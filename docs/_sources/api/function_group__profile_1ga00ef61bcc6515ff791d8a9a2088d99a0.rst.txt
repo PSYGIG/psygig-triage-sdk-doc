@@ -1,0 +1,13 @@
+.. _exhale_function_group__profile_1ga00ef61bcc6515ff791d8a9a2088d99a0:
+
+Function psygig_profile_enable_profiling
+========================================
+
+- Defined in :ref:`file_include_psygigsdk.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: psygig_profile_enable_profiling(psygig_agent_handle, int)

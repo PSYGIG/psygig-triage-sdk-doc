@@ -1,0 +1,32 @@
+Change Log
+===========
+
+``v0.2``
+----------
+
+.. code-block:: none
+
+    • Initial API implementation:
+        • Log Collection API
+        • Crash Reporting API
+
+    • System information collection:
+        • Operating system
+        • RAM
+        • Storage/file systems
+        • Peripherals
+        • Network
+
+``v0.1``
+----------
+
+.. code-block:: none
+
+    • Initial API implementation:
+        • Metrics Collection API
+        • Event Reporting API
+        • System Information API    
+            
+    • Initial ABI support:
+        • x86_64
+        • armhf

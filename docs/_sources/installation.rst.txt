@@ -1,0 +1,25 @@
+Download & Installation
+=======================
+Installing the `PSYGIG Triage SDK` is a simple procedure involving downloading and extracting the release package
+on to the device file system. 
+
+SDK Download
+------------
+Download the `PSYGIG Triage SDK` from the `releases page <https://psygig.com?psygig-triage-sdk>`_.
+
+.. note::
+    Ensure that you download the correct release for your platform architecture (eg. x86_64, aarch64).
+
+.. _install-sdk:
+
+Installing the SDK
+------------------
+Extract the SDK to the desired location (eg. ``/opt``) using the ``tar`` command:
+
+.. code-block:: bash
+
+    sudo tar xvzf psygig-VERSION-ARCH.tar.gz -C /opt
+    
+:sub:`where VERSION is the SDK version and ARCH is the platform architecture`
+
+That's it! Now head to :doc:`getting-started` to start instrumenting your application.

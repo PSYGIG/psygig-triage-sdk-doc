@@ -1,0 +1,13 @@
+.. _exhale_typedef_group__admin_1ga3981963f680114687830d048aca94c20:
+
+Typedef psygig_agent_handle
+===========================
+
+- Defined in :ref:`file_include_psygigsdk.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: psygig_agent_handle

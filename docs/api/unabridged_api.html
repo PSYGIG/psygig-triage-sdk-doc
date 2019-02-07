@@ -1,0 +1,1270 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ja" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Full API &mdash; PSYGIG Triage SDK 0.2.0 ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+ 
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-91451950-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PSYGIG Triage SDK
+          
+
+          
+            
+            <img src="../_static/psygig-logo-white-text.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">OVERVIEW</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../supported-platforms.html">Supported Platforms/Architectures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../third-party-integration.html">Third Party Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../change-log.html">Change Log</a></li>
+</ul>
+<p class="caption"><span class="caption-text">USAGE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Download &amp; Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started.html">Getting Started</a></li>
+</ul>
+<p class="caption"><span class="caption-text">FEATURES</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../application-performance-profiling.html">Application Performance Profiling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../crash-reporting.html">Crash Reporting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../log-collection.html">Log Collection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../metrics-collection.html">Metrics Collection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system-information.html">System Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../event-reporting.html">Event Reporting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../benchmark-testing.html">Benchmark Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../diagnostic-testing.html">Diagnostic Testing</a></li>
+</ul>
+<p class="caption"><span class="caption-text">PSYGIG TRIAGE SDK REFERENCE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../psymon-man.html"><code class="docutils literal notranslate"><span class="pre">psymon</span></code> man page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../psybench-man.html"><code class="docutils literal notranslate"><span class="pre">psybench</span></code> man page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../psydiag-man.html"><code class="docutils literal notranslate"><span class="pre">psydiag</span></code> man page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">PSYGIG Triage SDK API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sample-output.html">Sample Output</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PSYGIG Triage SDK</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Full API</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="full-api">
+<h1>Full API<a class="headerlink" href="#full-api" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="classes-and-structs">
+<h2>Classes and Structs<a class="headerlink" href="#classes-and-structs" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="struct__psygig__cfg.html">Struct _psygig_cfg</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="struct__psygig__cfg.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="struct__psygig__cpuinfo.html">Struct _psygig_cpuinfo</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="struct__psygig__cpuinfo.html#nested-relationships">Nested Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="struct__psygig__cpuinfo.html#nested-types">Nested Types</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="struct__psygig__cpuinfo.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="struct__psygig__cpuinfo_1_1cache__t.html">Struct _psygig_cpuinfo::cache_t</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="struct__psygig__cpuinfo_1_1cache__t.html#nested-relationships">Nested Relationships</a></li>
+<li class="toctree-l2"><a class="reference internal" href="struct__psygig__cpuinfo_1_1cache__t.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="struct__psygig__diag__result.html">Struct _psygig_diag_result</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="struct__psygig__diag__result.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="struct__psygig__diskinfo.html">Struct _psygig_diskinfo</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="struct__psygig__diskinfo.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="struct__psygig__fsinfo.html">Struct _psygig_fsinfo</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="struct__psygig__fsinfo.html#nested-relationships">Nested Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="struct__psygig__fsinfo.html#nested-types">Nested Types</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="struct__psygig__fsinfo.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="struct__psygig__fsinfo_1_1__fsinfo.html">Struct _psygig_fsinfo::_fsinfo</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="struct__psygig__fsinfo_1_1__fsinfo.html#nested-relationships">Nested Relationships</a></li>
+<li class="toctree-l2"><a class="reference internal" href="struct__psygig__fsinfo_1_1__fsinfo.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="struct__psygig__meminfo.html">Struct _psygig_meminfo</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="struct__psygig__meminfo.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="struct__psygig__netinfo.html">Struct _psygig_netinfo</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="struct__psygig__netinfo.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="struct__psygig__osinfo.html">Struct _psygig_osinfo</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="struct__psygig__osinfo.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="struct__psygig__pciinfo.html">Struct _psygig_pciinfo</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="struct__psygig__pciinfo.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="struct__psygig__pointcloud__data.html">Struct _psygig_pointcloud_data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="struct__psygig__pointcloud__data.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="struct__psygig__session__info.html">Struct _psygig_session_info</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="struct__psygig__session__info.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="struct__psygig__sink__cfg.html">Struct _psygig_sink_cfg</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="struct__psygig__sink__cfg.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="struct__psygig__sink__file__cfg.html">Struct _psygig_sink_file_cfg</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="struct__psygig__sink__file__cfg.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="struct__psygig__sink__fstream__cfg.html">Struct _psygig_sink_fstream_cfg</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="struct__psygig__sink__fstream__cfg.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="struct__psygig__sink__http__cfg.html">Struct _psygig_sink_http_cfg</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="struct__psygig__sink__http__cfg.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="struct__psygig__sink__influxdb__cfg.html">Struct _psygig_sink_influxdb_cfg</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="struct__psygig__sink__influxdb__cfg.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="struct__psygig__sink__mqtt__cfg.html">Struct _psygig_sink_mqtt_cfg</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="struct__psygig__sink__mqtt__cfg.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="struct__psygig__sink__tcp__cfg.html">Struct _psygig_sink_tcp_cfg</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="struct__psygig__sink__tcp__cfg.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="struct__psygig__sink__udp__cfg.html">Struct _psygig_sink_udp_cfg</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="struct__psygig__sink__udp__cfg.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="struct__psygig__sysinfo.html">Struct _psygig_sysinfo</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="struct__psygig__sysinfo.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="struct__psygig__usbinfo.html">Struct _psygig_usbinfo</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="struct__psygig__usbinfo.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="struct__psygig__video__cfg.html">Struct _psygig_video_cfg</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="struct__psygig__video__cfg.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="enums">
+<h2>Enums<a class="headerlink" href="#enums" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="enum_group__admin_1ga06fc87d81c62e9abb8790b6e5713c55b.html">Enum &#64;0</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enum_group__admin_1ga06fc87d81c62e9abb8790b6e5713c55b.html#enum-documentation">Enum Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="enum_group__log_1gadf764cbdea00d65edcd07bb9953ad2b7.html">Enum &#64;1</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enum_group__log_1gadf764cbdea00d65edcd07bb9953ad2b7.html#enum-documentation">Enum Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="enum_group__benchmark_1ga9e4632f4c308834d293ccea51e958420.html">Enum _psygig_benchmark_type</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enum_group__benchmark_1ga9e4632f4c308834d293ccea51e958420.html#enum-documentation">Enum Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="enum_group__diag_1ga11ff833fec26f132a5a0967482068767.html">Enum _psygig_diag_type</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enum_group__diag_1ga11ff833fec26f132a5a0967482068767.html#enum-documentation">Enum Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="enum_group__event_1gaa5b30511a731762245c930d4fd7a0b1f.html">Enum _psygig_event_level</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enum_group__event_1gaa5b30511a731762245c930d4fd7a0b1f.html#enum-documentation">Enum Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="enum_group__log_1ga3fe058e3349d2c426b2088c905b0e2e6.html">Enum _psygig_log_level</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enum_group__log_1ga3fe058e3349d2c426b2088c905b0e2e6.html#enum-documentation">Enum Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="enum_group__metric_1gabeecf8c237a073597898a4e0bf55390d.html">Enum _psygig_metric_file_type</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enum_group__metric_1gabeecf8c237a073597898a4e0bf55390d.html#enum-documentation">Enum Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="enum_group__admin_1gaead9312bcdfbbb0d282f56b8379017d8.html">Enum _psygig_sink_data_format</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enum_group__admin_1gaead9312bcdfbbb0d282f56b8379017d8.html#enum-documentation">Enum Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="enum_group__admin_1ga80e0093feb6fa13bbc424dfb30b95379.html">Enum _psygig_sink_type</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enum_group__admin_1ga80e0093feb6fa13bbc424dfb30b95379.html#enum-documentation">Enum Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="enum_psygigsdk_8h_1aaa1c70d1804a90a82b3585f4f07fa243.html">Enum PSYGIG_ERROR</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enum_psygigsdk_8h_1aaa1c70d1804a90a82b3585f4f07fa243.html#enum-documentation">Enum Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_group__admin_1ga121d61c2e2463adfaed1a57565c3147c.html">Function psygig_agent_add_sink</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_group__admin_1ga121d61c2e2463adfaed1a57565c3147c.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_group__admin_1ga87e7454c02c913293326cca96873f296.html">Function psygig_agent_cleanup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_group__admin_1ga87e7454c02c913293326cca96873f296.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_group__admin_1ga825d9336eb987cd5853b3800c20b6ba0.html">Function psygig_agent_get_current_session</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_group__admin_1ga825d9336eb987cd5853b3800c20b6ba0.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_group__admin_1ga1c2be988f0d29d39e6e3491b20de03a9.html">Function psygig_agent_get_num_sinks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_group__admin_1ga1c2be988f0d29d39e6e3491b20de03a9.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_group__admin_1ga352c28cc0a7836d70233375b6a66ef3d.html">Function psygig_agent_get_sink_info</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_group__admin_1ga352c28cc0a7836d70233375b6a66ef3d.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_group__admin_1gad3a56ef340a04a516b837a61833cca4e.html">Function psygig_agent_get_version</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_group__admin_1gad3a56ef340a04a516b837a61833cca4e.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_group__admin_1gaaf1964e8484d484331d4875fd8995e92.html">Function psygig_agent_init</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_group__admin_1gaaf1964e8484d484331d4875fd8995e92.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_group__admin_1ga62818a0b620c8ed11c1124995bcd9a51.html">Function psygig_agent_init_config</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_group__admin_1ga62818a0b620c8ed11c1124995bcd9a51.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_group__admin_1ga225a40e1a12bdeae6a7ed08513e447a0.html">Function psygig_agent_remove_sink</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_group__admin_1ga225a40e1a12bdeae6a7ed08513e447a0.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_group__admin_1ga97ef5aaf4e0e8fc25394051409b2d425.html">Function psygig_agent_set_debug_level</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_group__admin_1ga97ef5aaf4e0e8fc25394051409b2d425.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_group__admin_1ga99a931e11a90377d4048d2c808bf436a.html">Function psygig_agent_start_session</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_group__admin_1ga99a931e11a90377d4048d2c808bf436a.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_group__admin_1ga2648dbe0d465aad94d1808b318d7bcbe.html">Function psygig_agent_stop_session</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_group__admin_1ga2648dbe0d465aad94d1808b318d7bcbe.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_group__benchmark_1gad36ec5de5192a22cbbb9ec1154148a63.html">Function psygig_benchmark_export_report</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_group__benchmark_1gad36ec5de5192a22cbbb9ec1154148a63.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_group__benchmark_1ga36cfa76eba5674983349ce827289acfa.html">Function psygig_benchmark_run</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_group__benchmark_1ga36cfa76eba5674983349ce827289acfa.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_group__crash_1gabaf07ed013042d1f49ad0e88f43653b4.html">Function psygig_crash_enable_report_on_fatal_signal</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_group__crash_1gabaf07ed013042d1f49ad0e88f43653b4.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_group__crash_1gafac8bff88650e7c72a82a0e179b81e3d.html">Function psygig_crash_install_core_dump_handler</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_group__crash_1gafac8bff88650e7c72a82a0e179b81e3d.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_group__crash_1gaa749aeaa1e74ebed417610776e0ba3c1.html">Function psygig_crash_start_crash_monitor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_group__crash_1gaa749aeaa1e74ebed417610776e0ba3c1.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_group__diag_1ga329a2a24b7f9aa4f264e3dc368d75516.html">Function psygig_diag_export_report</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_group__diag_1ga329a2a24b7f9aa4f264e3dc368d75516.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_group__diag_1gaa5372ebc913ecae1d822e7cc442b2ff7.html">Function psygig_diag_run</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_group__diag_1gaa5372ebc913ecae1d822e7cc442b2ff7.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_group__event_1gafb3cf0708c1ef0c63a3907a77643b1db.html">Function psygig_event_enable_auto_report_os_faults</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_group__event_1gafb3cf0708c1ef0c63a3907a77643b1db.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_group__event_1ga94560ed7ee27811bcbeb48e6705c0adf.html">Function psygig_event_import_file</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_group__event_1ga94560ed7ee27811bcbeb48e6705c0adf.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_group__event_1ga2535bc46a92042dd6a94a43d7e53c9be.html">Function psygig_event_report</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_group__event_1ga2535bc46a92042dd6a94a43d7e53c9be.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_group__log_1ga648f67cc928ec74ec9a8ce48dcffa68f.html">Function psygig_log_glob_free</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_group__log_1ga648f67cc928ec74ec9a8ce48dcffa68f.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_group__log_1gafa91bdd5bb9e6ddb1ed8c0f2b3a9b56a.html">Function psygig_log_glob_known_log_files</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_group__log_1gafa91bdd5bb9e6ddb1ed8c0f2b3a9b56a.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_group__log_1gae738ca7b0c34bf6dba6712a9e7cddd2b.html">Function psygig_log_import_file</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_group__log_1gae738ca7b0c34bf6dba6712a9e7cddd2b.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_group__log_1gae5f9adc10f83bd1a01ef5c022796db86.html">Function psygig_log_monitor_log_file</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_group__log_1gae5f9adc10f83bd1a01ef5c022796db86.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_group__log_1gaa61bab002571d86eefbd051bad2a4d92.html">Function psygig_logf</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_group__log_1gaa61bab002571d86eefbd051bad2a4d92.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_group__metric_1gab2661de85dc52970a843f6399bee13d4.html">Function psygig_metric_enable_poll_system_resources</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_group__metric_1gab2661de85dc52970a843f6399bee13d4.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_group__metric_1ga086dbb3c27895dd1795dbba0e922ec0d.html">Function psygig_metric_export_report</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_group__metric_1ga086dbb3c27895dd1795dbba0e922ec0d.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_group__metric_1ga73001ada94c6c95c7857dd005a3d0873.html">Function psygig_metric_get_values_blob</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_group__metric_1ga73001ada94c6c95c7857dd005a3d0873.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_group__metric_1ga46a79a572ab82b198217426464651faf.html">Function psygig_metric_get_values_numeric</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_group__metric_1ga46a79a572ab82b198217426464651faf.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_group__metric_1ga633cc0dea5da06743ad0308eb7d600ea.html">Function psygig_metric_get_values_string</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_group__metric_1ga633cc0dea5da06743ad0308eb7d600ea.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_group__metric_1gacd4b61dc0315610828452bb0c23f12a1.html">Function psygig_metric_import_file</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_group__metric_1gacd4b61dc0315610828452bb0c23f12a1.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_group__metric_1gadcdb801039b078604891895cf65d1ab4.html">Function psygig_metric_record_pointcloud</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_group__metric_1gadcdb801039b078604891895cf65d1ab4.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_group__metric_1gab6f6044bb6ac877e2d6491383952bdda.html">Function psygig_metric_record_values_blob</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_group__metric_1gab6f6044bb6ac877e2d6491383952bdda.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_group__metric_1ga13961393fb675c701b1dde08500cec8f.html">Function psygig_metric_record_values_numeric</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_group__metric_1ga13961393fb675c701b1dde08500cec8f.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_group__metric_1ga03dd4f1ecc14708475838e7feca12a7c.html">Function psygig_metric_record_values_string</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_group__metric_1ga03dd4f1ecc14708475838e7feca12a7c.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_group__profile_1ga4575f8efe2f09bec2c61e3457830a1cb.html">Function psygig_profile_code_begin</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_group__profile_1ga4575f8efe2f09bec2c61e3457830a1cb.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_group__profile_1ga05e2d1688244c23c0d511fe3fa3a71b6.html">Function psygig_profile_code_end</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_group__profile_1ga05e2d1688244c23c0d511fe3fa3a71b6.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_group__profile_1ga00ef61bcc6515ff791d8a9a2088d99a0.html">Function psygig_profile_enable_profiling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_group__profile_1ga00ef61bcc6515ff791d8a9a2088d99a0.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_group__profile_1ga4d2866def94870a7c54c8a5935fc3d2e.html">Function psygig_profile_export_report</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_group__profile_1ga4d2866def94870a7c54c8a5935fc3d2e.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_group__sysinfo_1gad62e444b026de8265c45346933424da2.html">Function psygig_sysinfo_export_report</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_group__sysinfo_1gad62e444b026de8265c45346933424da2.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_group__sysinfo_1ga70289db0bfc184d04ce16a2bc17ea7fc.html">Function psygig_sysinfo_get</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_group__sysinfo_1ga70289db0bfc184d04ce16a2bc17ea7fc.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_group__video_1ga5e4ad5e01335eed273cd3334f10b9177.html">Function psygig_video_import</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_group__video_1ga5e4ad5e01335eed273cd3334f10b9177.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_group__video_1gaf0ae8019b6abf5853191e8084d6db2d4.html">Function psygig_video_stream_start</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_group__video_1gaf0ae8019b6abf5853191e8084d6db2d4.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_group__video_1ga152f2287018683a2e5605a1fb3bc039e.html">Function psygig_video_stream_stop</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_group__video_1ga152f2287018683a2e5605a1fb3bc039e.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="defines">
+<h2>Defines<a class="headerlink" href="#defines" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="define_group__sysinfo_1ga036449da4ccac7279fa86d00ca8861d1.html">Define MAX_CACHES</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="define_group__sysinfo_1ga036449da4ccac7279fa86d00ca8861d1.html#define-documentation">Define Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="define_group__admin_1ga55e37042abe9e49d5b055ca4da45dce2.html">Define MAX_DEVICE_ID_LENGTH</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="define_group__admin_1ga55e37042abe9e49d5b055ca4da45dce2.html#define-documentation">Define Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="define_group__sysinfo_1gac874d7a1f535e6a609d1bf4c3b74e421.html">Define MAX_DISKS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="define_group__sysinfo_1gac874d7a1f535e6a609d1bf4c3b74e421.html#define-documentation">Define Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="define_group__sysinfo_1gaa5f75fdbcf486cecbce0a63152429c2c.html">Define MAX_NET_INTF</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="define_group__sysinfo_1gaa5f75fdbcf486cecbce0a63152429c2c.html#define-documentation">Define Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="define_group__sysinfo_1ga83701fcd523d39d6399f6f701e8bbaea.html">Define MAX_PARTS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="define_group__sysinfo_1ga83701fcd523d39d6399f6f701e8bbaea.html#define-documentation">Define Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="define_group__sysinfo_1ga1fa9555567da6fbd4652105591a3264a.html">Define MAX_PCI_DEVS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="define_group__sysinfo_1ga1fa9555567da6fbd4652105591a3264a.html#define-documentation">Define Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="define_group__admin_1ga019aa8a74d5a3fa69bcba968514214dd.html">Define MAX_PSYGIG_SESSION_NAME_LENGTH</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="define_group__admin_1ga019aa8a74d5a3fa69bcba968514214dd.html#define-documentation">Define Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="define_group__sysinfo_1gafba6e02f31b8a53894ca0e0faaaa7482.html">Define MAX_USB_DEVS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="define_group__sysinfo_1gafba6e02f31b8a53894ca0e0faaaa7482.html#define-documentation">Define Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="define_psygigsdk_8h_1a7a18783e5822ba5ea364d35854897085.html">Define NOT_EXPORTED</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="define_psygigsdk_8h_1a7a18783e5822ba5ea364d35854897085.html#define-documentation">Define Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="define_psygigsdk_8h_1ae1b16a95f537ece7d6e8e03311833865.html">Define PSYGIG_API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="define_psygigsdk_8h_1ae1b16a95f537ece7d6e8e03311833865.html#define-documentation">Define Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="typedefs">
+<h2>Typedefs<a class="headerlink" href="#typedefs" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_group__admin_1ga3981963f680114687830d048aca94c20.html">Typedef psygig_agent_handle</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_group__admin_1ga3981963f680114687830d048aca94c20.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_group__benchmark_1ga8ca83cf178d5f623c468ad1982765dd0.html">Typedef psygig_benchmark_type</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_group__benchmark_1ga8ca83cf178d5f623c468ad1982765dd0.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_group__admin_1ga4d6d224f55aa00778d0a279ad63a17ef.html">Typedef psygig_cfg</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_group__admin_1ga4d6d224f55aa00778d0a279ad63a17ef.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_group__sysinfo_1ga5ef3f551fb07171df98421a106e641c2.html">Typedef psygig_cpuinfo</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_group__sysinfo_1ga5ef3f551fb07171df98421a106e641c2.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_group__diag_1ga36c28e721d2040c85a8d7943fbb8011d.html">Typedef psygig_diag_result</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_group__diag_1ga36c28e721d2040c85a8d7943fbb8011d.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_group__diag_1ga86ad220aeeef6bd944bcb02e011b0680.html">Typedef psygig_diag_type</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_group__diag_1ga86ad220aeeef6bd944bcb02e011b0680.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_group__sysinfo_1gabec888c1e5957910697cd709cfc14634.html">Typedef psygig_diskinfo</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_group__sysinfo_1gabec888c1e5957910697cd709cfc14634.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_group__event_1ga8061a166157ee4a37eee4032493a78e2.html">Typedef psygig_event_level</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_group__event_1ga8061a166157ee4a37eee4032493a78e2.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_group__sysinfo_1gaca9ae00fcaeaebf4f6b0d920a987a142.html">Typedef psygig_fsinfo</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_group__sysinfo_1gaca9ae00fcaeaebf4f6b0d920a987a142.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_group__log_1gae787592a3d2392876a30ad63d1d95452.html">Typedef psygig_log_level</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_group__log_1gae787592a3d2392876a30ad63d1d95452.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_group__sysinfo_1gaf9cd1804ffe32d13e5f0c4101d63f147.html">Typedef psygig_meminfo</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_group__sysinfo_1gaf9cd1804ffe32d13e5f0c4101d63f147.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_group__metric_1ga7c7ea594a2f7345f436080bd6a22433e.html">Typedef psygig_metric_file_type</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_group__metric_1ga7c7ea594a2f7345f436080bd6a22433e.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_group__sysinfo_1ga6a734a61fa806c75dd2731997559bd56.html">Typedef psygig_netinfo</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_group__sysinfo_1ga6a734a61fa806c75dd2731997559bd56.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_group__sysinfo_1ga15b4369a22dd2ca4bc73d662a3ed973b.html">Typedef psygig_osinfo</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_group__sysinfo_1ga15b4369a22dd2ca4bc73d662a3ed973b.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_group__sysinfo_1ga49fdfa973f3ae0e57c972127dc74627e.html">Typedef psygig_pciinfo</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_group__sysinfo_1ga49fdfa973f3ae0e57c972127dc74627e.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_group__metric_1ga1fe05be4c1bfbaa52440060155299761.html">Typedef psygig_pointcloud_data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_group__metric_1ga1fe05be4c1bfbaa52440060155299761.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_group__admin_1ga54e9d2990ca293d686ca2347be84a1f5.html">Typedef psygig_session_info</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_group__admin_1ga54e9d2990ca293d686ca2347be84a1f5.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_group__admin_1gaaf0df8949411545158a840cbd4363ff3.html">Typedef psygig_sink_cfg</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_group__admin_1gaaf0df8949411545158a840cbd4363ff3.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_group__admin_1gacaf10cdcf4d1f34aa1fcbad382d53957.html">Typedef psygig_sink_data_format</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_group__admin_1gacaf10cdcf4d1f34aa1fcbad382d53957.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_group__admin_1gac8776d2d9f31b519633ef8660f87ec3a.html">Typedef psygig_sink_file_cfg</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_group__admin_1gac8776d2d9f31b519633ef8660f87ec3a.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_group__admin_1ga72d87ed3888dfc41312fdb74edd34d89.html">Typedef psygig_sink_fstream_cfg</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_group__admin_1ga72d87ed3888dfc41312fdb74edd34d89.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_group__admin_1ga78b4fa980ceefde0a393224b7112d892.html">Typedef psygig_sink_http_cfg</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_group__admin_1ga78b4fa980ceefde0a393224b7112d892.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_group__admin_1gaa8c01e107b0ec7365f3d1d88caf6e61a.html">Typedef psygig_sink_influxdb_cfg</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_group__admin_1gaa8c01e107b0ec7365f3d1d88caf6e61a.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_group__admin_1ga7315cf71c50e0cb58a285af0c3613d92.html">Typedef psygig_sink_mqtt_cfg</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_group__admin_1ga7315cf71c50e0cb58a285af0c3613d92.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_group__admin_1ga5bdc5861f74c5721787506933ae972f6.html">Typedef psygig_sink_tcp_cfg</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_group__admin_1ga5bdc5861f74c5721787506933ae972f6.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_group__admin_1gab5aba5687d0cc663995fee0604d08b14.html">Typedef psygig_sink_type</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_group__admin_1gab5aba5687d0cc663995fee0604d08b14.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_group__admin_1gabe641754bc346b3b54a5c88f6659504b.html">Typedef psygig_sink_udp_cfg</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_group__admin_1gabe641754bc346b3b54a5c88f6659504b.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_group__sysinfo_1gaf4f8a4d078de38b6921a5ca49ee0251d.html">Typedef psygig_sysinfo</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_group__sysinfo_1gaf4f8a4d078de38b6921a5ca49ee0251d.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_group__sysinfo_1ga5fc81e59438dd9d0755d81b7f4863cfe.html">Typedef psygig_usbinfo</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_group__sysinfo_1ga5fc81e59438dd9d0755d81b7f4863cfe.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_group__video_1ga020cba254357ccf8e53d0ef0369235c7.html">Typedef psygig_video_cfg</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_group__video_1ga020cba254357ccf8e53d0ef0369235c7.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_group__video_1ga54c26db1cfeb60f0584666f630ba7497.html">Typedef psygig_video_handle</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_group__video_1ga54c26db1cfeb60f0584666f630ba7497.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="directories">
+<h2>Directories<a class="headerlink" href="#directories" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dir_include.html">Directory include</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dir_include.html#files">Files</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="files">
+<h2>Files<a class="headerlink" href="#files" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_include_psygigsdk.h.html">File psygigsdk.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_include_psygigsdk.h.html#definition-include-psygigsdk-h">Definition (<code class="docutils literal notranslate"><span class="pre">include/psygigsdk.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_include_psygigsdk.h.html">Program Listing for File psygigsdk.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_include_psygigsdk.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_include_psygigsdk.h.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_include_psygigsdk.h.html#enums">Enums</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_include_psygigsdk.h.html#functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_include_psygigsdk.h.html#defines">Defines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_include_psygigsdk.h.html#typedefs">Typedefs</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019 PSYGIG株式会社
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

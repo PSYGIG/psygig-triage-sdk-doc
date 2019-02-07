@@ -1,0 +1,13 @@
+.. _exhale_typedef_group__event_1ga8061a166157ee4a37eee4032493a78e2:
+
+Typedef psygig_event_level
+==========================
+
+- Defined in :ref:`file_include_psygigsdk.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: psygig_event_level

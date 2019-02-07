@@ -1,0 +1,13 @@
+.. _exhale_typedef_group__sysinfo_1ga5ef3f551fb07171df98421a106e641c2:
+
+Typedef psygig_cpuinfo
+======================
+
+- Defined in :ref:`file_include_psygigsdk.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: psygig_cpuinfo

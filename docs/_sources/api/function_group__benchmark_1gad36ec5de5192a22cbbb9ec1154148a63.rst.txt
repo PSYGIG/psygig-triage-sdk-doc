@@ -1,0 +1,13 @@
+.. _exhale_function_group__benchmark_1gad36ec5de5192a22cbbb9ec1154148a63:
+
+Function psygig_benchmark_export_report
+=======================================
+
+- Defined in :ref:`file_include_psygigsdk.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: psygig_benchmark_export_report(psygig_agent_handle, char *)

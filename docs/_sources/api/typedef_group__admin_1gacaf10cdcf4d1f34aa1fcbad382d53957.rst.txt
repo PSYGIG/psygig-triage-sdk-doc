@@ -1,0 +1,13 @@
+.. _exhale_typedef_group__admin_1gacaf10cdcf4d1f34aa1fcbad382d53957:
+
+Typedef psygig_sink_data_format
+===============================
+
+- Defined in :ref:`file_include_psygigsdk.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: psygig_sink_data_format

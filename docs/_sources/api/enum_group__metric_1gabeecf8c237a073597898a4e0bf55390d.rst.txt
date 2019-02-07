@@ -1,0 +1,13 @@
+.. _exhale_enum_group__metric_1gabeecf8c237a073597898a4e0bf55390d:
+
+Enum _psygig_metric_file_type
+=============================
+
+- Defined in :ref:`file_include_psygigsdk.h`
+
+
+Enum Documentation
+------------------
+
+
+.. doxygenenum:: _psygig_metric_file_type

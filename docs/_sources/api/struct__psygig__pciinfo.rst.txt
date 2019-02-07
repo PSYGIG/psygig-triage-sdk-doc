@@ -1,0 +1,16 @@
+.. _exhale_struct_struct__psygig__pciinfo:
+
+Struct _psygig_pciinfo
+======================
+
+- Defined in :ref:`file_include_psygigsdk.h`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: _psygig_pciinfo
+   :members:
+   :protected-members:
+   :undoc-members:

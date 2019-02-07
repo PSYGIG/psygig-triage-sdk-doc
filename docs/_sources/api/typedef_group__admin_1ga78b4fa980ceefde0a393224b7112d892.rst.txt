@@ -1,0 +1,13 @@
+.. _exhale_typedef_group__admin_1ga78b4fa980ceefde0a393224b7112d892:
+
+Typedef psygig_sink_http_cfg
+============================
+
+- Defined in :ref:`file_include_psygigsdk.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: psygig_sink_http_cfg

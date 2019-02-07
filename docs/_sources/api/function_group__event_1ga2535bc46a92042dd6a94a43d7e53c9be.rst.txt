@@ -1,0 +1,13 @@
+.. _exhale_function_group__event_1ga2535bc46a92042dd6a94a43d7e53c9be:
+
+Function psygig_event_report
+============================
+
+- Defined in :ref:`file_include_psygigsdk.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: psygig_event_report(psygig_agent_handle, psygig_event_level, char *, int, const char *)

@@ -1,0 +1,13 @@
+.. _exhale_function_group__metric_1gab6f6044bb6ac877e2d6491383952bdda:
+
+Function psygig_metric_record_values_blob
+=========================================
+
+- Defined in :ref:`file_include_psygigsdk.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: psygig_metric_record_values_blob(psygig_agent_handle, char *, void *, int, int)

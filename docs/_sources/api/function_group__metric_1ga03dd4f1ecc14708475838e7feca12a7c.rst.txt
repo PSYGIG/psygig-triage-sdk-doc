@@ -1,0 +1,13 @@
+.. _exhale_function_group__metric_1ga03dd4f1ecc14708475838e7feca12a7c:
+
+Function psygig_metric_record_values_string
+===========================================
+
+- Defined in :ref:`file_include_psygigsdk.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: psygig_metric_record_values_string(psygig_agent_handle, char *, char *, int)

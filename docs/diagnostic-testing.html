@@ -1,0 +1,372 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ja" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Diagnostic Testing &mdash; PSYGIG Triage SDK 0.2.0 ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="psymon man page" href="psymon-man.html" />
+    <link rel="prev" title="Benchmark Testing" href="benchmark-testing.html" />
+ 
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-91451950-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> PSYGIG Triage SDK
+          
+
+          
+            
+            <img src="_static/psygig-logo-white-text.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">OVERVIEW</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="supported-platforms.html">Supported Platforms/Architectures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="third-party-integration.html">Third Party Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="change-log.html">Change Log</a></li>
+</ul>
+<p class="caption"><span class="caption-text">USAGE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Download &amp; Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
+</ul>
+<p class="caption"><span class="caption-text">FEATURES</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="application-performance-profiling.html">Application Performance Profiling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="crash-reporting.html">Crash Reporting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-collection.html">Log Collection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metrics-collection.html">Metrics Collection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="system-information.html">System Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="event-reporting.html">Event Reporting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="benchmark-testing.html">Benchmark Testing</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Diagnostic Testing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#running-the-diagnostics-tests">Running the diagnostics tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-psygig-sdk-api">Using PSYGIG SDK API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#running-the-ram-diagnostic-test">Running the RAM Diagnostic Test</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#sample-diagnostic-json-results">Sample diagnostic JSON results</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">PSYGIG TRIAGE SDK REFERENCE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="psymon-man.html"><code class="docutils literal notranslate"><span class="pre">psymon</span></code> man page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="psybench-man.html"><code class="docutils literal notranslate"><span class="pre">psybench</span></code> man page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="psydiag-man.html"><code class="docutils literal notranslate"><span class="pre">psydiag</span></code> man page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/index.html">PSYGIG Triage SDK API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sample-output.html">Sample Output</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PSYGIG Triage SDK</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Diagnostic Testing</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="diagnostic-testing">
+<h1>Diagnostic Testing<a class="headerlink" href="#diagnostic-testing" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>Ensuring the reliability and stability of a safety-critical system is a necessity when considering the socio-economical costs of a system failure.
+The consequences of a failure can be benign such as an intermittent disk failure causing few corrupted entries in a log file, or it can be catastrophic
+such as a memory failure causing the navigation system of an autonomous vehicle to halt. Including diagnostic tests as part of the normal operation of the device
+allows chronic or intermittent problems to be discovered before a more catastrophic failure can occur.</p>
+<p><cite>PSYGIG Triage SDK</cite> provides an extensive suite of diagnostic tests designed to exercise and stress the most common subsytems of an embedded device.</p>
+<p>The Diagnostic Testing API includes many features suitable for integration into embedded systems:</p>
+<ul class="simple">
+<li>Works out-of-the-box; <cite>just run</cite> <a class="reference internal" href="benchmark-testing.html#running-benchmarks"><span class="std std-ref">psydiag</span></a></li>
+<li>Full diagnostic test suite:</li>
+</ul>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="_images/cpu.png"><img alt="cpu" src="_images/cpu.png" style="height: 30px;" /></a></td>
+<td>CPU</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="_images/gpu.png"><img alt="gpu" src="_images/gpu.png" style="height: 30px;" /></a></td>
+<td>GPU</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="_images/ram.png"><img alt="ram" src="_images/ram.png" style="height: 30px;" /></a></td>
+<td>RAM</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="_images/disk.png"><img alt="disk" src="_images/disk.png" style="height: 30px;" /></a></td>
+<td>Storage devices</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="_images/network.png"><img alt="network" src="_images/network.png" style="height: 30px;" /></a></td>
+<td>Network</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>Simultaneous testing of all subsystems to fully stress the device as a whole</li>
+<li>Customizable and extensible diagnostic tests</li>
+<li>Track diagnostic results with built-in integration in the <a class="reference external" href="https://www.psygig.com">PSYGIG diagnostics platform</a></li>
+<li>Generate a diagnostics HTML report</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">The <cite>Diagnostic Testing</cite> feature is a work-in-progress.
+Please <script type="text/javascript">document.write(
+              "<n uers=\"znvygb:vasb\100cfltvt\056pbz?fhowrpg=[CFLTVT Gevntr FQX] Qvntabfgvp Grfgvat\">pbagnpg hf <\057n>".replace(/[a-zA-Z]/g,
+              function(c){
+                return String.fromCharCode(
+                (c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);}));
+                </script> if you are interested in beta-testing this feature.</p>
+</div>
+<div class="section" id="running-the-diagnostics-tests">
+<h2>Running the diagnostics tests<a class="headerlink" href="#running-the-diagnostics-tests" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Simply run the included standalone binary <code class="docutils literal notranslate"><span class="pre">psydiag</span></code> to run the full diagnostic suite. For example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>psydiag -f json -o diagnostic-results.json
+</pre></div>
+</div>
+<p>See <a class="reference internal" href="psydiag-man.html"><span class="doc">psydiag man page</span></a> for a complete list of options.</p>
+</div>
+<div class="section" id="using-psygig-sdk-api">
+<h2>Using PSYGIG SDK API<a class="headerlink" href="#using-psygig-sdk-api" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>The Diagnostic Testing API can be accessed by including a <a class="reference internal" href="api/file_include_psygigsdk.h.html"><span class="doc">single header file</span></a>
+and linking the <code class="docutils literal notranslate"><span class="pre">libpsygig</span></code> shared library. See <a class="reference internal" href="getting-started.html#libpsygig-linking"><span class="std std-ref">Advanced Setup - Building your application with libpsygig</span></a> for details.</p>
+<div class="section" id="running-the-ram-diagnostic-test">
+<h3>Running the RAM Diagnostic Test<a class="headerlink" href="#running-the-ram-diagnostic-test" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;psygigsdk.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">psygig_agent_handle</span>     <span class="n">pah</span><span class="p">;</span>  <span class="c1">// handle to psygig agent</span>
+
+    <span class="cm">/* ... Initialize code omitted for simplicity ... */</span>
+
+    <span class="c1">// Run RAM diagnostic test</span>
+    <span class="n">psygig_diag_result</span> <span class="n">diagres</span><span class="p">;</span>
+    <span class="n">rc</span> <span class="o">=</span> <span class="n">psygig_diag_run</span><span class="p">(</span><span class="n">pah</span><span class="p">,</span> <span class="n">PSYGIG_DIAG_RAM</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">diagres</span><span class="p">);</span>
+
+    <span class="cm">/* ... Cleanup code omitted for simplicity ... */</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+<div class="section" id="sample-diagnostic-json-results">
+<h2>Sample diagnostic JSON results<a class="headerlink" href="#sample-diagnostic-json-results" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s">&quot;DiagResults&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s">&quot;Type: &quot;</span><span class="n">RAM</span><span class="s">&quot;</span>
+        <span class="s">&quot;StartTime&quot;</span><span class="o">:</span> <span class="mi">1547534065</span><span class="p">,</span>
+        <span class="s">&quot;StartTimeOfDay&quot;</span><span class="o">:</span> <span class="s">&quot;2019-01-15 15:34:25&quot;</span><span class="p">,</span>
+        <span class="s">&quot;Result&quot;</span><span class="o">:</span> <span class="s">&quot;PASS&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="psymon-man.html" class="btn btn-neutral float-right" title="psymon man page" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="benchmark-testing.html" class="btn btn-neutral" title="Benchmark Testing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019 PSYGIG株式会社
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
+        <script type="text/javascript" src="_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script type="text/javascript" src="_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+Event Reporting
+================
+Events refer to an exceptional behaviour in the environment beyond normal circumstances. This includes events in the physical environment such as
+a low battery warning for an autonomous drone, as well as software events such as low remaining disk space. Diagnosing system failures involves
+analyzing any anomaly in events that were raised before the failure occurred. Events may also be used to trigger certain actions, such as performing
+a graceful shutdown when the battery level is crtically low.
+
+`PSYGIG Triage SDK` provides an event reporting service that allows on-demand event reporting, as well as the setting of event triggers when a condition
+or threshold is exceeded.
+
+The Event Reporting API includes many features suitable for integration into embedded systems:
+
+- Works on existing applications; `no need to recompile source code`
+- Seamless integration with :ref:`third party IoT platforms <iot-third-party>` and :ref:`databases/data warehouses <db-third-party>`
+- Pre-defined event triggers that raise an event when a condition is satisfied
+- Define custom even triggers for any SDK diagnostic data (eg. :doc:`Metrics <metrics-collection>`, :doc:`Profiling data <application-performance-profiling>`, :doc:`Log data <log-collection>`)
+- Generate an event log HTML report
+
+Using ``psymon``
+----------------
+Without modifying your existing source code, you can instantly enable any of the pre-defined event triggers
+in your application by using the ``psymon`` script to run your program. For example:
+
+.. code-block:: bash
+
+   psymon --eventtrigger "lowmem" -c "/path/to/your/app --arg1 --arg2 --arg3"
+
+See :doc:`psymon-man` for a complete list of options.
+
+.. note::
+    ``psymon`` is a work-in-progress. 
+    Please :email:`contact us <info@psygig.com?subject=[PSYGIG Triage SDK] psymon>` if you are interested in beta-testing this feature. 
+
+Using PSYGIG SDK API
+------------------------
+The Event Reporting API can be accessed by including a :doc:`single header file <api/file_include_psygigsdk.h>`
+and linking the ``libpsygig`` shared library. See :ref:`libpsygig-linking` for details.
+
+Raising an event on demand
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: c
+    :linenos:
+
+    #include <psygigsdk.h>
+
+    int main(int argc, char **argv)
+    {
+        psygig_agent_handle     pah;  // handle to psygig agent
+
+        /* ... Initialize code omitted for simplicity ... */
+
+        // Report monitoring task complete as event
+        rc = psygig_event_report(pah, PSYGIG_EVENT_LEVEL_INFO, "monitor", TASK_COMPLETE_EVENT_ID, "Monitor task complete");
+
+        /* ... Cleanup code omitted for simplicity ... */
+    }
+
+Sample event JSON data
+-----------------------
+
+.. code-block:: javascript
+
+    {
+        "Event": {
+            "Duration": 0,
+            "Timestamp": 1547534065,
+            "TimeOfDay": "2019-01-15 15:34:25",
+            "Level": "Info",
+            "Source": "monitor",
+            "EventID": 1,
+            "Message": "Monitor task start"
+        }
+    },
+    {
+        "Event": {
+            "Duration": 15,
+            "Timestamp": 1547534080,
+            "TimeOfDay": "2019-01-15 15:34:40",
+            "Level": "Info",
+            "Source": "monitor",
+            "EventID": 2,
+            "Message": "Monitor task complete"
+        }
+    }

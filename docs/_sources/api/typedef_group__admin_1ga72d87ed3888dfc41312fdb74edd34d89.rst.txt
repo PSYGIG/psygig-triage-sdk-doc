@@ -1,0 +1,13 @@
+.. _exhale_typedef_group__admin_1ga72d87ed3888dfc41312fdb74edd34d89:
+
+Typedef psygig_sink_fstream_cfg
+===============================
+
+- Defined in :ref:`file_include_psygigsdk.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: psygig_sink_fstream_cfg

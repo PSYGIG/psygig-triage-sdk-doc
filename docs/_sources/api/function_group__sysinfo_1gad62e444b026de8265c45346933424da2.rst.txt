@@ -1,0 +1,13 @@
+.. _exhale_function_group__sysinfo_1gad62e444b026de8265c45346933424da2:
+
+Function psygig_sysinfo_export_report
+=====================================
+
+- Defined in :ref:`file_include_psygigsdk.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: psygig_sysinfo_export_report(psygig_agent_handle, char *)

@@ -1,0 +1,13 @@
+.. _exhale_typedef_group__benchmark_1ga8ca83cf178d5f623c468ad1982765dd0:
+
+Typedef psygig_benchmark_type
+=============================
+
+- Defined in :ref:`file_include_psygigsdk.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: psygig_benchmark_type

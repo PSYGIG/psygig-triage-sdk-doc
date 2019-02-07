@@ -1,0 +1,13 @@
+.. _exhale_function_group__profile_1ga4575f8efe2f09bec2c61e3457830a1cb:
+
+Function psygig_profile_code_begin
+==================================
+
+- Defined in :ref:`file_include_psygigsdk.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: psygig_profile_code_begin(psygig_agent_handle, const char *, const char *, unsigned int)

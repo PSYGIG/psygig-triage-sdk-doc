@@ -1,0 +1,13 @@
+.. _exhale_function_group__metric_1ga086dbb3c27895dd1795dbba0e922ec0d:
+
+Function psygig_metric_export_report
+====================================
+
+- Defined in :ref:`file_include_psygigsdk.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: psygig_metric_export_report(psygig_agent_handle, char *)

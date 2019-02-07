@@ -1,0 +1,13 @@
+.. _exhale_function_group__crash_1gafac8bff88650e7c72a82a0e179b81e3d:
+
+Function psygig_crash_install_core_dump_handler
+===============================================
+
+- Defined in :ref:`file_include_psygigsdk.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: psygig_crash_install_core_dump_handler(psygig_agent_handle)

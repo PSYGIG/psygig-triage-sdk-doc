@@ -1,0 +1,13 @@
+.. _exhale_function_group__diag_1ga329a2a24b7f9aa4f264e3dc368d75516:
+
+Function psygig_diag_export_report
+==================================
+
+- Defined in :ref:`file_include_psygigsdk.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: psygig_diag_export_report(psygig_agent_handle, char *)

@@ -1,0 +1,13 @@
+.. _exhale_function_group__metric_1gab2661de85dc52970a843f6399bee13d4:
+
+Function psygig_metric_enable_poll_system_resources
+===================================================
+
+- Defined in :ref:`file_include_psygigsdk.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: psygig_metric_enable_poll_system_resources(psygig_agent_handle, int)

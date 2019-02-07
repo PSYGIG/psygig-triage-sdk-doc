@@ -1,0 +1,90 @@
+Application Performance Profiling
+=================================
+Performance issues are a subset of software faults caused by a failure to complete an operation within fixed-time constraints.
+For example, real-time system such as autonomous vehicles or high-frequency financial trading platforms that fail to perform required actions within
+millisecond resolution would ultimately result in significant socio-economical impacts. Unlike fatal or logic errors, 
+performance issues may not result in obvious failures like system crashes or incorrect output.
+
+In order to diagnose performance issues, an instrumentation tool called the `profiler` is used to sample the execution state of the program at regular intervals.
+By analyzing the profile data, the overconsumption of CPU/memory resources can be isolated to the offending source code file and function.
+
+`PSYGIG Triage SDK` provides instrumentation tools to identify hotspots in the program code where overall performance may be affected.
+The Application Performance Profiling API includes many features suitable for integration into embedded systems:
+
+- Works on existing applications; `no need to recompile source code`
+- :doc:`Multiplatform support <supported-platforms>`
+- Seamless integration with :ref:`third party APM platforms <apm-third-party>`
+- Automatically collect CPU usage profiling data, generating call trees that identify performance hotspots
+- Generate periodic memory usage snapshots, providing a stack trace of where memory is being allocated/de-allocated
+- Identify memory leaks in your program
+- Generate an application performance HTML report
+
+.. note::
+    The `Application Performance Profiling` feature is a work-in-progress. 
+    Please :email:`contact us <info@psygig.com?subject=[PSYGIG Triage SDK] Application Performance Profiling>` if you are interested in beta-testing this feature. 
+
+Using ``psymon``
+----------------
+Without modifying your existing source code, you can instantly enable performance profiling
+to your application by using the ``psymon`` script to run your program. For example:
+
+.. code-block:: bash
+
+   psymon --profile -c "/path/to/your/app --arg1 --arg2 --arg3"
+
+See :doc:`psymon-man` for a complete list of options.
+
+Using PSYGIG SDK API
+------------------------
+The Application Performance Profiling API can be accessed by including a :doc:`single header file <api/file_include_psygigsdk.h>`
+and linking the ``libpsygig`` shared library. See :ref:`libpsygig-linking` for details.
+
+Start/stop CPU profiler
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: c
+    :linenos:
+
+    #include <psygigsdk.h>
+
+    int main(int argc, char **argv)
+    {
+        psygig_agent_handle     pah;  // handle to psygig agent
+
+        /* ... Initialize code omitted for simplicity ... */
+
+        // Start CPU profiler
+        rc = psygig_profile_enable_profiling(pah, 10);
+
+        /* Some code to profile */
+
+        // Stop CPU profiler
+        rc = psygig_profile_enable_profiling(pah, 0);
+
+        /* ... Cleanup code omitted for simplicity ... */
+    }
+
+Generate memory usage snapshot
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: c
+    :linenos:
+
+    #include <psygigsdk.h>
+
+    int main(int argc, char **argv)
+    {
+        psygig_agent_handle     pah;  // handle to psygig agent
+
+        /* ... Initialize code omitted for simplicity ... */
+
+        // Capture memory snapshot
+        rc = psygig_profile_memory_snapshot(pah);
+
+        /* ... Cleanup code omitted for simplicity ... */
+    }
+
+Sample CPU profile data visualization
+-------------------------------------
+
+.. image:: images/cpu-profile.png

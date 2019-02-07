@@ -1,0 +1,13 @@
+.. _exhale_define_group__sysinfo_1gac874d7a1f535e6a609d1bf4c3b74e421:
+
+Define MAX_DISKS
+================
+
+- Defined in :ref:`file_include_psygigsdk.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: MAX_DISKS

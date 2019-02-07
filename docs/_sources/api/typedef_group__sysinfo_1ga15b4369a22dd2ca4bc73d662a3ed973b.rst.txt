@@ -1,0 +1,13 @@
+.. _exhale_typedef_group__sysinfo_1ga15b4369a22dd2ca4bc73d662a3ed973b:
+
+Typedef psygig_osinfo
+=====================
+
+- Defined in :ref:`file_include_psygigsdk.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: psygig_osinfo

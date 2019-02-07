@@ -1,0 +1,13 @@
+.. _exhale_function_group__admin_1ga225a40e1a12bdeae6a7ed08513e447a0:
+
+Function psygig_agent_remove_sink
+=================================
+
+- Defined in :ref:`file_include_psygigsdk.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: psygig_agent_remove_sink(psygig_agent_handle, int)

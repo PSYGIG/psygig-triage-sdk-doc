@@ -1,0 +1,13 @@
+.. _exhale_define_group__sysinfo_1ga1fa9555567da6fbd4652105591a3264a:
+
+Define MAX_PCI_DEVS
+===================
+
+- Defined in :ref:`file_include_psygigsdk.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: MAX_PCI_DEVS

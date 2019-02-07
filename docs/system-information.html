@@ -1,0 +1,665 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ja" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>System Information &mdash; PSYGIG Triage SDK 0.2.0 ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="Event Reporting" href="event-reporting.html" />
+    <link rel="prev" title="Metrics Collection" href="metrics-collection.html" />
+ 
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-91451950-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> PSYGIG Triage SDK
+          
+
+          
+            
+            <img src="_static/psygig-logo-white-text.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">OVERVIEW</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="supported-platforms.html">Supported Platforms/Architectures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="third-party-integration.html">Third Party Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="change-log.html">Change Log</a></li>
+</ul>
+<p class="caption"><span class="caption-text">USAGE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Download &amp; Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
+</ul>
+<p class="caption"><span class="caption-text">FEATURES</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="application-performance-profiling.html">Application Performance Profiling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="crash-reporting.html">Crash Reporting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-collection.html">Log Collection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metrics-collection.html">Metrics Collection</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">System Information</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#using-psymon">Using <code class="docutils literal notranslate"><span class="pre">psymon</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-psygig-sdk-api">Using PSYGIG SDK API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#print-cpu-details-to-stdout">Print CPU details to stdout</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#sample-system-information-output">Sample system information output</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="event-reporting.html">Event Reporting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="benchmark-testing.html">Benchmark Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="diagnostic-testing.html">Diagnostic Testing</a></li>
+</ul>
+<p class="caption"><span class="caption-text">PSYGIG TRIAGE SDK REFERENCE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="psymon-man.html"><code class="docutils literal notranslate"><span class="pre">psymon</span></code> man page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="psybench-man.html"><code class="docutils literal notranslate"><span class="pre">psybench</span></code> man page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="psydiag-man.html"><code class="docutils literal notranslate"><span class="pre">psydiag</span></code> man page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/index.html">PSYGIG Triage SDK API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sample-output.html">Sample Output</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PSYGIG Triage SDK</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>System Information</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="system-information">
+<h1>System Information<a class="headerlink" href="#system-information" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>System Information is the collection of inventory details about the hardware, operating system and software. Embedded devices can be built on any
+combinations of existing hardware and software components. As such, tracking the system information allows diagnostic data to be associated with a
+specific combination of components, each of which is also associated with a particular version. Component types include the following:</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="_images/soc.png"><img alt="board" src="_images/soc.png" style="height: 30px;" /></a></td>
+<td>Motherboard/System-on-chip (SoC)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="_images/firmware.png"><img alt="firmware" src="_images/firmware.png" style="height: 30px;" /></a></td>
+<td>Firmware</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="_images/linux.png"><img alt="os" src="_images/linux.png" style="height: 30px;" /></a></td>
+<td>Operating system</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="_images/cpu.png"><img alt="cpu" src="_images/cpu.png" style="height: 30px;" /></a></td>
+<td>CPU</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="_images/gpu.png"><img alt="gpu" src="_images/gpu.png" style="height: 30px;" /></a></td>
+<td>GPU</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="_images/ram.png"><img alt="ram" src="_images/ram.png" style="height: 30px;" /></a></td>
+<td>RAM</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="_images/disk.png"><img alt="disk" src="_images/disk.png" style="height: 30px;" /></a></td>
+<td>Storage devices</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="_images/network.png"><img alt="network" src="_images/network.png" style="height: 30px;" /></a></td>
+<td>Network adapters</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="_images/usb.png"><img alt="usb" src="_images/usb.png" style="height: 30px;" /></a></td>
+<td>USB controllers and devices</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="_images/pci.png"><img alt="pci" src="_images/pci.png" style="height: 30px;" /></a></td>
+<td>PCI devices</td>
+</tr>
+</tbody>
+</table>
+<p><cite>PSYGIG Triage SDK</cite> associates the system information with all <a class="reference internal" href="sample-output.html"><span class="doc">diagnostic data</span></a> collected within the SDK.
+This provides the opportunity to realize valuable insights when system components are upgraded or replaced.
+For example, the <a class="reference internal" href="application-performance-profiling.html"><span class="doc">application performance effects</span></a> of upgrading to a GPU with a higher compute core count
+can be visualized in a comparison graph.</p>
+<p>The System Information API includes many features suitable for integration into embedded systems:</p>
+<ul class="simple">
+<li>Works on existing applications; <cite>no need to recompile source code</cite></li>
+<li><a class="reference internal" href="supported-platforms.html"><span class="doc">Multiplatform support</span></a></li>
+<li>Up-to-date with latest hardware standards and technologies</li>
+<li>Accurate hardware specifications (eg. CPU architecture) and measurements (eg. clock speed)</li>
+<li>Maintain an inventory of peripheral devices and sensors</li>
+<li>Generate a system information report in HTML</li>
+<li>Export to a variety of file formats (eg. JSON, CSV, XML)</li>
+</ul>
+<div class="section" id="using-psymon">
+<h2>Using <code class="docutils literal notranslate"><span class="pre">psymon</span></code><a class="headerlink" href="#using-psymon" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Without modifying your existing source code, you can instantly enable system information collection
+to your application by using the <code class="docutils literal notranslate"><span class="pre">psymon</span></code> script to run your program. For example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>psymon --sysinfo -c <span class="s2">&quot;/path/to/your/app --arg1 --arg2 --arg3&quot;</span>
+</pre></div>
+</div>
+<p>See <a class="reference internal" href="psymon-man.html"><span class="doc">psymon man page</span></a> for a complete list of options.</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">psymon</span></code> is a work-in-progress.
+Please <script type="text/javascript">document.write(
+              "<n uers=\"znvygb:vasb\100cfltvt\056pbz?fhowrpg=[CFLTVT Gevntr FQX] cflzba\">pbagnpg hf <\057n>".replace(/[a-zA-Z]/g,
+              function(c){
+                return String.fromCharCode(
+                (c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);}));
+                </script> if you are interested in beta-testing this feature.</p>
+</div>
+</div>
+<div class="section" id="using-psygig-sdk-api">
+<h2>Using PSYGIG SDK API<a class="headerlink" href="#using-psygig-sdk-api" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>The System Information API can be accessed by including a <a class="reference internal" href="api/file_include_psygigsdk.h.html"><span class="doc">single header file</span></a>
+and linking the <code class="docutils literal notranslate"><span class="pre">libpsygig</span></code> shared library. See <a class="reference internal" href="getting-started.html#libpsygig-linking"><span class="std std-ref">Advanced Setup - Building your application with libpsygig</span></a> for details.</p>
+<div class="section" id="print-cpu-details-to-stdout">
+<h3>Print CPU details to stdout<a class="headerlink" href="#print-cpu-details-to-stdout" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;psygigsdk.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">psygig_agent_handle</span>     <span class="n">pah</span><span class="p">;</span>  <span class="c1">// handle to psygig agent</span>
+
+    <span class="cm">/* ... Initialize code omitted for simplicity ... */</span>
+
+    <span class="c1">// Get the system information</span>
+    <span class="n">rc</span> <span class="o">=</span> <span class="n">psygig_sysinfo_get</span><span class="p">(</span><span class="n">pah</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">sysinfo</span> <span class="p">);</span>
+
+    <span class="c1">// Print out the system information</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;CPU Architecture:</span><span class="se">\t</span><span class="s">%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">sysinfo</span><span class="p">.</span><span class="n">cpuinfo</span><span class="p">.</span><span class="n">architecture</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;CPU Features:</span><span class="se">\t</span><span class="s">%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">sysinfo</span><span class="p">.</span><span class="n">cpuinfo</span><span class="p">.</span><span class="n">features</span><span class="p">);</span>
+    <span class="k">switch</span> <span class="p">(</span><span class="n">sysinfo</span><span class="p">.</span><span class="n">cpuinfo</span><span class="p">.</span><span class="n">archtype</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">case</span> <span class="nl">ARCH_X86</span><span class="p">:</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Vendor:</span><span class="se">\t</span><span class="s">%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">sysinfo</span><span class="p">.</span><span class="n">cpuinfo</span><span class="p">.</span><span class="n">X86Info</span><span class="p">.</span><span class="n">vendor</span><span class="p">);</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Brand:</span><span class="se">\t</span><span class="s">%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">sysinfo</span><span class="p">.</span><span class="n">cpuinfo</span><span class="p">.</span><span class="n">X86Info</span><span class="p">.</span><span class="n">brand</span><span class="p">);</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Microarchitecture:</span><span class="se">\t</span><span class="s">%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">sysinfo</span><span class="p">.</span><span class="n">cpuinfo</span><span class="p">.</span><span class="n">X86Info</span><span class="p">.</span><span class="n">uarch</span><span class="p">);</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Family:</span><span class="se">\t</span><span class="s">0x%x</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">sysinfo</span><span class="p">.</span><span class="n">cpuinfo</span><span class="p">.</span><span class="n">X86Info</span><span class="p">.</span><span class="n">family</span><span class="p">);</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Model:</span><span class="se">\t</span><span class="s">0x%x</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">sysinfo</span><span class="p">.</span><span class="n">cpuinfo</span><span class="p">.</span><span class="n">X86Info</span><span class="p">.</span><span class="n">model</span><span class="p">);</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Stepping:</span><span class="se">\t</span><span class="s">0x%x</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">sysinfo</span><span class="p">.</span><span class="n">cpuinfo</span><span class="p">.</span><span class="n">X86Info</span><span class="p">.</span><span class="n">stepping</span><span class="p">);</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="nl">ARCH_ARM</span><span class="p">:</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Implementer:</span><span class="se">\t</span><span class="s">0x%x</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">sysinfo</span><span class="p">.</span><span class="n">cpuinfo</span><span class="p">.</span><span class="n">ArmInfo</span><span class="p">.</span><span class="n">implementer</span><span class="p">);</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Microarchitecture:</span><span class="se">\t</span><span class="s">0x%x</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">sysinfo</span><span class="p">.</span><span class="n">cpuinfo</span><span class="p">.</span><span class="n">ArmInfo</span><span class="p">.</span><span class="n">architecture</span><span class="p">);</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Variant:</span><span class="se">\t</span><span class="s">0x%x</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">sysinfo</span><span class="p">.</span><span class="n">cpuinfo</span><span class="p">.</span><span class="n">ArmInfo</span><span class="p">.</span><span class="n">variant</span><span class="p">);</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Part:</span><span class="se">\t</span><span class="s">0x%x</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">sysinfo</span><span class="p">.</span><span class="n">cpuinfo</span><span class="p">.</span><span class="n">ArmInfo</span><span class="p">.</span><span class="n">part</span><span class="p">);</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Revision:</span><span class="se">\t</span><span class="s">0x%x</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">sysinfo</span><span class="p">.</span><span class="n">cpuinfo</span><span class="p">.</span><span class="n">ArmInfo</span><span class="p">.</span><span class="n">revision</span><span class="p">);</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">default</span><span class="o">:</span>
+            <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="cm">/* ... Cleanup code omitted for simplicity ... */</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+<div class="section" id="sample-system-information-output">
+<h2>Sample system information output<a class="headerlink" href="#sample-system-information-output" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;SysInfo&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;CPUInfo&quot;</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">&quot;ThreadsPerCore&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="s2">&quot;CoresPerPackage&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="s2">&quot;NumPackages&quot;</span><span class="o">:</span> <span class="mi">8</span><span class="p">,</span>
+            <span class="s2">&quot;Vendor&quot;</span><span class="o">:</span> <span class="s2">&quot;GenuineIntel&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Model&quot;</span><span class="o">:</span> <span class="s2">&quot;Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Architecture&quot;</span><span class="o">:</span> <span class="s2">&quot;x86&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Features&quot;</span><span class="o">:</span> <span class="s2">&quot;aes avx avx2 bmi1 bmi2 cx16 erms f16c fma3 sse4_1 sse4_2 ssse3 &quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Endian&quot;</span><span class="o">:</span> <span class="s2">&quot;Little Endian&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;ClockMhz&quot;</span><span class="o">:</span> <span class="mi">2808</span><span class="p">,</span>
+            <span class="s2">&quot;X86Info&quot;</span><span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;Microarchitecture&quot;</span><span class="o">:</span> <span class="s2">&quot;INTEL_KBL&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Family&quot;</span><span class="o">:</span> <span class="mi">6</span><span class="p">,</span>
+                <span class="s2">&quot;Model&quot;</span><span class="o">:</span> <span class="mi">158</span><span class="p">,</span>
+                <span class="s2">&quot;Stepping&quot;</span><span class="o">:</span> <span class="mi">9</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;CacheInfo&quot;</span><span class="o">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;Level&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+                    <span class="s2">&quot;Size&quot;</span><span class="o">:</span> <span class="mi">32768</span><span class="p">,</span>
+                    <span class="s2">&quot;LineSize&quot;</span><span class="o">:</span> <span class="mi">64</span><span class="p">,</span>
+                    <span class="s2">&quot;Associativity&quot;</span><span class="o">:</span> <span class="mi">8</span><span class="p">,</span>
+                    <span class="s2">&quot;Type&quot;</span><span class="o">:</span> <span class="s2">&quot;Data&quot;</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;Level&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+                    <span class="s2">&quot;Size&quot;</span><span class="o">:</span> <span class="mi">32768</span><span class="p">,</span>
+                    <span class="s2">&quot;LineSize&quot;</span><span class="o">:</span> <span class="mi">64</span><span class="p">,</span>
+                    <span class="s2">&quot;Associativity&quot;</span><span class="o">:</span> <span class="mi">8</span><span class="p">,</span>
+                    <span class="s2">&quot;Type&quot;</span><span class="o">:</span> <span class="s2">&quot;Instruction&quot;</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;Level&quot;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+                    <span class="s2">&quot;Size&quot;</span><span class="o">:</span> <span class="mi">262144</span><span class="p">,</span>
+                    <span class="s2">&quot;LineSize&quot;</span><span class="o">:</span> <span class="mi">64</span><span class="p">,</span>
+                    <span class="s2">&quot;Associativity&quot;</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span>
+                    <span class="s2">&quot;Type&quot;</span><span class="o">:</span> <span class="s2">&quot;Unified&quot;</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;Level&quot;</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+                    <span class="s2">&quot;Size&quot;</span><span class="o">:</span> <span class="mi">6291456</span><span class="p">,</span>
+                    <span class="s2">&quot;LineSize&quot;</span><span class="o">:</span> <span class="mi">64</span><span class="p">,</span>
+                    <span class="s2">&quot;Associativity&quot;</span><span class="o">:</span> <span class="mi">12</span><span class="p">,</span>
+                    <span class="s2">&quot;Type&quot;</span><span class="o">:</span> <span class="s2">&quot;Unified&quot;</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;MemInfo&quot;</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">&quot;TotalRAM&quot;</span><span class="o">:</span> <span class="mi">8339906560</span><span class="p">,</span>
+            <span class="s2">&quot;FreeRAM&quot;</span><span class="o">:</span> <span class="mi">123629568</span><span class="p">,</span>
+            <span class="s2">&quot;SharedRAM&quot;</span><span class="o">:</span> <span class="mi">1137197056</span><span class="p">,</span>
+            <span class="s2">&quot;BufferRAM&quot;</span><span class="o">:</span> <span class="mi">14872576</span><span class="p">,</span>
+            <span class="s2">&quot;TotalSwap&quot;</span><span class="o">:</span> <span class="mi">8587309056</span><span class="p">,</span>
+            <span class="s2">&quot;FreeSwap&quot;</span><span class="o">:</span> <span class="mi">4164923392</span><span class="p">,</span>
+            <span class="s2">&quot;TotalHiMem&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s2">&quot;FreeHiMem&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s2">&quot;NumProcesses&quot;</span><span class="o">:</span> <span class="mi">1106</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;FileSystemInfo&quot;</span><span class="o">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;Device&quot;</span><span class="o">:</span> <span class="s2">&quot;/dev/sda1&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;MountDir&quot;</span><span class="o">:</span> <span class="s2">&quot;/&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;FileSystem&quot;</span><span class="o">:</span> <span class="s2">&quot;ext4&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;MountOpts&quot;</span><span class="o">:</span> <span class="s2">&quot;rw,relatime,errors=remount-ro,d&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;BlockSize&quot;</span><span class="o">:</span> <span class="mi">4096</span><span class="p">,</span>
+                <span class="s2">&quot;FragSize&quot;</span><span class="o">:</span> <span class="mi">4096</span><span class="p">,</span>
+                <span class="s2">&quot;TotalBlocks&quot;</span><span class="o">:</span> <span class="mi">8223964</span><span class="p">,</span>
+                <span class="s2">&quot;FreeBlocks&quot;</span><span class="o">:</span> <span class="mi">914408</span><span class="p">,</span>
+                <span class="s2">&quot;AvailBlocks&quot;</span><span class="o">:</span> <span class="mi">490895</span><span class="p">,</span>
+                <span class="s2">&quot;TotalInodes&quot;</span><span class="o">:</span> <span class="mi">2097152</span><span class="p">,</span>
+                <span class="s2">&quot;FreeInodes&quot;</span><span class="o">:</span> <span class="mi">1239254</span><span class="p">,</span>
+                <span class="s2">&quot;AvailInodes&quot;</span><span class="o">:</span> <span class="mi">1239254</span><span class="p">,</span>
+                <span class="s2">&quot;FileSystemID&quot;</span><span class="o">:</span> <span class="mi">272869076</span><span class="p">,</span>
+                <span class="s2">&quot;FileSystemFlags&quot;</span><span class="o">:</span> <span class="mi">4096</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;Device&quot;</span><span class="o">:</span> <span class="s2">&quot;/home/psygig/.Private&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;MountDir&quot;</span><span class="o">:</span> <span class="s2">&quot;/home/psygig&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;FileSystem&quot;</span><span class="o">:</span> <span class="s2">&quot;ecryptfs&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;MountOpts&quot;</span><span class="o">:</span> <span class="s2">&quot;rw,nosuid,nodev,relatime,ecrypt&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;BlockSize&quot;</span><span class="o">:</span> <span class="mi">4096</span><span class="p">,</span>
+                <span class="s2">&quot;FragSize&quot;</span><span class="o">:</span> <span class="mi">4096</span><span class="p">,</span>
+                <span class="s2">&quot;TotalBlocks&quot;</span><span class="o">:</span> <span class="mi">8223964</span><span class="p">,</span>
+                <span class="s2">&quot;FreeBlocks&quot;</span><span class="o">:</span> <span class="mi">914408</span><span class="p">,</span>
+                <span class="s2">&quot;AvailBlocks&quot;</span><span class="o">:</span> <span class="mi">490895</span><span class="p">,</span>
+                <span class="s2">&quot;TotalInodes&quot;</span><span class="o">:</span> <span class="mi">2097152</span><span class="p">,</span>
+                <span class="s2">&quot;FreeInodes&quot;</span><span class="o">:</span> <span class="mi">1239254</span><span class="p">,</span>
+                <span class="s2">&quot;AvailInodes&quot;</span><span class="o">:</span> <span class="mi">1239254</span><span class="p">,</span>
+                <span class="s2">&quot;FileSystemID&quot;</span><span class="o">:</span> <span class="mi">272869076</span><span class="p">,</span>
+                <span class="s2">&quot;FileSystemFlags&quot;</span><span class="o">:</span> <span class="mi">4102</span>
+            <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;OSInfo&quot;</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">&quot;Name&quot;</span><span class="o">:</span> <span class="s2">&quot;Ubuntu&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;FullName&quot;</span><span class="o">:</span> <span class="s2">&quot;Ubuntu 16.04.5 LTS&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;CodeName&quot;</span><span class="o">:</span> <span class="s2">&quot;xenial&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Major&quot;</span><span class="o">:</span> <span class="mi">16</span><span class="p">,</span>
+            <span class="s2">&quot;Minor&quot;</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span>
+            <span class="s2">&quot;Patch&quot;</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+            <span class="s2">&quot;Build&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s2">&quot;KernelInfo&quot;</span><span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;Name&quot;</span><span class="o">:</span> <span class="s2">&quot;Linux&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Major&quot;</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span>
+                <span class="s2">&quot;Minor&quot;</span><span class="o">:</span> <span class="mi">15</span><span class="p">,</span>
+                <span class="s2">&quot;Patch&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="s2">&quot;Build&quot;</span><span class="o">:</span> <span class="mi">43</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;USBInfo&quot;</span><span class="o">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;Product&quot;</span><span class="o">:</span> <span class="s2">&quot;xHCI Host Controller&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Manufacturer&quot;</span><span class="o">:</span> <span class="s2">&quot;Linux 4.15.0-43-generic xhci-hcd&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;DeviceClass&quot;</span><span class="o">:</span> <span class="s2">&quot;Hub&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Version&quot;</span><span class="o">:</span> <span class="s2">&quot;4.15&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Serial&quot;</span><span class="o">:</span> <span class="s2">&quot;0000:03:00.0&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;UsbVersion&quot;</span><span class="o">:</span> <span class="s2">&quot; 2.00&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;ProductId&quot;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+                <span class="s2">&quot;VendorId&quot;</span><span class="o">:</span> <span class="mi">7531</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;Product&quot;</span><span class="o">:</span> <span class="s2">&quot;EHCI Host Controller&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Manufacturer&quot;</span><span class="o">:</span> <span class="s2">&quot;Linux 4.15.0-43-generic ehci_hcd&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;DeviceClass&quot;</span><span class="o">:</span> <span class="s2">&quot;Hub&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Version&quot;</span><span class="o">:</span> <span class="s2">&quot;4.15&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Serial&quot;</span><span class="o">:</span> <span class="s2">&quot;0000:02:03.0&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;UsbVersion&quot;</span><span class="o">:</span> <span class="s2">&quot; 2.00&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;ProductId&quot;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+                <span class="s2">&quot;VendorId&quot;</span><span class="o">:</span> <span class="mi">7531</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;Product&quot;</span><span class="o">:</span> <span class="s2">&quot;VMware Virtual USB Hub&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Manufacturer&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;DeviceClass&quot;</span><span class="o">:</span> <span class="s2">&quot;Hub&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Version&quot;</span><span class="o">:</span> <span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Serial&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;UsbVersion&quot;</span><span class="o">:</span> <span class="s2">&quot; 2.00&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;ProductId&quot;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+                <span class="s2">&quot;VendorId&quot;</span><span class="o">:</span> <span class="mi">3599</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;Product&quot;</span><span class="o">:</span> <span class="s2">&quot;Virtual Bluetooth Adapter&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Manufacturer&quot;</span><span class="o">:</span> <span class="s2">&quot;VMware&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;DeviceClass&quot;</span><span class="o">:</span> <span class="s2">&quot;Wireless Controller&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Version&quot;</span><span class="o">:</span> <span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Serial&quot;</span><span class="o">:</span> <span class="s2">&quot;000650268328&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;UsbVersion&quot;</span><span class="o">:</span> <span class="s2">&quot; 2.00&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;ProductId&quot;</span><span class="o">:</span> <span class="mi">8</span><span class="p">,</span>
+                <span class="s2">&quot;VendorId&quot;</span><span class="o">:</span> <span class="mi">3599</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;Product&quot;</span><span class="o">:</span> <span class="s2">&quot;xHCI Host Controller&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Manufacturer&quot;</span><span class="o">:</span> <span class="s2">&quot;Linux 4.15.0-43-generic xhci-hcd&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;DeviceClass&quot;</span><span class="o">:</span> <span class="s2">&quot;Hub&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Version&quot;</span><span class="o">:</span> <span class="s2">&quot;4.15&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Serial&quot;</span><span class="o">:</span> <span class="s2">&quot;0000:03:00.0&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;UsbVersion&quot;</span><span class="o">:</span> <span class="s2">&quot; 3.00&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;ProductId&quot;</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+                <span class="s2">&quot;VendorId&quot;</span><span class="o">:</span> <span class="mi">7531</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;Product&quot;</span><span class="o">:</span> <span class="s2">&quot;VMware Virtual USB Hub&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Manufacturer&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;DeviceClass&quot;</span><span class="o">:</span> <span class="s2">&quot;Hub&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Version&quot;</span><span class="o">:</span> <span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Serial&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;UsbVersion&quot;</span><span class="o">:</span> <span class="s2">&quot; 1.10&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;ProductId&quot;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+                <span class="s2">&quot;VendorId&quot;</span><span class="o">:</span> <span class="mi">3599</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;Product&quot;</span><span class="o">:</span> <span class="s2">&quot;UHCI Host Controller&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Manufacturer&quot;</span><span class="o">:</span> <span class="s2">&quot;Linux 4.15.0-43-generic uhci_hcd&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;DeviceClass&quot;</span><span class="o">:</span> <span class="s2">&quot;Hub&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Version&quot;</span><span class="o">:</span> <span class="s2">&quot;4.15&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Serial&quot;</span><span class="o">:</span> <span class="s2">&quot;0000:02:00.0&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;UsbVersion&quot;</span><span class="o">:</span> <span class="s2">&quot; 1.10&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;ProductId&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+                <span class="s2">&quot;VendorId&quot;</span><span class="o">:</span> <span class="mi">7531</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;Product&quot;</span><span class="o">:</span> <span class="s2">&quot;VMware Virtual USB Hub&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Manufacturer&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;DeviceClass&quot;</span><span class="o">:</span> <span class="s2">&quot;Hub&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Version&quot;</span><span class="o">:</span> <span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Serial&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;UsbVersion&quot;</span><span class="o">:</span> <span class="s2">&quot; 1.10&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;ProductId&quot;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+                <span class="s2">&quot;VendorId&quot;</span><span class="o">:</span> <span class="mi">3599</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;Product&quot;</span><span class="o">:</span> <span class="s2">&quot;VMware Virtual USB Mouse&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Manufacturer&quot;</span><span class="o">:</span> <span class="s2">&quot;VMware&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;DeviceClass&quot;</span><span class="o">:</span> <span class="s2">&quot;Unknown&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Version&quot;</span><span class="o">:</span> <span class="s2">&quot;1.3&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Serial&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;UsbVersion&quot;</span><span class="o">:</span> <span class="s2">&quot; 1.10&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;ProductId&quot;</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+                <span class="s2">&quot;VendorId&quot;</span><span class="o">:</span> <span class="mi">3599</span>
+            <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;DiskInfo&quot;</span><span class="o">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;Device&quot;</span><span class="o">:</span> <span class="s2">&quot;sr0&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Model&quot;</span><span class="o">:</span> <span class="s2">&quot;VMware SATA CD01&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Vendor&quot;</span><span class="o">:</span> <span class="s2">&quot;NECVMWar&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Serial&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Size&quot;</span><span class="o">:</span> <span class="mi">1073741312</span><span class="p">,</span>
+                <span class="s2">&quot;PartitionInfo&quot;</span><span class="o">:</span> <span class="p">[]</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;Device&quot;</span><span class="o">:</span> <span class="s2">&quot;sda&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Model&quot;</span><span class="o">:</span> <span class="s2">&quot;VMware Virtual S&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Vendor&quot;</span><span class="o">:</span> <span class="s2">&quot;VMware, &quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Serial&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Size&quot;</span><span class="o">:</span> <span class="mi">42949672960</span><span class="p">,</span>
+                <span class="s2">&quot;PartitionInfo&quot;</span><span class="o">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="s2">&quot;PartNum&quot;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+                        <span class="s2">&quot;Start&quot;</span><span class="o">:</span> <span class="mi">34360785920</span><span class="p">,</span>
+                        <span class="s2">&quot;Size&quot;</span><span class="o">:</span> <span class="mi">1024</span>
+                    <span class="p">},</span>
+                    <span class="p">{</span>
+                        <span class="s2">&quot;PartNum&quot;</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+                        <span class="s2">&quot;Start&quot;</span><span class="o">:</span> <span class="mi">34360786944</span><span class="p">,</span>
+                        <span class="s2">&quot;Size&quot;</span><span class="o">:</span> <span class="mi">8587837440</span>
+                    <span class="p">},</span>
+                    <span class="p">{</span>
+                        <span class="s2">&quot;PartNum&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+                        <span class="s2">&quot;Start&quot;</span><span class="o">:</span> <span class="mi">1048576</span><span class="p">,</span>
+                        <span class="s2">&quot;Size&quot;</span><span class="o">:</span> <span class="mi">34358689792</span>
+                    <span class="p">}</span>
+                <span class="p">]</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="event-reporting.html" class="btn btn-neutral float-right" title="Event Reporting" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="metrics-collection.html" class="btn btn-neutral" title="Metrics Collection" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019 PSYGIG株式会社
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
+        <script type="text/javascript" src="_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script type="text/javascript" src="_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

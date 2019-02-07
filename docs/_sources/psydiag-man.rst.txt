@@ -1,0 +1,7 @@
+``psydiag`` man page
+=====================
+``psydiag`` is a standalone program for running diagnostic tests on the system, assigning a PASS/FAIL result for each completed test
+
+.. note::
+    ``psydiag`` is a work-in-progress. 
+    Please :email:`contact us <info@psygig.com?subject=[PSYGIG Triage SDK] psydiag>` if you are interested in beta-testing this feature. 

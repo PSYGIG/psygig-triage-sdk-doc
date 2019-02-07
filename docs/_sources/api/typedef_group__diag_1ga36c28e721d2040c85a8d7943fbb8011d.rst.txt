@@ -1,0 +1,13 @@
+.. _exhale_typedef_group__diag_1ga36c28e721d2040c85a8d7943fbb8011d:
+
+Typedef psygig_diag_result
+==========================
+
+- Defined in :ref:`file_include_psygigsdk.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: psygig_diag_result

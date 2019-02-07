@@ -1,0 +1,16 @@
+.. _exhale_struct_struct__psygig__sink__udp__cfg:
+
+Struct _psygig_sink_udp_cfg
+===========================
+
+- Defined in :ref:`file_include_psygigsdk.h`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: _psygig_sink_udp_cfg
+   :members:
+   :protected-members:
+   :undoc-members:

@@ -1,0 +1,13 @@
+.. _exhale_typedef_group__log_1gae787592a3d2392876a30ad63d1d95452:
+
+Typedef psygig_log_level
+========================
+
+- Defined in :ref:`file_include_psygigsdk.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: psygig_log_level

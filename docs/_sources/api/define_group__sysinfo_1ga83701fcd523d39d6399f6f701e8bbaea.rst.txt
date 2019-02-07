@@ -1,0 +1,13 @@
+.. _exhale_define_group__sysinfo_1ga83701fcd523d39d6399f6f701e8bbaea:
+
+Define MAX_PARTS
+================
+
+- Defined in :ref:`file_include_psygigsdk.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: MAX_PARTS

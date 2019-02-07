@@ -1,0 +1,16 @@
+.. _exhale_struct_struct__psygig__netinfo:
+
+Struct _psygig_netinfo
+======================
+
+- Defined in :ref:`file_include_psygigsdk.h`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: _psygig_netinfo
+   :members:
+   :protected-members:
+   :undoc-members:

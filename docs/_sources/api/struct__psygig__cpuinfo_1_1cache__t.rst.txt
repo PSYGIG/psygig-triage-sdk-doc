@@ -1,0 +1,22 @@
+.. _exhale_struct_struct__psygig__cpuinfo_1_1cache__t:
+
+Struct _psygig_cpuinfo::cache_t
+===============================
+
+- Defined in :ref:`file_include_psygigsdk.h`
+
+
+Nested Relationships
+--------------------
+
+This struct is a nested type of :ref:`exhale_struct_struct__psygig__cpuinfo`.
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: _psygig_cpuinfo::cache_t
+   :members:
+   :protected-members:
+   :undoc-members:

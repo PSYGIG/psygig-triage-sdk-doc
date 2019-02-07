@@ -1,0 +1,474 @@
+Crash Reporting
+===============
+Many software development teams strive to build defect-free software systems, spending vast amounts of resources in software quality assurance and 
+code analysis tools to prevent software failure from occuring. In reality, however, faults will still occur in the software and ultimately,
+causing the application to crash.
+
+To determine the cause of failure, a post-mortem analysis must be performed on the state of the application at the time of the crash.
+Such data includes stack traces, memory dumps and register contents at the point of failure, which can be used to
+identify the exact line in the source file where the crash occurred.
+
+`PSYGIG Triage SDK` extends your application with crash reporting capabilties, collecting post-mortem data at the point of failure.
+The Crash Reporting API includes many features suitable for integration into embedded systems:
+
+* Works on existing applications; `no need to recompile source code`
+* :doc:`Multiplatform support <supported-platforms>`
+* Seamless integration with :ref:`third party crash reporting platforms <crash-third-party>`
+* Generate process snapshot dumps for the crash report, including:
+
+    - Process environment - `including command line and environment variables`
+    - Thread states - `including register contents and stack memory`
+    - Loaded modules - `such as shared libraries and memory-mapped files`
+    - Memory dump of sections in process memory space
+* Capture stack traces, including source file and line number
+* Small execution footprint to preserve program state
+* Append user-defined, application-specific metadata to the crash report
+* Export crash report to a variety of file formats (eg. JSON, CSV, HTML)
+
+Using ``psymon``
+----------------
+Without modifying your existing source code, you can instantly enable crash reporting
+to your application by using the ``psymon`` script to run your program. For example:
+
+.. code-block:: bash
+
+   psymon --crash -c "/path/to/your/app --arg1 --arg2 --arg3"
+
+See :doc:`psymon-man` for a complete list of options.
+
+.. note::
+    ``psymon`` is a work-in-progress. 
+    Please :email:`contact us <info@psygig.com?subject=[PSYGIG Triage SDK] psymon>` if you are interested in beta-testing this feature. 
+
+Using PSYGIG SDK API
+------------------------
+The Crash Reporting API can be accessed by including a :doc:`single header file <api/file_include_psygigsdk.h>`
+and linking the ``libpsygig`` shared library. See :ref:`libpsygig-linking` for details.
+
+Generate crash report on fatal signals (eg. SIGSEGV, SIGKILL)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: c
+    :linenos:
+
+    #include <psygigsdk.h>
+
+    int main(int argc, char **argv)
+    {
+        psygig_agent_handle     pah;  // handle to psygig agent
+
+        /* ... Initialize code omitted for simplicity ... */
+
+        // Install fatal signal handler
+        rc = psygig_crash_enable_report_on_fatal_signal(pah, 1);
+
+        /* ... Cleanup code omitted for simplicity ... */
+    }
+
+Generate crash report during core dump 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: c
+    :linenos:
+
+    #include <psygigsdk.h>
+
+    int main(int argc, char **argv)
+    {
+        psygig_agent_handle     pah;  // handle to psygig agent
+
+        /* ... Initialize code omitted for simplicity ... */
+
+        // Install binary that runs on core dump generation
+        rc = psygig_crash_install_core_dump_handler(pah);
+
+        /* ... Cleanup code omitted for simplicity ... */
+    }
+
+Generate crash report on demand
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: c
+    :linenos:
+
+    #include <psygigsdk.h>
+
+    int main(int argc, char **argv)
+    {
+        psygig_agent_handle     pah;  // handle to psygig agent
+
+        /* ... Initialize code omitted for simplicity ... */
+
+        // Install binary that runs on core dump generation
+        rc = psygig_crash_capture_process_snapshot(pah);
+
+        /* ... Cleanup code omitted for simplicity ... */
+    }
+
+Sample JSON crash report
+------------------------
+
+.. code-block:: javascript
+
+    "TaskInfo": {
+        "ProcID":37941,
+        "UserID":1000,
+        "GroupID":1000,
+        "Cmdline":"\/home\/psygig\/psygig-sdk-c\/build\/sdkexample",
+        "Name":"sdkexample",
+        "Signal":11
+    },
+    "StackTrace": [
+        {
+            "FrameNum":1,
+            "InstrAddr":"0x00007ffff78969c9",
+            "FilePath":"\/home\/psygig\/psygig-sdk-c\/build\/libpsygig.so.0.2.0",
+            "Function":"_generate_crash_report",
+            "Offset":"0xb9"
+        },
+        {
+            "FrameNum":2,
+            "InstrAddr":"0x00007ffff744b4b0",
+            "FilePath":"\/lib\/x86_64-linux-gnu\/libc.so.6",
+            "Function":"killpg",
+            "Offset":"0x40"
+        },
+        {
+            "FrameNum":3,
+            "InstrAddr":"0x0000000000400af0",
+            "FilePath":"\/home\/psygig\/psygig-sdk-c\/build\/sdkexample",
+            "Function":"crash",
+            "Offset":"0x0"
+        },
+        {
+            "FrameNum":4,
+            "InstrAddr":"0x0000000000400b07",
+            "FilePath":"\/home\/psygig\/psygig-sdk-c\/build\/sdkexample",
+            "Function":"foo4",
+            "Offset":"0x7"
+        },
+        {
+            "FrameNum":5,
+            "InstrAddr":"0x0000000000400b17",
+            "FilePath":"\/home\/psygig\/psygig-sdk-c\/build\/sdkexample",
+            "Function":"foo3",
+            "Offset":"0x7"
+        },
+        {
+            "FrameNum":6,
+            "InstrAddr":"0x0000000000400b27",
+            "FilePath":"\/home\/psygig\/psygig-sdk-c\/build\/sdkexample",
+            "Function":"foo2",
+            "Offset":"0x7"
+        },
+        {
+            "FrameNum":7,
+            "InstrAddr":"0x0000000000400b37",
+            "FilePath":"\/home\/psygig\/psygig-sdk-c\/build\/sdkexample",
+            "Function":"induce_segfault",
+            "Offset":"0x7"
+        },
+        {
+            "FrameNum":8,
+            "InstrAddr":"0x0000000000400986",
+            "FilePath":"\/home\/psygig\/psygig-sdk-c\/build\/sdkexample",
+            "Function":"main",
+            "Offset":"0xc6"
+        },
+        {
+            "FrameNum":9,
+            "InstrAddr":"0x00007ffff7436830",
+            "FilePath":"\/lib\/x86_64-linux-gnu\/libc.so.6",
+            "Function":"__libc_start_main",
+            "Offset":"0xf0"
+        },
+        {
+            "FrameNum":10,
+            "InstrAddr":"0x0000000000400a09",
+            "FilePath":"\/home\/psygig\/psygig-sdk-c\/build\/sdkexample",
+            "Function":"_start",
+            "Offset":"0x29"
+        },
+    ],
+    "MemoryMap": [
+        {
+            "StartAddr":"0x400000",
+            "EndAddr":"0x401000",
+            "Permissions":"r-xp",
+            "FileOffset":"0x0",
+            "Device":"00:32"
+            "Inode":1840151
+            "FilePath":"\/home\/psygig\/psygig-sdk-c\/build\/sdkexample"
+        },
+        {
+            "StartAddr":"0x601000",
+            "EndAddr":"0x602000",
+            "Permissions":"r--p",
+            "FileOffset":"0x1000",
+            "Device":"00:32"
+            "Inode":1840151
+            "FilePath":"\/home\/psygig\/psygig-sdk-c\/build\/sdkexample"
+        },
+        {
+            "StartAddr":"0x602000",
+            "EndAddr":"0x603000",
+            "Permissions":"rw-p",
+            "FileOffset":"0x2000",
+            "Device":"00:32"
+            "Inode":1840151
+            "FilePath":"\/home\/psygig\/psygig-sdk-c\/build\/sdkexample"
+        },
+        {
+            "StartAddr":"0x603000",
+            "EndAddr":"0x62a000",
+            "Permissions":"rw-p",
+            "FileOffset":"0x0",
+            "Device":"00:00"
+            "Inode":0
+            "FilePath":"[heap]"
+        },
+        {
+            "StartAddr":"0x7ffff6ff5000",
+            "EndAddr":"0x7ffff6ff8000",
+            "Permissions":"r-xp",
+            "FileOffset":"0x0",
+            "Device":"08:01"
+            "Inode":1972536
+            "FilePath":"\/lib\/x86_64-linux-gnu\/libdl-2.23.so"
+        },
+        {
+            "StartAddr":"0x7ffff6ff8000",
+            "EndAddr":"0x7ffff71f7000",
+            "Permissions":"---p",
+            "FileOffset":"0x3000",
+            "Device":"08:01"
+            "Inode":1972536
+            "FilePath":"\/lib\/x86_64-linux-gnu\/libdl-2.23.so"
+        },
+        {
+            "StartAddr":"0x7ffff71f7000",
+            "EndAddr":"0x7ffff71f8000",
+            "Permissions":"r--p",
+            "FileOffset":"0x2000",
+            "Device":"08:01"
+            "Inode":1972536
+            "FilePath":"\/lib\/x86_64-linux-gnu\/libdl-2.23.so"
+        },
+        {
+            "StartAddr":"0x7ffff71f8000",
+            "EndAddr":"0x7ffff71f9000",
+            "Permissions":"rw-p",
+            "FileOffset":"0x3000",
+            "Device":"08:01"
+            "Inode":1972536
+            "FilePath":"\/lib\/x86_64-linux-gnu\/libdl-2.23.so"
+        },
+        {
+            "StartAddr":"0x7ffff71f9000",
+            "EndAddr":"0x7ffff7211000",
+            "Permissions":"r-xp",
+            "FileOffset":"0x0",
+            "Device":"08:01"
+            "Inode":1972533
+            "FilePath":"\/lib\/x86_64-linux-gnu\/libpthread-2.23.so"
+        },
+        {
+            "StartAddr":"0x7ffff7211000",
+            "EndAddr":"0x7ffff7410000",
+            "Permissions":"---p",
+            "FileOffset":"0x18000",
+            "Device":"08:01"
+            "Inode":1972533
+            "FilePath":"\/lib\/x86_64-linux-gnu\/libpthread-2.23.so"
+        },
+        {
+            "StartAddr":"0x7ffff7410000",
+            "EndAddr":"0x7ffff7411000",
+            "Permissions":"r--p",
+            "FileOffset":"0x17000",
+            "Device":"08:01"
+            "Inode":1972533
+            "FilePath":"\/lib\/x86_64-linux-gnu\/libpthread-2.23.so"
+        },
+        {
+            "StartAddr":"0x7ffff7411000",
+            "EndAddr":"0x7ffff7412000",
+            "Permissions":"rw-p",
+            "FileOffset":"0x18000",
+            "Device":"08:01"
+            "Inode":1972533
+            "FilePath":"\/lib\/x86_64-linux-gnu\/libpthread-2.23.so"
+        },
+        {
+            "StartAddr":"0x7ffff7412000",
+            "EndAddr":"0x7ffff7416000",
+            "Permissions":"rw-p",
+            "FileOffset":"0x0",
+            "Device":"00:00"
+            "Inode":0
+            "FilePath":""
+        },
+        {
+            "StartAddr":"0x7ffff7416000",
+            "EndAddr":"0x7ffff75d6000",
+            "Permissions":"r-xp",
+            "FileOffset":"0x0",
+            "Device":"08:01"
+            "Inode":1972534
+            "FilePath":"\/lib\/x86_64-linux-gnu\/libc-2.23.so"
+        },
+        {
+            "StartAddr":"0x7ffff75d6000",
+            "EndAddr":"0x7ffff77d6000",
+            "Permissions":"---p",
+            "FileOffset":"0x1c0000",
+            "Device":"08:01"
+            "Inode":1972534
+            "FilePath":"\/lib\/x86_64-linux-gnu\/libc-2.23.so"
+        },
+        {
+            "StartAddr":"0x7ffff77d6000",
+            "EndAddr":"0x7ffff77da000",
+            "Permissions":"r--p",
+            "FileOffset":"0x1c0000",
+            "Device":"08:01"
+            "Inode":1972534
+            "FilePath":"\/lib\/x86_64-linux-gnu\/libc-2.23.so"
+        },
+        {
+            "StartAddr":"0x7ffff77da000",
+            "EndAddr":"0x7ffff77dc000",
+            "Permissions":"rw-p",
+            "FileOffset":"0x1c4000",
+            "Device":"08:01"
+            "Inode":1972534
+            "FilePath":"\/lib\/x86_64-linux-gnu\/libc-2.23.so"
+        },
+        {
+            "StartAddr":"0x7ffff77dc000",
+            "EndAddr":"0x7ffff77e0000",
+            "Permissions":"rw-p",
+            "FileOffset":"0x0",
+            "Device":"00:00"
+            "Inode":0
+            "FilePath":""
+        },
+        {
+            "StartAddr":"0x7ffff77e0000",
+            "EndAddr":"0x7ffff7b86000",
+            "Permissions":"r-xp",
+            "FileOffset":"0x0",
+            "Device":"00:32"
+            "Inode":1836953
+            "FilePath":"\/home\/psygig\/psygig-sdk-c\/build\/libpsygig.so.0.2.0"
+        },
+        {
+            "StartAddr":"0x7ffff7b86000",
+            "EndAddr":"0x7ffff7d86000",
+            "Permissions":"---p",
+            "FileOffset":"0x3a6000",
+            "Device":"00:32"
+            "Inode":1836953
+            "FilePath":"\/home\/psygig\/psygig-sdk-c\/build\/libpsygig.so.0.2.0"
+        },
+        {
+            "StartAddr":"0x7ffff7d86000",
+            "EndAddr":"0x7ffff7db8000",
+            "Permissions":"r--p",
+            "FileOffset":"0x3a6000",
+            "Device":"00:32"
+            "Inode":1836953
+            "FilePath":"\/home\/psygig\/psygig-sdk-c\/build\/libpsygig.so.0.2.0"
+        },
+        {
+            "StartAddr":"0x7ffff7db8000",
+            "EndAddr":"0x7ffff7dc4000",
+            "Permissions":"rw-p",
+            "FileOffset":"0x3d8000",
+            "Device":"00:32"
+            "Inode":1836953
+            "FilePath":"\/home\/psygig\/psygig-sdk-c\/build\/libpsygig.so.0.2.0"
+        },
+        {
+            "StartAddr":"0x7ffff7dc4000",
+            "EndAddr":"0x7ffff7dd7000",
+            "Permissions":"rw-p",
+            "FileOffset":"0x0",
+            "Device":"00:00"
+            "Inode":0
+            "FilePath":""
+        },
+        {
+            "StartAddr":"0x7ffff7dd7000",
+            "EndAddr":"0x7ffff7dfd000",
+            "Permissions":"r-xp",
+            "FileOffset":"0x0",
+            "Device":"08:01"
+            "Inode":1972305
+            "FilePath":"\/lib\/x86_64-linux-gnu\/ld-2.23.so"
+        },
+        {
+            "StartAddr":"0x7ffff7fd2000",
+            "EndAddr":"0x7ffff7fd6000",
+            "Permissions":"rw-p",
+            "FileOffset":"0x0",
+            "Device":"00:00"
+            "Inode":0
+            "FilePath":""
+        },
+        {
+            "StartAddr":"0x7ffff7ff4000",
+            "EndAddr":"0x7ffff7ff7000",
+            "Permissions":"rw-p",
+            "FileOffset":"0x0",
+            "Device":"00:00"
+            "Inode":0
+            "FilePath":""
+        },
+        {
+            "StartAddr":"0x7ffff7ff7000",
+            "EndAddr":"0x7ffff7ffa000",
+            "Permissions":"r--p",
+            "FileOffset":"0x0",
+            "Device":"00:00"
+            "Inode":0
+            "FilePath":"[vvar]"
+        },
+        {
+            "StartAddr":"0x7ffff7ffa000",
+            "EndAddr":"0x7ffff7ffc000",
+            "Permissions":"r-xp",
+            "FileOffset":"0x0",
+            "Device":"00:00"
+            "Inode":0
+            "FilePath":"[vdso]"
+        },
+        {
+            "StartAddr":"0x7ffff7ffc000",
+            "EndAddr":"0x7ffff7ffd000",
+            "Permissions":"r--p",
+            "FileOffset":"0x25000",
+            "Device":"08:01"
+            "Inode":1972305
+            "FilePath":"\/lib\/x86_64-linux-gnu\/ld-2.23.so"
+        },
+        {
+            "StartAddr":"0x7ffff7ffd000",
+            "EndAddr":"0x7ffff7ffe000",
+            "Permissions":"rw-p",
+            "FileOffset":"0x26000",
+            "Device":"08:01"
+            "Inode":1972305
+            "FilePath":"\/lib\/x86_64-linux-gnu\/ld-2.23.so"
+        },
+        {
+            "StartAddr":"0x7ffff7ffe000",
+            "EndAddr":"0x7ffff7fff000",
+            "Permissions":"rw-p",
+            "FileOffset":"0x0",
+            "Device":"00:00"
+            "Inode":0
+            "FilePath":""
+        },
+    ]
+

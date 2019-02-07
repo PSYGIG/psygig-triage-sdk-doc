@@ -1,0 +1,10 @@
+``psymon`` man page
+===================
+``psymon`` is a script that uses the ``LD_PRELOAD`` enviroment variable of the dynamic linker to inject new functionality
+into your programs without re-compiling your source code. ``LD_PRELOAD`` instructs the dynamic linker to load the 
+``libpsygig`` library before running your application, allowing the library to perform the necessary initializations in order
+to monitor your application. This includes installation application profiling, system metric collection and crash reporting routines.
+
+.. note::
+    ``psymon`` is a work-in-progress. 
+    Please :email:`contact us <info@psygig.com?subject=[PSYGIG Triage SDK] psymon>` if you are interested in beta-testing this feature. 

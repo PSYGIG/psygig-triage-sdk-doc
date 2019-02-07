@@ -1,0 +1,434 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ja" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>File psygigsdk.h &mdash; PSYGIG Triage SDK 0.2.0 ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="next" title="Program Listing for File psygigsdk.h" href="program_listing_file_include_psygigsdk.h.html" />
+    <link rel="prev" title="Directory include" href="dir_include.html" />
+ 
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-91451950-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PSYGIG Triage SDK
+          
+
+          
+            
+            <img src="../_static/psygig-logo-white-text.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">OVERVIEW</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../supported-platforms.html">Supported Platforms/Architectures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../third-party-integration.html">Third Party Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../change-log.html">Change Log</a></li>
+</ul>
+<p class="caption"><span class="caption-text">USAGE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Download &amp; Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started.html">Getting Started</a></li>
+</ul>
+<p class="caption"><span class="caption-text">FEATURES</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../application-performance-profiling.html">Application Performance Profiling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../crash-reporting.html">Crash Reporting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../log-collection.html">Log Collection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../metrics-collection.html">Metrics Collection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system-information.html">System Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../event-reporting.html">Event Reporting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../benchmark-testing.html">Benchmark Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../diagnostic-testing.html">Diagnostic Testing</a></li>
+</ul>
+<p class="caption"><span class="caption-text">PSYGIG TRIAGE SDK REFERENCE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../psymon-man.html"><code class="docutils literal notranslate"><span class="pre">psymon</span></code> man page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../psybench-man.html"><code class="docutils literal notranslate"><span class="pre">psybench</span></code> man page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../psydiag-man.html"><code class="docutils literal notranslate"><span class="pre">psydiag</span></code> man page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">PSYGIG Triage SDK API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sample-output.html">Sample Output</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PSYGIG Triage SDK</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">PSYGIG Triage SDK API</a> &raquo;</li>
+        
+      <li>File psygigsdk.h</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="file-psygigsdk-h">
+<span id="file-include-psygigsdk-h"></span><h1>File psygigsdk.h<a class="headerlink" href="#file-psygigsdk-h" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>↰ <a class="reference internal" href="dir_include.html#dir-include"><span class="std std-ref">Parent directory</span></a> (<code class="docutils literal notranslate"><span class="pre">include</span></code>)</p>
+<p>PSYGIG Triage SDK API header file.</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#definition-include-psygigsdk-h" id="id1">Definition (<code class="docutils literal notranslate"><span class="pre">include/psygigsdk.h</span></code>)</a></li>
+<li><a class="reference internal" href="#includes" id="id2">Includes</a></li>
+<li><a class="reference internal" href="#classes" id="id3">Classes</a></li>
+<li><a class="reference internal" href="#enums" id="id4">Enums</a></li>
+<li><a class="reference internal" href="#functions" id="id5">Functions</a></li>
+<li><a class="reference internal" href="#defines" id="id6">Defines</a></li>
+<li><a class="reference internal" href="#typedefs" id="id7">Typedefs</a></li>
+</ul>
+</div>
+<div class="section" id="definition-include-psygigsdk-h">
+<h2>Definition (<code class="docutils literal notranslate"><span class="pre">include/psygigsdk.h</span></code>)<a class="headerlink" href="#definition-include-psygigsdk-h" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="program_listing_file_include_psygigsdk.h.html">Program Listing for File psygigsdk.h</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="includes">
+<h2>Includes<a class="headerlink" href="#includes" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">stdint.h</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">stdio.h</span></code></li>
+</ul>
+</div>
+<div class="section" id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="struct__psygig__cfg.html#exhale-struct-struct-psygig-cfg"><span class="std std-ref">Struct _psygig_cfg</span></a></li>
+<li><a class="reference internal" href="struct__psygig__cpuinfo.html#exhale-struct-struct-psygig-cpuinfo"><span class="std std-ref">Struct _psygig_cpuinfo</span></a></li>
+<li><a class="reference internal" href="struct__psygig__cpuinfo_1_1cache__t.html#exhale-struct-struct-psygig-cpuinfo-1-1cache-t"><span class="std std-ref">Struct _psygig_cpuinfo::cache_t</span></a></li>
+<li><a class="reference internal" href="struct__psygig__diag__result.html#exhale-struct-struct-psygig-diag-result"><span class="std std-ref">Struct _psygig_diag_result</span></a></li>
+<li><a class="reference internal" href="struct__psygig__diskinfo.html#exhale-struct-struct-psygig-diskinfo"><span class="std std-ref">Struct _psygig_diskinfo</span></a></li>
+<li><a class="reference internal" href="struct__psygig__fsinfo.html#exhale-struct-struct-psygig-fsinfo"><span class="std std-ref">Struct _psygig_fsinfo</span></a></li>
+<li><a class="reference internal" href="struct__psygig__fsinfo_1_1__fsinfo.html#exhale-struct-struct-psygig-fsinfo-1-1-fsinfo"><span class="std std-ref">Struct _psygig_fsinfo::_fsinfo</span></a></li>
+<li><a class="reference internal" href="struct__psygig__meminfo.html#exhale-struct-struct-psygig-meminfo"><span class="std std-ref">Struct _psygig_meminfo</span></a></li>
+<li><a class="reference internal" href="struct__psygig__netinfo.html#exhale-struct-struct-psygig-netinfo"><span class="std std-ref">Struct _psygig_netinfo</span></a></li>
+<li><a class="reference internal" href="struct__psygig__osinfo.html#exhale-struct-struct-psygig-osinfo"><span class="std std-ref">Struct _psygig_osinfo</span></a></li>
+<li><a class="reference internal" href="struct__psygig__pciinfo.html#exhale-struct-struct-psygig-pciinfo"><span class="std std-ref">Struct _psygig_pciinfo</span></a></li>
+<li><a class="reference internal" href="struct__psygig__pointcloud__data.html#exhale-struct-struct-psygig-pointcloud-data"><span class="std std-ref">Struct _psygig_pointcloud_data</span></a></li>
+<li><a class="reference internal" href="struct__psygig__session__info.html#exhale-struct-struct-psygig-session-info"><span class="std std-ref">Struct _psygig_session_info</span></a></li>
+<li><a class="reference internal" href="struct__psygig__sink__cfg.html#exhale-struct-struct-psygig-sink-cfg"><span class="std std-ref">Struct _psygig_sink_cfg</span></a></li>
+<li><a class="reference internal" href="struct__psygig__sink__file__cfg.html#exhale-struct-struct-psygig-sink-file-cfg"><span class="std std-ref">Struct _psygig_sink_file_cfg</span></a></li>
+<li><a class="reference internal" href="struct__psygig__sink__fstream__cfg.html#exhale-struct-struct-psygig-sink-fstream-cfg"><span class="std std-ref">Struct _psygig_sink_fstream_cfg</span></a></li>
+<li><a class="reference internal" href="struct__psygig__sink__http__cfg.html#exhale-struct-struct-psygig-sink-http-cfg"><span class="std std-ref">Struct _psygig_sink_http_cfg</span></a></li>
+<li><a class="reference internal" href="struct__psygig__sink__influxdb__cfg.html#exhale-struct-struct-psygig-sink-influxdb-cfg"><span class="std std-ref">Struct _psygig_sink_influxdb_cfg</span></a></li>
+<li><a class="reference internal" href="struct__psygig__sink__mqtt__cfg.html#exhale-struct-struct-psygig-sink-mqtt-cfg"><span class="std std-ref">Struct _psygig_sink_mqtt_cfg</span></a></li>
+<li><a class="reference internal" href="struct__psygig__sink__tcp__cfg.html#exhale-struct-struct-psygig-sink-tcp-cfg"><span class="std std-ref">Struct _psygig_sink_tcp_cfg</span></a></li>
+<li><a class="reference internal" href="struct__psygig__sink__udp__cfg.html#exhale-struct-struct-psygig-sink-udp-cfg"><span class="std std-ref">Struct _psygig_sink_udp_cfg</span></a></li>
+<li><a class="reference internal" href="struct__psygig__sysinfo.html#exhale-struct-struct-psygig-sysinfo"><span class="std std-ref">Struct _psygig_sysinfo</span></a></li>
+<li><a class="reference internal" href="struct__psygig__usbinfo.html#exhale-struct-struct-psygig-usbinfo"><span class="std std-ref">Struct _psygig_usbinfo</span></a></li>
+<li><a class="reference internal" href="struct__psygig__video__cfg.html#exhale-struct-struct-psygig-video-cfg"><span class="std std-ref">Struct _psygig_video_cfg</span></a></li>
+</ul>
+</div>
+<div class="section" id="enums">
+<h2>Enums<a class="headerlink" href="#enums" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="enum_group__admin_1ga06fc87d81c62e9abb8790b6e5713c55b.html#exhale-enum-group-admin-1ga06fc87d81c62e9abb8790b6e5713c55b"><span class="std std-ref">Enum &#64;0</span></a></li>
+<li><a class="reference internal" href="enum_group__log_1gadf764cbdea00d65edcd07bb9953ad2b7.html#exhale-enum-group-log-1gadf764cbdea00d65edcd07bb9953ad2b7"><span class="std std-ref">Enum &#64;1</span></a></li>
+<li><a class="reference internal" href="enum_group__benchmark_1ga9e4632f4c308834d293ccea51e958420.html#exhale-enum-group-benchmark-1ga9e4632f4c308834d293ccea51e958420"><span class="std std-ref">Enum _psygig_benchmark_type</span></a></li>
+<li><a class="reference internal" href="enum_group__diag_1ga11ff833fec26f132a5a0967482068767.html#exhale-enum-group-diag-1ga11ff833fec26f132a5a0967482068767"><span class="std std-ref">Enum _psygig_diag_type</span></a></li>
+<li><a class="reference internal" href="enum_group__event_1gaa5b30511a731762245c930d4fd7a0b1f.html#exhale-enum-group-event-1gaa5b30511a731762245c930d4fd7a0b1f"><span class="std std-ref">Enum _psygig_event_level</span></a></li>
+<li><a class="reference internal" href="enum_group__log_1ga3fe058e3349d2c426b2088c905b0e2e6.html#exhale-enum-group-log-1ga3fe058e3349d2c426b2088c905b0e2e6"><span class="std std-ref">Enum _psygig_log_level</span></a></li>
+<li><a class="reference internal" href="enum_group__metric_1gabeecf8c237a073597898a4e0bf55390d.html#exhale-enum-group-metric-1gabeecf8c237a073597898a4e0bf55390d"><span class="std std-ref">Enum _psygig_metric_file_type</span></a></li>
+<li><a class="reference internal" href="enum_group__admin_1gaead9312bcdfbbb0d282f56b8379017d8.html#exhale-enum-group-admin-1gaead9312bcdfbbb0d282f56b8379017d8"><span class="std std-ref">Enum _psygig_sink_data_format</span></a></li>
+<li><a class="reference internal" href="enum_group__admin_1ga80e0093feb6fa13bbc424dfb30b95379.html#exhale-enum-group-admin-1ga80e0093feb6fa13bbc424dfb30b95379"><span class="std std-ref">Enum _psygig_sink_type</span></a></li>
+<li><a class="reference internal" href="enum_psygigsdk_8h_1aaa1c70d1804a90a82b3585f4f07fa243.html#exhale-enum-psygigsdk-8h-1aaa1c70d1804a90a82b3585f4f07fa243"><span class="std std-ref">Enum PSYGIG_ERROR</span></a></li>
+</ul>
+</div>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="function_group__admin_1ga121d61c2e2463adfaed1a57565c3147c.html#exhale-function-group-admin-1ga121d61c2e2463adfaed1a57565c3147c"><span class="std std-ref">Function psygig_agent_add_sink</span></a></li>
+<li><a class="reference internal" href="function_group__admin_1ga87e7454c02c913293326cca96873f296.html#exhale-function-group-admin-1ga87e7454c02c913293326cca96873f296"><span class="std std-ref">Function psygig_agent_cleanup</span></a></li>
+<li><a class="reference internal" href="function_group__admin_1ga825d9336eb987cd5853b3800c20b6ba0.html#exhale-function-group-admin-1ga825d9336eb987cd5853b3800c20b6ba0"><span class="std std-ref">Function psygig_agent_get_current_session</span></a></li>
+<li><a class="reference internal" href="function_group__admin_1ga1c2be988f0d29d39e6e3491b20de03a9.html#exhale-function-group-admin-1ga1c2be988f0d29d39e6e3491b20de03a9"><span class="std std-ref">Function psygig_agent_get_num_sinks</span></a></li>
+<li><a class="reference internal" href="function_group__admin_1ga352c28cc0a7836d70233375b6a66ef3d.html#exhale-function-group-admin-1ga352c28cc0a7836d70233375b6a66ef3d"><span class="std std-ref">Function psygig_agent_get_sink_info</span></a></li>
+<li><a class="reference internal" href="function_group__admin_1gad3a56ef340a04a516b837a61833cca4e.html#exhale-function-group-admin-1gad3a56ef340a04a516b837a61833cca4e"><span class="std std-ref">Function psygig_agent_get_version</span></a></li>
+<li><a class="reference internal" href="function_group__admin_1gaaf1964e8484d484331d4875fd8995e92.html#exhale-function-group-admin-1gaaf1964e8484d484331d4875fd8995e92"><span class="std std-ref">Function psygig_agent_init</span></a></li>
+<li><a class="reference internal" href="function_group__admin_1ga62818a0b620c8ed11c1124995bcd9a51.html#exhale-function-group-admin-1ga62818a0b620c8ed11c1124995bcd9a51"><span class="std std-ref">Function psygig_agent_init_config</span></a></li>
+<li><a class="reference internal" href="function_group__admin_1ga225a40e1a12bdeae6a7ed08513e447a0.html#exhale-function-group-admin-1ga225a40e1a12bdeae6a7ed08513e447a0"><span class="std std-ref">Function psygig_agent_remove_sink</span></a></li>
+<li><a class="reference internal" href="function_group__admin_1ga97ef5aaf4e0e8fc25394051409b2d425.html#exhale-function-group-admin-1ga97ef5aaf4e0e8fc25394051409b2d425"><span class="std std-ref">Function psygig_agent_set_debug_level</span></a></li>
+<li><a class="reference internal" href="function_group__admin_1ga99a931e11a90377d4048d2c808bf436a.html#exhale-function-group-admin-1ga99a931e11a90377d4048d2c808bf436a"><span class="std std-ref">Function psygig_agent_start_session</span></a></li>
+<li><a class="reference internal" href="function_group__admin_1ga2648dbe0d465aad94d1808b318d7bcbe.html#exhale-function-group-admin-1ga2648dbe0d465aad94d1808b318d7bcbe"><span class="std std-ref">Function psygig_agent_stop_session</span></a></li>
+<li><a class="reference internal" href="function_group__benchmark_1gad36ec5de5192a22cbbb9ec1154148a63.html#exhale-function-group-benchmark-1gad36ec5de5192a22cbbb9ec1154148a63"><span class="std std-ref">Function psygig_benchmark_export_report</span></a></li>
+<li><a class="reference internal" href="function_group__benchmark_1ga36cfa76eba5674983349ce827289acfa.html#exhale-function-group-benchmark-1ga36cfa76eba5674983349ce827289acfa"><span class="std std-ref">Function psygig_benchmark_run</span></a></li>
+<li><a class="reference internal" href="function_group__crash_1gabaf07ed013042d1f49ad0e88f43653b4.html#exhale-function-group-crash-1gabaf07ed013042d1f49ad0e88f43653b4"><span class="std std-ref">Function psygig_crash_enable_report_on_fatal_signal</span></a></li>
+<li><a class="reference internal" href="function_group__crash_1gafac8bff88650e7c72a82a0e179b81e3d.html#exhale-function-group-crash-1gafac8bff88650e7c72a82a0e179b81e3d"><span class="std std-ref">Function psygig_crash_install_core_dump_handler</span></a></li>
+<li><a class="reference internal" href="function_group__crash_1gaa749aeaa1e74ebed417610776e0ba3c1.html#exhale-function-group-crash-1gaa749aeaa1e74ebed417610776e0ba3c1"><span class="std std-ref">Function psygig_crash_start_crash_monitor</span></a></li>
+<li><a class="reference internal" href="function_group__diag_1ga329a2a24b7f9aa4f264e3dc368d75516.html#exhale-function-group-diag-1ga329a2a24b7f9aa4f264e3dc368d75516"><span class="std std-ref">Function psygig_diag_export_report</span></a></li>
+<li><a class="reference internal" href="function_group__diag_1gaa5372ebc913ecae1d822e7cc442b2ff7.html#exhale-function-group-diag-1gaa5372ebc913ecae1d822e7cc442b2ff7"><span class="std std-ref">Function psygig_diag_run</span></a></li>
+<li><a class="reference internal" href="function_group__event_1gafb3cf0708c1ef0c63a3907a77643b1db.html#exhale-function-group-event-1gafb3cf0708c1ef0c63a3907a77643b1db"><span class="std std-ref">Function psygig_event_enable_auto_report_os_faults</span></a></li>
+<li><a class="reference internal" href="function_group__event_1ga94560ed7ee27811bcbeb48e6705c0adf.html#exhale-function-group-event-1ga94560ed7ee27811bcbeb48e6705c0adf"><span class="std std-ref">Function psygig_event_import_file</span></a></li>
+<li><a class="reference internal" href="function_group__event_1ga2535bc46a92042dd6a94a43d7e53c9be.html#exhale-function-group-event-1ga2535bc46a92042dd6a94a43d7e53c9be"><span class="std std-ref">Function psygig_event_report</span></a></li>
+<li><a class="reference internal" href="function_group__log_1ga648f67cc928ec74ec9a8ce48dcffa68f.html#exhale-function-group-log-1ga648f67cc928ec74ec9a8ce48dcffa68f"><span class="std std-ref">Function psygig_log_glob_free</span></a></li>
+<li><a class="reference internal" href="function_group__log_1gafa91bdd5bb9e6ddb1ed8c0f2b3a9b56a.html#exhale-function-group-log-1gafa91bdd5bb9e6ddb1ed8c0f2b3a9b56a"><span class="std std-ref">Function psygig_log_glob_known_log_files</span></a></li>
+<li><a class="reference internal" href="function_group__log_1gae738ca7b0c34bf6dba6712a9e7cddd2b.html#exhale-function-group-log-1gae738ca7b0c34bf6dba6712a9e7cddd2b"><span class="std std-ref">Function psygig_log_import_file</span></a></li>
+<li><a class="reference internal" href="function_group__log_1gae5f9adc10f83bd1a01ef5c022796db86.html#exhale-function-group-log-1gae5f9adc10f83bd1a01ef5c022796db86"><span class="std std-ref">Function psygig_log_monitor_log_file</span></a></li>
+<li><a class="reference internal" href="function_group__log_1gaa61bab002571d86eefbd051bad2a4d92.html#exhale-function-group-log-1gaa61bab002571d86eefbd051bad2a4d92"><span class="std std-ref">Function psygig_logf</span></a></li>
+<li><a class="reference internal" href="function_group__metric_1gab2661de85dc52970a843f6399bee13d4.html#exhale-function-group-metric-1gab2661de85dc52970a843f6399bee13d4"><span class="std std-ref">Function psygig_metric_enable_poll_system_resources</span></a></li>
+<li><a class="reference internal" href="function_group__metric_1ga086dbb3c27895dd1795dbba0e922ec0d.html#exhale-function-group-metric-1ga086dbb3c27895dd1795dbba0e922ec0d"><span class="std std-ref">Function psygig_metric_export_report</span></a></li>
+<li><a class="reference internal" href="function_group__metric_1ga73001ada94c6c95c7857dd005a3d0873.html#exhale-function-group-metric-1ga73001ada94c6c95c7857dd005a3d0873"><span class="std std-ref">Function psygig_metric_get_values_blob</span></a></li>
+<li><a class="reference internal" href="function_group__metric_1ga46a79a572ab82b198217426464651faf.html#exhale-function-group-metric-1ga46a79a572ab82b198217426464651faf"><span class="std std-ref">Function psygig_metric_get_values_numeric</span></a></li>
+<li><a class="reference internal" href="function_group__metric_1ga633cc0dea5da06743ad0308eb7d600ea.html#exhale-function-group-metric-1ga633cc0dea5da06743ad0308eb7d600ea"><span class="std std-ref">Function psygig_metric_get_values_string</span></a></li>
+<li><a class="reference internal" href="function_group__metric_1gacd4b61dc0315610828452bb0c23f12a1.html#exhale-function-group-metric-1gacd4b61dc0315610828452bb0c23f12a1"><span class="std std-ref">Function psygig_metric_import_file</span></a></li>
+<li><a class="reference internal" href="function_group__metric_1gadcdb801039b078604891895cf65d1ab4.html#exhale-function-group-metric-1gadcdb801039b078604891895cf65d1ab4"><span class="std std-ref">Function psygig_metric_record_pointcloud</span></a></li>
+<li><a class="reference internal" href="function_group__metric_1gab6f6044bb6ac877e2d6491383952bdda.html#exhale-function-group-metric-1gab6f6044bb6ac877e2d6491383952bdda"><span class="std std-ref">Function psygig_metric_record_values_blob</span></a></li>
+<li><a class="reference internal" href="function_group__metric_1ga13961393fb675c701b1dde08500cec8f.html#exhale-function-group-metric-1ga13961393fb675c701b1dde08500cec8f"><span class="std std-ref">Function psygig_metric_record_values_numeric</span></a></li>
+<li><a class="reference internal" href="function_group__metric_1ga03dd4f1ecc14708475838e7feca12a7c.html#exhale-function-group-metric-1ga03dd4f1ecc14708475838e7feca12a7c"><span class="std std-ref">Function psygig_metric_record_values_string</span></a></li>
+<li><a class="reference internal" href="function_group__profile_1ga4575f8efe2f09bec2c61e3457830a1cb.html#exhale-function-group-profile-1ga4575f8efe2f09bec2c61e3457830a1cb"><span class="std std-ref">Function psygig_profile_code_begin</span></a></li>
+<li><a class="reference internal" href="function_group__profile_1ga05e2d1688244c23c0d511fe3fa3a71b6.html#exhale-function-group-profile-1ga05e2d1688244c23c0d511fe3fa3a71b6"><span class="std std-ref">Function psygig_profile_code_end</span></a></li>
+<li><a class="reference internal" href="function_group__profile_1ga00ef61bcc6515ff791d8a9a2088d99a0.html#exhale-function-group-profile-1ga00ef61bcc6515ff791d8a9a2088d99a0"><span class="std std-ref">Function psygig_profile_enable_profiling</span></a></li>
+<li><a class="reference internal" href="function_group__profile_1ga4d2866def94870a7c54c8a5935fc3d2e.html#exhale-function-group-profile-1ga4d2866def94870a7c54c8a5935fc3d2e"><span class="std std-ref">Function psygig_profile_export_report</span></a></li>
+<li><a class="reference internal" href="function_group__sysinfo_1gad62e444b026de8265c45346933424da2.html#exhale-function-group-sysinfo-1gad62e444b026de8265c45346933424da2"><span class="std std-ref">Function psygig_sysinfo_export_report</span></a></li>
+<li><a class="reference internal" href="function_group__sysinfo_1ga70289db0bfc184d04ce16a2bc17ea7fc.html#exhale-function-group-sysinfo-1ga70289db0bfc184d04ce16a2bc17ea7fc"><span class="std std-ref">Function psygig_sysinfo_get</span></a></li>
+<li><a class="reference internal" href="function_group__video_1ga5e4ad5e01335eed273cd3334f10b9177.html#exhale-function-group-video-1ga5e4ad5e01335eed273cd3334f10b9177"><span class="std std-ref">Function psygig_video_import</span></a></li>
+<li><a class="reference internal" href="function_group__video_1gaf0ae8019b6abf5853191e8084d6db2d4.html#exhale-function-group-video-1gaf0ae8019b6abf5853191e8084d6db2d4"><span class="std std-ref">Function psygig_video_stream_start</span></a></li>
+<li><a class="reference internal" href="function_group__video_1ga152f2287018683a2e5605a1fb3bc039e.html#exhale-function-group-video-1ga152f2287018683a2e5605a1fb3bc039e"><span class="std std-ref">Function psygig_video_stream_stop</span></a></li>
+</ul>
+</div>
+<div class="section" id="defines">
+<h2>Defines<a class="headerlink" href="#defines" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="define_group__sysinfo_1ga036449da4ccac7279fa86d00ca8861d1.html#exhale-define-group-sysinfo-1ga036449da4ccac7279fa86d00ca8861d1"><span class="std std-ref">Define MAX_CACHES</span></a></li>
+<li><a class="reference internal" href="define_group__admin_1ga55e37042abe9e49d5b055ca4da45dce2.html#exhale-define-group-admin-1ga55e37042abe9e49d5b055ca4da45dce2"><span class="std std-ref">Define MAX_DEVICE_ID_LENGTH</span></a></li>
+<li><a class="reference internal" href="define_group__sysinfo_1gac874d7a1f535e6a609d1bf4c3b74e421.html#exhale-define-group-sysinfo-1gac874d7a1f535e6a609d1bf4c3b74e421"><span class="std std-ref">Define MAX_DISKS</span></a></li>
+<li><a class="reference internal" href="define_group__sysinfo_1gaa5f75fdbcf486cecbce0a63152429c2c.html#exhale-define-group-sysinfo-1gaa5f75fdbcf486cecbce0a63152429c2c"><span class="std std-ref">Define MAX_NET_INTF</span></a></li>
+<li><a class="reference internal" href="define_group__sysinfo_1ga83701fcd523d39d6399f6f701e8bbaea.html#exhale-define-group-sysinfo-1ga83701fcd523d39d6399f6f701e8bbaea"><span class="std std-ref">Define MAX_PARTS</span></a></li>
+<li><a class="reference internal" href="define_group__sysinfo_1ga1fa9555567da6fbd4652105591a3264a.html#exhale-define-group-sysinfo-1ga1fa9555567da6fbd4652105591a3264a"><span class="std std-ref">Define MAX_PCI_DEVS</span></a></li>
+<li><a class="reference internal" href="define_group__admin_1ga019aa8a74d5a3fa69bcba968514214dd.html#exhale-define-group-admin-1ga019aa8a74d5a3fa69bcba968514214dd"><span class="std std-ref">Define MAX_PSYGIG_SESSION_NAME_LENGTH</span></a></li>
+<li><a class="reference internal" href="define_group__sysinfo_1gafba6e02f31b8a53894ca0e0faaaa7482.html#exhale-define-group-sysinfo-1gafba6e02f31b8a53894ca0e0faaaa7482"><span class="std std-ref">Define MAX_USB_DEVS</span></a></li>
+<li><a class="reference internal" href="define_psygigsdk_8h_1a7a18783e5822ba5ea364d35854897085.html#exhale-define-psygigsdk-8h-1a7a18783e5822ba5ea364d35854897085"><span class="std std-ref">Define NOT_EXPORTED</span></a></li>
+<li><a class="reference internal" href="define_psygigsdk_8h_1ae1b16a95f537ece7d6e8e03311833865.html#exhale-define-psygigsdk-8h-1ae1b16a95f537ece7d6e8e03311833865"><span class="std std-ref">Define PSYGIG_API</span></a></li>
+</ul>
+</div>
+<div class="section" id="typedefs">
+<h2>Typedefs<a class="headerlink" href="#typedefs" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="typedef_group__admin_1ga3981963f680114687830d048aca94c20.html#exhale-typedef-group-admin-1ga3981963f680114687830d048aca94c20"><span class="std std-ref">Typedef psygig_agent_handle</span></a></li>
+<li><a class="reference internal" href="typedef_group__benchmark_1ga8ca83cf178d5f623c468ad1982765dd0.html#exhale-typedef-group-benchmark-1ga8ca83cf178d5f623c468ad1982765dd0"><span class="std std-ref">Typedef psygig_benchmark_type</span></a></li>
+<li><a class="reference internal" href="typedef_group__admin_1ga4d6d224f55aa00778d0a279ad63a17ef.html#exhale-typedef-group-admin-1ga4d6d224f55aa00778d0a279ad63a17ef"><span class="std std-ref">Typedef psygig_cfg</span></a></li>
+<li><a class="reference internal" href="typedef_group__sysinfo_1ga5ef3f551fb07171df98421a106e641c2.html#exhale-typedef-group-sysinfo-1ga5ef3f551fb07171df98421a106e641c2"><span class="std std-ref">Typedef psygig_cpuinfo</span></a></li>
+<li><a class="reference internal" href="typedef_group__diag_1ga36c28e721d2040c85a8d7943fbb8011d.html#exhale-typedef-group-diag-1ga36c28e721d2040c85a8d7943fbb8011d"><span class="std std-ref">Typedef psygig_diag_result</span></a></li>
+<li><a class="reference internal" href="typedef_group__diag_1ga86ad220aeeef6bd944bcb02e011b0680.html#exhale-typedef-group-diag-1ga86ad220aeeef6bd944bcb02e011b0680"><span class="std std-ref">Typedef psygig_diag_type</span></a></li>
+<li><a class="reference internal" href="typedef_group__sysinfo_1gabec888c1e5957910697cd709cfc14634.html#exhale-typedef-group-sysinfo-1gabec888c1e5957910697cd709cfc14634"><span class="std std-ref">Typedef psygig_diskinfo</span></a></li>
+<li><a class="reference internal" href="typedef_group__event_1ga8061a166157ee4a37eee4032493a78e2.html#exhale-typedef-group-event-1ga8061a166157ee4a37eee4032493a78e2"><span class="std std-ref">Typedef psygig_event_level</span></a></li>
+<li><a class="reference internal" href="typedef_group__sysinfo_1gaca9ae00fcaeaebf4f6b0d920a987a142.html#exhale-typedef-group-sysinfo-1gaca9ae00fcaeaebf4f6b0d920a987a142"><span class="std std-ref">Typedef psygig_fsinfo</span></a></li>
+<li><a class="reference internal" href="typedef_group__log_1gae787592a3d2392876a30ad63d1d95452.html#exhale-typedef-group-log-1gae787592a3d2392876a30ad63d1d95452"><span class="std std-ref">Typedef psygig_log_level</span></a></li>
+<li><a class="reference internal" href="typedef_group__sysinfo_1gaf9cd1804ffe32d13e5f0c4101d63f147.html#exhale-typedef-group-sysinfo-1gaf9cd1804ffe32d13e5f0c4101d63f147"><span class="std std-ref">Typedef psygig_meminfo</span></a></li>
+<li><a class="reference internal" href="typedef_group__metric_1ga7c7ea594a2f7345f436080bd6a22433e.html#exhale-typedef-group-metric-1ga7c7ea594a2f7345f436080bd6a22433e"><span class="std std-ref">Typedef psygig_metric_file_type</span></a></li>
+<li><a class="reference internal" href="typedef_group__sysinfo_1ga6a734a61fa806c75dd2731997559bd56.html#exhale-typedef-group-sysinfo-1ga6a734a61fa806c75dd2731997559bd56"><span class="std std-ref">Typedef psygig_netinfo</span></a></li>
+<li><a class="reference internal" href="typedef_group__sysinfo_1ga15b4369a22dd2ca4bc73d662a3ed973b.html#exhale-typedef-group-sysinfo-1ga15b4369a22dd2ca4bc73d662a3ed973b"><span class="std std-ref">Typedef psygig_osinfo</span></a></li>
+<li><a class="reference internal" href="typedef_group__sysinfo_1ga49fdfa973f3ae0e57c972127dc74627e.html#exhale-typedef-group-sysinfo-1ga49fdfa973f3ae0e57c972127dc74627e"><span class="std std-ref">Typedef psygig_pciinfo</span></a></li>
+<li><a class="reference internal" href="typedef_group__metric_1ga1fe05be4c1bfbaa52440060155299761.html#exhale-typedef-group-metric-1ga1fe05be4c1bfbaa52440060155299761"><span class="std std-ref">Typedef psygig_pointcloud_data</span></a></li>
+<li><a class="reference internal" href="typedef_group__admin_1ga54e9d2990ca293d686ca2347be84a1f5.html#exhale-typedef-group-admin-1ga54e9d2990ca293d686ca2347be84a1f5"><span class="std std-ref">Typedef psygig_session_info</span></a></li>
+<li><a class="reference internal" href="typedef_group__admin_1gaaf0df8949411545158a840cbd4363ff3.html#exhale-typedef-group-admin-1gaaf0df8949411545158a840cbd4363ff3"><span class="std std-ref">Typedef psygig_sink_cfg</span></a></li>
+<li><a class="reference internal" href="typedef_group__admin_1gacaf10cdcf4d1f34aa1fcbad382d53957.html#exhale-typedef-group-admin-1gacaf10cdcf4d1f34aa1fcbad382d53957"><span class="std std-ref">Typedef psygig_sink_data_format</span></a></li>
+<li><a class="reference internal" href="typedef_group__admin_1gac8776d2d9f31b519633ef8660f87ec3a.html#exhale-typedef-group-admin-1gac8776d2d9f31b519633ef8660f87ec3a"><span class="std std-ref">Typedef psygig_sink_file_cfg</span></a></li>
+<li><a class="reference internal" href="typedef_group__admin_1ga72d87ed3888dfc41312fdb74edd34d89.html#exhale-typedef-group-admin-1ga72d87ed3888dfc41312fdb74edd34d89"><span class="std std-ref">Typedef psygig_sink_fstream_cfg</span></a></li>
+<li><a class="reference internal" href="typedef_group__admin_1ga78b4fa980ceefde0a393224b7112d892.html#exhale-typedef-group-admin-1ga78b4fa980ceefde0a393224b7112d892"><span class="std std-ref">Typedef psygig_sink_http_cfg</span></a></li>
+<li><a class="reference internal" href="typedef_group__admin_1gaa8c01e107b0ec7365f3d1d88caf6e61a.html#exhale-typedef-group-admin-1gaa8c01e107b0ec7365f3d1d88caf6e61a"><span class="std std-ref">Typedef psygig_sink_influxdb_cfg</span></a></li>
+<li><a class="reference internal" href="typedef_group__admin_1ga7315cf71c50e0cb58a285af0c3613d92.html#exhale-typedef-group-admin-1ga7315cf71c50e0cb58a285af0c3613d92"><span class="std std-ref">Typedef psygig_sink_mqtt_cfg</span></a></li>
+<li><a class="reference internal" href="typedef_group__admin_1ga5bdc5861f74c5721787506933ae972f6.html#exhale-typedef-group-admin-1ga5bdc5861f74c5721787506933ae972f6"><span class="std std-ref">Typedef psygig_sink_tcp_cfg</span></a></li>
+<li><a class="reference internal" href="typedef_group__admin_1gab5aba5687d0cc663995fee0604d08b14.html#exhale-typedef-group-admin-1gab5aba5687d0cc663995fee0604d08b14"><span class="std std-ref">Typedef psygig_sink_type</span></a></li>
+<li><a class="reference internal" href="typedef_group__admin_1gabe641754bc346b3b54a5c88f6659504b.html#exhale-typedef-group-admin-1gabe641754bc346b3b54a5c88f6659504b"><span class="std std-ref">Typedef psygig_sink_udp_cfg</span></a></li>
+<li><a class="reference internal" href="typedef_group__sysinfo_1gaf4f8a4d078de38b6921a5ca49ee0251d.html#exhale-typedef-group-sysinfo-1gaf4f8a4d078de38b6921a5ca49ee0251d"><span class="std std-ref">Typedef psygig_sysinfo</span></a></li>
+<li><a class="reference internal" href="typedef_group__sysinfo_1ga5fc81e59438dd9d0755d81b7f4863cfe.html#exhale-typedef-group-sysinfo-1ga5fc81e59438dd9d0755d81b7f4863cfe"><span class="std std-ref">Typedef psygig_usbinfo</span></a></li>
+<li><a class="reference internal" href="typedef_group__video_1ga020cba254357ccf8e53d0ef0369235c7.html#exhale-typedef-group-video-1ga020cba254357ccf8e53d0ef0369235c7"><span class="std std-ref">Typedef psygig_video_cfg</span></a></li>
+<li><a class="reference internal" href="typedef_group__video_1ga54c26db1cfeb60f0584666f630ba7497.html#exhale-typedef-group-video-1ga54c26db1cfeb60f0584666f630ba7497"><span class="std std-ref">Typedef psygig_video_handle</span></a></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="program_listing_file_include_psygigsdk.h.html" class="btn btn-neutral float-right" title="Program Listing for File psygigsdk.h" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="dir_include.html" class="btn btn-neutral" title="Directory include" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019 PSYGIG株式会社
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

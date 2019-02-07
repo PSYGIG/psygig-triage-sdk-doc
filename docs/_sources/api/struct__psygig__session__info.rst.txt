@@ -1,0 +1,16 @@
+.. _exhale_struct_struct__psygig__session__info:
+
+Struct _psygig_session_info
+===========================
+
+- Defined in :ref:`file_include_psygigsdk.h`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: _psygig_session_info
+   :members:
+   :protected-members:
+   :undoc-members:

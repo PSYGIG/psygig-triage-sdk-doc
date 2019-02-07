@@ -1,0 +1,115 @@
+.. image:: images/psygig-logo.png
+   :height: 120
+   :target: https://psygig.com
+
+PSYGIG Triage SDK
+-----------------
+
+`PSYGIG Triage SDK` or ``psyiage`` is a set of portable, lightweight library and tools for extending high-performance, safety-critical embedded devices
+with diagnostic and performance data instrumentation capabilities. The goal is to provide actionable insights in order to resolve the most 
+critical software defects that cause system failure.
+
+`PSYGIG Triage SDK` is rich with advanced instrumentation features, yet exposes a simple API for easy integration with existing software.
+
+.. |app| image:: images/visualization.png
+   :height: 30
+
+.. |crash| image:: images/visualization.png
+   :height: 30
+
+.. |log| image:: images/visualization.png
+   :height: 30
+
+.. |metrics| image:: images/visualization.png
+   :height: 30
+
+.. |sysinfo| image:: images/visualization.png
+   :height: 30
+
+.. |event| image:: images/visualization.png
+   :height: 30
+
+.. |benchmark| image:: images/visualization.png
+   :height: 30
+
+.. |diag| image:: images/visualization.png
+   :height: 30
+
+.. table::
+    :widths: 10 40
+
+    +-------------+------------------------------------------------------------------------------+
+    | |app|       | :doc:`Application performance profiling <application-performance-profiling>` |
+    +-------------+------------------------------------------------------------------------------+
+    | |crash|     | :doc:`Software crash reporting <crash-reporting>`                            |
+    +-------------+------------------------------------------------------------------------------+
+    | |log|       | :doc:`Log collection and monitoring <log-collection>`                        |
+    +-------------+------------------------------------------------------------------------------+
+    | |metrics|   | :doc:`Sensor data/metric collection <metrics-collection>`                    |
+    +-------------+------------------------------------------------------------------------------+
+    | |sysinfo|   | :doc:`System information collection <system-information>`                    |
+    +-------------+------------------------------------------------------------------------------+
+    | |event|     | :doc:`Event/alert reporting <event-reporting>`                               |
+    +-------------+------------------------------------------------------------------------------+
+    | |benchmark| | :doc:`Benchmark testing <benchmark-testing>`                                 |
+    +-------------+------------------------------------------------------------------------------+
+    | |diag|      | :doc:`Diagnostic testing <diagnostic-testing>`                               |
+    +-------------+------------------------------------------------------------------------------+
+    
+`PSYGIG Triage SDK` was designed to be integrated into existing applications with minimal/no changes to the source code, along with several 
+other features suitable for integration into embedded systems:
+
+- :doc:`Multiplatform support <supported-platforms>`
+- :doc:`Third Party Integration <third-party-integration>`
+- C99-standard compliant
+- Works on existing applications; `no need to recompile source code`
+- Export collected data into various formats (JSON, CSV, HTML)
+
+.. tip::
+    Start instrumenting your application right away with our :doc:`getting-started` guide.
+
+TABLE OF CONTENTS
+-----------------
+
+.. toctree::
+   :caption: OVERVIEW
+   :maxdepth: 1
+
+   supported-platforms
+   third-party-integration
+   change-log
+
+.. toctree::
+   :caption: USAGE
+   :maxdepth: 2
+
+   installation
+   getting-started
+
+.. toctree::
+   :caption: FEATURES
+   :maxdepth: 1
+
+   application-performance-profiling
+   crash-reporting
+   log-collection
+   metrics-collection
+   system-information
+   event-reporting
+   benchmark-testing
+   diagnostic-testing
+   
+.. toctree::
+   :caption: PSYGIG TRIAGE SDK REFERENCE
+   :maxdepth: 1
+
+   psymon-man
+   psybench-man
+   psydiag-man
+   api/index
+   sample-output
+
+.. toctree::
+   :caption: DEBUGGING AND TROUBLESHOOTING
+   :maxdepth: 2
+

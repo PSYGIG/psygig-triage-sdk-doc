@@ -1,0 +1,568 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ja" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Struct _psygig_cpuinfo &mdash; PSYGIG Triage SDK 0.2.0 ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="next" title="Struct _psygig_cpuinfo::cache_t" href="struct__psygig__cpuinfo_1_1cache__t.html" />
+    <link rel="prev" title="Struct _psygig_cfg" href="struct__psygig__cfg.html" />
+ 
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-91451950-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PSYGIG Triage SDK
+          
+
+          
+            
+            <img src="../_static/psygig-logo-white-text.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">OVERVIEW</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../supported-platforms.html">Supported Platforms/Architectures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../third-party-integration.html">Third Party Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../change-log.html">Change Log</a></li>
+</ul>
+<p class="caption"><span class="caption-text">USAGE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Download &amp; Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started.html">Getting Started</a></li>
+</ul>
+<p class="caption"><span class="caption-text">FEATURES</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../application-performance-profiling.html">Application Performance Profiling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../crash-reporting.html">Crash Reporting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../log-collection.html">Log Collection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../metrics-collection.html">Metrics Collection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system-information.html">System Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../event-reporting.html">Event Reporting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../benchmark-testing.html">Benchmark Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../diagnostic-testing.html">Diagnostic Testing</a></li>
+</ul>
+<p class="caption"><span class="caption-text">PSYGIG TRIAGE SDK REFERENCE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../psymon-man.html"><code class="docutils literal notranslate"><span class="pre">psymon</span></code> man page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../psybench-man.html"><code class="docutils literal notranslate"><span class="pre">psybench</span></code> man page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../psydiag-man.html"><code class="docutils literal notranslate"><span class="pre">psydiag</span></code> man page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">PSYGIG Triage SDK API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sample-output.html">Sample Output</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PSYGIG Triage SDK</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">PSYGIG Triage SDK API</a> &raquo;</li>
+        
+      <li>Struct _psygig_cpuinfo</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="struct-psygig-cpuinfo">
+<span id="exhale-struct-struct-psygig-cpuinfo"></span><h1>Struct _psygig_cpuinfo<a class="headerlink" href="#struct-psygig-cpuinfo" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<ul class="simple">
+<li>Defined in <a class="reference internal" href="file_include_psygigsdk.h.html#file-include-psygigsdk-h"><span class="std std-ref">File psygigsdk.h</span></a></li>
+</ul>
+<div class="section" id="nested-relationships">
+<h2>Nested Relationships<a class="headerlink" href="#nested-relationships" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="nested-types">
+<h3>Nested Types<a class="headerlink" href="#nested-types" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="struct__psygig__cpuinfo_1_1cache__t.html#exhale-struct-struct-psygig-cpuinfo-1-1cache-t"><span class="std std-ref">Struct _psygig_cpuinfo::cache_t</span></a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="struct-documentation">
+<h2>Struct Documentation<a class="headerlink" href="#struct-documentation" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<dl class="class">
+<dt id="_CPPv415_psygig_cpuinfo">
+<span id="_CPPv315_psygig_cpuinfo"></span><span id="_CPPv215_psygig_cpuinfo"></span><span id="_psygig_cpuinfo"></span><span class="target" id="struct__psygig__cpuinfo"></span><em class="property">struct </em><code class="descname">_psygig_cpuinfo</code><a class="headerlink" href="#_CPPv415_psygig_cpuinfo" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd><p>CPU Information Specification details of the CPU running on the system. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Types</p>
+<dl class="type">
+<dt id="_CPPv4N15_psygig_cpuinfo12__anonymous4E">
+<span id="_CPPv3N15_psygig_cpuinfo12__anonymous4E"></span><span id="_CPPv2N15_psygig_cpuinfo12__anonymous4E"></span><span id="_psygig_cpuinfo::__anonymous4"></span><span class="target" id="struct__psygig__cpuinfo_1a693e102a44f5714c561a01f1ccb746ab"></span><em class="property">enum </em><code class="descname"><strong>[anonymous]</strong></code><a class="headerlink" href="#_CPPv4N15_psygig_cpuinfo12__anonymous4E" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd><p><em>Values:</em></p>
+<dl class="enumerator">
+<dt id="_CPPv4N15_psygig_cpuinfo12ARCH_UNKNOWNE">
+<span id="_CPPv3N15_psygig_cpuinfo12ARCH_UNKNOWNE"></span><span id="_CPPv2N15_psygig_cpuinfo12ARCH_UNKNOWNE"></span><span class="target" id="struct__psygig__cpuinfo_1a693e102a44f5714c561a01f1ccb746aba72ac5447d01fa73f6c421d5b1963371d"></span><code class="descname">ARCH_UNKNOWN</code> = -1<a class="headerlink" href="#_CPPv4N15_psygig_cpuinfo12ARCH_UNKNOWNE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N15_psygig_cpuinfo8ARCH_X86E">
+<span id="_CPPv3N15_psygig_cpuinfo8ARCH_X86E"></span><span id="_CPPv2N15_psygig_cpuinfo8ARCH_X86E"></span><span class="target" id="struct__psygig__cpuinfo_1a693e102a44f5714c561a01f1ccb746aba6fe268b9716807f7e62e476499777dbf"></span><code class="descname">ARCH_X86</code><a class="headerlink" href="#_CPPv4N15_psygig_cpuinfo8ARCH_X86E" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N15_psygig_cpuinfo9ARCH_IA64E">
+<span id="_CPPv3N15_psygig_cpuinfo9ARCH_IA64E"></span><span id="_CPPv2N15_psygig_cpuinfo9ARCH_IA64E"></span><span class="target" id="struct__psygig__cpuinfo_1a693e102a44f5714c561a01f1ccb746aba4ef9eae406fe29ba479dd296b2f32cf8"></span><code class="descname">ARCH_IA64</code><a class="headerlink" href="#_CPPv4N15_psygig_cpuinfo9ARCH_IA64E" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N15_psygig_cpuinfo12ARCH_AARCH64E">
+<span id="_CPPv3N15_psygig_cpuinfo12ARCH_AARCH64E"></span><span id="_CPPv2N15_psygig_cpuinfo12ARCH_AARCH64E"></span><span class="target" id="struct__psygig__cpuinfo_1a693e102a44f5714c561a01f1ccb746aba43600fe1daa70086f96993204ae37a2f"></span><code class="descname">ARCH_AARCH64</code><a class="headerlink" href="#_CPPv4N15_psygig_cpuinfo12ARCH_AARCH64E" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N15_psygig_cpuinfo8ARCH_ARME">
+<span id="_CPPv3N15_psygig_cpuinfo8ARCH_ARME"></span><span id="_CPPv2N15_psygig_cpuinfo8ARCH_ARME"></span><span class="target" id="struct__psygig__cpuinfo_1a693e102a44f5714c561a01f1ccb746aba776b9ccceeda8a6d3c9006551df578ae"></span><code class="descname">ARCH_ARM</code><a class="headerlink" href="#_CPPv4N15_psygig_cpuinfo8ARCH_ARME" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N15_psygig_cpuinfo9ARCH_MIPSE">
+<span id="_CPPv3N15_psygig_cpuinfo9ARCH_MIPSE"></span><span id="_CPPv2N15_psygig_cpuinfo9ARCH_MIPSE"></span><span class="target" id="struct__psygig__cpuinfo_1a693e102a44f5714c561a01f1ccb746abacad75fd7f8448c64c260a73e5cb58b29"></span><code class="descname">ARCH_MIPS</code><a class="headerlink" href="#_CPPv4N15_psygig_cpuinfo9ARCH_MIPSE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N15_psygig_cpuinfo8ARCH_PPCE">
+<span id="_CPPv3N15_psygig_cpuinfo8ARCH_PPCE"></span><span id="_CPPv2N15_psygig_cpuinfo8ARCH_PPCE"></span><span class="target" id="struct__psygig__cpuinfo_1a693e102a44f5714c561a01f1ccb746aba9b5c1618b1c40e9a5aa5be61ac8a3aff"></span><code class="descname">ARCH_PPC</code><a class="headerlink" href="#_CPPv4N15_psygig_cpuinfo8ARCH_PPCE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="type">
+<dt id="_CPPv4N15_psygig_cpuinfo12__anonymous5E">
+<span id="_CPPv3N15_psygig_cpuinfo12__anonymous5E"></span><span id="_CPPv2N15_psygig_cpuinfo12__anonymous5E"></span><span id="_psygig_cpuinfo::__anonymous5"></span><span class="target" id="struct__psygig__cpuinfo_1a6ec0bf17f608741d3041f22f93c961d5"></span><em class="property">enum </em><code class="descname"><strong>[anonymous]</strong></code><a class="headerlink" href="#_CPPv4N15_psygig_cpuinfo12__anonymous5E" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd><p><em>Values:</em></p>
+<dl class="enumerator">
+<dt id="_CPPv4N15_psygig_cpuinfo10ENDIAN_BIGE">
+<span id="_CPPv3N15_psygig_cpuinfo10ENDIAN_BIGE"></span><span id="_CPPv2N15_psygig_cpuinfo10ENDIAN_BIGE"></span><span class="target" id="struct__psygig__cpuinfo_1a6ec0bf17f608741d3041f22f93c961d5ad03a938b7f0d3e799da251f804d29bd1"></span><code class="descname">ENDIAN_BIG</code><a class="headerlink" href="#_CPPv4N15_psygig_cpuinfo10ENDIAN_BIGE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N15_psygig_cpuinfo13ENDIAN_LITTLEE">
+<span id="_CPPv3N15_psygig_cpuinfo13ENDIAN_LITTLEE"></span><span id="_CPPv2N15_psygig_cpuinfo13ENDIAN_LITTLEE"></span><span class="target" id="struct__psygig__cpuinfo_1a6ec0bf17f608741d3041f22f93c961d5afbf96d7b14f4403cc00d09c84215c0d8"></span><code class="descname">ENDIAN_LITTLE</code><a class="headerlink" href="#_CPPv4N15_psygig_cpuinfo13ENDIAN_LITTLEE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv4N15_psygig_cpuinfo14threadspercoreE">
+<span id="_CPPv3N15_psygig_cpuinfo14threadspercoreE"></span><span id="_CPPv2N15_psygig_cpuinfo14threadspercoreE"></span><span id="_psygig_cpuinfo::threadspercore__uint32_t"></span><span class="target" id="struct__psygig__cpuinfo_1aa7a5e37d61a302d7d76c55c8aaa2b98f"></span>uint32_t <code class="descname">threadspercore</code><a class="headerlink" href="#_CPPv4N15_psygig_cpuinfo14threadspercoreE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd><p>Hyperthreads. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N15_psygig_cpuinfo11coresperpkgE">
+<span id="_CPPv3N15_psygig_cpuinfo11coresperpkgE"></span><span id="_CPPv2N15_psygig_cpuinfo11coresperpkgE"></span><span id="_psygig_cpuinfo::coresperpkg__uint32_t"></span><span class="target" id="struct__psygig__cpuinfo_1a279847e34728223c957e83ab567ffaf2"></span>uint32_t <code class="descname">coresperpkg</code><a class="headerlink" href="#_CPPv4N15_psygig_cpuinfo11coresperpkgE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd><p>Physical &quot;cores&quot;. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N15_psygig_cpuinfo7numpkgsE">
+<span id="_CPPv3N15_psygig_cpuinfo7numpkgsE"></span><span id="_CPPv2N15_psygig_cpuinfo7numpkgsE"></span><span id="_psygig_cpuinfo::numpkgs__uint32_t"></span><span class="target" id="struct__psygig__cpuinfo_1ae79a467f4535f802de42c93611b75f06"></span>uint32_t <code class="descname">numpkgs</code><a class="headerlink" href="#_CPPv4N15_psygig_cpuinfo7numpkgsE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd><p>Physical CPU units/packages/sockets. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N15_psygig_cpuinfo6vendorE">
+<span id="_CPPv3N15_psygig_cpuinfo6vendorE"></span><span id="_CPPv2N15_psygig_cpuinfo6vendorE"></span><span id="_psygig_cpuinfo::vendor__cA"></span><span class="target" id="struct__psygig__cpuinfo_1ad61010773cb4977ba72be085f3f297cf"></span>char <code class="descname">vendor</code>[13]<a class="headerlink" href="#_CPPv4N15_psygig_cpuinfo6vendorE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N15_psygig_cpuinfo5modelE">
+<span id="_CPPv3N15_psygig_cpuinfo5modelE"></span><span id="_CPPv2N15_psygig_cpuinfo5modelE"></span><span id="_psygig_cpuinfo::model__cA"></span><span class="target" id="struct__psygig__cpuinfo_1a5043063221e595197222367ac5ddc7cd"></span>char <code class="descname">model</code>[64]<a class="headerlink" href="#_CPPv4N15_psygig_cpuinfo5modelE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N15_psygig_cpuinfo12architectureE">
+<span id="_CPPv3N15_psygig_cpuinfo12architectureE"></span><span id="_CPPv2N15_psygig_cpuinfo12architectureE"></span><span id="_psygig_cpuinfo::architecture__cA"></span><span class="target" id="struct__psygig__cpuinfo_1a52cdfa123f6459f49ffac65c0c144841"></span>char <code class="descname">architecture</code>[32]<a class="headerlink" href="#_CPPv4N15_psygig_cpuinfo12architectureE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N15_psygig_cpuinfo8featuresE">
+<span id="_CPPv3N15_psygig_cpuinfo8featuresE"></span><span id="_CPPv2N15_psygig_cpuinfo8featuresE"></span><span id="_psygig_cpuinfo::features__cA"></span><span class="target" id="struct__psygig__cpuinfo_1aff4c8c0994d884c47f3b4bf48a61c5be"></span>char <code class="descname">features</code>[128]<a class="headerlink" href="#_CPPv4N15_psygig_cpuinfo8featuresE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N15_psygig_cpuinfo8archtypeE">
+<span id="_CPPv3N15_psygig_cpuinfo8archtypeE"></span><span id="_CPPv2N15_psygig_cpuinfo8archtypeE"></span><span class="target" id="struct__psygig__cpuinfo_1a61f308b196ab3bd9183154dd46925c68"></span><a class="reference internal" href="#_CPPv415_psygig_cpuinfo" title="_psygig_cpuinfo">_psygig_cpuinfo</a>::<strong>[anonymous]</strong> <code class="descname">archtype</code><a class="headerlink" href="#_CPPv4N15_psygig_cpuinfo8archtypeE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N15_psygig_cpuinfo6endianE">
+<span id="_CPPv3N15_psygig_cpuinfo6endianE"></span><span id="_CPPv2N15_psygig_cpuinfo6endianE"></span><span class="target" id="struct__psygig__cpuinfo_1a51263f368cf36c28b2c906561b8859d2"></span><a class="reference internal" href="#_CPPv415_psygig_cpuinfo" title="_psygig_cpuinfo">_psygig_cpuinfo</a>::<strong>[anonymous]</strong> <code class="descname">endian</code><a class="headerlink" href="#_CPPv4N15_psygig_cpuinfo6endianE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N15_psygig_cpuinfo8clockmhzE">
+<span id="_CPPv3N15_psygig_cpuinfo8clockmhzE"></span><span id="_CPPv2N15_psygig_cpuinfo8clockmhzE"></span><span id="_psygig_cpuinfo::clockmhz__float"></span><span class="target" id="struct__psygig__cpuinfo_1a3f8e74e6340c4f73ae94616b9a96ac77"></span>float <code class="descname">clockmhz</code><a class="headerlink" href="#_CPPv4N15_psygig_cpuinfo8clockmhzE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N15_psygig_cpuinfo6familyE">
+<span id="_CPPv3N15_psygig_cpuinfo6familyE"></span><span id="_CPPv2N15_psygig_cpuinfo6familyE"></span><span id="_psygig_cpuinfo::family__i"></span><span class="target" id="struct__psygig__cpuinfo_1a7e408a8988d4cb66f91aada5d7762368"></span>int <code class="descname">family</code><a class="headerlink" href="#_CPPv4N15_psygig_cpuinfo6familyE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N15_psygig_cpuinfo5modelE">
+<span id="_CPPv3N15_psygig_cpuinfo5modelE"></span><span id="_CPPv2N15_psygig_cpuinfo5modelE"></span><span id="_psygig_cpuinfo::model__i"></span><span class="target" id="struct__psygig__cpuinfo_1a2a2b81d49b83e9d55bd53dc6753e3fb9"></span>int <code class="descname">model</code><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N15_psygig_cpuinfo8steppingE">
+<span id="_CPPv3N15_psygig_cpuinfo8steppingE"></span><span id="_CPPv2N15_psygig_cpuinfo8steppingE"></span><span id="_psygig_cpuinfo::stepping__i"></span><span class="target" id="struct__psygig__cpuinfo_1ac4bcdb11a540aba704f6f45ea9b66bf2"></span>int <code class="descname">stepping</code><a class="headerlink" href="#_CPPv4N15_psygig_cpuinfo8steppingE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N15_psygig_cpuinfo5brandE">
+<span id="_CPPv3N15_psygig_cpuinfo5brandE"></span><span id="_CPPv2N15_psygig_cpuinfo5brandE"></span><span id="_psygig_cpuinfo::brand__cA"></span><span class="target" id="struct__psygig__cpuinfo_1a9ae4df4305a669cbb8e467220d089220"></span>char <code class="descname">brand</code>[49]<a class="headerlink" href="#_CPPv4N15_psygig_cpuinfo5brandE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N15_psygig_cpuinfo5uarchE">
+<span id="_CPPv3N15_psygig_cpuinfo5uarchE"></span><span id="_CPPv2N15_psygig_cpuinfo5uarchE"></span><span id="_psygig_cpuinfo::uarch__cA"></span><span class="target" id="struct__psygig__cpuinfo_1af97f7e20b0969aa03e81dae6151dc4f7"></span>char <code class="descname">uarch</code>[64]<a class="headerlink" href="#_CPPv4N15_psygig_cpuinfo5uarchE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N15_psygig_cpuinfo7X86InfoE">
+<span id="_CPPv3N15_psygig_cpuinfo7X86InfoE"></span><span id="_CPPv2N15_psygig_cpuinfo7X86InfoE"></span><span class="target" id="struct__psygig__cpuinfo_1ab4735b1902a309ddf05f538eba13a734"></span><em class="property">struct</em> <a class="reference internal" href="#_CPPv415_psygig_cpuinfo" title="_psygig_cpuinfo">_psygig_cpuinfo</a>::<strong>[anonymous]</strong>::<strong>[anonymous]</strong> <code class="descname">X86Info</code><a class="headerlink" href="#_CPPv4N15_psygig_cpuinfo7X86InfoE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N15_psygig_cpuinfo11implementerE">
+<span id="_CPPv3N15_psygig_cpuinfo11implementerE"></span><span id="_CPPv2N15_psygig_cpuinfo11implementerE"></span><span id="_psygig_cpuinfo::implementer__i"></span><span class="target" id="struct__psygig__cpuinfo_1ac19f39ceab4f2f4b99bf5f3b76d6607d"></span>int <code class="descname">implementer</code><a class="headerlink" href="#_CPPv4N15_psygig_cpuinfo11implementerE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N15_psygig_cpuinfo7variantE">
+<span id="_CPPv3N15_psygig_cpuinfo7variantE"></span><span id="_CPPv2N15_psygig_cpuinfo7variantE"></span><span id="_psygig_cpuinfo::variant__i"></span><span class="target" id="struct__psygig__cpuinfo_1a59209405afcdb3b8ff4fe1f29a10c8d6"></span>int <code class="descname">variant</code><a class="headerlink" href="#_CPPv4N15_psygig_cpuinfo7variantE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N15_psygig_cpuinfo4partE">
+<span id="_CPPv3N15_psygig_cpuinfo4partE"></span><span id="_CPPv2N15_psygig_cpuinfo4partE"></span><span id="_psygig_cpuinfo::part__i"></span><span class="target" id="struct__psygig__cpuinfo_1a9f1d8caae3c1eca914fd8d0016400b0c"></span>int <code class="descname">part</code><a class="headerlink" href="#_CPPv4N15_psygig_cpuinfo4partE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N15_psygig_cpuinfo8revisionE">
+<span id="_CPPv3N15_psygig_cpuinfo8revisionE"></span><span id="_CPPv2N15_psygig_cpuinfo8revisionE"></span><span id="_psygig_cpuinfo::revision__i"></span><span class="target" id="struct__psygig__cpuinfo_1ad209f595317141a784e91d4a8b53504f"></span>int <code class="descname">revision</code><a class="headerlink" href="#_CPPv4N15_psygig_cpuinfo8revisionE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N15_psygig_cpuinfo11Aarch64InfoE">
+<span id="_CPPv3N15_psygig_cpuinfo11Aarch64InfoE"></span><span id="_CPPv2N15_psygig_cpuinfo11Aarch64InfoE"></span><span class="target" id="struct__psygig__cpuinfo_1ad29c69d6c543aceb66bef33c8fc92cc7"></span><em class="property">struct</em> <a class="reference internal" href="#_CPPv415_psygig_cpuinfo" title="_psygig_cpuinfo">_psygig_cpuinfo</a>::<strong>[anonymous]</strong>::<strong>[anonymous]</strong> <code class="descname">Aarch64Info</code><a class="headerlink" href="#_CPPv4N15_psygig_cpuinfo11Aarch64InfoE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N15_psygig_cpuinfo12architectureE">
+<span id="_CPPv3N15_psygig_cpuinfo12architectureE"></span><span id="_CPPv2N15_psygig_cpuinfo12architectureE"></span><span id="_psygig_cpuinfo::architecture__i"></span><span class="target" id="struct__psygig__cpuinfo_1a75ef0147a949fe3918e2e24c28f3fa4c"></span>int <code class="descname">architecture</code><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N15_psygig_cpuinfo7ArmInfoE">
+<span id="_CPPv3N15_psygig_cpuinfo7ArmInfoE"></span><span id="_CPPv2N15_psygig_cpuinfo7ArmInfoE"></span><span class="target" id="struct__psygig__cpuinfo_1a065368afdd03c8a256cc9915726c6f6f"></span><em class="property">struct</em> <a class="reference internal" href="#_CPPv415_psygig_cpuinfo" title="_psygig_cpuinfo">_psygig_cpuinfo</a>::<strong>[anonymous]</strong>::<strong>[anonymous]</strong> <code class="descname">ArmInfo</code><a class="headerlink" href="#_CPPv4N15_psygig_cpuinfo7ArmInfoE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N15_psygig_cpuinfo8MipsInfoE">
+<span id="_CPPv3N15_psygig_cpuinfo8MipsInfoE"></span><span id="_CPPv2N15_psygig_cpuinfo8MipsInfoE"></span><span class="target" id="struct__psygig__cpuinfo_1ab0a4957f6c12fe8203724fc3229b9554"></span><em class="property">struct</em> <a class="reference internal" href="#_CPPv415_psygig_cpuinfo" title="_psygig_cpuinfo">_psygig_cpuinfo</a>::<strong>[anonymous]</strong>::<strong>[anonymous]</strong> <code class="descname">MipsInfo</code><a class="headerlink" href="#_CPPv4N15_psygig_cpuinfo8MipsInfoE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N15_psygig_cpuinfo8platformE">
+<span id="_CPPv3N15_psygig_cpuinfo8platformE"></span><span id="_CPPv2N15_psygig_cpuinfo8platformE"></span><span id="_psygig_cpuinfo::platform__cA"></span><span class="target" id="struct__psygig__cpuinfo_1aeb3c5be751451ff18bf5d70a8f7960b8"></span>char <code class="descname">platform</code>[64]<a class="headerlink" href="#_CPPv4N15_psygig_cpuinfo8platformE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N15_psygig_cpuinfo7machineE">
+<span id="_CPPv3N15_psygig_cpuinfo7machineE"></span><span id="_CPPv2N15_psygig_cpuinfo7machineE"></span><span id="_psygig_cpuinfo::machine__cA"></span><span class="target" id="struct__psygig__cpuinfo_1a62a6004e98713c95f39854c4b4194a39"></span>char <code class="descname">machine</code>[64]<a class="headerlink" href="#_CPPv4N15_psygig_cpuinfo7machineE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N15_psygig_cpuinfo3cpuE">
+<span id="_CPPv3N15_psygig_cpuinfo3cpuE"></span><span id="_CPPv2N15_psygig_cpuinfo3cpuE"></span><span id="_psygig_cpuinfo::cpu__cA"></span><span class="target" id="struct__psygig__cpuinfo_1a1b7326c59eda454039a46d3c44e4b2d0"></span>char <code class="descname">cpu</code>[64]<a class="headerlink" href="#_CPPv4N15_psygig_cpuinfo3cpuE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N15_psygig_cpuinfo3isaE">
+<span id="_CPPv3N15_psygig_cpuinfo3isaE"></span><span id="_CPPv2N15_psygig_cpuinfo3isaE"></span><span id="_psygig_cpuinfo::isa__cA"></span><span class="target" id="struct__psygig__cpuinfo_1aea3f2e63b542b72d95892ecc7306b992"></span>char <code class="descname">isa</code>[64]<a class="headerlink" href="#_CPPv4N15_psygig_cpuinfo3isaE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N15_psygig_cpuinfo7PPCInfoE">
+<span id="_CPPv3N15_psygig_cpuinfo7PPCInfoE"></span><span id="_CPPv2N15_psygig_cpuinfo7PPCInfoE"></span><span class="target" id="struct__psygig__cpuinfo_1acc3142ccd00b2288807786eebf9b6197"></span><em class="property">struct</em> <a class="reference internal" href="#_CPPv415_psygig_cpuinfo" title="_psygig_cpuinfo">_psygig_cpuinfo</a>::<strong>[anonymous]</strong>::<strong>[anonymous]</strong> <code class="descname">PPCInfo</code><a class="headerlink" href="#_CPPv4N15_psygig_cpuinfo7PPCInfoE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N15_psygig_cpuinfoUt1_7E">
+<span id="_CPPv3N15_psygig_cpuinfoUt1_7E"></span><span class="target" id="struct__psygig__cpuinfo_1a1ca3f3f9ee11032cdc8c58fa0cde3856"></span><em class="property">union</em> <a class="reference internal" href="#_CPPv415_psygig_cpuinfo" title="_psygig_cpuinfo">_psygig_cpuinfo</a>::<strong>[anonymous]</strong> <strong>[anonymous]</strong><a class="headerlink" href="#_CPPv4N15_psygig_cpuinfoUt1_7E" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N15_psygig_cpuinfo5cacheE">
+<span id="_CPPv3N15_psygig_cpuinfo5cacheE"></span><span id="_CPPv2N15_psygig_cpuinfo5cacheE"></span><span id="_psygig_cpuinfo::cache___psygig_cpuinfo::cache_tA"></span><span class="target" id="struct__psygig__cpuinfo_1a8d0b72406fd4f27c30d555fb2f5cb216"></span><em class="property">struct</em> <a class="reference internal" href="#_CPPv415_psygig_cpuinfo" title="_psygig_cpuinfo">_psygig_cpuinfo</a>::<a class="reference internal" href="#_CPPv4N15_psygig_cpuinfo7cache_tE" title="_psygig_cpuinfo::cache_t">cache_t</a> <code class="descname">cache</code>[<code class="descname">MAX_CACHES</code>]<a class="headerlink" href="#_CPPv4N15_psygig_cpuinfo5cacheE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N15_psygig_cpuinfo9numcachesE">
+<span id="_CPPv3N15_psygig_cpuinfo9numcachesE"></span><span id="_CPPv2N15_psygig_cpuinfo9numcachesE"></span><span id="_psygig_cpuinfo::numcaches__unsigned-i"></span><span class="target" id="struct__psygig__cpuinfo_1aa40f1b6a94ef8505844d60c43700235f"></span>unsigned int <code class="descname">numcaches</code><a class="headerlink" href="#_CPPv4N15_psygig_cpuinfo9numcachesE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="class">
+<dt id="_CPPv4N15_psygig_cpuinfo7cache_tE">
+<span id="_CPPv3N15_psygig_cpuinfo7cache_tE"></span><span id="_CPPv2N15_psygig_cpuinfo7cache_tE"></span><span id="_psygig_cpuinfo::cache_t"></span><span class="target" id="struct__psygig__cpuinfo_1_1cache__t"></span><em class="property">struct </em><code class="descname">cache_t</code><a class="headerlink" href="#_CPPv4N15_psygig_cpuinfo7cache_tE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Types</p>
+<dl class="type">
+<dt id="_CPPv4N15_psygig_cpuinfo13__anonymous13E">
+<span id="_CPPv3N15_psygig_cpuinfo13__anonymous13E"></span><span id="_CPPv2N15_psygig_cpuinfo13__anonymous13E"></span><span id="_psygig_cpuinfo::__anonymous13"></span><span class="target" id="struct__psygig__cpuinfo_1_1cache__t_1a7538c6d3ac5b9bb85fc0bae869a40491"></span><em class="property">enum </em><code class="descname"><strong>[anonymous]</strong></code><a class="headerlink" href="#_CPPv4N15_psygig_cpuinfo13__anonymous13E" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd><p><em>Values:</em></p>
+<dl class="enumerator">
+<dt id="_CPPv4N15_psygig_cpuinfo7unifiedE">
+<span id="_CPPv3N15_psygig_cpuinfo7unifiedE"></span><span id="_CPPv2N15_psygig_cpuinfo7unifiedE"></span><span class="target" id="struct__psygig__cpuinfo_1_1cache__t_1a7538c6d3ac5b9bb85fc0bae869a40491ac59ec5ff9f26049fb5043ef1a0b557c8"></span><code class="descname">unified</code><a class="headerlink" href="#_CPPv4N15_psygig_cpuinfo7unifiedE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N15_psygig_cpuinfo11instructionE">
+<span id="_CPPv3N15_psygig_cpuinfo11instructionE"></span><span id="_CPPv2N15_psygig_cpuinfo11instructionE"></span><span class="target" id="struct__psygig__cpuinfo_1_1cache__t_1a7538c6d3ac5b9bb85fc0bae869a40491ab86a5cf57aca409c3f499ecf3c159ebf"></span><code class="descname">instruction</code><a class="headerlink" href="#_CPPv4N15_psygig_cpuinfo11instructionE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N15_psygig_cpuinfo4dataE">
+<span id="_CPPv3N15_psygig_cpuinfo4dataE"></span><span id="_CPPv2N15_psygig_cpuinfo4dataE"></span><span class="target" id="struct__psygig__cpuinfo_1_1cache__t_1a7538c6d3ac5b9bb85fc0bae869a40491a6ce7b56ff86ab3d0f34db5bc16894a6e"></span><code class="descname">data</code><a class="headerlink" href="#_CPPv4N15_psygig_cpuinfo4dataE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N15_psygig_cpuinfo5traceE">
+<span id="_CPPv3N15_psygig_cpuinfo5traceE"></span><span id="_CPPv2N15_psygig_cpuinfo5traceE"></span><span class="target" id="struct__psygig__cpuinfo_1_1cache__t_1a7538c6d3ac5b9bb85fc0bae869a40491ac869f6eb81b28232aee8dd1700fefbce"></span><code class="descname">trace</code><a class="headerlink" href="#_CPPv4N15_psygig_cpuinfo5traceE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv4N15_psygig_cpuinfo7cache_t5levelE">
+<span id="_CPPv3N15_psygig_cpuinfo7cache_t5levelE"></span><span id="_CPPv2N15_psygig_cpuinfo7cache_t5levelE"></span><span id="_psygig_cpuinfo::cache_t::level__uint8_t"></span><span class="target" id="struct__psygig__cpuinfo_1_1cache__t_1a4de02b8d32e730b6a32daea0836ab215"></span>uint8_t <code class="descname">level</code><a class="headerlink" href="#_CPPv4N15_psygig_cpuinfo7cache_t5levelE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N15_psygig_cpuinfo7cache_t4sizeE">
+<span id="_CPPv3N15_psygig_cpuinfo7cache_t4sizeE"></span><span id="_CPPv2N15_psygig_cpuinfo7cache_t4sizeE"></span><span id="_psygig_cpuinfo::cache_t::size__uint32_t"></span><span class="target" id="struct__psygig__cpuinfo_1_1cache__t_1a7bf262eff81307aeea906cac9673228e"></span>uint32_t <code class="descname">size</code><a class="headerlink" href="#_CPPv4N15_psygig_cpuinfo7cache_t4sizeE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N15_psygig_cpuinfo7cache_t8linesizeE">
+<span id="_CPPv3N15_psygig_cpuinfo7cache_t8linesizeE"></span><span id="_CPPv2N15_psygig_cpuinfo7cache_t8linesizeE"></span><span id="_psygig_cpuinfo::cache_t::linesize__uint32_t"></span><span class="target" id="struct__psygig__cpuinfo_1_1cache__t_1a63efa6645c108b18e54272a462805e1b"></span>uint32_t <code class="descname">linesize</code><a class="headerlink" href="#_CPPv4N15_psygig_cpuinfo7cache_t8linesizeE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N15_psygig_cpuinfo7cache_t13associativityE">
+<span id="_CPPv3N15_psygig_cpuinfo7cache_t13associativityE"></span><span id="_CPPv2N15_psygig_cpuinfo7cache_t13associativityE"></span><span id="_psygig_cpuinfo::cache_t::associativity__uint8_t"></span><span class="target" id="struct__psygig__cpuinfo_1_1cache__t_1ab9cc419b354c12d1106f35031a919e84"></span>uint8_t <code class="descname">associativity</code><a class="headerlink" href="#_CPPv4N15_psygig_cpuinfo7cache_t13associativityE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N15_psygig_cpuinfo7cache_t4typeE">
+<span id="_CPPv3N15_psygig_cpuinfo7cache_t4typeE"></span><span id="_CPPv2N15_psygig_cpuinfo7cache_t4typeE"></span><span class="target" id="struct__psygig__cpuinfo_1_1cache__t_1a7346ce47f102abbdbcdc8ee7a1f7a6c5"></span><a class="reference internal" href="#_CPPv415_psygig_cpuinfo" title="_psygig_cpuinfo">_psygig_cpuinfo</a>::<a class="reference internal" href="#_CPPv4N15_psygig_cpuinfo7cache_tE" title="_psygig_cpuinfo::cache_t">cache_t</a>::<strong>[anonymous]</strong> <code class="descname">type</code><a class="headerlink" href="#_CPPv4N15_psygig_cpuinfo7cache_t4typeE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="struct__psygig__cpuinfo_1_1cache__t.html" class="btn btn-neutral float-right" title="Struct _psygig_cpuinfo::cache_t" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="struct__psygig__cfg.html" class="btn btn-neutral" title="Struct _psygig_cfg" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019 PSYGIG株式会社
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

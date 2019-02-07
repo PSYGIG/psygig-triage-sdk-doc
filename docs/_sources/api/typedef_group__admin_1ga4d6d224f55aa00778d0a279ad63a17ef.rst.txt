@@ -1,0 +1,13 @@
+.. _exhale_typedef_group__admin_1ga4d6d224f55aa00778d0a279ad63a17ef:
+
+Typedef psygig_cfg
+==================
+
+- Defined in :ref:`file_include_psygigsdk.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: psygig_cfg

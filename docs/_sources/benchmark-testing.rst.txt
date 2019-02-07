@@ -1,0 +1,112 @@
+Benchmark Testing
+=================
+Benchmarking refers to the process of measuring and comparing the performance of a system using a set of standardized tests.
+Tracking the benchmark scores of a system provides an objective way of identifying how hardware or software components can
+affect the system performance. For example, the benchmark score obtained from a computer vision benchmark test may indicate
+whether a GPU upgrade is required.
+
+`PSYGIG Triage SDK` includes a comprehensive set of benchmark tests designed to measure the performance of the most basic components and
+functions of an embedded system.
+
+The Benchmark Testing API includes many features suitable for integration into embedded systems:
+
+- Works out-of-the-box; `just run` :ref:`psybench <running-benchmarks>`
+- Full benchmark test suite:
+
+.. |cpu| image:: images/cpu.png
+   :height: 30
+
+.. |gpu| image:: images/gpu.png
+   :height: 30
+
+.. |ram| image:: images/ram.png
+   :height: 30
+
+.. |disk| image:: images/disk.png
+   :height: 30
+
+.. |network| image:: images/network.png
+   :height: 30
+
+.. |cv| image:: images/computer-vision.png
+   :height: 30
+
+.. table::
+    :widths: 10 40
+        
+    +-------------+----------------------------------+
+    | |cpu|       | CPU                              |
+    +-------------+----------------------------------+
+    | |gpu|       | GPU                              |
+    +-------------+----------------------------------+
+    | |ram|       | RAM                              |
+    +-------------+----------------------------------+
+    | |disk|      | Storage devices                  |
+    +-------------+----------------------------------+
+    | |network|   | Network                          |
+    +-------------+----------------------------------+
+    | |cv|        | Computer vision [1]_             |
+    +-------------+----------------------------------+
+
+.. [1] :sub:`Stereo matching, Optical flow, Visual odometry, SLAM, Object detection, Object classification, Object tracking, 3D estimation, Velocity estimation`
+
+- Customizable and extensible benchmark tests
+- View comparison charts of your device with built-in integration in the `PSYGIG diagnostics platform <https://www.psygig.com>`_
+- Generate an HTML report from the benchmark results
+
+.. note::
+    The `Benchmark Testing` feature is a work-in-progress. 
+    Please :email:`contact us <info@psygig.com?subject=[PSYGIG Triage SDK] Benchmark Testing>` if you are interested in beta-testing this feature. 
+
+.. _running-benchmarks:
+
+Running the benchmark tests
+---------------------------
+Simply run the included standalone binary ``psybench`` to run the full benchmark suite. For example:
+
+.. code-block:: bash
+
+   psybench -f json -o benchmark-results.json
+
+See :doc:`psybench-man` for a complete list of options.
+
+Using PSYGIG SDK API
+------------------------
+The Benchmark Testing API can be accessed by including a :doc:`single header file <api/file_include_psygigsdk.h>`
+and linking the ``libpsygig`` shared library. See :ref:`libpsygig-linking` for details.
+
+Running the CPU Benchmark Test
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: c
+    :linenos:
+
+    #include <psygigsdk.h>
+
+    int main(int argc, char **argv)
+    {
+        psygig_agent_handle     pah;  // handle to psygig agent
+
+        /* ... Initialize code omitted for simplicity ... */
+
+        // Run CPU benchmark test
+        float cpuscore;
+        rc = psygig_benchmark_run(pah, PSYGIG_BENCH_CPU, cpuscore);
+
+        /* ... Cleanup code omitted for simplicity ... */
+    }
+
+Sample benchmark JSON results
+-----------------------------
+
+.. code-block:: c
+
+    {
+        "BenchResults": {
+            "Type: "CPU"
+            "StartTime": 1547534065,
+            "StartTimeOfDay": "2019-01-15 15:34:25",
+            "TestDuration": 23,
+            "Score": 1843.8
+        }
+    }

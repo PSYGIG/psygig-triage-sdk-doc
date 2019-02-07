@@ -1,0 +1,13 @@
+.. _exhale_function_group__crash_1gaa749aeaa1e74ebed417610776e0ba3c1:
+
+Function psygig_crash_start_crash_monitor
+=========================================
+
+- Defined in :ref:`file_include_psygigsdk.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: psygig_crash_start_crash_monitor(psygig_agent_handle)

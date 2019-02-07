@@ -1,0 +1,396 @@
+Metrics Collection
+==================
+A critical aspect of diagnosing software applications for embedded systems is collecting and visualizing
+the metrics data obtained from the device. This includes raw sensor measurements, internal hardware metrics, 
+firmware/operating system metrics, and other high-level software metrics. For example, Unmanned Aerial Vehicles (UAV) 
+obtain linear velocity, altitude, orientation measurements from its sensors, which can plotted on time-series graphs 
+to diagnose flight control issues.
+
+`PSYGIG Triage SDK` alleviates the complexity of writing specific code for each metric source with its built-in support for 
+known sensors, internal hardware, operating systems and applications. The Metrics Collection API includes many features suitable for integration
+into embedded systems:
+
+- Works on existing applications; `no need to recompile source code`
+- :doc:`Multiplatform support <supported-platforms>`
+- Seamless integration with :ref:`third party IoT platforms <iot-third-party>` and :ref:`databases/data warehouses <db-third-party>`
+- Automatically collect metric data from :ref:`known sources <known-metric-sources>`
+- Extensible to application-defined metrics
+- Generate a metrics HTML report, including time-scale charts
+
+.. _known-metric-sources:
+
+Known metric sources
+--------------------
+The Metrics Collection API provides facilities to discover and poll metrics data from the following known applications: 
+
+.. |cpu| image:: images/cpu.png
+   :height: 40
+
+.. |gpu| image:: images/gpu.png
+   :height: 40
+
+.. |ram| image:: images/ram.png
+   :height: 40
+
+.. |disk| image:: images/disk.png
+   :height: 40
+
+.. |network| image:: images/network.png
+   :height: 40
+
+.. |linux| image:: images/linux.png
+   :height: 40
+
+.. table::
+    :widths: 10 40
+
+    +-------------+---------------------------------------------+
+    | |cpu|       | CPU (eg. % usage, temperature, clock speed) |
+    +-------------+---------------------------------------------+
+    | |gpu|       | GPU (eg. % usage, memory usage)             |
+    +-------------+---------------------------------------------+
+    | |ram|       | Memory (eg. % RAM usage)                    |
+    +-------------+---------------------------------------------+
+    | |disk|      | Disk (eg. Read/write speed, Response time)  |
+    +-------------+---------------------------------------------+
+    | |network|   | Network (eg. throughput)                    |
+    +-------------+---------------------------------------------+
+    | |linux|     | Linux (eg. process count, open sockets)     |
+    +-------------+---------------------------------------------+
+
+.. note::
+    This list is constantly expanding.
+    Please :email:`contact us <info@psygig.com?subject=[PSYGIG Triage SDK] Metrics Collection>` if there is a specific sensor or application that you would like to be supported.
+
+Using ``psymon``
+----------------
+Without modifying your existing source code, you can instantly enable periodic collection of system resource metrics
+to your application by using the ``psymon`` script to run your program. For example:
+
+.. code-block:: bash
+
+   psymon --sysmon -c "/path/to/your/app --arg1 --arg2 --arg3"
+
+See :doc:`psymon-man` for a complete list of options.
+
+.. note::
+    ``psymon`` is a work-in-progress. 
+    Please :email:`contact us <info@psygig.com?subject=[PSYGIG Triage SDK] psymon>` if you are interested in beta-testing this feature. 
+
+Using PSYGIG SDK API
+------------------------
+The Metrics Collection API can be accessed by including a :doc:`single header file <api/file_include_psygigsdk.h>`
+and linking the ``libpsygig`` shared library. See :ref:`libpsygig-linking` for details.
+
+Enable periodic collection of system resource metrics
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: c
+    :linenos:
+
+    #include <psygigsdk.h>
+
+    int main(int argc, char **argv)
+    {
+        psygig_agent_handle     pah;  // handle to psygig agent
+
+        /* ... Initialize code omitted for simplicity ... */
+
+        // Poll system resource metrics every 500ms
+        psygig_metric_enable_poll_system_resources(pah, 500);
+
+        /* ... Cleanup code omitted for simplicity ... */
+    }
+
+Collection of application-defined metrics
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: c
+    :linenos:
+
+    #include <psygigsdk.h>
+
+    int main(int argc, char **argv)
+    {
+        psygig_agent_handle     pah;  // handle to psygig agent
+
+        /* ... Initialize code omitted for simplicity ... */
+
+        /* ... Read and aggregate data from laser sensors and cameras */         
+
+        // Collect application-defined topographic data
+        rc = psygig_metric_record_values_blob(pah, "Topography", topographic_data, topographic_data_size, 1);
+
+        /* ... Cleanup code omitted for simplicity ... */
+    }
+
+Sample metrics JSON data
+-------------------------
+
+.. code-block:: javascript
+
+    {
+        "Session": {
+            "DeviceID": "7a3cb41c5a05cf4a09df67a39a09f09f683047b892d2874563102e614f0b754a",
+            "Name": "psygig-0.2.0-20190115-153452",
+            "StartTime": "2019-01-15 15:34:52",
+            "EndTime": "2019-01-15 15:35:02",
+            "Duration": 10,
+            "Metrics": [
+                {
+                    "Name": "ProcVM",
+                    "Timestamps": [
+                        1547534093,
+                        1547534094,
+                        1547534095,
+                        1547534096,
+                        1547534097,
+                        1547534098,
+                        1547534099,
+                        1547534100,
+                        1547534101
+                    ],
+                    "Values": [
+                        244064256,
+                        244064256,
+                        244064256,
+                        244064256,
+                        244064256,
+                        244064256,
+                        244064256,
+                        244064256,
+                        244064256
+                    ]
+                },
+                {
+                    "Name": "SysRAM",
+                    "Timestamps": [
+                        1547534093,
+                        1547534094,
+                        1547534095,
+                        1547534096,
+                        1547534097,
+                        1547534098,
+                        1547534099,
+                        1547534100,
+                        1547534101
+                    ],
+                    "Values": [
+                        8192331776,
+                        8194359296,
+                        8193589248,
+                        8193470464,
+                        8193470464,
+                        8194048000,
+                        8195629056,
+                        8196390912,
+                        8198610944
+                    ]
+                },
+                {
+                    "Name": "ProcRAM",
+                    "Timestamps": [
+                        1547534093,
+                        1547534094,
+                        1547534095,
+                        1547534096,
+                        1547534097,
+                        1547534098,
+                        1547534099,
+                        1547534100,
+                        1547534101
+                    ],
+                    "Values": [
+                        3751936,
+                        3751936,
+                        3751936,
+                        3751936,
+                        3751936,
+                        3751936,
+                        3751936,
+                        3751936,
+                        3751936
+                    ]
+                },
+                {
+                    "Name": "ProcRAMPeak",
+                    "Timestamps": [
+                        1547534093,
+                        1547534094,
+                        1547534095,
+                        1547534096,
+                        1547534097,
+                        1547534098,
+                        1547534099,
+                        1547534100,
+                        1547534101
+                    ],
+                    "Values": [
+                        3788800,
+                        3788800,
+                        3788800,
+                        3788800,
+                        3788800,
+                        3788800,
+                        3788800,
+                        3788800,
+                        3788800
+                    ]
+                },
+                {
+                    "Name": "SysCPU",
+                    "Timestamps": [
+                        1547534093,
+                        1547534094,
+                        1547534095,
+                        1547534096,
+                        1547534097,
+                        1547534098,
+                        1547534099,
+                        1547534100,
+                        1547534101
+                    ],
+                    "Values": [
+                        0.04413619264960289,
+                        0.02893081679940224,
+                        0.04659949615597725,
+                        0.01624999940395355,
+                        0.02518891729414463,
+                        0.02770780771970749,
+                        0.05296342819929123,
+                        0.04785894230008125,
+                        0.02272727340459824
+                    ]
+                },
+                {
+                    "Name": "RandFloat",
+                    "Timestamps": [
+                        1547534092,
+                        1547534093,
+                        1547534094,
+                        1547534095,
+                        1547534096,
+                        1547534097,
+                        1547534098,
+                        1547534099,
+                        1547534100,
+                        1547534101
+                    ],
+                    "Values": [
+                        0.3943829238414764,
+                        0.7984400391578674,
+                        0.1975513696670532,
+                        0.768229603767395,
+                        0.5539699792861938,
+                        0.6288709044456482,
+                        0.5134009122848511,
+                        0.9161950945854187,
+                        0.7172969579696655,
+                        0.606968879699707
+                    ]
+                },
+                {
+                    "Name": "ProcCPU",
+                    "Timestamps": [
+                        1547534093,
+                        1547534094,
+                        1547534095,
+                        1547534096,
+                        1547534097,
+                        1547534098,
+                        1547534099,
+                        1547534100,
+                        1547534101
+                    ],
+                    "Values": [
+                        0,
+                        0.001237623742781579,
+                        0,
+                        0,
+                        0.001237623742781579,
+                        0.001249999972060323,
+                        0.001249999972060323,
+                        0,
+                        0.001249999972060323
+                    ]
+                },
+                {
+                    "Name": "ProcSwap",
+                    "Timestamps": [
+                        1547534093,
+                        1547534094,
+                        1547534095,
+                        1547534096,
+                        1547534097,
+                        1547534098,
+                        1547534099,
+                        1547534100,
+                        1547534101
+                    ],
+                    "Values": [
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
+                    ]
+                },
+                {
+                    "Name": "ProcVMPeak",
+                    "Timestamps": [
+                        1547534093,
+                        1547534094,
+                        1547534095,
+                        1547534096,
+                        1547534097,
+                        1547534098,
+                        1547534099,
+                        1547534100,
+                        1547534101
+                    ],
+                    "Values": [
+                        311173120,
+                        311173120,
+                        311173120,
+                        311173120,
+                        311173120,
+                        311173120,
+                        311173120,
+                        311173120,
+                        311173120
+                    ]
+                },
+                {
+                    "Name": "RandInt",
+                    "Timestamps": [
+                        1547534092,
+                        1547534093,
+                        1547534094,
+                        1547534095,
+                        1547534096,
+                        1547534097,
+                        1547534098,
+                        1547534099,
+                        1547534100,
+                        1547534101
+                    ],
+                    "Values": [
+                        1804289408,
+                        1681692800,
+                        1957747840,
+                        719885376,
+                        596516672,
+                        1025202368,
+                        783368704,
+                        2044897792,
+                        1365180544,
+                        304089184
+                    ]
+                }
+            ]
+        }
+    }

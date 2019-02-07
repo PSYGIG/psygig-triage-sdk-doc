@@ -1,0 +1,16 @@
+.. _exhale_struct_struct__psygig__pointcloud__data:
+
+Struct _psygig_pointcloud_data
+==============================
+
+- Defined in :ref:`file_include_psygigsdk.h`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: _psygig_pointcloud_data
+   :members:
+   :protected-members:
+   :undoc-members:

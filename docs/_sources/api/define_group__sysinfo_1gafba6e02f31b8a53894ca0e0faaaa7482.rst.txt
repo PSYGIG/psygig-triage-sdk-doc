@@ -1,0 +1,13 @@
+.. _exhale_define_group__sysinfo_1gafba6e02f31b8a53894ca0e0faaaa7482:
+
+Define MAX_USB_DEVS
+===================
+
+- Defined in :ref:`file_include_psygigsdk.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: MAX_USB_DEVS

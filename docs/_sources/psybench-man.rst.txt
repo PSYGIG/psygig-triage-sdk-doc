@@ -1,0 +1,7 @@
+``psybench`` man page
+=====================
+``psybench`` is a standalone program for running benchmark tests on the system, assigning a performance score for each completed test  
+
+.. note::
+    ``psybench`` is a work-in-progress. 
+    Please :email:`contact us <info@psygig.com?subject=[PSYGIG Triage SDK] psybench>` if you are interested in beta-testing this feature. 

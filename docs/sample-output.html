@@ -1,0 +1,1125 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ja" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Sample Output &mdash; PSYGIG Triage SDK 0.2.0 ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="prev" title="Program Listing for File psygigsdk.h" href="api/program_listing_file_include_psygigsdk.h.html" />
+ 
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-91451950-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> PSYGIG Triage SDK
+          
+
+          
+            
+            <img src="_static/psygig-logo-white-text.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">OVERVIEW</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="supported-platforms.html">Supported Platforms/Architectures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="third-party-integration.html">Third Party Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="change-log.html">Change Log</a></li>
+</ul>
+<p class="caption"><span class="caption-text">USAGE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Download &amp; Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
+</ul>
+<p class="caption"><span class="caption-text">FEATURES</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="application-performance-profiling.html">Application Performance Profiling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="crash-reporting.html">Crash Reporting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-collection.html">Log Collection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metrics-collection.html">Metrics Collection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="system-information.html">System Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="event-reporting.html">Event Reporting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="benchmark-testing.html">Benchmark Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="diagnostic-testing.html">Diagnostic Testing</a></li>
+</ul>
+<p class="caption"><span class="caption-text">PSYGIG TRIAGE SDK REFERENCE</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="psymon-man.html"><code class="docutils literal notranslate"><span class="pre">psymon</span></code> man page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="psybench-man.html"><code class="docutils literal notranslate"><span class="pre">psybench</span></code> man page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="psydiag-man.html"><code class="docutils literal notranslate"><span class="pre">psydiag</span></code> man page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/index.html">PSYGIG Triage SDK API</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Sample Output</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PSYGIG Triage SDK</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Sample Output</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="sample-output">
+<h1>Sample Output<a class="headerlink" href="#sample-output" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;Session&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;DeviceID&quot;</span><span class="o">:</span> <span class="s2">&quot;7a3cb41c5a05cf4a09df67a39a09f09f683047b892d2874563102e614f0b754a&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Name&quot;</span><span class="o">:</span> <span class="s2">&quot;psygig-0.2.0-20190115-153452&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;StartTime&quot;</span><span class="o">:</span> <span class="s2">&quot;2019-01-15 15:34:52&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;EndTime&quot;</span><span class="o">:</span> <span class="s2">&quot;2019-01-15 15:35:02&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Duration&quot;</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="s2">&quot;SysInfo&quot;</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">&quot;CPUInfo&quot;</span><span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;ThreadsPerCore&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+                <span class="s2">&quot;CoresPerPackage&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+                <span class="s2">&quot;NumPackages&quot;</span><span class="o">:</span> <span class="mi">8</span><span class="p">,</span>
+                <span class="s2">&quot;Vendor&quot;</span><span class="o">:</span> <span class="s2">&quot;GenuineIntel&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Model&quot;</span><span class="o">:</span> <span class="s2">&quot;Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Architecture&quot;</span><span class="o">:</span> <span class="s2">&quot;x86&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Features&quot;</span><span class="o">:</span> <span class="s2">&quot;aes avx avx2 bmi1 bmi2 cx16 erms f16c fma3 sse4_1 sse4_2 ssse3 &quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Endian&quot;</span><span class="o">:</span> <span class="s2">&quot;Little Endian&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;ClockMhz&quot;</span><span class="o">:</span> <span class="mi">2808</span><span class="p">,</span>
+                <span class="s2">&quot;X86Info&quot;</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;Microarchitecture&quot;</span><span class="o">:</span> <span class="s2">&quot;INTEL_KBL&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Family&quot;</span><span class="o">:</span> <span class="mi">6</span><span class="p">,</span>
+                    <span class="s2">&quot;Model&quot;</span><span class="o">:</span> <span class="mi">158</span><span class="p">,</span>
+                    <span class="s2">&quot;Stepping&quot;</span><span class="o">:</span> <span class="mi">9</span>
+                <span class="p">},</span>
+                <span class="s2">&quot;CacheInfo&quot;</span><span class="o">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="s2">&quot;Level&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+                        <span class="s2">&quot;Size&quot;</span><span class="o">:</span> <span class="mi">32768</span><span class="p">,</span>
+                        <span class="s2">&quot;LineSize&quot;</span><span class="o">:</span> <span class="mi">64</span><span class="p">,</span>
+                        <span class="s2">&quot;Associativity&quot;</span><span class="o">:</span> <span class="mi">8</span><span class="p">,</span>
+                        <span class="s2">&quot;Type&quot;</span><span class="o">:</span> <span class="s2">&quot;Data&quot;</span>
+                    <span class="p">},</span>
+                    <span class="p">{</span>
+                        <span class="s2">&quot;Level&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+                        <span class="s2">&quot;Size&quot;</span><span class="o">:</span> <span class="mi">32768</span><span class="p">,</span>
+                        <span class="s2">&quot;LineSize&quot;</span><span class="o">:</span> <span class="mi">64</span><span class="p">,</span>
+                        <span class="s2">&quot;Associativity&quot;</span><span class="o">:</span> <span class="mi">8</span><span class="p">,</span>
+                        <span class="s2">&quot;Type&quot;</span><span class="o">:</span> <span class="s2">&quot;Instruction&quot;</span>
+                    <span class="p">},</span>
+                    <span class="p">{</span>
+                        <span class="s2">&quot;Level&quot;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+                        <span class="s2">&quot;Size&quot;</span><span class="o">:</span> <span class="mi">262144</span><span class="p">,</span>
+                        <span class="s2">&quot;LineSize&quot;</span><span class="o">:</span> <span class="mi">64</span><span class="p">,</span>
+                        <span class="s2">&quot;Associativity&quot;</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span>
+                        <span class="s2">&quot;Type&quot;</span><span class="o">:</span> <span class="s2">&quot;Unified&quot;</span>
+                    <span class="p">},</span>
+                    <span class="p">{</span>
+                        <span class="s2">&quot;Level&quot;</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+                        <span class="s2">&quot;Size&quot;</span><span class="o">:</span> <span class="mi">6291456</span><span class="p">,</span>
+                        <span class="s2">&quot;LineSize&quot;</span><span class="o">:</span> <span class="mi">64</span><span class="p">,</span>
+                        <span class="s2">&quot;Associativity&quot;</span><span class="o">:</span> <span class="mi">12</span><span class="p">,</span>
+                        <span class="s2">&quot;Type&quot;</span><span class="o">:</span> <span class="s2">&quot;Unified&quot;</span>
+                    <span class="p">}</span>
+                <span class="p">]</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;MemInfo&quot;</span><span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;TotalRAM&quot;</span><span class="o">:</span> <span class="mi">8339906560</span><span class="p">,</span>
+                <span class="s2">&quot;FreeRAM&quot;</span><span class="o">:</span> <span class="mi">123629568</span><span class="p">,</span>
+                <span class="s2">&quot;SharedRAM&quot;</span><span class="o">:</span> <span class="mi">1137197056</span><span class="p">,</span>
+                <span class="s2">&quot;BufferRAM&quot;</span><span class="o">:</span> <span class="mi">14872576</span><span class="p">,</span>
+                <span class="s2">&quot;TotalSwap&quot;</span><span class="o">:</span> <span class="mi">8587309056</span><span class="p">,</span>
+                <span class="s2">&quot;FreeSwap&quot;</span><span class="o">:</span> <span class="mi">4164923392</span><span class="p">,</span>
+                <span class="s2">&quot;TotalHiMem&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="s2">&quot;FreeHiMem&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="s2">&quot;NumProcesses&quot;</span><span class="o">:</span> <span class="mi">1106</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;FileSystemInfo&quot;</span><span class="o">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;Device&quot;</span><span class="o">:</span> <span class="s2">&quot;/dev/sda1&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;MountDir&quot;</span><span class="o">:</span> <span class="s2">&quot;/&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;FileSystem&quot;</span><span class="o">:</span> <span class="s2">&quot;ext4&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;MountOpts&quot;</span><span class="o">:</span> <span class="s2">&quot;rw,relatime,errors=remount-ro,d&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;BlockSize&quot;</span><span class="o">:</span> <span class="mi">4096</span><span class="p">,</span>
+                    <span class="s2">&quot;FragSize&quot;</span><span class="o">:</span> <span class="mi">4096</span><span class="p">,</span>
+                    <span class="s2">&quot;TotalBlocks&quot;</span><span class="o">:</span> <span class="mi">8223964</span><span class="p">,</span>
+                    <span class="s2">&quot;FreeBlocks&quot;</span><span class="o">:</span> <span class="mi">914408</span><span class="p">,</span>
+                    <span class="s2">&quot;AvailBlocks&quot;</span><span class="o">:</span> <span class="mi">490895</span><span class="p">,</span>
+                    <span class="s2">&quot;TotalInodes&quot;</span><span class="o">:</span> <span class="mi">2097152</span><span class="p">,</span>
+                    <span class="s2">&quot;FreeInodes&quot;</span><span class="o">:</span> <span class="mi">1239254</span><span class="p">,</span>
+                    <span class="s2">&quot;AvailInodes&quot;</span><span class="o">:</span> <span class="mi">1239254</span><span class="p">,</span>
+                    <span class="s2">&quot;FileSystemID&quot;</span><span class="o">:</span> <span class="mi">272869076</span><span class="p">,</span>
+                    <span class="s2">&quot;FileSystemFlags&quot;</span><span class="o">:</span> <span class="mi">4096</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;Device&quot;</span><span class="o">:</span> <span class="s2">&quot;/home/psygig/.Private&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;MountDir&quot;</span><span class="o">:</span> <span class="s2">&quot;/home/psygig&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;FileSystem&quot;</span><span class="o">:</span> <span class="s2">&quot;ecryptfs&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;MountOpts&quot;</span><span class="o">:</span> <span class="s2">&quot;rw,nosuid,nodev,relatime,ecrypt&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;BlockSize&quot;</span><span class="o">:</span> <span class="mi">4096</span><span class="p">,</span>
+                    <span class="s2">&quot;FragSize&quot;</span><span class="o">:</span> <span class="mi">4096</span><span class="p">,</span>
+                    <span class="s2">&quot;TotalBlocks&quot;</span><span class="o">:</span> <span class="mi">8223964</span><span class="p">,</span>
+                    <span class="s2">&quot;FreeBlocks&quot;</span><span class="o">:</span> <span class="mi">914408</span><span class="p">,</span>
+                    <span class="s2">&quot;AvailBlocks&quot;</span><span class="o">:</span> <span class="mi">490895</span><span class="p">,</span>
+                    <span class="s2">&quot;TotalInodes&quot;</span><span class="o">:</span> <span class="mi">2097152</span><span class="p">,</span>
+                    <span class="s2">&quot;FreeInodes&quot;</span><span class="o">:</span> <span class="mi">1239254</span><span class="p">,</span>
+                    <span class="s2">&quot;AvailInodes&quot;</span><span class="o">:</span> <span class="mi">1239254</span><span class="p">,</span>
+                    <span class="s2">&quot;FileSystemID&quot;</span><span class="o">:</span> <span class="mi">272869076</span><span class="p">,</span>
+                    <span class="s2">&quot;FileSystemFlags&quot;</span><span class="o">:</span> <span class="mi">4102</span>
+                <span class="p">}</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;OSInfo&quot;</span><span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;Name&quot;</span><span class="o">:</span> <span class="s2">&quot;Ubuntu&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;FullName&quot;</span><span class="o">:</span> <span class="s2">&quot;Ubuntu 16.04.5 LTS&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;CodeName&quot;</span><span class="o">:</span> <span class="s2">&quot;xenial&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Major&quot;</span><span class="o">:</span> <span class="mi">16</span><span class="p">,</span>
+                <span class="s2">&quot;Minor&quot;</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span>
+                <span class="s2">&quot;Patch&quot;</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+                <span class="s2">&quot;Build&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="s2">&quot;KernelInfo&quot;</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;Name&quot;</span><span class="o">:</span> <span class="s2">&quot;Linux&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Major&quot;</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span>
+                    <span class="s2">&quot;Minor&quot;</span><span class="o">:</span> <span class="mi">15</span><span class="p">,</span>
+                    <span class="s2">&quot;Patch&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s2">&quot;Build&quot;</span><span class="o">:</span> <span class="mi">43</span>
+                <span class="p">}</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;USBInfo&quot;</span><span class="o">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;Product&quot;</span><span class="o">:</span> <span class="s2">&quot;xHCI Host Controller&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Manufacturer&quot;</span><span class="o">:</span> <span class="s2">&quot;Linux 4.15.0-43-generic xhci-hcd&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;DeviceClass&quot;</span><span class="o">:</span> <span class="s2">&quot;Hub&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Version&quot;</span><span class="o">:</span> <span class="s2">&quot;4.15&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Serial&quot;</span><span class="o">:</span> <span class="s2">&quot;0000:03:00.0&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;UsbVersion&quot;</span><span class="o">:</span> <span class="s2">&quot; 2.00&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;ProductId&quot;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+                    <span class="s2">&quot;VendorId&quot;</span><span class="o">:</span> <span class="mi">7531</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;Product&quot;</span><span class="o">:</span> <span class="s2">&quot;EHCI Host Controller&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Manufacturer&quot;</span><span class="o">:</span> <span class="s2">&quot;Linux 4.15.0-43-generic ehci_hcd&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;DeviceClass&quot;</span><span class="o">:</span> <span class="s2">&quot;Hub&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Version&quot;</span><span class="o">:</span> <span class="s2">&quot;4.15&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Serial&quot;</span><span class="o">:</span> <span class="s2">&quot;0000:02:03.0&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;UsbVersion&quot;</span><span class="o">:</span> <span class="s2">&quot; 2.00&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;ProductId&quot;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+                    <span class="s2">&quot;VendorId&quot;</span><span class="o">:</span> <span class="mi">7531</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;Product&quot;</span><span class="o">:</span> <span class="s2">&quot;VMware Virtual USB Hub&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Manufacturer&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;DeviceClass&quot;</span><span class="o">:</span> <span class="s2">&quot;Hub&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Version&quot;</span><span class="o">:</span> <span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Serial&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;UsbVersion&quot;</span><span class="o">:</span> <span class="s2">&quot; 2.00&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;ProductId&quot;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+                    <span class="s2">&quot;VendorId&quot;</span><span class="o">:</span> <span class="mi">3599</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;Product&quot;</span><span class="o">:</span> <span class="s2">&quot;Virtual Bluetooth Adapter&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Manufacturer&quot;</span><span class="o">:</span> <span class="s2">&quot;VMware&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;DeviceClass&quot;</span><span class="o">:</span> <span class="s2">&quot;Wireless Controller&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Version&quot;</span><span class="o">:</span> <span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Serial&quot;</span><span class="o">:</span> <span class="s2">&quot;000650268328&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;UsbVersion&quot;</span><span class="o">:</span> <span class="s2">&quot; 2.00&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;ProductId&quot;</span><span class="o">:</span> <span class="mi">8</span><span class="p">,</span>
+                    <span class="s2">&quot;VendorId&quot;</span><span class="o">:</span> <span class="mi">3599</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;Product&quot;</span><span class="o">:</span> <span class="s2">&quot;xHCI Host Controller&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Manufacturer&quot;</span><span class="o">:</span> <span class="s2">&quot;Linux 4.15.0-43-generic xhci-hcd&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;DeviceClass&quot;</span><span class="o">:</span> <span class="s2">&quot;Hub&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Version&quot;</span><span class="o">:</span> <span class="s2">&quot;4.15&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Serial&quot;</span><span class="o">:</span> <span class="s2">&quot;0000:03:00.0&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;UsbVersion&quot;</span><span class="o">:</span> <span class="s2">&quot; 3.00&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;ProductId&quot;</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+                    <span class="s2">&quot;VendorId&quot;</span><span class="o">:</span> <span class="mi">7531</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;Product&quot;</span><span class="o">:</span> <span class="s2">&quot;VMware Virtual USB Hub&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Manufacturer&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;DeviceClass&quot;</span><span class="o">:</span> <span class="s2">&quot;Hub&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Version&quot;</span><span class="o">:</span> <span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Serial&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;UsbVersion&quot;</span><span class="o">:</span> <span class="s2">&quot; 1.10&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;ProductId&quot;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+                    <span class="s2">&quot;VendorId&quot;</span><span class="o">:</span> <span class="mi">3599</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;Product&quot;</span><span class="o">:</span> <span class="s2">&quot;UHCI Host Controller&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Manufacturer&quot;</span><span class="o">:</span> <span class="s2">&quot;Linux 4.15.0-43-generic uhci_hcd&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;DeviceClass&quot;</span><span class="o">:</span> <span class="s2">&quot;Hub&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Version&quot;</span><span class="o">:</span> <span class="s2">&quot;4.15&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Serial&quot;</span><span class="o">:</span> <span class="s2">&quot;0000:02:00.0&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;UsbVersion&quot;</span><span class="o">:</span> <span class="s2">&quot; 1.10&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;ProductId&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+                    <span class="s2">&quot;VendorId&quot;</span><span class="o">:</span> <span class="mi">7531</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;Product&quot;</span><span class="o">:</span> <span class="s2">&quot;VMware Virtual USB Hub&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Manufacturer&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;DeviceClass&quot;</span><span class="o">:</span> <span class="s2">&quot;Hub&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Version&quot;</span><span class="o">:</span> <span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Serial&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;UsbVersion&quot;</span><span class="o">:</span> <span class="s2">&quot; 1.10&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;ProductId&quot;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+                    <span class="s2">&quot;VendorId&quot;</span><span class="o">:</span> <span class="mi">3599</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;Product&quot;</span><span class="o">:</span> <span class="s2">&quot;VMware Virtual USB Mouse&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Manufacturer&quot;</span><span class="o">:</span> <span class="s2">&quot;VMware&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;DeviceClass&quot;</span><span class="o">:</span> <span class="s2">&quot;Unknown&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Version&quot;</span><span class="o">:</span> <span class="s2">&quot;1.3&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Serial&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;UsbVersion&quot;</span><span class="o">:</span> <span class="s2">&quot; 1.10&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;ProductId&quot;</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+                    <span class="s2">&quot;VendorId&quot;</span><span class="o">:</span> <span class="mi">3599</span>
+                <span class="p">}</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;DiskInfo&quot;</span><span class="o">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;Device&quot;</span><span class="o">:</span> <span class="s2">&quot;sr0&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Model&quot;</span><span class="o">:</span> <span class="s2">&quot;VMware SATA CD01&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Vendor&quot;</span><span class="o">:</span> <span class="s2">&quot;NECVMWar&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Serial&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Size&quot;</span><span class="o">:</span> <span class="mi">1073741312</span><span class="p">,</span>
+                    <span class="s2">&quot;PartitionInfo&quot;</span><span class="o">:</span> <span class="p">[]</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;Device&quot;</span><span class="o">:</span> <span class="s2">&quot;sda&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Model&quot;</span><span class="o">:</span> <span class="s2">&quot;VMware Virtual S&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Vendor&quot;</span><span class="o">:</span> <span class="s2">&quot;VMware, &quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Serial&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Size&quot;</span><span class="o">:</span> <span class="mi">42949672960</span><span class="p">,</span>
+                    <span class="s2">&quot;PartitionInfo&quot;</span><span class="o">:</span> <span class="p">[</span>
+                        <span class="p">{</span>
+                            <span class="s2">&quot;PartNum&quot;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+                            <span class="s2">&quot;Start&quot;</span><span class="o">:</span> <span class="mi">34360785920</span><span class="p">,</span>
+                            <span class="s2">&quot;Size&quot;</span><span class="o">:</span> <span class="mi">1024</span>
+                        <span class="p">},</span>
+                        <span class="p">{</span>
+                            <span class="s2">&quot;PartNum&quot;</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+                            <span class="s2">&quot;Start&quot;</span><span class="o">:</span> <span class="mi">34360786944</span><span class="p">,</span>
+                            <span class="s2">&quot;Size&quot;</span><span class="o">:</span> <span class="mi">8587837440</span>
+                        <span class="p">},</span>
+                        <span class="p">{</span>
+                            <span class="s2">&quot;PartNum&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+                            <span class="s2">&quot;Start&quot;</span><span class="o">:</span> <span class="mi">1048576</span><span class="p">,</span>
+                            <span class="s2">&quot;Size&quot;</span><span class="o">:</span> <span class="mi">34358689792</span>
+                        <span class="p">}</span>
+                    <span class="p">]</span>
+                <span class="p">}</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;PCIInfo&quot;</span><span class="o">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;VendorName&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;DeviceName&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;VendorId&quot;</span><span class="o">:</span> <span class="mi">5549</span><span class="p">,</span>
+                    <span class="s2">&quot;DeviceId&quot;</span><span class="o">:</span> <span class="mi">1913</span><span class="p">,</span>
+                    <span class="s2">&quot;DomainNo&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s2">&quot;BusNo&quot;</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+                    <span class="s2">&quot;DeviceNo&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s2">&quot;FunctionNo&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s2">&quot;BaseClass&quot;</span><span class="o">:</span> <span class="mi">12</span><span class="p">,</span>
+                    <span class="s2">&quot;SubClass&quot;</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+                    <span class="s2">&quot;ProgIntfClass&quot;</span><span class="o">:</span> <span class="mi">48</span><span class="p">,</span>
+                    <span class="s2">&quot;Revision&quot;</span><span class="o">:</span> <span class="mi">0</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;VendorName&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;DeviceName&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;VendorId&quot;</span><span class="o">:</span> <span class="mi">4096</span><span class="p">,</span>
+                    <span class="s2">&quot;DeviceId&quot;</span><span class="o">:</span> <span class="mi">48</span><span class="p">,</span>
+                    <span class="s2">&quot;DomainNo&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s2">&quot;BusNo&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s2">&quot;DeviceNo&quot;</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+                    <span class="s2">&quot;FunctionNo&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s2">&quot;BaseClass&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+                    <span class="s2">&quot;SubClass&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s2">&quot;ProgIntfClass&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s2">&quot;Revision&quot;</span><span class="o">:</span> <span class="mi">1</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;VendorName&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;DeviceName&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;VendorId&quot;</span><span class="o">:</span> <span class="mi">5549</span><span class="p">,</span>
+                    <span class="s2">&quot;DeviceId&quot;</span><span class="o">:</span> <span class="mi">1908</span><span class="p">,</span>
+                    <span class="s2">&quot;DomainNo&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s2">&quot;BusNo&quot;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+                    <span class="s2">&quot;DeviceNo&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s2">&quot;FunctionNo&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s2">&quot;BaseClass&quot;</span><span class="o">:</span> <span class="mi">12</span><span class="p">,</span>
+                    <span class="s2">&quot;SubClass&quot;</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+                    <span class="s2">&quot;ProgIntfClass&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s2">&quot;Revision&quot;</span><span class="o">:</span> <span class="mi">0</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;VendorName&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;DeviceName&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;VendorId&quot;</span><span class="o">:</span> <span class="mi">5549</span><span class="p">,</span>
+                    <span class="s2">&quot;DeviceId&quot;</span><span class="o">:</span> <span class="mi">1904</span><span class="p">,</span>
+                    <span class="s2">&quot;DomainNo&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s2">&quot;BusNo&quot;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+                    <span class="s2">&quot;DeviceNo&quot;</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+                    <span class="s2">&quot;FunctionNo&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s2">&quot;BaseClass&quot;</span><span class="o">:</span> <span class="mi">12</span><span class="p">,</span>
+                    <span class="s2">&quot;SubClass&quot;</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+                    <span class="s2">&quot;ProgIntfClass&quot;</span><span class="o">:</span> <span class="mi">32</span><span class="p">,</span>
+                    <span class="s2">&quot;Revision&quot;</span><span class="o">:</span> <span class="mi">0</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;VendorName&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;DeviceName&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;VendorId&quot;</span><span class="o">:</span> <span class="mi">5549</span><span class="p">,</span>
+                    <span class="s2">&quot;DeviceId&quot;</span><span class="o">:</span> <span class="mi">1029</span><span class="p">,</span>
+                    <span class="s2">&quot;DomainNo&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s2">&quot;BusNo&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s2">&quot;DeviceNo&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s2">&quot;FunctionNo&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s2">&quot;BaseClass&quot;</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+                    <span class="s2">&quot;SubClass&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s2">&quot;ProgIntfClass&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s2">&quot;Revision&quot;</span><span class="o">:</span> <span class="mi">0</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;VendorName&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;DeviceName&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;VendorId&quot;</span><span class="o">:</span> <span class="mi">5549</span><span class="p">,</span>
+                    <span class="s2">&quot;DeviceId&quot;</span><span class="o">:</span> <span class="mi">1856</span><span class="p">,</span>
+                    <span class="s2">&quot;DomainNo&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s2">&quot;BusNo&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s2">&quot;DeviceNo&quot;</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
+                    <span class="s2">&quot;FunctionNo&quot;</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
+                    <span class="s2">&quot;BaseClass&quot;</span><span class="o">:</span> <span class="mi">8</span><span class="p">,</span>
+                    <span class="s2">&quot;SubClass&quot;</span><span class="o">:</span> <span class="mi">128</span><span class="p">,</span>
+                    <span class="s2">&quot;ProgIntfClass&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s2">&quot;Revision&quot;</span><span class="o">:</span> <span class="mi">16</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;VendorName&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;DeviceName&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;VendorId&quot;</span><span class="o">:</span> <span class="mi">4724</span><span class="p">,</span>
+                    <span class="s2">&quot;DeviceId&quot;</span><span class="o">:</span> <span class="mi">4977</span><span class="p">,</span>
+                    <span class="s2">&quot;DomainNo&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s2">&quot;BusNo&quot;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+                    <span class="s2">&quot;DeviceNo&quot;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+                    <span class="s2">&quot;FunctionNo&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s2">&quot;BaseClass&quot;</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span>
+                    <span class="s2">&quot;SubClass&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+                    <span class="s2">&quot;ProgIntfClass&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s2">&quot;Revision&quot;</span><span class="o">:</span> <span class="mi">2</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;VendorName&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;DeviceName&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;VendorId&quot;</span><span class="o">:</span> <span class="mi">5549</span><span class="p">,</span>
+                    <span class="s2">&quot;DeviceId&quot;</span><span class="o">:</span> <span class="mi">2016</span><span class="p">,</span>
+                    <span class="s2">&quot;DomainNo&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s2">&quot;BusNo&quot;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+                    <span class="s2">&quot;DeviceNo&quot;</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+                    <span class="s2">&quot;FunctionNo&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s2">&quot;BaseClass&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+                    <span class="s2">&quot;SubClass&quot;</span><span class="o">:</span> <span class="mi">6</span><span class="p">,</span>
+                    <span class="s2">&quot;ProgIntfClass&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+                    <span class="s2">&quot;Revision&quot;</span><span class="o">:</span> <span class="mi">0</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;VendorName&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;DeviceName&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;VendorId&quot;</span><span class="o">:</span> <span class="mi">32902</span><span class="p">,</span>
+                    <span class="s2">&quot;DeviceId&quot;</span><span class="o">:</span> <span class="mi">28945</span><span class="p">,</span>
+                    <span class="s2">&quot;DomainNo&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s2">&quot;BusNo&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s2">&quot;DeviceNo&quot;</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
+                    <span class="s2">&quot;FunctionNo&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+                    <span class="s2">&quot;BaseClass&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+                    <span class="s2">&quot;SubClass&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+                    <span class="s2">&quot;ProgIntfClass&quot;</span><span class="o">:</span> <span class="mi">138</span><span class="p">,</span>
+                    <span class="s2">&quot;Revision&quot;</span><span class="o">:</span> <span class="mi">1</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;VendorName&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;DeviceName&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;VendorId&quot;</span><span class="o">:</span> <span class="mi">32902</span><span class="p">,</span>
+                    <span class="s2">&quot;DeviceId&quot;</span><span class="o">:</span> <span class="mi">4111</span><span class="p">,</span>
+                    <span class="s2">&quot;DomainNo&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s2">&quot;BusNo&quot;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+                    <span class="s2">&quot;DeviceNo&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+                    <span class="s2">&quot;FunctionNo&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s2">&quot;BaseClass&quot;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+                    <span class="s2">&quot;SubClass&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s2">&quot;ProgIntfClass&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s2">&quot;Revision&quot;</span><span class="o">:</span> <span class="mi">1</span>
+                <span class="p">}</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;NetInfo&quot;</span><span class="o">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;Device&quot;</span><span class="o">:</span> <span class="s2">&quot;ens33&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;MacAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;00:0c:29:87:5e:df&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;IPAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;192.168.183.155&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;IP6Addr&quot;</span><span class="o">:</span> <span class="s2">&quot;fe80::bb0a:46d8:686a:37cf&quot;</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;Device&quot;</span><span class="o">:</span> <span class="s2">&quot;lo&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;MacAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;IPAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;IP6Addr&quot;</span><span class="o">:</span> <span class="s2">&quot;::1&quot;</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;Metrics&quot;</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;Name&quot;</span><span class="o">:</span> <span class="s2">&quot;ProcVM&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Timestamps&quot;</span><span class="o">:</span> <span class="p">[</span>
+                <span class="mi">1547534093</span><span class="p">,</span>
+                <span class="mi">1547534094</span><span class="p">,</span>
+                <span class="mi">1547534095</span><span class="p">,</span>
+                <span class="mi">1547534096</span><span class="p">,</span>
+                <span class="mi">1547534097</span><span class="p">,</span>
+                <span class="mi">1547534098</span><span class="p">,</span>
+                <span class="mi">1547534099</span><span class="p">,</span>
+                <span class="mi">1547534100</span><span class="p">,</span>
+                <span class="mi">1547534101</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;Values&quot;</span><span class="o">:</span> <span class="p">[</span>
+                <span class="mi">244064256</span><span class="p">,</span>
+                <span class="mi">244064256</span><span class="p">,</span>
+                <span class="mi">244064256</span><span class="p">,</span>
+                <span class="mi">244064256</span><span class="p">,</span>
+                <span class="mi">244064256</span><span class="p">,</span>
+                <span class="mi">244064256</span><span class="p">,</span>
+                <span class="mi">244064256</span><span class="p">,</span>
+                <span class="mi">244064256</span><span class="p">,</span>
+                <span class="mi">244064256</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;Name&quot;</span><span class="o">:</span> <span class="s2">&quot;SysRAM&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Timestamps&quot;</span><span class="o">:</span> <span class="p">[</span>
+                <span class="mi">1547534093</span><span class="p">,</span>
+                <span class="mi">1547534094</span><span class="p">,</span>
+                <span class="mi">1547534095</span><span class="p">,</span>
+                <span class="mi">1547534096</span><span class="p">,</span>
+                <span class="mi">1547534097</span><span class="p">,</span>
+                <span class="mi">1547534098</span><span class="p">,</span>
+                <span class="mi">1547534099</span><span class="p">,</span>
+                <span class="mi">1547534100</span><span class="p">,</span>
+                <span class="mi">1547534101</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;Values&quot;</span><span class="o">:</span> <span class="p">[</span>
+                <span class="mi">8192331776</span><span class="p">,</span>
+                <span class="mi">8194359296</span><span class="p">,</span>
+                <span class="mi">8193589248</span><span class="p">,</span>
+                <span class="mi">8193470464</span><span class="p">,</span>
+                <span class="mi">8193470464</span><span class="p">,</span>
+                <span class="mi">8194048000</span><span class="p">,</span>
+                <span class="mi">8195629056</span><span class="p">,</span>
+                <span class="mi">8196390912</span><span class="p">,</span>
+                <span class="mi">8198610944</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;Name&quot;</span><span class="o">:</span> <span class="s2">&quot;ProcRAM&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Timestamps&quot;</span><span class="o">:</span> <span class="p">[</span>
+                <span class="mi">1547534093</span><span class="p">,</span>
+                <span class="mi">1547534094</span><span class="p">,</span>
+                <span class="mi">1547534095</span><span class="p">,</span>
+                <span class="mi">1547534096</span><span class="p">,</span>
+                <span class="mi">1547534097</span><span class="p">,</span>
+                <span class="mi">1547534098</span><span class="p">,</span>
+                <span class="mi">1547534099</span><span class="p">,</span>
+                <span class="mi">1547534100</span><span class="p">,</span>
+                <span class="mi">1547534101</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;Values&quot;</span><span class="o">:</span> <span class="p">[</span>
+                <span class="mi">3751936</span><span class="p">,</span>
+                <span class="mi">3751936</span><span class="p">,</span>
+                <span class="mi">3751936</span><span class="p">,</span>
+                <span class="mi">3751936</span><span class="p">,</span>
+                <span class="mi">3751936</span><span class="p">,</span>
+                <span class="mi">3751936</span><span class="p">,</span>
+                <span class="mi">3751936</span><span class="p">,</span>
+                <span class="mi">3751936</span><span class="p">,</span>
+                <span class="mi">3751936</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;Name&quot;</span><span class="o">:</span> <span class="s2">&quot;ProcRAMPeak&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Timestamps&quot;</span><span class="o">:</span> <span class="p">[</span>
+                <span class="mi">1547534093</span><span class="p">,</span>
+                <span class="mi">1547534094</span><span class="p">,</span>
+                <span class="mi">1547534095</span><span class="p">,</span>
+                <span class="mi">1547534096</span><span class="p">,</span>
+                <span class="mi">1547534097</span><span class="p">,</span>
+                <span class="mi">1547534098</span><span class="p">,</span>
+                <span class="mi">1547534099</span><span class="p">,</span>
+                <span class="mi">1547534100</span><span class="p">,</span>
+                <span class="mi">1547534101</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;Values&quot;</span><span class="o">:</span> <span class="p">[</span>
+                <span class="mi">3788800</span><span class="p">,</span>
+                <span class="mi">3788800</span><span class="p">,</span>
+                <span class="mi">3788800</span><span class="p">,</span>
+                <span class="mi">3788800</span><span class="p">,</span>
+                <span class="mi">3788800</span><span class="p">,</span>
+                <span class="mi">3788800</span><span class="p">,</span>
+                <span class="mi">3788800</span><span class="p">,</span>
+                <span class="mi">3788800</span><span class="p">,</span>
+                <span class="mi">3788800</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;Name&quot;</span><span class="o">:</span> <span class="s2">&quot;SysCPU&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Timestamps&quot;</span><span class="o">:</span> <span class="p">[</span>
+                <span class="mi">1547534093</span><span class="p">,</span>
+                <span class="mi">1547534094</span><span class="p">,</span>
+                <span class="mi">1547534095</span><span class="p">,</span>
+                <span class="mi">1547534096</span><span class="p">,</span>
+                <span class="mi">1547534097</span><span class="p">,</span>
+                <span class="mi">1547534098</span><span class="p">,</span>
+                <span class="mi">1547534099</span><span class="p">,</span>
+                <span class="mi">1547534100</span><span class="p">,</span>
+                <span class="mi">1547534101</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;Values&quot;</span><span class="o">:</span> <span class="p">[</span>
+                <span class="mf">0.04413619264960289</span><span class="p">,</span>
+                <span class="mf">0.02893081679940224</span><span class="p">,</span>
+                <span class="mf">0.04659949615597725</span><span class="p">,</span>
+                <span class="mf">0.01624999940395355</span><span class="p">,</span>
+                <span class="mf">0.02518891729414463</span><span class="p">,</span>
+                <span class="mf">0.02770780771970749</span><span class="p">,</span>
+                <span class="mf">0.05296342819929123</span><span class="p">,</span>
+                <span class="mf">0.04785894230008125</span><span class="p">,</span>
+                <span class="mf">0.02272727340459824</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;Name&quot;</span><span class="o">:</span> <span class="s2">&quot;RandFloat&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Timestamps&quot;</span><span class="o">:</span> <span class="p">[</span>
+                <span class="mi">1547534092</span><span class="p">,</span>
+                <span class="mi">1547534093</span><span class="p">,</span>
+                <span class="mi">1547534094</span><span class="p">,</span>
+                <span class="mi">1547534095</span><span class="p">,</span>
+                <span class="mi">1547534096</span><span class="p">,</span>
+                <span class="mi">1547534097</span><span class="p">,</span>
+                <span class="mi">1547534098</span><span class="p">,</span>
+                <span class="mi">1547534099</span><span class="p">,</span>
+                <span class="mi">1547534100</span><span class="p">,</span>
+                <span class="mi">1547534101</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;Values&quot;</span><span class="o">:</span> <span class="p">[</span>
+                <span class="mf">0.3943829238414764</span><span class="p">,</span>
+                <span class="mf">0.7984400391578674</span><span class="p">,</span>
+                <span class="mf">0.1975513696670532</span><span class="p">,</span>
+                <span class="mf">0.768229603767395</span><span class="p">,</span>
+                <span class="mf">0.5539699792861938</span><span class="p">,</span>
+                <span class="mf">0.6288709044456482</span><span class="p">,</span>
+                <span class="mf">0.5134009122848511</span><span class="p">,</span>
+                <span class="mf">0.9161950945854187</span><span class="p">,</span>
+                <span class="mf">0.7172969579696655</span><span class="p">,</span>
+                <span class="mf">0.606968879699707</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;Name&quot;</span><span class="o">:</span> <span class="s2">&quot;ProcCPU&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Timestamps&quot;</span><span class="o">:</span> <span class="p">[</span>
+                <span class="mi">1547534093</span><span class="p">,</span>
+                <span class="mi">1547534094</span><span class="p">,</span>
+                <span class="mi">1547534095</span><span class="p">,</span>
+                <span class="mi">1547534096</span><span class="p">,</span>
+                <span class="mi">1547534097</span><span class="p">,</span>
+                <span class="mi">1547534098</span><span class="p">,</span>
+                <span class="mi">1547534099</span><span class="p">,</span>
+                <span class="mi">1547534100</span><span class="p">,</span>
+                <span class="mi">1547534101</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;Values&quot;</span><span class="o">:</span> <span class="p">[</span>
+                <span class="mi">0</span><span class="p">,</span>
+                <span class="mf">0.001237623742781579</span><span class="p">,</span>
+                <span class="mi">0</span><span class="p">,</span>
+                <span class="mi">0</span><span class="p">,</span>
+                <span class="mf">0.001237623742781579</span><span class="p">,</span>
+                <span class="mf">0.001249999972060323</span><span class="p">,</span>
+                <span class="mf">0.001249999972060323</span><span class="p">,</span>
+                <span class="mi">0</span><span class="p">,</span>
+                <span class="mf">0.001249999972060323</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;Name&quot;</span><span class="o">:</span> <span class="s2">&quot;ProcSwap&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Timestamps&quot;</span><span class="o">:</span> <span class="p">[</span>
+                <span class="mi">1547534093</span><span class="p">,</span>
+                <span class="mi">1547534094</span><span class="p">,</span>
+                <span class="mi">1547534095</span><span class="p">,</span>
+                <span class="mi">1547534096</span><span class="p">,</span>
+                <span class="mi">1547534097</span><span class="p">,</span>
+                <span class="mi">1547534098</span><span class="p">,</span>
+                <span class="mi">1547534099</span><span class="p">,</span>
+                <span class="mi">1547534100</span><span class="p">,</span>
+                <span class="mi">1547534101</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;Values&quot;</span><span class="o">:</span> <span class="p">[</span>
+                <span class="mi">0</span><span class="p">,</span>
+                <span class="mi">0</span><span class="p">,</span>
+                <span class="mi">0</span><span class="p">,</span>
+                <span class="mi">0</span><span class="p">,</span>
+                <span class="mi">0</span><span class="p">,</span>
+                <span class="mi">0</span><span class="p">,</span>
+                <span class="mi">0</span><span class="p">,</span>
+                <span class="mi">0</span><span class="p">,</span>
+                <span class="mi">0</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;Name&quot;</span><span class="o">:</span> <span class="s2">&quot;ProcVMPeak&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Timestamps&quot;</span><span class="o">:</span> <span class="p">[</span>
+                <span class="mi">1547534093</span><span class="p">,</span>
+                <span class="mi">1547534094</span><span class="p">,</span>
+                <span class="mi">1547534095</span><span class="p">,</span>
+                <span class="mi">1547534096</span><span class="p">,</span>
+                <span class="mi">1547534097</span><span class="p">,</span>
+                <span class="mi">1547534098</span><span class="p">,</span>
+                <span class="mi">1547534099</span><span class="p">,</span>
+                <span class="mi">1547534100</span><span class="p">,</span>
+                <span class="mi">1547534101</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;Values&quot;</span><span class="o">:</span> <span class="p">[</span>
+                <span class="mi">311173120</span><span class="p">,</span>
+                <span class="mi">311173120</span><span class="p">,</span>
+                <span class="mi">311173120</span><span class="p">,</span>
+                <span class="mi">311173120</span><span class="p">,</span>
+                <span class="mi">311173120</span><span class="p">,</span>
+                <span class="mi">311173120</span><span class="p">,</span>
+                <span class="mi">311173120</span><span class="p">,</span>
+                <span class="mi">311173120</span><span class="p">,</span>
+                <span class="mi">311173120</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;Name&quot;</span><span class="o">:</span> <span class="s2">&quot;RandInt&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Timestamps&quot;</span><span class="o">:</span> <span class="p">[</span>
+                <span class="mi">1547534092</span><span class="p">,</span>
+                <span class="mi">1547534093</span><span class="p">,</span>
+                <span class="mi">1547534094</span><span class="p">,</span>
+                <span class="mi">1547534095</span><span class="p">,</span>
+                <span class="mi">1547534096</span><span class="p">,</span>
+                <span class="mi">1547534097</span><span class="p">,</span>
+                <span class="mi">1547534098</span><span class="p">,</span>
+                <span class="mi">1547534099</span><span class="p">,</span>
+                <span class="mi">1547534100</span><span class="p">,</span>
+                <span class="mi">1547534101</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;Values&quot;</span><span class="o">:</span> <span class="p">[</span>
+                <span class="mi">1804289408</span><span class="p">,</span>
+                <span class="mi">1681692800</span><span class="p">,</span>
+                <span class="mi">1957747840</span><span class="p">,</span>
+                <span class="mi">719885376</span><span class="p">,</span>
+                <span class="mi">596516672</span><span class="p">,</span>
+                <span class="mi">1025202368</span><span class="p">,</span>
+                <span class="mi">783368704</span><span class="p">,</span>
+                <span class="mi">2044897792</span><span class="p">,</span>
+                <span class="mi">1365180544</span><span class="p">,</span>
+                <span class="mi">304089184</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;Events&quot;</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;Timestamp&quot;</span><span class="o">:</span> <span class="mi">1547534092</span><span class="p">,</span>
+            <span class="s2">&quot;TimeOfDay&quot;</span><span class="o">:</span> <span class="s2">&quot;2019-01-15 15:35:02&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Level&quot;</span><span class="o">:</span> <span class="s2">&quot;Info&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Source&quot;</span><span class="o">:</span> <span class="s2">&quot;monitor&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;EventID&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="s2">&quot;Message&quot;</span><span class="o">:</span> <span class="s2">&quot;Monitor task start&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;Timestamp&quot;</span><span class="o">:</span> <span class="mi">1547534102</span><span class="p">,</span>
+            <span class="s2">&quot;TimeOfDay&quot;</span><span class="o">:</span> <span class="s2">&quot;2019-01-15 15:35:02&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Level&quot;</span><span class="o">:</span> <span class="s2">&quot;Info&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Source&quot;</span><span class="o">:</span> <span class="s2">&quot;monitor&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;EventID&quot;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="s2">&quot;Message&quot;</span><span class="o">:</span> <span class="s2">&quot;Monitor task complete&quot;</span>
+        <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;Logs&quot;</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/var/log/auth.log.4.gz&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Flags&quot;</span><span class="o">:</span> <span class="mi">196609</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/var/log/lpr.log.3.gz&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Flags&quot;</span><span class="o">:</span> <span class="mi">196609</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/var/log/daemon.log.3.gz&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Flags&quot;</span><span class="o">:</span> <span class="mi">196609</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/var/log/auth.log.2.gz&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Flags&quot;</span><span class="o">:</span> <span class="mi">196609</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/var/log/syslog.1&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Flags&quot;</span><span class="o">:</span> <span class="mi">65537</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/var/log/daemon.log&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Flags&quot;</span><span class="o">:</span> <span class="mi">0</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/var/log/cron.log.1&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Flags&quot;</span><span class="o">:</span> <span class="mi">65537</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/var/log/lpr.log&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Flags&quot;</span><span class="o">:</span> <span class="mi">0</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/var/log/user.log.1&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Flags&quot;</span><span class="o">:</span> <span class="mi">65537</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/var/log/lpr.log.1&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Flags&quot;</span><span class="o">:</span> <span class="mi">65537</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/var/log/user.log&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Flags&quot;</span><span class="o">:</span> <span class="mi">0</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/var/log/cron.log&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Flags&quot;</span><span class="o">:</span> <span class="mi">0</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/var/log/daemon.log.1&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Flags&quot;</span><span class="o">:</span> <span class="mi">65537</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/var/log/debug.3.gz&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Flags&quot;</span><span class="o">:</span> <span class="mi">196609</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/var/log/syslog&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Flags&quot;</span><span class="o">:</span> <span class="mi">0</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/var/log/user.log.4.gz&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Flags&quot;</span><span class="o">:</span> <span class="mi">196609</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/var/log/syslog.2.gz&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Flags&quot;</span><span class="o">:</span> <span class="mi">196609</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/var/log/messages.4.gz&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Flags&quot;</span><span class="o">:</span> <span class="mi">196609</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/var/log/kern.log.4.gz&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Flags&quot;</span><span class="o">:</span> <span class="mi">196609</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/var/log/messages.2.gz&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Flags&quot;</span><span class="o">:</span> <span class="mi">196609</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/var/log/kern.log.2.gz&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Flags&quot;</span><span class="o">:</span> <span class="mi">196609</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/var/log/syslog.6.gz&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Flags&quot;</span><span class="o">:</span> <span class="mi">196609</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/var/log/cron.log.3.gz&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Flags&quot;</span><span class="o">:</span> <span class="mi">196609</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/var/log/user.log.2.gz&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Flags&quot;</span><span class="o">:</span> <span class="mi">196609</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/var/log/syslog.4.gz&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Flags&quot;</span><span class="o">:</span> <span class="mi">196609</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/var/log/lpr.log.2.gz&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Flags&quot;</span><span class="o">:</span> <span class="mi">196609</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/var/log/daemon.log.2.gz&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Flags&quot;</span><span class="o">:</span> <span class="mi">196609</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/var/log/daemon.log.4.gz&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Flags&quot;</span><span class="o">:</span> <span class="mi">196609</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/var/log/debug.1&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Flags&quot;</span><span class="o">:</span> <span class="mi">65537</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/var/log/lpr.log.4.gz&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Flags&quot;</span><span class="o">:</span> <span class="mi">196609</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/var/log/auth.log.3.gz&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Flags&quot;</span><span class="o">:</span> <span class="mi">196609</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/var/log/auth.log&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Flags&quot;</span><span class="o">:</span> <span class="mi">0</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/var/log/kern.log.1&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Flags&quot;</span><span class="o">:</span> <span class="mi">65537</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/var/log/messages.1&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Flags&quot;</span><span class="o">:</span> <span class="mi">65537</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/var/log/kern.log&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Flags&quot;</span><span class="o">:</span> <span class="mi">0</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/var/log/messages&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Flags&quot;</span><span class="o">:</span> <span class="mi">0</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/var/log/debug.4.gz&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Flags&quot;</span><span class="o">:</span> <span class="mi">196609</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/var/log/debug.2.gz&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Flags&quot;</span><span class="o">:</span> <span class="mi">196609</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/var/log/auth.log.1&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Flags&quot;</span><span class="o">:</span> <span class="mi">65537</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/var/log/syslog.3.gz&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Flags&quot;</span><span class="o">:</span> <span class="mi">196609</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/var/log/cron.log.4.gz&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Flags&quot;</span><span class="o">:</span> <span class="mi">196609</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/var/log/debug&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Flags&quot;</span><span class="o">:</span> <span class="mi">0</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/var/log/syslog.7.gz&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Flags&quot;</span><span class="o">:</span> <span class="mi">196609</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/var/log/messages.3.gz&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Flags&quot;</span><span class="o">:</span> <span class="mi">196609</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/var/log/kern.log.3.gz&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Flags&quot;</span><span class="o">:</span> <span class="mi">196609</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/var/log/syslog.5.gz&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Flags&quot;</span><span class="o">:</span> <span class="mi">196609</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/var/log/cron.log.2.gz&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Flags&quot;</span><span class="o">:</span> <span class="mi">196609</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/var/log/user.log.3.gz&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Flags&quot;</span><span class="o">:</span> <span class="mi">196609</span>
+        <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="api/program_listing_file_include_psygigsdk.h.html" class="btn btn-neutral" title="Program Listing for File psygigsdk.h" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019 PSYGIG株式会社
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
+        <script type="text/javascript" src="_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script type="text/javascript" src="_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

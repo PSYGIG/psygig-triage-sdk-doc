@@ -1,0 +1,13 @@
+.. _exhale_function_group__admin_1ga97ef5aaf4e0e8fc25394051409b2d425:
+
+Function psygig_agent_set_debug_level
+=====================================
+
+- Defined in :ref:`file_include_psygigsdk.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: psygig_agent_set_debug_level(psygig_agent_handle, int)

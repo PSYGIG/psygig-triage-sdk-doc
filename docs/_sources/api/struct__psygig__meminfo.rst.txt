@@ -1,0 +1,16 @@
+.. _exhale_struct_struct__psygig__meminfo:
+
+Struct _psygig_meminfo
+======================
+
+- Defined in :ref:`file_include_psygigsdk.h`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: _psygig_meminfo
+   :members:
+   :protected-members:
+   :undoc-members:

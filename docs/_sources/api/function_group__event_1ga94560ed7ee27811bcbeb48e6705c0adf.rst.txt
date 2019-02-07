@@ -1,0 +1,13 @@
+.. _exhale_function_group__event_1ga94560ed7ee27811bcbeb48e6705c0adf:
+
+Function psygig_event_import_file
+=================================
+
+- Defined in :ref:`file_include_psygigsdk.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: psygig_event_import_file(psygig_agent_handle, char *)

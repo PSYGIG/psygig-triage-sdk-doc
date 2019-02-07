@@ -1,0 +1,13 @@
+.. _exhale_function_group__metric_1ga13961393fb675c701b1dde08500cec8f:
+
+Function psygig_metric_record_values_numeric
+============================================
+
+- Defined in :ref:`file_include_psygigsdk.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: psygig_metric_record_values_numeric(psygig_agent_handle, char *, float, int)

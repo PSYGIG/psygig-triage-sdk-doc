@@ -1,0 +1,16 @@
+.. _exhale_struct_struct__psygig__diag__result:
+
+Struct _psygig_diag_result
+==========================
+
+- Defined in :ref:`file_include_psygigsdk.h`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: _psygig_diag_result
+   :members:
+   :protected-members:
+   :undoc-members:

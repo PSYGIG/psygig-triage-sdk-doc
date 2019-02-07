@@ -1,0 +1,13 @@
+.. _exhale_function_group__log_1gaa61bab002571d86eefbd051bad2a4d92:
+
+Function psygig_logf
+====================
+
+- Defined in :ref:`file_include_psygigsdk.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: psygig_logf(psygig_agent_handle, psygig_log_level, char *, ...)
