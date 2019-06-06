@@ -1,0 +1,13 @@
+.. _exhale_function_group__video_1gab44c287691d4b5c9748142bc6baea6aa:
+
+Function psyiage_video_import
+=============================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: psyiage_video_import(psyiage_handle, char *)

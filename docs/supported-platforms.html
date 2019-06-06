@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Supported Platforms/Architectures &mdash; PSYGIG Triage SDK 0.2.0 ドキュメント</title>
+  <title>Supported Platforms/Architectures &mdash; PSYGIG Triage SDK 0.4.0 ドキュメント</title>
   
 
   
@@ -73,7 +73,7 @@
             
             
               <div class="version">
-                0.2
+                0.4
               </div>
             
           
@@ -101,6 +101,7 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Supported Platforms/Architectures</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#platform-architectures-supported">Platform architectures supported</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#platform-architectures-partially-supported">Platform architectures partially supported</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#tested-hardware-platforms">Tested Hardware Platforms</a></li>
 </ul>
 </li>
@@ -210,19 +211,11 @@
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>x86</td>
-<td>i386</td>
-<td>Linux / FreeBSD</td>
-</tr>
-<tr class="row-odd"><td>x86-64
+<tr class="row-even"><td>x86-64
 (x64,
 AMD64)</td>
 <td>x86_64</td>
 <td>Linux / FreeBSD</td>
-</tr>
-<tr class="row-even"><td>IA-64 <a class="footnote-reference" href="#id7" id="id1">[1]</a></td>
-<td>ia64</td>
-<td>Linux</td>
 </tr>
 <tr class="row-odd"><td>ARMv5</td>
 <td>arm</td>
@@ -237,32 +230,52 @@ AMD64)</td>
 <td>aarch64</td>
 <td>Linux / FreeBSD</td>
 </tr>
-<tr class="row-even"><td>PowerPC64 <a class="footnote-reference" href="#id7" id="id2">[1]</a></td>
+</tbody>
+</table>
+</div>
+<div class="section" id="platform-architectures-partially-supported">
+<h2>Platform architectures partially supported<a class="headerlink" href="#platform-architectures-partially-supported" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="22%" />
+<col width="44%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Architecture</th>
+<th class="head">ABI</th>
+<th class="head">Operating System</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>x86</td>
+<td>i386</td>
+<td>Linux / FreeBSD</td>
+</tr>
+<tr class="row-odd"><td>IA-64</td>
+<td>ia64</td>
+<td>Linux</td>
+</tr>
+<tr class="row-even"><td>PowerPC64</td>
 <td>ppc64</td>
 <td>Linux</td>
 </tr>
-<tr class="row-odd"><td>MIPS <a class="footnote-reference" href="#id7" id="id3">[1]</a></td>
+<tr class="row-odd"><td>MIPS</td>
 <td>mips</td>
 <td>Linux</td>
 </tr>
-<tr class="row-even"><td>SuperH <a class="footnote-reference" href="#id7" id="id4">[1]</a></td>
+<tr class="row-even"><td>SuperH</td>
 <td>sh4</td>
 <td>Linux</td>
 </tr>
-<tr class="row-odd"><td>PA-RISC <a class="footnote-reference" href="#id7" id="id5">[1]</a></td>
+<tr class="row-odd"><td>PA-RISC</td>
 <td>hppa</td>
 <td>Linux</td>
 </tr>
-<tr class="row-even"><td>TILE-Gx <a class="footnote-reference" href="#id7" id="id6">[1]</a></td>
+<tr class="row-even"><td>TILE-Gx</td>
 <td>tilegx</td>
 <td>Linux</td>
 </tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id7" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[1]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id2">2</a>, <a class="fn-backref" href="#id3">3</a>, <a class="fn-backref" href="#id4">4</a>, <a class="fn-backref" href="#id5">5</a>, <a class="fn-backref" href="#id6">6</a>)</em> <sub>Not yet tested</sub></td></tr>
 </tbody>
 </table>
 </div>
@@ -298,27 +311,27 @@ AMD64)</td>
 <td>aarch64</td>
 <td>Ubuntu 16.04</td>
 </tr>
-<tr class="row-odd"><td>NVIDIA Jetson AGX Xavier <a class="footnote-reference" href="#id13" id="id8">[2]</a></td>
+<tr class="row-odd"><td>NVIDIA Jetson AGX Xavier <a class="footnote-reference" href="#id6" id="id1">[2]</a></td>
 <td>ARMv8</td>
 <td>aarch64</td>
 <td>Ubuntu 16.04</td>
 </tr>
-<tr class="row-even"><td>Raspberry Pi 1 <a class="footnote-reference" href="#id13" id="id9">[2]</a></td>
+<tr class="row-even"><td>Raspberry Pi 1 <a class="footnote-reference" href="#id6" id="id2">[2]</a></td>
 <td>ARMv6</td>
 <td>arm</td>
 <td>Raspbian</td>
 </tr>
-<tr class="row-odd"><td>Raspberry Pi 2 <a class="footnote-reference" href="#id13" id="id10">[2]</a></td>
+<tr class="row-odd"><td>Raspberry Pi 2 <a class="footnote-reference" href="#id6" id="id3">[2]</a></td>
 <td>ARMv7</td>
 <td>armhf</td>
 <td>Ubuntu MATE 16.04</td>
 </tr>
-<tr class="row-even"><td>Raspberry Pi 3 <a class="footnote-reference" href="#id13" id="id11">[2]</a></td>
+<tr class="row-even"><td>Raspberry Pi 3 <a class="footnote-reference" href="#id6" id="id4">[2]</a></td>
 <td>ARMv8</td>
 <td>armhf</td>
 <td>Ubuntu MATE 16.04</td>
 </tr>
-<tr class="row-odd"><td>Raspberry Pi Zero <a class="footnote-reference" href="#id13" id="id12">[2]</a></td>
+<tr class="row-odd"><td>Raspberry Pi Zero <a class="footnote-reference" href="#id6" id="id5">[2]</a></td>
 <td>ARMv6</td>
 <td>arm</td>
 <td>Raspbian</td>
@@ -340,10 +353,10 @@ AMD64)</td>
 </tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id13" rules="none">
+<table class="docutils footnote" frame="void" id="id6" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[2]</td><td><em>(<a class="fn-backref" href="#id8">1</a>, <a class="fn-backref" href="#id9">2</a>, <a class="fn-backref" href="#id10">3</a>, <a class="fn-backref" href="#id11">4</a>, <a class="fn-backref" href="#id12">5</a>)</em> <sub>Partially tested</sub></td></tr>
+<tr><td class="label">[2]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id2">2</a>, <a class="fn-backref" href="#id3">3</a>, <a class="fn-backref" href="#id4">4</a>, <a class="fn-backref" href="#id5">5</a>)</em> <sub>Partially tested</sub></td></tr>
 </tbody>
 </table>
 </div>
@@ -394,8 +407,8 @@ AMD64)</td>
         <script type="text/javascript" src="_static/jquery.js"></script>
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
         <script type="text/javascript" src="_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/javascript" src="_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
         <script type="text/javascript" src="_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
     

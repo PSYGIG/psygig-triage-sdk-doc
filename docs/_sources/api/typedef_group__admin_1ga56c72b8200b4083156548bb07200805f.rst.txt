@@ -1,0 +1,13 @@
+.. _exhale_typedef_group__admin_1ga56c72b8200b4083156548bb07200805f:
+
+Typedef psyiage_session_info
+============================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: psyiage_session_info

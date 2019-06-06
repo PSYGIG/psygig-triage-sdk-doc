@@ -1,0 +1,13 @@
+.. _exhale_function_group__log_1gaee7f59f93c8b969927f7c635a10d0217:
+
+Function psyiage_log_glob_free
+==============================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: psyiage_log_glob_free(char *, uint32_t *, int)

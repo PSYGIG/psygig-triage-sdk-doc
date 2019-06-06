@@ -1,0 +1,13 @@
+.. _exhale_function_group__admin_1ga58ecaa2271e7e1507a016482b9bb870c:
+
+Function psyiage_get_sink_info
+==============================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: psyiage_get_sink_info(psyiage_handle, int, psyiage_sink_cfg *)

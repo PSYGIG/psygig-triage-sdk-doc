@@ -1,0 +1,13 @@
+.. _exhale_typedef_group__diag_1gafe434ff30f430b6f0e4c8b73f395ce29:
+
+Typedef psyiage_diag_result
+===========================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: psyiage_diag_result

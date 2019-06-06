@@ -72,8 +72,8 @@ See :doc:`psybench-man` for a complete list of options.
 
 Using PSYGIG SDK API
 ------------------------
-The Benchmark Testing API can be accessed by including a :doc:`single header file <api/file_include_psygigsdk.h>`
-and linking the ``libpsygig`` shared library. See :ref:`libpsygig-linking` for details.
+The Benchmark Testing API can be accessed by including a :doc:`single header file <api/file_include_psyiage_psyiagesdk.h>`
+and linking the ``libpsyiage`` shared library. See :ref:`libpsyiage-linking` for details.
 
 Running the CPU Benchmark Test
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -81,17 +81,17 @@ Running the CPU Benchmark Test
 .. code-block:: c
     :linenos:
 
-    #include <psygigsdk.h>
+    #include <psyiage/psyiagesdk.h>
 
     int main(int argc, char **argv)
     {
-        psygig_agent_handle     pah;  // handle to psygig agent
+        psyiage_handle     pah;  // handle to psyiage instance
 
         /* ... Initialize code omitted for simplicity ... */
 
         // Run CPU benchmark test
         float cpuscore;
-        rc = psygig_benchmark_run(pah, PSYGIG_BENCH_CPU, cpuscore);
+        rc = psyiage_benchmark_run(pah, PSYIAGE_BENCH_CPU, cpuscore);
 
         /* ... Cleanup code omitted for simplicity ... */
     }

@@ -1,0 +1,13 @@
+.. _exhale_typedef_group__sysinfo_1ga5d799ce23fcd267dd59d4f9782376f84:
+
+Typedef psyiage_netinfo
+=======================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: psyiage_netinfo

@@ -1,0 +1,13 @@
+.. _exhale_function_group__admin_1ga80a2a28f0e7e89af0b849809528488e6:
+
+Function psyiage_set_debug_level
+================================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: psyiage_set_debug_level(psyiage_handle, int)

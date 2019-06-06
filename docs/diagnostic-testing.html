@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Diagnostic Testing &mdash; PSYGIG Triage SDK 0.2.0 ドキュメント</title>
+  <title>Diagnostic Testing &mdash; PSYGIG Triage SDK 0.4.0 ドキュメント</title>
   
 
   
@@ -73,7 +73,7 @@
             
             
               <div class="version">
-                0.2
+                0.4
               </div>
             
           
@@ -119,7 +119,7 @@
 <li class="toctree-l1"><a class="reference internal" href="benchmark-testing.html">Benchmark Testing</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Diagnostic Testing</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#running-the-diagnostics-tests">Running the diagnostics tests</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#using-psygig-sdk-api">Using PSYGIG SDK API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#using-psygig-triage-sdk-api">Using PSYGIG Triage SDK API</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#running-the-ram-diagnostic-test">Running the RAM Diagnostic Test</a></li>
 </ul>
 </li>
@@ -255,10 +255,10 @@ Please <script type="text/javascript">document.write(
 </div>
 <p>See <a class="reference internal" href="psydiag-man.html"><span class="doc">psydiag man page</span></a> for a complete list of options.</p>
 </div>
-<div class="section" id="using-psygig-sdk-api">
-<h2>Using PSYGIG SDK API<a class="headerlink" href="#using-psygig-sdk-api" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>The Diagnostic Testing API can be accessed by including a <a class="reference internal" href="api/file_include_psygigsdk.h.html"><span class="doc">single header file</span></a>
-and linking the <code class="docutils literal notranslate"><span class="pre">libpsygig</span></code> shared library. See <a class="reference internal" href="getting-started.html#libpsygig-linking"><span class="std std-ref">Advanced Setup - Building your application with libpsygig</span></a> for details.</p>
+<div class="section" id="using-psygig-triage-sdk-api">
+<h2>Using PSYGIG Triage SDK API<a class="headerlink" href="#using-psygig-triage-sdk-api" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>The Diagnostic Testing API can be accessed by including a <a class="reference internal" href="api/file_include_psyiage_psyiagesdk.h.html"><span class="doc">single header file</span></a>
+and linking the <code class="docutils literal notranslate"><span class="pre">libpsyiage</span></code> shared library. See <a class="reference internal" href="getting-started.html#libpsyiage-linking"><span class="std std-ref">Advanced Setup - Building your application with libpsyiage</span></a> for details.</p>
 <div class="section" id="running-the-ram-diagnostic-test">
 <h3>Running the RAM Diagnostic Test<a class="headerlink" href="#running-the-ram-diagnostic-test" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -274,17 +274,17 @@ and linking the <code class="docutils literal notranslate"><span class="pre">lib
 11
 12
 13
-14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;psygigsdk.h&gt;</span><span class="cp"></span>
+14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;psyiage/psyiagesdk.h&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="n">psygig_agent_handle</span>     <span class="n">pah</span><span class="p">;</span>  <span class="c1">// handle to psygig agent</span>
+    <span class="n">psyiage_handle</span>     <span class="n">pah</span><span class="p">;</span>  <span class="c1">// handle to psyiage instance</span>
 
     <span class="cm">/* ... Initialize code omitted for simplicity ... */</span>
 
     <span class="c1">// Run RAM diagnostic test</span>
-    <span class="n">psygig_diag_result</span> <span class="n">diagres</span><span class="p">;</span>
-    <span class="n">rc</span> <span class="o">=</span> <span class="n">psygig_diag_run</span><span class="p">(</span><span class="n">pah</span><span class="p">,</span> <span class="n">PSYGIG_DIAG_RAM</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">diagres</span><span class="p">);</span>
+    <span class="n">psyiage_diag_result</span> <span class="n">diagres</span><span class="p">;</span>
+    <span class="n">rc</span> <span class="o">=</span> <span class="n">psyiage_diag_run</span><span class="p">(</span><span class="n">pah</span><span class="p">,</span> <span class="n">PSYIAGE_DIAG_RAM</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">diagres</span><span class="p">);</span>
 
     <span class="cm">/* ... Cleanup code omitted for simplicity ... */</span>
 <span class="p">}</span>
@@ -352,8 +352,8 @@ and linking the <code class="docutils literal notranslate"><span class="pre">lib
         <script type="text/javascript" src="_static/jquery.js"></script>
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
         <script type="text/javascript" src="_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/javascript" src="_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
         <script type="text/javascript" src="_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
     

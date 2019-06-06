@@ -19,10 +19,6 @@ The Application Performance Profiling API includes many features suitable for in
 - Identify memory leaks in your program
 - Generate an application performance HTML report
 
-.. note::
-    The `Application Performance Profiling` feature is a work-in-progress. 
-    Please :email:`contact us <info@psygig.com?subject=[PSYGIG Triage SDK] Application Performance Profiling>` if you are interested in beta-testing this feature. 
-
 Using ``psymon``
 ----------------
 Without modifying your existing source code, you can instantly enable performance profiling
@@ -30,14 +26,14 @@ to your application by using the ``psymon`` script to run your program. For exam
 
 .. code-block:: bash
 
-   psymon --profile -c "/path/to/your/app --arg1 --arg2 --arg3"
+   psymon --profile "/path/to/your/app --arg1 --arg2 --arg3"
 
 See :doc:`psymon-man` for a complete list of options.
 
-Using PSYGIG SDK API
-------------------------
-The Application Performance Profiling API can be accessed by including a :doc:`single header file <api/file_include_psygigsdk.h>`
-and linking the ``libpsygig`` shared library. See :ref:`libpsygig-linking` for details.
+Using PSYGIG Triage SDK API
+---------------------------
+The Application Performance Profiling API can be accessed by including a :doc:`single header file <api/file_include_psyiage_psyiagesdk.h>`
+and linking the ``libpsyiage`` shared library. See :ref:`libpsyiage-linking` for details.
 
 Start/stop CPU profiler
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -45,43 +41,1373 @@ Start/stop CPU profiler
 .. code-block:: c
     :linenos:
 
-    #include <psygigsdk.h>
+    #include <psyiage/psyiagesdk.h>
 
     int main(int argc, char **argv)
     {
-        psygig_agent_handle     pah;  // handle to psygig agent
+        psyiage_handle     pah;  // handle to psyiage instance
 
         /* ... Initialize code omitted for simplicity ... */
 
         // Start CPU profiler
-        rc = psygig_profile_enable_profiling(pah, 10);
+        rc = psyiage_profile_enable_profiling(pah, 10);
 
         /* Some code to profile */
 
         // Stop CPU profiler
-        rc = psygig_profile_enable_profiling(pah, 0);
+        rc = psyiage_profile_enable_profiling(pah, 0);
 
         /* ... Cleanup code omitted for simplicity ... */
     }
 
 Generate memory usage snapshot
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. note::
+    `Generate memory usage snapshot` is a work-in-progress. 
+    Please :email:`contact us <info@psygig.com?subject=[PSYGIG Triage SDK] Generate memory usage snapshot>` if you are interested in beta-testing this feature. 
 
 .. code-block:: c
     :linenos:
 
-    #include <psygigsdk.h>
+    #include <psyiage/psyiagesdk.h>
 
     int main(int argc, char **argv)
     {
-        psygig_agent_handle     pah;  // handle to psygig agent
+        psyiage_handle     pah;  // handle to psyiage instance
 
         /* ... Initialize code omitted for simplicity ... */
 
         // Capture memory snapshot
-        rc = psygig_profile_memory_snapshot(pah);
+        rc = psyiage_profile_memory_snapshot(pah);
 
         /* ... Cleanup code omitted for simplicity ... */
+    }
+
+Sample JSON CPU profile data
+-----------------------------
+
+.. code-block:: javascript
+
+    {
+        "CPUProfile": {
+        "Duration": 6.971331596,
+        "Timestamp": 1559354468.148161173,
+        "TimeOfDay": "2019-06-01 11:01:08.148161172",
+        "Samples": [
+        {
+            "ThreadId": "0x00007f49a2367800",
+            "Count": 1,
+            "Depth": 10,
+            "StackTrace": [
+            {
+            "FrameNum": 1,
+            "InstrAddr": "0x000055d0471b2f38",
+            "FilePathId": 0,
+            "FunctionId": 1,
+            "Offset": "0xf148"
+            },
+            {
+            "FrameNum": 2,
+            "InstrAddr": "0x000055d0471b3dc1",
+            "FilePathId": 0,
+            "FunctionId": 1,
+            "Offset": "0xffd1"
+            },
+            {
+            "FrameNum": 3,
+            "InstrAddr": "0x000055d0471aad13",
+            "FilePathId": 0,
+            "FunctionId": 1,
+            "Offset": "0x6f23"
+            },
+            {
+            "FrameNum": 4,
+            "InstrAddr": "0x000055d04719d6f2",
+            "FilePathId": 0,
+            "FunctionId": 2,
+            "Offset": "0x32"
+            },
+            {
+            "FrameNum": 5,
+            "InstrAddr": "0x000055d0471a27ae",
+            "FilePathId": 0,
+            "FunctionId": 3,
+            "Offset": "0x45de"
+            },
+            {
+            "FrameNum": 6,
+            "InstrAddr": "0x000055d0471a27ae",
+            "FilePathId": 0,
+            "FunctionId": 3,
+            "Offset": "0x45de"
+            },
+            {
+            "FrameNum": 7,
+            "InstrAddr": "0x000055d04719cb2a",
+            "FilePathId": 0,
+            "FunctionId": 4,
+            "Offset": "0xf32"
+            },
+            {
+            "FrameNum": 8,
+            "InstrAddr": "0x000055d04719c221",
+            "FilePathId": 0,
+            "FunctionId": 4,
+            "Offset": "0x629"
+            },
+            {
+            "FrameNum": 9,
+            "InstrAddr": "0x00007f49a11bc830",
+            "FilePathId": 5,
+            "FunctionId": 6,
+            "Offset": "0xf0"
+            },
+            {
+            "FrameNum": 10,
+            "InstrAddr": "0x000055d04719c369",
+            "FilePathId": 0,
+            "FunctionId": 4,
+            "Offset": "0x771"
+            }
+            ]
+        },
+        {
+            "ThreadId": "0x00007f49a2367800",
+            "Count": 7,
+            "Depth": 8,
+            "StackTrace": [
+            {
+            "FrameNum": 1,
+            "InstrAddr": "0x00007f49a12648eb",
+            "FilePathId": 5,
+            "FunctionId": 7,
+            "Offset": "0x3b"
+            },
+            {
+            "FrameNum": 2,
+            "InstrAddr": "0x00007f49a12644b1",
+            "FilePathId": 5,
+            "FunctionId": 8,
+            "Offset": "0x91"
+            },
+            {
+            "FrameNum": 3,
+            "InstrAddr": "0x000055d0471b6bb8",
+            "FilePathId": 0,
+            "FunctionId": 1,
+            "Offset": "0x12dc8"
+            },
+            {
+            "FrameNum": 4,
+            "InstrAddr": "0x000055d0471b7e6c",
+            "FilePathId": -1,
+            "FunctionId": 9,
+            "Offset": "0x4fc"
+            },
+            {
+            "FrameNum": 5,
+            "InstrAddr": "0x000055d04719c7a0",
+            "FilePathId": 0,
+            "FunctionId": 4,
+            "Offset": "0xba8"
+            },
+            {
+            "FrameNum": 6,
+            "InstrAddr": "0x000055d04719c221",
+            "FilePathId": 0,
+            "FunctionId": 4,
+            "Offset": "0x629"
+            },
+            {
+            "FrameNum": 7,
+            "InstrAddr": "0x00007f49a11bc830",
+            "FilePathId": 5,
+            "FunctionId": 6,
+            "Offset": "0xf0"
+            },
+            {
+            "FrameNum": 8,
+            "InstrAddr": "0x000055d04719c369",
+            "FilePathId": 0,
+            "FunctionId": 4,
+            "Offset": "0x771"
+            }
+            ]
+        },
+        {
+            "ThreadId": "0x00007f49a2367800",
+            "Count": 1,
+            "Depth": 10,
+            "StackTrace": [
+            {
+            "FrameNum": 1,
+            "InstrAddr": "0x00007f49a11e9319",
+            "FilePathId": 5,
+            "FunctionId": 10,
+            "Offset": "0x1a9"
+            },
+            {
+            "FrameNum": 2,
+            "InstrAddr": "0x00007f49a12b2bc9",
+            "FilePathId": 5,
+            "FunctionId": 11,
+            "Offset": "0xf9"
+            },
+            {
+            "FrameNum": 3,
+            "InstrAddr": "0x000055d0471aad45",
+            "FilePathId": 0,
+            "FunctionId": 1,
+            "Offset": "0x6f55"
+            },
+            {
+            "FrameNum": 4,
+            "InstrAddr": "0x000055d04719d6f2",
+            "FilePathId": 0,
+            "FunctionId": 2,
+            "Offset": "0x32"
+            },
+            {
+            "FrameNum": 5,
+            "InstrAddr": "0x000055d0471a27ae",
+            "FilePathId": 0,
+            "FunctionId": 3,
+            "Offset": "0x45de"
+            },
+            {
+            "FrameNum": 6,
+            "InstrAddr": "0x000055d0471a27ae",
+            "FilePathId": 0,
+            "FunctionId": 3,
+            "Offset": "0x45de"
+            },
+            {
+            "FrameNum": 7,
+            "InstrAddr": "0x000055d04719cb2a",
+            "FilePathId": 0,
+            "FunctionId": 4,
+            "Offset": "0xf32"
+            },
+            {
+            "FrameNum": 8,
+            "InstrAddr": "0x000055d04719c221",
+            "FilePathId": 0,
+            "FunctionId": 4,
+            "Offset": "0x629"
+            },
+            {
+            "FrameNum": 9,
+            "InstrAddr": "0x00007f49a11bc830",
+            "FilePathId": 5,
+            "FunctionId": 6,
+            "Offset": "0xf0"
+            },
+            {
+            "FrameNum": 10,
+            "InstrAddr": "0x000055d04719c369",
+            "FilePathId": 0,
+            "FunctionId": 4,
+            "Offset": "0x771"
+            }
+            ]
+        },
+        {
+            "ThreadId": "0x00007f49a2367800",
+            "Count": 1,
+            "Depth": 11,
+            "StackTrace": [
+            {
+            "FrameNum": 1,
+            "InstrAddr": "0x00007f49a11c8b74",
+            "FilePathId": 5,
+            "FunctionId": 12,
+            "Offset": "0x14"
+            },
+            {
+            "FrameNum": 2,
+            "InstrAddr": "0x000055d0471b2cad",
+            "FilePathId": 0,
+            "FunctionId": 1,
+            "Offset": "0xeebd"
+            },
+            {
+            "FrameNum": 3,
+            "InstrAddr": "0x000055d0471b3dc1",
+            "FilePathId": 0,
+            "FunctionId": 1,
+            "Offset": "0xffd1"
+            },
+            {
+            "FrameNum": 4,
+            "InstrAddr": "0x000055d0471aad13",
+            "FilePathId": 0,
+            "FunctionId": 1,
+            "Offset": "0x6f23"
+            },
+            {
+            "FrameNum": 5,
+            "InstrAddr": "0x000055d04719d6f2",
+            "FilePathId": 0,
+            "FunctionId": 2,
+            "Offset": "0x32"
+            },
+            {
+            "FrameNum": 6,
+            "InstrAddr": "0x000055d0471a27ae",
+            "FilePathId": 0,
+            "FunctionId": 3,
+            "Offset": "0x45de"
+            },
+            {
+            "FrameNum": 7,
+            "InstrAddr": "0x000055d0471a27ae",
+            "FilePathId": 0,
+            "FunctionId": 3,
+            "Offset": "0x45de"
+            },
+            {
+            "FrameNum": 8,
+            "InstrAddr": "0x000055d04719cb2a",
+            "FilePathId": 0,
+            "FunctionId": 4,
+            "Offset": "0xf32"
+            },
+            {
+            "FrameNum": 9,
+            "InstrAddr": "0x000055d04719c221",
+            "FilePathId": 0,
+            "FunctionId": 4,
+            "Offset": "0x629"
+            },
+            {
+            "FrameNum": 10,
+            "InstrAddr": "0x00007f49a11bc830",
+            "FilePathId": 5,
+            "FunctionId": 6,
+            "Offset": "0xf0"
+            },
+            {
+            "FrameNum": 11,
+            "InstrAddr": "0x000055d04719c369",
+            "FilePathId": 0,
+            "FunctionId": 4,
+            "Offset": "0x771"
+            }
+            ]
+        },
+        {
+            "ThreadId": "0x00007f49a2367800",
+            "Count": 1,
+            "Depth": 9,
+            "StackTrace": [
+            {
+            "FrameNum": 1,
+            "InstrAddr": "0x00007f49a121e786",
+            "FilePathId": 5,
+            "FunctionId": 13,
+            "Offset": "0x56b6"
+            },
+            {
+            "FrameNum": 2,
+            "InstrAddr": "0x00007f49a1220184",
+            "FilePathId": 5,
+            "FunctionId": 14,
+            "Offset": "0x54"
+            },
+            {
+            "FrameNum": 3,
+            "InstrAddr": "0x000055d0471b6313",
+            "FilePathId": 0,
+            "FunctionId": 1,
+            "Offset": "0x12523"
+            },
+            {
+            "FrameNum": 4,
+            "InstrAddr": "0x000055d0471b6bf2",
+            "FilePathId": -1,
+            "FunctionId": 1,
+            "Offset": "0x12e02"
+            },
+            {
+            "FrameNum": 5,
+            "InstrAddr": "0x000055d0471b7e6c",
+            "FilePathId": -1,
+            "FunctionId": 9,
+            "Offset": "0x4fc"
+            },
+            {
+            "FrameNum": 6,
+            "InstrAddr": "0x000055d04719c7a0",
+            "FilePathId": 0,
+            "FunctionId": 4,
+            "Offset": "0xba8"
+            },
+            {
+            "FrameNum": 7,
+            "InstrAddr": "0x000055d04719c221",
+            "FilePathId": 0,
+            "FunctionId": 4,
+            "Offset": "0x629"
+            },
+            {
+            "FrameNum": 8,
+            "InstrAddr": "0x00007f49a11bc830",
+            "FilePathId": 5,
+            "FunctionId": 6,
+            "Offset": "0xf0"
+            },
+            {
+            "FrameNum": 9,
+            "InstrAddr": "0x000055d04719c369",
+            "FilePathId": 0,
+            "FunctionId": 4,
+            "Offset": "0x771"
+            }
+            ]
+        },
+        {
+            "ThreadId": "0x00007f49a2367800",
+            "Count": 1,
+            "Depth": 4,
+            "StackTrace": [
+            {
+            "FrameNum": 1,
+            "InstrAddr": "0x000055d04719cb02",
+            "FilePathId": 0,
+            "FunctionId": 4,
+            "Offset": "0xf0a"
+            },
+            {
+            "FrameNum": 2,
+            "InstrAddr": "0x000055d04719c221",
+            "FilePathId": 0,
+            "FunctionId": 4,
+            "Offset": "0x629"
+            },
+            {
+            "FrameNum": 3,
+            "InstrAddr": "0x00007f49a11bc830",
+            "FilePathId": 5,
+            "FunctionId": 6,
+            "Offset": "0xf0"
+            },
+            {
+            "FrameNum": 4,
+            "InstrAddr": "0x000055d04719c369",
+            "FilePathId": 0,
+            "FunctionId": 4,
+            "Offset": "0x771"
+            }
+            ]
+        },
+        {
+            "ThreadId": "0x00007f49a2367800",
+            "Count": 42,
+            "Depth": 14,
+            "StackTrace": [
+            {
+            "FrameNum": 1,
+            "InstrAddr": "0x00007f49a12932c0",
+            "FilePathId": 5,
+            "FunctionId": 15,
+            "Offset": "0x10"
+            },
+            {
+            "FrameNum": 2,
+            "InstrAddr": "0x00007f49a1214bff",
+            "FilePathId": 5,
+            "FunctionId": 16,
+            "Offset": "0x8f"
+            },
+            {
+            "FrameNum": 3,
+            "InstrAddr": "0x00007f49a1216409",
+            "FilePathId": 5,
+            "FunctionId": 17,
+            "Offset": "0x79"
+            },
+            {
+            "FrameNum": 4,
+            "InstrAddr": "0x00007f49a121547d",
+            "FilePathId": 5,
+            "FunctionId": 18,
+            "Offset": "0x29d"
+            },
+            {
+            "FrameNum": 5,
+            "InstrAddr": "0x00007f49a11e992d",
+            "FilePathId": 5,
+            "FunctionId": 10,
+            "Offset": "0x7bd"
+            },
+            {
+            "FrameNum": 6,
+            "InstrAddr": "0x00007f49a12b2bc9",
+            "FilePathId": 5,
+            "FunctionId": 11,
+            "Offset": "0xf9"
+            },
+            {
+            "FrameNum": 7,
+            "InstrAddr": "0x000055d0471aad45",
+            "FilePathId": 0,
+            "FunctionId": 1,
+            "Offset": "0x6f55"
+            },
+            {
+            "FrameNum": 8,
+            "InstrAddr": "0x000055d04719d6f2",
+            "FilePathId": 0,
+            "FunctionId": 2,
+            "Offset": "0x32"
+            },
+            {
+            "FrameNum": 9,
+            "InstrAddr": "0x000055d0471a27ae",
+            "FilePathId": 0,
+            "FunctionId": 3,
+            "Offset": "0x45de"
+            },
+            {
+            "FrameNum": 10,
+            "InstrAddr": "0x000055d0471a27ae",
+            "FilePathId": 0,
+            "FunctionId": 3,
+            "Offset": "0x45de"
+            },
+            {
+            "FrameNum": 11,
+            "InstrAddr": "0x000055d04719cb2a",
+            "FilePathId": 0,
+            "FunctionId": 4,
+            "Offset": "0xf32"
+            },
+            {
+            "FrameNum": 12,
+            "InstrAddr": "0x000055d04719c221",
+            "FilePathId": 0,
+            "FunctionId": 4,
+            "Offset": "0x629"
+            },
+            {
+            "FrameNum": 13,
+            "InstrAddr": "0x00007f49a11bc830",
+            "FilePathId": 5,
+            "FunctionId": 6,
+            "Offset": "0xf0"
+            },
+            {
+            "FrameNum": 14,
+            "InstrAddr": "0x000055d04719c369",
+            "FilePathId": 0,
+            "FunctionId": 4,
+            "Offset": "0x771"
+            }
+            ]
+        },
+        {
+            "ThreadId": "0x00007f49a2367800",
+            "Count": 1,
+            "Depth": 14,
+            "StackTrace": [
+            {
+            "FrameNum": 1,
+            "InstrAddr": "0x00007f49a12932be",
+            "FilePathId": 5,
+            "FunctionId": 15,
+            "Offset": "0xe"
+            },
+            {
+            "FrameNum": 2,
+            "InstrAddr": "0x00007f49a1214bff",
+            "FilePathId": 5,
+            "FunctionId": 16,
+            "Offset": "0x8f"
+            },
+            {
+            "FrameNum": 3,
+            "InstrAddr": "0x00007f49a1216409",
+            "FilePathId": 5,
+            "FunctionId": 17,
+            "Offset": "0x79"
+            },
+            {
+            "FrameNum": 4,
+            "InstrAddr": "0x00007f49a121547d",
+            "FilePathId": 5,
+            "FunctionId": 18,
+            "Offset": "0x29d"
+            },
+            {
+            "FrameNum": 5,
+            "InstrAddr": "0x00007f49a11e992d",
+            "FilePathId": 5,
+            "FunctionId": 10,
+            "Offset": "0x7bd"
+            },
+            {
+            "FrameNum": 6,
+            "InstrAddr": "0x00007f49a12b2bc9",
+            "FilePathId": 5,
+            "FunctionId": 11,
+            "Offset": "0xf9"
+            },
+            {
+            "FrameNum": 7,
+            "InstrAddr": "0x000055d0471aad45",
+            "FilePathId": 0,
+            "FunctionId": 1,
+            "Offset": "0x6f55"
+            },
+            {
+            "FrameNum": 8,
+            "InstrAddr": "0x000055d04719d6f2",
+            "FilePathId": 0,
+            "FunctionId": 2,
+            "Offset": "0x32"
+            },
+            {
+            "FrameNum": 9,
+            "InstrAddr": "0x000055d0471a27ae",
+            "FilePathId": 0,
+            "FunctionId": 3,
+            "Offset": "0x45de"
+            },
+            {
+            "FrameNum": 10,
+            "InstrAddr": "0x000055d0471a27ae",
+            "FilePathId": 0,
+            "FunctionId": 3,
+            "Offset": "0x45de"
+            },
+            {
+            "FrameNum": 11,
+            "InstrAddr": "0x000055d04719cb2a",
+            "FilePathId": 0,
+            "FunctionId": 4,
+            "Offset": "0xf32"
+            },
+            {
+            "FrameNum": 12,
+            "InstrAddr": "0x000055d04719c221",
+            "FilePathId": 0,
+            "FunctionId": 4,
+            "Offset": "0x629"
+            },
+            {
+            "FrameNum": 13,
+            "InstrAddr": "0x00007f49a11bc830",
+            "FilePathId": 5,
+            "FunctionId": 6,
+            "Offset": "0xf0"
+            },
+            {
+            "FrameNum": 14,
+            "InstrAddr": "0x000055d04719c369",
+            "FilePathId": 0,
+            "FunctionId": 4,
+            "Offset": "0x771"
+            }
+            ]
+        },
+        {
+            "ThreadId": "0x00007f49a2367800",
+            "Count": 1,
+            "Depth": 9,
+            "StackTrace": [
+            {
+            "FrameNum": 1,
+            "InstrAddr": "0x000055d0471aae7f",
+            "FilePathId": 0,
+            "FunctionId": 1,
+            "Offset": "0x708f"
+            },
+            {
+            "FrameNum": 2,
+            "InstrAddr": "0x000055d0471aad29",
+            "FilePathId": 0,
+            "FunctionId": 1,
+            "Offset": "0x6f39"
+            },
+            {
+            "FrameNum": 3,
+            "InstrAddr": "0x000055d04719d6f2",
+            "FilePathId": 0,
+            "FunctionId": 2,
+            "Offset": "0x32"
+            },
+            {
+            "FrameNum": 4,
+            "InstrAddr": "0x000055d0471a27ae",
+            "FilePathId": 0,
+            "FunctionId": 3,
+            "Offset": "0x45de"
+            },
+            {
+            "FrameNum": 5,
+            "InstrAddr": "0x000055d0471a27ae",
+            "FilePathId": 0,
+            "FunctionId": 3,
+            "Offset": "0x45de"
+            },
+            {
+            "FrameNum": 6,
+            "InstrAddr": "0x000055d04719cb2a",
+            "FilePathId": 0,
+            "FunctionId": 4,
+            "Offset": "0xf32"
+            },
+            {
+            "FrameNum": 7,
+            "InstrAddr": "0x000055d04719c221",
+            "FilePathId": 0,
+            "FunctionId": 4,
+            "Offset": "0x629"
+            },
+            {
+            "FrameNum": 8,
+            "InstrAddr": "0x00007f49a11bc830",
+            "FilePathId": 5,
+            "FunctionId": 6,
+            "Offset": "0xf0"
+            },
+            {
+            "FrameNum": 9,
+            "InstrAddr": "0x000055d04719c369",
+            "FilePathId": 0,
+            "FunctionId": 4,
+            "Offset": "0x771"
+            }
+            ]
+        },
+        {
+            "ThreadId": "0x00007f49a2367800",
+            "Count": 1,
+            "Depth": 9,
+            "StackTrace": [
+            {
+            "FrameNum": 1,
+            "InstrAddr": "0x000055d0471aae35",
+            "FilePathId": 0,
+            "FunctionId": 1,
+            "Offset": "0x7045"
+            },
+            {
+            "FrameNum": 2,
+            "InstrAddr": "0x000055d0471aad29",
+            "FilePathId": 0,
+            "FunctionId": 1,
+            "Offset": "0x6f39"
+            },
+            {
+            "FrameNum": 3,
+            "InstrAddr": "0x000055d04719d6f2",
+            "FilePathId": 0,
+            "FunctionId": 2,
+            "Offset": "0x32"
+            },
+            {
+            "FrameNum": 4,
+            "InstrAddr": "0x000055d0471a27ae",
+            "FilePathId": 0,
+            "FunctionId": 3,
+            "Offset": "0x45de"
+            },
+            {
+            "FrameNum": 5,
+            "InstrAddr": "0x000055d0471a27ae",
+            "FilePathId": 0,
+            "FunctionId": 3,
+            "Offset": "0x45de"
+            },
+            {
+            "FrameNum": 6,
+            "InstrAddr": "0x000055d04719cb2a",
+            "FilePathId": 0,
+            "FunctionId": 4,
+            "Offset": "0xf32"
+            },
+            {
+            "FrameNum": 7,
+            "InstrAddr": "0x000055d04719c221",
+            "FilePathId": 0,
+            "FunctionId": 4,
+            "Offset": "0x629"
+            },
+            {
+            "FrameNum": 8,
+            "InstrAddr": "0x00007f49a11bc830",
+            "FilePathId": 5,
+            "FunctionId": 6,
+            "Offset": "0xf0"
+            },
+            {
+            "FrameNum": 9,
+            "InstrAddr": "0x000055d04719c369",
+            "FilePathId": 0,
+            "FunctionId": 4,
+            "Offset": "0x771"
+            }
+            ]
+        }
+        ],
+        "MemoryMap": [
+        {
+            "StartAddr": "0x55d047195000",
+            "EndAddr": "0x55d0471c8000",
+            "Permissions": "r-xp",
+            "FileOffset": "0x0",
+            "Device": "08:01",
+            "Inode": 1573226,
+            "FilePathId": 19
+        },
+        {
+            "StartAddr": "0x55d0473c8000",
+            "EndAddr": "0x55d0473ca000",
+            "Permissions": "r--p",
+            "FileOffset": "0x33000",
+            "Device": "08:01",
+            "Inode": 1573226,
+            "FilePathId": 19
+        },
+        {
+            "StartAddr": "0x55d0473ca000",
+            "EndAddr": "0x55d0473cb000",
+            "Permissions": "rw-p",
+            "FileOffset": "0x35000",
+            "Device": "08:01",
+            "Inode": 1573226,
+            "FilePathId": 19
+        },
+        {
+            "StartAddr": "0x55d0473cb000",
+            "EndAddr": "0x55d0473cc000",
+            "Permissions": "rw-p",
+            "FileOffset": "0x0",
+            "Device": "00:00",
+            "Inode": 0,
+            "FilePathId": -1
+        },
+        {
+            "StartAddr": "0x55d04889b000",
+            "EndAddr": "0x55d0488c9000",
+            "Permissions": "rw-p",
+            "FileOffset": "0x0",
+            "Device": "00:00",
+            "Inode": 0,
+            "FilePathId": 20
+        },
+        {
+            "StartAddr": "0x7f49a031c000",
+            "EndAddr": "0x7f49a06f1000",
+            "Permissions": "r--p",
+            "FileOffset": "0x0",
+            "Device": "08:01",
+            "Inode": 1582240,
+            "FilePathId": 21
+        },
+        {
+            "StartAddr": "0x7f49a06f1000",
+            "EndAddr": "0x7f49a0b0b000",
+            "Permissions": "rw-p",
+            "FileOffset": "0x0",
+            "Device": "00:00",
+            "Inode": 0,
+            "FilePathId": -1
+        },
+        {
+            "StartAddr": "0x7f49a0b0b000",
+            "EndAddr": "0x7f49a0b79000",
+            "Permissions": "r-xp",
+            "FileOffset": "0x0",
+            "Device": "08:01",
+            "Inode": 1971606,
+            "FilePathId": 22
+        },
+        {
+            "StartAddr": "0x7f49a0b79000",
+            "EndAddr": "0x7f49a0d79000",
+            "Permissions": "---p",
+            "FileOffset": "0x6e000",
+            "Device": "08:01",
+            "Inode": 1971606,
+            "FilePathId": 22
+        },
+        {
+            "StartAddr": "0x7f49a0d79000",
+            "EndAddr": "0x7f49a0d7a000",
+            "Permissions": "r--p",
+            "FileOffset": "0x6e000",
+            "Device": "08:01",
+            "Inode": 1971606,
+            "FilePathId": 22
+        },
+        {
+            "StartAddr": "0x7f49a0d7a000",
+            "EndAddr": "0x7f49a0d7b000",
+            "Permissions": "rw-p",
+            "FileOffset": "0x6f000",
+            "Device": "08:01",
+            "Inode": 1971606,
+            "FilePathId": 22
+        },
+        {
+            "StartAddr": "0x7f49a0d7b000",
+            "EndAddr": "0x7f49a0d7e000",
+            "Permissions": "r-xp",
+            "FileOffset": "0x0",
+            "Device": "08:01",
+            "Inode": 1972536,
+            "FilePathId": 23
+        },
+        {
+            "StartAddr": "0x7f49a0d7e000",
+            "EndAddr": "0x7f49a0f7d000",
+            "Permissions": "---p",
+            "FileOffset": "0x3000",
+            "Device": "08:01",
+            "Inode": 1972536,
+            "FilePathId": 23
+        },
+        {
+            "StartAddr": "0x7f49a0f7d000",
+            "EndAddr": "0x7f49a0f7e000",
+            "Permissions": "r--p",
+            "FileOffset": "0x2000",
+            "Device": "08:01",
+            "Inode": 1972536,
+            "FilePathId": 23
+        },
+        {
+            "StartAddr": "0x7f49a0f7e000",
+            "EndAddr": "0x7f49a0f7f000",
+            "Permissions": "rw-p",
+            "FileOffset": "0x3000",
+            "Device": "08:01",
+            "Inode": 1972536,
+            "FilePathId": 23
+        },
+        {
+            "StartAddr": "0x7f49a0f7f000",
+            "EndAddr": "0x7f49a0f97000",
+            "Permissions": "r-xp",
+            "FileOffset": "0x0",
+            "Device": "08:01",
+            "Inode": 1972533,
+            "FilePathId": 24
+        },
+        {
+            "StartAddr": "0x7f49a0f97000",
+            "EndAddr": "0x7f49a1196000",
+            "Permissions": "---p",
+            "FileOffset": "0x18000",
+            "Device": "08:01",
+            "Inode": 1972533,
+            "FilePathId": 24
+        },
+        {
+            "StartAddr": "0x7f49a1196000",
+            "EndAddr": "0x7f49a1197000",
+            "Permissions": "r--p",
+            "FileOffset": "0x17000",
+            "Device": "08:01",
+            "Inode": 1972533,
+            "FilePathId": 24
+        },
+        {
+            "StartAddr": "0x7f49a1197000",
+            "EndAddr": "0x7f49a1198000",
+            "Permissions": "rw-p",
+            "FileOffset": "0x18000",
+            "Device": "08:01",
+            "Inode": 1972533,
+            "FilePathId": 24
+        },
+        {
+            "StartAddr": "0x7f49a1198000",
+            "EndAddr": "0x7f49a119c000",
+            "Permissions": "rw-p",
+            "FileOffset": "0x0",
+            "Device": "00:00",
+            "Inode": 0,
+            "FilePathId": -1
+        },
+        {
+            "StartAddr": "0x7f49a119c000",
+            "EndAddr": "0x7f49a135c000",
+            "Permissions": "r-xp",
+            "FileOffset": "0x0",
+            "Device": "08:01",
+            "Inode": 1972534,
+            "FilePathId": 25
+        },
+        {
+            "StartAddr": "0x7f49a135c000",
+            "EndAddr": "0x7f49a155c000",
+            "Permissions": "---p",
+            "FileOffset": "0x1c0000",
+            "Device": "08:01",
+            "Inode": 1972534,
+            "FilePathId": 25
+        },
+        {
+            "StartAddr": "0x7f49a155c000",
+            "EndAddr": "0x7f49a1560000",
+            "Permissions": "r--p",
+            "FileOffset": "0x1c0000",
+            "Device": "08:01",
+            "Inode": 1972534,
+            "FilePathId": 25
+        },
+        {
+            "StartAddr": "0x7f49a1560000",
+            "EndAddr": "0x7f49a1562000",
+            "Permissions": "rw-p",
+            "FileOffset": "0x1c4000",
+            "Device": "08:01",
+            "Inode": 1972534,
+            "FilePathId": 25
+        },
+        {
+            "StartAddr": "0x7f49a1562000",
+            "EndAddr": "0x7f49a1566000",
+            "Permissions": "rw-p",
+            "FileOffset": "0x0",
+            "Device": "00:00",
+            "Inode": 0,
+            "FilePathId": -1
+        },
+        {
+            "StartAddr": "0x7f49a1566000",
+            "EndAddr": "0x7f49a166e000",
+            "Permissions": "r-xp",
+            "FileOffset": "0x0",
+            "Device": "08:01",
+            "Inode": 1971430,
+            "FilePathId": 26
+        },
+        {
+            "StartAddr": "0x7f49a166e000",
+            "EndAddr": "0x7f49a186d000",
+            "Permissions": "---p",
+            "FileOffset": "0x108000",
+            "Device": "08:01",
+            "Inode": 1971430,
+            "FilePathId": 26
+        },
+        {
+            "StartAddr": "0x7f49a186d000",
+            "EndAddr": "0x7f49a186e000",
+            "Permissions": "r--p",
+            "FileOffset": "0x107000",
+            "Device": "08:01",
+            "Inode": 1971430,
+            "FilePathId": 26
+        },
+        {
+            "StartAddr": "0x7f49a186e000",
+            "EndAddr": "0x7f49a186f000",
+            "Permissions": "rw-p",
+            "FileOffset": "0x108000",
+            "Device": "08:01",
+            "Inode": 1971430,
+            "FilePathId": 26
+        },
+        {
+            "StartAddr": "0x7f49a186f000",
+            "EndAddr": "0x7f49a188e000",
+            "Permissions": "r-xp",
+            "FileOffset": "0x0",
+            "Device": "08:01",
+            "Inode": 1971635,
+            "FilePathId": 27
+        },
+        {
+            "StartAddr": "0x7f49a188e000",
+            "EndAddr": "0x7f49a1a8d000",
+            "Permissions": "---p",
+            "FileOffset": "0x1f000",
+            "Device": "08:01",
+            "Inode": 1971635,
+            "FilePathId": 27
+        },
+        {
+            "StartAddr": "0x7f49a1a8d000",
+            "EndAddr": "0x7f49a1a8e000",
+            "Permissions": "r--p",
+            "FileOffset": "0x1e000",
+            "Device": "08:01",
+            "Inode": 1971635,
+            "FilePathId": 27
+        },
+        {
+            "StartAddr": "0x7f49a1a8e000",
+            "EndAddr": "0x7f49a1a8f000",
+            "Permissions": "rw-p",
+            "FileOffset": "0x1f000",
+            "Device": "08:01",
+            "Inode": 1971635,
+            "FilePathId": 27
+        },
+        {
+            "StartAddr": "0x7f49a1a8f000",
+            "EndAddr": "0x7f49a1a91000",
+            "Permissions": "rw-p",
+            "FileOffset": "0x0",
+            "Device": "00:00",
+            "Inode": 0,
+            "FilePathId": -1
+        },
+        {
+            "StartAddr": "0x7f49a1a91000",
+            "EndAddr": "0x7f49a1e75000",
+            "Permissions": "r-xp",
+            "FileOffset": "0x0",
+            "Device": "00:32",
+            "Inode": 1967932,
+            "FilePathId": 28
+        },
+        {
+            "StartAddr": "0x7f49a1e75000",
+            "EndAddr": "0x7f49a2074000",
+            "Permissions": "---p",
+            "FileOffset": "0x3e4000",
+            "Device": "00:32",
+            "Inode": 1967932,
+            "FilePathId": 28
+        },
+        {
+            "StartAddr": "0x7f49a2074000",
+            "EndAddr": "0x7f49a20a7000",
+            "Permissions": "r--p",
+            "FileOffset": "0x3e3000",
+            "Device": "00:32",
+            "Inode": 1967932,
+            "FilePathId": 28
+        },
+        {
+            "StartAddr": "0x7f49a20a7000",
+            "EndAddr": "0x7f49a20b4000",
+            "Permissions": "rw-p",
+            "FileOffset": "0x416000",
+            "Device": "00:32",
+            "Inode": 1967932,
+            "FilePathId": 28
+        },
+        {
+            "StartAddr": "0x7f49a20b4000",
+            "EndAddr": "0x7f49a2169000",
+            "Permissions": "rw-p",
+            "FileOffset": "0x0",
+            "Device": "00:00",
+            "Inode": 0,
+            "FilePathId": -1
+        },
+        {
+            "StartAddr": "0x7f49a2169000",
+            "EndAddr": "0x7f49a218f000",
+            "Permissions": "r-xp",
+            "FileOffset": "0x0",
+            "Device": "08:01",
+            "Inode": 1972305,
+            "FilePathId": 29
+        },
+        {
+            "StartAddr": "0x7f49a2327000",
+            "EndAddr": "0x7f49a236c000",
+            "Permissions": "rw-p",
+            "FileOffset": "0x0",
+            "Device": "00:00",
+            "Inode": 0,
+            "FilePathId": -1
+        },
+        {
+            "StartAddr": "0x7f49a2388000",
+            "EndAddr": "0x7f49a238e000",
+            "Permissions": "rw-p",
+            "FileOffset": "0x0",
+            "Device": "00:00",
+            "Inode": 0,
+            "FilePathId": -1
+        },
+        {
+            "StartAddr": "0x7f49a238e000",
+            "EndAddr": "0x7f49a238f000",
+            "Permissions": "r--p",
+            "FileOffset": "0x25000",
+            "Device": "08:01",
+            "Inode": 1972305,
+            "FilePathId": 29
+        },
+        {
+            "StartAddr": "0x7f49a238f000",
+            "EndAddr": "0x7f49a2390000",
+            "Permissions": "rw-p",
+            "FileOffset": "0x26000",
+            "Device": "08:01",
+            "Inode": 1972305,
+            "FilePathId": 29
+        },
+        {
+            "StartAddr": "0x7f49a2390000",
+            "EndAddr": "0x7f49a2391000",
+            "Permissions": "rw-p",
+            "FileOffset": "0x0",
+            "Device": "00:00",
+            "Inode": 0,
+            "FilePathId": -1
+        },
+        {
+            "StartAddr": "0x7ffc76986000",
+            "EndAddr": "0x7ffc769a8000",
+            "Permissions": "rw-p",
+            "FileOffset": "0x0",
+            "Device": "00:00",
+            "Inode": 0,
+            "FilePathId": 30
+        },
+        {
+            "StartAddr": "0x7ffc769eb000",
+            "EndAddr": "0x7ffc769ee000",
+            "Permissions": "r--p",
+            "FileOffset": "0x0",
+            "Device": "00:00",
+            "Inode": 0,
+            "FilePathId": 31
+        }
+        ],
+        "StringTable": [
+        {
+            "Id": 22,
+            "Value": "/lib/x86_64-linux-gnu/libpcre.so.3.13.2"
+        },
+        {
+            "Id": 4,
+            "Value": "_init"
+        },
+        {
+            "Id": 3,
+            "Value": "pred_fls"
+        },
+        {
+            "Id": 0,
+            "Value": "find"
+        },
+        {
+            "Id": 10,
+            "Value": "_IO_vfprintf"
+        },
+        {
+            "Id": 7,
+            "Value": "versionsort"
+        },
+        {
+            "Id": 27,
+            "Value": "/lib/x86_64-linux-gnu/libselinux.so.1"
+        },
+        {
+            "Id": 24,
+            "Value": "/lib/x86_64-linux-gnu/libpthread-2.23.so"
+        },
+        {
+            "Id": 16,
+            "Value": "_IO_file_write"
+        },
+        {
+            "Id": 8,
+            "Value": "readdir"
+        },
+        {
+            "Id": 1,
+            "Value": "pred_fprintf"
+        },
+        {
+            "Id": 9,
+            "Value": "fts_read"
+        },
+        {
+            "Id": 17,
+            "Value": "_IO_do_write"
+        },
+        {
+            "Id": 6,
+            "Value": "__libc_start_main"
+        },
+        {
+            "Id": 11,
+            "Value": "__fprintf_chk"
+        },
+        {
+            "Id": 30,
+            "Value": "[stack]"
+        },
+        {
+            "Id": 18,
+            "Value": "_IO_file_xsputn"
+        },
+        {
+            "Id": 31,
+            "Value": "[vvar]"
+        },
+        {
+            "Id": 23,
+            "Value": "/lib/x86_64-linux-gnu/libdl-2.23.so"
+        },
+        {
+            "Id": 5,
+            "Value": "/lib/x86_64-linux-gnu/libc.so.6"
+        },
+        {
+            "Id": 26,
+            "Value": "/lib/x86_64-linux-gnu/libm-2.23.so"
+        },
+        {
+            "Id": 28,
+            "Value": "/home/psygig/psygig-sdk-c/build/install/opt/psygig/psyiage/lib/libpsyiage.so.0.3.0"
+        },
+        {
+            "Id": 29,
+            "Value": "/lib/x86_64-linux-gnu/ld-2.23.so"
+        },
+        {
+            "Id": 12,
+            "Value": "__ctype_get_mb_cur_max"
+        },
+        {
+            "Id": 15,
+            "Value": "__write"
+        },
+        {
+            "Id": 21,
+            "Value": "/usr/lib/locale/locale-archive"
+        },
+        {
+            "Id": 25,
+            "Value": "/lib/x86_64-linux-gnu/libc-2.23.so"
+        },
+        {
+            "Id": 2,
+            "Value": "pred_execdir"
+        },
+        {
+            "Id": 19,
+            "Value": "/usr/bin/find"
+        },
+        {
+            "Id": 14,
+            "Value": "__libc_malloc"
+        },
+        {
+            "Id": 13,
+            "Value": "_IO_str_seekoff"
+        },
+        {
+            "Id": 20,
+            "Value": "[heap]"
+        }
+        ]
+        }
     }
 
 Sample CPU profile data visualization

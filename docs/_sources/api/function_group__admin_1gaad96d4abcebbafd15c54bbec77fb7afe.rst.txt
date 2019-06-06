@@ -1,0 +1,13 @@
+.. _exhale_function_group__admin_1gaad96d4abcebbafd15c54bbec77fb7afe:
+
+Function psyiage_add_sink
+=========================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: psyiage_add_sink(psyiage_handle, psyiage_sink_cfg *)

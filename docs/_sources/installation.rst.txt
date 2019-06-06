@@ -1,25 +1,47 @@
 Download & Installation
 =======================
-Installing the `PSYGIG Triage SDK` is a simple procedure involving downloading and extracting the release package
-on to the device file system. 
 
 SDK Download
 ------------
-Download the `PSYGIG Triage SDK` from the `releases page <https://psygig.com?psygig-triage-sdk>`_.
+Download the most up-to-date `PSYGIG Triage SDK` from the `releases page <https://psygig.com>`_.
 
 .. note::
-    Ensure that you download the correct release for your platform architecture (eg. x86_64, aarch64).
+    Ensure that you download the correct release for your platform architecture (eg. x86_64, armhf, aarch64).
 
 .. _install-sdk:
 
 Installing the SDK
 ------------------
+
+Installing .deb file via ``dpkg``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Run the following command to install the .deb package using dpkg:
+
+.. code-block:: bash
+
+    sudo dpkg -i psyiage-VERSION-ARCH.deb
+
+:sub:`where VERSION is the SDK version and ARCH is the platform architecture`
+
+Installing .tar.gz file via ``tar``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Extract the SDK to the desired location (eg. ``/opt``) using the ``tar`` command:
 
 .. code-block:: bash
 
-    sudo tar xvzf psygig-VERSION-ARCH.tar.gz -C /opt
-    
+    sudo tar xvzf psyiage-VERSION-ARCH.tar.gz -C /opt
+
 :sub:`where VERSION is the SDK version and ARCH is the platform architecture`
+
+`To make it easier to access the SDK's libraries and binaries, you may want to setup symbolic links from the system directories (eg. /usr/local/bin /usr/local/lib)`
+
+.. code-block:: bash
+
+    sudo ln -fs /opt/psygig/psyiage/include/* /usr/local/include
+    sudo ln -fs /opt/psygig/psyiage/bin/* /usr/local/bin
+    sudo ln -fs /opt/psygig/psyiage/lib/* /usr/local/lib
+    sudo ldconfig
 
 That's it! Now head to :doc:`getting-started` to start instrumenting your application.

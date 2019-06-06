@@ -1,0 +1,309 @@
+
+.. _file_include_psyiage_psyiagesdk.h:
+
+File psyiagesdk.h
+=================
+
+|exhale_lsh| :ref:`Parent directory <dir_include_psyiage>` (``include/psyiage``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+PSYGIG Triage SDK API header file. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/psyiage/psyiagesdk.h``)
+---------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_psyiage_psyiagesdk.h.rst
+
+
+
+Detailed Description
+--------------------
+
+Copyright (C) 2019 PSYGIG
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. 
+
+
+
+
+Includes
+--------
+
+
+- ``stdint.h``
+
+- ``stdio.h``
+
+
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_struct__psyiage__cpuinfo`
+
+- :ref:`exhale_struct_struct__psyiage__diag__result`
+
+- :ref:`exhale_struct_struct__psyiage__diskinfo`
+
+- :ref:`exhale_struct_struct__psyiage__fsinfo`
+
+- :ref:`exhale_struct_struct__psyiage__meminfo`
+
+- :ref:`exhale_struct_struct__psyiage__netinfo`
+
+- :ref:`exhale_struct_struct__psyiage__osinfo`
+
+- :ref:`exhale_struct_struct__psyiage__pciinfo`
+
+- :ref:`exhale_struct_struct__psyiage__pointcloud__data`
+
+- :ref:`exhale_struct_struct__psyiage__session__info`
+
+- :ref:`exhale_struct_struct__psyiage__sink__cfg`
+
+- :ref:`exhale_struct_struct__psyiage__sink__file__cfg`
+
+- :ref:`exhale_struct_struct__psyiage__sink__fstream__cfg`
+
+- :ref:`exhale_struct_struct__psyiage__sink__http__cfg`
+
+- :ref:`exhale_struct_struct__psyiage__sink__influxdb__cfg`
+
+- :ref:`exhale_struct_struct__psyiage__sink__mqtt__cfg`
+
+- :ref:`exhale_struct_struct__psyiage__sink__psygig__cfg`
+
+- :ref:`exhale_struct_struct__psyiage__sink__tcp__cfg`
+
+- :ref:`exhale_struct_struct__psyiage__sink__udp__cfg`
+
+- :ref:`exhale_struct_struct__psyiage__sysinfo`
+
+- :ref:`exhale_struct_struct__psyiage__usbinfo`
+
+- :ref:`exhale_struct_struct__psyiage__video__cfg`
+
+
+Enums
+-----
+
+
+- :ref:`exhale_enum_group__admin_1ga06fc87d81c62e9abb8790b6e5713c55b`
+
+- :ref:`exhale_enum_group__log_1gadf764cbdea00d65edcd07bb9953ad2b7`
+
+- :ref:`exhale_enum_group__benchmark_1gac03dae5406da673f498e6bab7336aee6`
+
+- :ref:`exhale_enum_group__diag_1gac770c842f98bec563fe2340bd6e878a8`
+
+- :ref:`exhale_enum_psyiagesdk_8h_1a734f6bf1ee2ec276496c1422b058d6a5`
+
+- :ref:`exhale_enum_group__event_1ga57d263052073675d36b0508906b3295f`
+
+- :ref:`exhale_enum_group__log_1ga48b7b38696df6517a044bbd18bbb0a41`
+
+- :ref:`exhale_enum_group__metric_1ga70589d67957039a542cc0e145800e04a`
+
+- :ref:`exhale_enum_group__admin_1ga11aad8ec19c713fe01e757c542ec8f03`
+
+- :ref:`exhale_enum_group__admin_1ga66b12eae528c03fa4bd539d9f1d51fda`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_group__admin_1gaad96d4abcebbafd15c54bbec77fb7afe`
+
+- :ref:`exhale_function_group__benchmark_1ga78a2c0ca88cfe4a8131009e2c8ad58bc`
+
+- :ref:`exhale_function_group__admin_1ga45475ebc1a0de0c7235b335582cec39b`
+
+- :ref:`exhale_function_group__crash_1gaa1cf522377f5700324b2e2689e757e55`
+
+- :ref:`exhale_function_group__crash_1ga75fbbeb52ff7abb36b4a0936a4f4a224`
+
+- :ref:`exhale_function_group__crash_1ga62988c01593331c81abcecbd2802393c`
+
+- :ref:`exhale_function_group__diag_1gad6ec410e55af93597dbf4a8f90cd8261`
+
+- :ref:`exhale_function_group__diag_1ga8c776d3e23a731373df927d15bb6a158`
+
+- :ref:`exhale_function_group__event_1ga073357feb3a8a779a416c6f4e00df863`
+
+- :ref:`exhale_function_group__event_1ga88fa290d48b65043113cadec8dfc03b0`
+
+- :ref:`exhale_function_group__event_1gadb39dc50e109bd382c40cd5a26179caf`
+
+- :ref:`exhale_function_group__admin_1ga84098c77aa86802e46d76c3fc9d9b05c`
+
+- :ref:`exhale_function_group__admin_1gaafe397a3a21395843a420633e201acb8`
+
+- :ref:`exhale_function_group__admin_1ga58ecaa2271e7e1507a016482b9bb870c`
+
+- :ref:`exhale_function_group__admin_1gab8664018e420c273c2445963406e370a`
+
+- :ref:`exhale_function_group__admin_1ga689acebf415fa1b1ac81ee98a4f02ebe`
+
+- :ref:`exhale_function_group__log_1gaee7f59f93c8b969927f7c635a10d0217`
+
+- :ref:`exhale_function_group__log_1gab26869954e2077d9528e5ee2aa01a851`
+
+- :ref:`exhale_function_group__log_1ga66ffb17354fe9a3634b1415aa7909943`
+
+- :ref:`exhale_function_group__log_1gaca2e28802660df71c0c1802a7fcca889`
+
+- :ref:`exhale_function_group__log_1gabdba4839b5940b035dab35a547132871`
+
+- :ref:`exhale_function_group__metric_1gae9c2020b8292c26d902de6f91a53524c`
+
+- :ref:`exhale_function_group__metric_1ga63a6b5010d50b0443555adb15106dd14`
+
+- :ref:`exhale_function_group__metric_1ga50ac5677790d3ced2eb4354c4adb1b9a`
+
+- :ref:`exhale_function_group__metric_1ga3e00588fc2053ab426da22f973424043`
+
+- :ref:`exhale_function_group__metric_1ga65fe769e9290b20201e1dd01b29c2166`
+
+- :ref:`exhale_function_group__metric_1gabd74a787a571ef4e160c3f2a83e946f8`
+
+- :ref:`exhale_function_group__metric_1gad6ee99f1de56dd03d91dfcf02dacdb71`
+
+- :ref:`exhale_function_group__metric_1gafbe2b448c64bce6d855afbd5d2247955`
+
+- :ref:`exhale_function_group__metric_1gab715c1e25afb366bd3ec5d4f7b0b3346`
+
+- :ref:`exhale_function_group__profile_1ga62fc4763ea6cc9d9a42564a2790d4207`
+
+- :ref:`exhale_function_group__profile_1ga49c998d49450ca1024fe0dd94592b214`
+
+- :ref:`exhale_function_group__profile_1gab3bd7bfd5de5b5af79231e51d25f5744`
+
+- :ref:`exhale_function_group__admin_1ga1b78ff10f48bb97007ca0bd7ae83cb63`
+
+- :ref:`exhale_function_group__admin_1ga80a2a28f0e7e89af0b849809528488e6`
+
+- :ref:`exhale_function_group__admin_1ga685b0634cb744c1b920c8452404330ec`
+
+- :ref:`exhale_function_group__admin_1ga8cf34f1c5e1ca06e3dabe6a8f5ef5f97`
+
+- :ref:`exhale_function_group__sysinfo_1ga6a766b0b280da58739595172719c1b08`
+
+- :ref:`exhale_function_group__sysinfo_1ga248d2dba10cc8a368b09dbafd7659a7a`
+
+- :ref:`exhale_function_group__video_1gab44c287691d4b5c9748142bc6baea6aa`
+
+- :ref:`exhale_function_group__video_1ga7a35f0cbf89fbac1d8277470984700c9`
+
+- :ref:`exhale_function_group__video_1ga136c94bc1954b25f3e6d499581cbecd8`
+
+
+Defines
+-------
+
+
+- :ref:`exhale_define_group__sysinfo_1ga036449da4ccac7279fa86d00ca8861d1`
+
+- :ref:`exhale_define_group__admin_1ga55e37042abe9e49d5b055ca4da45dce2`
+
+- :ref:`exhale_define_group__sysinfo_1gac874d7a1f535e6a609d1bf4c3b74e421`
+
+- :ref:`exhale_define_group__sysinfo_1gaa5f75fdbcf486cecbce0a63152429c2c`
+
+- :ref:`exhale_define_group__sysinfo_1ga83701fcd523d39d6399f6f701e8bbaea`
+
+- :ref:`exhale_define_group__sysinfo_1ga1fa9555567da6fbd4652105591a3264a`
+
+- :ref:`exhale_define_group__admin_1ga4f63dfd286ac76e65b342e2820428e9c`
+
+- :ref:`exhale_define_group__sysinfo_1gafba6e02f31b8a53894ca0e0faaaa7482`
+
+
+Typedefs
+--------
+
+
+- :ref:`exhale_typedef_group__benchmark_1gaea3c4fa11ac33ff2876572da9697045f`
+
+- :ref:`exhale_typedef_group__sysinfo_1ga73a9c407ebaca5cdab83dbc11f01d3ef`
+
+- :ref:`exhale_typedef_group__diag_1gafe434ff30f430b6f0e4c8b73f395ce29`
+
+- :ref:`exhale_typedef_group__diag_1gae5cf86ea571b82e577d3f19c434d9a54`
+
+- :ref:`exhale_typedef_group__sysinfo_1gaf42431ed915b3f35a95816a7e5f5e437`
+
+- :ref:`exhale_typedef_psyiagesdk_8h_1a04a2ebbe603eeb319217ace07cb5950d`
+
+- :ref:`exhale_typedef_group__event_1gae1c6518703f04847513478d34f5932e4`
+
+- :ref:`exhale_typedef_group__sysinfo_1gaff2e794d5ec36561f8c067fb486903bb`
+
+- :ref:`exhale_typedef_group__admin_1ga49255132aa0ebae339c8e05d385980b2`
+
+- :ref:`exhale_typedef_group__log_1ga808be951c69d09a9dfd404c9c516f0ce`
+
+- :ref:`exhale_typedef_group__sysinfo_1ga291ded934cd9cff52388819b63e0bc47`
+
+- :ref:`exhale_typedef_group__metric_1ga3ec4a745466817a40b916566a379bc83`
+
+- :ref:`exhale_typedef_group__sysinfo_1ga5d799ce23fcd267dd59d4f9782376f84`
+
+- :ref:`exhale_typedef_group__sysinfo_1ga4d483955cbe645e631d66a0905bd6ddd`
+
+- :ref:`exhale_typedef_group__sysinfo_1ga07334784a527ae69fb98d80f00e33658`
+
+- :ref:`exhale_typedef_group__metric_1ga748985727467aa81bfb33988a17e3ed5`
+
+- :ref:`exhale_typedef_group__admin_1ga56c72b8200b4083156548bb07200805f`
+
+- :ref:`exhale_typedef_group__admin_1gad16476cfe5c3822528da970b59904243`
+
+- :ref:`exhale_typedef_group__admin_1ga8e508fdbc67d17db77ffa7361734ff1f`
+
+- :ref:`exhale_typedef_group__admin_1gae9a4cb96e37fe1332f761c07c2dfcc7e`
+
+- :ref:`exhale_typedef_group__admin_1ga46f3f258385a58e95bd2841f2426b20f`
+
+- :ref:`exhale_typedef_group__admin_1gadc5bb1081e343d7e0f133a547c59e701`
+
+- :ref:`exhale_typedef_group__admin_1ga1e1859bec7fc878e24adca169ae16147`
+
+- :ref:`exhale_typedef_group__admin_1ga29b9caabb18720031d4fd4852d920207`
+
+- :ref:`exhale_typedef_group__admin_1gaa87f95f2c81cccd5cd107b2dd6dbccd2`
+
+- :ref:`exhale_typedef_group__admin_1gaa5431a5dc87350dc36e4debb1f4d459e`
+
+- :ref:`exhale_typedef_group__admin_1gafd597ed8a80e3e08bdbfb653a2af76f2`
+
+- :ref:`exhale_typedef_group__admin_1gaeb6555902b19d87d0b2631fdee270a2f`
+
+- :ref:`exhale_typedef_group__sysinfo_1ga196ccbc07a32f7e27868dffaba2aa628`
+
+- :ref:`exhale_typedef_group__sysinfo_1ga87cdb6c2ddc997b0a3de8b8d2609efc1`
+
+- :ref:`exhale_typedef_group__video_1ga10a2a2b22fcbc3f928dc6f3a37789fdd`
+
+- :ref:`exhale_typedef_group__video_1gaaa0c6b2cc90010654de1ae761138d245`
+

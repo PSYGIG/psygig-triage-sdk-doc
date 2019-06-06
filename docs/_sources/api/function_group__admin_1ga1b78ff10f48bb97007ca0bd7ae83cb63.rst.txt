@@ -1,0 +1,13 @@
+.. _exhale_function_group__admin_1ga1b78ff10f48bb97007ca0bd7ae83cb63:
+
+Function psyiage_remove_sink
+============================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: psyiage_remove_sink(psyiage_handle, int)

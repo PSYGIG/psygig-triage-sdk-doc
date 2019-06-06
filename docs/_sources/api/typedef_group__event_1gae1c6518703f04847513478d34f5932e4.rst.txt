@@ -1,0 +1,13 @@
+.. _exhale_typedef_group__event_1gae1c6518703f04847513478d34f5932e4:
+
+Typedef psyiage_event_level
+===========================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: psyiage_event_level

@@ -1,0 +1,13 @@
+.. _exhale_function_group__sysinfo_1ga248d2dba10cc8a368b09dbafd7659a7a:
+
+Function psyiage_sysinfo_get
+============================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: psyiage_sysinfo_get(psyiage_handle, psyiage_sysinfo *)

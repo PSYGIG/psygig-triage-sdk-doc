@@ -81,18 +81,14 @@ to your application by using the ``psymon`` script to run your program. For exam
 
 .. code-block:: bash
 
-   psymon --sysinfo -c "/path/to/your/app --arg1 --arg2 --arg3"
+   psymon "/path/to/your/app --arg1 --arg2 --arg3"
 
 See :doc:`psymon-man` for a complete list of options.
 
-.. note::
-    ``psymon`` is a work-in-progress. 
-    Please :email:`contact us <info@psygig.com?subject=[PSYGIG Triage SDK] psymon>` if you are interested in beta-testing this feature. 
-
-Using PSYGIG SDK API
-------------------------
-The System Information API can be accessed by including a :doc:`single header file <api/file_include_psygigsdk.h>`
-and linking the ``libpsygig`` shared library. See :ref:`libpsygig-linking` for details.
+Using PSYGIG Triage SDK API
+---------------------------
+The System Information API can be accessed by including a :doc:`single header file <api/file_include_psyiage_psyiagesdk.h>`
+and linking the ``libpsyiage`` shared library. See :ref:`libpsyiage-linking` for details.
 
 Print CPU details to stdout
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -100,16 +96,16 @@ Print CPU details to stdout
 .. code-block:: c
     :linenos:
 
-    #include <psygigsdk.h>
+    #include <psyiage/psyiagesdk.h>
 
     int main(int argc, char **argv)
     {
-        psygig_agent_handle     pah;  // handle to psygig agent
+        psyiage_handle     pah;  // handle to psyiage instance
 
         /* ... Initialize code omitted for simplicity ... */
 
         // Get the system information
-        rc = psygig_sysinfo_get(pah, &sysinfo );
+        rc = psyiage_sysinfo_get(pah, &sysinfo );
 
         // Print out the system information
         printf("CPU Architecture:\t%s\n", sysinfo.cpuinfo.architecture);

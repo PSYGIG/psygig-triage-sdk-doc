@@ -1,0 +1,13 @@
+.. _exhale_typedef_group__sysinfo_1ga4d483955cbe645e631d66a0905bd6ddd:
+
+Typedef psyiage_osinfo
+======================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: psyiage_osinfo

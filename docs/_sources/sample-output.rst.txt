@@ -4,872 +4,1023 @@ Sample Output
 .. code-block:: javascript
 
     {
-        "Session": {
-            "DeviceID": "7a3cb41c5a05cf4a09df67a39a09f09f683047b892d2874563102e614f0b754a",
-            "Name": "psygig-0.2.0-20190115-153452",
-            "StartTime": "2019-01-15 15:34:52",
-            "EndTime": "2019-01-15 15:35:02",
-            "Duration": 10,
-            "SysInfo": {
-                "CPUInfo": {
-                    "ThreadsPerCore": 1,
-                    "CoresPerPackage": 1,
-                    "NumPackages": 8,
-                    "Vendor": "GenuineIntel",
-                    "Model": "Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz",
-                    "Architecture": "x86",
-                    "Features": "aes avx avx2 bmi1 bmi2 cx16 erms f16c fma3 sse4_1 sse4_2 ssse3 ",
-                    "Endian": "Little Endian",
-                    "ClockMhz": 2808,
-                    "X86Info": {
-                        "Microarchitecture": "INTEL_KBL",
-                        "Family": 6,
-                        "Model": 158,
-                        "Stepping": 9
-                    },
-                    "CacheInfo": [
-                        {
-                            "Level": 1,
-                            "Size": 32768,
-                            "LineSize": 64,
-                            "Associativity": 8,
-                            "Type": "Data"
-                        },
-                        {
-                            "Level": 1,
-                            "Size": 32768,
-                            "LineSize": 64,
-                            "Associativity": 8,
-                            "Type": "Instruction"
-                        },
-                        {
-                            "Level": 2,
-                            "Size": 262144,
-                            "LineSize": 64,
-                            "Associativity": 4,
-                            "Type": "Unified"
-                        },
-                        {
-                            "Level": 3,
-                            "Size": 6291456,
-                            "LineSize": 64,
-                            "Associativity": 12,
-                            "Type": "Unified"
-                        }
-                    ]
-                },
-                "MemInfo": {
-                    "TotalRAM": 8339906560,
-                    "FreeRAM": 123629568,
-                    "SharedRAM": 1137197056,
-                    "BufferRAM": 14872576,
-                    "TotalSwap": 8587309056,
-                    "FreeSwap": 4164923392,
-                    "TotalHiMem": 0,
-                    "FreeHiMem": 0,
-                    "NumProcesses": 1106
-                },
-                "FileSystemInfo": [
-                    {
-                        "Device": "/dev/sda1",
-                        "MountDir": "/",
-                        "FileSystem": "ext4",
-                        "MountOpts": "rw,relatime,errors=remount-ro,d",
-                        "BlockSize": 4096,
-                        "FragSize": 4096,
-                        "TotalBlocks": 8223964,
-                        "FreeBlocks": 914408,
-                        "AvailBlocks": 490895,
-                        "TotalInodes": 2097152,
-                        "FreeInodes": 1239254,
-                        "AvailInodes": 1239254,
-                        "FileSystemID": 272869076,
-                        "FileSystemFlags": 4096
-                    },
-                    {
-                        "Device": "/home/psygig/.Private",
-                        "MountDir": "/home/psygig",
-                        "FileSystem": "ecryptfs",
-                        "MountOpts": "rw,nosuid,nodev,relatime,ecrypt",
-                        "BlockSize": 4096,
-                        "FragSize": 4096,
-                        "TotalBlocks": 8223964,
-                        "FreeBlocks": 914408,
-                        "AvailBlocks": 490895,
-                        "TotalInodes": 2097152,
-                        "FreeInodes": 1239254,
-                        "AvailInodes": 1239254,
-                        "FileSystemID": 272869076,
-                        "FileSystemFlags": 4102
-                    }
-                ],
-                "OSInfo": {
-                    "Name": "Ubuntu",
-                    "FullName": "Ubuntu 16.04.5 LTS",
-                    "CodeName": "xenial",
-                    "Major": 16,
-                    "Minor": 4,
-                    "Patch": 5,
-                    "Build": 0,
-                    "KernelInfo": {
-                        "Name": "Linux",
-                        "Major": 4,
-                        "Minor": 15,
-                        "Patch": 0,
-                        "Build": 43
-                    }
-                },
-                "USBInfo": [
-                    {
-                        "Product": "xHCI Host Controller",
-                        "Manufacturer": "Linux 4.15.0-43-generic xhci-hcd",
-                        "DeviceClass": "Hub",
-                        "Version": "4.15",
-                        "Serial": "0000:03:00.0",
-                        "UsbVersion": " 2.00",
-                        "ProductId": 2,
-                        "VendorId": 7531
-                    },
-                    {
-                        "Product": "EHCI Host Controller",
-                        "Manufacturer": "Linux 4.15.0-43-generic ehci_hcd",
-                        "DeviceClass": "Hub",
-                        "Version": "4.15",
-                        "Serial": "0000:02:03.0",
-                        "UsbVersion": " 2.00",
-                        "ProductId": 2,
-                        "VendorId": 7531
-                    },
-                    {
-                        "Product": "VMware Virtual USB Hub",
-                        "Manufacturer": "",
-                        "DeviceClass": "Hub",
-                        "Version": "1.0",
-                        "Serial": "",
-                        "UsbVersion": " 2.00",
-                        "ProductId": 2,
-                        "VendorId": 3599
-                    },
-                    {
-                        "Product": "Virtual Bluetooth Adapter",
-                        "Manufacturer": "VMware",
-                        "DeviceClass": "Wireless Controller",
-                        "Version": "1.0",
-                        "Serial": "000650268328",
-                        "UsbVersion": " 2.00",
-                        "ProductId": 8,
-                        "VendorId": 3599
-                    },
-                    {
-                        "Product": "xHCI Host Controller",
-                        "Manufacturer": "Linux 4.15.0-43-generic xhci-hcd",
-                        "DeviceClass": "Hub",
-                        "Version": "4.15",
-                        "Serial": "0000:03:00.0",
-                        "UsbVersion": " 3.00",
-                        "ProductId": 3,
-                        "VendorId": 7531
-                    },
-                    {
-                        "Product": "VMware Virtual USB Hub",
-                        "Manufacturer": "",
-                        "DeviceClass": "Hub",
-                        "Version": "1.0",
-                        "Serial": "",
-                        "UsbVersion": " 1.10",
-                        "ProductId": 2,
-                        "VendorId": 3599
-                    },
-                    {
-                        "Product": "UHCI Host Controller",
-                        "Manufacturer": "Linux 4.15.0-43-generic uhci_hcd",
-                        "DeviceClass": "Hub",
-                        "Version": "4.15",
-                        "Serial": "0000:02:00.0",
-                        "UsbVersion": " 1.10",
-                        "ProductId": 1,
-                        "VendorId": 7531
-                    },
-                    {
-                        "Product": "VMware Virtual USB Hub",
-                        "Manufacturer": "",
-                        "DeviceClass": "Hub",
-                        "Version": "1.0",
-                        "Serial": "",
-                        "UsbVersion": " 1.10",
-                        "ProductId": 2,
-                        "VendorId": 3599
-                    },
-                    {
-                        "Product": "VMware Virtual USB Mouse",
-                        "Manufacturer": "VMware",
-                        "DeviceClass": "Unknown",
-                        "Version": "1.3",
-                        "Serial": "",
-                        "UsbVersion": " 1.10",
-                        "ProductId": 3,
-                        "VendorId": 3599
-                    }
-                ],
-                "DiskInfo": [
-                    {
-                        "Device": "sr0",
-                        "Model": "VMware SATA CD01",
-                        "Vendor": "NECVMWar",
-                        "Serial": "",
-                        "Size": 1073741312,
-                        "PartitionInfo": []
-                    },
-                    {
-                        "Device": "sda",
-                        "Model": "VMware Virtual S",
-                        "Vendor": "VMware, ",
-                        "Serial": "",
-                        "Size": 42949672960,
-                        "PartitionInfo": [
-                            {
-                                "PartNum": 2,
-                                "Start": 34360785920,
-                                "Size": 1024
-                            },
-                            {
-                                "PartNum": 5,
-                                "Start": 34360786944,
-                                "Size": 8587837440
-                            },
-                            {
-                                "PartNum": 1,
-                                "Start": 1048576,
-                                "Size": 34358689792
-                            }
-                        ]
-                    }
-                ],
-                "PCIInfo": [
-                    {
-                        "VendorName": "",
-                        "DeviceName": "",
-                        "VendorId": 5549,
-                        "DeviceId": 1913,
-                        "DomainNo": 0,
-                        "BusNo": 3,
-                        "DeviceNo": 0,
-                        "FunctionNo": 0,
-                        "BaseClass": 12,
-                        "SubClass": 3,
-                        "ProgIntfClass": 48,
-                        "Revision": 0
-                    },
-                    {
-                        "VendorName": "",
-                        "DeviceName": "",
-                        "VendorId": 4096,
-                        "DeviceId": 48,
-                        "DomainNo": 0,
-                        "BusNo": 0,
-                        "DeviceNo": 10,
-                        "FunctionNo": 0,
-                        "BaseClass": 1,
-                        "SubClass": 0,
-                        "ProgIntfClass": 0,
-                        "Revision": 1
-                    },
-                    {
-                        "VendorName": "",
-                        "DeviceName": "",
-                        "VendorId": 5549,
-                        "DeviceId": 1908,
-                        "DomainNo": 0,
-                        "BusNo": 2,
-                        "DeviceNo": 0,
-                        "FunctionNo": 0,
-                        "BaseClass": 12,
-                        "SubClass": 3,
-                        "ProgIntfClass": 0,
-                        "Revision": 0
-                    },
-                    {
-                        "VendorName": "",
-                        "DeviceName": "",
-                        "VendorId": 5549,
-                        "DeviceId": 1904,
-                        "DomainNo": 0,
-                        "BusNo": 2,
-                        "DeviceNo": 3,
-                        "FunctionNo": 0,
-                        "BaseClass": 12,
-                        "SubClass": 3,
-                        "ProgIntfClass": 32,
-                        "Revision": 0
-                    },
-                    {
-                        "VendorName": "",
-                        "DeviceName": "",
-                        "VendorId": 5549,
-                        "DeviceId": 1029,
-                        "DomainNo": 0,
-                        "BusNo": 0,
-                        "DeviceNo": 0,
-                        "FunctionNo": 0,
-                        "BaseClass": 3,
-                        "SubClass": 0,
-                        "ProgIntfClass": 0,
-                        "Revision": 0
-                    },
-                    {
-                        "VendorName": "",
-                        "DeviceName": "",
-                        "VendorId": 5549,
-                        "DeviceId": 1856,
-                        "DomainNo": 0,
-                        "BusNo": 0,
-                        "DeviceNo": 7,
-                        "FunctionNo": 7,
-                        "BaseClass": 8,
-                        "SubClass": 128,
-                        "ProgIntfClass": 0,
-                        "Revision": 16
-                    },
-                    {
-                        "VendorName": "",
-                        "DeviceName": "",
-                        "VendorId": 4724,
-                        "DeviceId": 4977,
-                        "DomainNo": 0,
-                        "BusNo": 2,
-                        "DeviceNo": 2,
-                        "FunctionNo": 0,
-                        "BaseClass": 4,
-                        "SubClass": 1,
-                        "ProgIntfClass": 0,
-                        "Revision": 2
-                    },
-                    {
-                        "VendorName": "",
-                        "DeviceName": "",
-                        "VendorId": 5549,
-                        "DeviceId": 2016,
-                        "DomainNo": 0,
-                        "BusNo": 2,
-                        "DeviceNo": 5,
-                        "FunctionNo": 0,
-                        "BaseClass": 1,
-                        "SubClass": 6,
-                        "ProgIntfClass": 1,
-                        "Revision": 0
-                    },
-                    {
-                        "VendorName": "",
-                        "DeviceName": "",
-                        "VendorId": 32902,
-                        "DeviceId": 28945,
-                        "DomainNo": 0,
-                        "BusNo": 0,
-                        "DeviceNo": 7,
-                        "FunctionNo": 1,
-                        "BaseClass": 1,
-                        "SubClass": 1,
-                        "ProgIntfClass": 138,
-                        "Revision": 1
-                    },
-                    {
-                        "VendorName": "",
-                        "DeviceName": "",
-                        "VendorId": 32902,
-                        "DeviceId": 4111,
-                        "DomainNo": 0,
-                        "BusNo": 2,
-                        "DeviceNo": 1,
-                        "FunctionNo": 0,
-                        "BaseClass": 2,
-                        "SubClass": 0,
-                        "ProgIntfClass": 0,
-                        "Revision": 1
-                    }
-                ],
-                "NetInfo": [
-                    {
-                        "Device": "ens33",
-                        "MacAddr": "00:0c:29:87:5e:df",
-                        "IPAddr": "192.168.183.155",
-                        "IP6Addr": "fe80::bb0a:46d8:686a:37cf"
-                    },
-                    {
-                        "Device": "lo",
-                        "MacAddr": "",
-                        "IPAddr": "127.0.0.1",
-                        "IP6Addr": "::1"
-                    }
-                ]
-            },
-            "Metrics": [
+      "Session": {
+        "DeviceID": "7a3cb41c5a05cf4a09df67a39a09f09f683047b892d2874563102e614f0b754a",
+        "Name": "psyiage-0.3.0-20190602-110741",
+        "StartTime": "2019-06-02 11:07:41.351514816",
+        "EndTime": "2019-06-02 11:07:49.000000000",
+        "Duration": 7.648485184,
+        "SysInfo": {
+        "CPUInfo": {
+          "ThreadsPerCore": 1,
+          "CoresPerPackage": 1,
+          "NumPackages": 8,
+          "Vendor": "GenuineIntel",
+          "Model": "Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz",
+          "Architecture": "x86",
+          "Features": "aes avx avx2 bmi1 bmi2 cx16 erms f16c fma3 sse4_1 sse4_2 ssse3 ",
+          "Endian": "Little Endian",
+          "ClockMhz": 2808.0029296875,
+          "X86Info": {
+          "Microarchitecture": "INTEL_KBL",
+          "Family": 6,
+          "Model": 158,
+          "Stepping": 9
+          },
+          "CacheInfo": [
+          {
+            "Level": 1,
+            "Size": 32768,
+            "LineSize": 64,
+            "Associativity": 8,
+            "Type": "Data"
+          },
+          {
+            "Level": 1,
+            "Size": 32768,
+            "LineSize": 64,
+            "Associativity": 8,
+            "Type": "Instruction"
+          },
+          {
+            "Level": 2,
+            "Size": 262144,
+            "LineSize": 64,
+            "Associativity": 4,
+            "Type": "Unified"
+          },
+          {
+            "Level": 3,
+            "Size": 6291456,
+            "LineSize": 64,
+            "Associativity": 12,
+            "Type": "Unified"
+          }
+          ]
+        },
+        "MemInfo": {
+          "TotalRAM": 8339869696,
+          "FreeRAM": 349646848,
+          "SharedRAM": 62222336,
+          "BufferRAM": 393728000,
+          "TotalSwap": 8587309056,
+          "FreeSwap": 8585986048,
+          "TotalHiMem": 0,
+          "FreeHiMem": 0,
+          "NumProcesses": 867
+        },
+        "FileSystemInfo": [
+          {
+          "Device": "/dev/sda1",
+          "MountDir": "/",
+          "FileSystem": "ext4",
+          "MountOpts": "rw,relatime,errors=remount-ro,d",
+          "BlockSize": 4096,
+          "FragSize": 4096,
+          "TotalBlocks": 8223964,
+          "FreeBlocks": 820378,
+          "AvailBlocks": 396865,
+          "TotalInodes": 2097152,
+          "FreeInodes": 1163043,
+          "AvailInodes": 1163043,
+          "FileSystemID": 272869076,
+          "FileSystemFlags": 4096
+          },
+          {
+          "Device": "/home/psygig/.Private",
+          "MountDir": "/home/psygig",
+          "FileSystem": "ecryptfs",
+          "MountOpts": "rw,nosuid,nodev,relatime,ecrypt",
+          "BlockSize": 4096,
+          "FragSize": 4096,
+          "TotalBlocks": 8223964,
+          "FreeBlocks": 820378,
+          "AvailBlocks": 396865,
+          "TotalInodes": 2097152,
+          "FreeInodes": 1163043,
+          "AvailInodes": 1163043,
+          "FileSystemID": 272869076,
+          "FileSystemFlags": 4102
+          }
+        ],
+        "OSInfo": {
+          "Name": "Ubuntu",
+          "FullName": "Ubuntu 16.04.5 LTS",
+          "CodeName": "xenial",
+          "Major": 16,
+          "Minor": 4,
+          "Patch": 5,
+          "Build": 0,
+          "KernelInfo": {
+          "Name": "Linux",
+          "Major": 4,
+          "Minor": 15,
+          "Patch": 0,
+          "Build": 50
+          }
+        },
+        "USBInfo": [
+          {
+          "Product": "xHCI Host Controller",
+          "Manufacturer": "Linux 4.15.0-50-generic xhci-hcd",
+          "DeviceClass": "Hub",
+          "Version": "4.15",
+          "Serial": "0000:03:00.0",
+          "UsbVersion": " 2.00",
+          "ProductId": 2,
+          "VendorId": 7531
+          },
+          {
+          "Product": "EHCI Host Controller",
+          "Manufacturer": "Linux 4.15.0-50-generic ehci_hcd",
+          "DeviceClass": "Hub",
+          "Version": "4.15",
+          "Serial": "0000:02:03.0",
+          "UsbVersion": " 2.00",
+          "ProductId": 2,
+          "VendorId": 7531
+          },
+          {
+          "Product": "VMware Virtual USB Hub",
+          "Manufacturer": "",
+          "DeviceClass": "Hub",
+          "Version": "1.0",
+          "Serial": "",
+          "UsbVersion": " 2.00",
+          "ProductId": 2,
+          "VendorId": 3599
+          },
+          {
+          "Product": "Virtual Bluetooth Adapter",
+          "Manufacturer": "VMware",
+          "DeviceClass": "Wireless Controller",
+          "Version": "1.0",
+          "Serial": "000650268328",
+          "UsbVersion": " 2.00",
+          "ProductId": 8,
+          "VendorId": 3599
+          },
+          {
+          "Product": "xHCI Host Controller",
+          "Manufacturer": "Linux 4.15.0-50-generic xhci-hcd",
+          "DeviceClass": "Hub",
+          "Version": "4.15",
+          "Serial": "0000:03:00.0",
+          "UsbVersion": " 3.00",
+          "ProductId": 3,
+          "VendorId": 7531
+          },
+          {
+          "Product": "VMware Virtual USB Hub",
+          "Manufacturer": "",
+          "DeviceClass": "Hub",
+          "Version": "1.0",
+          "Serial": "",
+          "UsbVersion": " 1.10",
+          "ProductId": 2,
+          "VendorId": 3599
+          },
+          {
+          "Product": "UHCI Host Controller",
+          "Manufacturer": "Linux 4.15.0-50-generic uhci_hcd",
+          "DeviceClass": "Hub",
+          "Version": "4.15",
+          "Serial": "0000:02:00.0",
+          "UsbVersion": " 1.10",
+          "ProductId": 1,
+          "VendorId": 7531
+          },
+          {
+          "Product": "VMware Virtual USB Hub",
+          "Manufacturer": "",
+          "DeviceClass": "Hub",
+          "Version": "1.0",
+          "Serial": "",
+          "UsbVersion": " 1.10",
+          "ProductId": 2,
+          "VendorId": 3599
+          },
+          {
+          "Product": "VMware Virtual USB Mouse",
+          "Manufacturer": "VMware",
+          "DeviceClass": "Unknown",
+          "Version": "1.3",
+          "Serial": "",
+          "UsbVersion": " 1.10",
+          "ProductId": 3,
+          "VendorId": 3599
+          }
+        ],
+        "DiskInfo": [
+          {
+          "Device": "sr0",
+          "Model": "VMware SATA CD01",
+          "Vendor": "NECVMWar",
+          "Serial": "",
+          "Size": 1073741312,
+          "PartitionInfo": []
+          },
+          {
+          "Device": "sda",
+          "Model": "VMware Virtual S",
+          "Vendor": "VMware, ",
+          "Serial": "",
+          "Size": 42949672960,
+          "PartitionInfo": [
             {
-                "Name": "ProcVM",
-                "Timestamps": [
-                    1547534093,
-                    1547534094,
-                    1547534095,
-                    1547534096,
-                    1547534097,
-                    1547534098,
-                    1547534099,
-                    1547534100,
-                    1547534101
-                ],
-                "Values": [
-                    244064256,
-                    244064256,
-                    244064256,
-                    244064256,
-                    244064256,
-                    244064256,
-                    244064256,
-                    244064256,
-                    244064256
-                ]
+            "PartNum": 2,
+            "Start": 34360785920,
+            "Size": 1024
             },
             {
-                "Name": "SysRAM",
-                "Timestamps": [
-                    1547534093,
-                    1547534094,
-                    1547534095,
-                    1547534096,
-                    1547534097,
-                    1547534098,
-                    1547534099,
-                    1547534100,
-                    1547534101
-                ],
-                "Values": [
-                    8192331776,
-                    8194359296,
-                    8193589248,
-                    8193470464,
-                    8193470464,
-                    8194048000,
-                    8195629056,
-                    8196390912,
-                    8198610944
-                ]
+            "PartNum": 5,
+            "Start": 34360786944,
+            "Size": 8587837440
             },
             {
-                "Name": "ProcRAM",
-                "Timestamps": [
-                    1547534093,
-                    1547534094,
-                    1547534095,
-                    1547534096,
-                    1547534097,
-                    1547534098,
-                    1547534099,
-                    1547534100,
-                    1547534101
-                ],
-                "Values": [
-                    3751936,
-                    3751936,
-                    3751936,
-                    3751936,
-                    3751936,
-                    3751936,
-                    3751936,
-                    3751936,
-                    3751936
-                ]
-            },
-            {
-                "Name": "ProcRAMPeak",
-                "Timestamps": [
-                    1547534093,
-                    1547534094,
-                    1547534095,
-                    1547534096,
-                    1547534097,
-                    1547534098,
-                    1547534099,
-                    1547534100,
-                    1547534101
-                ],
-                "Values": [
-                    3788800,
-                    3788800,
-                    3788800,
-                    3788800,
-                    3788800,
-                    3788800,
-                    3788800,
-                    3788800,
-                    3788800
-                ]
-            },
-            {
-                "Name": "SysCPU",
-                "Timestamps": [
-                    1547534093,
-                    1547534094,
-                    1547534095,
-                    1547534096,
-                    1547534097,
-                    1547534098,
-                    1547534099,
-                    1547534100,
-                    1547534101
-                ],
-                "Values": [
-                    0.04413619264960289,
-                    0.02893081679940224,
-                    0.04659949615597725,
-                    0.01624999940395355,
-                    0.02518891729414463,
-                    0.02770780771970749,
-                    0.05296342819929123,
-                    0.04785894230008125,
-                    0.02272727340459824
-                ]
-            },
-            {
-                "Name": "RandFloat",
-                "Timestamps": [
-                    1547534092,
-                    1547534093,
-                    1547534094,
-                    1547534095,
-                    1547534096,
-                    1547534097,
-                    1547534098,
-                    1547534099,
-                    1547534100,
-                    1547534101
-                ],
-                "Values": [
-                    0.3943829238414764,
-                    0.7984400391578674,
-                    0.1975513696670532,
-                    0.768229603767395,
-                    0.5539699792861938,
-                    0.6288709044456482,
-                    0.5134009122848511,
-                    0.9161950945854187,
-                    0.7172969579696655,
-                    0.606968879699707
-                ]
-            },
-            {
-                "Name": "ProcCPU",
-                "Timestamps": [
-                    1547534093,
-                    1547534094,
-                    1547534095,
-                    1547534096,
-                    1547534097,
-                    1547534098,
-                    1547534099,
-                    1547534100,
-                    1547534101
-                ],
-                "Values": [
-                    0,
-                    0.001237623742781579,
-                    0,
-                    0,
-                    0.001237623742781579,
-                    0.001249999972060323,
-                    0.001249999972060323,
-                    0,
-                    0.001249999972060323
-                ]
-            },
-            {
-                "Name": "ProcSwap",
-                "Timestamps": [
-                    1547534093,
-                    1547534094,
-                    1547534095,
-                    1547534096,
-                    1547534097,
-                    1547534098,
-                    1547534099,
-                    1547534100,
-                    1547534101
-                ],
-                "Values": [
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0
-                ]
-            },
-            {
-                "Name": "ProcVMPeak",
-                "Timestamps": [
-                    1547534093,
-                    1547534094,
-                    1547534095,
-                    1547534096,
-                    1547534097,
-                    1547534098,
-                    1547534099,
-                    1547534100,
-                    1547534101
-                ],
-                "Values": [
-                    311173120,
-                    311173120,
-                    311173120,
-                    311173120,
-                    311173120,
-                    311173120,
-                    311173120,
-                    311173120,
-                    311173120
-                ]
-            },
-            {
-                "Name": "RandInt",
-                "Timestamps": [
-                    1547534092,
-                    1547534093,
-                    1547534094,
-                    1547534095,
-                    1547534096,
-                    1547534097,
-                    1547534098,
-                    1547534099,
-                    1547534100,
-                    1547534101
-                ],
-                "Values": [
-                    1804289408,
-                    1681692800,
-                    1957747840,
-                    719885376,
-                    596516672,
-                    1025202368,
-                    783368704,
-                    2044897792,
-                    1365180544,
-                    304089184
-                ]
+            "PartNum": 1,
+            "Start": 1048576,
+            "Size": 34358689792
             }
-            ],
-            "Events": [
-            {
-                "Timestamp": 1547534092,
-                "TimeOfDay": "2019-01-15 15:35:02",
-                "Level": "Info",
-                "Source": "monitor",
-                "EventID": 1,
-                "Message": "Monitor task start"
-            },
-            {
-                "Timestamp": 1547534102,
-                "TimeOfDay": "2019-01-15 15:35:02",
-                "Level": "Info",
-                "Source": "monitor",
-                "EventID": 2,
-                "Message": "Monitor task complete"
-            }
-            ],
-            "Logs": [
-            {
-                "FilePath": "/var/log/auth.log.4.gz",
-                "Flags": 196609
-            },
-            {
-                "FilePath": "/var/log/lpr.log.3.gz",
-                "Flags": 196609
-            },
-            {
-                "FilePath": "/var/log/daemon.log.3.gz",
-                "Flags": 196609
-            },
-            {
-                "FilePath": "/var/log/auth.log.2.gz",
-                "Flags": 196609
-            },
-            {
-                "FilePath": "/var/log/syslog.1",
-                "Flags": 65537
-            },
-            {
-                "FilePath": "/var/log/daemon.log",
-                "Flags": 0
-            },
-            {
-                "FilePath": "/var/log/cron.log.1",
-                "Flags": 65537
-            },
-            {
-                "FilePath": "/var/log/lpr.log",
-                "Flags": 0
-            },
-            {
-                "FilePath": "/var/log/user.log.1",
-                "Flags": 65537
-            },
-            {
-                "FilePath": "/var/log/lpr.log.1",
-                "Flags": 65537
-            },
-            {
-                "FilePath": "/var/log/user.log",
-                "Flags": 0
-            },
-            {
-                "FilePath": "/var/log/cron.log",
-                "Flags": 0
-            },
-            {
-                "FilePath": "/var/log/daemon.log.1",
-                "Flags": 65537
-            },
-            {
-                "FilePath": "/var/log/debug.3.gz",
-                "Flags": 196609
-            },
-            {
-                "FilePath": "/var/log/syslog",
-                "Flags": 0
-            },
-            {
-                "FilePath": "/var/log/user.log.4.gz",
-                "Flags": 196609
-            },
-            {
-                "FilePath": "/var/log/syslog.2.gz",
-                "Flags": 196609
-            },
-            {
-                "FilePath": "/var/log/messages.4.gz",
-                "Flags": 196609
-            },
-            {
-                "FilePath": "/var/log/kern.log.4.gz",
-                "Flags": 196609
-            },
-            {
-                "FilePath": "/var/log/messages.2.gz",
-                "Flags": 196609
-            },
-            {
-                "FilePath": "/var/log/kern.log.2.gz",
-                "Flags": 196609
-            },
-            {
-                "FilePath": "/var/log/syslog.6.gz",
-                "Flags": 196609
-            },
-            {
-                "FilePath": "/var/log/cron.log.3.gz",
-                "Flags": 196609
-            },
-            {
-                "FilePath": "/var/log/user.log.2.gz",
-                "Flags": 196609
-            },
-            {
-                "FilePath": "/var/log/syslog.4.gz",
-                "Flags": 196609
-            },
-            {
-                "FilePath": "/var/log/lpr.log.2.gz",
-                "Flags": 196609
-            },
-            {
-                "FilePath": "/var/log/daemon.log.2.gz",
-                "Flags": 196609
-            },
-            {
-                "FilePath": "/var/log/daemon.log.4.gz",
-                "Flags": 196609
-            },
-            {
-                "FilePath": "/var/log/debug.1",
-                "Flags": 65537
-            },
-            {
-                "FilePath": "/var/log/lpr.log.4.gz",
-                "Flags": 196609
-            },
-            {
-                "FilePath": "/var/log/auth.log.3.gz",
-                "Flags": 196609
-            },
-            {
-                "FilePath": "/var/log/auth.log",
-                "Flags": 0
-            },
-            {
-                "FilePath": "/var/log/kern.log.1",
-                "Flags": 65537
-            },
-            {
-                "FilePath": "/var/log/messages.1",
-                "Flags": 65537
-            },
-            {
-                "FilePath": "/var/log/kern.log",
-                "Flags": 0
-            },
-            {
-                "FilePath": "/var/log/messages",
-                "Flags": 0
-            },
-            {
-                "FilePath": "/var/log/debug.4.gz",
-                "Flags": 196609
-            },
-            {
-                "FilePath": "/var/log/debug.2.gz",
-                "Flags": 196609
-            },
-            {
-                "FilePath": "/var/log/auth.log.1",
-                "Flags": 65537
-            },
-            {
-                "FilePath": "/var/log/syslog.3.gz",
-                "Flags": 196609
-            },
-            {
-                "FilePath": "/var/log/cron.log.4.gz",
-                "Flags": 196609
-            },
-            {
-                "FilePath": "/var/log/debug",
-                "Flags": 0
-            },
-            {
-                "FilePath": "/var/log/syslog.7.gz",
-                "Flags": 196609
-            },
-            {
-                "FilePath": "/var/log/messages.3.gz",
-                "Flags": 196609
-            },
-            {
-                "FilePath": "/var/log/kern.log.3.gz",
-                "Flags": 196609
-            },
-            {
-                "FilePath": "/var/log/syslog.5.gz",
-                "Flags": 196609
-            },
-            {
-                "FilePath": "/var/log/cron.log.2.gz",
-                "Flags": 196609
-            },
-            {
-                "FilePath": "/var/log/user.log.3.gz",
-                "Flags": 196609
-            }
-            ]
+          ]
+          }
+        ],
+        "PCIInfo": [
+          {
+          "VendorName": "",
+          "DeviceName": "",
+          "VendorId": 5549,
+          "DeviceId": 1913,
+          "DomainNo": 0,
+          "BusNo": 3,
+          "DeviceNo": 0,
+          "FunctionNo": 0,
+          "BaseClass": 12,
+          "SubClass": 3,
+          "ProgIntfClass": 48,
+          "Revision": 0
+          },
+          {
+          "VendorName": "",
+          "DeviceName": "",
+          "VendorId": 4096,
+          "DeviceId": 48,
+          "DomainNo": 0,
+          "BusNo": 0,
+          "DeviceNo": 10,
+          "FunctionNo": 0,
+          "BaseClass": 1,
+          "SubClass": 0,
+          "ProgIntfClass": 0,
+          "Revision": 1
+          },
+          {
+          "VendorName": "",
+          "DeviceName": "",
+          "VendorId": 5549,
+          "DeviceId": 1908,
+          "DomainNo": 0,
+          "BusNo": 2,
+          "DeviceNo": 0,
+          "FunctionNo": 0,
+          "BaseClass": 12,
+          "SubClass": 3,
+          "ProgIntfClass": 0,
+          "Revision": 0
+          },
+          {
+          "VendorName": "",
+          "DeviceName": "",
+          "VendorId": 5549,
+          "DeviceId": 1904,
+          "DomainNo": 0,
+          "BusNo": 2,
+          "DeviceNo": 3,
+          "FunctionNo": 0,
+          "BaseClass": 12,
+          "SubClass": 3,
+          "ProgIntfClass": 32,
+          "Revision": 0
+          },
+          {
+          "VendorName": "",
+          "DeviceName": "",
+          "VendorId": 5549,
+          "DeviceId": 1029,
+          "DomainNo": 0,
+          "BusNo": 0,
+          "DeviceNo": 0,
+          "FunctionNo": 0,
+          "BaseClass": 3,
+          "SubClass": 0,
+          "ProgIntfClass": 0,
+          "Revision": 0
+          },
+          {
+          "VendorName": "",
+          "DeviceName": "",
+          "VendorId": 5549,
+          "DeviceId": 1856,
+          "DomainNo": 0,
+          "BusNo": 0,
+          "DeviceNo": 7,
+          "FunctionNo": 7,
+          "BaseClass": 8,
+          "SubClass": 128,
+          "ProgIntfClass": 0,
+          "Revision": 16
+          },
+          {
+          "VendorName": "",
+          "DeviceName": "",
+          "VendorId": 4724,
+          "DeviceId": 4977,
+          "DomainNo": 0,
+          "BusNo": 2,
+          "DeviceNo": 2,
+          "FunctionNo": 0,
+          "BaseClass": 4,
+          "SubClass": 1,
+          "ProgIntfClass": 0,
+          "Revision": 2
+          },
+          {
+          "VendorName": "",
+          "DeviceName": "",
+          "VendorId": 5549,
+          "DeviceId": 2016,
+          "DomainNo": 0,
+          "BusNo": 2,
+          "DeviceNo": 5,
+          "FunctionNo": 0,
+          "BaseClass": 1,
+          "SubClass": 6,
+          "ProgIntfClass": 1,
+          "Revision": 0
+          },
+          {
+          "VendorName": "",
+          "DeviceName": "",
+          "VendorId": 32902,
+          "DeviceId": 28945,
+          "DomainNo": 0,
+          "BusNo": 0,
+          "DeviceNo": 7,
+          "FunctionNo": 1,
+          "BaseClass": 1,
+          "SubClass": 1,
+          "ProgIntfClass": 138,
+          "Revision": 1
+          },
+          {
+          "VendorName": "",
+          "DeviceName": "",
+          "VendorId": 32902,
+          "DeviceId": 4111,
+          "DomainNo": 0,
+          "BusNo": 2,
+          "DeviceNo": 1,
+          "FunctionNo": 0,
+          "BaseClass": 2,
+          "SubClass": 0,
+          "ProgIntfClass": 0,
+          "Revision": 1
+          }
+        ],
+        "NetInfo": [
+          {
+          "Device": "ens33",
+          "MacAddr": "00:0c:29:87:5e:df",
+          "IPAddr": "192.168.106.132",
+          "IP6Addr": "fe80::bb0a:46d8:686a:37cf"
+          },
+          {
+          "Device": "docker0",
+          "MacAddr": "02:42:08:3f:e5:c6",
+          "IPAddr": "172.17.0.1",
+          "IP6Addr": ""
+          },
+          {
+          "Device": "lo",
+          "MacAddr": "",
+          "IPAddr": "127.0.0.1",
+          "IP6Addr": "::1"
+          }
+        ]
+        },
+        "Metrics": [
+        {
+          "Name": "ProcVM",
+          "Timestamps": [
+          1559441261.353869677,
+          1559441261.855941296,
+          1559441262.356708527,
+          1559441262.857420444,
+          1559441263.359550714,
+          1559441263.861519575,
+          1559441264.363255501,
+          1559441264.864745140,
+          1559441265.366092205,
+          1559441265.867869377,
+          1559441266.368916988,
+          1559441266.869877100,
+          1559441267.371484041,
+          1559441267.873387337,
+          1559441268.375117064,
+          1559441268.876521111
+          ],
+          "Values": [
+          100020224,
+          175489024,
+          242597888,
+          242597888,
+          242597888,
+          242597888,
+          242597888,
+          242597888,
+          242597888,
+          242597888,
+          242597888,
+          242597888,
+          242597888,
+          242597888,
+          242597888,
+          242597888
+          ]
+        },
+        {
+          "Name": "SysCPU",
+          "Timestamps": [
+          1559441261.855915308,
+          1559441262.356707096,
+          1559441262.857419491,
+          1559441263.359548092,
+          1559441263.861516476,
+          1559441264.363252401,
+          1559441264.864742041,
+          1559441265.366089344,
+          1559441265.867866278,
+          1559441266.368915558,
+          1559441266.869873524,
+          1559441267.371482134,
+          1559441267.873384714,
+          1559441268.375114441,
+          1559441268.876519680
+          ],
+          "Values": [
+          0.05276381969451904,
+          0.1136363670229912,
+          0.118387907743454,
+          0.09974424540996552,
+          0.05778894573450089,
+          0.00501253129914403,
+          0.01002506259828806,
+          0.002506265649572015,
+          0.01002506259828806,
+          0.00501253129914403,
+          0.09743589907884598,
+          0.07653061300516129,
+          0.06377550959587097,
+          0.1218274086713791,
+          0.1173469424247742
+          ]
+        },
+        {
+          "Name": "ProcRAMPeak",
+          "Timestamps": [
+          1559441261.353827715,
+          1559441261.855940819,
+          1559441262.356708288,
+          1559441262.857420444,
+          1559441263.359550238,
+          1559441263.861519098,
+          1559441264.363255024,
+          1559441264.864744663,
+          1559441265.366091728,
+          1559441265.867868900,
+          1559441266.368916750,
+          1559441266.869876385,
+          1559441267.371483803,
+          1559441267.873386621,
+          1559441268.375116587,
+          1559441268.876520872
+          ],
+          "Values": [
+          3518464,
+          3571712,
+          3571712,
+          3571712,
+          3571712,
+          3571712,
+          3571712,
+          3571712,
+          3571712,
+          3571712,
+          3571712,
+          3571712,
+          3571712,
+          3571712,
+          3571712,
+          3571712
+          ]
+        },
+        {
+          "Name": "SysRAM",
+          "Timestamps": [
+          1559441261.353817225,
+          1559441261.855916023,
+          1559441262.356707573,
+          1559441262.857419968,
+          1559441263.359549284,
+          1559441263.861517906,
+          1559441264.363253593,
+          1559441264.864743471,
+          1559441265.366090298,
+          1559441265.867867708,
+          1559441266.368916035,
+          1559441266.869874954,
+          1559441267.371482849,
+          1559441267.873385668,
+          1559441268.375115395,
+          1559441268.876520157
+          ],
+          "Values": [
+          7990476800,
+          7991328768,
+          7998083072,
+          7973814272,
+          7972257792,
+          7972151296,
+          7972024320,
+          7972151296,
+          7972151296,
+          7972151296,
+          7972151296,
+          7972757504,
+          7972835328,
+          7946727424,
+          7958634496,
+          7958667264
+          ]
+        },
+        {
+          "Name": "ProcCPU",
+          "Timestamps": [
+          1559441261.855939627,
+          1559441262.356707811,
+          1559441262.857419968,
+          1559441263.359549522,
+          1559441263.861518145,
+          1559441264.363253832,
+          1559441264.864743710,
+          1559441265.366090775,
+          1559441265.867867947,
+          1559441266.368916035,
+          1559441266.869875193,
+          1559441267.371483088,
+          1559441267.873385906,
+          1559441268.375115633,
+          1559441268.876520395
+          ],
+          "Values": [
+          0,
+          0,
+          0.002499999944120646,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0.002499999944120646,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+          ]
+        },
+        {
+          "Name": "ProcRAM",
+          "Timestamps": [
+          1559441261.353822470,
+          1559441261.855940104,
+          1559441262.356708050,
+          1559441262.857420206,
+          1559441263.359549999,
+          1559441263.861518621,
+          1559441264.363254786,
+          1559441264.864744425,
+          1559441265.366091490,
+          1559441265.867868662,
+          1559441266.368916512,
+          1559441266.869876146,
+          1559441267.371483564,
+          1559441267.873386383,
+          1559441268.375116110,
+          1559441268.876520634
+          ],
+          "Values": [
+          3518464,
+          3571712,
+          3571712,
+          3571712,
+          3571712,
+          3571712,
+          3571712,
+          3571712,
+          3571712,
+          3571712,
+          3571712,
+          3571712,
+          3571712,
+          3571712,
+          3571712,
+          3571712
+          ]
+        },
+        {
+          "Name": "ProcSwap",
+          "Timestamps": [
+          1559441261.353886366,
+          1559441261.855942011,
+          1559441262.356708765,
+          1559441262.857420921,
+          1559441263.359551430,
+          1559441263.861520290,
+          1559441264.363256216,
+          1559441264.864745855,
+          1559441265.366093159,
+          1559441265.867870331,
+          1559441266.368917465,
+          1559441266.869878054,
+          1559441267.371484756,
+          1559441267.873388290,
+          1559441268.375118017,
+          1559441268.876521826
+          ],
+          "Values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+          ]
+        },
+        {
+          "Name": "ProcVMPeak",
+          "Timestamps": [
+          1559441261.353879929,
+          1559441261.855941534,
+          1559441262.356708527,
+          1559441262.857420683,
+          1559441263.359550953,
+          1559441263.861519814,
+          1559441264.363255739,
+          1559441264.864745378,
+          1559441265.366092443,
+          1559441265.867869854,
+          1559441266.368917227,
+          1559441266.869877577,
+          1559441267.371484280,
+          1559441267.873387814,
+          1559441268.375117540,
+          1559441268.876521349
+          ],
+          "Values": [
+          166981632,
+          242597888,
+          242597888,
+          242597888,
+          242597888,
+          242597888,
+          242597888,
+          242597888,
+          242597888,
+          242597888,
+          242597888,
+          242597888,
+          242597888,
+          242597888,
+          242597888,
+          242597888
+          ]
         }
+        ],
+        "Events": [],
+        "Logs": [
+        {
+          "FilePath": "/var/log/auth.log.4.gz",
+          "Entries": []
+        },
+        {
+          "FilePath": "/var/log/lpr.log.3.gz",
+          "Entries": []
+        },
+        {
+          "FilePath": "/var/log/daemon.log.3.gz",
+          "Entries": []
+        },
+        {
+          "FilePath": "/var/log/auth.log.2.gz",
+          "Entries": []
+        },
+        {
+          "FilePath": "/var/log/syslog.1",
+          "Entries": []
+        },
+        {
+          "FilePath": "/var/log/daemon.log",
+          "Entries": []
+        },
+        {
+          "FilePath": "/var/log/cron.log.1",
+          "Entries": []
+        },
+        {
+          "FilePath": "/var/log/lpr.log",
+          "Entries": []
+        },
+        {
+          "FilePath": "/var/log/user.log.1",
+          "Entries": []
+        },
+        {
+          "FilePath": "/var/log/lpr.log.1",
+          "Entries": []
+        },
+        {
+          "FilePath": "/var/log/user.log",
+          "Entries": [
+          {
+            "Duration": 1.001929522,
+            "Timestamp": 1559441262.353444338,
+            "TimeOfDay": "2019-06-02 11:07:42.353444337",
+            "LogFile": "/var/log/user.log",
+            "LogText": "Jun  2 11:07:12 ubuntu org.gnome.zeitgeist.SimpleIndexer[2272]: ** (zeitgeist-fts:3126): WARNING **: Unable to get info on application://nautilus-autostart.desktop"
+          }
+          ]
+        },
+        {
+          "FilePath": "/var/log/cron.log",
+          "Entries": []
+        },
+        {
+          "FilePath": "/var/log/daemon.log.1",
+          "Entries": []
+        },
+        {
+          "FilePath": "/var/log/debug.3.gz",
+          "Entries": []
+        },
+        {
+          "FilePath": "/var/log/syslog",
+          "Entries": [
+          {
+            "Duration": 1.002066374,
+            "Timestamp": 1559441262.353581190,
+            "TimeOfDay": "2019-06-02 11:07:42.353581190",
+            "LogFile": "/var/log/syslog",
+            "LogText": "Jun  2 11:07:12 ubuntu org.gnome.zeitgeist.SimpleIndexer[2272]: ** (zeitgeist-fts:3126): WARNING **: Unable to get info on application://nautilus-autostart.desktop"
+          },
+          {
+            "Duration": 1.002118349,
+            "Timestamp": 1559441262.353633165,
+            "TimeOfDay": "2019-06-02 11:07:42.353633165",
+            "LogFile": "/var/log/syslog",
+            "LogText": "Jun  2 11:07:41 ubuntu log_monitor[36567]: psyiage 0.3.0 log monitoring test @ priority Emergency"
+          },
+          {
+            "Duration": 2.002543926,
+            "Timestamp": 1559441263.354058743,
+            "TimeOfDay": "2019-06-02 11:07:43.354058742",
+            "LogFile": "/var/log/syslog",
+            "LogText": "Jun  2 11:07:42 ubuntu log_monitor[36567]: psyiage 0.3.0 log monitoring test @ priority Alert"
+          },
+          {
+            "Duration": 3.003835678,
+            "Timestamp": 1559441264.355350494,
+            "TimeOfDay": "2019-06-02 11:07:44.355350494",
+            "LogFile": "/var/log/syslog",
+            "LogText": "Jun  2 11:07:43 ubuntu log_monitor[36567]: psyiage 0.3.0 log monitoring test @ priority Critical"
+          },
+          {
+            "Duration": 4.005154610,
+            "Timestamp": 1559441265.356669426,
+            "TimeOfDay": "2019-06-02 11:07:45.356669425",
+            "LogFile": "/var/log/syslog",
+            "LogText": "Jun  2 11:07:44 ubuntu log_monitor[36567]: psyiage 0.3.0 log monitoring test @ priority Error"
+          },
+          {
+            "Duration": 5.006255388,
+            "Timestamp": 1559441266.357770205,
+            "TimeOfDay": "2019-06-02 11:07:46.357770204",
+            "LogFile": "/var/log/syslog",
+            "LogText": "Jun  2 11:07:45 ubuntu log_monitor[36567]: psyiage 0.3.0 log monitoring test @ priority Warning"
+          },
+          {
+            "Duration": 6.008578539,
+            "Timestamp": 1559441267.360093355,
+            "TimeOfDay": "2019-06-02 11:07:47.360093355",
+            "LogFile": "/var/log/syslog",
+            "LogText": "Jun  2 11:07:46 ubuntu log_monitor[36567]: psyiage 0.3.0 log monitoring test @ priority Notice"
+          },
+          {
+            "Duration": 6.008731842,
+            "Timestamp": 1559441267.360246658,
+            "TimeOfDay": "2019-06-02 11:07:47.360246658",
+            "LogFile": "/var/log/syslog",
+            "LogText": "Jun  2 11:07:47 ubuntu log_monitor[36567]: psyiage 0.3.0 log monitoring test @ priority Info"
+          },
+          {
+            "Duration": 7.009192467,
+            "Timestamp": 1559441268.360707283,
+            "TimeOfDay": "2019-06-02 11:07:48.360707283",
+            "LogFile": "/var/log/syslog",
+            "LogText": "Jun  2 11:07:48 ubuntu log_monitor[36567]: psyiage 0.3.0 log monitoring test @ priority Debug"
+          }
+          ]
+        },
+        {
+          "FilePath": "/var/log/user.log.4.gz",
+          "Entries": []
+        },
+        {
+          "FilePath": "/var/log/syslog.2.gz",
+          "Entries": []
+        },
+        {
+          "FilePath": "/var/log/messages.4.gz",
+          "Entries": []
+        },
+        {
+          "FilePath": "/var/log/kern.log.4.gz",
+          "Entries": []
+        },
+        {
+          "FilePath": "/var/log/messages.2.gz",
+          "Entries": []
+        },
+        {
+          "FilePath": "/var/log/kern.log.2.gz",
+          "Entries": []
+        },
+        {
+          "FilePath": "/var/log/syslog.6.gz",
+          "Entries": []
+        },
+        {
+          "FilePath": "/var/log/cron.log.3.gz",
+          "Entries": []
+        },
+        {
+          "FilePath": "/var/log/user.log.2.gz",
+          "Entries": []
+        },
+        {
+          "FilePath": "/var/log/syslog.4.gz",
+          "Entries": []
+        },
+        {
+          "FilePath": "/var/log/lpr.log.2.gz",
+          "Entries": []
+        },
+        {
+          "FilePath": "/var/log/daemon.log.2.gz",
+          "Entries": []
+        },
+        {
+          "FilePath": "/var/log/daemon.log.4.gz",
+          "Entries": []
+        },
+        {
+          "FilePath": "/var/log/debug.1",
+          "Entries": []
+        },
+        {
+          "FilePath": "/var/log/lpr.log.4.gz",
+          "Entries": []
+        },
+        {
+          "FilePath": "/var/log/auth.log.3.gz",
+          "Entries": []
+        },
+        {
+          "FilePath": "/var/log/auth.log",
+          "Entries": []
+        },
+        {
+          "FilePath": "/var/log/kern.log.1",
+          "Entries": []
+        },
+        {
+          "FilePath": "/var/log/messages.1",
+          "Entries": []
+        },
+        {
+          "FilePath": "/var/log/kern.log",
+          "Entries": []
+        },
+        {
+          "FilePath": "/var/log/messages",
+          "Entries": [
+          {
+            "Duration": 1.002196074,
+            "Timestamp": 1559441262.353710890,
+            "TimeOfDay": "2019-06-02 11:07:42.353710889",
+            "LogFile": "/var/log/messages",
+            "LogText": "Jun  2 11:07:12 ubuntu org.gnome.zeitgeist.SimpleIndexer[2272]: ** (zeitgeist-fts:3126): WARNING **: Unable to get info on application://nautilus-autostart.desktop"
+          },
+          {
+            "Duration": 5.007384777,
+            "Timestamp": 1559441266.358899593,
+            "TimeOfDay": "2019-06-02 11:07:46.358899593",
+            "LogFile": "/var/log/messages",
+            "LogText": "Jun  2 11:07:45 ubuntu log_monitor[36567]: psyiage 0.3.0 log monitoring test @ priority Warning"
+          },
+          {
+            "Duration": 6.008818626,
+            "Timestamp": 1559441267.360333443,
+            "TimeOfDay": "2019-06-02 11:07:47.360333442",
+            "LogFile": "/var/log/messages",
+            "LogText": "Jun  2 11:07:46 ubuntu log_monitor[36567]: psyiage 0.3.0 log monitoring test @ priority Notice"
+          },
+          {
+            "Duration": 6.008904696,
+            "Timestamp": 1559441267.360419512,
+            "TimeOfDay": "2019-06-02 11:07:47.360419511",
+            "LogFile": "/var/log/messages",
+            "LogText": "Jun  2 11:07:47 ubuntu log_monitor[36567]: psyiage 0.3.0 log monitoring test @ priority Info"
+          }
+          ]
+        },
+        {
+          "FilePath": "/var/log/debug.4.gz",
+          "Entries": []
+        },
+        {
+          "FilePath": "/var/log/debug.2.gz",
+          "Entries": []
+        },
+        {
+          "FilePath": "/var/log/auth.log.1",
+          "Entries": []
+        },
+        {
+          "FilePath": "/var/log/syslog.3.gz",
+          "Entries": []
+        },
+        {
+          "FilePath": "/var/log/cron.log.4.gz",
+          "Entries": []
+        },
+        {
+          "FilePath": "/var/log/debug",
+          "Entries": [
+          {
+            "Duration": 7.009480476,
+            "Timestamp": 1559441268.360995293,
+            "TimeOfDay": "2019-06-02 11:07:48.360995292",
+            "LogFile": "/var/log/debug",
+            "LogText": "Jun  2 11:07:48 ubuntu log_monitor[36567]: psyiage 0.3.0 log monitoring test @ priority Debug"
+          }
+          ]
+        },
+        {
+          "FilePath": "/var/log/syslog.7.gz",
+          "Entries": []
+        },
+        {
+          "FilePath": "/var/log/messages.3.gz",
+          "Entries": []
+        },
+        {
+          "FilePath": "/var/log/kern.log.3.gz",
+          "Entries": []
+        },
+        {
+          "FilePath": "/var/log/syslog.5.gz",
+          "Entries": []
+        },
+        {
+          "FilePath": "/var/log/cron.log.2.gz",
+          "Entries": []
+        },
+        {
+          "FilePath": "/var/log/user.log.3.gz",
+          "Entries": []
+        }
+        ]
+      }
     }
-

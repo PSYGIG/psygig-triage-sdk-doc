@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Change Log &mdash; PSYGIG Triage SDK 0.2.0 ドキュメント</title>
+  <title>Change Log &mdash; PSYGIG Triage SDK 0.4.0 ドキュメント</title>
   
 
   
@@ -73,7 +73,7 @@
             
             
               <div class="version">
-                0.2
+                0.4
               </div>
             
           
@@ -102,8 +102,7 @@
 <li class="toctree-l1"><a class="reference internal" href="supported-platforms.html">Supported Platforms/Architectures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="third-party-integration.html">Third Party Integration</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Change Log</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#v0-2"><code class="docutils literal notranslate"><span class="pre">v0.2</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#v0-1"><code class="docutils literal notranslate"><span class="pre">v0.1</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v0-4-0-initial-public-release"><code class="docutils literal notranslate"><span class="pre">v0.4.0</span> <span class="pre">(Initial</span> <span class="pre">public</span> <span class="pre">release)</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -194,31 +193,30 @@
             
   <div class="section" id="change-log">
 <h1>Change Log<a class="headerlink" href="#change-log" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<div class="section" id="v0-2">
-<h2><code class="docutils literal notranslate"><span class="pre">v0.2</span></code><a class="headerlink" href="#v0-2" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>• Initial API implementation:
-    • Log Collection API
-    • Crash Reporting API
-
-• System information collection:
-    • Operating system
-    • RAM
-    • Storage/file systems
-    • Peripherals
-    • Network
-</pre></div>
-</div>
-</div>
-<div class="section" id="v0-1">
-<h2><code class="docutils literal notranslate"><span class="pre">v0.1</span></code><a class="headerlink" href="#v0-1" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>• Initial API implementation:
-    • Metrics Collection API
-    • Event Reporting API
-    • System Information API
-
-• Initial ABI support:
+<div class="section" id="v0-4-0-initial-public-release">
+<h2><code class="docutils literal notranslate"><span class="pre">v0.4.0</span> <span class="pre">(Initial</span> <span class="pre">public</span> <span class="pre">release)</span></code><a class="headerlink" href="#v0-4-0-initial-public-release" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>• psymon script for automatic instrumentation of any executable binary
+• Application performance profiling API
+    • Collecting CPU profiling samples and exporting to JSON
+• System information API
+• Log collection API
+    • Monitoring log files for new entries
+• Crash reporting API
+    • Handle fatal signals and capture stack trace + loaded modules
+    • Install core dump handler
+• Metrics collection API
+    • Collect any arbitrary numeric metric values
+    • Enable automatic collection of system metrics
+• Events reporting API
+• Sink framework for pushing instrumentation data to any storage/analytics platform
+    • Disk
+    • File stream (stdout, stderr, etc)
+    • HTTP
+    • MQTT
+• Support architectures
     • x86_64
     • armhf
+    • aarch64
 </pre></div>
 </div>
 </div>
@@ -269,8 +267,8 @@
         <script type="text/javascript" src="_static/jquery.js"></script>
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
         <script type="text/javascript" src="_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/javascript" src="_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
         <script type="text/javascript" src="_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
     

@@ -1,0 +1,16 @@
+.. _exhale_struct_struct__psyiage__diskinfo:
+
+Struct _psyiage_diskinfo
+========================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: _psyiage_diskinfo
+   :members:
+   :protected-members:
+   :undoc-members:

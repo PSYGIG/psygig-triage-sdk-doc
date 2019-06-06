@@ -1,0 +1,13 @@
+.. _exhale_enum_group__benchmark_1gac03dae5406da673f498e6bab7336aee6:
+
+Enum _psyiage_benchmark_type
+============================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Enum Documentation
+------------------
+
+
+.. doxygenenum:: _psyiage_benchmark_type

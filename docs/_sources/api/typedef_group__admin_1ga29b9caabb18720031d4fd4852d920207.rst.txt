@@ -1,0 +1,13 @@
+.. _exhale_typedef_group__admin_1ga29b9caabb18720031d4fd4852d920207:
+
+Typedef psyiage_sink_mqtt_cfg
+=============================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: psyiage_sink_mqtt_cfg

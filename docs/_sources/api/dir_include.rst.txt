@@ -7,10 +7,10 @@ Directory include
 
 *Directory path:* ``include``
 
+Subdirectories
+--------------
 
-Files
------
+- :ref:`dir_include_psyiage`
 
-- :ref:`file_include_psygigsdk.h`
 
 

@@ -1,0 +1,589 @@
+
+.. _program_listing_file_include_psyiage_psyiagesdk.h:
+
+Program Listing for File psyiagesdk.h
+=====================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_psyiage_psyiagesdk.h>` (``include/psyiage/psyiagesdk.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #ifndef PSYIAGESDK_H_
+   #define PSYIAGESDK_H_
+   
+   #include <stdint.h>
+   #include <stdio.h>
+   
+   #ifdef __cplusplus
+   extern "C" {
+   #endif
+   
+   
+   #if defined _WIN32 || defined __CYGWIN__
+     #ifdef WIN_EXPORT
+       // Exporting...
+       #ifdef __GNUC__
+         #define PSYIAGE_API __attribute__ ((dllexport))
+       #else
+         #define PSYIAGE_API __declspec(dllexport) // Note: actually gcc seems to also supports this syntax.
+       #endif
+     #else
+       #ifdef __GNUC__
+         #define PSYIAGE_API __attribute__ ((dllimport))
+       #else
+         #define PSYIAGE_API __declspec(dllimport) // Note: actually gcc seems to also supports this syntax.
+       #endif
+     #endif
+     #define FUTURE_PSYIAGE_API
+   #else
+     #if __GNUC__ >= 4
+       #define PSYIAGE_API __attribute__ ((visibility ("default")))
+       #define FUTURE_PSYIAGE_API  __attribute__ ((visibility ("hidden")))
+     #else
+       #define PSYIAGE_API
+       #define FUTURE_PSYIAGE_API
+     #endif
+   #endif
+   
+   
+   //---------------------------------------------------------------------
+   //  PSYGIG Triage SDK API Declarations
+   //---------------------------------------------------------------------
+   
+   
+   typedef enum _psyiage_error_code
+   {
+       PSYIAGE_ERROR_SUCCESS = 0,
+       PSYIAGE_ERROR_INVALID_PARAMETER,
+       PSYIAGE_ERROR_UNEXPECTED,
+       PSYIAGE_ERROR_NOT_YET_IMPLEMENTED,
+       PSYIAGE_ERROR_METRIC_NOT_FOUND,
+       PSYIAGE_ERROR_FILE_NOT_FOUND,
+       PSYIAGE_ERROR_OPEN_FAILED,
+       PSYIAGE_ERROR_CLOSE_FAILED,
+       PSYIAGE_ERROR_SEEK_FAILED,
+       PSYIAGE_ERROR_READ_FAILED,
+       PSYIAGE_ERROR_WRITE_FAILED,
+       PSYIAGE_ERROR_FLUSH_FAILED,
+       PSYIAGE_ERROR_ACCESS_DENIED,
+       PSYIAGE_ERROR_INVALID_DATA,
+       PSYIAGE_ERROR_NO_DATA,
+       PSYIAGE_ERROR_SIGNATURE_MISMATCH,
+       PSYIAGE_ERROR_CHECKSUM_MISMATCH,
+       PSYIAGE_ERROR_INSUFFICIENT_MEMORY,
+       PSYIAGE_ERROR_INSUFFICIENT_SPACE,
+       PSYIAGE_ERROR_THREAD_CREATE,
+       PSYIAGE_ERROR_MUTEX_INIT,
+       PSYIAGE_ERROR_REST_INIT,
+       PSYIAGE_ERROR_RESOURCE_CONTENTION   
+   } psyiage_error_code;
+   
+   typedef void* psyiage_handle;
+   
+   PSYIAGE_API const char* psyiage_get_version( void );
+   
+   PSYIAGE_API int psyiage_init(psyiage_handle *handle);
+   
+   PSYIAGE_API int psyiage_cleanup(psyiage_handle *handle);
+   
+   typedef enum _psyiage_sink_data_format
+   {
+       PSYIAGE_DATA_FORMAT_TEXT,
+       PSYIAGE_DATA_FORMAT_CSV,
+       PSYIAGE_DATA_FORMAT_JSON,
+       PSYIAGE_DATA_FORMAT_YAML,
+       PSYIAGE_DATA_FORMAT_INFLUX,
+   } psyiage_sink_data_format;
+   
+   typedef enum _psyiage_sink_type
+   {
+       PSYIAGE_SINK_FILE,
+       PSYIAGE_SINK_FSTREAM,
+       PSYIAGE_SINK_UDP,
+       PSYIAGE_SINK_TCP,
+       PSYIAGE_SINK_MQTT,
+       PSYIAGE_SINK_HTTP,
+       PSYIAGE_SINK_INFLUXDB,
+       PSYIAGE_SINK_PSYGIG
+   } psyiage_sink_type;
+   
+   typedef struct _psyiage_sink_file_cfg {
+       char dir[256];
+       char basename[256];
+   } psyiage_sink_file_cfg;
+   
+   typedef struct _psyiage_sink_fstream_cfg {
+       FILE *fd;
+   } psyiage_sink_fstream_cfg;
+   
+   typedef struct _psyiage_sink_udp_cfg {
+       char host[256];
+       int port;
+   } psyiage_sink_udp_cfg;
+   
+   typedef struct _psyiage_sink_tcp_cfg {
+       char host[256];
+       int port;
+   } psyiage_sink_tcp_cfg;
+   
+   typedef struct _psyiage_sink_mqtt_cfg {
+       char serveruri[256];
+       const char* username;
+       const char* password;
+       int mqttversion;
+       int timeoutsecs;
+       int qos;
+   } psyiage_sink_mqtt_cfg;
+   
+   typedef struct _psyiage_sink_http_cfg {
+       char host[256];
+       int port;
+   
+       int secure;
+   } psyiage_sink_http_cfg;
+   
+   typedef struct _psyiage_sink_influxdb_cfg {
+       char serveruri[256];
+   } psyiage_sink_influxdb_cfg;
+   
+   typedef struct _psyiage_sink_psygig_cfg {
+       char serveruri[256];
+   
+       const char *account;
+       const char *key;
+   } psyiage_sink_psygig_cfg;
+   
+   typedef struct _psyiage_sink_cfg {
+       psyiage_sink_type type;
+       psyiage_sink_data_format format;
+       union {
+           psyiage_sink_file_cfg file;
+           psyiage_sink_fstream_cfg fstream;
+           psyiage_sink_udp_cfg udp;
+           psyiage_sink_tcp_cfg tcp;
+           psyiage_sink_mqtt_cfg mqtt;
+           psyiage_sink_http_cfg http;
+           psyiage_sink_influxdb_cfg influxdb;
+           psyiage_sink_psygig_cfg psygig;
+       };
+   } psyiage_sink_cfg;
+   
+   PSYIAGE_API int psyiage_add_sink(psyiage_handle handle, psyiage_sink_cfg* cfg);
+   
+   PSYIAGE_API int psyiage_remove_sink(psyiage_handle handle, int index);
+   
+   PSYIAGE_API int psyiage_get_num_sinks(psyiage_handle handle, int *numsinks);
+   
+   PSYIAGE_API int psyiage_get_sink_info(psyiage_handle handle, int index, psyiage_sink_cfg* sinkinfo);
+   
+   PSYIAGE_API int psyiage_start_session(psyiage_handle handle, char *sessionname);
+   
+   #define MAX_PSYIAGE_SESSION_NAME_LENGTH     64
+   
+   #define MAX_DEVICE_ID_LENGTH                128
+   
+   typedef struct _psyiage_session_info {
+       char name[MAX_PSYIAGE_SESSION_NAME_LENGTH + 1];
+       char deviceid[MAX_DEVICE_ID_LENGTH + 1];
+       double timestamp;
+       double duration;
+       uint64_t nummetrics;
+       uint64_t numevents;
+   } psyiage_session_info;
+   
+   PSYIAGE_API int psyiage_get_current_session(psyiage_handle handle, psyiage_session_info *session);
+   
+   PSYIAGE_API int psyiage_stop_session(psyiage_handle handle);
+   
+   enum { PSYIAGE_DBGLVL_DISABLE, PSYIAGE_DBGLVL_FATAL, PSYIAGE_DBGLVL_ERROR, PSYIAGE_DBGLVL_WARN, PSYIAGE_DBGLVL_INFO, PSYIAGE_DBGLVL_DEBUG, PSYIAGE_DBGLVL_TRACE, PSYIAGE_DBGLVL_MIN = PSYIAGE_DBGLVL_DISABLE, PSYIAGE_DBGLVL_MAX = PSYIAGE_DBGLVL_TRACE };
+   
+   PSYIAGE_API int psyiage_set_debug_level(psyiage_handle handle, int level);
+    // end of admin
+   
+   PSYIAGE_API int psyiage_metric_enable_poll_system_resources(psyiage_handle handle, int periodms);
+   
+   PSYIAGE_API int psyiage_metric_record_values_numeric(psyiage_handle handle, char *names[], float values[], int nummetrics);
+   
+   FUTURE_PSYIAGE_API int psyiage_metric_record_values_string(psyiage_handle handle, char *names[], char *values[], int nummetrics);
+   
+   FUTURE_PSYIAGE_API int psyiage_metric_record_values_blob(psyiage_handle handle, char *names[], void *values, int valuesize, int nummetrics);
+   
+   typedef struct _psyiage_pointcloud_data
+   {
+       float x;
+       float y;
+       float z;
+       unsigned int rgb;
+   } psyiage_pointcloud_data;
+   
+   FUTURE_PSYIAGE_API int psyiage_metric_record_pointcloud(psyiage_handle handle, char *name, psyiage_pointcloud_data *value, int numpoints);
+   
+   PSYIAGE_API int psyiage_metric_get_values_numeric(psyiage_handle handle, char *name, unsigned long long timestamps[], float values[], int *numvalues);
+   
+   FUTURE_PSYIAGE_API int psyiage_metric_get_values_string(psyiage_handle handle, char *name, unsigned long long timestamps[], char* values[], int *numvalues);
+   
+   FUTURE_PSYIAGE_API int psyiage_metric_get_values_blob(psyiage_handle handle, char *name, unsigned long long timestamps[], void* values, int valuesize, int *numvalues);
+   
+   typedef enum _psyiage_metric_file_type
+   {
+       PSYIAGE_METRIC_FILE_CSV,
+       PSYIAGE_METRIC_FILE_TEXT,
+       PSYIAGE_METRIC_FILE_JSON,
+       PSYIAGE_METRIC_FILE_YAML,
+       PSYIAGE_METRIC_FILE_PCD
+   } psyiage_metric_file_type;
+   
+   FUTURE_PSYIAGE_API int psyiage_metric_import_file(psyiage_handle handle, psyiage_metric_file_type type, char* path );
+    // end of metric
+   
+   typedef enum _psyiage_event_level
+   {
+       PSYIAGE_EVENT_LEVEL_INFO,
+       PSYIAGE_EVENT_LEVEL_WARNING,
+       PSYIAGE_EVENT_LEVEL_ERROR,
+       PSYIAGE_EVENT_LEVEL_CRITICAL,
+       PSYIAGE_EVENT_NUM_LEVELS
+   } psyiage_event_level;
+   
+   PSYIAGE_API int psyiage_event_report(psyiage_handle handle, psyiage_event_level level, char *source, int eventid, const char* message);
+   
+   FUTURE_PSYIAGE_API int psyiage_event_enable_auto_report_os_faults(psyiage_handle handle, int enable);
+   
+   FUTURE_PSYIAGE_API int psyiage_event_import_file(psyiage_handle handle, char *path);
+    // end of event
+   
+   typedef enum _psyiage_log_level
+   {
+       PSYIAGE_LOG_LEVEL_DEBUG,
+       PSYIAGE_LOG_LEVEL_INFO,
+       PSYIAGE_LOG_LEVEL_WARNING,
+       PSYIAGE_LOG_LEVEL_ERROR,
+       PSYIAGE_LOG_LEVEL_FATAL
+   } psyiage_log_level;
+   
+   FUTURE_PSYIAGE_API int psyiage_logf(psyiage_handle handle, psyiage_log_level level, char *format, ...);
+   
+   #ifdef __cplusplus
+   extern std::ostream psyiage_log;
+   #endif
+   
+   enum {
+       PSYIAGE_LOG_FLAG_NONE = 0,
+       PSYIAGE_LOG_FLAG_SYSLOG = 1 << 0,   
+       PSYIAGE_LOG_FLAG_OLD = 1 << 16,
+       PSYIAGE_LOG_FLAG_COMPRESSED = 1 << 17,
+       PSYIAGE_LOG_FLAG_ALL = 0xffffffff
+   };
+   
+   PSYIAGE_API int psyiage_log_import_file(psyiage_handle handle, char *path, uint32_t flags);
+   
+   PSYIAGE_API int psyiage_log_glob_free(char *filelist[], uint32_t *flagslist, int numfiles);
+   
+   PSYIAGE_API int psyiage_log_glob_known_log_files(char **filelist[], uint32_t *flagslist[], int* numfiles );
+   
+   PSYIAGE_API int psyiage_log_monitor_log_file(psyiage_handle handle, char *path, int enable);
+    // end of log
+   
+   // Reference: sololink/flightcode/video/vid/vidlaunch.cpp
+   typedef struct _psyiage_video_cfg {
+       int variablemode;
+   
+       int minframerate;
+       int maxframerate;
+       int minbitrate;
+       int maxbitrate;
+   
+   } psyiage_video_cfg;
+   
+   typedef void* psyiage_video_handle;
+   
+   FUTURE_PSYIAGE_API int psyiage_video_stream_start(psyiage_handle handle, char *viddev, psyiage_video_cfg *cfg, psyiage_video_handle *vh);
+   
+   FUTURE_PSYIAGE_API int psyiage_video_stream_stop(psyiage_video_handle vh);
+   
+   FUTURE_PSYIAGE_API int psyiage_video_import(psyiage_handle handle, char *path);
+    // end of video
+   
+   #define MAX_CACHES 5
+   
+   typedef struct _psyiage_cpuinfo {
+       uint32_t threadspercore;
+       uint32_t coresperpkg;
+       uint32_t numpkgs;
+   
+       char vendor[32];
+   
+       char model[64];
+       
+       char architecture[32];
+   
+       char features[128];
+   
+       enum {
+           ARCH_UNKNOWN = -1,
+           ARCH_X86,
+           ARCH_IA64,
+           ARCH_AARCH64,
+           ARCH_ARM,
+           ARCH_MIPS,
+           ARCH_PPC
+       } archtype;
+   
+       enum {
+           ENDIAN_BIG,
+           ENDIAN_LITTLE
+       } endian;
+   
+       float clockmhz;
+       union {
+   
+           struct {
+               int family;
+               int model;
+               int stepping;
+               char vendor[13];
+               char brand[49];
+               char uarch[32];
+           } X86Info;
+           struct {        
+               int implementer;
+               int variant;
+               int part;
+               int revision;
+           } Aarch64Info;
+           struct {
+               int implementer;
+               int architecture;
+               int variant;
+               int part;
+               int revision;
+           } ArmInfo;
+           struct {
+           } MipsInfo;
+           struct {
+               char platform[64];
+               char model[64];
+               char machine[64];
+               char cpu[64];
+               char isa[64];
+               char uarch[64];
+           } PPCInfo;
+       };
+       struct {
+           uint8_t level;
+           uint32_t size;
+           uint32_t linesize;
+           uint8_t associativity;
+           enum {
+               unified,
+               instruction,
+               data,
+               trace,
+           } type;
+       } cache[MAX_CACHES];
+       unsigned int numcaches;
+   } psyiage_cpuinfo;
+   
+   typedef struct _psyiage_meminfo
+   {
+       uint64_t aveloads[3];
+       uint64_t totalram;
+       uint64_t freeram;
+       uint64_t sharedram;
+       uint64_t bufferram; 
+       uint64_t totalswap;
+       uint64_t freeswap;  
+       uint64_t totalhigh;
+       uint64_t freehigh;
+       uint32_t numprocs;
+   } psyiage_meminfo;
+   
+   typedef struct _psyiage_fsinfo
+   {
+       struct
+       {
+           char device[32];
+           char mountdir[256];
+           char filesystem[32];
+           char mountopts[32];
+           uint64_t blksize;
+           uint64_t fragsize;
+           uint64_t totalblks;
+           uint64_t freeblks;
+           uint64_t availblks;
+           uint64_t totalino;
+           uint64_t freeino;
+           uint64_t availino;
+           uint32_t fsid;
+           uint32_t fsflags;
+           uint32_t fnamemax;
+           uint64_t size;
+       } fs[10];
+       unsigned int numfs; 
+   } psyiage_fsinfo;
+   
+   typedef struct _psyiage_osinfo {
+       char name[64];
+       char fullname[64];
+       char codename[64];
+       unsigned int major;
+       unsigned int minor;
+       unsigned int patch;
+       unsigned int build_number;
+   
+       struct {
+           char name[64];
+           unsigned int major;
+           unsigned int minor;
+           unsigned int patch;
+           unsigned int build_number;
+       } kernel;
+   
+   } psyiage_osinfo;
+   
+   #define MAX_USB_DEVS        16
+   
+   typedef struct _psyiage_usbinfo {
+       struct {
+           char product[64];
+           char manufacturer[64];
+           char deviceclass[64];
+           char version[64];
+           char serial[64];
+           char usbver[16];
+           uint16_t productid;
+           uint16_t vendorid;
+       } device[MAX_USB_DEVS];
+       unsigned int numdev;    
+   } psyiage_usbinfo;
+   
+   
+   #define MAX_DISKS       16
+   
+   #define MAX_PARTS       16
+   
+   typedef struct _psyiage_diskinfo {
+       struct {
+           char devname[16];
+           char model[64];
+           char vendor[64];
+           char serial[64];
+           uint64_t size;
+           
+           struct {
+               int partnum;
+               uint64_t start;
+               uint64_t size;          
+           } partition[MAX_PARTS];
+           int numparts;
+       } disk[MAX_DISKS];
+       unsigned int numdisks;  
+   } psyiage_diskinfo;
+   
+   #define MAX_PCI_DEVS    16
+   
+   typedef struct _psyiage_pciinfo {
+       struct {
+           uint16_t domain;
+           uint8_t bus;
+           uint8_t dev;
+           uint8_t fun;
+           char vendor[64];
+           char device[64];
+           uint16_t vendorid;
+           uint16_t deviceid;
+           struct {
+               uint8_t baseclass;
+               uint8_t subclass;
+               uint8_t progintf;
+           } classcode;
+           uint8_t revision;       
+       } device[MAX_PCI_DEVS];
+       unsigned int numdev;    
+   } psyiage_pciinfo;
+   
+   #define MAX_NET_INTF    8
+   
+   typedef struct _psyiage_netinfo {
+       struct {
+           char devname[16];
+           char macaddr[32];
+           char ipaddr[32];
+           char ip6addr[64];
+       } interface[MAX_NET_INTF];
+       unsigned int numintf;   
+   } psyiage_netinfo;
+   
+   typedef struct _psyiage_sysinfo {
+       long uptime;
+       psyiage_cpuinfo cpuinfo;
+       psyiage_meminfo meminfo;
+       psyiage_fsinfo fsinfo;
+       psyiage_osinfo osinfo;
+       psyiage_usbinfo usbinfo;
+       psyiage_diskinfo diskinfo;
+       psyiage_netinfo netinfo;
+       psyiage_pciinfo pciinfo;
+   } psyiage_sysinfo;
+   
+   PSYIAGE_API int psyiage_sysinfo_get(psyiage_handle handle, psyiage_sysinfo *sysinfo);
+   
+   PSYIAGE_API int psyiage_sysinfo_export_report(psyiage_handle handle, char* path);
+    // end of sysinfo
+   
+   PSYIAGE_API int psyiage_crash_install_core_dump_handler(psyiage_handle handle);
+   
+   PSYIAGE_API int psyiage_crash_enable_report_on_fatal_signal(psyiage_handle handle, int enable);
+   
+   FUTURE_PSYIAGE_API int psyiage_crash_start_crash_monitor(psyiage_handle handle);
+    // end of crash
+   
+   typedef enum _psyiage_benchmark_type
+   {
+       PSYIAGE_BENCH_CPU,
+       PSYIAGE_BENCH_RAM,
+       PSYIAGE_BENCH_GPU,
+       PSYIAGE_BENCH_HDD,
+       PSYIAGE_BENCH_NET,
+   } psyiage_benchmark_type;
+   
+   FUTURE_PSYIAGE_API int psyiage_benchmark_run(psyiage_handle handle, psyiage_benchmark_type benchmark, float *score);
+    // end of benchmark
+   
+   PSYIAGE_API int psyiage_profile_enable_profiling(psyiage_handle handle, int periodms);
+   
+   FUTURE_PSYIAGE_API int psyiage_profile_code_begin(psyiage_handle handle, const char* funcname, const char* filename, unsigned int lineno);
+   
+   FUTURE_PSYIAGE_API int psyiage_profile_code_end(psyiage_handle handle);
+    // end of profile
+   
+   typedef enum _psyiage_diag_type
+   {
+       PSYIAGE_DIAG_CPU,
+       PSYIAGE_DIAG_RAM,
+       PSYIAGE_DIAG_GPU,
+       PSYIAGE_DIAG_HDD,
+       PSYIAGE_DIAG_NET,
+   } psyiage_diag_type;
+   
+   typedef struct _psyiage_diag_result
+   {
+       int result;
+       int numerrs;
+       char *errstr;
+   } psyiage_diag_result;
+   
+   FUTURE_PSYIAGE_API int psyiage_diag_run(psyiage_handle handle, psyiage_diag_type diagnostic, psyiage_diag_result *result);
+   
+   FUTURE_PSYIAGE_API int psyiage_diag_export_report(psyiage_handle handle, char* path);
+    // end of diag
+   
+   
+   #ifdef __cplusplus
+   }
+   #endif
+   
+   #endif /* PSYIAGESDK_H_ */

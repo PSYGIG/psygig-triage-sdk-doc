@@ -1,0 +1,13 @@
+.. _exhale_function_group__log_1gab26869954e2077d9528e5ee2aa01a851:
+
+Function psyiage_log_glob_known_log_files
+=========================================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: psyiage_log_glob_known_log_files(char **, uint32_t *, int *)

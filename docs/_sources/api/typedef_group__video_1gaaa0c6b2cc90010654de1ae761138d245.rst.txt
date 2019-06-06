@@ -1,0 +1,13 @@
+.. _exhale_typedef_group__video_1gaaa0c6b2cc90010654de1ae761138d245:
+
+Typedef psyiage_video_handle
+============================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: psyiage_video_handle

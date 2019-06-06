@@ -149,18 +149,14 @@ to your application by using the ``psymon`` script to run your program. For exam
 
 .. code-block:: bash
 
-   psymon --log -c "/path/to/your/app --arg1 --arg2 --arg3"
+   psymon --logs "/path/to/your/app --arg1 --arg2 --arg3"
 
 See :doc:`psymon-man` for a complete list of options.
 
-.. note::
-    ``psymon`` is a work-in-progress. 
-    Please :email:`contact us <info@psygig.com?subject=[PSYGIG Triage SDK] psymon>` if you are interested in beta-testing this feature. 
-
-Using PSYGIG SDK API
-------------------------
-The Log Collection API can be accessed by including a :doc:`single header file <api/file_include_psygigsdk.h>`
-and linking the ``libpsygig`` shared library. See :ref:`libpsygig-linking` for details.
+Using PSYGIG Triage SDK API
+---------------------------
+The Log Collection API can be accessed by including a :doc:`single header file <api/file_include_psyiage_psyiagesdk.h>`
+and linking the ``libpsyiage`` shared library. See :ref:`libpsyiage-linking` for details.
 
 Real-time monitoring of known log files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -169,11 +165,11 @@ Real-time monitoring of known log files
 .. code-block:: c
     :linenos:
 
-    #include <psygigsdk.h>
+    #include <psyiage/psyiagesdk.h>
 
     int main(int argc, char **argv)
     {
-        psygig_agent_handle     pah;  // handle to psygig agent
+        psyiage_handle     pah;  // handle to psyiage instance
 
         /* ... Initialize code omitted for simplicity ... */
 
@@ -182,18 +178,18 @@ Real-time monitoring of known log files
         uint32_t*   logfileflags = NULL;  // Array of log flags
         int         numfiles = 0;         // Number of log files found
 
-        rc = psygig_log_glob_known_log_files(&logfiles, &logfileflags, &numfiles);
+        rc = psyiage_log_glob_known_log_files(&logfiles, &logfileflags, &numfiles);
         
         // Monitor all log files found in real-time, at a period of 1 second
         int i;
         for (i = 0; i < numfiles; i++)
         {
             char *logfile = logfiles[i];
-            rc = psygig_log_monitor_log_file(pah, logfile, 1000);
+            rc = psyiage_log_monitor_log_file(pah, logfile, 1000);
         }
 
         // Free memory allocated to arrays
-        psygig_log_glob_free(logfiles, logfileflags, numfiles);
+        psyiage_log_glob_free(logfiles, logfileflags, numfiles);
         
         /* ... Cleanup code omitted for simplicity ... */
     }
@@ -204,26 +200,28 @@ Sample ``syslog`` JSON output
 .. code-block:: javascript
 
     {
-        "Log": {
-            "Duration": 1,
-            "Timestamp": 1544063871,
-            "TimeOfDay": "2018-12-06 11:37:51",
-            "Text": "Dec  6 11:37:50 ubuntu kernel: [18825.174713] [drm:vmw_cmdbuf_work_func [vmwgfx]] *ERROR* Command \"SVGA_3D_CMD_DX_SET_SHADER_RESOURCES\" causing device error."
+      "FilePath": "/var/log/messages",
+      "Entries": [
+        {
+          "Duration": 5.006322384,
+          "Timestamp": 1559440474.084455013,
+          "TimeOfDay": "2019-06-02 10:54:34.084455013",
+          "LogFile": "/var/log/messages",
+          "LogText": "Jun  2 10:54:33 ubuntu log_monitor[35659]: psyiage 0.3.0 log monitoring test @ priority Warning"
+        },
+        {
+          "Duration": 6.008110762,
+          "Timestamp": 1559440475.086243391,
+          "TimeOfDay": "2019-06-02 10:54:35.086243391",
+          "LogFile": "/var/log/messages",
+          "LogText": "Jun  2 10:54:34 ubuntu log_monitor[35659]: psyiage 0.3.0 log monitoring test @ priority Notice"
+        },
+        {
+          "Duration": 6.008533001,
+          "Timestamp": 1559440475.086665630,
+          "TimeOfDay": "2019-06-02 10:54:35.086665630",
+          "LogFile": "/var/log/messages",
+          "LogText": "Jun  2 10:54:35 ubuntu log_monitor[35659]: psyiage 0.3.0 log monitoring test @ priority Info"
         }
+      ]
     },
-    {
-        "Log": {
-            "Duration": 1,
-            "Timestamp": 1544063871,
-            "TimeOfDay": "2018-12-06 11:37:51",
-            "Text": "Dec  6 11:37:50 ubuntu kernel: [18825.174721] [drm:vmw_cmdbuf_work_func [vmwgfx]] *ERROR* Command buffer offset is 48"
-        }
-    },
-    {
-        "Log": {
-            "Duration": 1,
-            "Timestamp": 1544063871,
-            "TimeOfDay": "2018-12-06 11:37:51",
-            "Text": "Dec  6 11:37:50 ubuntu kernel: [18825.174739] [drm:vmw_cmdbuf_work_func [vmwgfx]] *ERROR* Command size is 20"
-        }
-    }

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>psymon man page &mdash; PSYGIG Triage SDK 0.2.0 ドキュメント</title>
+  <title>psymon man page &mdash; PSYGIG Triage SDK 0.4.0 ドキュメント</title>
   
 
   
@@ -73,7 +73,7 @@
             
             
               <div class="version">
-                0.2
+                0.4
               </div>
             
           
@@ -190,19 +190,54 @@
             
   <div class="section" id="psymon-man-page">
 <h1><code class="docutils literal notranslate"><span class="pre">psymon</span></code> man page<a class="headerlink" href="#psymon-man-page" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p><code class="docutils literal notranslate"><span class="pre">psymon</span></code> is a script that uses the <code class="docutils literal notranslate"><span class="pre">LD_PRELOAD</span></code> enviroment variable of the dynamic linker to inject new functionality
-into your programs without re-compiling your source code. <code class="docutils literal notranslate"><span class="pre">LD_PRELOAD</span></code> instructs the dynamic linker to load the
-<code class="docutils literal notranslate"><span class="pre">libpsygig</span></code> library before running your application, allowing the library to perform the necessary initializations in order
-to monitor your application. This includes installation application profiling, system metric collection and crash reporting routines.</p>
-<div class="admonition note">
-<p class="first admonition-title">注釈</p>
-<p class="last"><code class="docutils literal notranslate"><span class="pre">psymon</span></code> is a work-in-progress.
-Please <script type="text/javascript">document.write(
-              "<n uers=\"znvygb:vasb\100cfltvt\056pbz?fhowrpg=[CFLTVT Gevntr FQX] cflzba\">pbagnpg hf <\057n>".replace(/[a-zA-Z]/g,
-              function(c){
-                return String.fromCharCode(
-                (c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);}));
-                </script> if you are interested in beta-testing this feature.</p>
+<p><code class="docutils literal notranslate"><span class="pre">psymon</span></code> automatically instruments the execution of any arbitrary command with psyiage diagnostic and performance capabilities
+without any source code changes or recompilation. For example, CPU profile, system metric, crash and log data can be automatically
+collected simply by running your executable with the <code class="docutils literal notranslate"><span class="pre">psymon</span></code> script.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>On-demand diagnostic and performance instrumentation of any arbitrary <span class="nb">command</span>
+
+Usage:
+  psymon <span class="o">[</span>instrumentation-options<span class="o">]</span> <span class="o">[</span>output-options<span class="o">]</span> <span class="s2">&quot;&lt;command+arguments&gt;&quot;</span>
+
+Example:
+  psymon --logs --metrics --profile cpu -o json <span class="s2">&quot;/path/to/your/app --arg1 --arg2 --arg3&quot;</span>
+
+psymon automatically instruments the execution of any arbitrary <span class="nb">command</span> <span class="o">(</span>and arguments<span class="o">)</span>
+with psyiage diagnostic and performance capabilities without any <span class="nb">source</span> code changes
+or recompilation.
+
+The collected instrumentation data can be exported or streamed to a number of supported
+output plugins <span class="o">(</span>eg. json, csv, text, mqtt, http<span class="o">)</span>
+
+Options: Informational
+  -V, --version           Print version information.
+  -h, --help              Print help.
+
+Options: instrumentation
+  --logs <span class="o">[</span>options<span class="o">]</span>        Enable collection and monitoring of known log files <span class="o">(</span>system<span class="o">)</span> <span class="o">[</span>Default: system<span class="o">]</span>
+  --profile <span class="o">[</span>options<span class="o">]</span>     Enable application profiling. <span class="o">(</span>cpu<span class="p">|</span>mem<span class="o">)</span> <span class="o">[</span>Default: cpu<span class="o">]</span>
+  --profile-period &lt;ms&gt;   Sampling period <span class="o">(</span>in ms<span class="o">)</span> when collecting profiling data. <span class="o">[</span>Default: <span class="m">10</span><span class="o">]</span>
+  --crash                 Enable collection of post-mortem data on program crash
+  --metrics <span class="o">[</span>options<span class="o">]</span>     Enable collection of metric data from known sources. <span class="o">(</span>system<span class="o">)</span> <span class="o">[</span>Default: system<span class="o">]</span>
+  --metrics-period &lt;ms&gt;   Sampling period <span class="o">(</span>in ms<span class="o">)</span> when collecting metrics. <span class="o">(</span><span class="m">1</span>-32768<span class="o">)</span> <span class="o">[</span>Default: <span class="m">500</span><span class="o">]</span>
+  --alerts <span class="o">[</span>options<span class="o">]</span>      Enable pre-defined alerts/event triggers that raise an event when a condition is satisfied
+  --bench <span class="o">[</span>options<span class="o">]</span>       Enable execution of benchmark tests on startup
+  --diag <span class="o">[</span>options<span class="o">]</span>        Enable execution of diagnostic tests on startup
+
+  If no instrumentation options are selected, --metrics --logs --crash are enabled by default
+
+Options: output
+  -o, --output <span class="o">[</span>formats<span class="o">]</span>  Output format of the collected data. <span class="o">(</span>json<span class="p">|</span>csv<span class="p">|</span>text<span class="p">|</span>http<span class="p">|</span>mqtt<span class="o">)</span> <span class="o">[</span>Default: json<span class="o">]</span>
+  -d, --dir &lt;path&gt;        Directory path <span class="k">for</span> output data. Only valid <span class="k">for</span> json, csv and text output formats <span class="o">(</span>Default: current directory<span class="o">)</span>
+  -p. --prefix &lt;string&gt;   String to prepend the output file name. Only valid <span class="k">for</span> json, csv and text output formats <span class="o">(</span>Default: <span class="nb">command</span> name<span class="o">)</span>
+  -h, --host &lt;address&gt;    Host address to stream output data. Only valid <span class="k">for</span> http<span class="p">|</span>mqtt output format.
+  -k, --key &lt;key&gt;         Key to use with --host <span class="k">for</span> streaming output data. Only valid <span class="k">for</span> http<span class="p">|</span>mqtt output format
+  -q, --quiet             Disable console messages when monitoring
+
+NOTES:
+* psymon uses preloaded shared libraries to initiate profiling.  For this
+  reason, it cannot be used to profile setuid programs.
+* psymon may not be able to profile programs that themselves use preloading.
+</pre></div>
 </div>
 </div>
 
@@ -251,8 +286,8 @@ Please <script type="text/javascript">document.write(
         <script type="text/javascript" src="_static/jquery.js"></script>
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
         <script type="text/javascript" src="_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/javascript" src="_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
         <script type="text/javascript" src="_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
     

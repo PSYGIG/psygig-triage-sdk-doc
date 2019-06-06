@@ -1,0 +1,13 @@
+.. _exhale_typedef_group__sysinfo_1gaff2e794d5ec36561f8c067fb486903bb:
+
+Typedef psyiage_fsinfo
+======================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: psyiage_fsinfo

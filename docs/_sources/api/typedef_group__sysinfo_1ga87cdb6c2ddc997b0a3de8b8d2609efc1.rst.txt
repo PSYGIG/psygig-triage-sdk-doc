@@ -1,0 +1,13 @@
+.. _exhale_typedef_group__sysinfo_1ga87cdb6c2ddc997b0a3de8b8d2609efc1:
+
+Typedef psyiage_usbinfo
+=======================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: psyiage_usbinfo

@@ -61,10 +61,10 @@ Simply run the included standalone binary ``psydiag`` to run the full diagnostic
 
 See :doc:`psydiag-man` for a complete list of options.
 
-Using PSYGIG SDK API
-------------------------
-The Diagnostic Testing API can be accessed by including a :doc:`single header file <api/file_include_psygigsdk.h>`
-and linking the ``libpsygig`` shared library. See :ref:`libpsygig-linking` for details.
+Using PSYGIG Triage SDK API
+---------------------------
+The Diagnostic Testing API can be accessed by including a :doc:`single header file <api/file_include_psyiage_psyiagesdk.h>`
+and linking the ``libpsyiage`` shared library. See :ref:`libpsyiage-linking` for details.
 
 Running the RAM Diagnostic Test
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -72,17 +72,17 @@ Running the RAM Diagnostic Test
 .. code-block:: c
     :linenos:
 
-    #include <psygigsdk.h>
+    #include <psyiage/psyiagesdk.h>
 
     int main(int argc, char **argv)
     {
-        psygig_agent_handle     pah;  // handle to psygig agent
+        psyiage_handle     pah;  // handle to psyiage instance
 
         /* ... Initialize code omitted for simplicity ... */
 
         // Run RAM diagnostic test
-        psygig_diag_result diagres;
-        rc = psygig_diag_run(pah, PSYGIG_DIAG_RAM, &diagres);
+        psyiage_diag_result diagres;
+        rc = psyiage_diag_run(pah, PSYIAGE_DIAG_RAM, &diagres);
 
         /* ... Cleanup code omitted for simplicity ... */
     }

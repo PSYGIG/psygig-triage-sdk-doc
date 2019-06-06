@@ -1,0 +1,16 @@
+.. _exhale_struct_struct__psyiage__sink__psygig__cfg:
+
+Struct _psyiage_sink_psygig_cfg
+===============================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: _psyiage_sink_psygig_cfg
+   :members:
+   :protected-members:
+   :undoc-members:

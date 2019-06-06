@@ -1,0 +1,13 @@
+.. _exhale_function_group__metric_1ga50ac5677790d3ced2eb4354c4adb1b9a:
+
+Function psyiage_metric_get_values_numeric
+==========================================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: psyiage_metric_get_values_numeric(psyiage_handle, char *, unsigned long long, float, int *)

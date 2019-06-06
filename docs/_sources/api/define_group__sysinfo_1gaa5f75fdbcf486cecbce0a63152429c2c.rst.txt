@@ -3,7 +3,7 @@
 Define MAX_NET_INTF
 ===================
 
-- Defined in :ref:`file_include_psygigsdk.h`
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
 
 
 Define Documentation

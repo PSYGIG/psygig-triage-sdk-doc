@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Log Collection &mdash; PSYGIG Triage SDK 0.2.0 ドキュメント</title>
+  <title>Log Collection &mdash; PSYGIG Triage SDK 0.4.0 ドキュメント</title>
   
 
   
@@ -73,7 +73,7 @@
             
             
               <div class="version">
-                0.2
+                0.4
               </div>
             
           
@@ -115,7 +115,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Log Collection</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#known-log-sources">Known Log Sources</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#using-psymon">Using <code class="docutils literal notranslate"><span class="pre">psymon</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#using-psygig-sdk-api">Using PSYGIG SDK API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#using-psygig-triage-sdk-api">Using PSYGIG Triage SDK API</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#real-time-monitoring-of-known-log-files">Real-time monitoring of known log files</a></li>
 </ul>
 </li>
@@ -311,25 +311,15 @@ Please <script type="text/javascript">document.write(
 <h2>Using <code class="docutils literal notranslate"><span class="pre">psymon</span></code><a class="headerlink" href="#using-psymon" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>Without modifying your existing source code, you can instantly enable collection of known application logs
 to your application by using the <code class="docutils literal notranslate"><span class="pre">psymon</span></code> script to run your program. For example:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>psymon --log -c <span class="s2">&quot;/path/to/your/app --arg1 --arg2 --arg3&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>psymon --logs <span class="s2">&quot;/path/to/your/app --arg1 --arg2 --arg3&quot;</span>
 </pre></div>
 </div>
 <p>See <a class="reference internal" href="psymon-man.html"><span class="doc">psymon man page</span></a> for a complete list of options.</p>
-<div class="admonition note">
-<p class="first admonition-title">注釈</p>
-<p class="last"><code class="docutils literal notranslate"><span class="pre">psymon</span></code> is a work-in-progress.
-Please <script type="text/javascript">document.write(
-              "<n uers=\"znvygb:vasb\100cfltvt\056pbz?fhowrpg=[CFLTVT Gevntr FQX] cflzba\">pbagnpg hf <\057n>".replace(/[a-zA-Z]/g,
-              function(c){
-                return String.fromCharCode(
-                (c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);}));
-                </script> if you are interested in beta-testing this feature.</p>
 </div>
-</div>
-<div class="section" id="using-psygig-sdk-api">
-<h2>Using PSYGIG SDK API<a class="headerlink" href="#using-psygig-sdk-api" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>The Log Collection API can be accessed by including a <a class="reference internal" href="api/file_include_psygigsdk.h.html"><span class="doc">single header file</span></a>
-and linking the <code class="docutils literal notranslate"><span class="pre">libpsygig</span></code> shared library. See <a class="reference internal" href="getting-started.html#libpsygig-linking"><span class="std std-ref">Advanced Setup - Building your application with libpsygig</span></a> for details.</p>
+<div class="section" id="using-psygig-triage-sdk-api">
+<h2>Using PSYGIG Triage SDK API<a class="headerlink" href="#using-psygig-triage-sdk-api" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>The Log Collection API can be accessed by including a <a class="reference internal" href="api/file_include_psyiage_psyiagesdk.h.html"><span class="doc">single header file</span></a>
+and linking the <code class="docutils literal notranslate"><span class="pre">libpsyiage</span></code> shared library. See <a class="reference internal" href="getting-started.html#libpsyiage-linking"><span class="std std-ref">Advanced Setup - Building your application with libpsyiage</span></a> for details.</p>
 <div class="section" id="real-time-monitoring-of-known-log-files">
 <h3>Real-time monitoring of known log files<a class="headerlink" href="#real-time-monitoring-of-known-log-files" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -359,11 +349,11 @@ and linking the <code class="docutils literal notranslate"><span class="pre">lib
 25
 26
 27
-28</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;psygigsdk.h&gt;</span><span class="cp"></span>
+28</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;psyiage/psyiagesdk.h&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="n">psygig_agent_handle</span>     <span class="n">pah</span><span class="p">;</span>  <span class="c1">// handle to psygig agent</span>
+    <span class="n">psyiage_handle</span>     <span class="n">pah</span><span class="p">;</span>  <span class="c1">// handle to psyiage instance</span>
 
     <span class="cm">/* ... Initialize code omitted for simplicity ... */</span>
 
@@ -372,18 +362,18 @@ and linking the <code class="docutils literal notranslate"><span class="pre">lib
     <span class="kt">uint32_t</span><span class="o">*</span>   <span class="n">logfileflags</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>  <span class="c1">// Array of log flags</span>
     <span class="kt">int</span>         <span class="n">numfiles</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>         <span class="c1">// Number of log files found</span>
 
-    <span class="n">rc</span> <span class="o">=</span> <span class="n">psygig_log_glob_known_log_files</span><span class="p">(</span><span class="o">&amp;</span><span class="n">logfiles</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">logfileflags</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">numfiles</span><span class="p">);</span>
+    <span class="n">rc</span> <span class="o">=</span> <span class="n">psyiage_log_glob_known_log_files</span><span class="p">(</span><span class="o">&amp;</span><span class="n">logfiles</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">logfileflags</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">numfiles</span><span class="p">);</span>
 
     <span class="c1">// Monitor all log files found in real-time, at a period of 1 second</span>
     <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
     <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numfiles</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="kt">char</span> <span class="o">*</span><span class="n">logfile</span> <span class="o">=</span> <span class="n">logfiles</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-        <span class="n">rc</span> <span class="o">=</span> <span class="n">psygig_log_monitor_log_file</span><span class="p">(</span><span class="n">pah</span><span class="p">,</span> <span class="n">logfile</span><span class="p">,</span> <span class="mi">1000</span><span class="p">);</span>
+        <span class="n">rc</span> <span class="o">=</span> <span class="n">psyiage_log_monitor_log_file</span><span class="p">(</span><span class="n">pah</span><span class="p">,</span> <span class="n">logfile</span><span class="p">,</span> <span class="mi">1000</span><span class="p">);</span>
     <span class="p">}</span>
 
     <span class="c1">// Free memory allocated to arrays</span>
-    <span class="n">psygig_log_glob_free</span><span class="p">(</span><span class="n">logfiles</span><span class="p">,</span> <span class="n">logfileflags</span><span class="p">,</span> <span class="n">numfiles</span><span class="p">);</span>
+    <span class="n">psyiage_log_glob_free</span><span class="p">(</span><span class="n">logfiles</span><span class="p">,</span> <span class="n">logfileflags</span><span class="p">,</span> <span class="n">numfiles</span><span class="p">);</span>
 
     <span class="cm">/* ... Cleanup code omitted for simplicity ... */</span>
 <span class="p">}</span>
@@ -394,29 +384,31 @@ and linking the <code class="docutils literal notranslate"><span class="pre">lib
 <div class="section" id="sample-syslog-json-output">
 <h2>Sample <code class="docutils literal notranslate"><span class="pre">syslog</span></code> JSON output<a class="headerlink" href="#sample-syslog-json-output" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="s2">&quot;Log&quot;</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">&quot;Duration&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="s2">&quot;Timestamp&quot;</span><span class="o">:</span> <span class="mi">1544063871</span><span class="p">,</span>
-        <span class="s2">&quot;TimeOfDay&quot;</span><span class="o">:</span> <span class="s2">&quot;2018-12-06 11:37:51&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;Text&quot;</span><span class="o">:</span> <span class="s2">&quot;Dec  6 11:37:50 ubuntu kernel: [18825.174713] [drm:vmw_cmdbuf_work_func [vmwgfx]] *ERROR* Command \&quot;SVGA_3D_CMD_DX_SET_SHADER_RESOURCES\&quot; causing device error.&quot;</span>
+  <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/var/log/messages&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;Entries&quot;</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;Duration&quot;</span><span class="o">:</span> <span class="mf">5.006322384</span><span class="p">,</span>
+      <span class="s2">&quot;Timestamp&quot;</span><span class="o">:</span> <span class="mf">1559440474.084455013</span><span class="p">,</span>
+      <span class="s2">&quot;TimeOfDay&quot;</span><span class="o">:</span> <span class="s2">&quot;2019-06-02 10:54:34.084455013&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;LogFile&quot;</span><span class="o">:</span> <span class="s2">&quot;/var/log/messages&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;LogText&quot;</span><span class="o">:</span> <span class="s2">&quot;Jun  2 10:54:33 ubuntu log_monitor[35659]: psyiage 0.3.0 log monitoring test @ priority Warning&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;Duration&quot;</span><span class="o">:</span> <span class="mf">6.008110762</span><span class="p">,</span>
+      <span class="s2">&quot;Timestamp&quot;</span><span class="o">:</span> <span class="mf">1559440475.086243391</span><span class="p">,</span>
+      <span class="s2">&quot;TimeOfDay&quot;</span><span class="o">:</span> <span class="s2">&quot;2019-06-02 10:54:35.086243391&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;LogFile&quot;</span><span class="o">:</span> <span class="s2">&quot;/var/log/messages&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;LogText&quot;</span><span class="o">:</span> <span class="s2">&quot;Jun  2 10:54:34 ubuntu log_monitor[35659]: psyiage 0.3.0 log monitoring test @ priority Notice&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;Duration&quot;</span><span class="o">:</span> <span class="mf">6.008533001</span><span class="p">,</span>
+      <span class="s2">&quot;Timestamp&quot;</span><span class="o">:</span> <span class="mf">1559440475.086665630</span><span class="p">,</span>
+      <span class="s2">&quot;TimeOfDay&quot;</span><span class="o">:</span> <span class="s2">&quot;2019-06-02 10:54:35.086665630&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;LogFile&quot;</span><span class="o">:</span> <span class="s2">&quot;/var/log/messages&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;LogText&quot;</span><span class="o">:</span> <span class="s2">&quot;Jun  2 10:54:35 ubuntu log_monitor[35659]: psyiage 0.3.0 log monitoring test @ priority Info&quot;</span>
     <span class="p">}</span>
+  <span class="p">]</span>
 <span class="p">},</span>
-<span class="p">{</span>
-    <span class="s2">&quot;Log&quot;</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">&quot;Duration&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="s2">&quot;Timestamp&quot;</span><span class="o">:</span> <span class="mi">1544063871</span><span class="p">,</span>
-        <span class="s2">&quot;TimeOfDay&quot;</span><span class="o">:</span> <span class="s2">&quot;2018-12-06 11:37:51&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;Text&quot;</span><span class="o">:</span> <span class="s2">&quot;Dec  6 11:37:50 ubuntu kernel: [18825.174721] [drm:vmw_cmdbuf_work_func [vmwgfx]] *ERROR* Command buffer offset is 48&quot;</span>
-    <span class="p">}</span>
-<span class="p">},</span>
-<span class="p">{</span>
-    <span class="s2">&quot;Log&quot;</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">&quot;Duration&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="s2">&quot;Timestamp&quot;</span><span class="o">:</span> <span class="mi">1544063871</span><span class="p">,</span>
-        <span class="s2">&quot;TimeOfDay&quot;</span><span class="o">:</span> <span class="s2">&quot;2018-12-06 11:37:51&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;Text&quot;</span><span class="o">:</span> <span class="s2">&quot;Dec  6 11:37:50 ubuntu kernel: [18825.174739] [drm:vmw_cmdbuf_work_func [vmwgfx]] *ERROR* Command size is 20&quot;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -467,8 +459,8 @@ and linking the <code class="docutils literal notranslate"><span class="pre">lib
         <script type="text/javascript" src="_static/jquery.js"></script>
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
         <script type="text/javascript" src="_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/javascript" src="_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
         <script type="text/javascript" src="_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
     

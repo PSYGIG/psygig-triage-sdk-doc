@@ -1,0 +1,13 @@
+.. _exhale_typedef_group__metric_1ga748985727467aa81bfb33988a17e3ed5:
+
+Typedef psyiage_pointcloud_data
+===============================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: psyiage_pointcloud_data

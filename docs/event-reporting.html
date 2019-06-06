@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Event Reporting &mdash; PSYGIG Triage SDK 0.2.0 ドキュメント</title>
+  <title>Event Reporting &mdash; PSYGIG Triage SDK 0.4.0 ドキュメント</title>
   
 
   
@@ -73,7 +73,7 @@
             
             
               <div class="version">
-                0.2
+                0.4
               </div>
             
           
@@ -117,7 +117,7 @@
 <li class="toctree-l1"><a class="reference internal" href="system-information.html">System Information</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Event Reporting</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#using-psymon">Using <code class="docutils literal notranslate"><span class="pre">psymon</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#using-psygig-sdk-api">Using PSYGIG SDK API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#using-psygig-triage-sdk-api">Using PSYGIG Triage SDK API</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#raising-an-event-on-demand">Raising an event on demand</a></li>
 </ul>
 </li>
@@ -216,25 +216,25 @@ or threshold is exceeded.</p>
 <h2>Using <code class="docutils literal notranslate"><span class="pre">psymon</span></code><a class="headerlink" href="#using-psymon" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>Without modifying your existing source code, you can instantly enable any of the pre-defined event triggers
 in your application by using the <code class="docutils literal notranslate"><span class="pre">psymon</span></code> script to run your program. For example:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>psymon --eventtrigger <span class="s2">&quot;lowmem&quot;</span> -c <span class="s2">&quot;/path/to/your/app --arg1 --arg2 --arg3&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>psymon --alerts <span class="s2">&quot;lowmem&quot;</span> <span class="s2">&quot;/path/to/your/app --arg1 --arg2 --arg3&quot;</span>
 </pre></div>
 </div>
 <p>See <a class="reference internal" href="psymon-man.html"><span class="doc">psymon man page</span></a> for a complete list of options.</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last"><code class="docutils literal notranslate"><span class="pre">psymon</span></code> is a work-in-progress.
+<p class="last"><code class="docutils literal notranslate"><span class="pre">psymon</span> <span class="pre">--alerts</span></code> is a work-in-progress.
 Please <script type="text/javascript">document.write(
-              "<n uers=\"znvygb:vasb\100cfltvt\056pbz?fhowrpg=[CFLTVT Gevntr FQX] cflzba\">pbagnpg hf <\057n>".replace(/[a-zA-Z]/g,
+              "<n uers=\"znvygb:vasb\100cfltvt\056pbz?fhowrpg=[CFLTVT Gevntr FQX] cflzba --nyregf\">pbagnpg hf <\057n>".replace(/[a-zA-Z]/g,
               function(c){
                 return String.fromCharCode(
                 (c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);}));
                 </script> if you are interested in beta-testing this feature.</p>
 </div>
 </div>
-<div class="section" id="using-psygig-sdk-api">
-<h2>Using PSYGIG SDK API<a class="headerlink" href="#using-psygig-sdk-api" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>The Event Reporting API can be accessed by including a <a class="reference internal" href="api/file_include_psygigsdk.h.html"><span class="doc">single header file</span></a>
-and linking the <code class="docutils literal notranslate"><span class="pre">libpsygig</span></code> shared library. See <a class="reference internal" href="getting-started.html#libpsygig-linking"><span class="std std-ref">Advanced Setup - Building your application with libpsygig</span></a> for details.</p>
+<div class="section" id="using-psygig-triage-sdk-api">
+<h2>Using PSYGIG Triage SDK API<a class="headerlink" href="#using-psygig-triage-sdk-api" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>The Event Reporting API can be accessed by including a <a class="reference internal" href="api/file_include_psyiage_psyiagesdk.h.html"><span class="doc">single header file</span></a>
+and linking the <code class="docutils literal notranslate"><span class="pre">libpsyiage</span></code> shared library. See <a class="reference internal" href="getting-started.html#libpsyiage-linking"><span class="std std-ref">Advanced Setup - Building your application with libpsyiage</span></a> for details.</p>
 <div class="section" id="raising-an-event-on-demand">
 <h3>Raising an event on demand<a class="headerlink" href="#raising-an-event-on-demand" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -249,16 +249,16 @@ and linking the <code class="docutils literal notranslate"><span class="pre">lib
 10
 11
 12
-13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;psygigsdk.h&gt;</span><span class="cp"></span>
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;psyiage/psyiagesdk.h&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="n">psygig_agent_handle</span>     <span class="n">pah</span><span class="p">;</span>  <span class="c1">// handle to psygig agent</span>
+    <span class="n">psyiage_handle</span>     <span class="n">pah</span><span class="p">;</span>  <span class="c1">// handle to psyiage instance</span>
 
     <span class="cm">/* ... Initialize code omitted for simplicity ... */</span>
 
     <span class="c1">// Report monitoring task complete as event</span>
-    <span class="n">rc</span> <span class="o">=</span> <span class="n">psygig_event_report</span><span class="p">(</span><span class="n">pah</span><span class="p">,</span> <span class="n">PSYGIG_EVENT_LEVEL_INFO</span><span class="p">,</span> <span class="s">&quot;monitor&quot;</span><span class="p">,</span> <span class="n">TASK_COMPLETE_EVENT_ID</span><span class="p">,</span> <span class="s">&quot;Monitor task complete&quot;</span><span class="p">);</span>
+    <span class="n">rc</span> <span class="o">=</span> <span class="n">psyiage_event_report</span><span class="p">(</span><span class="n">pah</span><span class="p">,</span> <span class="n">PSYIAGE_EVENT_LEVEL_INFO</span><span class="p">,</span> <span class="s">&quot;monitor&quot;</span><span class="p">,</span> <span class="n">TASK_COMPLETE_EVENT_ID</span><span class="p">,</span> <span class="s">&quot;Monitor task complete&quot;</span><span class="p">);</span>
 
     <span class="cm">/* ... Cleanup code omitted for simplicity ... */</span>
 <span class="p">}</span>
@@ -268,28 +268,40 @@ and linking the <code class="docutils literal notranslate"><span class="pre">lib
 </div>
 <div class="section" id="sample-event-json-data">
 <h2>Sample event JSON data<a class="headerlink" href="#sample-event-json-data" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="s2">&quot;Event&quot;</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">&quot;Duration&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="s2">&quot;Timestamp&quot;</span><span class="o">:</span> <span class="mi">1547534065</span><span class="p">,</span>
-        <span class="s2">&quot;TimeOfDay&quot;</span><span class="o">:</span> <span class="s2">&quot;2019-01-15 15:34:25&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;Level&quot;</span><span class="o">:</span> <span class="s2">&quot;Info&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;Source&quot;</span><span class="o">:</span> <span class="s2">&quot;monitor&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;EventID&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="s2">&quot;Message&quot;</span><span class="o">:</span> <span class="s2">&quot;Monitor task start&quot;</span>
-    <span class="p">}</span>
-<span class="p">},</span>
-<span class="p">{</span>
-    <span class="s2">&quot;Event&quot;</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">&quot;Duration&quot;</span><span class="o">:</span> <span class="mi">15</span><span class="p">,</span>
-        <span class="s2">&quot;Timestamp&quot;</span><span class="o">:</span> <span class="mi">1547534080</span><span class="p">,</span>
-        <span class="s2">&quot;TimeOfDay&quot;</span><span class="o">:</span> <span class="s2">&quot;2019-01-15 15:34:40&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;Level&quot;</span><span class="o">:</span> <span class="s2">&quot;Info&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;Source&quot;</span><span class="o">:</span> <span class="s2">&quot;monitor&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;EventID&quot;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-        <span class="s2">&quot;Message&quot;</span><span class="o">:</span> <span class="s2">&quot;Monitor task complete&quot;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Events&quot;</span><span class="o">:</span> <span class="p">[</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;Timestamp&quot;</span><span class="o">:</span> <span class="mf">1559440949.192214012</span><span class="p">,</span>
+    <span class="s2">&quot;TimeOfDay&quot;</span><span class="o">:</span> <span class="s2">&quot;2019-06-02 11:02:29.192214012&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Level&quot;</span><span class="o">:</span> <span class="s2">&quot;Info&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Source&quot;</span><span class="o">:</span> <span class="s2">&quot;event_report&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;EventID&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;Message&quot;</span><span class="o">:</span> <span class="s2">&quot;Reporting event with severity 0&quot;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;Timestamp&quot;</span><span class="o">:</span> <span class="mf">1559440950.192817450</span><span class="p">,</span>
+    <span class="s2">&quot;TimeOfDay&quot;</span><span class="o">:</span> <span class="s2">&quot;2019-06-02 11:02:30.192817449&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Level&quot;</span><span class="o">:</span> <span class="s2">&quot;Warning&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Source&quot;</span><span class="o">:</span> <span class="s2">&quot;event_report&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;EventID&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;Message&quot;</span><span class="o">:</span> <span class="s2">&quot;Reporting event with severity 1&quot;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;Timestamp&quot;</span><span class="o">:</span> <span class="mf">1559440951.194056273</span><span class="p">,</span>
+    <span class="s2">&quot;TimeOfDay&quot;</span><span class="o">:</span> <span class="s2">&quot;2019-06-02 11:02:31.194056272&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Level&quot;</span><span class="o">:</span> <span class="s2">&quot;Error&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Source&quot;</span><span class="o">:</span> <span class="s2">&quot;event_report&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;EventID&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;Message&quot;</span><span class="o">:</span> <span class="s2">&quot;Reporting event with severity 2&quot;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;Timestamp&quot;</span><span class="o">:</span> <span class="mf">1559440952.194596052</span><span class="p">,</span>
+    <span class="s2">&quot;TimeOfDay&quot;</span><span class="o">:</span> <span class="s2">&quot;2019-06-02 11:02:32.194596052&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Level&quot;</span><span class="o">:</span> <span class="s2">&quot;Critical&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Source&quot;</span><span class="o">:</span> <span class="s2">&quot;event_report&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;EventID&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;Message&quot;</span><span class="o">:</span> <span class="s2">&quot;Reporting event with severity 3&quot;</span>
+  <span class="p">}</span>
+<span class="p">],</span>
 </pre></div>
 </div>
 </div>
@@ -340,8 +352,8 @@ and linking the <code class="docutils literal notranslate"><span class="pre">lib
         <script type="text/javascript" src="_static/jquery.js"></script>
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
         <script type="text/javascript" src="_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/javascript" src="_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
         <script type="text/javascript" src="_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
     

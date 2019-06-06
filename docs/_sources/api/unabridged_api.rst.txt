@@ -10,122 +10,112 @@ Classes and Structs
 .. toctree::
    :maxdepth: 5
 
-   struct__psygig__cfg.rst
+   struct__psyiage__cpuinfo.rst
 
 .. toctree::
    :maxdepth: 5
 
-   struct__psygig__cpuinfo.rst
+   struct__psyiage__diag__result.rst
 
 .. toctree::
    :maxdepth: 5
 
-   struct__psygig__cpuinfo_1_1cache__t.rst
+   struct__psyiage__diskinfo.rst
 
 .. toctree::
    :maxdepth: 5
 
-   struct__psygig__diag__result.rst
+   struct__psyiage__fsinfo.rst
 
 .. toctree::
    :maxdepth: 5
 
-   struct__psygig__diskinfo.rst
+   struct__psyiage__meminfo.rst
 
 .. toctree::
    :maxdepth: 5
 
-   struct__psygig__fsinfo.rst
+   struct__psyiage__netinfo.rst
 
 .. toctree::
    :maxdepth: 5
 
-   struct__psygig__fsinfo_1_1__fsinfo.rst
+   struct__psyiage__osinfo.rst
 
 .. toctree::
    :maxdepth: 5
 
-   struct__psygig__meminfo.rst
+   struct__psyiage__pciinfo.rst
 
 .. toctree::
    :maxdepth: 5
 
-   struct__psygig__netinfo.rst
+   struct__psyiage__pointcloud__data.rst
 
 .. toctree::
    :maxdepth: 5
 
-   struct__psygig__osinfo.rst
+   struct__psyiage__session__info.rst
 
 .. toctree::
    :maxdepth: 5
 
-   struct__psygig__pciinfo.rst
+   struct__psyiage__sink__cfg.rst
 
 .. toctree::
    :maxdepth: 5
 
-   struct__psygig__pointcloud__data.rst
+   struct__psyiage__sink__file__cfg.rst
 
 .. toctree::
    :maxdepth: 5
 
-   struct__psygig__session__info.rst
+   struct__psyiage__sink__fstream__cfg.rst
 
 .. toctree::
    :maxdepth: 5
 
-   struct__psygig__sink__cfg.rst
+   struct__psyiage__sink__http__cfg.rst
 
 .. toctree::
    :maxdepth: 5
 
-   struct__psygig__sink__file__cfg.rst
+   struct__psyiage__sink__influxdb__cfg.rst
 
 .. toctree::
    :maxdepth: 5
 
-   struct__psygig__sink__fstream__cfg.rst
+   struct__psyiage__sink__mqtt__cfg.rst
 
 .. toctree::
    :maxdepth: 5
 
-   struct__psygig__sink__http__cfg.rst
+   struct__psyiage__sink__psygig__cfg.rst
 
 .. toctree::
    :maxdepth: 5
 
-   struct__psygig__sink__influxdb__cfg.rst
+   struct__psyiage__sink__tcp__cfg.rst
 
 .. toctree::
    :maxdepth: 5
 
-   struct__psygig__sink__mqtt__cfg.rst
+   struct__psyiage__sink__udp__cfg.rst
 
 .. toctree::
    :maxdepth: 5
 
-   struct__psygig__sink__tcp__cfg.rst
+   struct__psyiage__sysinfo.rst
 
 .. toctree::
    :maxdepth: 5
 
-   struct__psygig__sink__udp__cfg.rst
+   struct__psyiage__usbinfo.rst
 
 .. toctree::
    :maxdepth: 5
 
-   struct__psygig__sysinfo.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   struct__psygig__usbinfo.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   struct__psygig__video__cfg.rst
+   struct__psyiage__video__cfg.rst
 
 Enums
 *****
@@ -144,42 +134,42 @@ Enums
 .. toctree::
    :maxdepth: 5
 
-   enum_group__benchmark_1ga9e4632f4c308834d293ccea51e958420.rst
+   enum_group__benchmark_1gac03dae5406da673f498e6bab7336aee6.rst
 
 .. toctree::
    :maxdepth: 5
 
-   enum_group__diag_1ga11ff833fec26f132a5a0967482068767.rst
+   enum_group__diag_1gac770c842f98bec563fe2340bd6e878a8.rst
 
 .. toctree::
    :maxdepth: 5
 
-   enum_group__event_1gaa5b30511a731762245c930d4fd7a0b1f.rst
+   enum_psyiagesdk_8h_1a734f6bf1ee2ec276496c1422b058d6a5.rst
 
 .. toctree::
    :maxdepth: 5
 
-   enum_group__log_1ga3fe058e3349d2c426b2088c905b0e2e6.rst
+   enum_group__event_1ga57d263052073675d36b0508906b3295f.rst
 
 .. toctree::
    :maxdepth: 5
 
-   enum_group__metric_1gabeecf8c237a073597898a4e0bf55390d.rst
+   enum_group__log_1ga48b7b38696df6517a044bbd18bbb0a41.rst
 
 .. toctree::
    :maxdepth: 5
 
-   enum_group__admin_1gaead9312bcdfbbb0d282f56b8379017d8.rst
+   enum_group__metric_1ga70589d67957039a542cc0e145800e04a.rst
 
 .. toctree::
    :maxdepth: 5
 
-   enum_group__admin_1ga80e0093feb6fa13bbc424dfb30b95379.rst
+   enum_group__admin_1ga11aad8ec19c713fe01e757c542ec8f03.rst
 
 .. toctree::
    :maxdepth: 5
 
-   enum_psygigsdk_8h_1aaa1c70d1804a90a82b3585f4f07fa243.rst
+   enum_group__admin_1ga66b12eae528c03fa4bd539d9f1d51fda.rst
 
 Functions
 *********
@@ -188,232 +178,212 @@ Functions
 .. toctree::
    :maxdepth: 5
 
-   function_group__admin_1ga121d61c2e2463adfaed1a57565c3147c.rst
+   function_group__admin_1gaad96d4abcebbafd15c54bbec77fb7afe.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_group__admin_1ga87e7454c02c913293326cca96873f296.rst
+   function_group__benchmark_1ga78a2c0ca88cfe4a8131009e2c8ad58bc.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_group__admin_1ga825d9336eb987cd5853b3800c20b6ba0.rst
+   function_group__admin_1ga45475ebc1a0de0c7235b335582cec39b.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_group__admin_1ga1c2be988f0d29d39e6e3491b20de03a9.rst
+   function_group__crash_1gaa1cf522377f5700324b2e2689e757e55.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_group__admin_1ga352c28cc0a7836d70233375b6a66ef3d.rst
+   function_group__crash_1ga75fbbeb52ff7abb36b4a0936a4f4a224.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_group__admin_1gad3a56ef340a04a516b837a61833cca4e.rst
+   function_group__crash_1ga62988c01593331c81abcecbd2802393c.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_group__admin_1gaaf1964e8484d484331d4875fd8995e92.rst
+   function_group__diag_1gad6ec410e55af93597dbf4a8f90cd8261.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_group__admin_1ga62818a0b620c8ed11c1124995bcd9a51.rst
+   function_group__diag_1ga8c776d3e23a731373df927d15bb6a158.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_group__admin_1ga225a40e1a12bdeae6a7ed08513e447a0.rst
+   function_group__event_1ga073357feb3a8a779a416c6f4e00df863.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_group__admin_1ga97ef5aaf4e0e8fc25394051409b2d425.rst
+   function_group__event_1ga88fa290d48b65043113cadec8dfc03b0.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_group__admin_1ga99a931e11a90377d4048d2c808bf436a.rst
+   function_group__event_1gadb39dc50e109bd382c40cd5a26179caf.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_group__admin_1ga2648dbe0d465aad94d1808b318d7bcbe.rst
+   function_group__admin_1ga84098c77aa86802e46d76c3fc9d9b05c.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_group__benchmark_1gad36ec5de5192a22cbbb9ec1154148a63.rst
+   function_group__admin_1gaafe397a3a21395843a420633e201acb8.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_group__benchmark_1ga36cfa76eba5674983349ce827289acfa.rst
+   function_group__admin_1ga58ecaa2271e7e1507a016482b9bb870c.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_group__crash_1gabaf07ed013042d1f49ad0e88f43653b4.rst
+   function_group__admin_1gab8664018e420c273c2445963406e370a.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_group__crash_1gafac8bff88650e7c72a82a0e179b81e3d.rst
+   function_group__admin_1ga689acebf415fa1b1ac81ee98a4f02ebe.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_group__crash_1gaa749aeaa1e74ebed417610776e0ba3c1.rst
+   function_group__log_1gaee7f59f93c8b969927f7c635a10d0217.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_group__diag_1ga329a2a24b7f9aa4f264e3dc368d75516.rst
+   function_group__log_1gab26869954e2077d9528e5ee2aa01a851.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_group__diag_1gaa5372ebc913ecae1d822e7cc442b2ff7.rst
+   function_group__log_1ga66ffb17354fe9a3634b1415aa7909943.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_group__event_1gafb3cf0708c1ef0c63a3907a77643b1db.rst
+   function_group__log_1gaca2e28802660df71c0c1802a7fcca889.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_group__event_1ga94560ed7ee27811bcbeb48e6705c0adf.rst
+   function_group__log_1gabdba4839b5940b035dab35a547132871.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_group__event_1ga2535bc46a92042dd6a94a43d7e53c9be.rst
+   function_group__metric_1gae9c2020b8292c26d902de6f91a53524c.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_group__log_1ga648f67cc928ec74ec9a8ce48dcffa68f.rst
+   function_group__metric_1ga63a6b5010d50b0443555adb15106dd14.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_group__log_1gafa91bdd5bb9e6ddb1ed8c0f2b3a9b56a.rst
+   function_group__metric_1ga50ac5677790d3ced2eb4354c4adb1b9a.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_group__log_1gae738ca7b0c34bf6dba6712a9e7cddd2b.rst
+   function_group__metric_1ga3e00588fc2053ab426da22f973424043.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_group__log_1gae5f9adc10f83bd1a01ef5c022796db86.rst
+   function_group__metric_1ga65fe769e9290b20201e1dd01b29c2166.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_group__log_1gaa61bab002571d86eefbd051bad2a4d92.rst
+   function_group__metric_1gabd74a787a571ef4e160c3f2a83e946f8.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_group__metric_1gab2661de85dc52970a843f6399bee13d4.rst
+   function_group__metric_1gad6ee99f1de56dd03d91dfcf02dacdb71.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_group__metric_1ga086dbb3c27895dd1795dbba0e922ec0d.rst
+   function_group__metric_1gafbe2b448c64bce6d855afbd5d2247955.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_group__metric_1ga73001ada94c6c95c7857dd005a3d0873.rst
+   function_group__metric_1gab715c1e25afb366bd3ec5d4f7b0b3346.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_group__metric_1ga46a79a572ab82b198217426464651faf.rst
+   function_group__profile_1ga62fc4763ea6cc9d9a42564a2790d4207.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_group__metric_1ga633cc0dea5da06743ad0308eb7d600ea.rst
+   function_group__profile_1ga49c998d49450ca1024fe0dd94592b214.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_group__metric_1gacd4b61dc0315610828452bb0c23f12a1.rst
+   function_group__profile_1gab3bd7bfd5de5b5af79231e51d25f5744.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_group__metric_1gadcdb801039b078604891895cf65d1ab4.rst
+   function_group__admin_1ga1b78ff10f48bb97007ca0bd7ae83cb63.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_group__metric_1gab6f6044bb6ac877e2d6491383952bdda.rst
+   function_group__admin_1ga80a2a28f0e7e89af0b849809528488e6.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_group__metric_1ga13961393fb675c701b1dde08500cec8f.rst
+   function_group__admin_1ga685b0634cb744c1b920c8452404330ec.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_group__metric_1ga03dd4f1ecc14708475838e7feca12a7c.rst
+   function_group__admin_1ga8cf34f1c5e1ca06e3dabe6a8f5ef5f97.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_group__profile_1ga4575f8efe2f09bec2c61e3457830a1cb.rst
+   function_group__sysinfo_1ga6a766b0b280da58739595172719c1b08.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_group__profile_1ga05e2d1688244c23c0d511fe3fa3a71b6.rst
+   function_group__sysinfo_1ga248d2dba10cc8a368b09dbafd7659a7a.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_group__profile_1ga00ef61bcc6515ff791d8a9a2088d99a0.rst
+   function_group__video_1gab44c287691d4b5c9748142bc6baea6aa.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_group__profile_1ga4d2866def94870a7c54c8a5935fc3d2e.rst
+   function_group__video_1ga7a35f0cbf89fbac1d8277470984700c9.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_group__sysinfo_1gad62e444b026de8265c45346933424da2.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   function_group__sysinfo_1ga70289db0bfc184d04ce16a2bc17ea7fc.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   function_group__video_1ga5e4ad5e01335eed273cd3334f10b9177.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   function_group__video_1gaf0ae8019b6abf5853191e8084d6db2d4.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   function_group__video_1ga152f2287018683a2e5605a1fb3bc039e.rst
+   function_group__video_1ga136c94bc1954b25f3e6d499581cbecd8.rst
 
 Defines
 *******
@@ -452,22 +422,12 @@ Defines
 .. toctree::
    :maxdepth: 5
 
-   define_group__admin_1ga019aa8a74d5a3fa69bcba968514214dd.rst
+   define_group__admin_1ga4f63dfd286ac76e65b342e2820428e9c.rst
 
 .. toctree::
    :maxdepth: 5
 
    define_group__sysinfo_1gafba6e02f31b8a53894ca0e0faaaa7482.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   define_psygigsdk_8h_1a7a18783e5822ba5ea364d35854897085.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   define_psygigsdk_8h_1ae1b16a95f537ece7d6e8e03311833865.rst
 
 Typedefs
 ********
@@ -476,157 +436,162 @@ Typedefs
 .. toctree::
    :maxdepth: 5
 
-   typedef_group__admin_1ga3981963f680114687830d048aca94c20.rst
+   typedef_group__benchmark_1gaea3c4fa11ac33ff2876572da9697045f.rst
 
 .. toctree::
    :maxdepth: 5
 
-   typedef_group__benchmark_1ga8ca83cf178d5f623c468ad1982765dd0.rst
+   typedef_group__sysinfo_1ga73a9c407ebaca5cdab83dbc11f01d3ef.rst
 
 .. toctree::
    :maxdepth: 5
 
-   typedef_group__admin_1ga4d6d224f55aa00778d0a279ad63a17ef.rst
+   typedef_group__diag_1gafe434ff30f430b6f0e4c8b73f395ce29.rst
 
 .. toctree::
    :maxdepth: 5
 
-   typedef_group__sysinfo_1ga5ef3f551fb07171df98421a106e641c2.rst
+   typedef_group__diag_1gae5cf86ea571b82e577d3f19c434d9a54.rst
 
 .. toctree::
    :maxdepth: 5
 
-   typedef_group__diag_1ga36c28e721d2040c85a8d7943fbb8011d.rst
+   typedef_group__sysinfo_1gaf42431ed915b3f35a95816a7e5f5e437.rst
 
 .. toctree::
    :maxdepth: 5
 
-   typedef_group__diag_1ga86ad220aeeef6bd944bcb02e011b0680.rst
+   typedef_psyiagesdk_8h_1a04a2ebbe603eeb319217ace07cb5950d.rst
 
 .. toctree::
    :maxdepth: 5
 
-   typedef_group__sysinfo_1gabec888c1e5957910697cd709cfc14634.rst
+   typedef_group__event_1gae1c6518703f04847513478d34f5932e4.rst
 
 .. toctree::
    :maxdepth: 5
 
-   typedef_group__event_1ga8061a166157ee4a37eee4032493a78e2.rst
+   typedef_group__sysinfo_1gaff2e794d5ec36561f8c067fb486903bb.rst
 
 .. toctree::
    :maxdepth: 5
 
-   typedef_group__sysinfo_1gaca9ae00fcaeaebf4f6b0d920a987a142.rst
+   typedef_group__admin_1ga49255132aa0ebae339c8e05d385980b2.rst
 
 .. toctree::
    :maxdepth: 5
 
-   typedef_group__log_1gae787592a3d2392876a30ad63d1d95452.rst
+   typedef_group__log_1ga808be951c69d09a9dfd404c9c516f0ce.rst
 
 .. toctree::
    :maxdepth: 5
 
-   typedef_group__sysinfo_1gaf9cd1804ffe32d13e5f0c4101d63f147.rst
+   typedef_group__sysinfo_1ga291ded934cd9cff52388819b63e0bc47.rst
 
 .. toctree::
    :maxdepth: 5
 
-   typedef_group__metric_1ga7c7ea594a2f7345f436080bd6a22433e.rst
+   typedef_group__metric_1ga3ec4a745466817a40b916566a379bc83.rst
 
 .. toctree::
    :maxdepth: 5
 
-   typedef_group__sysinfo_1ga6a734a61fa806c75dd2731997559bd56.rst
+   typedef_group__sysinfo_1ga5d799ce23fcd267dd59d4f9782376f84.rst
 
 .. toctree::
    :maxdepth: 5
 
-   typedef_group__sysinfo_1ga15b4369a22dd2ca4bc73d662a3ed973b.rst
+   typedef_group__sysinfo_1ga4d483955cbe645e631d66a0905bd6ddd.rst
 
 .. toctree::
    :maxdepth: 5
 
-   typedef_group__sysinfo_1ga49fdfa973f3ae0e57c972127dc74627e.rst
+   typedef_group__sysinfo_1ga07334784a527ae69fb98d80f00e33658.rst
 
 .. toctree::
    :maxdepth: 5
 
-   typedef_group__metric_1ga1fe05be4c1bfbaa52440060155299761.rst
+   typedef_group__metric_1ga748985727467aa81bfb33988a17e3ed5.rst
 
 .. toctree::
    :maxdepth: 5
 
-   typedef_group__admin_1ga54e9d2990ca293d686ca2347be84a1f5.rst
+   typedef_group__admin_1ga56c72b8200b4083156548bb07200805f.rst
 
 .. toctree::
    :maxdepth: 5
 
-   typedef_group__admin_1gaaf0df8949411545158a840cbd4363ff3.rst
+   typedef_group__admin_1gad16476cfe5c3822528da970b59904243.rst
 
 .. toctree::
    :maxdepth: 5
 
-   typedef_group__admin_1gacaf10cdcf4d1f34aa1fcbad382d53957.rst
+   typedef_group__admin_1ga8e508fdbc67d17db77ffa7361734ff1f.rst
 
 .. toctree::
    :maxdepth: 5
 
-   typedef_group__admin_1gac8776d2d9f31b519633ef8660f87ec3a.rst
+   typedef_group__admin_1gae9a4cb96e37fe1332f761c07c2dfcc7e.rst
 
 .. toctree::
    :maxdepth: 5
 
-   typedef_group__admin_1ga72d87ed3888dfc41312fdb74edd34d89.rst
+   typedef_group__admin_1ga46f3f258385a58e95bd2841f2426b20f.rst
 
 .. toctree::
    :maxdepth: 5
 
-   typedef_group__admin_1ga78b4fa980ceefde0a393224b7112d892.rst
+   typedef_group__admin_1gadc5bb1081e343d7e0f133a547c59e701.rst
 
 .. toctree::
    :maxdepth: 5
 
-   typedef_group__admin_1gaa8c01e107b0ec7365f3d1d88caf6e61a.rst
+   typedef_group__admin_1ga1e1859bec7fc878e24adca169ae16147.rst
 
 .. toctree::
    :maxdepth: 5
 
-   typedef_group__admin_1ga7315cf71c50e0cb58a285af0c3613d92.rst
+   typedef_group__admin_1ga29b9caabb18720031d4fd4852d920207.rst
 
 .. toctree::
    :maxdepth: 5
 
-   typedef_group__admin_1ga5bdc5861f74c5721787506933ae972f6.rst
+   typedef_group__admin_1gaa87f95f2c81cccd5cd107b2dd6dbccd2.rst
 
 .. toctree::
    :maxdepth: 5
 
-   typedef_group__admin_1gab5aba5687d0cc663995fee0604d08b14.rst
+   typedef_group__admin_1gaa5431a5dc87350dc36e4debb1f4d459e.rst
 
 .. toctree::
    :maxdepth: 5
 
-   typedef_group__admin_1gabe641754bc346b3b54a5c88f6659504b.rst
+   typedef_group__admin_1gafd597ed8a80e3e08bdbfb653a2af76f2.rst
 
 .. toctree::
    :maxdepth: 5
 
-   typedef_group__sysinfo_1gaf4f8a4d078de38b6921a5ca49ee0251d.rst
+   typedef_group__admin_1gaeb6555902b19d87d0b2631fdee270a2f.rst
 
 .. toctree::
    :maxdepth: 5
 
-   typedef_group__sysinfo_1ga5fc81e59438dd9d0755d81b7f4863cfe.rst
+   typedef_group__sysinfo_1ga196ccbc07a32f7e27868dffaba2aa628.rst
 
 .. toctree::
    :maxdepth: 5
 
-   typedef_group__video_1ga020cba254357ccf8e53d0ef0369235c7.rst
+   typedef_group__sysinfo_1ga87cdb6c2ddc997b0a3de8b8d2609efc1.rst
 
 .. toctree::
    :maxdepth: 5
 
-   typedef_group__video_1ga54c26db1cfeb60f0584666f630ba7497.rst
+   typedef_group__video_1ga10a2a2b22fcbc3f928dc6f3a37789fdd.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   typedef_group__video_1gaaa0c6b2cc90010654de1ae761138d245.rst
 
 Directories
 ***********
@@ -637,6 +602,11 @@ Directories
 
    dir_include.rst
 
+.. toctree::
+   :maxdepth: 5
+
+   dir_include_psyiage.rst
+
 Files
 *****
 
@@ -644,4 +614,4 @@ Files
 .. toctree::
    :maxdepth: 5
 
-   file_include_psygigsdk.h.rst
+   file_include_psyiage_psyiagesdk.h.rst

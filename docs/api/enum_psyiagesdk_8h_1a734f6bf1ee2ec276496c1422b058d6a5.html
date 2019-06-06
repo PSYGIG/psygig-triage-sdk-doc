@@ -1,0 +1,388 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ja" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Enum _psyiage_error_code &mdash; PSYGIG Triage SDK 0.4.0 ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="next" title="Enum _psyiage_event_level" href="enum_group__event_1ga57d263052073675d36b0508906b3295f.html" />
+    <link rel="prev" title="Enum _psyiage_diag_type" href="enum_group__diag_1gac770c842f98bec563fe2340bd6e878a8.html" />
+ 
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-91451950-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PSYGIG Triage SDK
+          
+
+          
+            
+            <img src="../_static/psygig-logo-white-text.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">OVERVIEW</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../supported-platforms.html">Supported Platforms/Architectures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../third-party-integration.html">Third Party Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../change-log.html">Change Log</a></li>
+</ul>
+<p class="caption"><span class="caption-text">USAGE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Download &amp; Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started.html">Getting Started</a></li>
+</ul>
+<p class="caption"><span class="caption-text">FEATURES</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../application-performance-profiling.html">Application Performance Profiling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../crash-reporting.html">Crash Reporting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../log-collection.html">Log Collection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../metrics-collection.html">Metrics Collection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system-information.html">System Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../event-reporting.html">Event Reporting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../benchmark-testing.html">Benchmark Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../diagnostic-testing.html">Diagnostic Testing</a></li>
+</ul>
+<p class="caption"><span class="caption-text">PSYGIG TRIAGE SDK REFERENCE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../psymon-man.html"><code class="docutils literal notranslate"><span class="pre">psymon</span></code> man page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../psybench-man.html"><code class="docutils literal notranslate"><span class="pre">psybench</span></code> man page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../psydiag-man.html"><code class="docutils literal notranslate"><span class="pre">psydiag</span></code> man page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">PSYGIG Triage SDK API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sample-output.html">Sample Output</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PSYGIG Triage SDK</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">PSYGIG Triage SDK API</a> &raquo;</li>
+        
+      <li>Enum _psyiage_error_code</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="enum-psyiage-error-code">
+<span id="exhale-enum-psyiagesdk-8h-1a734f6bf1ee2ec276496c1422b058d6a5"></span><h1>Enum _psyiage_error_code<a class="headerlink" href="#enum-psyiage-error-code" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<ul class="simple">
+<li>Defined in <a class="reference internal" href="file_include_psyiage_psyiagesdk.h.html#file-include-psyiage-psyiagesdk-h"><span class="std std-ref">File psyiagesdk.h</span></a></li>
+</ul>
+<div class="section" id="enum-documentation">
+<h2>Enum Documentation<a class="headerlink" href="#enum-documentation" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<dl class="type">
+<dt id="_CPPv319_psyiage_error_code">
+<span id="_CPPv219_psyiage_error_code"></span><span id="_psyiage_error_code"></span><span class="target" id="psyiagesdk_8h_1a734f6bf1ee2ec276496c1422b058d6a5"></span><em class="property">enum </em><code class="descname">_psyiage_error_code</code><a class="headerlink" href="#_CPPv319_psyiage_error_code" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd><p>Error codes If the function is successful, zero is returned. </p>
+<p>Otherwise, a non-zero value. </p>
+<p><em>Values:</em></p>
+<dl class="enumerator">
+<dt id="_CPPv321PSYIAGE_ERROR_SUCCESS">
+<span id="_CPPv221PSYIAGE_ERROR_SUCCESS"></span><span class="target" id="psyiagesdk_8h_1a734f6bf1ee2ec276496c1422b058d6a5a01d853f1101e1c88cbe88032143b6baf"></span><code class="descname">PSYIAGE_ERROR_SUCCESS</code> = 0<a class="headerlink" href="#_CPPv321PSYIAGE_ERROR_SUCCESS" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv331PSYIAGE_ERROR_INVALID_PARAMETER">
+<span id="_CPPv231PSYIAGE_ERROR_INVALID_PARAMETER"></span><span class="target" id="psyiagesdk_8h_1a734f6bf1ee2ec276496c1422b058d6a5a8c7b68c2351d7d1f9b2e9105c0f7d298"></span><code class="descname">PSYIAGE_ERROR_INVALID_PARAMETER</code><a class="headerlink" href="#_CPPv331PSYIAGE_ERROR_INVALID_PARAMETER" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv324PSYIAGE_ERROR_UNEXPECTED">
+<span id="_CPPv224PSYIAGE_ERROR_UNEXPECTED"></span><span class="target" id="psyiagesdk_8h_1a734f6bf1ee2ec276496c1422b058d6a5aae49828ebeb3289b08fbfbc8ffa9b903"></span><code class="descname">PSYIAGE_ERROR_UNEXPECTED</code><a class="headerlink" href="#_CPPv324PSYIAGE_ERROR_UNEXPECTED" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv333PSYIAGE_ERROR_NOT_YET_IMPLEMENTED">
+<span id="_CPPv233PSYIAGE_ERROR_NOT_YET_IMPLEMENTED"></span><span class="target" id="psyiagesdk_8h_1a734f6bf1ee2ec276496c1422b058d6a5ae869d34ffa3b4426e82b454792428013"></span><code class="descname">PSYIAGE_ERROR_NOT_YET_IMPLEMENTED</code><a class="headerlink" href="#_CPPv333PSYIAGE_ERROR_NOT_YET_IMPLEMENTED" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv330PSYIAGE_ERROR_METRIC_NOT_FOUND">
+<span id="_CPPv230PSYIAGE_ERROR_METRIC_NOT_FOUND"></span><span class="target" id="psyiagesdk_8h_1a734f6bf1ee2ec276496c1422b058d6a5a6862af396da615cdd44addda5ead53ec"></span><code class="descname">PSYIAGE_ERROR_METRIC_NOT_FOUND</code><a class="headerlink" href="#_CPPv330PSYIAGE_ERROR_METRIC_NOT_FOUND" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv328PSYIAGE_ERROR_FILE_NOT_FOUND">
+<span id="_CPPv228PSYIAGE_ERROR_FILE_NOT_FOUND"></span><span class="target" id="psyiagesdk_8h_1a734f6bf1ee2ec276496c1422b058d6a5a47c49ca1974f49513f9bd0020f69af83"></span><code class="descname">PSYIAGE_ERROR_FILE_NOT_FOUND</code><a class="headerlink" href="#_CPPv328PSYIAGE_ERROR_FILE_NOT_FOUND" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv325PSYIAGE_ERROR_OPEN_FAILED">
+<span id="_CPPv225PSYIAGE_ERROR_OPEN_FAILED"></span><span class="target" id="psyiagesdk_8h_1a734f6bf1ee2ec276496c1422b058d6a5a1e286c516b14e0ce637b365a77138ba9"></span><code class="descname">PSYIAGE_ERROR_OPEN_FAILED</code><a class="headerlink" href="#_CPPv325PSYIAGE_ERROR_OPEN_FAILED" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv326PSYIAGE_ERROR_CLOSE_FAILED">
+<span id="_CPPv226PSYIAGE_ERROR_CLOSE_FAILED"></span><span class="target" id="psyiagesdk_8h_1a734f6bf1ee2ec276496c1422b058d6a5a96b2fd1e3cbd0f4a81618d8858178b01"></span><code class="descname">PSYIAGE_ERROR_CLOSE_FAILED</code><a class="headerlink" href="#_CPPv326PSYIAGE_ERROR_CLOSE_FAILED" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv325PSYIAGE_ERROR_SEEK_FAILED">
+<span id="_CPPv225PSYIAGE_ERROR_SEEK_FAILED"></span><span class="target" id="psyiagesdk_8h_1a734f6bf1ee2ec276496c1422b058d6a5a3b918210f89b5c96d54dd84d6fa703f3"></span><code class="descname">PSYIAGE_ERROR_SEEK_FAILED</code><a class="headerlink" href="#_CPPv325PSYIAGE_ERROR_SEEK_FAILED" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv325PSYIAGE_ERROR_READ_FAILED">
+<span id="_CPPv225PSYIAGE_ERROR_READ_FAILED"></span><span class="target" id="psyiagesdk_8h_1a734f6bf1ee2ec276496c1422b058d6a5ac96a25d68635c539217fef4e4aa94954"></span><code class="descname">PSYIAGE_ERROR_READ_FAILED</code><a class="headerlink" href="#_CPPv325PSYIAGE_ERROR_READ_FAILED" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv326PSYIAGE_ERROR_WRITE_FAILED">
+<span id="_CPPv226PSYIAGE_ERROR_WRITE_FAILED"></span><span class="target" id="psyiagesdk_8h_1a734f6bf1ee2ec276496c1422b058d6a5a654fe23e57cdad575a3dfe562e00521f"></span><code class="descname">PSYIAGE_ERROR_WRITE_FAILED</code><a class="headerlink" href="#_CPPv326PSYIAGE_ERROR_WRITE_FAILED" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv326PSYIAGE_ERROR_FLUSH_FAILED">
+<span id="_CPPv226PSYIAGE_ERROR_FLUSH_FAILED"></span><span class="target" id="psyiagesdk_8h_1a734f6bf1ee2ec276496c1422b058d6a5a6ccc4885dbc332ae85f441a6234e10ff"></span><code class="descname">PSYIAGE_ERROR_FLUSH_FAILED</code><a class="headerlink" href="#_CPPv326PSYIAGE_ERROR_FLUSH_FAILED" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv327PSYIAGE_ERROR_ACCESS_DENIED">
+<span id="_CPPv227PSYIAGE_ERROR_ACCESS_DENIED"></span><span class="target" id="psyiagesdk_8h_1a734f6bf1ee2ec276496c1422b058d6a5a1beb8048fc3f87ab0cba8958cc30bf02"></span><code class="descname">PSYIAGE_ERROR_ACCESS_DENIED</code><a class="headerlink" href="#_CPPv327PSYIAGE_ERROR_ACCESS_DENIED" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv326PSYIAGE_ERROR_INVALID_DATA">
+<span id="_CPPv226PSYIAGE_ERROR_INVALID_DATA"></span><span class="target" id="psyiagesdk_8h_1a734f6bf1ee2ec276496c1422b058d6a5afcd35f3282cb701823b998e10fceed81"></span><code class="descname">PSYIAGE_ERROR_INVALID_DATA</code><a class="headerlink" href="#_CPPv326PSYIAGE_ERROR_INVALID_DATA" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv321PSYIAGE_ERROR_NO_DATA">
+<span id="_CPPv221PSYIAGE_ERROR_NO_DATA"></span><span class="target" id="psyiagesdk_8h_1a734f6bf1ee2ec276496c1422b058d6a5a0a4aec8d00f6144d91cde4e7edb6ddac"></span><code class="descname">PSYIAGE_ERROR_NO_DATA</code><a class="headerlink" href="#_CPPv321PSYIAGE_ERROR_NO_DATA" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv332PSYIAGE_ERROR_SIGNATURE_MISMATCH">
+<span id="_CPPv232PSYIAGE_ERROR_SIGNATURE_MISMATCH"></span><span class="target" id="psyiagesdk_8h_1a734f6bf1ee2ec276496c1422b058d6a5a9daf3bd24c6fcad010c127565e6d8581"></span><code class="descname">PSYIAGE_ERROR_SIGNATURE_MISMATCH</code><a class="headerlink" href="#_CPPv332PSYIAGE_ERROR_SIGNATURE_MISMATCH" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv331PSYIAGE_ERROR_CHECKSUM_MISMATCH">
+<span id="_CPPv231PSYIAGE_ERROR_CHECKSUM_MISMATCH"></span><span class="target" id="psyiagesdk_8h_1a734f6bf1ee2ec276496c1422b058d6a5a296b7f2cc557947cdab6f744ab754c29"></span><code class="descname">PSYIAGE_ERROR_CHECKSUM_MISMATCH</code><a class="headerlink" href="#_CPPv331PSYIAGE_ERROR_CHECKSUM_MISMATCH" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv333PSYIAGE_ERROR_INSUFFICIENT_MEMORY">
+<span id="_CPPv233PSYIAGE_ERROR_INSUFFICIENT_MEMORY"></span><span class="target" id="psyiagesdk_8h_1a734f6bf1ee2ec276496c1422b058d6a5a6275113015ce2eba049bd4dd60d8bae3"></span><code class="descname">PSYIAGE_ERROR_INSUFFICIENT_MEMORY</code><a class="headerlink" href="#_CPPv333PSYIAGE_ERROR_INSUFFICIENT_MEMORY" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv332PSYIAGE_ERROR_INSUFFICIENT_SPACE">
+<span id="_CPPv232PSYIAGE_ERROR_INSUFFICIENT_SPACE"></span><span class="target" id="psyiagesdk_8h_1a734f6bf1ee2ec276496c1422b058d6a5a4b3b7b5bb7154fa335233b183af7300e"></span><code class="descname">PSYIAGE_ERROR_INSUFFICIENT_SPACE</code><a class="headerlink" href="#_CPPv332PSYIAGE_ERROR_INSUFFICIENT_SPACE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv327PSYIAGE_ERROR_THREAD_CREATE">
+<span id="_CPPv227PSYIAGE_ERROR_THREAD_CREATE"></span><span class="target" id="psyiagesdk_8h_1a734f6bf1ee2ec276496c1422b058d6a5aadb647a67c068b5492762bdf96b0c879"></span><code class="descname">PSYIAGE_ERROR_THREAD_CREATE</code><a class="headerlink" href="#_CPPv327PSYIAGE_ERROR_THREAD_CREATE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv324PSYIAGE_ERROR_MUTEX_INIT">
+<span id="_CPPv224PSYIAGE_ERROR_MUTEX_INIT"></span><span class="target" id="psyiagesdk_8h_1a734f6bf1ee2ec276496c1422b058d6a5ad454a55a70c5a094d7627370d62cac49"></span><code class="descname">PSYIAGE_ERROR_MUTEX_INIT</code><a class="headerlink" href="#_CPPv324PSYIAGE_ERROR_MUTEX_INIT" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv323PSYIAGE_ERROR_REST_INIT">
+<span id="_CPPv223PSYIAGE_ERROR_REST_INIT"></span><span class="target" id="psyiagesdk_8h_1a734f6bf1ee2ec276496c1422b058d6a5a61159482ca847c5a1e93392cbffe24ee"></span><code class="descname">PSYIAGE_ERROR_REST_INIT</code><a class="headerlink" href="#_CPPv323PSYIAGE_ERROR_REST_INIT" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv333PSYIAGE_ERROR_RESOURCE_CONTENTION">
+<span id="_CPPv233PSYIAGE_ERROR_RESOURCE_CONTENTION"></span><span class="target" id="psyiagesdk_8h_1a734f6bf1ee2ec276496c1422b058d6a5a4798a8415b9d492631564e7b6919e7a9"></span><code class="descname">PSYIAGE_ERROR_RESOURCE_CONTENTION</code><a class="headerlink" href="#_CPPv333PSYIAGE_ERROR_RESOURCE_CONTENTION" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="enum_group__event_1ga57d263052073675d36b0508906b3295f.html" class="btn btn-neutral float-right" title="Enum _psyiage_event_level" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="enum_group__diag_1gac770c842f98bec563fe2340bd6e878a8.html" class="btn btn-neutral" title="Enum _psyiage_diag_type" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019 PSYGIG株式会社
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

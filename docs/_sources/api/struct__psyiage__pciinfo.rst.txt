@@ -1,0 +1,16 @@
+.. _exhale_struct_struct__psyiage__pciinfo:
+
+Struct _psyiage_pciinfo
+=======================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: _psyiage_pciinfo
+   :members:
+   :protected-members:
+   :undoc-members:

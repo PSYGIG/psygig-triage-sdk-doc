@@ -1,0 +1,13 @@
+.. _exhale_function_group__admin_1ga84098c77aa86802e46d76c3fc9d9b05c:
+
+Function psyiage_get_current_session
+====================================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: psyiage_get_current_session(psyiage_handle, psyiage_session_info *)

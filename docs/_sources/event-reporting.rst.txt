@@ -23,18 +23,18 @@ in your application by using the ``psymon`` script to run your program. For exam
 
 .. code-block:: bash
 
-   psymon --eventtrigger "lowmem" -c "/path/to/your/app --arg1 --arg2 --arg3"
+   psymon --alerts "lowmem" "/path/to/your/app --arg1 --arg2 --arg3"
 
 See :doc:`psymon-man` for a complete list of options.
 
 .. note::
-    ``psymon`` is a work-in-progress. 
-    Please :email:`contact us <info@psygig.com?subject=[PSYGIG Triage SDK] psymon>` if you are interested in beta-testing this feature. 
+    ``psymon --alerts`` is a work-in-progress. 
+    Please :email:`contact us <info@psygig.com?subject=[PSYGIG Triage SDK] psymon --alerts>` if you are interested in beta-testing this feature. 
 
-Using PSYGIG SDK API
-------------------------
-The Event Reporting API can be accessed by including a :doc:`single header file <api/file_include_psygigsdk.h>`
-and linking the ``libpsygig`` shared library. See :ref:`libpsygig-linking` for details.
+Using PSYGIG Triage SDK API
+---------------------------
+The Event Reporting API can be accessed by including a :doc:`single header file <api/file_include_psyiage_psyiagesdk.h>`
+and linking the ``libpsyiage`` shared library. See :ref:`libpsyiage-linking` for details.
 
 Raising an event on demand
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -42,16 +42,16 @@ Raising an event on demand
 .. code-block:: c
     :linenos:
 
-    #include <psygigsdk.h>
+    #include <psyiage/psyiagesdk.h>
 
     int main(int argc, char **argv)
     {
-        psygig_agent_handle     pah;  // handle to psygig agent
+        psyiage_handle     pah;  // handle to psyiage instance
 
         /* ... Initialize code omitted for simplicity ... */
 
         // Report monitoring task complete as event
-        rc = psygig_event_report(pah, PSYGIG_EVENT_LEVEL_INFO, "monitor", TASK_COMPLETE_EVENT_ID, "Monitor task complete");
+        rc = psyiage_event_report(pah, PSYIAGE_EVENT_LEVEL_INFO, "monitor", TASK_COMPLETE_EVENT_ID, "Monitor task complete");
 
         /* ... Cleanup code omitted for simplicity ... */
     }
@@ -61,25 +61,37 @@ Sample event JSON data
 
 .. code-block:: javascript
 
-    {
-        "Event": {
-            "Duration": 0,
-            "Timestamp": 1547534065,
-            "TimeOfDay": "2019-01-15 15:34:25",
-            "Level": "Info",
-            "Source": "monitor",
-            "EventID": 1,
-            "Message": "Monitor task start"
-        }
-    },
-    {
-        "Event": {
-            "Duration": 15,
-            "Timestamp": 1547534080,
-            "TimeOfDay": "2019-01-15 15:34:40",
-            "Level": "Info",
-            "Source": "monitor",
-            "EventID": 2,
-            "Message": "Monitor task complete"
-        }
-    }
+    "Events": [
+      {
+        "Timestamp": 1559440949.192214012,
+        "TimeOfDay": "2019-06-02 11:02:29.192214012",
+        "Level": "Info",
+        "Source": "event_report",
+        "EventID": 1,
+        "Message": "Reporting event with severity 0"
+      },
+      {
+        "Timestamp": 1559440950.192817450,
+        "TimeOfDay": "2019-06-02 11:02:30.192817449",
+        "Level": "Warning",
+        "Source": "event_report",
+        "EventID": 1,
+        "Message": "Reporting event with severity 1"
+      },
+      {
+        "Timestamp": 1559440951.194056273,
+        "TimeOfDay": "2019-06-02 11:02:31.194056272",
+        "Level": "Error",
+        "Source": "event_report",
+        "EventID": 1,
+        "Message": "Reporting event with severity 2"
+      },
+      {
+        "Timestamp": 1559440952.194596052,
+        "TimeOfDay": "2019-06-02 11:02:32.194596052",
+        "Level": "Critical",
+        "Source": "event_report",
+        "EventID": 1,
+        "Message": "Reporting event with severity 3"
+      }
+    ],

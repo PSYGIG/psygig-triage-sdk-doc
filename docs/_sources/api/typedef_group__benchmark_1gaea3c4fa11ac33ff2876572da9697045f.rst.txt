@@ -1,0 +1,13 @@
+.. _exhale_typedef_group__benchmark_1gaea3c4fa11ac33ff2876572da9697045f:
+
+Typedef psyiage_benchmark_type
+==============================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: psyiage_benchmark_type

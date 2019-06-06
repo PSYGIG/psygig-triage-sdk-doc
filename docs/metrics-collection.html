@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Metrics Collection &mdash; PSYGIG Triage SDK 0.2.0 ドキュメント</title>
+  <title>Metrics Collection &mdash; PSYGIG Triage SDK 0.4.0 ドキュメント</title>
   
 
   
@@ -73,7 +73,7 @@
             
             
               <div class="version">
-                0.2
+                0.4
               </div>
             
           
@@ -116,7 +116,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Metrics Collection</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#known-metric-sources">Known metric sources</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#using-psymon">Using <code class="docutils literal notranslate"><span class="pre">psymon</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#using-psygig-sdk-api">Using PSYGIG SDK API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#using-psygig-triage-sdk-api">Using PSYGIG Triage SDK API</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#enable-periodic-collection-of-system-resource-metrics">Enable periodic collection of system resource metrics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#collection-of-application-defined-metrics">Collection of application-defined metrics</a></li>
 </ul>
@@ -260,25 +260,15 @@ Please <script type="text/javascript">document.write(
 <h2>Using <code class="docutils literal notranslate"><span class="pre">psymon</span></code><a class="headerlink" href="#using-psymon" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>Without modifying your existing source code, you can instantly enable periodic collection of system resource metrics
 to your application by using the <code class="docutils literal notranslate"><span class="pre">psymon</span></code> script to run your program. For example:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>psymon --sysmon -c <span class="s2">&quot;/path/to/your/app --arg1 --arg2 --arg3&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>psymon --metrics <span class="s2">&quot;/path/to/your/app --arg1 --arg2 --arg3&quot;</span>
 </pre></div>
 </div>
 <p>See <a class="reference internal" href="psymon-man.html"><span class="doc">psymon man page</span></a> for a complete list of options.</p>
-<div class="admonition note">
-<p class="first admonition-title">注釈</p>
-<p class="last"><code class="docutils literal notranslate"><span class="pre">psymon</span></code> is a work-in-progress.
-Please <script type="text/javascript">document.write(
-              "<n uers=\"znvygb:vasb\100cfltvt\056pbz?fhowrpg=[CFLTVT Gevntr FQX] cflzba\">pbagnpg hf <\057n>".replace(/[a-zA-Z]/g,
-              function(c){
-                return String.fromCharCode(
-                (c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);}));
-                </script> if you are interested in beta-testing this feature.</p>
 </div>
-</div>
-<div class="section" id="using-psygig-sdk-api">
-<h2>Using PSYGIG SDK API<a class="headerlink" href="#using-psygig-sdk-api" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>The Metrics Collection API can be accessed by including a <a class="reference internal" href="api/file_include_psygigsdk.h.html"><span class="doc">single header file</span></a>
-and linking the <code class="docutils literal notranslate"><span class="pre">libpsygig</span></code> shared library. See <a class="reference internal" href="getting-started.html#libpsygig-linking"><span class="std std-ref">Advanced Setup - Building your application with libpsygig</span></a> for details.</p>
+<div class="section" id="using-psygig-triage-sdk-api">
+<h2>Using PSYGIG Triage SDK API<a class="headerlink" href="#using-psygig-triage-sdk-api" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>The Metrics Collection API can be accessed by including a <a class="reference internal" href="api/file_include_psyiage_psyiagesdk.h.html"><span class="doc">single header file</span></a>
+and linking the <code class="docutils literal notranslate"><span class="pre">libpsyiage</span></code> shared library. See <a class="reference internal" href="getting-started.html#libpsyiage-linking"><span class="std std-ref">Advanced Setup - Building your application with libpsyiage</span></a> for details.</p>
 <div class="section" id="enable-periodic-collection-of-system-resource-metrics">
 <h3>Enable periodic collection of system resource metrics<a class="headerlink" href="#enable-periodic-collection-of-system-resource-metrics" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -293,16 +283,16 @@ and linking the <code class="docutils literal notranslate"><span class="pre">lib
 10
 11
 12
-13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;psygigsdk.h&gt;</span><span class="cp"></span>
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;psyiage/psyiagesdk.h&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="n">psygig_agent_handle</span>     <span class="n">pah</span><span class="p">;</span>  <span class="c1">// handle to psygig agent</span>
+    <span class="n">psyiage_handle</span>     <span class="n">pah</span><span class="p">;</span>  <span class="c1">// handle to psyiage instance</span>
 
     <span class="cm">/* ... Initialize code omitted for simplicity ... */</span>
 
     <span class="c1">// Poll system resource metrics every 500ms</span>
-    <span class="n">psygig_metric_enable_poll_system_resources</span><span class="p">(</span><span class="n">pah</span><span class="p">,</span> <span class="mi">500</span><span class="p">);</span>
+    <span class="n">psyiage_metric_enable_poll_system_resources</span><span class="p">(</span><span class="n">pah</span><span class="p">,</span> <span class="mi">500</span><span class="p">);</span>
 
     <span class="cm">/* ... Cleanup code omitted for simplicity ... */</span>
 <span class="p">}</span>
@@ -325,18 +315,18 @@ and linking the <code class="docutils literal notranslate"><span class="pre">lib
 12
 13
 14
-15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;psygigsdk.h&gt;</span><span class="cp"></span>
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;psyiage/psyiagesdk.h&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="n">psygig_agent_handle</span>     <span class="n">pah</span><span class="p">;</span>  <span class="c1">// handle to psygig agent</span>
+    <span class="n">psyiage_handle</span>     <span class="n">pah</span><span class="p">;</span>  <span class="c1">// handle to psyiage instance</span>
 
     <span class="cm">/* ... Initialize code omitted for simplicity ... */</span>
 
     <span class="cm">/* ... Read and aggregate data from laser sensors and cameras */</span>
 
     <span class="c1">// Collect application-defined topographic data</span>
-    <span class="n">rc</span> <span class="o">=</span> <span class="n">psygig_metric_record_values_blob</span><span class="p">(</span><span class="n">pah</span><span class="p">,</span> <span class="s">&quot;Topography&quot;</span><span class="p">,</span> <span class="n">topographic_data</span><span class="p">,</span> <span class="n">topographic_data_size</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="n">rc</span> <span class="o">=</span> <span class="n">psyiage_metric_record_values_blob</span><span class="p">(</span><span class="n">pah</span><span class="p">,</span> <span class="s">&quot;Topography&quot;</span><span class="p">,</span> <span class="n">topographic_data</span><span class="p">,</span> <span class="n">topographic_data_size</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
 
     <span class="cm">/* ... Cleanup code omitted for simplicity ... */</span>
 <span class="p">}</span>
@@ -346,271 +336,284 @@ and linking the <code class="docutils literal notranslate"><span class="pre">lib
 </div>
 <div class="section" id="sample-metrics-json-data">
 <h2>Sample metrics JSON data<a class="headerlink" href="#sample-metrics-json-data" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="s2">&quot;Session&quot;</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">&quot;DeviceID&quot;</span><span class="o">:</span> <span class="s2">&quot;7a3cb41c5a05cf4a09df67a39a09f09f683047b892d2874563102e614f0b754a&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;Name&quot;</span><span class="o">:</span> <span class="s2">&quot;psygig-0.2.0-20190115-153452&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;StartTime&quot;</span><span class="o">:</span> <span class="s2">&quot;2019-01-15 15:34:52&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;EndTime&quot;</span><span class="o">:</span> <span class="s2">&quot;2019-01-15 15:35:02&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;Duration&quot;</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
-        <span class="s2">&quot;Metrics&quot;</span><span class="o">:</span> <span class="p">[</span>
-            <span class="p">{</span>
-                <span class="s2">&quot;Name&quot;</span><span class="o">:</span> <span class="s2">&quot;ProcVM&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;Timestamps&quot;</span><span class="o">:</span> <span class="p">[</span>
-                    <span class="mi">1547534093</span><span class="p">,</span>
-                    <span class="mi">1547534094</span><span class="p">,</span>
-                    <span class="mi">1547534095</span><span class="p">,</span>
-                    <span class="mi">1547534096</span><span class="p">,</span>
-                    <span class="mi">1547534097</span><span class="p">,</span>
-                    <span class="mi">1547534098</span><span class="p">,</span>
-                    <span class="mi">1547534099</span><span class="p">,</span>
-                    <span class="mi">1547534100</span><span class="p">,</span>
-                    <span class="mi">1547534101</span>
-                <span class="p">],</span>
-                <span class="s2">&quot;Values&quot;</span><span class="o">:</span> <span class="p">[</span>
-                    <span class="mi">244064256</span><span class="p">,</span>
-                    <span class="mi">244064256</span><span class="p">,</span>
-                    <span class="mi">244064256</span><span class="p">,</span>
-                    <span class="mi">244064256</span><span class="p">,</span>
-                    <span class="mi">244064256</span><span class="p">,</span>
-                    <span class="mi">244064256</span><span class="p">,</span>
-                    <span class="mi">244064256</span><span class="p">,</span>
-                    <span class="mi">244064256</span><span class="p">,</span>
-                    <span class="mi">244064256</span>
-                <span class="p">]</span>
-            <span class="p">},</span>
-            <span class="p">{</span>
-                <span class="s2">&quot;Name&quot;</span><span class="o">:</span> <span class="s2">&quot;SysRAM&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;Timestamps&quot;</span><span class="o">:</span> <span class="p">[</span>
-                    <span class="mi">1547534093</span><span class="p">,</span>
-                    <span class="mi">1547534094</span><span class="p">,</span>
-                    <span class="mi">1547534095</span><span class="p">,</span>
-                    <span class="mi">1547534096</span><span class="p">,</span>
-                    <span class="mi">1547534097</span><span class="p">,</span>
-                    <span class="mi">1547534098</span><span class="p">,</span>
-                    <span class="mi">1547534099</span><span class="p">,</span>
-                    <span class="mi">1547534100</span><span class="p">,</span>
-                    <span class="mi">1547534101</span>
-                <span class="p">],</span>
-                <span class="s2">&quot;Values&quot;</span><span class="o">:</span> <span class="p">[</span>
-                    <span class="mi">8192331776</span><span class="p">,</span>
-                    <span class="mi">8194359296</span><span class="p">,</span>
-                    <span class="mi">8193589248</span><span class="p">,</span>
-                    <span class="mi">8193470464</span><span class="p">,</span>
-                    <span class="mi">8193470464</span><span class="p">,</span>
-                    <span class="mi">8194048000</span><span class="p">,</span>
-                    <span class="mi">8195629056</span><span class="p">,</span>
-                    <span class="mi">8196390912</span><span class="p">,</span>
-                    <span class="mi">8198610944</span>
-                <span class="p">]</span>
-            <span class="p">},</span>
-            <span class="p">{</span>
-                <span class="s2">&quot;Name&quot;</span><span class="o">:</span> <span class="s2">&quot;ProcRAM&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;Timestamps&quot;</span><span class="o">:</span> <span class="p">[</span>
-                    <span class="mi">1547534093</span><span class="p">,</span>
-                    <span class="mi">1547534094</span><span class="p">,</span>
-                    <span class="mi">1547534095</span><span class="p">,</span>
-                    <span class="mi">1547534096</span><span class="p">,</span>
-                    <span class="mi">1547534097</span><span class="p">,</span>
-                    <span class="mi">1547534098</span><span class="p">,</span>
-                    <span class="mi">1547534099</span><span class="p">,</span>
-                    <span class="mi">1547534100</span><span class="p">,</span>
-                    <span class="mi">1547534101</span>
-                <span class="p">],</span>
-                <span class="s2">&quot;Values&quot;</span><span class="o">:</span> <span class="p">[</span>
-                    <span class="mi">3751936</span><span class="p">,</span>
-                    <span class="mi">3751936</span><span class="p">,</span>
-                    <span class="mi">3751936</span><span class="p">,</span>
-                    <span class="mi">3751936</span><span class="p">,</span>
-                    <span class="mi">3751936</span><span class="p">,</span>
-                    <span class="mi">3751936</span><span class="p">,</span>
-                    <span class="mi">3751936</span><span class="p">,</span>
-                    <span class="mi">3751936</span><span class="p">,</span>
-                    <span class="mi">3751936</span>
-                <span class="p">]</span>
-            <span class="p">},</span>
-            <span class="p">{</span>
-                <span class="s2">&quot;Name&quot;</span><span class="o">:</span> <span class="s2">&quot;ProcRAMPeak&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;Timestamps&quot;</span><span class="o">:</span> <span class="p">[</span>
-                    <span class="mi">1547534093</span><span class="p">,</span>
-                    <span class="mi">1547534094</span><span class="p">,</span>
-                    <span class="mi">1547534095</span><span class="p">,</span>
-                    <span class="mi">1547534096</span><span class="p">,</span>
-                    <span class="mi">1547534097</span><span class="p">,</span>
-                    <span class="mi">1547534098</span><span class="p">,</span>
-                    <span class="mi">1547534099</span><span class="p">,</span>
-                    <span class="mi">1547534100</span><span class="p">,</span>
-                    <span class="mi">1547534101</span>
-                <span class="p">],</span>
-                <span class="s2">&quot;Values&quot;</span><span class="o">:</span> <span class="p">[</span>
-                    <span class="mi">3788800</span><span class="p">,</span>
-                    <span class="mi">3788800</span><span class="p">,</span>
-                    <span class="mi">3788800</span><span class="p">,</span>
-                    <span class="mi">3788800</span><span class="p">,</span>
-                    <span class="mi">3788800</span><span class="p">,</span>
-                    <span class="mi">3788800</span><span class="p">,</span>
-                    <span class="mi">3788800</span><span class="p">,</span>
-                    <span class="mi">3788800</span><span class="p">,</span>
-                    <span class="mi">3788800</span>
-                <span class="p">]</span>
-            <span class="p">},</span>
-            <span class="p">{</span>
-                <span class="s2">&quot;Name&quot;</span><span class="o">:</span> <span class="s2">&quot;SysCPU&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;Timestamps&quot;</span><span class="o">:</span> <span class="p">[</span>
-                    <span class="mi">1547534093</span><span class="p">,</span>
-                    <span class="mi">1547534094</span><span class="p">,</span>
-                    <span class="mi">1547534095</span><span class="p">,</span>
-                    <span class="mi">1547534096</span><span class="p">,</span>
-                    <span class="mi">1547534097</span><span class="p">,</span>
-                    <span class="mi">1547534098</span><span class="p">,</span>
-                    <span class="mi">1547534099</span><span class="p">,</span>
-                    <span class="mi">1547534100</span><span class="p">,</span>
-                    <span class="mi">1547534101</span>
-                <span class="p">],</span>
-                <span class="s2">&quot;Values&quot;</span><span class="o">:</span> <span class="p">[</span>
-                    <span class="mf">0.04413619264960289</span><span class="p">,</span>
-                    <span class="mf">0.02893081679940224</span><span class="p">,</span>
-                    <span class="mf">0.04659949615597725</span><span class="p">,</span>
-                    <span class="mf">0.01624999940395355</span><span class="p">,</span>
-                    <span class="mf">0.02518891729414463</span><span class="p">,</span>
-                    <span class="mf">0.02770780771970749</span><span class="p">,</span>
-                    <span class="mf">0.05296342819929123</span><span class="p">,</span>
-                    <span class="mf">0.04785894230008125</span><span class="p">,</span>
-                    <span class="mf">0.02272727340459824</span>
-                <span class="p">]</span>
-            <span class="p">},</span>
-            <span class="p">{</span>
-                <span class="s2">&quot;Name&quot;</span><span class="o">:</span> <span class="s2">&quot;RandFloat&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;Timestamps&quot;</span><span class="o">:</span> <span class="p">[</span>
-                    <span class="mi">1547534092</span><span class="p">,</span>
-                    <span class="mi">1547534093</span><span class="p">,</span>
-                    <span class="mi">1547534094</span><span class="p">,</span>
-                    <span class="mi">1547534095</span><span class="p">,</span>
-                    <span class="mi">1547534096</span><span class="p">,</span>
-                    <span class="mi">1547534097</span><span class="p">,</span>
-                    <span class="mi">1547534098</span><span class="p">,</span>
-                    <span class="mi">1547534099</span><span class="p">,</span>
-                    <span class="mi">1547534100</span><span class="p">,</span>
-                    <span class="mi">1547534101</span>
-                <span class="p">],</span>
-                <span class="s2">&quot;Values&quot;</span><span class="o">:</span> <span class="p">[</span>
-                    <span class="mf">0.3943829238414764</span><span class="p">,</span>
-                    <span class="mf">0.7984400391578674</span><span class="p">,</span>
-                    <span class="mf">0.1975513696670532</span><span class="p">,</span>
-                    <span class="mf">0.768229603767395</span><span class="p">,</span>
-                    <span class="mf">0.5539699792861938</span><span class="p">,</span>
-                    <span class="mf">0.6288709044456482</span><span class="p">,</span>
-                    <span class="mf">0.5134009122848511</span><span class="p">,</span>
-                    <span class="mf">0.9161950945854187</span><span class="p">,</span>
-                    <span class="mf">0.7172969579696655</span><span class="p">,</span>
-                    <span class="mf">0.606968879699707</span>
-                <span class="p">]</span>
-            <span class="p">},</span>
-            <span class="p">{</span>
-                <span class="s2">&quot;Name&quot;</span><span class="o">:</span> <span class="s2">&quot;ProcCPU&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;Timestamps&quot;</span><span class="o">:</span> <span class="p">[</span>
-                    <span class="mi">1547534093</span><span class="p">,</span>
-                    <span class="mi">1547534094</span><span class="p">,</span>
-                    <span class="mi">1547534095</span><span class="p">,</span>
-                    <span class="mi">1547534096</span><span class="p">,</span>
-                    <span class="mi">1547534097</span><span class="p">,</span>
-                    <span class="mi">1547534098</span><span class="p">,</span>
-                    <span class="mi">1547534099</span><span class="p">,</span>
-                    <span class="mi">1547534100</span><span class="p">,</span>
-                    <span class="mi">1547534101</span>
-                <span class="p">],</span>
-                <span class="s2">&quot;Values&quot;</span><span class="o">:</span> <span class="p">[</span>
-                    <span class="mi">0</span><span class="p">,</span>
-                    <span class="mf">0.001237623742781579</span><span class="p">,</span>
-                    <span class="mi">0</span><span class="p">,</span>
-                    <span class="mi">0</span><span class="p">,</span>
-                    <span class="mf">0.001237623742781579</span><span class="p">,</span>
-                    <span class="mf">0.001249999972060323</span><span class="p">,</span>
-                    <span class="mf">0.001249999972060323</span><span class="p">,</span>
-                    <span class="mi">0</span><span class="p">,</span>
-                    <span class="mf">0.001249999972060323</span>
-                <span class="p">]</span>
-            <span class="p">},</span>
-            <span class="p">{</span>
-                <span class="s2">&quot;Name&quot;</span><span class="o">:</span> <span class="s2">&quot;ProcSwap&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;Timestamps&quot;</span><span class="o">:</span> <span class="p">[</span>
-                    <span class="mi">1547534093</span><span class="p">,</span>
-                    <span class="mi">1547534094</span><span class="p">,</span>
-                    <span class="mi">1547534095</span><span class="p">,</span>
-                    <span class="mi">1547534096</span><span class="p">,</span>
-                    <span class="mi">1547534097</span><span class="p">,</span>
-                    <span class="mi">1547534098</span><span class="p">,</span>
-                    <span class="mi">1547534099</span><span class="p">,</span>
-                    <span class="mi">1547534100</span><span class="p">,</span>
-                    <span class="mi">1547534101</span>
-                <span class="p">],</span>
-                <span class="s2">&quot;Values&quot;</span><span class="o">:</span> <span class="p">[</span>
-                    <span class="mi">0</span><span class="p">,</span>
-                    <span class="mi">0</span><span class="p">,</span>
-                    <span class="mi">0</span><span class="p">,</span>
-                    <span class="mi">0</span><span class="p">,</span>
-                    <span class="mi">0</span><span class="p">,</span>
-                    <span class="mi">0</span><span class="p">,</span>
-                    <span class="mi">0</span><span class="p">,</span>
-                    <span class="mi">0</span><span class="p">,</span>
-                    <span class="mi">0</span>
-                <span class="p">]</span>
-            <span class="p">},</span>
-            <span class="p">{</span>
-                <span class="s2">&quot;Name&quot;</span><span class="o">:</span> <span class="s2">&quot;ProcVMPeak&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;Timestamps&quot;</span><span class="o">:</span> <span class="p">[</span>
-                    <span class="mi">1547534093</span><span class="p">,</span>
-                    <span class="mi">1547534094</span><span class="p">,</span>
-                    <span class="mi">1547534095</span><span class="p">,</span>
-                    <span class="mi">1547534096</span><span class="p">,</span>
-                    <span class="mi">1547534097</span><span class="p">,</span>
-                    <span class="mi">1547534098</span><span class="p">,</span>
-                    <span class="mi">1547534099</span><span class="p">,</span>
-                    <span class="mi">1547534100</span><span class="p">,</span>
-                    <span class="mi">1547534101</span>
-                <span class="p">],</span>
-                <span class="s2">&quot;Values&quot;</span><span class="o">:</span> <span class="p">[</span>
-                    <span class="mi">311173120</span><span class="p">,</span>
-                    <span class="mi">311173120</span><span class="p">,</span>
-                    <span class="mi">311173120</span><span class="p">,</span>
-                    <span class="mi">311173120</span><span class="p">,</span>
-                    <span class="mi">311173120</span><span class="p">,</span>
-                    <span class="mi">311173120</span><span class="p">,</span>
-                    <span class="mi">311173120</span><span class="p">,</span>
-                    <span class="mi">311173120</span><span class="p">,</span>
-                    <span class="mi">311173120</span>
-                <span class="p">]</span>
-            <span class="p">},</span>
-            <span class="p">{</span>
-                <span class="s2">&quot;Name&quot;</span><span class="o">:</span> <span class="s2">&quot;RandInt&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;Timestamps&quot;</span><span class="o">:</span> <span class="p">[</span>
-                    <span class="mi">1547534092</span><span class="p">,</span>
-                    <span class="mi">1547534093</span><span class="p">,</span>
-                    <span class="mi">1547534094</span><span class="p">,</span>
-                    <span class="mi">1547534095</span><span class="p">,</span>
-                    <span class="mi">1547534096</span><span class="p">,</span>
-                    <span class="mi">1547534097</span><span class="p">,</span>
-                    <span class="mi">1547534098</span><span class="p">,</span>
-                    <span class="mi">1547534099</span><span class="p">,</span>
-                    <span class="mi">1547534100</span><span class="p">,</span>
-                    <span class="mi">1547534101</span>
-                <span class="p">],</span>
-                <span class="s2">&quot;Values&quot;</span><span class="o">:</span> <span class="p">[</span>
-                    <span class="mi">1804289408</span><span class="p">,</span>
-                    <span class="mi">1681692800</span><span class="p">,</span>
-                    <span class="mi">1957747840</span><span class="p">,</span>
-                    <span class="mi">719885376</span><span class="p">,</span>
-                    <span class="mi">596516672</span><span class="p">,</span>
-                    <span class="mi">1025202368</span><span class="p">,</span>
-                    <span class="mi">783368704</span><span class="p">,</span>
-                    <span class="mi">2044897792</span><span class="p">,</span>
-                    <span class="mi">1365180544</span><span class="p">,</span>
-                    <span class="mi">304089184</span>
-                <span class="p">]</span>
-            <span class="p">}</span>
-        <span class="p">]</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Metrics&quot;</span><span class="o">:</span> <span class="p">[</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;Name&quot;</span><span class="o">:</span> <span class="s2">&quot;ProcVM&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Timestamps&quot;</span><span class="o">:</span> <span class="p">[</span>
+      <span class="mf">1559439076.125103951</span><span class="p">,</span>
+      <span class="mf">1559439076.626415014</span><span class="p">,</span>
+      <span class="mf">1559439077.127984047</span><span class="p">,</span>
+      <span class="mf">1559439077.629561663</span><span class="p">,</span>
+      <span class="mf">1559439078.130370855</span><span class="p">,</span>
+      <span class="mf">1559439078.631809711</span><span class="p">,</span>
+      <span class="mf">1559439079.132480621</span><span class="p">,</span>
+      <span class="mf">1559439079.633147001</span><span class="p">,</span>
+      <span class="mf">1559439080.133864164</span><span class="p">,</span>
+      <span class="mf">1559439080.635303974</span><span class="p">,</span>
+      <span class="mf">1559439081.136044741</span><span class="p">,</span>
+      <span class="mf">1559439081.636738777</span><span class="p">,</span>
+      <span class="mf">1559439082.137473822</span><span class="p">,</span>
+      <span class="mf">1559439082.638967037</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;Values&quot;</span><span class="o">:</span> <span class="p">[</span>
+      <span class="mi">112214016</span><span class="p">,</span>
+      <span class="mi">112214016</span><span class="p">,</span>
+      <span class="mi">113311744</span><span class="p">,</span>
+      <span class="mi">113311744</span><span class="p">,</span>
+      <span class="mi">112230400</span><span class="p">,</span>
+      <span class="mi">112906240</span><span class="p">,</span>
+      <span class="mi">113340416</span><span class="p">,</span>
+      <span class="mi">112934912</span><span class="p">,</span>
+      <span class="mi">112394240</span><span class="p">,</span>
+      <span class="mi">112242688</span><span class="p">,</span>
+      <span class="mi">112377856</span><span class="p">,</span>
+      <span class="mi">112242688</span><span class="p">,</span>
+      <span class="mi">112230400</span><span class="p">,</span>
+      <span class="mi">112230400</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;Name&quot;</span><span class="o">:</span> <span class="s2">&quot;SysCPU&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Timestamps&quot;</span><span class="o">:</span> <span class="p">[</span>
+      <span class="mf">1559439076.626402378</span><span class="p">,</span>
+      <span class="mf">1559439077.127982140</span><span class="p">,</span>
+      <span class="mf">1559439077.629560232</span><span class="p">,</span>
+      <span class="mf">1559439078.130369663</span><span class="p">,</span>
+      <span class="mf">1559439078.631808519</span><span class="p">,</span>
+      <span class="mf">1559439079.132479429</span><span class="p">,</span>
+      <span class="mf">1559439079.633145809</span><span class="p">,</span>
+      <span class="mf">1559439080.133862734</span><span class="p">,</span>
+      <span class="mf">1559439080.635302544</span><span class="p">,</span>
+      <span class="mf">1559439081.136043549</span><span class="p">,</span>
+      <span class="mf">1559439081.636737585</span><span class="p">,</span>
+      <span class="mf">1559439082.137472630</span><span class="p">,</span>
+      <span class="mf">1559439082.638965845</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;Values&quot;</span><span class="o">:</span> <span class="p">[</span>
+      <span class="mf">0.1624365448951721</span><span class="p">,</span>
+      <span class="mf">0.1700507551431656</span><span class="p">,</span>
+      <span class="mf">0.1616161614656448</span><span class="p">,</span>
+      <span class="mf">0.157760813832283</span><span class="p">,</span>
+      <span class="mf">0.1670886129140854</span><span class="p">,</span>
+      <span class="mf">0.1569620221853256</span><span class="p">,</span>
+      <span class="mf">0.149367094039917</span><span class="p">,</span>
+      <span class="mf">0.1454081684350967</span><span class="p">,</span>
+      <span class="mf">0.1472081243991852</span><span class="p">,</span>
+      <span class="mf">0.1522842645645142</span><span class="p">,</span>
+      <span class="mf">0.1522842645645142</span><span class="p">,</span>
+      <span class="mf">0.1594936698675156</span><span class="p">,</span>
+      <span class="mf">0.1548223346471786</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;Name&quot;</span><span class="o">:</span> <span class="s2">&quot;ProcRAMPeak&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Timestamps&quot;</span><span class="o">:</span> <span class="p">[</span>
+      <span class="mf">1559439076.125098944</span><span class="p">,</span>
+      <span class="mf">1559439076.626414537</span><span class="p">,</span>
+      <span class="mf">1559439077.127983570</span><span class="p">,</span>
+      <span class="mf">1559439077.629561424</span><span class="p">,</span>
+      <span class="mf">1559439078.130370617</span><span class="p">,</span>
+      <span class="mf">1559439078.631809473</span><span class="p">,</span>
+      <span class="mf">1559439079.132480383</span><span class="p">,</span>
+      <span class="mf">1559439079.633146763</span><span class="p">,</span>
+      <span class="mf">1559439080.133863926</span><span class="p">,</span>
+      <span class="mf">1559439080.635303736</span><span class="p">,</span>
+      <span class="mf">1559439081.136044502</span><span class="p">,</span>
+      <span class="mf">1559439081.636738539</span><span class="p">,</span>
+      <span class="mf">1559439082.137473583</span><span class="p">,</span>
+      <span class="mf">1559439082.638966799</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;Values&quot;</span><span class="o">:</span> <span class="p">[</span>
+      <span class="mi">4075520</span><span class="p">,</span>
+      <span class="mi">4075520</span><span class="p">,</span>
+      <span class="mi">5636096</span><span class="p">,</span>
+      <span class="mi">5636096</span><span class="p">,</span>
+      <span class="mi">5636096</span><span class="p">,</span>
+      <span class="mi">5636096</span><span class="p">,</span>
+      <span class="mi">5636096</span><span class="p">,</span>
+      <span class="mi">5636096</span><span class="p">,</span>
+      <span class="mi">5636096</span><span class="p">,</span>
+      <span class="mi">5636096</span><span class="p">,</span>
+      <span class="mi">5636096</span><span class="p">,</span>
+      <span class="mi">5636096</span><span class="p">,</span>
+      <span class="mi">5636096</span><span class="p">,</span>
+      <span class="mi">5636096</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;Name&quot;</span><span class="o">:</span> <span class="s2">&quot;SysRAM&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Timestamps&quot;</span><span class="o">:</span> <span class="p">[</span>
+      <span class="mf">1559439076.125087976</span><span class="p">,</span>
+      <span class="mf">1559439076.626402617</span><span class="p">,</span>
+      <span class="mf">1559439077.127982855</span><span class="p">,</span>
+      <span class="mf">1559439077.629560709</span><span class="p">,</span>
+      <span class="mf">1559439078.130370140</span><span class="p">,</span>
+      <span class="mf">1559439078.631808996</span><span class="p">,</span>
+      <span class="mf">1559439079.132479906</span><span class="p">,</span>
+      <span class="mf">1559439079.633146286</span><span class="p">,</span>
+      <span class="mf">1559439080.133863211</span><span class="p">,</span>
+      <span class="mf">1559439080.635303259</span><span class="p">,</span>
+      <span class="mf">1559439081.136044025</span><span class="p">,</span>
+      <span class="mf">1559439081.636737823</span><span class="p">,</span>
+      <span class="mf">1559439082.137473106</span><span class="p">,</span>
+      <span class="mf">1559439082.638966322</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;Values&quot;</span><span class="o">:</span> <span class="p">[</span>
+      <span class="mi">7739355136</span><span class="p">,</span>
+      <span class="mi">7773405184</span><span class="p">,</span>
+      <span class="mi">7816024064</span><span class="p">,</span>
+      <span class="mi">7798185984</span><span class="p">,</span>
+      <span class="mi">7815942144</span><span class="p">,</span>
+      <span class="mi">7802179584</span><span class="p">,</span>
+      <span class="mi">7853674496</span><span class="p">,</span>
+      <span class="mi">7907958784</span><span class="p">,</span>
+      <span class="mi">7963762688</span><span class="p">,</span>
+      <span class="mi">8024965120</span><span class="p">,</span>
+      <span class="mi">8073596928</span><span class="p">,</span>
+      <span class="mi">8121901056</span><span class="p">,</span>
+      <span class="mi">8156819456</span><span class="p">,</span>
+      <span class="mi">8199684096</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;Name&quot;</span><span class="o">:</span> <span class="s2">&quot;ProcCPU&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Timestamps&quot;</span><span class="o">:</span> <span class="p">[</span>
+      <span class="mf">1559439076.626414061</span><span class="p">,</span>
+      <span class="mf">1559439077.127983093</span><span class="p">,</span>
+      <span class="mf">1559439077.629560709</span><span class="p">,</span>
+      <span class="mf">1559439078.130370140</span><span class="p">,</span>
+      <span class="mf">1559439078.631808996</span><span class="p">,</span>
+      <span class="mf">1559439079.132479906</span><span class="p">,</span>
+      <span class="mf">1559439079.633146286</span><span class="p">,</span>
+      <span class="mf">1559439080.133863449</span><span class="p">,</span>
+      <span class="mf">1559439080.635303259</span><span class="p">,</span>
+      <span class="mf">1559439081.136044264</span><span class="p">,</span>
+      <span class="mf">1559439081.636738062</span><span class="p">,</span>
+      <span class="mf">1559439082.137473106</span><span class="p">,</span>
+      <span class="mf">1559439082.638966322</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;Values&quot;</span><span class="o">:</span> <span class="p">[</span>
+      <span class="mf">0.004999999888241291</span><span class="p">,</span>
+      <span class="mf">0.01250000018626451</span><span class="p">,</span>
+      <span class="mf">0.002499999944120646</span><span class="p">,</span>
+      <span class="mf">0.007499999832361937</span><span class="p">,</span>
+      <span class="mf">0.01250000018626451</span><span class="p">,</span>
+      <span class="mf">0.007499999832361937</span><span class="p">,</span>
+      <span class="mf">0.004999999888241291</span><span class="p">,</span>
+      <span class="mf">0.007499999832361937</span><span class="p">,</span>
+      <span class="mf">0.007352941203862429</span><span class="p">,</span>
+      <span class="mf">0.007499999832361937</span><span class="p">,</span>
+      <span class="mf">0.007499999832361937</span><span class="p">,</span>
+      <span class="mf">0.007499999832361937</span><span class="p">,</span>
+      <span class="mf">0.007499999832361937</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;Name&quot;</span><span class="o">:</span> <span class="s2">&quot;ProcRAM&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Timestamps&quot;</span><span class="o">:</span> <span class="p">[</span>
+      <span class="mf">1559439076.125092983</span><span class="p">,</span>
+      <span class="mf">1559439076.626414299</span><span class="p">,</span>
+      <span class="mf">1559439077.127983570</span><span class="p">,</span>
+      <span class="mf">1559439077.629561186</span><span class="p">,</span>
+      <span class="mf">1559439078.130370378</span><span class="p">,</span>
+      <span class="mf">1559439078.631809473</span><span class="p">,</span>
+      <span class="mf">1559439079.132480145</span><span class="p">,</span>
+      <span class="mf">1559439079.633146763</span><span class="p">,</span>
+      <span class="mf">1559439080.133863688</span><span class="p">,</span>
+      <span class="mf">1559439080.635303736</span><span class="p">,</span>
+      <span class="mf">1559439081.136044502</span><span class="p">,</span>
+      <span class="mf">1559439081.636738300</span><span class="p">,</span>
+      <span class="mf">1559439082.137473345</span><span class="p">,</span>
+      <span class="mf">1559439082.638966799</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;Values&quot;</span><span class="o">:</span> <span class="p">[</span>
+      <span class="mi">4075520</span><span class="p">,</span>
+      <span class="mi">4075520</span><span class="p">,</span>
+      <span class="mi">5582848</span><span class="p">,</span>
+      <span class="mi">5582848</span><span class="p">,</span>
+      <span class="mi">4775936</span><span class="p">,</span>
+      <span class="mi">5312512</span><span class="p">,</span>
+      <span class="mi">5611520</span><span class="p">,</span>
+      <span class="mi">5341184</span><span class="p">,</span>
+      <span class="mi">4804608</span><span class="p">,</span>
+      <span class="mi">4788224</span><span class="p">,</span>
+      <span class="mi">4788224</span><span class="p">,</span>
+      <span class="mi">4788224</span><span class="p">,</span>
+      <span class="mi">4775936</span><span class="p">,</span>
+      <span class="mi">4775936</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;Name&quot;</span><span class="o">:</span> <span class="s2">&quot;ProcSwap&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Timestamps&quot;</span><span class="o">:</span> <span class="p">[</span>
+      <span class="mf">1559439076.125116587</span><span class="p">,</span>
+      <span class="mf">1559439076.626415253</span><span class="p">,</span>
+      <span class="mf">1559439077.127984524</span><span class="p">,</span>
+      <span class="mf">1559439077.629562140</span><span class="p">,</span>
+      <span class="mf">1559439078.130371332</span><span class="p">,</span>
+      <span class="mf">1559439078.631810188</span><span class="p">,</span>
+      <span class="mf">1559439079.132480860</span><span class="p">,</span>
+      <span class="mf">1559439079.633147478</span><span class="p">,</span>
+      <span class="mf">1559439080.133864641</span><span class="p">,</span>
+      <span class="mf">1559439080.635304451</span><span class="p">,</span>
+      <span class="mf">1559439081.136045218</span><span class="p">,</span>
+      <span class="mf">1559439081.636739254</span><span class="p">,</span>
+      <span class="mf">1559439082.137474060</span><span class="p">,</span>
+      <span class="mf">1559439082.638967514</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;Values&quot;</span><span class="o">:</span> <span class="p">[</span>
+      <span class="mi">0</span><span class="p">,</span>
+      <span class="mi">0</span><span class="p">,</span>
+      <span class="mi">0</span><span class="p">,</span>
+      <span class="mi">0</span><span class="p">,</span>
+      <span class="mi">0</span><span class="p">,</span>
+      <span class="mi">0</span><span class="p">,</span>
+      <span class="mi">0</span><span class="p">,</span>
+      <span class="mi">0</span><span class="p">,</span>
+      <span class="mi">0</span><span class="p">,</span>
+      <span class="mi">0</span><span class="p">,</span>
+      <span class="mi">0</span><span class="p">,</span>
+      <span class="mi">0</span><span class="p">,</span>
+      <span class="mi">0</span><span class="p">,</span>
+      <span class="mi">0</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;Name&quot;</span><span class="o">:</span> <span class="s2">&quot;ProcVMPeak&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Timestamps&quot;</span><span class="o">:</span> <span class="p">[</span>
+      <span class="mf">1559439076.125111103</span><span class="p">,</span>
+      <span class="mf">1559439076.626415014</span><span class="p">,</span>
+      <span class="mf">1559439077.127984285</span><span class="p">,</span>
+      <span class="mf">1559439077.629561901</span><span class="p">,</span>
+      <span class="mf">1559439078.130371094</span><span class="p">,</span>
+      <span class="mf">1559439078.631809950</span><span class="p">,</span>
+      <span class="mf">1559439079.132480621</span><span class="p">,</span>
+      <span class="mf">1559439079.633147240</span><span class="p">,</span>
+      <span class="mf">1559439080.133864403</span><span class="p">,</span>
+      <span class="mf">1559439080.635304213</span><span class="p">,</span>
+      <span class="mf">1559439081.136044979</span><span class="p">,</span>
+      <span class="mf">1559439081.636739016</span><span class="p">,</span>
+      <span class="mf">1559439082.137473822</span><span class="p">,</span>
+      <span class="mf">1559439082.638967276</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;Values&quot;</span><span class="o">:</span> <span class="p">[</span>
+      <span class="mi">175169536</span><span class="p">,</span>
+      <span class="mi">175169536</span><span class="p">,</span>
+      <span class="mi">175169536</span><span class="p">,</span>
+      <span class="mi">175169536</span><span class="p">,</span>
+      <span class="mi">175169536</span><span class="p">,</span>
+      <span class="mi">175169536</span><span class="p">,</span>
+      <span class="mi">175169536</span><span class="p">,</span>
+      <span class="mi">175169536</span><span class="p">,</span>
+      <span class="mi">175169536</span><span class="p">,</span>
+      <span class="mi">175169536</span><span class="p">,</span>
+      <span class="mi">175169536</span><span class="p">,</span>
+      <span class="mi">175169536</span><span class="p">,</span>
+      <span class="mi">175169536</span><span class="p">,</span>
+      <span class="mi">175169536</span>
+    <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -661,8 +664,8 @@ and linking the <code class="docutils literal notranslate"><span class="pre">lib
         <script type="text/javascript" src="_static/jquery.js"></script>
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
         <script type="text/javascript" src="_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/javascript" src="_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
         <script type="text/javascript" src="_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
     

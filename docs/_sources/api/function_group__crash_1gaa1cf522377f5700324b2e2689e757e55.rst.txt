@@ -1,0 +1,13 @@
+.. _exhale_function_group__crash_1gaa1cf522377f5700324b2e2689e757e55:
+
+Function psyiage_crash_enable_report_on_fatal_signal
+====================================================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: psyiage_crash_enable_report_on_fatal_signal(psyiage_handle, int)

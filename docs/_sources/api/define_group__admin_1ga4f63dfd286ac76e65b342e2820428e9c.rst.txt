@@ -1,0 +1,13 @@
+.. _exhale_define_group__admin_1ga4f63dfd286ac76e65b342e2820428e9c:
+
+Define MAX_PSYIAGE_SESSION_NAME_LENGTH
+======================================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: MAX_PSYIAGE_SESSION_NAME_LENGTH

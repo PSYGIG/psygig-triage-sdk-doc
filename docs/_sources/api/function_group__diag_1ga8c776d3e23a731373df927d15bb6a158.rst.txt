@@ -1,0 +1,13 @@
+.. _exhale_function_group__diag_1ga8c776d3e23a731373df927d15bb6a158:
+
+Function psyiage_diag_run
+=========================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: psyiage_diag_run(psyiage_handle, psyiage_diag_type, psyiage_diag_result *)

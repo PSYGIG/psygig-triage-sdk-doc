@@ -1,0 +1,13 @@
+.. _exhale_typedef_group__sysinfo_1gaf42431ed915b3f35a95816a7e5f5e437:
+
+Typedef psyiage_diskinfo
+========================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: psyiage_diskinfo

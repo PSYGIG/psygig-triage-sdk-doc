@@ -1,0 +1,13 @@
+.. _exhale_typedef_group__admin_1gaeb6555902b19d87d0b2631fdee270a2f:
+
+Typedef psyiage_sink_udp_cfg
+============================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: psyiage_sink_udp_cfg
