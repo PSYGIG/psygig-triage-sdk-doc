@@ -1,0 +1,13 @@
+.. _exhale_enum_group__admin_1gad2b25661e4bfed58ed7cbcc088c5acc6:
+
+Enum _psyiage_endpoint_type
+===========================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Enum Documentation
+------------------
+
+
+.. doxygenenum:: _psyiage_endpoint_type

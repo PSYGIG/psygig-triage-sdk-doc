@@ -6,7 +6,7 @@ firmware/operating system metrics, and other high-level software metrics. For ex
 obtain linear velocity, altitude, orientation measurements from its sensors, which can plotted on time-series graphs 
 to diagnose flight control issues.
 
-`PSYGIG Triage SDK` alleviates the complexity of writing specific code for each metric source with its built-in support for 
+`PSYGIG Mobility IoT SDK` alleviates the complexity of writing specific code for each metric source with its built-in support for 
 known sensors, internal hardware, operating systems and applications. The Metrics Collection API includes many features suitable for integration
 into embedded systems:
 
@@ -60,7 +60,7 @@ The Metrics Collection API provides facilities to discover and poll metrics data
 
 .. note::
     This list is constantly expanding.
-    Please :email:`contact us <info@psygig.com?subject=[PSYGIG Triage SDK] Metrics Collection>` if there is a specific sensor or application that you would like to be supported.
+    Please `contact us <mailto:info@psygig.com>`_ if there is a specific sensor or application that you would like to be supported.
 
 Using ``psymon``
 ----------------
@@ -73,7 +73,7 @@ to your application by using the ``psymon`` script to run your program. For exam
 
 See :doc:`psymon-man` for a complete list of options.
 
-Using PSYGIG Triage SDK API
+Using C/C++ SDK API
 ---------------------------
 The Metrics Collection API can be accessed by including a :doc:`single header file <api/file_include_psyiage_psyiagesdk.h>`
 and linking the ``libpsyiage`` shared library. See :ref:`libpsyiage-linking` for details.

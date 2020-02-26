@@ -1,0 +1,271 @@
+サードパーテイインテグレーション
+======================================================
+`PSYGIG Mobility IoT SDK` は、サードパーティのデータプラットフォームとシームレスに導入できるため、データをストレージ/分析プラットフォームに転送するプロセスが簡単になります。
+
+.. note::
+    サードパーティプラットフォームのサポートは開発中です。使用プラットフォームがサポートされているかを確認する場合は
+    `連絡 <mailto:info@psygig.com>`_ ください。
+
+.. _iot-third-party:
+
+:doc:`メトリック収集 <metrics-collection>`
+--------------------------------------------------------------------------------
+.. |aws| image:: images/aws-iot.png
+   :height: 60
+   :target: link-aws-iot_
+
+.. |google| image:: images/google-cloud-platform.png
+   :height: 60
+   :target: link-google_
+
+.. |azure| image:: images/azure-iot-hub.png
+   :height: 60
+   :target: link-azure_
+
+.. |alibaba| image:: images/alibaba-cloud.png
+   :height: 60
+   :target: link-alibaba_
+
+.. |ibm| image:: images/ibm-watson.png
+   :height: 60
+   :target: link-ibm_
+
+.. |oracle| image:: images/oracle-cloud.png
+   :height: 60
+   :target: link-oracle_
+
+.. table::
+    :widths: 10 40
+
+    +-------------+----------------------------------------------+
+    | |aws|       | `Amazon AWS IoT <link-aws-iot_>`_            |
+    +-------------+----------------------------------------------+
+    | |google|    | `Google Cloud IoT <link-google_>`_           |
+    +-------------+----------------------------------------------+
+    | |azure|     | `Microsoft Azure IoT <link-azure_>`_         |
+    +-------------+----------------------------------------------+
+    | |alibaba|   | `Alibaba Cloud IoT Platform <link-alibaba_>`_|
+    +-------------+----------------------------------------------+
+    | |ibm|       | `IBM Watson IoT Platform <link-ibm_>`_       |
+    +-------------+----------------------------------------------+
+    | |oracle|    | `Oracle IoT Cloud Service <link-oracle_>`_   |
+    +-------------+----------------------------------------------+
+
+.. _crash-third-party:
+
+:doc:`クラッシュレポート<crash-reporting>`
+------------------------------------------------------------------------------
+.. |backtrace| image:: images/backtrace.io.webp
+   :height: 60
+   :target: link-backtrace_
+
+.. |bugsplat| image:: images/bugsplat.webp
+   :height: 60
+   :target: link-bugsplat_
+
+.. table::
+    :widths: 10 40
+
+    +-------------+------------------------------------+
+    | |backtrace| | `Backtrace I/O <link-backtrace_>`_ |
+    +-------------+------------------------------------+
+    | |bugsplat|  | `BugSplat <link-bugsplat_>`_       |
+    +-------------+------------------------------------+
+
+.. _log-third-party:
+
+:doc:`ログ収集/分析<metrics-collection>`
+----------------------------------------------------------------------------
+.. |elk| image:: images/elasticsearch-logstash-kibana.png
+   :height: 60
+   :target: link-elk_
+
+.. |aes| image:: images/amazon-elasticsearch-service.png
+   :height: 60
+   :target: link-aws-elk_
+
+.. |logz| image:: images/logz.io.png
+   :height: 60
+   :target: link-logz_
+
+.. |loggly| image:: images/loggly.webp
+   :height: 60
+   :target: link-loggly_
+
+.. |graylog| image:: images/graylog.png
+   :height: 60
+   :target: link-graylog_
+
+.. |splunk| image:: images/splunk.png
+   :height: 60
+   :target: link-splunk_
+
+.. |datadog| image:: images/datadog.png
+   :height: 60
+   :target: link-datadog_
+
+.. |sentry| image:: images/sentry.io.png
+   :height: 60
+   :target: link-sentry_
+
+.. table::
+    :widths: 10 40
+
+    +-----------+-------------------------------------------------+
+    | |elk|     | `Elastic Stack (ELK Stack) <link-elk_>`_        |
+    +-----------+-------------------------------------------------+
+    | |aes|     | `Amazon Elasticsearch Service <link-aws-elk_>`_ |
+    +-----------+-------------------------------------------------+
+    | |logz|    | `Logz.io  <link-logz_>`_                        |
+    +-----------+-------------------------------------------------+
+    | |loggly|  | `Loggly  <link-loggly_>`_                       |
+    +-----------+-------------------------------------------------+
+    | |graylog| | `Graylog <link-graylog_>`_                      |
+    +-----------+-------------------------------------------------+
+    | |splunk|  | `Splunk <link-splunk_>`_                        |
+    +-----------+-------------------------------------------------+
+    | |datadog| | `Datadog <link-datadog_>`_                      |
+    +-----------+-------------------------------------------------+
+    | |sentry|  | `Sentry.io <link-sentry_>`_                     |
+    +-----------+-------------------------------------------------+
+
+.. _apm-third-party:
+
+:doc:`アプリケーションパフォーマンス管理 <application-performance-profiling>`
+----------------------------------------------------------------------------------------------------------------------------------------------
+.. |appd| image:: images/appdynamics.png
+   :height: 60
+   :target: link-appd_
+
+.. |newrelic| image:: images/new-relic.png
+   :height: 60
+   :target: link-newrelic_
+
+.. |dynatrace| image:: images/dynatrace.png
+   :height: 60
+   :target: link-dynatrace_
+
+.. table::
+    :widths: 10 40
+
+    +-------------+--------------------------------+
+    | |appd|      | `AppDynamics <link-appd_>`_    |
+    +-------------+--------------------------------+
+    | |newrelic|  | `New Relic <link-newrelic_>`_  |
+    +-------------+--------------------------------+
+    | |dynatrace| | `Dynatrace <link-dynatrace_>`_ |
+    +-------------+--------------------------------+
+    | |sentry|    | `Sentry.io <link-sentry_>`_    |
+    +-------------+--------------------------------+
+
+.. _db-third-party:
+
+データベース/データウエアハウス
+----------------------------------------------------
+.. |mongodb| image:: images/mongodb.png
+   :height: 60
+   :target: link-mongodb_
+
+.. |mysql| image:: images/mysql.png
+   :height: 60
+   :target: link-mysql_
+   
+.. |sqlserver| image:: images/sql-server.png
+   :height: 60
+   :target: link-sqlserver_
+   
+.. |influxdb| image:: images/influxdb.png
+   :height: 60
+   :target: link-influxdb_
+   
+.. |bigquery| image:: images/google-bigquery.png
+   :height: 60
+   :target: link-bigquery_
+
+.. |firebase| image:: images/firebase.png
+   :height: 60
+   :target: link-firebase_
+
+.. |couchdb| image:: images/couchdb.png
+   :height: 60
+   :target: link-couchdb_
+
+.. |couchbase| image:: images/couchbase.png
+   :height: 60
+   :target: link-couchbase_
+
+.. |opentsdb| image:: images/opentsdb.png
+   :height: 60
+   :target: link-opentsdb_
+
+.. |cratedb| image:: images/cratedb.png
+   :height: 60
+   :target: link-cratedb_
+
+.. table::
+    :widths: 10 40
+
+    +-------------+------------------------------------------------+
+    | |mongodb|   | `MongoDB <link-mongodb_>`_                     |
+    +-------------+------------------------------------------------+
+    | |mysql|     | `MySQL <link-mysql_>`_                         |
+    +-------------+------------------------------------------------+
+    | |sqlserver| | `SQL Server <link-sqlserver_>`_                |
+    +-------------+------------------------------------------------+
+    | |influxdb|  | `InfluxDB <link-influxdb_>`_                   |
+    +-------------+------------------------------------------------+
+    | |bigquery|  | `Google BigQuery <link-bigquery_>`_            |
+    +-------------+------------------------------------------------+
+    | |firebase|  | `Firebase Realtime Database <link-firebase_>`_ |
+    +-------------+------------------------------------------------+
+    | |couchdb|   | `Apache CouchDB <link-couchdb_>`_              |
+    +-------------+------------------------------------------------+
+    | |couchbase| | `Couchbase <link-couchbase_>`_                 |
+    +-------------+------------------------------------------------+
+    | |opentsdb|  | `OpenTSDB <link-opentsdb_>`_                   |
+    +-------------+------------------------------------------------+
+    | |cratedb|   | `CrateDB <link-cratedb_>`_                     |
+    +-------------+------------------------------------------------+
+
+.. _link-aws-iot: https://aws.amazon.com/iot/
+.. _link-google: https://cloud.google.com/solutions/iot/
+.. _link-azure: https://azure.microsoft.com/en-us/services/iot-hub/
+.. _link-alibaba: https://www.alibabacloud.com/solutions/IoT
+.. _link-ibm: https://www.ibm.com/internet-of-things/solutions/iot-platform/watson-iot-platform
+.. _link-oracle: https://cloud.oracle.com/iot
+
+.. _link-backtrace: https://backtrace.io/
+.. _link-bugsplat: https://www.bugsplat.com/
+
+.. _link-elk: https://www.elastic.co/elk-stack
+.. _link-aws-elk: https://aws.amazon.com/elasticsearch-service/
+.. _link-logz: https://logz.io/
+.. _link-loggly: https://www.loggly.com/
+.. _link-graylog: https://www.graylog.org/
+.. _link-splunk: https://www.splunk.com/
+.. _link-datadog: https://www.datadoghq.com/
+.. _link-sentry: https://sentry.io
+
+.. _link-appd: https://www.appdynamics.com/
+.. _link-newrelic: https://newrelic.com/
+.. _link-dynatrace: https://www.dynatrace.com/
+
+.. _link-mongodb: https://www.mongodb.com/
+.. _link-mysql: https://www.mysql.com/
+.. _link-sqlserver: https://www.microsoft.com/sql-server/
+.. _link-influxdb: https://www.influxdata.com/time-series-platform/influxdb/
+.. _link-bigquery: https://cloud.google.com/bigquery/
+.. _link-firebase: https://firebase.google.com/products/realtime-database/
+.. _link-couchdb: http://couchdb.apache.org/
+.. _link-couchbase: https://www.couchbase.com/
+.. _link-opentsdb: http://opentsdb.net/
+.. _link-cratedb: https://crate.io/products/cratedb/
+
+
+
+
+
+
+
+
+

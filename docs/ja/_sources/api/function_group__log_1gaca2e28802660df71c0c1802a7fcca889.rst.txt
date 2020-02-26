@@ -1,0 +1,13 @@
+.. _exhale_function_group__log_1gaca2e28802660df71c0c1802a7fcca889:
+
+Function psyiage_log_monitor_log_file
+=====================================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: psyiage_log_monitor_log_file(psyiage_handle, char *, int)

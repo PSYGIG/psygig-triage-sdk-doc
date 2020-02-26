@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="ja" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="ja" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Third Party Integration &mdash; PSYGIG Triage SDK 0.4.0 ドキュメント</title>
+  <title>Third Party Integration &mdash; PSYGIG Mobility IoT SDK 0.4.0 documentation</title>
   
 
   
@@ -17,20 +17,29 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script type="text/javascript" src="_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/collapsible-lists/css/tree_view.css" type="text/css" />
-    <link rel="index" title="索引" href="genindex.html" />
-    <link rel="search" title="検索" href="search.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Change Log" href="change-log.html" />
-    <link rel="prev" title="Supported Platforms/Architectures" href="supported-platforms.html" />
+    <link rel="prev" title="Supported Platforms" href="supported-platforms.html" />
  
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -42,25 +51,25 @@
     ga('send', 'pageview');
 </script>
 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
+<p>EN | <a href="ja/index.html">JP</a></p>
+
+
+
+
           
-            <a href="index.html" class="icon icon-home"> PSYGIG Triage SDK
+            <a href="index.html" class="icon icon-home"> PSYGIG Mobility IoT SDK
           
 
           
@@ -99,12 +108,12 @@
             
               <p class="caption"><span class="caption-text">OVERVIEW</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="supported-platforms.html">Supported Platforms/Architectures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="supported-platforms.html">Supported Platforms</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Third Party Integration</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#metrics-collection"><code class="docutils literal notranslate"><span class="pre">Metrics</span> <span class="pre">Collection</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#crash-reporting"><code class="docutils literal notranslate"><span class="pre">Crash</span> <span class="pre">Reporting</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#log-collection-analysis"><code class="docutils literal notranslate"><span class="pre">Log</span> <span class="pre">Collection/Analysis</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#application-performance-management"><code class="docutils literal notranslate"><span class="pre">Application</span> <span class="pre">Performance</span> <span class="pre">Management</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#metrics-collection"><span class="xref std std-doc">Metrics Collection</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#crash-reporting"><span class="xref std std-doc">Crash Reporting</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#log-collection-analysis"><span class="xref std std-doc">Log Collection/Analysis</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#application-performance-management"><span class="xref std std-doc">Application Performance Management</span></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#database-data-warehouses">Database/Data Warehouses</a></li>
 </ul>
 </li>
@@ -115,24 +124,34 @@
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Download &amp; Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
 </ul>
-<p class="caption"><span class="caption-text">FEATURES</span></p>
+<p class="caption"><span class="caption-text">DEVICE PROVISIONING</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="software-provisioning.html">Software Provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module-marketplace.html">Module Marketplace</a></li>
+</ul>
+<p class="caption"><span class="caption-text">DEVICE MONITORING</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="video-streaming.html">Video Streaming</a></li>
 <li class="toctree-l1"><a class="reference internal" href="application-performance-profiling.html">Application Performance Profiling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="crash-reporting.html">Crash Reporting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="log-collection.html">Log Collection</a></li>
 <li class="toctree-l1"><a class="reference internal" href="metrics-collection.html">Metrics Collection</a></li>
-<li class="toctree-l1"><a class="reference internal" href="system-information.html">System Information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="event-reporting.html">Event Reporting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="benchmark-testing.html">Benchmark Testing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="diagnostic-testing.html">Diagnostic Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="system-information.html">System Information</a></li>
 </ul>
-<p class="caption"><span class="caption-text">PSYGIG TRIAGE SDK REFERENCE</span></p>
+<p class="caption"><span class="caption-text">DIAGNOSIS &amp; BENCHMARKS</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="diagnostic-testing.html">Diagnostic Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="benchmark-testing.html">Benchmark Testing</a></li>
+</ul>
+<p class="caption"><span class="caption-text">SDK REFERENCE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="angelo-man.html"><code class="docutils literal notranslate"><span class="pre">angelo</span></code> man page</a></li>
 <li class="toctree-l1"><a class="reference internal" href="psymon-man.html"><code class="docutils literal notranslate"><span class="pre">psymon</span></code> man page</a></li>
 <li class="toctree-l1"><a class="reference internal" href="psybench-man.html"><code class="docutils literal notranslate"><span class="pre">psybench</span></code> man page</a></li>
 <li class="toctree-l1"><a class="reference internal" href="psydiag-man.html"><code class="docutils literal notranslate"><span class="pre">psydiag</span></code> man page</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api/index.html">PSYGIG Triage SDK API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sample-output.html">Sample Output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/index.html">C/C++ SDK API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sample-output.html">Sample JSON Output</a></li>
 </ul>
 
             
@@ -147,7 +166,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">PSYGIG Triage SDK</a>
+          <a href="index.html">PSYGIG Mobility IoT SDK</a>
         
       </nav>
 
@@ -196,160 +215,155 @@
            <div itemprop="articleBody">
             
   <div class="section" id="third-party-integration">
-<h1>Third Party Integration<a class="headerlink" href="#third-party-integration" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p><cite>PSYGIG Triage SDK</cite> seamlessly integrates with third-party data platforms, simplifying the process of transporting your data
+<h1>Third Party Integration<a class="headerlink" href="#third-party-integration" title="Permalink to this headline">¶</a></h1>
+<p><cite>PSYGIG Mobility IoT SDK</cite> seamlessly integrates with third-party data platforms, simplifying the process of transporting your data
 to your preferred storage/analytics platform.</p>
 <div class="admonition note">
-<p class="first admonition-title">注釈</p>
-<p class="last">Integration with third party platforms is a work-in-progress.
-Please <script type="text/javascript">document.write(
-              "<n uers=\"znvygb:vasb\100cfltvt\056pbz?fhowrpg=[CFLTVT Gevntr FQX] Guveq Cnegl Vagrtengvba\">pbagnpg hf <\057n>".replace(/[a-zA-Z]/g,
-              function(c){
-                return String.fromCharCode(
-                (c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);}));
-                </script> to confirm support for your platform.</p>
+<p class="admonition-title">Note</p>
+<p>Integration with third party platforms is a work-in-progress.
+Please <a class="reference external" href="mailto:info&#37;&#52;&#48;psygig&#46;com">contact us</a> to confirm support for your platform.</p>
 </div>
 <div class="section" id="metrics-collection">
-<span id="iot-third-party"></span><h2><a class="reference internal" href="metrics-collection.html"><span class="doc">Metrics Collection</span></a><a class="headerlink" href="#metrics-collection" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<table border="1" class="colwidths-given docutils">
+<span id="iot-third-party"></span><h2><a class="reference internal" href="metrics-collection.html"><span class="doc">Metrics Collection</span></a><a class="headerlink" href="#metrics-collection" title="Permalink to this headline">¶</a></h2>
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="20%" />
-<col width="80%" />
+<col style="width: 20%" />
+<col style="width: 80%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference external" href="https://aws.amazon.com/iot/"><img alt="aws" src="_images/aws-iot.png" style="height: 60px;" /></a></td>
-<td><a class="reference external" href="https://aws.amazon.com/iot/">Amazon AWS IoT</a></td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference external" href="https://aws.amazon.com/iot/"><img alt="aws" src="_images/aws-iot.png" style="height: 60px;" /></a></p></td>
+<td><p><a class="reference external" href="https://aws.amazon.com/iot/">Amazon AWS IoT</a></p></td>
 </tr>
-<tr class="row-even"><td><a class="reference external" href="https://cloud.google.com/solutions/iot/"><img alt="google" src="_images/google-cloud-platform.png" style="height: 60px;" /></a></td>
-<td><a class="reference external" href="https://cloud.google.com/solutions/iot/">Google Cloud IoT</a></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://cloud.google.com/solutions/iot/"><img alt="google" src="_images/google-cloud-platform.png" style="height: 60px;" /></a></p></td>
+<td><p><a class="reference external" href="https://cloud.google.com/solutions/iot/">Google Cloud IoT</a></p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference external" href="https://azure.microsoft.com/en-us/services/iot-hub/"><img alt="azure" src="_images/azure-iot-hub.png" style="height: 60px;" /></a></td>
-<td><a class="reference external" href="https://azure.microsoft.com/en-us/services/iot-hub/">Microsoft Azure IoT</a></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://azure.microsoft.com/en-us/services/iot-hub/"><img alt="azure" src="_images/azure-iot-hub.png" style="height: 60px;" /></a></p></td>
+<td><p><a class="reference external" href="https://azure.microsoft.com/en-us/services/iot-hub/">Microsoft Azure IoT</a></p></td>
 </tr>
-<tr class="row-even"><td><a class="reference external" href="https://www.alibabacloud.com/solutions/IoT"><img alt="alibaba" src="_images/alibaba-cloud.png" style="height: 60px;" /></a></td>
-<td><a class="reference external" href="https://www.alibabacloud.com/solutions/IoT">Alibaba Cloud IoT Platform</a></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.alibabacloud.com/solutions/IoT"><img alt="alibaba" src="_images/alibaba-cloud.png" style="height: 60px;" /></a></p></td>
+<td><p><a class="reference external" href="https://www.alibabacloud.com/solutions/IoT">Alibaba Cloud IoT Platform</a></p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference external" href="https://www.ibm.com/internet-of-things/solutions/iot-platform/watson-iot-platform"><img alt="ibm" src="_images/ibm-watson.png" style="height: 60px;" /></a></td>
-<td><a class="reference external" href="https://www.ibm.com/internet-of-things/solutions/iot-platform/watson-iot-platform">IBM Watson IoT Platform</a></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.ibm.com/internet-of-things/solutions/iot-platform/watson-iot-platform"><img alt="ibm" src="_images/ibm-watson.png" style="height: 60px;" /></a></p></td>
+<td><p><a class="reference external" href="https://www.ibm.com/internet-of-things/solutions/iot-platform/watson-iot-platform">IBM Watson IoT Platform</a></p></td>
 </tr>
-<tr class="row-even"><td><a class="reference external" href="https://cloud.oracle.com/iot"><img alt="oracle" src="_images/oracle-cloud.png" style="height: 60px;" /></a></td>
-<td><a class="reference external" href="https://cloud.oracle.com/iot">Oracle IoT Cloud Service</a></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://cloud.oracle.com/iot"><img alt="oracle" src="_images/oracle-cloud.png" style="height: 60px;" /></a></p></td>
+<td><p><a class="reference external" href="https://cloud.oracle.com/iot">Oracle IoT Cloud Service</a></p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="crash-reporting">
-<span id="crash-third-party"></span><h2><a class="reference internal" href="crash-reporting.html"><span class="doc">Crash Reporting</span></a><a class="headerlink" href="#crash-reporting" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<table border="1" class="colwidths-given docutils">
+<span id="crash-third-party"></span><h2><a class="reference internal" href="crash-reporting.html"><span class="doc">Crash Reporting</span></a><a class="headerlink" href="#crash-reporting" title="Permalink to this headline">¶</a></h2>
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="20%" />
-<col width="80%" />
+<col style="width: 20%" />
+<col style="width: 80%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference external" href="https://backtrace.io/"><img alt="backtrace" src="_images/backtrace.io.webp" style="height: 60px;" /></a></td>
-<td><a class="reference external" href="https://backtrace.io/">Backtrace I/O</a></td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference external" href="https://backtrace.io/"><img alt="backtrace" src="_images/backtrace.io.webp" style="height: 60px;" /></a></p></td>
+<td><p><a class="reference external" href="https://backtrace.io/">Backtrace I/O</a></p></td>
 </tr>
-<tr class="row-even"><td><a class="reference external" href="https://www.bugsplat.com/"><img alt="bugsplat" src="_images/bugsplat.webp" style="height: 60px;" /></a></td>
-<td><a class="reference external" href="https://www.bugsplat.com/">BugSplat</a></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.bugsplat.com/"><img alt="bugsplat" src="_images/bugsplat.webp" style="height: 60px;" /></a></p></td>
+<td><p><a class="reference external" href="https://www.bugsplat.com/">BugSplat</a></p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="log-collection-analysis">
-<span id="log-third-party"></span><h2><a class="reference internal" href="metrics-collection.html"><span class="doc">Log Collection/Analysis</span></a><a class="headerlink" href="#log-collection-analysis" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<table border="1" class="colwidths-given docutils">
+<span id="log-third-party"></span><h2><a class="reference internal" href="metrics-collection.html"><span class="doc">Log Collection/Analysis</span></a><a class="headerlink" href="#log-collection-analysis" title="Permalink to this headline">¶</a></h2>
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="20%" />
-<col width="80%" />
+<col style="width: 20%" />
+<col style="width: 80%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference external" href="https://www.elastic.co/elk-stack"><img alt="elk" src="_images/elasticsearch-logstash-kibana.png" style="height: 60px;" /></a></td>
-<td><a class="reference external" href="https://www.elastic.co/elk-stack">Elastic Stack (ELK Stack)</a></td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.elastic.co/elk-stack"><img alt="elk" src="_images/elasticsearch-logstash-kibana.png" style="height: 60px;" /></a></p></td>
+<td><p><a class="reference external" href="https://www.elastic.co/elk-stack">Elastic Stack (ELK Stack)</a></p></td>
 </tr>
-<tr class="row-even"><td><a class="reference external" href="https://aws.amazon.com/elasticsearch-service/"><img alt="aes" src="_images/amazon-elasticsearch-service.png" style="height: 60px;" /></a></td>
-<td><a class="reference external" href="https://aws.amazon.com/elasticsearch-service/">Amazon Elasticsearch Service</a></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://aws.amazon.com/elasticsearch-service/"><img alt="aes" src="_images/amazon-elasticsearch-service.png" style="height: 60px;" /></a></p></td>
+<td><p><a class="reference external" href="https://aws.amazon.com/elasticsearch-service/">Amazon Elasticsearch Service</a></p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference external" href="https://logz.io/"><img alt="logz" src="_images/logz.io.png" style="height: 60px;" /></a></td>
-<td><a class="reference external" href="https://logz.io/">Logz.io</a></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://logz.io/"><img alt="logz" src="_images/logz.io.png" style="height: 60px;" /></a></p></td>
+<td><p><a class="reference external" href="https://logz.io/">Logz.io</a></p></td>
 </tr>
-<tr class="row-even"><td><a class="reference external" href="https://www.loggly.com/"><img alt="loggly" src="_images/loggly.webp" style="height: 60px;" /></a></td>
-<td><a class="reference external" href="https://www.loggly.com/">Loggly</a></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.loggly.com/"><img alt="loggly" src="_images/loggly.webp" style="height: 60px;" /></a></p></td>
+<td><p><a class="reference external" href="https://www.loggly.com/">Loggly</a></p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference external" href="https://www.graylog.org/"><img alt="graylog" src="_images/graylog.png" style="height: 60px;" /></a></td>
-<td><a class="reference external" href="https://www.graylog.org/">Graylog</a></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.graylog.org/"><img alt="graylog" src="_images/graylog.png" style="height: 60px;" /></a></p></td>
+<td><p><a class="reference external" href="https://www.graylog.org/">Graylog</a></p></td>
 </tr>
-<tr class="row-even"><td><a class="reference external" href="https://www.splunk.com/"><img alt="splunk" src="_images/splunk.png" style="height: 60px;" /></a></td>
-<td><a class="reference external" href="https://www.splunk.com/">Splunk</a></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.splunk.com/"><img alt="splunk" src="_images/splunk.png" style="height: 60px;" /></a></p></td>
+<td><p><a class="reference external" href="https://www.splunk.com/">Splunk</a></p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference external" href="https://www.datadoghq.com/"><img alt="datadog" src="_images/datadog.png" style="height: 60px;" /></a></td>
-<td><a class="reference external" href="https://www.datadoghq.com/">Datadog</a></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.datadoghq.com/"><img alt="datadog" src="_images/datadog.png" style="height: 60px;" /></a></p></td>
+<td><p><a class="reference external" href="https://www.datadoghq.com/">Datadog</a></p></td>
 </tr>
-<tr class="row-even"><td><a class="reference external" href="https://sentry.io"><img alt="sentry" src="_images/sentry.io.png" style="height: 60px;" /></a></td>
-<td><a class="reference external" href="https://sentry.io">Sentry.io</a></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://sentry.io"><img alt="sentry" src="_images/sentry.io.png" style="height: 60px;" /></a></p></td>
+<td><p><a class="reference external" href="https://sentry.io">Sentry.io</a></p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="application-performance-management">
-<span id="apm-third-party"></span><h2><a class="reference internal" href="application-performance-profiling.html"><span class="doc">Application Performance Management</span></a><a class="headerlink" href="#application-performance-management" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<table border="1" class="colwidths-given docutils">
+<span id="apm-third-party"></span><h2><a class="reference internal" href="application-performance-profiling.html"><span class="doc">Application Performance Management</span></a><a class="headerlink" href="#application-performance-management" title="Permalink to this headline">¶</a></h2>
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="20%" />
-<col width="80%" />
+<col style="width: 20%" />
+<col style="width: 80%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference external" href="https://www.appdynamics.com/"><img alt="appd" src="_images/appdynamics.png" style="height: 60px;" /></a></td>
-<td><a class="reference external" href="https://www.appdynamics.com/">AppDynamics</a></td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.appdynamics.com/"><img alt="appd" src="_images/appdynamics.png" style="height: 60px;" /></a></p></td>
+<td><p><a class="reference external" href="https://www.appdynamics.com/">AppDynamics</a></p></td>
 </tr>
-<tr class="row-even"><td><a class="reference external" href="https://newrelic.com/"><img alt="newrelic" src="_images/new-relic.png" style="height: 60px;" /></a></td>
-<td><a class="reference external" href="https://newrelic.com/">New Relic</a></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://newrelic.com/"><img alt="newrelic" src="_images/new-relic.png" style="height: 60px;" /></a></p></td>
+<td><p><a class="reference external" href="https://newrelic.com/">New Relic</a></p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference external" href="https://www.dynatrace.com/"><img alt="dynatrace" src="_images/dynatrace.png" style="height: 60px;" /></a></td>
-<td><a class="reference external" href="https://www.dynatrace.com/">Dynatrace</a></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.dynatrace.com/"><img alt="dynatrace" src="_images/dynatrace.png" style="height: 60px;" /></a></p></td>
+<td><p><a class="reference external" href="https://www.dynatrace.com/">Dynatrace</a></p></td>
 </tr>
-<tr class="row-even"><td><a class="reference external" href="https://sentry.io"><img alt="sentry" src="_images/sentry.io.png" style="height: 60px;" /></a></td>
-<td><a class="reference external" href="https://sentry.io">Sentry.io</a></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://sentry.io"><img alt="sentry" src="_images/sentry.io.png" style="height: 60px;" /></a></p></td>
+<td><p><a class="reference external" href="https://sentry.io">Sentry.io</a></p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="database-data-warehouses">
-<span id="db-third-party"></span><h2>Database/Data Warehouses<a class="headerlink" href="#database-data-warehouses" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<table border="1" class="colwidths-given docutils">
+<span id="db-third-party"></span><h2>Database/Data Warehouses<a class="headerlink" href="#database-data-warehouses" title="Permalink to this headline">¶</a></h2>
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="20%" />
-<col width="80%" />
+<col style="width: 20%" />
+<col style="width: 80%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference external" href="https://www.mongodb.com/"><img alt="mongodb" src="_images/mongodb.png" style="height: 60px;" /></a></td>
-<td><a class="reference external" href="https://www.mongodb.com/">MongoDB</a></td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.mongodb.com/"><img alt="mongodb" src="_images/mongodb.png" style="height: 60px;" /></a></p></td>
+<td><p><a class="reference external" href="https://www.mongodb.com/">MongoDB</a></p></td>
 </tr>
-<tr class="row-even"><td><a class="reference external" href="https://www.mysql.com/"><img alt="mysql" src="_images/mysql.png" style="height: 60px;" /></a></td>
-<td><a class="reference external" href="https://www.mysql.com/">MySQL</a></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.mysql.com/"><img alt="mysql" src="_images/mysql.png" style="height: 60px;" /></a></p></td>
+<td><p><a class="reference external" href="https://www.mysql.com/">MySQL</a></p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference external" href="https://www.microsoft.com/sql-server/"><img alt="sqlserver" src="_images/sql-server.png" style="height: 60px;" /></a></td>
-<td><a class="reference external" href="https://www.microsoft.com/sql-server/">SQL Server</a></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.microsoft.com/sql-server/"><img alt="sqlserver" src="_images/sql-server.png" style="height: 60px;" /></a></p></td>
+<td><p><a class="reference external" href="https://www.microsoft.com/sql-server/">SQL Server</a></p></td>
 </tr>
-<tr class="row-even"><td><a class="reference external" href="https://www.influxdata.com/time-series-platform/influxdb/"><img alt="influxdb" src="_images/influxdb.png" style="height: 60px;" /></a></td>
-<td><a class="reference external" href="https://www.influxdata.com/time-series-platform/influxdb/">InfluxDB</a></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.influxdata.com/time-series-platform/influxdb/"><img alt="influxdb" src="_images/influxdb.png" style="height: 60px;" /></a></p></td>
+<td><p><a class="reference external" href="https://www.influxdata.com/time-series-platform/influxdb/">InfluxDB</a></p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference external" href="https://cloud.google.com/bigquery/"><img alt="bigquery" src="_images/google-bigquery.png" style="height: 60px;" /></a></td>
-<td><a class="reference external" href="https://cloud.google.com/bigquery/">Google BigQuery</a></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://cloud.google.com/bigquery/"><img alt="bigquery" src="_images/google-bigquery.png" style="height: 60px;" /></a></p></td>
+<td><p><a class="reference external" href="https://cloud.google.com/bigquery/">Google BigQuery</a></p></td>
 </tr>
-<tr class="row-even"><td><a class="reference external" href="https://firebase.google.com/products/realtime-database/"><img alt="firebase" src="_images/firebase.png" style="height: 60px;" /></a></td>
-<td><a class="reference external" href="https://firebase.google.com/products/realtime-database/">Firebase Realtime Database</a></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://firebase.google.com/products/realtime-database/"><img alt="firebase" src="_images/firebase.png" style="height: 60px;" /></a></p></td>
+<td><p><a class="reference external" href="https://firebase.google.com/products/realtime-database/">Firebase Realtime Database</a></p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference external" href="http://couchdb.apache.org/"><img alt="couchdb" src="_images/couchdb.png" style="height: 60px;" /></a></td>
-<td><a class="reference external" href="http://couchdb.apache.org/">Apache CouchDB</a></td>
+<tr class="row-odd"><td><p><a class="reference external" href="http://couchdb.apache.org/"><img alt="couchdb" src="_images/couchdb.png" style="height: 60px;" /></a></p></td>
+<td><p><a class="reference external" href="http://couchdb.apache.org/">Apache CouchDB</a></p></td>
 </tr>
-<tr class="row-even"><td><a class="reference external" href="https://www.couchbase.com/"><img alt="couchbase" src="_images/couchbase.png" style="height: 60px;" /></a></td>
-<td><a class="reference external" href="https://www.couchbase.com/">Couchbase</a></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.couchbase.com/"><img alt="couchbase" src="_images/couchbase.png" style="height: 60px;" /></a></p></td>
+<td><p><a class="reference external" href="https://www.couchbase.com/">Couchbase</a></p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference external" href="http://opentsdb.net/"><img alt="opentsdb" src="_images/opentsdb.png" style="height: 60px;" /></a></td>
-<td><a class="reference external" href="http://opentsdb.net/">OpenTSDB</a></td>
+<tr class="row-odd"><td><p><a class="reference external" href="http://opentsdb.net/"><img alt="opentsdb" src="_images/opentsdb.png" style="height: 60px;" /></a></p></td>
+<td><p><a class="reference external" href="http://opentsdb.net/">OpenTSDB</a></p></td>
 </tr>
-<tr class="row-even"><td><a class="reference external" href="https://crate.io/products/cratedb/"><img alt="cratedb" src="_images/cratedb.png" style="height: 60px;" /></a></td>
-<td><a class="reference external" href="https://crate.io/products/cratedb/">CrateDB</a></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://crate.io/products/cratedb/"><img alt="cratedb" src="_images/cratedb.png" style="height: 60px;" /></a></p></td>
+<td><p><a class="reference external" href="https://crate.io/products/cratedb/">CrateDB</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -367,7 +381,7 @@ Please <script type="text/javascript">document.write(
         <a href="change-log.html" class="btn btn-neutral float-right" title="Change Log" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="supported-platforms.html" class="btn btn-neutral" title="Supported Platforms/Architectures" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="supported-platforms.html" class="btn btn-neutral float-left" title="Supported Platforms" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -376,7 +390,7 @@ Please <script type="text/javascript">document.write(
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019 PSYGIG株式会社
+        &copy; Copyright 2020 PSYGIG株式会社
 
     </p>
   </div>
@@ -393,29 +407,16 @@ Please <script type="text/javascript">document.write(
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/translations.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/javascript" src="_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
-        <script type="text/javascript" src="_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
-    
-
-  
-
-  <script type="text/javascript" src="_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

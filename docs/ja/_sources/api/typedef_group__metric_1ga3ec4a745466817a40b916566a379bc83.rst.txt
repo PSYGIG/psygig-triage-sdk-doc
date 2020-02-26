@@ -1,0 +1,13 @@
+.. _exhale_typedef_group__metric_1ga3ec4a745466817a40b916566a379bc83:
+
+Typedef psyiage_metric_file_type
+================================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: psyiage_metric_file_type

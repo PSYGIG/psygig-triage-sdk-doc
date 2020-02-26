@@ -59,7 +59,7 @@ specific combination of components, each of which is also associated with a part
     | |pci|       | PCI devices                      |
     +-------------+----------------------------------+
 
-`PSYGIG Triage SDK` associates the system information with all :doc:`diagnostic data <sample-output>` collected within the SDK.
+`PSYGIG Mobility IoT SDK` associates the system information with all :doc:`diagnostic data <sample-output>` collected within the SDK.
 This provides the opportunity to realize valuable insights when system components are upgraded or replaced.
 For example, the :doc:`application performance effects <application-performance-profiling>` of upgrading to a GPU with a higher compute core count
 can be visualized in a comparison graph.
@@ -85,7 +85,7 @@ to your application by using the ``psymon`` script to run your program. For exam
 
 See :doc:`psymon-man` for a complete list of options.
 
-Using PSYGIG Triage SDK API
+Using C/C++ SDK API
 ---------------------------
 The System Information API can be accessed by including a :doc:`single header file <api/file_include_psyiage_psyiagesdk.h>`
 and linking the ``libpsyiage`` shared library. See :ref:`libpsyiage-linking` for details.

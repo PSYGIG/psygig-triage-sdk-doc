@@ -1,0 +1,13 @@
+.. _exhale_enum_psyiagesdk_8h_1a734f6bf1ee2ec276496c1422b058d6a5:
+
+Enum _psyiage_error_code
+========================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Enum Documentation
+------------------
+
+
+.. doxygenenum:: _psyiage_error_code

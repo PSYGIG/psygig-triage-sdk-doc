@@ -1,0 +1,136 @@
+入門
+========
+
+このショートガイドではPSYGIG Mobility IoT SDKの使い方を説明します。アプリケーションの計測を始める前に、最新バージョンのSDKをダウンロードしてインストールする必要があります。
+
+:doc:`PSYGIG Mobility IoT SDKのダウンロード/インストールガイド <installation>`
+
+**クイックスタート**　-　``psymon`` の使用
+----------------------------------------------------------------------------
+ソースコードを修正しなくても、 ``psymon`` スクリプトを使用してプログラムを実行することで、アプリケーションに計測およびクラッシュレポート機能を即座に追加できます。例：
+
+.. code-block:: bash
+
+   psymon "/path/to/your/app --arg1 --arg2 --arg3"
+
+``psymon`` のデフォルト設定では、最も一般的な計測機能を使用します。選択的計測を有効にするには、計測クラスから :doc:`オプション <psymon-man>` を選択して計測の設定をします。
+
+オプションリストは :doc:`psymon-manページ <psymon-man>` を参考ください。
+
+:doc:`psymonによって生成されたJSON出力例 <sample-output>`
+
+.. _libpsyiage-linking:
+
+**アドバンス設定** -  ``libpsyiage`` を使ってアプリケーションを構築
+------------------------------------------------------------------------------------------------------------------------
+`PSYGIG Mobility IoT SDK` の豊富な機能は、 :doc:`../api/index` を介して活用できます。 APIにアクセスするには、 :doc:`単一のヘッダーファイル <../api/file_include_psyiage_psyiagesdk.h>` 
+を含めて ``libpsyiage`` 共有ライブラリにリンクします。
+
+.. _basic-example:
+
+**基本例：** `システムリソースメトリックの収集`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+この例では、システムリソースメトリックの期間ポーリングを有効にし、データをJSONファイルに保存します。
+
+.. rubric:: `基本例` ソースコード
+
+.. code-block:: c
+    :linenos:
+
+    #include <psyiage/psyiagesdk.h>
+
+    int main(int argc, char **argv)
+    {
+        psyiage_handle     pah;  // handle to psyiage instance
+        psyiage_sink_cfg   sink; // output sink configuration
+
+        int rc;
+
+        const char* RESULTS_DIR = "results"; // directory to store the output JSON file
+        const char* RESULTS_BASE = "sys"; // base filename of the output JSON file
+
+        // Initialize instance
+        rc = psyiage_init(&pah); // Ignore return code for simplicity sake
+
+        // Add a file sink for logging metrics to JSON
+        sink.type = PSYIAGE_SINK_FILE;
+        sink.format = PSYIAGE_DATA_FORMAT_JSON;
+        sink.file.dir = RESULTS_DIR;
+        sink.file.basename = RESULTS_BASE;
+        rc = psyiage_add_sink(pah, &sink);  // Ignore return code for simplicity sake
+
+        // Enable polling of system resources every 500ms
+        rc = psyiage_metric_enable_poll_system_resources(pah, 500);
+
+        // Let it run for 15 seconds
+        startts = time(NULL);
+        endts = startts + 15;
+
+        while (time(NULL) < endts)
+        {
+            millisleep(1000);
+        }
+
+        // We are done. Cleanup PSYIAGE instance.
+        rc = psyiage_cleanup(&pah);
+
+        return 0;
+    }
+
+.. rubric:: ``gcc`` を使用した `基本例` の構築
+
+`基本例` を構築するには、libpsyiage.so共有オブジェクトとリンクする必要があります。
+
+.. code-block:: bash
+
+    gcc basic-example.c -o basic-example -lpsyiage
+
+libpsyiageのインストール場所によっては、SDKのヘッダーファイルとライブラリファイルの場所を指定する必要があります。 GCCで指定する場合、それぞれ　-I　と　-L　オプションを使用してください。
+
+.. code-block:: bash
+
+    gcc -I/opt/psygig/psyiage/include basic-example.c -o basic-example -L/opt/psygig/psyiage/lib -lpsyiage
+
+:sub:`上記ではPSYGIG Mobility IoT SDKが　/opt/psygig/psyiage　にインストールされていたとしていします。`
+
+.. rubric:: ``cmake`` を使用した `基本例` の構築
+
+`PSYGIG Mobility IoT SDK` を使用してプログラムを構築するためのより良い代替手段は、特に複数のプラットフォーム用に開発している場合は、 ``cmake`` を使用することです。次のようなフォルダ構造を仮定します：
+
+.. code-block:: bash
+
+    basic-example\
+       |- src\
+       |   |- basic-example.c
+       |- CMakeLists.txt
+
+.. rubric:: `CMakeLists.txt` file
+.. rubric:: `CMakeLists.txt` ファイル
+
+.. code-block:: cmake
+    :linenos:
+
+    cmake_minimum_required(VERSION 3.1)
+    project(basic-example)
+
+    # Add the source files to the binary
+    add_executable(basic-example src/basic-example.c)
+
+    # Add the psyiagesdk.h folder to include path  
+    target_include_directories(basic-example PRIVATE /opt/psygig/psyiage/include)
+
+    # Link the libpsyiage.so folder to the binary
+    target_link_libraries(basic-example /opt/psygig/psyiage/lib/libpsyiage.so)
+
+:sub:`PSYGIG Mobility IoT SDKが /opt/psygig/psyiage にインストールされているとします`
+
+
+次の一連のコマンドは、ビルド用のディレクトリを作成し（ソースフォルダにビルドするのは避けましょう）、 ``cmake`` を使用して `基本例` をビルドしてからプログラムを実行します。
+
+.. code-block:: bash
+
+    mkdir build
+    cd build
+    cmake ..
+    make
+    ./basic-example

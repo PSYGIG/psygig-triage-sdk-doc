@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="ja" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="ja" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Struct _psyiage_netinfo &mdash; PSYGIG Triage SDK 0.4.0 ドキュメント</title>
+  <title>Struct _psyiage_netinfo &mdash; PSYGIG Mobility IoT SDK 0.4.0 documentation</title>
   
 
   
@@ -17,18 +17,27 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
-    <link rel="index" title="索引" href="../genindex.html" />
-    <link rel="search" title="検索" href="../search.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Struct _psyiage_osinfo" href="struct__psyiage__osinfo.html" />
     <link rel="prev" title="Struct _psyiage_meminfo" href="struct__psyiage__meminfo.html" />
  
@@ -42,25 +51,25 @@
     ga('send', 'pageview');
 </script>
 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
+<p>EN | <a href="ja/index.html">JP</a></p>
+
+
+
+
           
-            <a href="../index.html" class="icon icon-home"> PSYGIG Triage SDK
+            <a href="../index.html" class="icon icon-home"> PSYGIG Mobility IoT SDK
           
 
           
@@ -99,7 +108,7 @@
             
               <p class="caption"><span class="caption-text">OVERVIEW</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../supported-platforms.html">Supported Platforms/Architectures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../supported-platforms.html">Supported Platforms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../third-party-integration.html">Third Party Integration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../change-log.html">Change Log</a></li>
 </ul>
@@ -108,24 +117,34 @@
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">Download &amp; Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html">Getting Started</a></li>
 </ul>
-<p class="caption"><span class="caption-text">FEATURES</span></p>
+<p class="caption"><span class="caption-text">DEVICE PROVISIONING</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../software-provisioning.html">Software Provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-marketplace.html">Module Marketplace</a></li>
+</ul>
+<p class="caption"><span class="caption-text">DEVICE MONITORING</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../video-streaming.html">Video Streaming</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../application-performance-profiling.html">Application Performance Profiling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../crash-reporting.html">Crash Reporting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../log-collection.html">Log Collection</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../metrics-collection.html">Metrics Collection</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../system-information.html">System Information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../event-reporting.html">Event Reporting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../benchmark-testing.html">Benchmark Testing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../diagnostic-testing.html">Diagnostic Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system-information.html">System Information</a></li>
 </ul>
-<p class="caption"><span class="caption-text">PSYGIG TRIAGE SDK REFERENCE</span></p>
+<p class="caption"><span class="caption-text">DIAGNOSIS &amp; BENCHMARKS</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../diagnostic-testing.html">Diagnostic Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../benchmark-testing.html">Benchmark Testing</a></li>
+</ul>
+<p class="caption"><span class="caption-text">SDK REFERENCE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../angelo-man.html"><code class="docutils literal notranslate"><span class="pre">angelo</span></code> man page</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../psymon-man.html"><code class="docutils literal notranslate"><span class="pre">psymon</span></code> man page</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../psybench-man.html"><code class="docutils literal notranslate"><span class="pre">psybench</span></code> man page</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../psydiag-man.html"><code class="docutils literal notranslate"><span class="pre">psydiag</span></code> man page</a></li>
-<li class="toctree-l1"><a class="reference internal" href="index.html">PSYGIG Triage SDK API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../sample-output.html">Sample Output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">C/C++ SDK API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sample-output.html">Sample JSON Output</a></li>
 </ul>
 
             
@@ -140,7 +159,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">PSYGIG Triage SDK</a>
+          <a href="../index.html">PSYGIG Mobility IoT SDK</a>
         
       </nav>
 
@@ -171,7 +190,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="index.html">PSYGIG Triage SDK API</a> &raquo;</li>
+          <li><a href="index.html">C/C++ SDK API Reference</a> &raquo;</li>
         
       <li>Struct _psyiage_netinfo</li>
     
@@ -191,47 +210,47 @@
            <div itemprop="articleBody">
             
   <div class="section" id="struct-psyiage-netinfo">
-<span id="exhale-struct-struct-psyiage-netinfo"></span><h1>Struct _psyiage_netinfo<a class="headerlink" href="#struct-psyiage-netinfo" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<span id="exhale-struct-struct-psyiage-netinfo"></span><h1>Struct _psyiage_netinfo<a class="headerlink" href="#struct-psyiage-netinfo" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li>Defined in <a class="reference internal" href="file_include_psyiage_psyiagesdk.h.html#file-include-psyiage-psyiagesdk-h"><span class="std std-ref">File psyiagesdk.h</span></a></li>
+<li><p>Defined in <a class="reference internal" href="file_include_psyiage_psyiagesdk.h.html#file-include-psyiage-psyiagesdk-h"><span class="std std-ref">File psyiagesdk.h</span></a></p></li>
 </ul>
 <div class="section" id="struct-documentation">
-<h2>Struct Documentation<a class="headerlink" href="#struct-documentation" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>Struct Documentation<a class="headerlink" href="#struct-documentation" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
-<dt id="_CPPv316_psyiage_netinfo">
-<span id="_CPPv216_psyiage_netinfo"></span><span id="_psyiage_netinfo"></span><span class="target" id="struct__psyiage__netinfo"></span><em class="property">struct </em><code class="descname">_psyiage_netinfo</code><a class="headerlink" href="#_CPPv316_psyiage_netinfo" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dt id="_CPPv416_psyiage_netinfo">
+<span id="_CPPv316_psyiage_netinfo"></span><span id="_CPPv216_psyiage_netinfo"></span><span id="_psyiage_netinfo"></span><span class="target" id="struct__psyiage__netinfo"></span><em class="property">struct </em><code class="sig-name descname">_psyiage_netinfo</code><a class="headerlink" href="#_CPPv416_psyiage_netinfo" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Network Information Details of Network devices attached to the system. </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Members</p>
 <dl class="member">
-<dt id="_CPPv3N16_psyiage_netinfo7devnameE">
-<span id="_CPPv2N16_psyiage_netinfo7devnameE"></span><span id="_psyiage_netinfo::devname__cA"></span><span class="target" id="struct__psyiage__netinfo_1a85e0fe07af557a547ecaf4be58f3a983"></span>char <code class="descname">devname</code>[16]<a class="headerlink" href="#_CPPv3N16_psyiage_netinfo7devnameE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dt id="_CPPv4N16_psyiage_netinfo7devnameE">
+<span id="_CPPv3N16_psyiage_netinfo7devnameE"></span><span id="_CPPv2N16_psyiage_netinfo7devnameE"></span><span id="_psyiage_netinfo::devname__cA"></span><span class="target" id="struct__psyiage__netinfo_1a85e0fe07af557a547ecaf4be58f3a983"></span>char <code class="sig-name descname">devname</code>[16]<a class="headerlink" href="#_CPPv4N16_psyiage_netinfo7devnameE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="member">
-<dt id="_CPPv3N16_psyiage_netinfo7macaddrE">
-<span id="_CPPv2N16_psyiage_netinfo7macaddrE"></span><span id="_psyiage_netinfo::macaddr__cA"></span><span class="target" id="struct__psyiage__netinfo_1ac48109fd8949d1e5e79ec7ad79f4d698"></span>char <code class="descname">macaddr</code>[32]<a class="headerlink" href="#_CPPv3N16_psyiage_netinfo7macaddrE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dt id="_CPPv4N16_psyiage_netinfo7macaddrE">
+<span id="_CPPv3N16_psyiage_netinfo7macaddrE"></span><span id="_CPPv2N16_psyiage_netinfo7macaddrE"></span><span id="_psyiage_netinfo::macaddr__cA"></span><span class="target" id="struct__psyiage__netinfo_1ac48109fd8949d1e5e79ec7ad79f4d698"></span>char <code class="sig-name descname">macaddr</code>[32]<a class="headerlink" href="#_CPPv4N16_psyiage_netinfo7macaddrE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="member">
-<dt id="_CPPv3N16_psyiage_netinfo6ipaddrE">
-<span id="_CPPv2N16_psyiage_netinfo6ipaddrE"></span><span id="_psyiage_netinfo::ipaddr__cA"></span><span class="target" id="struct__psyiage__netinfo_1a1a8435662ef6094e86cd0bab3d21361b"></span>char <code class="descname">ipaddr</code>[32]<a class="headerlink" href="#_CPPv3N16_psyiage_netinfo6ipaddrE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dt id="_CPPv4N16_psyiage_netinfo6ipaddrE">
+<span id="_CPPv3N16_psyiage_netinfo6ipaddrE"></span><span id="_CPPv2N16_psyiage_netinfo6ipaddrE"></span><span id="_psyiage_netinfo::ipaddr__cA"></span><span class="target" id="struct__psyiage__netinfo_1a1a8435662ef6094e86cd0bab3d21361b"></span>char <code class="sig-name descname">ipaddr</code>[32]<a class="headerlink" href="#_CPPv4N16_psyiage_netinfo6ipaddrE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="member">
-<dt id="_CPPv3N16_psyiage_netinfo7ip6addrE">
-<span id="_CPPv2N16_psyiage_netinfo7ip6addrE"></span><span id="_psyiage_netinfo::ip6addr__cA"></span><span class="target" id="struct__psyiage__netinfo_1aaaeed1349e975f70f3684d077c4f7a29"></span>char <code class="descname">ip6addr</code>[64]<a class="headerlink" href="#_CPPv3N16_psyiage_netinfo7ip6addrE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dt id="_CPPv4N16_psyiage_netinfo7ip6addrE">
+<span id="_CPPv3N16_psyiage_netinfo7ip6addrE"></span><span id="_CPPv2N16_psyiage_netinfo7ip6addrE"></span><span id="_psyiage_netinfo::ip6addr__cA"></span><span class="target" id="struct__psyiage__netinfo_1aaaeed1349e975f70f3684d077c4f7a29"></span>char <code class="sig-name descname">ip6addr</code>[64]<a class="headerlink" href="#_CPPv4N16_psyiage_netinfo7ip6addrE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="member">
-<dt id="_CPPv3N16_psyiage_netinfo9interfaceE">
-<span id="_CPPv2N16_psyiage_netinfo9interfaceE"></span><span class="target" id="struct__psyiage__netinfo_1adcee3be226681252c7e9e53d3aedd12d"></span><em class="property">struct</em> <a class="reference internal" href="#_CPPv316_psyiage_netinfo" title="_psyiage_netinfo">_psyiage_netinfo</a>::<strong>[anonymous]</strong> <code class="descname">interface</code>[<code class="descname">MAX_NET_INTF</code>]<a class="headerlink" href="#_CPPv3N16_psyiage_netinfo9interfaceE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dt id="_CPPv4N16_psyiage_netinfo9interfaceE">
+<span id="_CPPv3N16_psyiage_netinfo9interfaceE"></span><span id="_CPPv2N16_psyiage_netinfo9interfaceE"></span><span class="target" id="struct__psyiage__netinfo_1adcee3be226681252c7e9e53d3aedd12d"></span><em class="property">struct</em> <a class="reference internal" href="#_CPPv416_psyiage_netinfo" title="_psyiage_netinfo">_psyiage_netinfo</a>::<strong>[anonymous]</strong> <code class="sig-name descname">interface</code>[<code class="sig-name descname">MAX_NET_INTF</code>]<a class="headerlink" href="#_CPPv4N16_psyiage_netinfo9interfaceE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Array of all network interfaces found on the system. </p>
 </dd></dl>
 
 <dl class="member">
-<dt id="_CPPv3N16_psyiage_netinfo7numintfE">
-<span id="_CPPv2N16_psyiage_netinfo7numintfE"></span><span id="_psyiage_netinfo::numintf__unsigned-i"></span><span class="target" id="struct__psyiage__netinfo_1a0aa1f8a3559ff0f9fd00401e84ecf7b2"></span>unsigned int <code class="descname">numintf</code><a class="headerlink" href="#_CPPv3N16_psyiage_netinfo7numintfE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dt id="_CPPv4N16_psyiage_netinfo7numintfE">
+<span id="_CPPv3N16_psyiage_netinfo7numintfE"></span><span id="_CPPv2N16_psyiage_netinfo7numintfE"></span><span id="_psyiage_netinfo::numintf__unsigned-i"></span><span class="target" id="struct__psyiage__netinfo_1a0aa1f8a3559ff0f9fd00401e84ecf7b2"></span>unsigned int <code class="sig-name descname">numintf</code><a class="headerlink" href="#_CPPv4N16_psyiage_netinfo7numintfE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Number of network interfaces found on the system. </p>
 </dd></dl>
 
@@ -252,7 +271,7 @@
         <a href="struct__psyiage__osinfo.html" class="btn btn-neutral float-right" title="Struct _psyiage_osinfo" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="struct__psyiage__meminfo.html" class="btn btn-neutral" title="Struct _psyiage_meminfo" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="struct__psyiage__meminfo.html" class="btn btn-neutral float-left" title="Struct _psyiage_meminfo" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -261,7 +280,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019 PSYGIG株式会社
+        &copy; Copyright 2020 PSYGIG株式会社
 
     </p>
   </div>
@@ -278,29 +297,16 @@
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/translations.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/javascript" src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
-        <script type="text/javascript" src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

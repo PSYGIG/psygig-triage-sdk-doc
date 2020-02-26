@@ -1,0 +1,13 @@
+.. _exhale_function_group__admin_1ga45475ebc1a0de0c7235b335582cec39b:
+
+Function psyiage_cleanup
+========================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: psyiage_cleanup(psyiage_handle *)

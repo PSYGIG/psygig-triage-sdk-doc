@@ -1,0 +1,329 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ja" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Struct _psyiage_sink_cfg &mdash; PSYGIG Mobility IoT SDK 0.4.0 ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="next" title="Struct _psyiage_sink_file_cfg" href="struct__psyiage__sink__file__cfg.html" />
+    <link rel="prev" title="Struct _psyiage_session_info" href="struct__psyiage__session__info.html" />
+ 
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-91451950-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+<p><a href="../index.html">EN</a> | JP</p>
+
+
+
+
+          
+            <a href="../index.html" class="icon icon-home"> PSYGIG Mobility IoT SDK
+          
+
+          
+            
+            <img src="../_static/psygig-logo-white-text.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">概要</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../supported-platforms.html">サポートされているプラットフォーム/アーキテクチャ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../third-party-integration.html">サードパーテイインテグレーション</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../change-log.html">変更ログ</a></li>
+</ul>
+<p class="caption"><span class="caption-text">使用方法</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">ダウンロード/インストール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started.html">入門</a></li>
+</ul>
+<p class="caption"><span class="caption-text">フィーチャー</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../application-performance-profiling.html">アプリケーションパフォーマンスプロファイリング</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../crash-reporting.html">クラッシュレポート</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../log-collection.html">ログ収集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../metrics-collection.html">メトリック収集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system-information.html">システム情報</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../event-reporting.html">イベント報告</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../benchmark-testing.html">ベンチマークテスト</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../diagnostic-testing.html">診断テスト</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../video-streaming.html">ビデオストリーミング</a></li>
+</ul>
+<p class="caption"><span class="caption-text">PSYGIG Mobility IoT SDK参照</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../psymon-man.html"><code class="docutils literal notranslate"><span class="pre">psymon</span></code> のマニュアルページ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../psybench-man.html"><code class="docutils literal notranslate"><span class="pre">psybench</span></code> のマニュアルページ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../psydiag-man.html"><code class="docutils literal notranslate"><span class="pre">psydiag</span></code> のマニュアルページ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">C/C++ SDK API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sample-output.html">出力例</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PSYGIG Mobility IoT SDK</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">C/C++ SDK API Reference</a> &raquo;</li>
+        
+      <li>Struct _psyiage_sink_cfg</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="struct-psyiage-sink-cfg">
+<span id="exhale-struct-struct-psyiage-sink-cfg"></span><h1>Struct _psyiage_sink_cfg<a class="headerlink" href="#struct-psyiage-sink-cfg" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_include_psyiage_psyiagesdk.h.html#file-include-psyiage-psyiagesdk-h"><span class="std std-ref">File psyiagesdk.h</span></a></p></li>
+</ul>
+<div class="section" id="struct-documentation">
+<h2>Struct Documentation<a class="headerlink" href="#struct-documentation" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<dl class="class">
+<dt id="_CPPv417_psyiage_sink_cfg">
+<span id="_CPPv317_psyiage_sink_cfg"></span><span id="_CPPv217_psyiage_sink_cfg"></span><span id="_psyiage_sink_cfg"></span><span class="target" id="struct__psyiage__sink__cfg"></span><em class="property">struct </em><code class="sig-name descname">_psyiage_sink_cfg</code><a class="headerlink" href="#_CPPv417_psyiage_sink_cfg" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd><p>Sink configuration The configuration settings specific to a particular sink. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv4N17_psyiage_sink_cfg4typeE">
+<span id="_CPPv3N17_psyiage_sink_cfg4typeE"></span><span id="_CPPv2N17_psyiage_sink_cfg4typeE"></span><span id="_psyiage_sink_cfg::type__psyiage_sink_type"></span><span class="target" id="struct__psyiage__sink__cfg_1ac2d7ce8361645bba0810f2db20ce110f"></span><a class="reference internal" href="typedef_group__admin_1gafd597ed8a80e3e08bdbfb653a2af76f2.html#_CPPv417psyiage_sink_type" title="psyiage_sink_type">psyiage_sink_type</a> <code class="sig-name descname">type</code><a class="headerlink" href="#_CPPv4N17_psyiage_sink_cfg4typeE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd><p>Sink type. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N17_psyiage_sink_cfg6formatE">
+<span id="_CPPv3N17_psyiage_sink_cfg6formatE"></span><span id="_CPPv2N17_psyiage_sink_cfg6formatE"></span><span id="_psyiage_sink_cfg::format__psyiage_sink_data_format"></span><span class="target" id="struct__psyiage__sink__cfg_1a1d20b134946e2489ecf62b38f1bbbca1"></span><a class="reference internal" href="typedef_group__admin_1ga8e508fdbc67d17db77ffa7361734ff1f.html#_CPPv424psyiage_sink_data_format" title="psyiage_sink_data_format">psyiage_sink_data_format</a> <code class="sig-name descname">format</code><a class="headerlink" href="#_CPPv4N17_psyiage_sink_cfg6formatE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd><p>Sink data format. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N17_psyiage_sink_cfg4fileE">
+<span id="_CPPv3N17_psyiage_sink_cfg4fileE"></span><span id="_CPPv2N17_psyiage_sink_cfg4fileE"></span><span id="_psyiage_sink_cfg::file__psyiage_sink_file_cfg"></span><span class="target" id="struct__psyiage__sink__cfg_1ac303dc172fb01109b908866f62e6f089"></span><a class="reference internal" href="typedef_group__admin_1gae9a4cb96e37fe1332f761c07c2dfcc7e.html#_CPPv421psyiage_sink_file_cfg" title="psyiage_sink_file_cfg">psyiage_sink_file_cfg</a> <code class="sig-name descname">file</code><a class="headerlink" href="#_CPPv4N17_psyiage_sink_cfg4fileE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N17_psyiage_sink_cfg7fstreamE">
+<span id="_CPPv3N17_psyiage_sink_cfg7fstreamE"></span><span id="_CPPv2N17_psyiage_sink_cfg7fstreamE"></span><span id="_psyiage_sink_cfg::fstream__psyiage_sink_fstream_cfg"></span><span class="target" id="struct__psyiage__sink__cfg_1a990d78affdf43351d1e40e85e20dd841"></span><a class="reference internal" href="typedef_group__admin_1ga46f3f258385a58e95bd2841f2426b20f.html#_CPPv424psyiage_sink_fstream_cfg" title="psyiage_sink_fstream_cfg">psyiage_sink_fstream_cfg</a> <code class="sig-name descname">fstream</code><a class="headerlink" href="#_CPPv4N17_psyiage_sink_cfg7fstreamE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N17_psyiage_sink_cfg3udpE">
+<span id="_CPPv3N17_psyiage_sink_cfg3udpE"></span><span id="_CPPv2N17_psyiage_sink_cfg3udpE"></span><span id="_psyiage_sink_cfg::udp__psyiage_sink_udp_cfg"></span><span class="target" id="struct__psyiage__sink__cfg_1a11107a09f473efaa6d9b6c7d071b4641"></span><a class="reference internal" href="typedef_group__admin_1gaeb6555902b19d87d0b2631fdee270a2f.html#_CPPv420psyiage_sink_udp_cfg" title="psyiage_sink_udp_cfg">psyiage_sink_udp_cfg</a> <code class="sig-name descname">udp</code><a class="headerlink" href="#_CPPv4N17_psyiage_sink_cfg3udpE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N17_psyiage_sink_cfg3tcpE">
+<span id="_CPPv3N17_psyiage_sink_cfg3tcpE"></span><span id="_CPPv2N17_psyiage_sink_cfg3tcpE"></span><span id="_psyiage_sink_cfg::tcp__psyiage_sink_tcp_cfg"></span><span class="target" id="struct__psyiage__sink__cfg_1ac7c4915cece74fcfbbb6d26bda612b3c"></span><a class="reference internal" href="typedef_group__admin_1gaa5431a5dc87350dc36e4debb1f4d459e.html#_CPPv420psyiage_sink_tcp_cfg" title="psyiage_sink_tcp_cfg">psyiage_sink_tcp_cfg</a> <code class="sig-name descname">tcp</code><a class="headerlink" href="#_CPPv4N17_psyiage_sink_cfg3tcpE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N17_psyiage_sink_cfg4mqttE">
+<span id="_CPPv3N17_psyiage_sink_cfg4mqttE"></span><span id="_CPPv2N17_psyiage_sink_cfg4mqttE"></span><span id="_psyiage_sink_cfg::mqtt__psyiage_sink_mqtt_cfg"></span><span class="target" id="struct__psyiage__sink__cfg_1af23439390a281bdc90eab430772e08bc"></span><a class="reference internal" href="typedef_group__admin_1ga29b9caabb18720031d4fd4852d920207.html#_CPPv421psyiage_sink_mqtt_cfg" title="psyiage_sink_mqtt_cfg">psyiage_sink_mqtt_cfg</a> <code class="sig-name descname">mqtt</code><a class="headerlink" href="#_CPPv4N17_psyiage_sink_cfg4mqttE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N17_psyiage_sink_cfg4httpE">
+<span id="_CPPv3N17_psyiage_sink_cfg4httpE"></span><span id="_CPPv2N17_psyiage_sink_cfg4httpE"></span><span id="_psyiage_sink_cfg::http__psyiage_sink_http_cfg"></span><span class="target" id="struct__psyiage__sink__cfg_1a64957c9882cbc6eed24c68a19ab42466"></span><a class="reference internal" href="typedef_group__admin_1gadc5bb1081e343d7e0f133a547c59e701.html#_CPPv421psyiage_sink_http_cfg" title="psyiage_sink_http_cfg">psyiage_sink_http_cfg</a> <code class="sig-name descname">http</code><a class="headerlink" href="#_CPPv4N17_psyiage_sink_cfg4httpE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N17_psyiage_sink_cfg8influxdbE">
+<span id="_CPPv3N17_psyiage_sink_cfg8influxdbE"></span><span id="_CPPv2N17_psyiage_sink_cfg8influxdbE"></span><span id="_psyiage_sink_cfg::influxdb__psyiage_sink_influxdb_cfg"></span><span class="target" id="struct__psyiage__sink__cfg_1a9c6a84a5d93b780a8a53e6573ed90f0c"></span><a class="reference internal" href="typedef_group__admin_1ga1e1859bec7fc878e24adca169ae16147.html#_CPPv425psyiage_sink_influxdb_cfg" title="psyiage_sink_influxdb_cfg">psyiage_sink_influxdb_cfg</a> <code class="sig-name descname">influxdb</code><a class="headerlink" href="#_CPPv4N17_psyiage_sink_cfg8influxdbE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N17_psyiage_sink_cfg6psygigE">
+<span id="_CPPv3N17_psyiage_sink_cfg6psygigE"></span><span id="_CPPv2N17_psyiage_sink_cfg6psygigE"></span><span id="_psyiage_sink_cfg::psygig__psyiage_sink_psygig_cfg"></span><span class="target" id="struct__psyiage__sink__cfg_1aa53146bf7d2efb5702baccefc6eaa232"></span><a class="reference internal" href="typedef_group__admin_1gaa87f95f2c81cccd5cd107b2dd6dbccd2.html#_CPPv423psyiage_sink_psygig_cfg" title="psyiage_sink_psygig_cfg">psyiage_sink_psygig_cfg</a> <code class="sig-name descname">psygig</code><a class="headerlink" href="#_CPPv4N17_psyiage_sink_cfg6psygigE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N17_psyiage_sink_cfgUt1_3E">
+<span id="_CPPv3N17_psyiage_sink_cfgUt1_3E"></span><span class="target" id="struct__psyiage__sink__cfg_1a4849524fe8b930d9e0d222e88103d36f"></span><em class="property">union</em> <a class="reference internal" href="#_CPPv417_psyiage_sink_cfg" title="_psyiage_sink_cfg">_psyiage_sink_cfg</a>::<strong>[anonymous]</strong> <strong>[anonymous]</strong><a class="headerlink" href="#_CPPv4N17_psyiage_sink_cfgUt1_3E" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="struct__psyiage__sink__file__cfg.html" class="btn btn-neutral float-right" title="Struct _psyiage_sink_file_cfg" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="struct__psyiage__session__info.html" class="btn btn-neutral float-left" title="Struct _psyiage_session_info" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020 PSYGIG株式会社
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

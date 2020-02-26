@@ -1,0 +1,16 @@
+.. _exhale_struct_struct__psyiage__usbinfo:
+
+Struct _psyiage_usbinfo
+=======================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: _psyiage_usbinfo
+   :members:
+   :protected-members:
+   :undoc-members:

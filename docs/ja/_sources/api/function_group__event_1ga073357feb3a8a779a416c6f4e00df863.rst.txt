@@ -1,0 +1,13 @@
+.. _exhale_function_group__event_1ga073357feb3a8a779a416c6f4e00df863:
+
+Function psyiage_event_enable_auto_report_os_faults
+===================================================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: psyiage_event_enable_auto_report_os_faults(psyiage_handle, int)

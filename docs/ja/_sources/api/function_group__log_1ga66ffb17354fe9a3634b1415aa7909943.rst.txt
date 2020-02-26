@@ -1,0 +1,13 @@
+.. _exhale_function_group__log_1ga66ffb17354fe9a3634b1415aa7909943:
+
+Function psyiage_log_import_file
+================================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: psyiage_log_import_file(psyiage_handle, char *, uint32_t)

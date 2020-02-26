@@ -1,0 +1,13 @@
+.. _exhale_function_group__admin_1gaafe397a3a21395843a420633e201acb8:
+
+Function psyiage_get_num_sinks
+==============================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: psyiage_get_num_sinks(psyiage_handle, int *)

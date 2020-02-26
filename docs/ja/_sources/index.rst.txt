@@ -1,0 +1,112 @@
+.. image:: images/psygig-logo.png
+   :height: 120
+   :target: https://psygig.com
+
+PSYGIG Mobility IoT SDK
+----------------------------------
+
+`PSYGIG Mobility IoT SDK` または ``psyiage`` は、診断およびパフォーマンスデータ計測機能を備えた、高性能で安全性が重要な組み込みデバイスを拡張するための、ポータブルで軽量のライブラリ
+およびツールセットです。目標は、システム障害を引き起こす最も重大なソフトウェアの欠陥を解決するために実用的な洞察を提供することです。
+
+`PSYGIG Mobility IoT SDK` は高度な計装機能を豊富に備え、ソフトウェアと簡単に組み込めるためのシンプルなAPIも備わっています。
+
+.. |app| image:: images/application-performance.png
+   :height: 30
+
+.. |crash| image:: images/crash-report.png
+   :height: 30
+
+.. |log| image:: images/application-logs.png
+   :height: 30
+
+.. |metrics| image:: images/sensor-metrics.png
+   :height: 30
+
+.. |sysinfo| image:: images/system-information.png
+   :height: 30
+
+.. |event| image:: images/event-notification.png
+   :height: 30
+
+.. |benchmark| image:: images/benchmark.png
+   :height: 30
+
+.. |diag| image:: images/diagnostics.png
+   :height: 30
+
+.. |video| image:: images/video-streaming.png
+   :height: 30
+
+.. table::
+    :widths: 10 40
+
+    ===============  =======================================================================
+    |app|            :doc:`アプリケーション性能プロファイリング <application-performance-profiling>`
+    |crash|          :doc:`ソフトウエアクラッシュレポート <crash-reporting>`
+    |log|            :doc:`ログ収集と監視 <log-collection>`
+    |metrics|        :doc:`センサーメトリック/データ収集 <metrics-collection>`
+    |sysinfo|        :doc:`システム情報収集 <system-information>`
+    |event|          :doc:`イベントアラート/報告 <event-reporting>`
+    |benchmark|      :doc:`ベンチマークテスト <benchmark-testing>`
+    |diag|           :doc:`診断テスト <diagnostic-testing>`
+    |video|          :doc:`ビデオストリーミング <video-streaming>`
+    ===============  =======================================================================
+    
+`PSYGIG Mobility IoT SDK` は、アプリケーションに統合するように設計されています、ソースコードへの変更は最小限/変更なしで、他のいくつかの機能も加えて組み込みシステムへの
+統合に適した機能：
+
+- :doc:`マルチプラットフォームサポー <supported-platforms>`
+- :doc:`サードパーティー導入 <third-party-integration>`
+- C99規格に準拠
+- アプリケーションで動作でき、 `ソースコードを再コンパイルする必要はありません`
+- 収集したデータをJSON, CSV, HTMLなど、様々な形式にエキスポート
+
+.. tip::
+    :doc:`getting-started` を使用すれば、すぐにアプリケーションへの計装を開始しできます。
+
+目次
+--------
+
+.. toctree::
+   :caption: 概要
+   :maxdepth: 1
+
+   supported-platforms
+   third-party-integration
+   change-log
+
+.. toctree::
+   :caption: 使用方法
+   :maxdepth: 2
+
+   installation
+   getting-started
+
+.. toctree::
+   :caption: フィーチャー
+   :maxdepth: 1
+
+   application-performance-profiling
+   crash-reporting
+   log-collection
+   metrics-collection
+   system-information
+   event-reporting
+   benchmark-testing
+   diagnostic-testing
+   video-streaming
+   
+.. toctree::
+   :caption: PSYGIG Mobility IoT SDK参照
+   :maxdepth: 1
+
+   psymon-man
+   psybench-man
+   psydiag-man
+   ../api/index
+   sample-output
+
+.. toctree::
+   :caption: デバッグとトラブルシューティング
+   :maxdepth: 2
+

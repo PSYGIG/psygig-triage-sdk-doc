@@ -1,0 +1,31 @@
+Module Marketplace
+======================
+Module Marketplace is a repository of 3rd party modules for custom video and data processing that can be installed directly onto a device.
+Instead of implementing a module from scratch, one that already exists in the marketplace may be installed directly on the device.
+Examples of such modules include the following computer vision/AI-based modules:
+
+- People counting
+- Gender/age classification
+- Emotion classification
+- Action recognition
+- Fall detection
+- Crack/damage detection
+
+`PSYGIG Mobility IoT SDK` provides the ``angelo`` command line tool for managing and installing modules from the Module Marketplace.
+
+Using ``angelo``
+----------------
+Installing a module from the marketplace can be performed with a single command ``angelo install [module]``, where `module` is the name of the module in the marketplace.
+
+.. code-block:: bash
+
+   angelo install people-counting
+
+Once the module has been downloaded and installed, run ``angelo run [module]`` to run the module.
+
+.. code-block:: bash
+
+   angelo run people-counting
+
+See :doc:`angelo-man` for a complete list of options.
+

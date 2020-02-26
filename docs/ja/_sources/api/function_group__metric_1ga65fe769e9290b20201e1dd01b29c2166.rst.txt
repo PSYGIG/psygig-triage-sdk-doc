@@ -1,0 +1,13 @@
+.. _exhale_function_group__metric_1ga65fe769e9290b20201e1dd01b29c2166:
+
+Function psyiage_metric_import_file
+===================================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: psyiage_metric_import_file(psyiage_handle, psyiage_metric_file_type, char *)

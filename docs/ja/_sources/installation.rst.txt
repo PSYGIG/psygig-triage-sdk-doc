@@ -1,0 +1,47 @@
+ダウンロード/インストール
+==========================================
+
+SDKダウンロード
+--------------------------
+`リリースページ <https://psygig.com>`_ から最も最新の `PSYGIG Mobility IoT SDK` をダウンロード。
+
+.. note::
+    x86_64、armhf、aarch64など、ご使用のプラットフォームアーキテクチャに適したリリースをダウンロードしてください。
+
+.. _install-sdk:
+
+SDKのインストール
+------------------------------
+
+``dpkg`` を使用した .deb ファイルのインストール
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+dpkg を使用して .deb パッケージをインストールする場合、下記のコマンドを実行してください：
+
+.. code-block:: bash
+
+    sudo dpkg -i psyiage-VERSION-ARCH.deb
+
+:sub:`VERSIONはSDKのバージョン、ARCHはプラットフォームのアーキテクチャです。`
+
+``tar`` を使用した .tar.gz ファイルのインストール
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+SDKを /opt などの指定の場所に抽出する場合、下記の ``tar`` コマンドを実行してください：
+
+.. code-block:: bash
+
+    sudo tar xvzf psyiage-VERSION-ARCH.tar.gz -C /opt
+
+:sub:`VERSIONはSDKのバージョン、ARCHはプラットフォームのアーキテクチャです。`
+
+`SDKのライブラリやバイナリへのアクセスを簡単にするために、システムディレクトリからシンボリックリンクを設定することをお勧めします。（例：/usr/local/bin /usr/local/lib）`
+
+.. code-block:: bash
+
+    sudo ln -fs /opt/psygig/psyiage/include/* /usr/local/include
+    sudo ln -fs /opt/psygig/psyiage/bin/* /usr/local/bin
+    sudo ln -fs /opt/psygig/psyiage/lib/* /usr/local/lib
+    sudo ldconfig
+
+インストールは以上で終了です！アプリケーションを計測するには :doc:`getting-started` に移動してください。

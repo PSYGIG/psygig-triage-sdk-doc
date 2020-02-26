@@ -1,11 +1,11 @@
 Third Party Integration
 =======================
-`PSYGIG Triage SDK` seamlessly integrates with third-party data platforms, simplifying the process of transporting your data
+`PSYGIG Mobility IoT SDK` seamlessly integrates with third-party data platforms, simplifying the process of transporting your data
 to your preferred storage/analytics platform.
 
 .. note::
     Integration with third party platforms is a work-in-progress. 
-    Please :email:`contact us <info@psygig.com?subject=[PSYGIG Triage SDK] Third Party Integration>` to confirm support for your platform. 
+    Please `contact us <mailto:info@psygig.com>`_ to confirm support for your platform. 
 
 .. _iot-third-party:
 

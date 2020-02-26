@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="ja" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="ja" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Download &amp; Installation &mdash; PSYGIG Triage SDK 0.4.0 ドキュメント</title>
+  <title>Download &amp; Installation &mdash; PSYGIG Mobility IoT SDK 0.4.0 documentation</title>
   
 
   
@@ -17,18 +17,27 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script type="text/javascript" src="_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/collapsible-lists/css/tree_view.css" type="text/css" />
-    <link rel="index" title="索引" href="genindex.html" />
-    <link rel="search" title="検索" href="search.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Getting Started" href="getting-started.html" />
     <link rel="prev" title="Change Log" href="change-log.html" />
  
@@ -42,25 +51,25 @@
     ga('send', 'pageview');
 </script>
 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
+<p>EN | <a href="ja/index.html">JP</a></p>
+
+
+
+
           
-            <a href="index.html" class="icon icon-home"> PSYGIG Triage SDK
+            <a href="index.html" class="icon icon-home"> PSYGIG Mobility IoT SDK
           
 
           
@@ -99,41 +108,47 @@
             
               <p class="caption"><span class="caption-text">OVERVIEW</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="supported-platforms.html">Supported Platforms/Architectures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="supported-platforms.html">Supported Platforms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="third-party-integration.html">Third Party Integration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="change-log.html">Change Log</a></li>
 </ul>
 <p class="caption"><span class="caption-text">USAGE</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Download &amp; Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#sdk-download">SDK Download</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#installing-the-sdk">Installing the SDK</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#installing-deb-file-via-dpkg">Installing .deb file via <code class="docutils literal notranslate"><span class="pre">dpkg</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#installing-tar-gz-file-via-tar">Installing .tar.gz file via <code class="docutils literal notranslate"><span class="pre">tar</span></code></a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="#option-1-install-sdk-via-apt-get">[Option 1] Install SDK via <code class="docutils literal notranslate"><span class="pre">apt-get</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#option-2-install-sdk-tar-gz-release">[Option 2] Install SDK tar.gz release</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
 </ul>
-<p class="caption"><span class="caption-text">FEATURES</span></p>
+<p class="caption"><span class="caption-text">DEVICE PROVISIONING</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="software-provisioning.html">Software Provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module-marketplace.html">Module Marketplace</a></li>
+</ul>
+<p class="caption"><span class="caption-text">DEVICE MONITORING</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="video-streaming.html">Video Streaming</a></li>
 <li class="toctree-l1"><a class="reference internal" href="application-performance-profiling.html">Application Performance Profiling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="crash-reporting.html">Crash Reporting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="log-collection.html">Log Collection</a></li>
 <li class="toctree-l1"><a class="reference internal" href="metrics-collection.html">Metrics Collection</a></li>
-<li class="toctree-l1"><a class="reference internal" href="system-information.html">System Information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="event-reporting.html">Event Reporting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="benchmark-testing.html">Benchmark Testing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="diagnostic-testing.html">Diagnostic Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="system-information.html">System Information</a></li>
 </ul>
-<p class="caption"><span class="caption-text">PSYGIG TRIAGE SDK REFERENCE</span></p>
+<p class="caption"><span class="caption-text">DIAGNOSIS &amp; BENCHMARKS</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="diagnostic-testing.html">Diagnostic Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="benchmark-testing.html">Benchmark Testing</a></li>
+</ul>
+<p class="caption"><span class="caption-text">SDK REFERENCE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="angelo-man.html"><code class="docutils literal notranslate"><span class="pre">angelo</span></code> man page</a></li>
 <li class="toctree-l1"><a class="reference internal" href="psymon-man.html"><code class="docutils literal notranslate"><span class="pre">psymon</span></code> man page</a></li>
 <li class="toctree-l1"><a class="reference internal" href="psybench-man.html"><code class="docutils literal notranslate"><span class="pre">psybench</span></code> man page</a></li>
 <li class="toctree-l1"><a class="reference internal" href="psydiag-man.html"><code class="docutils literal notranslate"><span class="pre">psydiag</span></code> man page</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api/index.html">PSYGIG Triage SDK API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sample-output.html">Sample Output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/index.html">C/C++ SDK API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sample-output.html">Sample JSON Output</a></li>
 </ul>
 
             
@@ -148,7 +163,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">PSYGIG Triage SDK</a>
+          <a href="index.html">PSYGIG Mobility IoT SDK</a>
         
       </nav>
 
@@ -197,41 +212,38 @@
            <div itemprop="articleBody">
             
   <div class="section" id="download-installation">
-<h1>Download &amp; Installation<a class="headerlink" href="#download-installation" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<div class="section" id="sdk-download">
-<h2>SDK Download<a class="headerlink" href="#sdk-download" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Download the most up-to-date <cite>PSYGIG Triage SDK</cite> from the <a class="reference external" href="https://psygig.com">releases page</a>.</p>
-<div class="admonition note">
-<p class="first admonition-title">注釈</p>
-<p class="last">Ensure that you download the correct release for your platform architecture (eg. x86_64, armhf, aarch64).</p>
-</div>
-</div>
-<div class="section" id="installing-the-sdk">
-<span id="install-sdk"></span><h2>Installing the SDK<a class="headerlink" href="#installing-the-sdk" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<div class="section" id="installing-deb-file-via-dpkg">
-<h3>Installing .deb file via <code class="docutils literal notranslate"><span class="pre">dpkg</span></code><a class="headerlink" href="#installing-deb-file-via-dpkg" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>Run the following command to install the .deb package using dpkg:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo dpkg -i psyiage-VERSION-ARCH.deb
+<h1>Download &amp; Installation<a class="headerlink" href="#download-installation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="option-1-install-sdk-via-apt-get">
+<span id="install-sdk"></span><h2>[Option 1] Install SDK via <code class="docutils literal notranslate"><span class="pre">apt-get</span></code><a class="headerlink" href="#option-1-install-sdk-via-apt-get" title="Permalink to this headline">¶</a></h2>
+<p>Run the following command to download and install the SDK using <code class="docutils literal notranslate"><span class="pre">apt-get</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;deb https://psygig.bintray.com/deb {distribution} main&quot;</span> <span class="p">|</span> sudo tee -a /etc/apt/sources.list
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 379CE192D401AB61
+sudo apt-get update
+sudo apt-get install psyiage
 </pre></div>
 </div>
-<p><sub>where VERSION is the SDK version and ARCH is the platform architecture</sub></p>
+<p><sub>where {distribution} is the operating system distribution (eg. xenial for Ubuntu 16.04)</sub></p>
 </div>
-<div class="section" id="installing-tar-gz-file-via-tar">
-<h3>Installing .tar.gz file via <code class="docutils literal notranslate"><span class="pre">tar</span></code><a class="headerlink" href="#installing-tar-gz-file-via-tar" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="option-2-install-sdk-tar-gz-release">
+<h2>[Option 2] Install SDK tar.gz release<a class="headerlink" href="#option-2-install-sdk-tar-gz-release" title="Permalink to this headline">¶</a></h2>
+<p>Download the most up-to-date <a class="reference external" href="https://bintray.com/psygig/PSYGIG/psyiage">PSYGIG Mobility IoT SDK</a> tar.gz release.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Ensure that you download the correct release for your platform architecture (eg. x86_64, armhf, aarch64).</p>
+</div>
 <p>Extract the SDK to the desired location (eg. <code class="docutils literal notranslate"><span class="pre">/opt</span></code>) using the <code class="docutils literal notranslate"><span class="pre">tar</span></code> command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo tar xvzf psyiage-VERSION-ARCH.tar.gz -C /opt
 </pre></div>
 </div>
 <p><sub>where VERSION is the SDK version and ARCH is the platform architecture</sub></p>
-<p><cite>To make it easier to access the SDK's libraries and binaries, you may want to setup symbolic links from the system directories (eg. /usr/local/bin /usr/local/lib)</cite></p>
+<p><cite>To make it easier to access the SDK’s libraries and binaries, you may want to setup symbolic links from the system directories (eg. /usr/local/bin /usr/local/lib)</cite></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo ln -fs /opt/psygig/psyiage/include/* /usr/local/include
 sudo ln -fs /opt/psygig/psyiage/bin/* /usr/local/bin
 sudo ln -fs /opt/psygig/psyiage/lib/* /usr/local/lib
 sudo ldconfig
 </pre></div>
 </div>
-<p>That's it! Now head to <a class="reference internal" href="getting-started.html"><span class="doc">Getting Started</span></a> to start instrumenting your application.</p>
-</div>
+<p>That’s it! Now head to <a class="reference internal" href="getting-started.html"><span class="doc">Getting Started</span></a> to start developing your IoT applications.</p>
 </div>
 </div>
 
@@ -246,7 +258,7 @@ sudo ldconfig
         <a href="getting-started.html" class="btn btn-neutral float-right" title="Getting Started" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="change-log.html" class="btn btn-neutral" title="Change Log" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="change-log.html" class="btn btn-neutral float-left" title="Change Log" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -255,7 +267,7 @@ sudo ldconfig
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019 PSYGIG株式会社
+        &copy; Copyright 2020 PSYGIG株式会社
 
     </p>
   </div>
@@ -272,29 +284,16 @@ sudo ldconfig
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/translations.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/javascript" src="_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
-        <script type="text/javascript" src="_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
-    
-
-  
-
-  <script type="text/javascript" src="_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

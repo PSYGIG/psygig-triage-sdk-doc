@@ -1,0 +1,13 @@
+.. _exhale_function_group__video_1ga18ad0164f5fd9156cd27de98aaa7f296:
+
+Function psyiage_video_stream_stop
+==================================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: psyiage_video_stream_stop(psyiage_handle, int)

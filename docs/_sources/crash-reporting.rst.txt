@@ -8,7 +8,7 @@ To determine the cause of failure, a post-mortem analysis must be performed on t
 Such data includes stack traces, memory dumps and register contents at the point of failure, which can be used to
 identify the exact line in the source file where the crash occurred.
 
-`PSYGIG Triage SDK` extends your application with crash reporting capabilties, collecting post-mortem data at the point of failure.
+`PSYGIG Mobility IoT SDK` extends your application with crash reporting capabilties, collecting post-mortem data at the point of failure.
 The Crash Reporting API includes many features suitable for integration into embedded systems:
 
 * Works on existing applications; `no need to recompile source code`
@@ -36,7 +36,7 @@ to your application by using the ``psymon`` script to run your program. For exam
 
 See :doc:`psymon-man` for a complete list of options.
 
-Using PSYGIG Triage SDK API
+Using C/C++ SDK API
 ---------------------------
 The Crash Reporting API can be accessed by including a :doc:`single header file <api/file_include_psyiage_psyiagesdk.h>`
 and linking the ``libpsyiage`` shared library. See :ref:`libpsyiage-linking` for details.
@@ -86,7 +86,7 @@ Generate crash report on demand
 
 .. note::
     `Generate crash report on demand` is a work-in-progress. 
-    Please :email:`contact us <info@psygig.com?subject=[PSYGIG Triage SDK] Generate crash report on demand>` if you are interested in beta-testing this feature. 
+    Please `contact us <mailto:info@psygig.com>`_ if you are interested in beta-testing this feature. 
 
 .. code-block:: c
     :linenos:

@@ -8,7 +8,7 @@ may dump pathfinding graphs into the logs.
 In order to diagnose and debug faults in software, navigating and understanding the vast amounts of log data is necessary in order to 
 find the root cause of failure.
 
-`PSYGIG Triage SDK` simplies the log collection process by providing a unified logging facility that consolidates logs from multiple sources.
+`PSYGIG Mobility IoT SDK` simplies the log collection process by providing a unified logging facility that consolidates logs from multiple sources.
 The logs can then be pushed to any :doc:`supported output plugin <third-party-integration>`.
 The Log Collection API includes many features suitable for integration into embedded systems:
 
@@ -28,7 +28,7 @@ The Log Collection API provides facilities to discover and monitor log files fro
     Support for application log files in this list is a work-in-progress. 
 
     This list is constantly expanding.
-    Please :email:`contact us <info@psygig.com?subject=[PSYGIG Triage SDK] Log Collection>` if there are log files from an application that you would like to be supported.
+    Please `contact us <mailto:info@psygig.com>`_ if there are log files from an application that you would like to be supported.
 
 .. |unix| image:: images/unix.png
    :height: 40
@@ -153,7 +153,7 @@ to your application by using the ``psymon`` script to run your program. For exam
 
 See :doc:`psymon-man` for a complete list of options.
 
-Using PSYGIG Triage SDK API
+Using C/C++ SDK API
 ---------------------------
 The Log Collection API can be accessed by including a :doc:`single header file <api/file_include_psyiage_psyiagesdk.h>`
 and linking the ``libpsyiage`` shared library. See :ref:`libpsyiage-linking` for details.

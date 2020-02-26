@@ -1,0 +1,13 @@
+.. _exhale_typedef_psyiagesdk_8h_1a04a2ebbe603eeb319217ace07cb5950d:
+
+Typedef psyiage_error_code
+==========================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: psyiage_error_code

@@ -2,61 +2,14 @@
    :height: 120
    :target: https://psygig.com
 
-PSYGIG Triage SDK
------------------
+PSYGIG Mobility IoT SDK
+------------------------
 
-`PSYGIG Triage SDK` or ``psyiage`` is a set of portable, lightweight library and tools for extending high-performance, safety-critical embedded devices
-with diagnostic and performance data instrumentation capabilities. The goal is to provide actionable insights in order to resolve the most 
-critical software defects that cause system failure.
+`PSYGIG Mobility IoT SDK` or ``psyiage`` is a :doc:`multiplatform <supported-platforms>` development kit for managing high-performance, safety-critical mobile IoT devices.
+The SDK provides portable, lightweight libraries and tools for provisioning, monitoring and connecting embedded devices to the cloud.
+The goal is to simplify the process of developing, deploying and monitoring cloud-enabled IoT edge devices. 
 
-`PSYGIG Triage SDK` is rich with advanced instrumentation features, yet exposes a simple API for easy integration with existing software.
-
-.. |app| image:: images/visualization.png
-   :height: 30
-
-.. |crash| image:: images/visualization.png
-   :height: 30
-
-.. |log| image:: images/visualization.png
-   :height: 30
-
-.. |metrics| image:: images/visualization.png
-   :height: 30
-
-.. |sysinfo| image:: images/visualization.png
-   :height: 30
-
-.. |event| image:: images/visualization.png
-   :height: 30
-
-.. |benchmark| image:: images/visualization.png
-   :height: 30
-
-.. |diag| image:: images/visualization.png
-   :height: 30
-
-.. table::
-    :widths: 10 40
-
-    +-------------+------------------------------------------------------------------------------+
-    | |app|       | :doc:`Application performance profiling <application-performance-profiling>` |
-    +-------------+------------------------------------------------------------------------------+
-    | |crash|     | :doc:`Software crash reporting <crash-reporting>`                            |
-    +-------------+------------------------------------------------------------------------------+
-    | |log|       | :doc:`Log collection and monitoring <log-collection>`                        |
-    +-------------+------------------------------------------------------------------------------+
-    | |metrics|   | :doc:`Sensor data/metric collection <metrics-collection>`                    |
-    +-------------+------------------------------------------------------------------------------+
-    | |sysinfo|   | :doc:`System information collection <system-information>`                    |
-    +-------------+------------------------------------------------------------------------------+
-    | |event|     | :doc:`Event/alert reporting <event-reporting>`                               |
-    +-------------+------------------------------------------------------------------------------+
-    | |benchmark| | :doc:`Benchmark testing <benchmark-testing>`                                 |
-    +-------------+------------------------------------------------------------------------------+
-    | |diag|      | :doc:`Diagnostic testing <diagnostic-testing>`                               |
-    +-------------+------------------------------------------------------------------------------+
-    
-`PSYGIG Triage SDK` was designed to be integrated into existing applications with minimal/no changes to the source code, along with several 
+`PSYGIG Mobility IoT SDK` was designed to be integrated into existing applications with minimal/no changes to the source code, along with several 
 other features suitable for integration into embedded systems:
 
 - :doc:`Multiplatform support <supported-platforms>`
@@ -66,8 +19,94 @@ other features suitable for integration into embedded systems:
 - Export collected data into various formats (JSON, CSV, HTML)
 
 .. tip::
-    Start instrumenting your application right away with our :doc:`getting-started` guide.
+    Start developing your IoT applications right away with our :doc:`getting-started` guide.
 
+Device Provisioning
+~~~~~~~~~~~~~~~~~~~~
+
+Provisioning software configurations and installing applications to embedded devices is simplified using `PSYGIG Mobility IoT SDK` built-in tools.
+
+.. |provisioning| image:: images/software-provisioning.png
+   :height: 30
+
+.. |marketplace| image:: images/module-marketplace.png
+   :height: 30
+
+.. table::
+    :widths: 10 40
+
+    +----------------+------------------------------------------------------+
+    | |provisioning| | :doc:`Software provisioning <software-provisioning>` |
+    +----------------+------------------------------------------------------+
+    | |marketplace|  | :doc:`Module marketplace <module-marketplace>`       |
+    +----------------+------------------------------------------------------+
+
+Device Monitoring
+~~~~~~~~~~~~~~~~~~
+
+`PSYGIG Mobility IoT SDK` is rich with advanced instrumentation features for collecting relevant device data (ie. "triaging"), 
+including a simple API for easy integration with existing software.
+
+.. |video| image:: images/video-streaming.png
+   :height: 30
+
+.. |app| image:: images/application-performance.png
+   :height: 30
+
+.. |crash| image:: images/crash-report.png
+   :height: 30
+
+.. |log| image:: images/application-logs.png
+   :height: 30
+
+.. |metrics| image:: images/sensor-metrics.png
+   :height: 30
+
+.. |event| image:: images/event-notification.png
+   :height: 30
+
+.. |sysinfo| image:: images/system-information.png
+   :height: 30
+
+.. table::
+    :widths: 10 40
+
+    +-------------+------------------------------------------------------------------------------+
+    | |video|     | :doc:`Video streaming <video-streaming>`                                     |
+    +-------------+------------------------------------------------------------------------------+
+    | |app|       | :doc:`Application performance profiling <application-performance-profiling>` |
+    +-------------+------------------------------------------------------------------------------+
+    | |crash|     | :doc:`Software crash reporting <crash-reporting>`                            |
+    +-------------+------------------------------------------------------------------------------+
+    | |log|       | :doc:`Log collection and monitoring <log-collection>`                        |
+    +-------------+------------------------------------------------------------------------------+
+    | |metrics|   | :doc:`Sensor data/metric collection <metrics-collection>`                    |
+    +-------------+------------------------------------------------------------------------------+
+    | |event|     | :doc:`Event/alert reporting <event-reporting>`                               |
+    +-------------+------------------------------------------------------------------------------+
+    | |sysinfo|   | :doc:`System information collection <system-information>`                    |
+    +-------------+------------------------------------------------------------------------------+
+
+Diagnosis & Benchmarks
+~~~~~~~~~~~~~~~~~~~~~~~
+
+`PSYGIG Mobility IoT SDK` includes built-in tests for evaluating the reliability and performance of the embedded device.
+
+.. |diag| image:: images/diagnostics.png
+   :height: 30
+
+.. |benchmark| image:: images/benchmark.png
+   :height: 30
+
+.. table::
+    :widths: 10 40
+
+    +-------------+------------------------------------------------------------------------------+
+    | |diag|      | :doc:`Diagnostic testing <diagnostic-testing>`                               |
+    +-------------+------------------------------------------------------------------------------+
+    | |benchmark| | :doc:`Benchmark testing <benchmark-testing>`                                 |
+    +-------------+------------------------------------------------------------------------------+
+    
 TABLE OF CONTENTS
 -----------------
 
@@ -87,22 +126,36 @@ TABLE OF CONTENTS
    getting-started
 
 .. toctree::
-   :caption: FEATURES
+   :caption: DEVICE PROVISIONING
    :maxdepth: 1
 
+   software-provisioning
+   module-marketplace
+
+.. toctree::
+   :caption: DEVICE MONITORING
+   :maxdepth: 1
+
+   video-streaming
    application-performance-profiling
    crash-reporting
    log-collection
    metrics-collection
-   system-information
    event-reporting
-   benchmark-testing
-   diagnostic-testing
-   
+   system-information
+
 .. toctree::
-   :caption: PSYGIG TRIAGE SDK REFERENCE
+   :caption: DIAGNOSIS & BENCHMARKS
    :maxdepth: 1
 
+   diagnostic-testing
+   benchmark-testing
+
+.. toctree::
+   :caption: SDK REFERENCE
+   :maxdepth: 1
+
+   angelo-man
    psymon-man
    psybench-man
    psydiag-man

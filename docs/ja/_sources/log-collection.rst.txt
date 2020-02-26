@@ -1,0 +1,224 @@
+ログ収集
+==============
+ソフトウェアプロセスはログを生成し、それがアプリケーションの内部動作への洞察になります。ソフトウェアシステムが複雑になり、複数のデバイスに分散されると、何百ものプロセスが
+何百万ものログエントリを生成します。例えば、レーザセンサ装置ドライバは点群データを含むログを生成することができます。同時に、自律飛行ドローン用の自動操縦ソフトウェアは、
+経路探索グラフをログにダンプすることもできます。
+
+ソフトウェア障害を診断およびデバッグするには、失敗の原因を見つける必要があり、膨大な量のログデータをナビゲートして理解することが必要です。
+
+`PSYGIG Mobility IoT SDK` は、複数のソースからのデータを纏めるログ統合機能を提供することで、ログ収集プロセスを簡素化します。統合されたログは :doc:`サポートされている出力プラグイン <third-party-integration>` 
+にプッシュできます。 Log Collection APIには、組み込みシステムへの統合に適した多くの機能も含まれています。
+
+- アプリケーションで動作でき、 `ソースコードを再コンパイルする必要はありません`
+- :ref:`サードパーティのロギングプラットフォーム <log-third-party>` および :ref:`データベース <db-third-party>` とのシームレスな統合
+- :ref:`既知のアプリケーション <known-log-sources>` によって生成されたログファイルを自動的に監視および収集します。
+- アプリケーション独自のロギングニーズに合わせて組み込みロギング機能を使用する
+- ログをさまざまなファイル形式（JSON、CSV、HTMLなど）にエクスポートする
+
+.. _known-log-sources:
+
+既知ログソース
+------------------------
+Log Collection APIは、下記に記載された既知のアプリケーションからログファイルを検出および監視する機能を提供します。
+
+.. note::
+    このリストのアプリケーションログファイルのサポートは進行中です。
+
+    このリストは常に拡大しています。あなたがサポートされたいアプリケーションからのログファイルがあるならば、
+    `連絡 <mailto:info@psygig.com>`_ ください。
+
+.. |unix| image:: images/unix.png
+   :height: 40
+
+.. |apache| image:: images/apache-http.png
+   :height: 40
+
+.. |tomcat| image:: images/tomcat.png
+   :height: 40
+
+.. |zookeeper| image:: images/zookeeper.png
+   :height: 40
+
+.. |nginx| image:: images/nginx.webp
+   :height: 40
+
+.. |mysql| image:: images/mysql.png
+   :height: 40
+
+.. |postgresql| image:: images/postgresql.png
+   :height: 40
+
+.. |mongodb| image:: images/mongodb.png
+   :height: 40
+
+.. |couchdb| image:: images/couchdb.png
+   :height: 40
+
+.. |redis| image:: images/redis.png
+   :height: 40
+
+.. |aws| image:: images/amazon-aws.png
+   :height: 40
+
+.. |docker| image:: images/docker.png
+   :height: 40
+
+.. |kafka| image:: images/kafka.png
+   :height: 40
+
+.. |django| image:: images/django.png
+   :height: 40
+
+.. |jenkins| image:: images/jenkins.png
+   :height: 40
+
+.. |haproxy| image:: images/haproxy.webp
+   :height: 40
+
+.. |nagios| image:: images/nagios.png
+   :height: 40
+
+.. |cassandra| image:: images/cassandra.png
+   :height: 40
+
+.. |sinatra| image:: images/sinatra.png
+   :height: 40
+
+.. |varnish| image:: images/varnish.png
+   :height: 40
+
+
+.. table::
+    :widths: 10 40
+
+    +-------------+----------------------------------------------+
+    | |unix|      | syslogd (eg. auth, daemon, kern, syslog)     |
+    +-------------+----------------------------------------------+
+    | |unix|      | journald                                     |
+    +-------------+----------------------------------------------+
+    | |unix|      | rsyslogd                                     |
+    +-------------+----------------------------------------------+
+    | |unix|      | syslog-ng                                    |
+    +-------------+----------------------------------------------+
+    | |apache|    | Apache HTTP Server                           |
+    +-------------+----------------------------------------------+
+    | |tomcat|    | Apache Tomcat                                |
+    +-------------+----------------------------------------------+
+    | |zookeeper| | Apache Zookeeper                             |
+    +-------------+----------------------------------------------+
+    | |kafka|     | Apache Kafka                                 |
+    +-------------+----------------------------------------------+
+    | |nginx|     | Nginx                                        |
+    +-------------+----------------------------------------------+
+    | |mysql|     | MySQL                                        |
+    +-------------+----------------------------------------------+
+    | |postgresql|| PostgreSQL                                   | 
+    +-------------+----------------------------------------------+
+    | |mongodb|   | MongoDB                                      |
+    +-------------+----------------------------------------------+
+    | |couchdb|   | CouchDB                                      |
+    +-------------+----------------------------------------------+
+    | |redis|     | Redis                                        |
+    +-------------+----------------------------------------------+
+    | |aws|       | Amazon AWS                                   |
+    +-------------+----------------------------------------------+
+    | |docker|    | Docker                                       |
+    +-------------+----------------------------------------------+
+    | |django|    | Django                                       |
+    +-------------+----------------------------------------------+
+    | |jenkins|   | Jenkins                                      |
+    +-------------+----------------------------------------------+
+    | |haproxy|   | HAProxy                                      |
+    +-------------+----------------------------------------------+
+    | |nagios|    | Nagios                                       |
+    +-------------+----------------------------------------------+
+    | |cassandra| | Cassandra                                    |
+    +-------------+----------------------------------------------+
+    | |sinatra|   | Sinatra                                      |
+    +-------------+----------------------------------------------+
+    | |varnish|   | Varnish                                      |
+    +-------------+----------------------------------------------+
+
+``psymon`` の使用
+--------------------------------
+ソースコードを修正しなくても、 ``psymon`` スクリプトを使用してプログラムを実行することで、既知のアプリケーションログ収集を
+アプリケーションに即座に有効にすることができます。例：
+
+.. code-block:: bash
+
+   psymon --logs "/path/to/your/app --arg1 --arg2 --arg3"
+
+オプションリストは :doc:`psymon-manページ <psymon-man>` を参考ください。
+
+C/C++ SDK APIの使用
+----------------------------------------------------
+Log Collection APIは、 :doc:`単一のヘッダーファイル <../api/file_include_psyiage_psyiagesdk.h>` をインクルードし、 ``libpsyiage`` 共有ライブラリを
+リンクすることによってアクセスできます。詳細については、 :ref:`libpsyiage-linking` を参照してください。
+
+既知のログファイルのリアルタイム監視
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+.. code-block:: c
+    :linenos:
+
+    #include <psyiage/psyiagesdk.h>
+
+    int main(int argc, char **argv)
+    {
+        psyiage_handle     pah;  // handle to psyiage instance
+
+        /* ... Initialize code omitted for simplicity ... */
+
+        // Search for known log files
+        char**      logfiles = NULL;      // Array of known log files
+        uint32_t*   logfileflags = NULL;  // Array of log flags
+        int         numfiles = 0;         // Number of log files found
+
+        rc = psyiage_log_glob_known_log_files(&logfiles, &logfileflags, &numfiles);
+        
+        // Monitor all log files found in real-time, at a period of 1 second
+        int i;
+        for (i = 0; i < numfiles; i++)
+        {
+            char *logfile = logfiles[i];
+            rc = psyiage_log_monitor_log_file(pah, logfile, 1000);
+        }
+
+        // Free memory allocated to arrays
+        psyiage_log_glob_free(logfiles, logfileflags, numfiles);
+        
+        /* ... Cleanup code omitted for simplicity ... */
+    }
+
+``syslog`` JSON出力サンプル
+--------------------------------------------------
+
+.. code-block:: javascript
+
+    {
+      "FilePath": "/var/log/messages",
+      "Entries": [
+        {
+          "Duration": 5.006322384,
+          "Timestamp": 1559440474.084455013,
+          "TimeOfDay": "2019-06-02 10:54:34.084455013",
+          "LogFile": "/var/log/messages",
+          "LogText": "Jun  2 10:54:33 ubuntu log_monitor[35659]: psyiage 0.3.0 log monitoring test @ priority Warning"
+        },
+        {
+          "Duration": 6.008110762,
+          "Timestamp": 1559440475.086243391,
+          "TimeOfDay": "2019-06-02 10:54:35.086243391",
+          "LogFile": "/var/log/messages",
+          "LogText": "Jun  2 10:54:34 ubuntu log_monitor[35659]: psyiage 0.3.0 log monitoring test @ priority Notice"
+        },
+        {
+          "Duration": 6.008533001,
+          "Timestamp": 1559440475.086665630,
+          "TimeOfDay": "2019-06-02 10:54:35.086665630",
+          "LogFile": "/var/log/messages",
+          "LogText": "Jun  2 10:54:35 ubuntu log_monitor[35659]: psyiage 0.3.0 log monitoring test @ priority Info"
+        }
+      ]
+    },

@@ -1,0 +1,326 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ja" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Struct _psyiage_sysinfo &mdash; PSYGIG Mobility IoT SDK 0.4.0 ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="next" title="Struct _psyiage_usbinfo" href="struct__psyiage__usbinfo.html" />
+    <link rel="prev" title="Struct _psyiage_sink_udp_cfg" href="struct__psyiage__sink__udp__cfg.html" />
+ 
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-91451950-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+<p><a href="../index.html">EN</a> | JP</p>
+
+
+
+
+          
+            <a href="../index.html" class="icon icon-home"> PSYGIG Mobility IoT SDK
+          
+
+          
+            
+            <img src="../_static/psygig-logo-white-text.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">概要</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../supported-platforms.html">サポートされているプラットフォーム/アーキテクチャ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../third-party-integration.html">サードパーテイインテグレーション</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../change-log.html">変更ログ</a></li>
+</ul>
+<p class="caption"><span class="caption-text">使用方法</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">ダウンロード/インストール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started.html">入門</a></li>
+</ul>
+<p class="caption"><span class="caption-text">フィーチャー</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../application-performance-profiling.html">アプリケーションパフォーマンスプロファイリング</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../crash-reporting.html">クラッシュレポート</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../log-collection.html">ログ収集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../metrics-collection.html">メトリック収集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system-information.html">システム情報</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../event-reporting.html">イベント報告</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../benchmark-testing.html">ベンチマークテスト</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../diagnostic-testing.html">診断テスト</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../video-streaming.html">ビデオストリーミング</a></li>
+</ul>
+<p class="caption"><span class="caption-text">PSYGIG Mobility IoT SDK参照</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../psymon-man.html"><code class="docutils literal notranslate"><span class="pre">psymon</span></code> のマニュアルページ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../psybench-man.html"><code class="docutils literal notranslate"><span class="pre">psybench</span></code> のマニュアルページ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../psydiag-man.html"><code class="docutils literal notranslate"><span class="pre">psydiag</span></code> のマニュアルページ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">C/C++ SDK API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sample-output.html">出力例</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PSYGIG Mobility IoT SDK</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">C/C++ SDK API Reference</a> &raquo;</li>
+        
+      <li>Struct _psyiage_sysinfo</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="struct-psyiage-sysinfo">
+<span id="exhale-struct-struct-psyiage-sysinfo"></span><h1>Struct _psyiage_sysinfo<a class="headerlink" href="#struct-psyiage-sysinfo" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_include_psyiage_psyiagesdk.h.html#file-include-psyiage-psyiagesdk-h"><span class="std std-ref">File psyiagesdk.h</span></a></p></li>
+</ul>
+<div class="section" id="struct-documentation">
+<h2>Struct Documentation<a class="headerlink" href="#struct-documentation" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<dl class="class">
+<dt id="_CPPv416_psyiage_sysinfo">
+<span id="_CPPv316_psyiage_sysinfo"></span><span id="_CPPv216_psyiage_sysinfo"></span><span id="_psyiage_sysinfo"></span><span class="target" id="struct__psyiage__sysinfo"></span><em class="property">struct </em><code class="sig-name descname">_psyiage_sysinfo</code><a class="headerlink" href="#_CPPv416_psyiage_sysinfo" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd><p>System Information Details describing the underlying hardware &amp; software subsystem. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv4N16_psyiage_sysinfo6uptimeE">
+<span id="_CPPv3N16_psyiage_sysinfo6uptimeE"></span><span id="_CPPv2N16_psyiage_sysinfo6uptimeE"></span><span id="_psyiage_sysinfo::uptime__l"></span><span class="target" id="struct__psyiage__sysinfo_1a27fac7e16a0ab8496f49f63030847f50"></span>long <code class="sig-name descname">uptime</code><a class="headerlink" href="#_CPPv4N16_psyiage_sysinfo6uptimeE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd><p>Time elapsed since the system booted in seconds. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N16_psyiage_sysinfo7cpuinfoE">
+<span id="_CPPv3N16_psyiage_sysinfo7cpuinfoE"></span><span id="_CPPv2N16_psyiage_sysinfo7cpuinfoE"></span><span id="_psyiage_sysinfo::cpuinfo__psyiage_cpuinfo"></span><span class="target" id="struct__psyiage__sysinfo_1ae25cde6507170270f8e494108b0cee62"></span><a class="reference internal" href="typedef_group__sysinfo_1ga73a9c407ebaca5cdab83dbc11f01d3ef.html#_CPPv415psyiage_cpuinfo" title="psyiage_cpuinfo">psyiage_cpuinfo</a> <code class="sig-name descname">cpuinfo</code><a class="headerlink" href="#_CPPv4N16_psyiage_sysinfo7cpuinfoE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd><p>CPU information. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N16_psyiage_sysinfo7meminfoE">
+<span id="_CPPv3N16_psyiage_sysinfo7meminfoE"></span><span id="_CPPv2N16_psyiage_sysinfo7meminfoE"></span><span id="_psyiage_sysinfo::meminfo__psyiage_meminfo"></span><span class="target" id="struct__psyiage__sysinfo_1a04c1c8b8784aa3f4b8fa532e5ede7850"></span><a class="reference internal" href="typedef_group__sysinfo_1ga291ded934cd9cff52388819b63e0bc47.html#_CPPv415psyiage_meminfo" title="psyiage_meminfo">psyiage_meminfo</a> <code class="sig-name descname">meminfo</code><a class="headerlink" href="#_CPPv4N16_psyiage_sysinfo7meminfoE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd><p>Memory information. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N16_psyiage_sysinfo6fsinfoE">
+<span id="_CPPv3N16_psyiage_sysinfo6fsinfoE"></span><span id="_CPPv2N16_psyiage_sysinfo6fsinfoE"></span><span id="_psyiage_sysinfo::fsinfo__psyiage_fsinfo"></span><span class="target" id="struct__psyiage__sysinfo_1a0674555e4347685b3b0381d1e08dc456"></span><a class="reference internal" href="typedef_group__sysinfo_1gaff2e794d5ec36561f8c067fb486903bb.html#_CPPv414psyiage_fsinfo" title="psyiage_fsinfo">psyiage_fsinfo</a> <code class="sig-name descname">fsinfo</code><a class="headerlink" href="#_CPPv4N16_psyiage_sysinfo6fsinfoE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd><p>File system information. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N16_psyiage_sysinfo6osinfoE">
+<span id="_CPPv3N16_psyiage_sysinfo6osinfoE"></span><span id="_CPPv2N16_psyiage_sysinfo6osinfoE"></span><span id="_psyiage_sysinfo::osinfo__psyiage_osinfo"></span><span class="target" id="struct__psyiage__sysinfo_1abdd23f71611380a6105d8b06d39c7f58"></span><a class="reference internal" href="typedef_group__sysinfo_1ga4d483955cbe645e631d66a0905bd6ddd.html#_CPPv414psyiage_osinfo" title="psyiage_osinfo">psyiage_osinfo</a> <code class="sig-name descname">osinfo</code><a class="headerlink" href="#_CPPv4N16_psyiage_sysinfo6osinfoE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd><p>Operating system information. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N16_psyiage_sysinfo7usbinfoE">
+<span id="_CPPv3N16_psyiage_sysinfo7usbinfoE"></span><span id="_CPPv2N16_psyiage_sysinfo7usbinfoE"></span><span id="_psyiage_sysinfo::usbinfo__psyiage_usbinfo"></span><span class="target" id="struct__psyiage__sysinfo_1a0a998dccfde1831f5de66e714628c70f"></span><a class="reference internal" href="typedef_group__sysinfo_1ga87cdb6c2ddc997b0a3de8b8d2609efc1.html#_CPPv415psyiage_usbinfo" title="psyiage_usbinfo">psyiage_usbinfo</a> <code class="sig-name descname">usbinfo</code><a class="headerlink" href="#_CPPv4N16_psyiage_sysinfo7usbinfoE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd><p>USB devices information. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N16_psyiage_sysinfo8diskinfoE">
+<span id="_CPPv3N16_psyiage_sysinfo8diskinfoE"></span><span id="_CPPv2N16_psyiage_sysinfo8diskinfoE"></span><span id="_psyiage_sysinfo::diskinfo__psyiage_diskinfo"></span><span class="target" id="struct__psyiage__sysinfo_1a0e09c3e4844826ad383c948ff5071011"></span><a class="reference internal" href="typedef_group__sysinfo_1gaf42431ed915b3f35a95816a7e5f5e437.html#_CPPv416psyiage_diskinfo" title="psyiage_diskinfo">psyiage_diskinfo</a> <code class="sig-name descname">diskinfo</code><a class="headerlink" href="#_CPPv4N16_psyiage_sysinfo8diskinfoE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd><p>Storage devices information. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N16_psyiage_sysinfo7netinfoE">
+<span id="_CPPv3N16_psyiage_sysinfo7netinfoE"></span><span id="_CPPv2N16_psyiage_sysinfo7netinfoE"></span><span id="_psyiage_sysinfo::netinfo__psyiage_netinfo"></span><span class="target" id="struct__psyiage__sysinfo_1a985a24d3b5b48aa15b7057786f3c7c09"></span><a class="reference internal" href="typedef_group__sysinfo_1ga5d799ce23fcd267dd59d4f9782376f84.html#_CPPv415psyiage_netinfo" title="psyiage_netinfo">psyiage_netinfo</a> <code class="sig-name descname">netinfo</code><a class="headerlink" href="#_CPPv4N16_psyiage_sysinfo7netinfoE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd><p>Network devices information. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N16_psyiage_sysinfo7pciinfoE">
+<span id="_CPPv3N16_psyiage_sysinfo7pciinfoE"></span><span id="_CPPv2N16_psyiage_sysinfo7pciinfoE"></span><span id="_psyiage_sysinfo::pciinfo__psyiage_pciinfo"></span><span class="target" id="struct__psyiage__sysinfo_1a2de47809412688895b3d33077871b1d4"></span><a class="reference internal" href="typedef_group__sysinfo_1ga07334784a527ae69fb98d80f00e33658.html#_CPPv415psyiage_pciinfo" title="psyiage_pciinfo">psyiage_pciinfo</a> <code class="sig-name descname">pciinfo</code><a class="headerlink" href="#_CPPv4N16_psyiage_sysinfo7pciinfoE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dd><p>PCI devices information. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="struct__psyiage__usbinfo.html" class="btn btn-neutral float-right" title="Struct _psyiage_usbinfo" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="struct__psyiage__sink__udp__cfg.html" class="btn btn-neutral float-left" title="Struct _psyiage_sink_udp_cfg" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020 PSYGIG株式会社
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

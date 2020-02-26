@@ -1,0 +1,13 @@
+.. _exhale_function_group__benchmark_1ga78a2c0ca88cfe4a8131009e2c8ad58bc:
+
+Function psyiage_benchmark_run
+==============================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: psyiage_benchmark_run(psyiage_handle, psyiage_benchmark_type, float *)

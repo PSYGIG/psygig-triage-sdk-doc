@@ -1,31 +1,29 @@
 Download & Installation
 =======================
 
-SDK Download
-------------
-Download the most up-to-date `PSYGIG Triage SDK` from the `releases page <https://psygig.com>`_.
-
-.. note::
-    Ensure that you download the correct release for your platform architecture (eg. x86_64, armhf, aarch64).
-
 .. _install-sdk:
 
-Installing the SDK
-------------------
+[Option 1] Install SDK via ``apt-get``
+---------------------------------------
 
-Installing .deb file via ``dpkg``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Run the following command to install the .deb package using dpkg:
+Run the following command to download and install the SDK using ``apt-get``:
 
 .. code-block:: bash
 
-    sudo dpkg -i psyiage-VERSION-ARCH.deb
+    echo "deb https://psygig.bintray.com/deb {distribution} main" | sudo tee -a /etc/apt/sources.list
+    sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 379CE192D401AB61
+    sudo apt-get update
+    sudo apt-get install psyiage
+    
+:sub:`where {distribution} is the operating system distribution (eg. xenial for Ubuntu 16.04)`
 
-:sub:`where VERSION is the SDK version and ARCH is the platform architecture`
+[Option 2] Install SDK tar.gz release 
+--------------------------------------
 
-Installing .tar.gz file via ``tar``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Download the most up-to-date `PSYGIG Mobility IoT SDK <https://bintray.com/psygig/PSYGIG/psyiage>`_ tar.gz release.
+
+.. note::
+    Ensure that you download the correct release for your platform architecture (eg. x86_64, armhf, aarch64).
 
 Extract the SDK to the desired location (eg. ``/opt``) using the ``tar`` command:
 
@@ -44,4 +42,4 @@ Extract the SDK to the desired location (eg. ``/opt``) using the ``tar`` command
     sudo ln -fs /opt/psygig/psyiage/lib/* /usr/local/lib
     sudo ldconfig
 
-That's it! Now head to :doc:`getting-started` to start instrumenting your application.
+That's it! Now head to :doc:`getting-started` to start developing your IoT applications.

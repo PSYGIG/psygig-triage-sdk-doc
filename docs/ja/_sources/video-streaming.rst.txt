@@ -1,0 +1,53 @@
+ビデオストリーミング
+================================
+Many IoT devices include a camera sensor for obtaining visual data of its operating environment.  
+These systems rely on image data captured from the camera as part of its core operation.
+Having access to the live video stream would allow the device to be monitored from a remote location.
+
+`PSYGIG Mobility IoT SDK` abstracts the complexity of streaming live, low-latency video with built-in tools and libraries.
+
+The SDK includes many features suitable for integration into embedded systems:
+
+- Works on existing applications; `no need to recompile source code`
+- :doc:`Multiplatform support <supported-platforms>`
+- Supports latest low-latency video streaming technologies (eg. WebRTC, CMAF-based HLS/DASH, SRT)
+- Automatically collect video diagnostic data (eg. packet loss, end-to-end latency, jitter)
+
+``psymon`` の使用
+--------------------------------
+With a simple command, low-latency video can be streamed live directly from a camera using the ``angelo`` command line tool.
+
+.. code-block:: bash
+
+   angelo live
+
+See :doc:`angelo-man` for a complete list of options.
+
+C/C++ SDK APIの使用
+------------------------------------------------------
+The Video Streaming API can be accessed by including a :doc:`single header file <../api/file_include_psyiage_psyiagesdk.h>`
+and linking the ``libpsyiage`` shared library. See :ref:`libpsyiage-linking` for details.
+
+Stream video to multiple peers via WebRTC
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: c
+    :linenos:
+
+    #include <psyiage/psyiagesdk.h>
+
+    int main(int argc, char **argv)
+    {
+        psyiage_handle     pah;  // handle to psyiage instance
+
+        /* ... Initialize code omitted for simplicity ... */
+
+        // Configure video streaming parameters
+        vidcfg.viddev = "/dev/video0";
+        vidcfg.server = "ws://webrtc.psygig.com";
+
+        // Start video streaming
+        rc = psyiage_video_stream_start(pah, &vidcfg);
+
+        /* ... Cleanup code omitted for simplicity ... */
+    }

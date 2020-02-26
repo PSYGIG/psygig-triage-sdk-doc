@@ -1,0 +1,13 @@
+.. _exhale_function_group__event_1ga88fa290d48b65043113cadec8dfc03b0:
+
+Function psyiage_event_import_file
+==================================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: psyiage_event_import_file(psyiage_handle, char *)

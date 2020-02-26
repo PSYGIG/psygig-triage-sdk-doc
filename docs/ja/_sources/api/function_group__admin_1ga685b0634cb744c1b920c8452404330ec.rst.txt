@@ -1,0 +1,13 @@
+.. _exhale_function_group__admin_1ga685b0634cb744c1b920c8452404330ec:
+
+Function psyiage_start_session
+==============================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: psyiage_start_session(psyiage_handle, char *)

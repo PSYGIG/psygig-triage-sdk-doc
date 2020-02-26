@@ -1,0 +1,30 @@
+変更ログ
+==============
+
+``v0.4.0（初一般公開）``
+--------------------------------------------
+
+.. code-block:: none
+
+    • psymon script for automatic instrumentation of any executable binary
+    • Application performance profiling API
+        • Collecting CPU profiling samples and exporting to JSON
+    • System information API
+    • Log collection API
+        • Monitoring log files for new entries
+    • Crash reporting API
+        • Handle fatal signals and capture stack trace + loaded modules
+        • Install core dump handler
+    • Metrics collection API
+        • Collect any arbitrary numeric metric values
+        • Enable automatic collection of system metrics
+    • Events reporting API
+    • Sink framework for pushing instrumentation data to any storage/analytics platform 
+        • Disk
+        • File stream (stdout, stderr, etc)
+        • HTTP 
+        • MQTT
+    • Support architectures
+        • x86_64
+        • armhf
+        • aarch64

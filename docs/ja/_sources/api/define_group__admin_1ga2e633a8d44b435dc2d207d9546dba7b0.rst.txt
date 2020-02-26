@@ -1,0 +1,13 @@
+.. _exhale_define_group__admin_1ga2e633a8d44b435dc2d207d9546dba7b0:
+
+Define PSYGIGAPI_V1
+===================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: PSYGIGAPI_V1

@@ -1,0 +1,615 @@
+クラッシュレポート
+==============================
+多くのソフトウェア開発チームは、欠陥のないソフトウェアシステムを構築し、ソフトウェアの品質保証やコード分析ツールに膨大なリソースを費やして、ソフトウェア障害が発生しないように
+取り組んでいます。しかし、実際には、ソフトウェア障害が発生し、最終的にアプリケーションがクラッシュします。
+
+失敗の原因を特定するには、クラッシュ時のアプリケーションの状態に対して事後分析を実行する必要があります。このようなデータには、スタックトレース、メモリダンプ、および障害発生時の
+レジスタの内容が含まれます。これらは、クラッシュが発生したソースファイル内の正確な行を識別するために使用できます。
+
+`PSYGIG Mobility IoT SDK` は、クラッシュレポート機能をアプリケーションに拡張し、障害発生時のデータを収集します。クラッシュレポートAPIには、組み込みシステムへの統合に適した多くの
+機能が含まれます：
+
+* アプリケーションで動作でき、 `ソースコードを再コンパイルする必要はありません`
+* :doc:`マルチプラットフォームサポート <supported-platforms>`
+* :ref:`サードパーティクラッシュ報告プラットフォーム <crash-third-party>` とのシームレスな統合
+* クラッシュレポート用のプロセススナップショットダンプを生成し、下記も含みます：
+
+    - プロセス環境 - `コマンドラインと環境変数を含む`
+    - スレッドの状態 - `レジスタの内容とスタックメモリを含む`
+    - ロードされたモジュール - `共有ライブラリやメモリマップファイルなど`
+    - プロセスメモリ空間内のセクションのメモリダンプ
+* ソースファイルと行番号を含むスタックトレースをを収集
+* プログラム状態を保存するための小さな実行フットプリント
+* クラッシュレポートにユーザー定義のアプリケーション固有のメタデータを追加する
+* クラッシュレポートをさまざまなファイル形式（JSON、CSV、HTMLなど）にエクスポートする
+
+``psymon`` の使用
+--------------------------------
+ソースコードを修正しなくても、 ``psymon`` スクリプトを使用してプログラムを実行することで、アプリケーションへのクラッシュレポートを即座に有効にできます。例：
+
+.. code-block:: bash
+
+   psymon --crash "/path/to/your/app --arg1 --arg2 --arg3"
+
+オプションリストは :doc:`psymon-manページ <psymon-man>` を参考ください。
+
+C/C++ SDK APIの使用
+------------------------------------------------------
+クラッシュレポートAPIは、 :doc:`単一のヘッダファイル <../api/file_include_psyiage_psyiagesdk.h>` をインクルードし、 ``libpsyiage`` 共有ライブラリを
+リンクすることによってアクセスできます。詳細については、 :ref:`libpsyiage-linking` を参照ください。
+
+致命的なシグナルに関するクラッシュレポートを生成します（例：SIGSEGV、SIGKILL）
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: c
+    :linenos:
+
+    #include <psyiage/psyiagesdk.h>
+
+    int main(int argc, char **argv)
+    {
+        psyiage_handle     pah;  // handle to psyiage instance
+
+        /* ... Initialize code omitted for simplicity ... */
+
+        // Install fatal signal handler
+        rc = psyiage_crash_enable_report_on_fatal_signal(pah, 1);
+
+        /* ... Cleanup code omitted for simplicity ... */
+    }
+
+コアダンプ中にクラッシュレポートを生成する 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: c
+    :linenos:
+
+    #include <psyiage/psyiagesdk.h>
+
+    int main(int argc, char **argv)
+    {
+        psyiage_handle     pah;  // handle to psyiage instance
+
+        /* ... Initialize code omitted for simplicity ... */
+
+        // Install binary that runs on core dump generation
+        rc = psyiage_crash_install_core_dump_handler(pah);
+
+        /* ... Cleanup code omitted for simplicity ... */
+    }
+
+要求に応じてクラッシュレポートを生成する
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. note::
+    `オンデマンドでクラッシュレポートを生成する` 機能は進行中の作業です。この機能をベータテストすることに興味がある方は、　`連絡 <mailto:info@psygig.com>`_　ください。
+
+.. code-block:: c
+    :linenos:
+
+    #include <psyiage/psyiagesdk.h>
+
+    int main(int argc, char **argv)
+    {
+        psyiage_handle     pah;  // handle to psyiage instance
+
+        /* ... Initialize code omitted for simplicity ... */
+
+        // Install binary that runs on core dump generation
+        rc = psyiage_crash_capture_process_snapshot(pah);
+
+        /* ... Cleanup code omitted for simplicity ... */
+    }
+
+サンプルJSONクラッシュレポート
+----------------------------------------------------
+
+.. code-block:: javascript
+
+    {
+      "TaskInfo": {
+        "ProcID": 35392,
+        "UserID": 1000,
+        "GroupID": 1000,
+        "Cmdline": "./crash_report",
+        "Name": "crash_report",
+        "Signal": 11
+      },
+      "CrashInfo": {
+        "ThreadId": 35392,
+        "Exception": "Segmentation fault",
+        "StackTrace": {
+          "Frames": [
+            {
+            "FrameNum": 0,
+            "InstrAddr": "0x00000000004008d6",
+            "FilePath": "./crash_report",
+            "Function": "crash",
+            "Offset": "0x10",
+            "Registers": {
+            "rax": "0x0000000000000000",
+            "rbx": "0x0000000000000000",
+            "rcx": "0x00007f698ce7e2c0",
+            "rdx": "0x00007f698d14d780",
+            "rsi": "0x0000000002229010",
+            "rdi": "0x0000000000000001",
+            "rbp": "0x00007ffcafcc0b90",
+            "rsp": "0x00007ffcafcc0b90",
+            "rip": "0x00000000004008d6",
+            "r8": "0x2e2e2e676e697473",
+            "r9": "0x6166206e6f697461",
+            "r10": "0x20726f6620746c75",
+            "r11": "0x0000000000000246",
+            "r12": "0x00000000004007d0",
+            "r13": "0x00007ffcafcc0cf0",
+            "r14": "0x0000000000000000",
+            "r15": "0x0000000000000000"
+            },
+            },
+            {
+            "FrameNum": 1,
+            "InstrAddr": "0x00000000004008ee",
+            "FilePath": "./crash_report",
+            "Function": "foo4",
+            "Offset": "0xe",
+            "Registers": {
+            "rax": "0x0000000000000000",
+            "rbx": "0x0000000000000000",
+            "rcx": "0x00007f698ce7e2c0",
+            "rdx": "0x00007f698d14d780",
+            "rsi": "0x0000000002229010",
+            "rdi": "0x0000000000000001",
+            "rbp": "0x00007ffcafcc0ba0",
+            "rsp": "0x00007ffcafcc0ba0",
+            "rip": "0x00000000004008ee",
+            "r8": "0x2e2e2e676e697473",
+            "r9": "0x6166206e6f697461",
+            "r10": "0x20726f6620746c75",
+            "r11": "0x0000000000000246",
+            "r12": "0x00000000004007d0",
+            "r13": "0x00007ffcafcc0cf0",
+            "r14": "0x0000000000000000",
+            "r15": "0x0000000000000000"
+            },
+            },
+            {
+            "FrameNum": 2,
+            "InstrAddr": "0x0000000000400903",
+            "FilePath": "./crash_report",
+            "Function": "foo3",
+            "Offset": "0xe",
+            "Registers": {
+            "rax": "0x0000000000000000",
+            "rbx": "0x0000000000000000",
+            "rcx": "0x00007f698ce7e2c0",
+            "rdx": "0x00007f698d14d780",
+            "rsi": "0x0000000002229010",
+            "rdi": "0x0000000000000001",
+            "rbp": "0x00007ffcafcc0bb0",
+            "rsp": "0x00007ffcafcc0bb0",
+            "rip": "0x0000000000400903",
+            "r8": "0x2e2e2e676e697473",
+            "r9": "0x6166206e6f697461",
+            "r10": "0x20726f6620746c75",
+            "r11": "0x0000000000000246",
+            "r12": "0x00000000004007d0",
+            "r13": "0x00007ffcafcc0cf0",
+            "r14": "0x0000000000000000",
+            "r15": "0x0000000000000000"
+            },
+            },
+            {
+            "FrameNum": 3,
+            "InstrAddr": "0x0000000000400918",
+            "FilePath": "./crash_report",
+            "Function": "foo2",
+            "Offset": "0xe",
+            "Registers": {
+            "rax": "0x0000000000000000",
+            "rbx": "0x0000000000000000",
+            "rcx": "0x00007f698ce7e2c0",
+            "rdx": "0x00007f698d14d780",
+            "rsi": "0x0000000002229010",
+            "rdi": "0x0000000000000001",
+            "rbp": "0x00007ffcafcc0bc0",
+            "rsp": "0x00007ffcafcc0bc0",
+            "rip": "0x0000000000400918",
+            "r8": "0x2e2e2e676e697473",
+            "r9": "0x6166206e6f697461",
+            "r10": "0x20726f6620746c75",
+            "r11": "0x0000000000000246",
+            "r12": "0x00000000004007d0",
+            "r13": "0x00007ffcafcc0cf0",
+            "r14": "0x0000000000000000",
+            "r15": "0x0000000000000000"
+            },
+            },
+            {
+            "FrameNum": 4,
+            "InstrAddr": "0x000000000040092d",
+            "FilePath": "./crash_report",
+            "Function": "induce_segfault",
+            "Offset": "0xe",
+            "Registers": {
+            "rax": "0x0000000000000000",
+            "rbx": "0x0000000000000000",
+            "rcx": "0x00007f698ce7e2c0",
+            "rdx": "0x00007f698d14d780",
+            "rsi": "0x0000000002229010",
+            "rdi": "0x0000000000000001",
+            "rbp": "0x00007ffcafcc0bd0",
+            "rsp": "0x00007ffcafcc0bd0",
+            "rip": "0x000000000040092d",
+            "r8": "0x2e2e2e676e697473",
+            "r9": "0x6166206e6f697461",
+            "r10": "0x20726f6620746c75",
+            "r11": "0x0000000000000246",
+            "r12": "0x00000000004007d0",
+            "r13": "0x00007ffcafcc0cf0",
+            "r14": "0x0000000000000000",
+            "r15": "0x0000000000000000"
+            },
+            },
+            {
+            "FrameNum": 5,
+            "InstrAddr": "0x0000000000400a01",
+            "FilePath": "./crash_report",
+            "Function": "main",
+            "Offset": "0xcd",
+            "Registers": {
+            "rax": "0x0000000000000000",
+            "rbx": "0x0000000000000000",
+            "rcx": "0x00007f698ce7e2c0",
+            "rdx": "0x00007f698d14d780",
+            "rsi": "0x0000000002229010",
+            "rdi": "0x0000000000000001",
+            "rbp": "0x00007ffcafcc0c10",
+            "rsp": "0x00007ffcafcc0be0",
+            "rip": "0x0000000000400a01",
+            "r8": "0x2e2e2e676e697473",
+            "r9": "0x6166206e6f697461",
+            "r10": "0x20726f6620746c75",
+            "r11": "0x0000000000000246",
+            "r12": "0x00000000004007d0",
+            "r13": "0x00007ffcafcc0cf0",
+            "r14": "0x0000000000000000",
+            "r15": "0x0000000000000000"
+            },
+            },
+            {
+            "FrameNum": 6,
+            "InstrAddr": "0x00007f698cda7830",
+            "FilePath": "/lib/x86_64-linux-gnu/libc.so.6",
+            "Function": "__libc_start_main",
+            "Offset": "0xf0",
+            "Registers": {
+            "rax": "0x0000000000000000",
+            "rbx": "0x0000000000000000",
+            "rcx": "0x00007f698ce7e2c0",
+            "rdx": "0x00007f698d14d780",
+            "rsi": "0x0000000002229010",
+            "rdi": "0x0000000000000001",
+            "rbp": "0x0000000000400a60",
+            "rsp": "0x00007ffcafcc0c20",
+            "rip": "0x00007f698cda7830",
+            "r8": "0x2e2e2e676e697473",
+            "r9": "0x6166206e6f697461",
+            "r10": "0x20726f6620746c75",
+            "r11": "0x0000000000000246",
+            "r12": "0x00000000004007d0",
+            "r13": "0x00007ffcafcc0cf0",
+            "r14": "0x0000000000000000",
+            "r15": "0x0000000000000000"
+            },
+            },
+            {
+            "FrameNum": 7,
+            "InstrAddr": "0x00000000004007f9",
+            "FilePath": "./crash_report",
+            "Function": "_start",
+            "Offset": "0x29",
+            "Registers": {
+            "rax": "0x0000000000000000",
+            "rbx": "0x0000000000000000",
+            "rcx": "0x00007f698ce7e2c0",
+            "rdx": "0x00007f698d14d780",
+            "rsi": "0x0000000002229010",
+            "rdi": "0x0000000000000001",
+            "rbp": "0x0000000000000000",
+            "rsp": "0x00007ffcafcc0ce0",
+            "rip": "0x00000000004007f9",
+            "r8": "0x2e2e2e676e697473",
+            "r9": "0x6166206e6f697461",
+            "r10": "0x20726f6620746c75",
+            "r11": "0x0000000000000246",
+            "r12": "0x00000000004007d0",
+            "r13": "0x00007ffcafcc0cf0",
+            "r14": "0x0000000000000000",
+            "r15": "0x0000000000000000"
+            },
+            },
+          ]
+        },
+      },
+      "MemoryMap": [
+        {
+        "StartAddr": "0x400000",
+        "EndAddr": "0x401000",
+        "Permissions": "r-xp",
+        "FileOffset": "0x0",
+        "Device": "00:32",
+        "Inode": 2087277,
+        "FilePath": "/home/psygig/psygig-sdk-c/build/crash_report"
+        },
+        {
+        "StartAddr": "0x600000",
+        "EndAddr": "0x601000",
+        "Permissions": "r--p",
+        "FileOffset": "0x0",
+        "Device": "00:32",
+        "Inode": 2087277,
+        "FilePath": "/home/psygig/psygig-sdk-c/build/crash_report"
+        },
+        {
+        "StartAddr": "0x601000",
+        "EndAddr": "0x602000",
+        "Permissions": "rw-p",
+        "FileOffset": "0x1000",
+        "Device": "00:32",
+        "Inode": 2087277,
+        "FilePath": "/home/psygig/psygig-sdk-c/build/crash_report"
+        },
+        {
+        "StartAddr": "0x2229000",
+        "EndAddr": "0x224a000",
+        "Permissions": "rw-p",
+        "FileOffset": "0x0",
+        "Device": "00:00",
+        "Inode": 0,
+        "FilePath": "[heap]"
+        },
+        {
+        "StartAddr": "0x7f698c966000",
+        "EndAddr": "0x7f698c969000",
+        "Permissions": "r-xp",
+        "FileOffset": "0x0",
+        "Device": "08:01",
+        "Inode": 1972536,
+        "FilePath": "/lib/x86_64-linux-gnu/libdl-2.23.so"
+        },
+        {
+        "StartAddr": "0x7f698c969000",
+        "EndAddr": "0x7f698cb68000",
+        "Permissions": "---p",
+        "FileOffset": "0x3000",
+        "Device": "08:01",
+        "Inode": 1972536,
+        "FilePath": "/lib/x86_64-linux-gnu/libdl-2.23.so"
+        },
+        {
+        "StartAddr": "0x7f698cb68000",
+        "EndAddr": "0x7f698cb69000",
+        "Permissions": "r--p",
+        "FileOffset": "0x2000",
+        "Device": "08:01",
+        "Inode": 1972536,
+        "FilePath": "/lib/x86_64-linux-gnu/libdl-2.23.so"
+        },
+        {
+        "StartAddr": "0x7f698cb69000",
+        "EndAddr": "0x7f698cb6a000",
+        "Permissions": "rw-p",
+        "FileOffset": "0x3000",
+        "Device": "08:01",
+        "Inode": 1972536,
+        "FilePath": "/lib/x86_64-linux-gnu/libdl-2.23.so"
+        },
+        {
+        "StartAddr": "0x7f698cb6a000",
+        "EndAddr": "0x7f698cb82000",
+        "Permissions": "r-xp",
+        "FileOffset": "0x0",
+        "Device": "08:01",
+        "Inode": 1972533,
+        "FilePath": "/lib/x86_64-linux-gnu/libpthread-2.23.so"
+        },
+        {
+        "StartAddr": "0x7f698cb82000",
+        "EndAddr": "0x7f698cd81000",
+        "Permissions": "---p",
+        "FileOffset": "0x18000",
+        "Device": "08:01",
+        "Inode": 1972533,
+        "FilePath": "/lib/x86_64-linux-gnu/libpthread-2.23.so"
+        },
+        {
+        "StartAddr": "0x7f698cd81000",
+        "EndAddr": "0x7f698cd82000",
+        "Permissions": "r--p",
+        "FileOffset": "0x17000",
+        "Device": "08:01",
+        "Inode": 1972533,
+        "FilePath": "/lib/x86_64-linux-gnu/libpthread-2.23.so"
+        },
+        {
+        "StartAddr": "0x7f698cd82000",
+        "EndAddr": "0x7f698cd83000",
+        "Permissions": "rw-p",
+        "FileOffset": "0x18000",
+        "Device": "08:01",
+        "Inode": 1972533,
+        "FilePath": "/lib/x86_64-linux-gnu/libpthread-2.23.so"
+        },
+        {
+        "StartAddr": "0x7f698cd83000",
+        "EndAddr": "0x7f698cd87000",
+        "Permissions": "rw-p",
+        "FileOffset": "0x0",
+        "Device": "00:00",
+        "Inode": 0,
+        "FilePath": ""
+        },
+        {
+        "StartAddr": "0x7f698cd87000",
+        "EndAddr": "0x7f698cf47000",
+        "Permissions": "r-xp",
+        "FileOffset": "0x0",
+        "Device": "08:01",
+        "Inode": 1972534,
+        "FilePath": "/lib/x86_64-linux-gnu/libc-2.23.so"
+        },
+        {
+        "StartAddr": "0x7f698cf47000",
+        "EndAddr": "0x7f698d147000",
+        "Permissions": "---p",
+        "FileOffset": "0x1c0000",
+        "Device": "08:01",
+        "Inode": 1972534,
+        "FilePath": "/lib/x86_64-linux-gnu/libc-2.23.so"
+        },
+        {
+        "StartAddr": "0x7f698d147000",
+        "EndAddr": "0x7f698d14b000",
+        "Permissions": "r--p",
+        "FileOffset": "0x1c0000",
+        "Device": "08:01",
+        "Inode": 1972534,
+        "FilePath": "/lib/x86_64-linux-gnu/libc-2.23.so"
+        },
+        {
+        "StartAddr": "0x7f698d14b000",
+        "EndAddr": "0x7f698d14d000",
+        "Permissions": "rw-p",
+        "FileOffset": "0x1c4000",
+        "Device": "08:01",
+        "Inode": 1972534,
+        "FilePath": "/lib/x86_64-linux-gnu/libc-2.23.so"
+        },
+        {
+        "StartAddr": "0x7f698d14d000",
+        "EndAddr": "0x7f698d151000",
+        "Permissions": "rw-p",
+        "FileOffset": "0x0",
+        "Device": "00:00",
+        "Inode": 0,
+        "FilePath": ""
+        },
+        {
+        "StartAddr": "0x7f698d151000",
+        "EndAddr": "0x7f698d535000",
+        "Permissions": "r-xp",
+        "FileOffset": "0x0",
+        "Device": "00:32",
+        "Inode": 2057000,
+        "FilePath": "/home/psygig/psygig-sdk-c/build/libpsyiage.so.0.3.0"
+        },
+        {
+        "StartAddr": "0x7f698d535000",
+        "EndAddr": "0x7f698d734000",
+        "Permissions": "---p",
+        "FileOffset": "0x3e4000",
+        "Device": "00:32",
+        "Inode": 2057000,
+        "FilePath": "/home/psygig/psygig-sdk-c/build/libpsyiage.so.0.3.0"
+        },
+        {
+        "StartAddr": "0x7f698d734000",
+        "EndAddr": "0x7f698d767000",
+        "Permissions": "r--p",
+        "FileOffset": "0x3e3000",
+        "Device": "00:32",
+        "Inode": 2057000,
+        "FilePath": "/home/psygig/psygig-sdk-c/build/libpsyiage.so.0.3.0"
+        },
+        {
+        "StartAddr": "0x7f698d767000",
+        "EndAddr": "0x7f698d774000",
+        "Permissions": "rw-p",
+        "FileOffset": "0x416000",
+        "Device": "00:32",
+        "Inode": 2057000,
+        "FilePath": "/home/psygig/psygig-sdk-c/build/libpsyiage.so.0.3.0"
+        },
+        {
+        "StartAddr": "0x7f698d774000",
+        "EndAddr": "0x7f698d829000",
+        "Permissions": "rw-p",
+        "FileOffset": "0x0",
+        "Device": "00:00",
+        "Inode": 0,
+        "FilePath": ""
+        },
+        {
+        "StartAddr": "0x7f698d829000",
+        "EndAddr": "0x7f698d84f000",
+        "Permissions": "r-xp",
+        "FileOffset": "0x0",
+        "Device": "08:01",
+        "Inode": 1972305,
+        "FilePath": "/lib/x86_64-linux-gnu/ld-2.23.so"
+        },
+        {
+        "StartAddr": "0x7f698da28000",
+        "EndAddr": "0x7f698da2c000",
+        "Permissions": "rw-p",
+        "FileOffset": "0x0",
+        "Device": "00:00",
+        "Inode": 0,
+        "FilePath": ""
+        },
+        {
+        "StartAddr": "0x7f698da4b000",
+        "EndAddr": "0x7f698da4e000",
+        "Permissions": "rw-p",
+        "FileOffset": "0x0",
+        "Device": "00:00",
+        "Inode": 0,
+        "FilePath": ""
+        },
+        {
+        "StartAddr": "0x7f698da4e000",
+        "EndAddr": "0x7f698da4f000",
+        "Permissions": "r--p",
+        "FileOffset": "0x25000",
+        "Device": "08:01",
+        "Inode": 1972305,
+        "FilePath": "/lib/x86_64-linux-gnu/ld-2.23.so"
+        },
+        {
+        "StartAddr": "0x7f698da4f000",
+        "EndAddr": "0x7f698da50000",
+        "Permissions": "rw-p",
+        "FileOffset": "0x26000",
+        "Device": "08:01",
+        "Inode": 1972305,
+        "FilePath": "/lib/x86_64-linux-gnu/ld-2.23.so"
+        },
+        {
+        "StartAddr": "0x7f698da50000",
+        "EndAddr": "0x7f698da51000",
+        "Permissions": "rw-p",
+        "FileOffset": "0x0",
+        "Device": "00:00",
+        "Inode": 0,
+        "FilePath": ""
+        },
+        {
+        "StartAddr": "0x7ffcafca1000",
+        "EndAddr": "0x7ffcafcc2000",
+        "Permissions": "rw-p",
+        "FileOffset": "0x0",
+        "Device": "00:00",
+        "Inode": 0,
+        "FilePath": "[stack]"
+        },
+        {
+        "StartAddr": "0x7ffcafd1c000",
+        "EndAddr": "0x7ffcafd1f000",
+        "Permissions": "r--p",
+        "FileOffset": "0x0",
+        "Device": "00:00",
+        "Inode": 0,
+        "FilePath": "[vvar]"
+        },
+      ],
+    }

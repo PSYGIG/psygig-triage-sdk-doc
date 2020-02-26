@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="ja" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="ja" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Full API &mdash; PSYGIG Triage SDK 0.4.0 ドキュメント</title>
+  <title>Full API &mdash; PSYGIG Mobility IoT SDK 0.4.0 documentation</title>
   
 
   
@@ -17,18 +17,27 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
-    <link rel="index" title="索引" href="../genindex.html" />
-    <link rel="search" title="検索" href="../search.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
  
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -40,25 +49,25 @@
     ga('send', 'pageview');
 </script>
 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
+<p>EN | <a href="ja/index.html">JP</a></p>
+
+
+
+
           
-            <a href="../index.html" class="icon icon-home"> PSYGIG Triage SDK
+            <a href="../index.html" class="icon icon-home"> PSYGIG Mobility IoT SDK
           
 
           
@@ -97,7 +106,7 @@
             
               <p class="caption"><span class="caption-text">OVERVIEW</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../supported-platforms.html">Supported Platforms/Architectures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../supported-platforms.html">Supported Platforms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../third-party-integration.html">Third Party Integration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../change-log.html">Change Log</a></li>
 </ul>
@@ -106,24 +115,34 @@
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">Download &amp; Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html">Getting Started</a></li>
 </ul>
-<p class="caption"><span class="caption-text">FEATURES</span></p>
+<p class="caption"><span class="caption-text">DEVICE PROVISIONING</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../software-provisioning.html">Software Provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-marketplace.html">Module Marketplace</a></li>
+</ul>
+<p class="caption"><span class="caption-text">DEVICE MONITORING</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../video-streaming.html">Video Streaming</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../application-performance-profiling.html">Application Performance Profiling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../crash-reporting.html">Crash Reporting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../log-collection.html">Log Collection</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../metrics-collection.html">Metrics Collection</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../system-information.html">System Information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../event-reporting.html">Event Reporting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../benchmark-testing.html">Benchmark Testing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../diagnostic-testing.html">Diagnostic Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system-information.html">System Information</a></li>
 </ul>
-<p class="caption"><span class="caption-text">PSYGIG TRIAGE SDK REFERENCE</span></p>
+<p class="caption"><span class="caption-text">DIAGNOSIS &amp; BENCHMARKS</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../diagnostic-testing.html">Diagnostic Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../benchmark-testing.html">Benchmark Testing</a></li>
+</ul>
+<p class="caption"><span class="caption-text">SDK REFERENCE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../angelo-man.html"><code class="docutils literal notranslate"><span class="pre">angelo</span></code> man page</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../psymon-man.html"><code class="docutils literal notranslate"><span class="pre">psymon</span></code> man page</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../psybench-man.html"><code class="docutils literal notranslate"><span class="pre">psybench</span></code> man page</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../psydiag-man.html"><code class="docutils literal notranslate"><span class="pre">psydiag</span></code> man page</a></li>
-<li class="toctree-l1"><a class="reference internal" href="index.html">PSYGIG Triage SDK API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../sample-output.html">Sample Output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">C/C++ SDK API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sample-output.html">Sample JSON Output</a></li>
 </ul>
 
             
@@ -138,7 +157,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">PSYGIG Triage SDK</a>
+          <a href="../index.html">PSYGIG Mobility IoT SDK</a>
         
       </nav>
 
@@ -187,9 +206,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="full-api">
-<h1>Full API<a class="headerlink" href="#full-api" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<h1>Full API<a class="headerlink" href="#full-api" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="classes-and-structs">
-<h2>Classes and Structs<a class="headerlink" href="#classes-and-structs" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>Classes and Structs<a class="headerlink" href="#classes-and-structs" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="struct__psyiage__cpuinfo.html">Struct _psyiage_cpuinfo</a><ul>
@@ -368,7 +387,7 @@
 </div>
 </div>
 <div class="section" id="enums">
-<h2>Enums<a class="headerlink" href="#enums" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>Enums<a class="headerlink" href="#enums" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="enum_group__admin_1ga06fc87d81c62e9abb8790b6e5713c55b.html">Enum &#64;0</a><ul>
@@ -397,6 +416,14 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="enum_group__diag_1gac770c842f98bec563fe2340bd6e878a8.html">Enum _psyiage_diag_type</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="enum_group__diag_1gac770c842f98bec563fe2340bd6e878a8.html#enum-documentation">Enum Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="enum_group__admin_1gad2b25661e4bfed58ed7cbcc088c5acc6.html">Enum _psyiage_endpoint_type</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enum_group__admin_1gad2b25661e4bfed58ed7cbcc088c5acc6.html#enum-documentation">Enum Documentation</a></li>
 </ul>
 </li>
 </ul>
@@ -451,7 +478,7 @@
 </div>
 </div>
 <div class="section" id="functions">
-<h2>Functions<a class="headerlink" href="#functions" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="function_group__admin_1gaad96d4abcebbafd15c54bbec77fb7afe.html">Function psyiage_add_sink</a><ul>
@@ -566,8 +593,8 @@
 </div>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="function_group__admin_1gab8664018e420c273c2445963406e370a.html">Function psyiage_get_version</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="function_group__admin_1gab8664018e420c273c2445963406e370a.html#function-documentation">Function Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="function_group__admin_1gac2016925a075f7cc3120ac29d2c9b5cd.html">Function psyiage_get_version</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_group__admin_1gac2016925a075f7cc3120ac29d2c9b5cd.html#function-documentation">Function Documentation</a></li>
 </ul>
 </li>
 </ul>
@@ -766,6 +793,14 @@
 </div>
 <div class="toctree-wrapper compound">
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="function_group__video_1gad416dd5fddb70471fc854a15d937741a.html">Function psyiage_video_get_num_streams</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_group__video_1gad416dd5fddb70471fc854a15d937741a.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="function_group__video_1gab44c287691d4b5c9748142bc6baea6aa.html">Function psyiage_video_import</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="function_group__video_1gab44c287691d4b5c9748142bc6baea6aa.html#function-documentation">Function Documentation</a></li>
 </ul>
@@ -774,23 +809,23 @@
 </div>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="function_group__video_1ga7a35f0cbf89fbac1d8277470984700c9.html">Function psyiage_video_stream_start</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="function_group__video_1ga7a35f0cbf89fbac1d8277470984700c9.html#function-documentation">Function Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="function_group__video_1ga055ea4807bfd37d27c48ef6eb120e3c7.html">Function psyiage_video_stream_start</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_group__video_1ga055ea4807bfd37d27c48ef6eb120e3c7.html#function-documentation">Function Documentation</a></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="function_group__video_1ga136c94bc1954b25f3e6d499581cbecd8.html">Function psyiage_video_stream_stop</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="function_group__video_1ga136c94bc1954b25f3e6d499581cbecd8.html#function-documentation">Function Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="function_group__video_1ga18ad0164f5fd9156cd27de98aaa7f296.html">Function psyiage_video_stream_stop</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_group__video_1ga18ad0164f5fd9156cd27de98aaa7f296.html#function-documentation">Function Documentation</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 <div class="section" id="defines">
-<h2>Defines<a class="headerlink" href="#defines" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>Defines<a class="headerlink" href="#defines" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="define_group__sysinfo_1ga036449da4ccac7279fa86d00ca8861d1.html">Define MAX_CACHES</a><ul>
@@ -819,6 +854,14 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="define_group__sysinfo_1gaa5f75fdbcf486cecbce0a63152429c2c.html">Define MAX_NET_INTF</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="define_group__sysinfo_1gaa5f75fdbcf486cecbce0a63152429c2c.html#define-documentation">Define Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="define_group__sysinfo_1ga8c4cfc91d6265f3e5602d5cb1772478d.html">Define MAX_NUM_FS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="define_group__sysinfo_1ga8c4cfc91d6265f3e5602d5cb1772478d.html#define-documentation">Define Documentation</a></li>
 </ul>
 </li>
 </ul>
@@ -855,9 +898,25 @@
 </li>
 </ul>
 </div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="define_group__admin_1ga1f1df1cf12f0602b5790cf7f5d454b9c.html">Define PSYGIGAPI_DEFAULT</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="define_group__admin_1ga1f1df1cf12f0602b5790cf7f5d454b9c.html#define-documentation">Define Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="define_group__admin_1ga2e633a8d44b435dc2d207d9546dba7b0.html">Define PSYGIGAPI_V1</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="define_group__admin_1ga2e633a8d44b435dc2d207d9546dba7b0.html#define-documentation">Define Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
 </div>
 <div class="section" id="typedefs">
-<h2>Typedefs<a class="headerlink" href="#typedefs" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>Typedefs<a class="headerlink" href="#typedefs" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="typedef_group__benchmark_1gaea3c4fa11ac33ff2876572da9697045f.html">Typedef psyiage_benchmark_type</a><ul>
@@ -894,6 +953,14 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="typedef_group__sysinfo_1gaf42431ed915b3f35a95816a7e5f5e437.html">Typedef psyiage_diskinfo</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="typedef_group__sysinfo_1gaf42431ed915b3f35a95816a7e5f5e437.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_group__admin_1ga2c4d4758ecc6d3accf2503b511d05de5.html">Typedef psyiage_endpoint_type</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_group__admin_1ga2c4d4758ecc6d3accf2503b511d05de5.html#typedef-documentation">Typedef Documentation</a></li>
 </ul>
 </li>
 </ul>
@@ -1106,54 +1173,6 @@
 </li>
 </ul>
 </div>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="typedef_group__video_1gaaa0c6b2cc90010654de1ae761138d245.html">Typedef psyiage_video_handle</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="typedef_group__video_1gaaa0c6b2cc90010654de1ae761138d245.html#typedef-documentation">Typedef Documentation</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-<div class="section" id="directories">
-<h2>Directories<a class="headerlink" href="#directories" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="dir_include.html">Directory include</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="dir_include.html#subdirectories">Subdirectories</a></li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="dir_include_psyiage.html">Directory psyiage</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="dir_include_psyiage.html#files">Files</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-<div class="section" id="files">
-<h2>Files<a class="headerlink" href="#files" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="file_include_psyiage_psyiagesdk.h.html">File psyiagesdk.h</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="file_include_psyiage_psyiagesdk.h.html#definition-include-psyiage-psyiagesdk-h">Definition (<code class="docutils literal notranslate"><span class="pre">include/psyiage/psyiagesdk.h</span></code>)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="program_listing_file_include_psyiage_psyiagesdk.h.html">Program Listing for File psyiagesdk.h</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="file_include_psyiage_psyiagesdk.h.html#detailed-description">Detailed Description</a></li>
-<li class="toctree-l2"><a class="reference internal" href="file_include_psyiage_psyiagesdk.h.html#includes">Includes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="file_include_psyiage_psyiagesdk.h.html#classes">Classes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="file_include_psyiage_psyiagesdk.h.html#enums">Enums</a></li>
-<li class="toctree-l2"><a class="reference internal" href="file_include_psyiage_psyiagesdk.h.html#functions">Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="file_include_psyiage_psyiagesdk.h.html#defines">Defines</a></li>
-<li class="toctree-l2"><a class="reference internal" href="file_include_psyiage_psyiagesdk.h.html#typedefs">Typedefs</a></li>
-</ul>
-</li>
-</ul>
-</div>
 </div>
 </div>
 
@@ -1168,7 +1187,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019 PSYGIG株式会社
+        &copy; Copyright 2020 PSYGIG株式会社
 
     </p>
   </div>
@@ -1185,29 +1204,16 @@
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/translations.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/javascript" src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
-        <script type="text/javascript" src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

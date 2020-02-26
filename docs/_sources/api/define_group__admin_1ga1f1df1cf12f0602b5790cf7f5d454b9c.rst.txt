@@ -1,0 +1,13 @@
+.. _exhale_define_group__admin_1ga1f1df1cf12f0602b5790cf7f5d454b9c:
+
+Define PSYGIGAPI_DEFAULT
+========================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: PSYGIGAPI_DEFAULT

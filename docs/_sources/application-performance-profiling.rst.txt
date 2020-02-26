@@ -8,7 +8,7 @@ performance issues may not result in obvious failures like system crashes or inc
 In order to diagnose performance issues, an instrumentation tool called the `profiler` is used to sample the execution state of the program at regular intervals.
 By analyzing the profile data, the overconsumption of CPU/memory resources can be isolated to the offending source code file and function.
 
-`PSYGIG Triage SDK` provides instrumentation tools to identify hotspots in the program code where overall performance may be affected.
+`PSYGIG Mobility IoT SDK` provides instrumentation tools to identify hotspots in the program code where overall performance may be affected.
 The Application Performance Profiling API includes many features suitable for integration into embedded systems:
 
 - Works on existing applications; `no need to recompile source code`
@@ -30,7 +30,7 @@ to your application by using the ``psymon`` script to run your program. For exam
 
 See :doc:`psymon-man` for a complete list of options.
 
-Using PSYGIG Triage SDK API
+Using C/C++ SDK API
 ---------------------------
 The Application Performance Profiling API can be accessed by including a :doc:`single header file <api/file_include_psyiage_psyiagesdk.h>`
 and linking the ``libpsyiage`` shared library. See :ref:`libpsyiage-linking` for details.
@@ -65,7 +65,7 @@ Generate memory usage snapshot
 
 .. note::
     `Generate memory usage snapshot` is a work-in-progress. 
-    Please :email:`contact us <info@psygig.com?subject=[PSYGIG Triage SDK] Generate memory usage snapshot>` if you are interested in beta-testing this feature. 
+    Please `contact us <mailto:info@psygig.com>`_ if you are interested in beta-testing this feature. 
 
 .. code-block:: c
     :linenos:

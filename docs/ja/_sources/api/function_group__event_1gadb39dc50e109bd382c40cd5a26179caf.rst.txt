@@ -1,0 +1,13 @@
+.. _exhale_function_group__event_1gadb39dc50e109bd382c40cd5a26179caf:
+
+Function psyiage_event_report
+=============================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: psyiage_event_report(psyiage_handle, psyiage_event_level, char *, int, const char *)

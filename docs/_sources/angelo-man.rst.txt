@@ -1,0 +1,46 @@
+``angelo`` man page
+===================
+``angelo`` is a multiplatform device management tool for provisioning, monitoring and diagnosing embedded and cloud-enabled IoT devices.
+With a single command, any device can be provisioned and monitored as specified by the configuration file.
+
+``angelo`` enables software provisioning by managing the software binaries and configurations to be executed on the device. 
+Once the device is in operation, ``angelo`` provides real-time monitoring of device health, including system resource metrics, logs, and events.
+
+.. code-block:: bash
+
+    Configure and run applications with Angelo.
+
+    Usage:
+      angelo [-f <arg>...] [options] [COMMAND] [ARGS...]
+      angelo -h|--help
+
+    Options:
+      -f, --file FILE             Specify an alternate angelo file
+                                  (default: angelo.yml)
+      --verbose                   Show more output
+      --log-level LEVEL           Set log level (DEBUG, INFO, WARNING, ERROR, CRITICAL)
+      -v, --version               Print version and exit
+      --root-directory PATH       Specify an alternate working directory
+                                  (default: the path of the Angelo file)
+
+    Commands:
+      config             Validate and view the Angelo file
+      register           Register device on the PSYGIG platform
+      up                 Start services
+      down               Stop services
+      start              Start all processes (services, MQTT client, webserver)
+      stop               Stop all processes
+      reload             Reload a new config file and start services
+      restart            Restart services
+      help               Get help on a command
+      kill               Kill services
+      logs               View output from services
+      ps                 List services
+      top                Display the running services
+      live               Send live video stream from device to server
+      offline            Stop the live video stream from the device to server
+      broadcast          Broadcast video stream from device to all clients connected to server
+      version            Show the Angelo version information
+      install            Install module for custom video and data processing
+      run                Run the module already installed with angelo
+      publish            Publish your module to the PSYGIG platform

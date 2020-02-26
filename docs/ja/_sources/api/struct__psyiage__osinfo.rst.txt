@@ -1,0 +1,16 @@
+.. _exhale_struct_struct__psyiage__osinfo:
+
+Struct _psyiage_osinfo
+======================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: _psyiage_osinfo
+   :members:
+   :protected-members:
+   :undoc-members:

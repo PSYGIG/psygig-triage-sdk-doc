@@ -1,0 +1,13 @@
+.. _exhale_function_group__profile_1gab3bd7bfd5de5b5af79231e51d25f5744:
+
+Function psyiage_profile_enable_profiling
+=========================================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: psyiage_profile_enable_profiling(psyiage_handle, int)

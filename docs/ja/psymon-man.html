@@ -1,0 +1,303 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ja" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>psymon のマニュアルページ &mdash; PSYGIG Mobility IoT SDK 0.4.0 ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
+        <script type="text/javascript" src="_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script type="text/javascript" src="_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="psybench のマニュアルページ" href="psybench-man.html" />
+    <link rel="prev" title="ビデオストリーミング" href="video-streaming.html" />
+ 
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-91451950-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+<p><a href="../index.html">EN</a> | JP</p>
+
+
+
+
+          
+            <a href="index.html" class="icon icon-home"> PSYGIG Mobility IoT SDK
+          
+
+          
+            
+            <img src="_static/psygig-logo-white-text.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">概要</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="supported-platforms.html">サポートされているプラットフォーム/アーキテクチャ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="third-party-integration.html">サードパーテイインテグレーション</a></li>
+<li class="toctree-l1"><a class="reference internal" href="change-log.html">変更ログ</a></li>
+</ul>
+<p class="caption"><span class="caption-text">使用方法</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">ダウンロード/インストール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">入門</a></li>
+</ul>
+<p class="caption"><span class="caption-text">フィーチャー</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="application-performance-profiling.html">アプリケーションパフォーマンスプロファイリング</a></li>
+<li class="toctree-l1"><a class="reference internal" href="crash-reporting.html">クラッシュレポート</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-collection.html">ログ収集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metrics-collection.html">メトリック収集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="system-information.html">システム情報</a></li>
+<li class="toctree-l1"><a class="reference internal" href="event-reporting.html">イベント報告</a></li>
+<li class="toctree-l1"><a class="reference internal" href="benchmark-testing.html">ベンチマークテスト</a></li>
+<li class="toctree-l1"><a class="reference internal" href="diagnostic-testing.html">診断テスト</a></li>
+<li class="toctree-l1"><a class="reference internal" href="video-streaming.html">ビデオストリーミング</a></li>
+</ul>
+<p class="caption"><span class="caption-text">PSYGIG Mobility IoT SDK参照</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">psymon</span></code> のマニュアルページ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="psybench-man.html"><code class="docutils literal notranslate"><span class="pre">psybench</span></code> のマニュアルページ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="psydiag-man.html"><code class="docutils literal notranslate"><span class="pre">psydiag</span></code> のマニュアルページ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/index.html">C/C++ SDK API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sample-output.html">出力例</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PSYGIG Mobility IoT SDK</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li><code class="docutils literal notranslate"><span class="pre">psymon</span></code> のマニュアルページ</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="psymon">
+<h1><code class="docutils literal notranslate"><span class="pre">psymon</span></code> のマニュアルページ<a class="headerlink" href="#psymon" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">psymon</span></code> は、ソースコードを変更したり再コンパイルしたりせずに、psyiageの診断機能とパフォーマンス機能を使用して任意のコマンドの実行を自動的に計測します。たとえば、CPUプロファイル、
+システムメトリック、クラッシュ、およびログデータは、 <code class="docutils literal notranslate"><span class="pre">psymon</span></code> スクリプトを使用して実行可能ファイルを実行するだけで自動的に収集できます。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>On-demand diagnostic and performance instrumentation of any arbitrary <span class="nb">command</span>
+
+Usage:
+  psymon <span class="o">[</span>instrumentation-options<span class="o">]</span> <span class="o">[</span>output-options<span class="o">]</span> <span class="s2">&quot;&lt;command+arguments&gt;&quot;</span>
+
+Example:
+  psymon --logs --metrics --profile cpu -o json <span class="s2">&quot;/path/to/your/app --arg1 --arg2 --arg3&quot;</span>
+
+psymon automatically instruments the execution of any arbitrary <span class="nb">command</span> <span class="o">(</span>and arguments<span class="o">)</span>
+with psyiage diagnostic and performance capabilities without any <span class="nb">source</span> code changes
+or recompilation.
+
+The collected instrumentation data can be exported or streamed to a number of supported
+output plugins <span class="o">(</span>eg. json, csv, text, mqtt, http<span class="o">)</span>
+
+Options: Informational
+  -V, --version           Print version information.
+  -h, --help              Print help.
+
+Options: instrumentation
+  --logs <span class="o">[</span>options<span class="o">]</span>        Enable collection and monitoring of known log files <span class="o">(</span>system<span class="o">)</span> <span class="o">[</span>Default: system<span class="o">]</span>
+  --profile <span class="o">[</span>options<span class="o">]</span>     Enable application profiling. <span class="o">(</span>cpu<span class="p">|</span>mem<span class="o">)</span> <span class="o">[</span>Default: cpu<span class="o">]</span>
+  --profile-period &lt;ms&gt;   Sampling period <span class="o">(</span>in ms<span class="o">)</span> when collecting profiling data. <span class="o">[</span>Default: <span class="m">10</span><span class="o">]</span>
+  --crash                 Enable collection of post-mortem data on program crash
+  --metrics <span class="o">[</span>options<span class="o">]</span>     Enable collection of metric data from known sources. <span class="o">(</span>system<span class="o">)</span> <span class="o">[</span>Default: system<span class="o">]</span>
+  --metrics-period &lt;ms&gt;   Sampling period <span class="o">(</span>in ms<span class="o">)</span> when collecting metrics. <span class="o">(</span><span class="m">1</span>-32768<span class="o">)</span> <span class="o">[</span>Default: <span class="m">500</span><span class="o">]</span>
+  --alerts <span class="o">[</span>options<span class="o">]</span>      Enable pre-defined alerts/event triggers that raise an event when a condition is satisfied
+  --bench <span class="o">[</span>options<span class="o">]</span>       Enable execution of benchmark tests on startup
+  --diag <span class="o">[</span>options<span class="o">]</span>        Enable execution of diagnostic tests on startup
+
+  If no instrumentation options are selected, --metrics --logs --crash are enabled by default
+
+Options: output
+  -o, --output <span class="o">[</span>formats<span class="o">]</span>  Output format of the collected data. <span class="o">(</span>json<span class="p">|</span>csv<span class="p">|</span>text<span class="p">|</span>http<span class="p">|</span>mqtt<span class="o">)</span> <span class="o">[</span>Default: json<span class="o">]</span>
+  -d, --dir &lt;path&gt;        Directory path <span class="k">for</span> output data. Only valid <span class="k">for</span> json, csv and text output formats <span class="o">(</span>Default: current directory<span class="o">)</span>
+  -p. --prefix &lt;string&gt;   String to prepend the output file name. Only valid <span class="k">for</span> json, csv and text output formats <span class="o">(</span>Default: <span class="nb">command</span> name<span class="o">)</span>
+  -h, --host &lt;address&gt;    Host address to stream output data. Only valid <span class="k">for</span> http<span class="p">|</span>mqtt output format.
+  -k, --key &lt;key&gt;         Key to use with --host <span class="k">for</span> streaming output data. Only valid <span class="k">for</span> http<span class="p">|</span>mqtt output format
+  -q, --quiet             Disable console messages when monitoring
+
+NOTES:
+* psymon uses preloaded shared libraries to initiate profiling.  For this
+  reason, it cannot be used to profile setuid programs.
+* psymon may not be able to profile programs that themselves use preloading.
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="psybench-man.html" class="btn btn-neutral float-right" title="psybench のマニュアルページ" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="video-streaming.html" class="btn btn-neutral float-left" title="ビデオストリーミング" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020 PSYGIG株式会社
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

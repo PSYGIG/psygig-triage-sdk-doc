@@ -1,0 +1,13 @@
+.. _exhale_function_group__sysinfo_1ga6a766b0b280da58739595172719c1b08:
+
+Function psyiage_sysinfo_export_report
+======================================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: psyiage_sysinfo_export_report(psyiage_handle, char *)

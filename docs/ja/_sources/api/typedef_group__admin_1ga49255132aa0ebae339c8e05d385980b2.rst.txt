@@ -1,0 +1,13 @@
+.. _exhale_typedef_group__admin_1ga49255132aa0ebae339c8e05d385980b2:
+
+Typedef psyiage_handle
+======================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: psyiage_handle

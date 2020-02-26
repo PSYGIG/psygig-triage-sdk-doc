@@ -1,0 +1,377 @@
+システム情報
+======================
+システム情報は、ハードウェア、オペレーティングシステム、およびソフトウェアに関するインベントリ詳細の集まりです。組み込みデバイスは、ハードウェアコンポーネントと
+ソフトウェアコンポーネントの任意の組み合わせで構築されています。システム情報を追跡することで、診断データをコンポーネントの特定の組み合わせに関連付けることができます。各コンポーネントは
+特定のバージョンにも関連付けられています。コンポーネントの種類は次のとおりです。
+
+.. |board| image:: images/soc.png
+   :height: 30
+
+.. |firmware| image:: images/firmware.png
+   :height: 30
+
+.. |os| image:: images/linux.png
+   :height: 30
+
+.. |cpu| image:: images/cpu.png
+   :height: 30
+
+.. |gpu| image:: images/gpu.png
+   :height: 30
+
+.. |ram| image:: images/ram.png
+   :height: 30
+
+.. |disk| image:: images/disk.png
+   :height: 30
+
+.. |network| image:: images/network.png
+   :height: 30
+
+.. |usb| image:: images/usb.png
+   :height: 30
+
+.. |pci| image:: images/pci.png
+   :height: 30
+
+.. table::
+    :widths: 10 40
+    
+    +-------------+----------------------------------+
+    | |board|     | Motherboard/System-on-chip (SoC) |
+    +-------------+----------------------------------+
+    | |firmware|  | Firmware                         |
+    +-------------+----------------------------------+
+    | |os|        | Operating system                 |
+    +-------------+----------------------------------+
+    | |cpu|       | CPU                              |
+    +-------------+----------------------------------+
+    | |gpu|       | GPU                              |
+    +-------------+----------------------------------+
+    | |ram|       | RAM                              |
+    +-------------+----------------------------------+
+    | |disk|      | Storage devices                  |
+    +-------------+----------------------------------+
+    | |network|   | Network adapters                 |
+    +-------------+----------------------------------+
+    | |usb|       | USB controllers and devices      |
+    +-------------+----------------------------------+
+    | |pci|       | PCI devices                      |
+    +-------------+----------------------------------+
+
+`PSYGIG Mobility IoT SDK` は、システム情報をSDK内で収集されたすべての :doc:`診断データ <sample-output>` に関連付けます。これにより、システムコンポーネントが
+アップグレードまたは交換されたときに貴重な洞察を得ることができます。たとえば、計算コア数が多いGPUにアップグレードした場合の :doc:`アプリケーションパフォーマンスの影響 <application-performance-profiling>`
+は、比較グラフで視覚化できます。
+
+システム情報APIには、組み込みシステムへの統合に適した多くの機能が含まれています。
+
+* アプリケーションで動作でき、 `ソースコードを再コンパイルする必要はありません`
+* :doc:`マルチプラットフォームサポート <supported-platforms>`
+* 最新のハードウェア標準とテクノロジーによる最新情報
+* 正確なハードウェア仕様（例：CPUアーキテクチャ）および測定値（例：クロック速度）
+* 周辺機器とセンサーの在庫管理
+* HTMLでシステム情報レポートを生成する
+* さまざまなファイル形式（JSON、CSV、XMLなど）にエクスポートする
+
+``psymon`` の使用
+--------------------------------
+ソースコードを修正しなくても、 ``psymon`` スクリプトを使用してプログラムを実行することで、アプリケーションへのシステム情報収集を即座に有効にすることができます。例：
+
+.. code-block:: bash
+
+   psymon "/path/to/your/app --arg1 --arg2 --arg3"
+
+オプションリストは :doc:`psymon-manページ <psymon-man>` を参考ください。
+
+C/C++ SDK APIの使用
+------------------------------------------------------
+システム情報APIは、 :doc:`単一のヘッダファイル <../api/file_include_psyiage_psyiagesdk.h>` をインクルードし、 ``libpsyiage`` 共有ライブラリを
+リンクすることによってアクセスできます。詳細については、 :ref:`libpsyiage-linking` を参照してください。
+
+CPUの詳細を標準出力に出力します
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: c
+    :linenos:
+
+    #include <psyiage/psyiagesdk.h>
+
+    int main(int argc, char **argv)
+    {
+        psyiage_handle     pah;  // handle to psyiage instance
+
+        /* ... Initialize code omitted for simplicity ... */
+
+        // Get the system information
+        rc = psyiage_sysinfo_get(pah, &sysinfo );
+
+        // Print out the system information
+        printf("CPU Architecture:\t%s\n", sysinfo.cpuinfo.architecture);
+        printf("CPU Features:\t%s\n", sysinfo.cpuinfo.features);
+        switch (sysinfo.cpuinfo.archtype)
+        {
+            case ARCH_X86:
+                printf("Vendor:\t%s\n", sysinfo.cpuinfo.X86Info.vendor);
+                printf("Brand:\t%s\n", sysinfo.cpuinfo.X86Info.brand);
+                printf("Microarchitecture:\t%s\n", sysinfo.cpuinfo.X86Info.uarch);
+                printf("Family:\t0x%x\n", sysinfo.cpuinfo.X86Info.family);
+                printf("Model:\t0x%x\n", sysinfo.cpuinfo.X86Info.model);
+                printf("Stepping:\t0x%x\n", sysinfo.cpuinfo.X86Info.stepping);
+                break;
+            case ARCH_ARM:
+                printf("Implementer:\t0x%x\n", sysinfo.cpuinfo.ArmInfo.implementer);
+                printf("Microarchitecture:\t0x%x\n", sysinfo.cpuinfo.ArmInfo.architecture);
+                printf("Variant:\t0x%x\n", sysinfo.cpuinfo.ArmInfo.variant);
+                printf("Part:\t0x%x\n", sysinfo.cpuinfo.ArmInfo.part);
+                printf("Revision:\t0x%x\n", sysinfo.cpuinfo.ArmInfo.revision);
+                break;
+            default:
+                break;
+        }
+
+        /* ... Cleanup code omitted for simplicity ... */
+    }
+
+システム情報の出力例
+----------------------------------
+
+.. code-block:: javascript
+
+    {
+        "SysInfo": {
+            "CPUInfo": {
+                "ThreadsPerCore": 1,
+                "CoresPerPackage": 1,
+                "NumPackages": 8,
+                "Vendor": "GenuineIntel",
+                "Model": "Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz",
+                "Architecture": "x86",
+                "Features": "aes avx avx2 bmi1 bmi2 cx16 erms f16c fma3 sse4_1 sse4_2 ssse3 ",
+                "Endian": "Little Endian",
+                "ClockMhz": 2808,
+                "X86Info": {
+                    "Microarchitecture": "INTEL_KBL",
+                    "Family": 6,
+                    "Model": 158,
+                    "Stepping": 9
+                },
+                "CacheInfo": [
+                    {
+                        "Level": 1,
+                        "Size": 32768,
+                        "LineSize": 64,
+                        "Associativity": 8,
+                        "Type": "Data"
+                    },
+                    {
+                        "Level": 1,
+                        "Size": 32768,
+                        "LineSize": 64,
+                        "Associativity": 8,
+                        "Type": "Instruction"
+                    },
+                    {
+                        "Level": 2,
+                        "Size": 262144,
+                        "LineSize": 64,
+                        "Associativity": 4,
+                        "Type": "Unified"
+                    },
+                    {
+                        "Level": 3,
+                        "Size": 6291456,
+                        "LineSize": 64,
+                        "Associativity": 12,
+                        "Type": "Unified"
+                    }
+                ]
+            },
+            "MemInfo": {
+                "TotalRAM": 8339906560,
+                "FreeRAM": 123629568,
+                "SharedRAM": 1137197056,
+                "BufferRAM": 14872576,
+                "TotalSwap": 8587309056,
+                "FreeSwap": 4164923392,
+                "TotalHiMem": 0,
+                "FreeHiMem": 0,
+                "NumProcesses": 1106
+            },
+            "FileSystemInfo": [
+                {
+                    "Device": "/dev/sda1",
+                    "MountDir": "/",
+                    "FileSystem": "ext4",
+                    "MountOpts": "rw,relatime,errors=remount-ro,d",
+                    "BlockSize": 4096,
+                    "FragSize": 4096,
+                    "TotalBlocks": 8223964,
+                    "FreeBlocks": 914408,
+                    "AvailBlocks": 490895,
+                    "TotalInodes": 2097152,
+                    "FreeInodes": 1239254,
+                    "AvailInodes": 1239254,
+                    "FileSystemID": 272869076,
+                    "FileSystemFlags": 4096
+                },
+                {
+                    "Device": "/home/psygig/.Private",
+                    "MountDir": "/home/psygig",
+                    "FileSystem": "ecryptfs",
+                    "MountOpts": "rw,nosuid,nodev,relatime,ecrypt",
+                    "BlockSize": 4096,
+                    "FragSize": 4096,
+                    "TotalBlocks": 8223964,
+                    "FreeBlocks": 914408,
+                    "AvailBlocks": 490895,
+                    "TotalInodes": 2097152,
+                    "FreeInodes": 1239254,
+                    "AvailInodes": 1239254,
+                    "FileSystemID": 272869076,
+                    "FileSystemFlags": 4102
+                }
+            ],
+            "OSInfo": {
+                "Name": "Ubuntu",
+                "FullName": "Ubuntu 16.04.5 LTS",
+                "CodeName": "xenial",
+                "Major": 16,
+                "Minor": 4,
+                "Patch": 5,
+                "Build": 0,
+                "KernelInfo": {
+                    "Name": "Linux",
+                    "Major": 4,
+                    "Minor": 15,
+                    "Patch": 0,
+                    "Build": 43
+                }
+            },
+            "USBInfo": [
+                {
+                    "Product": "xHCI Host Controller",
+                    "Manufacturer": "Linux 4.15.0-43-generic xhci-hcd",
+                    "DeviceClass": "Hub",
+                    "Version": "4.15",
+                    "Serial": "0000:03:00.0",
+                    "UsbVersion": " 2.00",
+                    "ProductId": 2,
+                    "VendorId": 7531
+                },
+                {
+                    "Product": "EHCI Host Controller",
+                    "Manufacturer": "Linux 4.15.0-43-generic ehci_hcd",
+                    "DeviceClass": "Hub",
+                    "Version": "4.15",
+                    "Serial": "0000:02:03.0",
+                    "UsbVersion": " 2.00",
+                    "ProductId": 2,
+                    "VendorId": 7531
+                },
+                {
+                    "Product": "VMware Virtual USB Hub",
+                    "Manufacturer": "",
+                    "DeviceClass": "Hub",
+                    "Version": "1.0",
+                    "Serial": "",
+                    "UsbVersion": " 2.00",
+                    "ProductId": 2,
+                    "VendorId": 3599
+                },
+                {
+                    "Product": "Virtual Bluetooth Adapter",
+                    "Manufacturer": "VMware",
+                    "DeviceClass": "Wireless Controller",
+                    "Version": "1.0",
+                    "Serial": "000650268328",
+                    "UsbVersion": " 2.00",
+                    "ProductId": 8,
+                    "VendorId": 3599
+                },
+                {
+                    "Product": "xHCI Host Controller",
+                    "Manufacturer": "Linux 4.15.0-43-generic xhci-hcd",
+                    "DeviceClass": "Hub",
+                    "Version": "4.15",
+                    "Serial": "0000:03:00.0",
+                    "UsbVersion": " 3.00",
+                    "ProductId": 3,
+                    "VendorId": 7531
+                },
+                {
+                    "Product": "VMware Virtual USB Hub",
+                    "Manufacturer": "",
+                    "DeviceClass": "Hub",
+                    "Version": "1.0",
+                    "Serial": "",
+                    "UsbVersion": " 1.10",
+                    "ProductId": 2,
+                    "VendorId": 3599
+                },
+                {
+                    "Product": "UHCI Host Controller",
+                    "Manufacturer": "Linux 4.15.0-43-generic uhci_hcd",
+                    "DeviceClass": "Hub",
+                    "Version": "4.15",
+                    "Serial": "0000:02:00.0",
+                    "UsbVersion": " 1.10",
+                    "ProductId": 1,
+                    "VendorId": 7531
+                },
+                {
+                    "Product": "VMware Virtual USB Hub",
+                    "Manufacturer": "",
+                    "DeviceClass": "Hub",
+                    "Version": "1.0",
+                    "Serial": "",
+                    "UsbVersion": " 1.10",
+                    "ProductId": 2,
+                    "VendorId": 3599
+                },
+                {
+                    "Product": "VMware Virtual USB Mouse",
+                    "Manufacturer": "VMware",
+                    "DeviceClass": "Unknown",
+                    "Version": "1.3",
+                    "Serial": "",
+                    "UsbVersion": " 1.10",
+                    "ProductId": 3,
+                    "VendorId": 3599
+                }
+            ],
+            "DiskInfo": [
+                {
+                    "Device": "sr0",
+                    "Model": "VMware SATA CD01",
+                    "Vendor": "NECVMWar",
+                    "Serial": "",
+                    "Size": 1073741312,
+                    "PartitionInfo": []
+                },
+                {
+                    "Device": "sda",
+                    "Model": "VMware Virtual S",
+                    "Vendor": "VMware, ",
+                    "Serial": "",
+                    "Size": 42949672960,
+                    "PartitionInfo": [
+                        {
+                            "PartNum": 2,
+                            "Start": 34360785920,
+                            "Size": 1024
+                        },
+                        {
+                            "PartNum": 5,
+                            "Start": 34360786944,
+                            "Size": 8587837440
+                        },
+                        {
+                            "PartNum": 1,
+                            "Start": 1048576,
+                            "Size": 34358689792
+                        }
+                    ]
+                }
+            ]
+        }
+    }

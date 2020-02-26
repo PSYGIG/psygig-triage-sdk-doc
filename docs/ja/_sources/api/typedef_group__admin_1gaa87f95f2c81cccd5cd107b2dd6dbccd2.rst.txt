@@ -1,0 +1,13 @@
+.. _exhale_typedef_group__admin_1gaa87f95f2c81cccd5cd107b2dd6dbccd2:
+
+Typedef psyiage_sink_psygig_cfg
+===============================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: psyiage_sink_psygig_cfg

@@ -1,0 +1,13 @@
+.. _exhale_function_group__metric_1gae9c2020b8292c26d902de6f91a53524c:
+
+Function psyiage_metric_enable_poll_system_resources
+====================================================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: psyiage_metric_enable_poll_system_resources(psyiage_handle, int)

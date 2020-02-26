@@ -1,0 +1,13 @@
+.. _exhale_function_group__video_1gad416dd5fddb70471fc854a15d937741a:
+
+Function psyiage_video_get_num_streams
+======================================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: psyiage_video_get_num_streams(psyiage_handle, int *)

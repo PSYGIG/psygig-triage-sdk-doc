@@ -1,0 +1,94 @@
+イベント報告
+====================
+イベントとは、通常の環境を超えた、環境内の例外的な動作を指します。これには、自律型ドローンのバッテリ低下警告などの物理的な環境のイベントや、ディスクの空き容量不足などの
+ソフトウェアイベントが含まれます。システム障害の診断には、障害が発生する前に発生したイベント内の異常を分析することが含まれます。イベントは、バッテリレベルが極端に
+低いときにグレースフルシャットダウンを実行するなど、特定のアクションをトリガーするためにも使用できます。
+
+`PSYGIG Mobility IoT SDK` は、オンデマンドのイベントレポート、および条件またはしきい値を超えたときのイベントトリガーの設定を可能にするイベントレポートサービスです。
+
+Event Reporting APIには、組み込みシステムへの統合に適した多くの機能が含まれています：
+
+- アプリケーションで動作でき、 `ソースコードを再コンパイルする必要はありません`
+- :ref:`サードパーティのIoTプラットフォーム <iot-third-party>` および :ref:`データベース/データウェアハウス <db-third-party>` とのシームレスな統合
+- 条件が満たされたときにイベントを発生させる事前定義のイベントトリガー
+- SDK診断データ（ :doc:`メトリック <metrics-collection>` 、 :doc:`プロファイリングデータ <application-performance-profiling>` 、 :doc:`ログデータ <log-collection>` など）のカスタム偶数トリガーを定義する
+- イベントログHTMLレポートを生成する
+
+``psymon`` の使用
+----------------------------------
+ソースコードを修正しなくても、 ``psymon`` スクリプトを使用してプログラムを実行することで、アプリケーション内の定義済みの
+イベントトリガーを即座に有効にできます。例：
+
+.. code-block:: bash
+
+   psymon --alerts "lowmem" "/path/to/your/app --arg1 --arg2 --arg3"
+
+オプションリストは :doc:`psymon-manページ <psymon-man>` を参考ください。
+
+.. note::
+    ``psymon --alerts`` は進行中の作業です。この機能をベータテストすることに興味がある方は、　`連絡 <mailto:info@psygig.com>`_　ください。
+
+C/C++ SDK APIの使用
+------------------------------------------------------
+Event Reporting APIは、　:doc:`単一のヘッダファイル <../api/file_include_psyiage_psyiagesdk.h>`　をインクルードし、　``libpsyiage``　共有ライブラリをリンクすることによってアクセスできます。
+詳細については、　:ref:`libpsyiage-linking`　を参照ください。
+
+オンデマンドでイベントの開催
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: c
+    :linenos:
+
+    #include <psyiage/psyiagesdk.h>
+
+    int main(int argc, char **argv)
+    {
+        psyiage_handle     pah;  // handle to psyiage instance
+
+        /* ... Initialize code omitted for simplicity ... */
+
+        // Report monitoring task complete as event
+        rc = psyiage_event_report(pah, PSYIAGE_EVENT_LEVEL_INFO, "monitor", TASK_COMPLETE_EVENT_ID, "Monitor task complete");
+
+        /* ... Cleanup code omitted for simplicity ... */
+    }
+
+サンプルイベントJSONデータ
+----------------------------------------------
+
+.. code-block:: javascript
+
+    "Events": [
+      {
+        "Timestamp": 1559440949.192214012,
+        "TimeOfDay": "2019-06-02 11:02:29.192214012",
+        "Level": "Info",
+        "Source": "event_report",
+        "EventID": 1,
+        "Message": "Reporting event with severity 0"
+      },
+      {
+        "Timestamp": 1559440950.192817450,
+        "TimeOfDay": "2019-06-02 11:02:30.192817449",
+        "Level": "Warning",
+        "Source": "event_report",
+        "EventID": 1,
+        "Message": "Reporting event with severity 1"
+      },
+      {
+        "Timestamp": 1559440951.194056273,
+        "TimeOfDay": "2019-06-02 11:02:31.194056272",
+        "Level": "Error",
+        "Source": "event_report",
+        "EventID": 1,
+        "Message": "Reporting event with severity 2"
+      },
+      {
+        "Timestamp": 1559440952.194596052,
+        "TimeOfDay": "2019-06-02 11:02:32.194596052",
+        "Level": "Critical",
+        "Source": "event_report",
+        "EventID": 1,
+        "Message": "Reporting event with severity 3"
+      }
+    ],

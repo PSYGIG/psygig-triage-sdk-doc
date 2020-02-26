@@ -1,0 +1,13 @@
+.. _exhale_enum_group__metric_1ga70589d67957039a542cc0e145800e04a:
+
+Enum _psyiage_metric_file_type
+==============================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Enum Documentation
+------------------
+
+
+.. doxygenenum:: _psyiage_metric_file_type

@@ -1,0 +1,674 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ja" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>メトリック収集 &mdash; PSYGIG Mobility IoT SDK 0.4.0 ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
+        <script type="text/javascript" src="_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script type="text/javascript" src="_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="システム情報" href="system-information.html" />
+    <link rel="prev" title="ログ収集" href="log-collection.html" />
+ 
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-91451950-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+<p><a href="../index.html">EN</a> | JP</p>
+
+
+
+
+          
+            <a href="index.html" class="icon icon-home"> PSYGIG Mobility IoT SDK
+          
+
+          
+            
+            <img src="_static/psygig-logo-white-text.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">概要</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="supported-platforms.html">サポートされているプラットフォーム/アーキテクチャ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="third-party-integration.html">サードパーテイインテグレーション</a></li>
+<li class="toctree-l1"><a class="reference internal" href="change-log.html">変更ログ</a></li>
+</ul>
+<p class="caption"><span class="caption-text">使用方法</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">ダウンロード/インストール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">入門</a></li>
+</ul>
+<p class="caption"><span class="caption-text">フィーチャー</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="application-performance-profiling.html">アプリケーションパフォーマンスプロファイリング</a></li>
+<li class="toctree-l1"><a class="reference internal" href="crash-reporting.html">クラッシュレポート</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-collection.html">ログ収集</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">メトリック収集</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#known-metric-sources">既知のメトリックソース</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#psymon"><code class="docutils literal notranslate"><span class="pre">psymon</span></code> の使用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#c-c-sdk-api">C/C++ SDK APIの使用</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id4">システムリソースメトリックの定期的な収集を有効にする</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">アプリケーション定義メトリックの収集</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#json">サンプルメトリクスJSONデータ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="system-information.html">システム情報</a></li>
+<li class="toctree-l1"><a class="reference internal" href="event-reporting.html">イベント報告</a></li>
+<li class="toctree-l1"><a class="reference internal" href="benchmark-testing.html">ベンチマークテスト</a></li>
+<li class="toctree-l1"><a class="reference internal" href="diagnostic-testing.html">診断テスト</a></li>
+<li class="toctree-l1"><a class="reference internal" href="video-streaming.html">ビデオストリーミング</a></li>
+</ul>
+<p class="caption"><span class="caption-text">PSYGIG Mobility IoT SDK参照</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="psymon-man.html"><code class="docutils literal notranslate"><span class="pre">psymon</span></code> のマニュアルページ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="psybench-man.html"><code class="docutils literal notranslate"><span class="pre">psybench</span></code> のマニュアルページ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="psydiag-man.html"><code class="docutils literal notranslate"><span class="pre">psydiag</span></code> のマニュアルページ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/index.html">C/C++ SDK API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sample-output.html">出力例</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PSYGIG Mobility IoT SDK</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>メトリック収集</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>メトリック収集<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>組み込みシステム用のソフトウェアアプリケーションを診断する際の重要な側面は、デバイスから取得したメトリックデータを収集して視覚化することです。これには、センサー測定値、
+内部ハードウェア測定基準、ファームウェア/オペレーティングシステム測定基準、およびその他の高レベルソフトウェア測定基準が含まれます。例えば、無人航空機（ＵＡＶ）、
+のセンサーから線速度、高度、方位の測定値を取得し、飛行制御の問題などを時系列グラフにプロットすることで診断することができます。</p>
+<p><cite>PSYGIG Mobility IoT SDK</cite> は、既知のセンサー、内部ハードウェア、オペレーティングシステム、およびアプリケーションのサポートを内蔵しているため、各メトリックソースに固有のコードを
+記述する複雑さを軽減します。 Metrics Collection APIには、組み込みシステムへの統合に適した多くの機能が含まれています。</p>
+<ul class="simple">
+<li><p>アプリケーションで動作でき、 <cite>ソースコードを再コンパイルする必要はありません</cite></p></li>
+<li><p><a class="reference internal" href="supported-platforms.html"><span class="doc">マルチプラットフォームサポート</span></a></p></li>
+<li><p><a class="reference internal" href="third-party-integration.html#iot-third-party"><span class="std std-ref">サードパーティのIoTプラットフォーム</span></a> および <a class="reference internal" href="third-party-integration.html#db-third-party"><span class="std std-ref">データベース/データウェアハウス</span></a> とのシームレスな統合</p></li>
+<li><p><a class="reference internal" href="#known-metric-sources"><span class="std std-ref">既知の情報源</span></a> からメトリックデータを自動的に収集</p></li>
+<li><p>アプリケーション定義のメトリックに拡張可能</p></li>
+<li><p>タイムスケールチャートを含むメトリックHTMLレポートを生成する</p></li>
+</ul>
+<div class="section" id="known-metric-sources">
+<span id="id2"></span><h2>既知のメトリックソース<a class="headerlink" href="#known-metric-sources" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Metrics Collection APIは、下記に記載されてる既知のアプリケーションからメトリックデータを検出してポーリングする機能を提供します。</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="_images/cpu.png"><img alt="cpu" src="_images/cpu.png" style="height: 40px;" /></a></p></td>
+<td><p>CPU (例：使用率、温度、クロック速度)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_images/gpu.png"><img alt="gpu" src="_images/gpu.png" style="height: 40px;" /></a></p></td>
+<td><p>GPU (例：使用率、メモリ使用率)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="_images/ram.png"><img alt="ram" src="_images/ram.png" style="height: 40px;" /></a></p></td>
+<td><p>Memory (例： RAM使用率)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_images/disk.png"><img alt="disk" src="_images/disk.png" style="height: 40px;" /></a></p></td>
+<td><p>Disk (例：読み書き速度、応答時間)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="_images/network.png"><img alt="network" src="_images/network.png" style="height: 40px;" /></a></p></td>
+<td><p>Network (例：スループット)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_images/linux.png"><img alt="linux" src="_images/linux.png" style="height: 40px;" /></a></p></td>
+<td><p>Linux (例：プロセス数、オープンソケット)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>このリストは常に拡大しています。サポートされることを望む特定のセンサーまたはアプリケーションがあるならば、
+<a class="reference external" href="mailto:info&#37;&#52;&#48;psygig&#46;com">連絡</a> ください。</p>
+</div>
+</div>
+<div class="section" id="psymon">
+<h2><code class="docutils literal notranslate"><span class="pre">psymon</span></code> の使用<a class="headerlink" href="#psymon" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>ソースコードを変更しなくても、 <code class="docutils literal notranslate"><span class="pre">psymon</span></code> スクリプトを使用してプログラムを実行することで、アプリケーションに対するシステムリソースメトリックの
+定期的な収集を即座に有効にできます。例：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>psymon --metrics <span class="s2">&quot;/path/to/your/app --arg1 --arg2 --arg3&quot;</span>
+</pre></div>
+</div>
+<p>オプションリストは <a class="reference internal" href="psymon-man.html"><span class="doc">psymon-manページ</span></a> を参考ください。</p>
+</div>
+<div class="section" id="c-c-sdk-api">
+<h2>C/C++ SDK APIの使用<a class="headerlink" href="#c-c-sdk-api" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Metrics Collection APIは、 <a class="reference internal" href="api/file_include_psyiage_psyiagesdk.h.html"><span class="doc">単一のヘッダーファイル</span></a> をインクルードし、 <code class="docutils literal notranslate"><span class="pre">libpsyiage</span></code>
+共有ライブラリをリンクすることによってアクセスできます。詳細については、 <a class="reference internal" href="getting-started.html#libpsyiage-linking"><span class="std std-ref">アドバンス設定 -  libpsyiage を使ってアプリケーションを構築</span></a> を参照ください。</p>
+<div class="section" id="id4">
+<h3>システムリソースメトリックの定期的な収集を有効にする<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;psyiage/psyiagesdk.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">psyiage_handle</span>     <span class="n">pah</span><span class="p">;</span>  <span class="c1">// handle to psyiage instance</span>
+
+    <span class="cm">/* ... Initialize code omitted for simplicity ... */</span>
+
+    <span class="c1">// Poll system resource metrics every 500ms</span>
+    <span class="n">psyiage_metric_enable_poll_system_resources</span><span class="p">(</span><span class="n">pah</span><span class="p">,</span> <span class="mi">500</span><span class="p">);</span>
+
+    <span class="cm">/* ... Cleanup code omitted for simplicity ... */</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="id5">
+<h3>アプリケーション定義メトリックの収集<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;psyiage/psyiagesdk.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">psyiage_handle</span>     <span class="n">pah</span><span class="p">;</span>  <span class="c1">// handle to psyiage instance</span>
+
+    <span class="cm">/* ... Initialize code omitted for simplicity ... */</span>
+
+    <span class="cm">/* ... Read and aggregate data from laser sensors and cameras */</span>
+
+    <span class="c1">// Collect application-defined topographic data</span>
+    <span class="n">rc</span> <span class="o">=</span> <span class="n">psyiage_metric_record_values_blob</span><span class="p">(</span><span class="n">pah</span><span class="p">,</span> <span class="s">&quot;Topography&quot;</span><span class="p">,</span> <span class="n">topographic_data</span><span class="p">,</span> <span class="n">topographic_data_size</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+
+    <span class="cm">/* ... Cleanup code omitted for simplicity ... */</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+<div class="section" id="json">
+<h2>サンプルメトリクスJSONデータ<a class="headerlink" href="#json" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Metrics&quot;</span><span class="o">:</span> <span class="p">[</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;Name&quot;</span><span class="o">:</span> <span class="s2">&quot;ProcVM&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Timestamps&quot;</span><span class="o">:</span> <span class="p">[</span>
+      <span class="mf">1559439076.125103951</span><span class="p">,</span>
+      <span class="mf">1559439076.626415014</span><span class="p">,</span>
+      <span class="mf">1559439077.127984047</span><span class="p">,</span>
+      <span class="mf">1559439077.629561663</span><span class="p">,</span>
+      <span class="mf">1559439078.130370855</span><span class="p">,</span>
+      <span class="mf">1559439078.631809711</span><span class="p">,</span>
+      <span class="mf">1559439079.132480621</span><span class="p">,</span>
+      <span class="mf">1559439079.633147001</span><span class="p">,</span>
+      <span class="mf">1559439080.133864164</span><span class="p">,</span>
+      <span class="mf">1559439080.635303974</span><span class="p">,</span>
+      <span class="mf">1559439081.136044741</span><span class="p">,</span>
+      <span class="mf">1559439081.636738777</span><span class="p">,</span>
+      <span class="mf">1559439082.137473822</span><span class="p">,</span>
+      <span class="mf">1559439082.638967037</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;Values&quot;</span><span class="o">:</span> <span class="p">[</span>
+      <span class="mi">112214016</span><span class="p">,</span>
+      <span class="mi">112214016</span><span class="p">,</span>
+      <span class="mi">113311744</span><span class="p">,</span>
+      <span class="mi">113311744</span><span class="p">,</span>
+      <span class="mi">112230400</span><span class="p">,</span>
+      <span class="mi">112906240</span><span class="p">,</span>
+      <span class="mi">113340416</span><span class="p">,</span>
+      <span class="mi">112934912</span><span class="p">,</span>
+      <span class="mi">112394240</span><span class="p">,</span>
+      <span class="mi">112242688</span><span class="p">,</span>
+      <span class="mi">112377856</span><span class="p">,</span>
+      <span class="mi">112242688</span><span class="p">,</span>
+      <span class="mi">112230400</span><span class="p">,</span>
+      <span class="mi">112230400</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;Name&quot;</span><span class="o">:</span> <span class="s2">&quot;SysCPU&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Timestamps&quot;</span><span class="o">:</span> <span class="p">[</span>
+      <span class="mf">1559439076.626402378</span><span class="p">,</span>
+      <span class="mf">1559439077.127982140</span><span class="p">,</span>
+      <span class="mf">1559439077.629560232</span><span class="p">,</span>
+      <span class="mf">1559439078.130369663</span><span class="p">,</span>
+      <span class="mf">1559439078.631808519</span><span class="p">,</span>
+      <span class="mf">1559439079.132479429</span><span class="p">,</span>
+      <span class="mf">1559439079.633145809</span><span class="p">,</span>
+      <span class="mf">1559439080.133862734</span><span class="p">,</span>
+      <span class="mf">1559439080.635302544</span><span class="p">,</span>
+      <span class="mf">1559439081.136043549</span><span class="p">,</span>
+      <span class="mf">1559439081.636737585</span><span class="p">,</span>
+      <span class="mf">1559439082.137472630</span><span class="p">,</span>
+      <span class="mf">1559439082.638965845</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;Values&quot;</span><span class="o">:</span> <span class="p">[</span>
+      <span class="mf">0.1624365448951721</span><span class="p">,</span>
+      <span class="mf">0.1700507551431656</span><span class="p">,</span>
+      <span class="mf">0.1616161614656448</span><span class="p">,</span>
+      <span class="mf">0.157760813832283</span><span class="p">,</span>
+      <span class="mf">0.1670886129140854</span><span class="p">,</span>
+      <span class="mf">0.1569620221853256</span><span class="p">,</span>
+      <span class="mf">0.149367094039917</span><span class="p">,</span>
+      <span class="mf">0.1454081684350967</span><span class="p">,</span>
+      <span class="mf">0.1472081243991852</span><span class="p">,</span>
+      <span class="mf">0.1522842645645142</span><span class="p">,</span>
+      <span class="mf">0.1522842645645142</span><span class="p">,</span>
+      <span class="mf">0.1594936698675156</span><span class="p">,</span>
+      <span class="mf">0.1548223346471786</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;Name&quot;</span><span class="o">:</span> <span class="s2">&quot;ProcRAMPeak&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Timestamps&quot;</span><span class="o">:</span> <span class="p">[</span>
+      <span class="mf">1559439076.125098944</span><span class="p">,</span>
+      <span class="mf">1559439076.626414537</span><span class="p">,</span>
+      <span class="mf">1559439077.127983570</span><span class="p">,</span>
+      <span class="mf">1559439077.629561424</span><span class="p">,</span>
+      <span class="mf">1559439078.130370617</span><span class="p">,</span>
+      <span class="mf">1559439078.631809473</span><span class="p">,</span>
+      <span class="mf">1559439079.132480383</span><span class="p">,</span>
+      <span class="mf">1559439079.633146763</span><span class="p">,</span>
+      <span class="mf">1559439080.133863926</span><span class="p">,</span>
+      <span class="mf">1559439080.635303736</span><span class="p">,</span>
+      <span class="mf">1559439081.136044502</span><span class="p">,</span>
+      <span class="mf">1559439081.636738539</span><span class="p">,</span>
+      <span class="mf">1559439082.137473583</span><span class="p">,</span>
+      <span class="mf">1559439082.638966799</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;Values&quot;</span><span class="o">:</span> <span class="p">[</span>
+      <span class="mi">4075520</span><span class="p">,</span>
+      <span class="mi">4075520</span><span class="p">,</span>
+      <span class="mi">5636096</span><span class="p">,</span>
+      <span class="mi">5636096</span><span class="p">,</span>
+      <span class="mi">5636096</span><span class="p">,</span>
+      <span class="mi">5636096</span><span class="p">,</span>
+      <span class="mi">5636096</span><span class="p">,</span>
+      <span class="mi">5636096</span><span class="p">,</span>
+      <span class="mi">5636096</span><span class="p">,</span>
+      <span class="mi">5636096</span><span class="p">,</span>
+      <span class="mi">5636096</span><span class="p">,</span>
+      <span class="mi">5636096</span><span class="p">,</span>
+      <span class="mi">5636096</span><span class="p">,</span>
+      <span class="mi">5636096</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;Name&quot;</span><span class="o">:</span> <span class="s2">&quot;SysRAM&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Timestamps&quot;</span><span class="o">:</span> <span class="p">[</span>
+      <span class="mf">1559439076.125087976</span><span class="p">,</span>
+      <span class="mf">1559439076.626402617</span><span class="p">,</span>
+      <span class="mf">1559439077.127982855</span><span class="p">,</span>
+      <span class="mf">1559439077.629560709</span><span class="p">,</span>
+      <span class="mf">1559439078.130370140</span><span class="p">,</span>
+      <span class="mf">1559439078.631808996</span><span class="p">,</span>
+      <span class="mf">1559439079.132479906</span><span class="p">,</span>
+      <span class="mf">1559439079.633146286</span><span class="p">,</span>
+      <span class="mf">1559439080.133863211</span><span class="p">,</span>
+      <span class="mf">1559439080.635303259</span><span class="p">,</span>
+      <span class="mf">1559439081.136044025</span><span class="p">,</span>
+      <span class="mf">1559439081.636737823</span><span class="p">,</span>
+      <span class="mf">1559439082.137473106</span><span class="p">,</span>
+      <span class="mf">1559439082.638966322</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;Values&quot;</span><span class="o">:</span> <span class="p">[</span>
+      <span class="mi">7739355136</span><span class="p">,</span>
+      <span class="mi">7773405184</span><span class="p">,</span>
+      <span class="mi">7816024064</span><span class="p">,</span>
+      <span class="mi">7798185984</span><span class="p">,</span>
+      <span class="mi">7815942144</span><span class="p">,</span>
+      <span class="mi">7802179584</span><span class="p">,</span>
+      <span class="mi">7853674496</span><span class="p">,</span>
+      <span class="mi">7907958784</span><span class="p">,</span>
+      <span class="mi">7963762688</span><span class="p">,</span>
+      <span class="mi">8024965120</span><span class="p">,</span>
+      <span class="mi">8073596928</span><span class="p">,</span>
+      <span class="mi">8121901056</span><span class="p">,</span>
+      <span class="mi">8156819456</span><span class="p">,</span>
+      <span class="mi">8199684096</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;Name&quot;</span><span class="o">:</span> <span class="s2">&quot;ProcCPU&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Timestamps&quot;</span><span class="o">:</span> <span class="p">[</span>
+      <span class="mf">1559439076.626414061</span><span class="p">,</span>
+      <span class="mf">1559439077.127983093</span><span class="p">,</span>
+      <span class="mf">1559439077.629560709</span><span class="p">,</span>
+      <span class="mf">1559439078.130370140</span><span class="p">,</span>
+      <span class="mf">1559439078.631808996</span><span class="p">,</span>
+      <span class="mf">1559439079.132479906</span><span class="p">,</span>
+      <span class="mf">1559439079.633146286</span><span class="p">,</span>
+      <span class="mf">1559439080.133863449</span><span class="p">,</span>
+      <span class="mf">1559439080.635303259</span><span class="p">,</span>
+      <span class="mf">1559439081.136044264</span><span class="p">,</span>
+      <span class="mf">1559439081.636738062</span><span class="p">,</span>
+      <span class="mf">1559439082.137473106</span><span class="p">,</span>
+      <span class="mf">1559439082.638966322</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;Values&quot;</span><span class="o">:</span> <span class="p">[</span>
+      <span class="mf">0.004999999888241291</span><span class="p">,</span>
+      <span class="mf">0.01250000018626451</span><span class="p">,</span>
+      <span class="mf">0.002499999944120646</span><span class="p">,</span>
+      <span class="mf">0.007499999832361937</span><span class="p">,</span>
+      <span class="mf">0.01250000018626451</span><span class="p">,</span>
+      <span class="mf">0.007499999832361937</span><span class="p">,</span>
+      <span class="mf">0.004999999888241291</span><span class="p">,</span>
+      <span class="mf">0.007499999832361937</span><span class="p">,</span>
+      <span class="mf">0.007352941203862429</span><span class="p">,</span>
+      <span class="mf">0.007499999832361937</span><span class="p">,</span>
+      <span class="mf">0.007499999832361937</span><span class="p">,</span>
+      <span class="mf">0.007499999832361937</span><span class="p">,</span>
+      <span class="mf">0.007499999832361937</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;Name&quot;</span><span class="o">:</span> <span class="s2">&quot;ProcRAM&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Timestamps&quot;</span><span class="o">:</span> <span class="p">[</span>
+      <span class="mf">1559439076.125092983</span><span class="p">,</span>
+      <span class="mf">1559439076.626414299</span><span class="p">,</span>
+      <span class="mf">1559439077.127983570</span><span class="p">,</span>
+      <span class="mf">1559439077.629561186</span><span class="p">,</span>
+      <span class="mf">1559439078.130370378</span><span class="p">,</span>
+      <span class="mf">1559439078.631809473</span><span class="p">,</span>
+      <span class="mf">1559439079.132480145</span><span class="p">,</span>
+      <span class="mf">1559439079.633146763</span><span class="p">,</span>
+      <span class="mf">1559439080.133863688</span><span class="p">,</span>
+      <span class="mf">1559439080.635303736</span><span class="p">,</span>
+      <span class="mf">1559439081.136044502</span><span class="p">,</span>
+      <span class="mf">1559439081.636738300</span><span class="p">,</span>
+      <span class="mf">1559439082.137473345</span><span class="p">,</span>
+      <span class="mf">1559439082.638966799</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;Values&quot;</span><span class="o">:</span> <span class="p">[</span>
+      <span class="mi">4075520</span><span class="p">,</span>
+      <span class="mi">4075520</span><span class="p">,</span>
+      <span class="mi">5582848</span><span class="p">,</span>
+      <span class="mi">5582848</span><span class="p">,</span>
+      <span class="mi">4775936</span><span class="p">,</span>
+      <span class="mi">5312512</span><span class="p">,</span>
+      <span class="mi">5611520</span><span class="p">,</span>
+      <span class="mi">5341184</span><span class="p">,</span>
+      <span class="mi">4804608</span><span class="p">,</span>
+      <span class="mi">4788224</span><span class="p">,</span>
+      <span class="mi">4788224</span><span class="p">,</span>
+      <span class="mi">4788224</span><span class="p">,</span>
+      <span class="mi">4775936</span><span class="p">,</span>
+      <span class="mi">4775936</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;Name&quot;</span><span class="o">:</span> <span class="s2">&quot;ProcSwap&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Timestamps&quot;</span><span class="o">:</span> <span class="p">[</span>
+      <span class="mf">1559439076.125116587</span><span class="p">,</span>
+      <span class="mf">1559439076.626415253</span><span class="p">,</span>
+      <span class="mf">1559439077.127984524</span><span class="p">,</span>
+      <span class="mf">1559439077.629562140</span><span class="p">,</span>
+      <span class="mf">1559439078.130371332</span><span class="p">,</span>
+      <span class="mf">1559439078.631810188</span><span class="p">,</span>
+      <span class="mf">1559439079.132480860</span><span class="p">,</span>
+      <span class="mf">1559439079.633147478</span><span class="p">,</span>
+      <span class="mf">1559439080.133864641</span><span class="p">,</span>
+      <span class="mf">1559439080.635304451</span><span class="p">,</span>
+      <span class="mf">1559439081.136045218</span><span class="p">,</span>
+      <span class="mf">1559439081.636739254</span><span class="p">,</span>
+      <span class="mf">1559439082.137474060</span><span class="p">,</span>
+      <span class="mf">1559439082.638967514</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;Values&quot;</span><span class="o">:</span> <span class="p">[</span>
+      <span class="mi">0</span><span class="p">,</span>
+      <span class="mi">0</span><span class="p">,</span>
+      <span class="mi">0</span><span class="p">,</span>
+      <span class="mi">0</span><span class="p">,</span>
+      <span class="mi">0</span><span class="p">,</span>
+      <span class="mi">0</span><span class="p">,</span>
+      <span class="mi">0</span><span class="p">,</span>
+      <span class="mi">0</span><span class="p">,</span>
+      <span class="mi">0</span><span class="p">,</span>
+      <span class="mi">0</span><span class="p">,</span>
+      <span class="mi">0</span><span class="p">,</span>
+      <span class="mi">0</span><span class="p">,</span>
+      <span class="mi">0</span><span class="p">,</span>
+      <span class="mi">0</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;Name&quot;</span><span class="o">:</span> <span class="s2">&quot;ProcVMPeak&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Timestamps&quot;</span><span class="o">:</span> <span class="p">[</span>
+      <span class="mf">1559439076.125111103</span><span class="p">,</span>
+      <span class="mf">1559439076.626415014</span><span class="p">,</span>
+      <span class="mf">1559439077.127984285</span><span class="p">,</span>
+      <span class="mf">1559439077.629561901</span><span class="p">,</span>
+      <span class="mf">1559439078.130371094</span><span class="p">,</span>
+      <span class="mf">1559439078.631809950</span><span class="p">,</span>
+      <span class="mf">1559439079.132480621</span><span class="p">,</span>
+      <span class="mf">1559439079.633147240</span><span class="p">,</span>
+      <span class="mf">1559439080.133864403</span><span class="p">,</span>
+      <span class="mf">1559439080.635304213</span><span class="p">,</span>
+      <span class="mf">1559439081.136044979</span><span class="p">,</span>
+      <span class="mf">1559439081.636739016</span><span class="p">,</span>
+      <span class="mf">1559439082.137473822</span><span class="p">,</span>
+      <span class="mf">1559439082.638967276</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;Values&quot;</span><span class="o">:</span> <span class="p">[</span>
+      <span class="mi">175169536</span><span class="p">,</span>
+      <span class="mi">175169536</span><span class="p">,</span>
+      <span class="mi">175169536</span><span class="p">,</span>
+      <span class="mi">175169536</span><span class="p">,</span>
+      <span class="mi">175169536</span><span class="p">,</span>
+      <span class="mi">175169536</span><span class="p">,</span>
+      <span class="mi">175169536</span><span class="p">,</span>
+      <span class="mi">175169536</span><span class="p">,</span>
+      <span class="mi">175169536</span><span class="p">,</span>
+      <span class="mi">175169536</span><span class="p">,</span>
+      <span class="mi">175169536</span><span class="p">,</span>
+      <span class="mi">175169536</span><span class="p">,</span>
+      <span class="mi">175169536</span><span class="p">,</span>
+      <span class="mi">175169536</span>
+    <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="system-information.html" class="btn btn-neutral float-right" title="システム情報" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="log-collection.html" class="btn btn-neutral float-left" title="ログ収集" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020 PSYGIG株式会社
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

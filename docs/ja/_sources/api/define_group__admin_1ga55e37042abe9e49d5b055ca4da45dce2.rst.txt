@@ -1,0 +1,13 @@
+.. _exhale_define_group__admin_1ga55e37042abe9e49d5b055ca4da45dce2:
+
+Define MAX_DEVICE_ID_LENGTH
+===========================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: MAX_DEVICE_ID_LENGTH

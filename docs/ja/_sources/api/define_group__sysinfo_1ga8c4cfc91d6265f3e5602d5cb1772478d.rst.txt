@@ -1,0 +1,13 @@
+.. _exhale_define_group__sysinfo_1ga8c4cfc91d6265f3e5602d5cb1772478d:
+
+Define MAX_NUM_FS
+=================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: MAX_NUM_FS

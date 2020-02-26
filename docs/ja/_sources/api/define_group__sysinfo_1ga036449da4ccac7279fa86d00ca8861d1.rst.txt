@@ -1,0 +1,13 @@
+.. _exhale_define_group__sysinfo_1ga036449da4ccac7279fa86d00ca8861d1:
+
+Define MAX_CACHES
+=================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: MAX_CACHES

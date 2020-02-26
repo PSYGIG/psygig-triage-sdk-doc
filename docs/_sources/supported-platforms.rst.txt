@@ -1,6 +1,6 @@
-Supported Platforms/Architectures
-=================================
-`PSYGIG Triage SDK` is designed to be integrated with embedded applications, which can come in a variety of architectures and platforms.
+Supported Platforms
+====================
+`PSYGIG Mobility IoT SDK` is designed to be integrated with embedded applications, which can come in a variety of architectures and platforms.
 
 Platform architectures supported
 ---------------------------------
@@ -29,7 +29,7 @@ Platform architectures partially supported
 +--------------+---------+------------------+
 | IA-64        | ia64    | Linux            |
 +--------------+---------+------------------+
-|PowerPC64     | ppc64   | Linux            |
+| PowerPC64    | ppc64   | Linux            |
 +--------------+---------+------------------+
 | MIPS         | mips    | Linux            |
 +--------------+---------+------------------+
@@ -51,13 +51,17 @@ Tested Hardware Platforms
 +-----------------------------+--------------+--------------+-------------------+
 | NVIDIA Jetson TX2           | ARMv8        | aarch64      | Ubuntu 16.04      |
 +-----------------------------+--------------+--------------+-------------------+
-|NVIDIA Jetson AGX Xavier [2]_| ARMv8        | aarch64      | Ubuntu 16.04      |
+| NVIDIA Jetson AGX Xavier    | ARMv8        | aarch64      | Ubuntu 16.04      |
++-----------------------------+--------------+--------------+-------------------+
+| NVIDIA Jetson Nano          | ARMv8        | aarch64      | Ubuntu 16.04      |
 +-----------------------------+--------------+--------------+-------------------+
 | Raspberry Pi 1 [2]_         | ARMv6        | arm          | Raspbian          |
 +-----------------------------+--------------+--------------+-------------------+
 | Raspberry Pi 2 [2]_         | ARMv7        | armhf        | Ubuntu MATE 16.04 |
 +-----------------------------+--------------+--------------+-------------------+
 | Raspberry Pi 3 [2]_         | ARMv8        | armhf        | Ubuntu MATE 16.04 |
++-----------------------------+--------------+--------------+-------------------+
+| Raspberry Pi 4 [2]_         | ARMv8        | aarch64      | Ubuntu 19.10      |
 +-----------------------------+--------------+--------------+-------------------+
 | Raspberry Pi Zero [2]_      | ARMv6        | arm          | Raspbian          |
 +-----------------------------+--------------+--------------+-------------------+

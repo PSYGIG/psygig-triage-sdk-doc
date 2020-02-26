@@ -1,0 +1,13 @@
+.. _exhale_function_group__admin_1gac2016925a075f7cc3120ac29d2c9b5cd:
+
+Function psyiage_get_version
+============================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: psyiage_get_version(void)

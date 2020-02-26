@@ -1,0 +1,13 @@
+.. _exhale_function_group__diag_1gad6ec410e55af93597dbf4a8f90cd8261:
+
+Function psyiage_diag_export_report
+===================================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: psyiage_diag_export_report(psyiage_handle, char *)

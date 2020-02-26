@@ -5,11 +5,11 @@ The consequences of a failure can be benign such as an intermittent disk failure
 such as a memory failure causing the navigation system of an autonomous vehicle to halt. Including diagnostic tests as part of the normal operation of the device
 allows chronic or intermittent problems to be discovered before a more catastrophic failure can occur.
 
-`PSYGIG Triage SDK` provides an extensive suite of diagnostic tests designed to exercise and stress the most common subsytems of an embedded device.
+`PSYGIG Mobility IoT SDK` provides an extensive suite of diagnostic tests designed to exercise and stress the most common subsytems of an embedded device.
 
 The Diagnostic Testing API includes many features suitable for integration into embedded systems:
 
-- Works out-of-the-box; `just run` :ref:`psydiag <running-benchmarks>`
+- Works out-of-the-box; `just run` :ref:`psydiag <running-diagnostics>`
 - Full diagnostic test suite:
 
 .. |cpu| image:: images/cpu.png
@@ -44,12 +44,14 @@ The Diagnostic Testing API includes many features suitable for integration into 
 
 - Simultaneous testing of all subsystems to fully stress the device as a whole
 - Customizable and extensible diagnostic tests
-- Track diagnostic results with built-in integration in the `PSYGIG diagnostics platform <https://www.psygig.com>`_
+- Track diagnostic results with built-in integration in the `PSYGIG data platform <https://www.psygig.com>`_
 - Generate a diagnostics HTML report
 
 .. note::
     The `Diagnostic Testing` feature is a work-in-progress. 
-    Please :email:`contact us <info@psygig.com?subject=[PSYGIG Triage SDK] Diagnostic Testing>` if you are interested in beta-testing this feature. 
+    Please `contact us <mailto:info@psygig.com>`_ if you are interested in beta-testing this feature. 
+
+.. _running-diagnostics:
 
 Running the diagnostics tests
 -----------------------------
@@ -61,7 +63,7 @@ Simply run the included standalone binary ``psydiag`` to run the full diagnostic
 
 See :doc:`psydiag-man` for a complete list of options.
 
-Using PSYGIG Triage SDK API
+Using C/C++ SDK API
 ---------------------------
 The Diagnostic Testing API can be accessed by including a :doc:`single header file <api/file_include_psyiage_psyiagesdk.h>`
 and linking the ``libpsyiage`` shared library. See :ref:`libpsyiage-linking` for details.

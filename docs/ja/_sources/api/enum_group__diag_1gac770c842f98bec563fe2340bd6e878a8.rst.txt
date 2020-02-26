@@ -1,0 +1,13 @@
+.. _exhale_enum_group__diag_1gac770c842f98bec563fe2340bd6e878a8:
+
+Enum _psyiage_diag_type
+=======================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Enum Documentation
+------------------
+
+
+.. doxygenenum:: _psyiage_diag_type

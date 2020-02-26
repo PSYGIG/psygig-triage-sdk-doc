@@ -1,0 +1,13 @@
+.. _exhale_typedef_group__sysinfo_1ga73a9c407ebaca5cdab83dbc11f01d3ef:
+
+Typedef psyiage_cpuinfo
+=======================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: psyiage_cpuinfo

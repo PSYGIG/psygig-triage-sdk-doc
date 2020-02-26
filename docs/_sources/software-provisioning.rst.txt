@@ -1,0 +1,38 @@
+Software Provisioning
+======================
+Provisioning software in a scalable, containerized way facilitates automated software deployment onto devices.
+Tracking multiple versions of binaries and configurations becomes exponentially difficult as the number of devices and applications increase.  
+
+Software provisioning involves defining custom software configuration recipes, describing the sequence of jobs and processes to execute on device boot.
+This includes the following:
+
+- Define the boot order of jobs and processes
+- Configure jobs for automatic restart upon process failure
+- Manage and switch between multiple software configurations
+- Manage over-the-air (OTA) updates
+
+`PSYGIG Mobility IoT SDK` includes tools to manage the complexity of software provisioning.
+
+Using ``angelo``
+-----------------
+With a single command, ``angelo`` automatically provisions software onto a device specified by a configuration file ``angelo.yml``.
+An example file is as follows.
+
+.. code-block:: none
+    :linenos:
+
+    version: '1.0'
+
+    services:
+      obstacle-detection:
+        command: objdetect --people --cars
+      slam:
+        command: slam --config default.cfg
+      path-finding:
+        command: pf --algorithm a-star
+
+Under ``services``, an arbitrary name is defined for each service, along with the command line to execute.
+
+Once the recipe has been configured, run ``angelo start`` to start all services.
+
+See :doc:`angelo-man` for a complete list of options.

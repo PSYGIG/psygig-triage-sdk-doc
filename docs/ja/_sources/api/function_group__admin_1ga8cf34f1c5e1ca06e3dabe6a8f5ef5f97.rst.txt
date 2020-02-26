@@ -1,0 +1,13 @@
+.. _exhale_function_group__admin_1ga8cf34f1c5e1ca06e3dabe6a8f5ef5f97:
+
+Function psyiage_stop_session
+=============================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: psyiage_stop_session(psyiage_handle)

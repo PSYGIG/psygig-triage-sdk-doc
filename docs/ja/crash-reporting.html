@@ -1,0 +1,909 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ja" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>クラッシュレポート &mdash; PSYGIG Mobility IoT SDK 0.4.0 ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
+        <script type="text/javascript" src="_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script type="text/javascript" src="_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="ログ収集" href="log-collection.html" />
+    <link rel="prev" title="アプリケーションパフォーマンスプロファイリング" href="application-performance-profiling.html" />
+ 
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-91451950-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+<p><a href="../index.html">EN</a> | JP</p>
+
+
+
+
+          
+            <a href="index.html" class="icon icon-home"> PSYGIG Mobility IoT SDK
+          
+
+          
+            
+            <img src="_static/psygig-logo-white-text.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">概要</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="supported-platforms.html">サポートされているプラットフォーム/アーキテクチャ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="third-party-integration.html">サードパーテイインテグレーション</a></li>
+<li class="toctree-l1"><a class="reference internal" href="change-log.html">変更ログ</a></li>
+</ul>
+<p class="caption"><span class="caption-text">使用方法</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">ダウンロード/インストール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">入門</a></li>
+</ul>
+<p class="caption"><span class="caption-text">フィーチャー</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="application-performance-profiling.html">アプリケーションパフォーマンスプロファイリング</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">クラッシュレポート</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#psymon"><code class="docutils literal notranslate"><span class="pre">psymon</span></code> の使用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#c-c-sdk-api">C/C++ SDK APIの使用</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sigsegvsigkill">致命的なシグナルに関するクラッシュレポートを生成します（例：SIGSEGV、SIGKILL）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">コアダンプ中にクラッシュレポートを生成する</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">要求に応じてクラッシュレポートを生成する</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#json">サンプルJSONクラッシュレポート</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="log-collection.html">ログ収集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metrics-collection.html">メトリック収集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="system-information.html">システム情報</a></li>
+<li class="toctree-l1"><a class="reference internal" href="event-reporting.html">イベント報告</a></li>
+<li class="toctree-l1"><a class="reference internal" href="benchmark-testing.html">ベンチマークテスト</a></li>
+<li class="toctree-l1"><a class="reference internal" href="diagnostic-testing.html">診断テスト</a></li>
+<li class="toctree-l1"><a class="reference internal" href="video-streaming.html">ビデオストリーミング</a></li>
+</ul>
+<p class="caption"><span class="caption-text">PSYGIG Mobility IoT SDK参照</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="psymon-man.html"><code class="docutils literal notranslate"><span class="pre">psymon</span></code> のマニュアルページ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="psybench-man.html"><code class="docutils literal notranslate"><span class="pre">psybench</span></code> のマニュアルページ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="psydiag-man.html"><code class="docutils literal notranslate"><span class="pre">psydiag</span></code> のマニュアルページ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/index.html">C/C++ SDK API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sample-output.html">出力例</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PSYGIG Mobility IoT SDK</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>クラッシュレポート</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>クラッシュレポート<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>多くのソフトウェア開発チームは、欠陥のないソフトウェアシステムを構築し、ソフトウェアの品質保証やコード分析ツールに膨大なリソースを費やして、ソフトウェア障害が発生しないように
+取り組んでいます。しかし、実際には、ソフトウェア障害が発生し、最終的にアプリケーションがクラッシュします。</p>
+<p>失敗の原因を特定するには、クラッシュ時のアプリケーションの状態に対して事後分析を実行する必要があります。このようなデータには、スタックトレース、メモリダンプ、および障害発生時の
+レジスタの内容が含まれます。これらは、クラッシュが発生したソースファイル内の正確な行を識別するために使用できます。</p>
+<p><cite>PSYGIG Mobility IoT SDK</cite> は、クラッシュレポート機能をアプリケーションに拡張し、障害発生時のデータを収集します。クラッシュレポートAPIには、組み込みシステムへの統合に適した多くの
+機能が含まれます：</p>
+<ul>
+<li><p>アプリケーションで動作でき、 <cite>ソースコードを再コンパイルする必要はありません</cite></p></li>
+<li><p><a class="reference internal" href="supported-platforms.html"><span class="doc">マルチプラットフォームサポート</span></a></p></li>
+<li><p><a class="reference internal" href="third-party-integration.html#crash-third-party"><span class="std std-ref">サードパーティクラッシュ報告プラットフォーム</span></a> とのシームレスな統合</p></li>
+<li><p>クラッシュレポート用のプロセススナップショットダンプを生成し、下記も含みます：</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>プロセス環境 - <cite>コマンドラインと環境変数を含む</cite></p></li>
+<li><p>スレッドの状態 - <cite>レジスタの内容とスタックメモリを含む</cite></p></li>
+<li><p>ロードされたモジュール - <cite>共有ライブラリやメモリマップファイルなど</cite></p></li>
+<li><p>プロセスメモリ空間内のセクションのメモリダンプ</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>ソースファイルと行番号を含むスタックトレースをを収集</p></li>
+<li><p>プログラム状態を保存するための小さな実行フットプリント</p></li>
+<li><p>クラッシュレポートにユーザー定義のアプリケーション固有のメタデータを追加する</p></li>
+<li><p>クラッシュレポートをさまざまなファイル形式（JSON、CSV、HTMLなど）にエクスポートする</p></li>
+</ul>
+<div class="section" id="psymon">
+<h2><code class="docutils literal notranslate"><span class="pre">psymon</span></code> の使用<a class="headerlink" href="#psymon" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>ソースコードを修正しなくても、 <code class="docutils literal notranslate"><span class="pre">psymon</span></code> スクリプトを使用してプログラムを実行することで、アプリケーションへのクラッシュレポートを即座に有効にできます。例：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>psymon --crash <span class="s2">&quot;/path/to/your/app --arg1 --arg2 --arg3&quot;</span>
+</pre></div>
+</div>
+<p>オプションリストは <a class="reference internal" href="psymon-man.html"><span class="doc">psymon-manページ</span></a> を参考ください。</p>
+</div>
+<div class="section" id="c-c-sdk-api">
+<h2>C/C++ SDK APIの使用<a class="headerlink" href="#c-c-sdk-api" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>クラッシュレポートAPIは、 <a class="reference internal" href="api/file_include_psyiage_psyiagesdk.h.html"><span class="doc">単一のヘッダファイル</span></a> をインクルードし、 <code class="docutils literal notranslate"><span class="pre">libpsyiage</span></code> 共有ライブラリを
+リンクすることによってアクセスできます。詳細については、 <a class="reference internal" href="getting-started.html#libpsyiage-linking"><span class="std std-ref">アドバンス設定 -  libpsyiage を使ってアプリケーションを構築</span></a> を参照ください。</p>
+<div class="section" id="sigsegvsigkill">
+<h3>致命的なシグナルに関するクラッシュレポートを生成します（例：SIGSEGV、SIGKILL）<a class="headerlink" href="#sigsegvsigkill" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;psyiage/psyiagesdk.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">psyiage_handle</span>     <span class="n">pah</span><span class="p">;</span>  <span class="c1">// handle to psyiage instance</span>
+
+    <span class="cm">/* ... Initialize code omitted for simplicity ... */</span>
+
+    <span class="c1">// Install fatal signal handler</span>
+    <span class="n">rc</span> <span class="o">=</span> <span class="n">psyiage_crash_enable_report_on_fatal_signal</span><span class="p">(</span><span class="n">pah</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+
+    <span class="cm">/* ... Cleanup code omitted for simplicity ... */</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="id2">
+<h3>コアダンプ中にクラッシュレポートを生成する<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;psyiage/psyiagesdk.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">psyiage_handle</span>     <span class="n">pah</span><span class="p">;</span>  <span class="c1">// handle to psyiage instance</span>
+
+    <span class="cm">/* ... Initialize code omitted for simplicity ... */</span>
+
+    <span class="c1">// Install binary that runs on core dump generation</span>
+    <span class="n">rc</span> <span class="o">=</span> <span class="n">psyiage_crash_install_core_dump_handler</span><span class="p">(</span><span class="n">pah</span><span class="p">);</span>
+
+    <span class="cm">/* ... Cleanup code omitted for simplicity ... */</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="id3">
+<h3>要求に応じてクラッシュレポートを生成する<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p><cite>オンデマンドでクラッシュレポートを生成する</cite> 機能は進行中の作業です。この機能をベータテストすることに興味がある方は、　<a class="reference external" href="mailto:info&#37;&#52;&#48;psygig&#46;com">連絡</a>　ください。</p>
+</div>
+<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;psyiage/psyiagesdk.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">psyiage_handle</span>     <span class="n">pah</span><span class="p">;</span>  <span class="c1">// handle to psyiage instance</span>
+
+    <span class="cm">/* ... Initialize code omitted for simplicity ... */</span>
+
+    <span class="c1">// Install binary that runs on core dump generation</span>
+    <span class="n">rc</span> <span class="o">=</span> <span class="n">psyiage_crash_capture_process_snapshot</span><span class="p">(</span><span class="n">pah</span><span class="p">);</span>
+
+    <span class="cm">/* ... Cleanup code omitted for simplicity ... */</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+<div class="section" id="json">
+<h2>サンプルJSONクラッシュレポート<a class="headerlink" href="#json" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;TaskInfo&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;ProcID&quot;</span><span class="o">:</span> <span class="mi">35392</span><span class="p">,</span>
+    <span class="s2">&quot;UserID&quot;</span><span class="o">:</span> <span class="mi">1000</span><span class="p">,</span>
+    <span class="s2">&quot;GroupID&quot;</span><span class="o">:</span> <span class="mi">1000</span><span class="p">,</span>
+    <span class="s2">&quot;Cmdline&quot;</span><span class="o">:</span> <span class="s2">&quot;./crash_report&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Name&quot;</span><span class="o">:</span> <span class="s2">&quot;crash_report&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Signal&quot;</span><span class="o">:</span> <span class="mi">11</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;CrashInfo&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;ThreadId&quot;</span><span class="o">:</span> <span class="mi">35392</span><span class="p">,</span>
+    <span class="s2">&quot;Exception&quot;</span><span class="o">:</span> <span class="s2">&quot;Segmentation fault&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;StackTrace&quot;</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">&quot;Frames&quot;</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+        <span class="s2">&quot;FrameNum&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;InstrAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x00000000004008d6&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;./crash_report&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Function&quot;</span><span class="o">:</span> <span class="s2">&quot;crash&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Offset&quot;</span><span class="o">:</span> <span class="s2">&quot;0x10&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Registers&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;rax&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000000000000&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rbx&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000000000000&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rcx&quot;</span><span class="o">:</span> <span class="s2">&quot;0x00007f698ce7e2c0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rdx&quot;</span><span class="o">:</span> <span class="s2">&quot;0x00007f698d14d780&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rsi&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000002229010&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rdi&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000000000001&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rbp&quot;</span><span class="o">:</span> <span class="s2">&quot;0x00007ffcafcc0b90&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rsp&quot;</span><span class="o">:</span> <span class="s2">&quot;0x00007ffcafcc0b90&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rip&quot;</span><span class="o">:</span> <span class="s2">&quot;0x00000000004008d6&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r8&quot;</span><span class="o">:</span> <span class="s2">&quot;0x2e2e2e676e697473&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r9&quot;</span><span class="o">:</span> <span class="s2">&quot;0x6166206e6f697461&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r10&quot;</span><span class="o">:</span> <span class="s2">&quot;0x20726f6620746c75&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r11&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000000000246&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r12&quot;</span><span class="o">:</span> <span class="s2">&quot;0x00000000004007d0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r13&quot;</span><span class="o">:</span> <span class="s2">&quot;0x00007ffcafcc0cf0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r14&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000000000000&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r15&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000000000000&quot;</span>
+        <span class="p">},</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+        <span class="s2">&quot;FrameNum&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;InstrAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x00000000004008ee&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;./crash_report&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Function&quot;</span><span class="o">:</span> <span class="s2">&quot;foo4&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Offset&quot;</span><span class="o">:</span> <span class="s2">&quot;0xe&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Registers&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;rax&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000000000000&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rbx&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000000000000&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rcx&quot;</span><span class="o">:</span> <span class="s2">&quot;0x00007f698ce7e2c0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rdx&quot;</span><span class="o">:</span> <span class="s2">&quot;0x00007f698d14d780&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rsi&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000002229010&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rdi&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000000000001&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rbp&quot;</span><span class="o">:</span> <span class="s2">&quot;0x00007ffcafcc0ba0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rsp&quot;</span><span class="o">:</span> <span class="s2">&quot;0x00007ffcafcc0ba0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rip&quot;</span><span class="o">:</span> <span class="s2">&quot;0x00000000004008ee&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r8&quot;</span><span class="o">:</span> <span class="s2">&quot;0x2e2e2e676e697473&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r9&quot;</span><span class="o">:</span> <span class="s2">&quot;0x6166206e6f697461&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r10&quot;</span><span class="o">:</span> <span class="s2">&quot;0x20726f6620746c75&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r11&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000000000246&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r12&quot;</span><span class="o">:</span> <span class="s2">&quot;0x00000000004007d0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r13&quot;</span><span class="o">:</span> <span class="s2">&quot;0x00007ffcafcc0cf0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r14&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000000000000&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r15&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000000000000&quot;</span>
+        <span class="p">},</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+        <span class="s2">&quot;FrameNum&quot;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s2">&quot;InstrAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000000400903&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;./crash_report&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Function&quot;</span><span class="o">:</span> <span class="s2">&quot;foo3&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Offset&quot;</span><span class="o">:</span> <span class="s2">&quot;0xe&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Registers&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;rax&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000000000000&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rbx&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000000000000&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rcx&quot;</span><span class="o">:</span> <span class="s2">&quot;0x00007f698ce7e2c0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rdx&quot;</span><span class="o">:</span> <span class="s2">&quot;0x00007f698d14d780&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rsi&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000002229010&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rdi&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000000000001&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rbp&quot;</span><span class="o">:</span> <span class="s2">&quot;0x00007ffcafcc0bb0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rsp&quot;</span><span class="o">:</span> <span class="s2">&quot;0x00007ffcafcc0bb0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rip&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000000400903&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r8&quot;</span><span class="o">:</span> <span class="s2">&quot;0x2e2e2e676e697473&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r9&quot;</span><span class="o">:</span> <span class="s2">&quot;0x6166206e6f697461&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r10&quot;</span><span class="o">:</span> <span class="s2">&quot;0x20726f6620746c75&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r11&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000000000246&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r12&quot;</span><span class="o">:</span> <span class="s2">&quot;0x00000000004007d0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r13&quot;</span><span class="o">:</span> <span class="s2">&quot;0x00007ffcafcc0cf0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r14&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000000000000&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r15&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000000000000&quot;</span>
+        <span class="p">},</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+        <span class="s2">&quot;FrameNum&quot;</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="s2">&quot;InstrAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000000400918&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;./crash_report&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Function&quot;</span><span class="o">:</span> <span class="s2">&quot;foo2&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Offset&quot;</span><span class="o">:</span> <span class="s2">&quot;0xe&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Registers&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;rax&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000000000000&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rbx&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000000000000&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rcx&quot;</span><span class="o">:</span> <span class="s2">&quot;0x00007f698ce7e2c0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rdx&quot;</span><span class="o">:</span> <span class="s2">&quot;0x00007f698d14d780&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rsi&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000002229010&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rdi&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000000000001&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rbp&quot;</span><span class="o">:</span> <span class="s2">&quot;0x00007ffcafcc0bc0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rsp&quot;</span><span class="o">:</span> <span class="s2">&quot;0x00007ffcafcc0bc0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rip&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000000400918&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r8&quot;</span><span class="o">:</span> <span class="s2">&quot;0x2e2e2e676e697473&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r9&quot;</span><span class="o">:</span> <span class="s2">&quot;0x6166206e6f697461&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r10&quot;</span><span class="o">:</span> <span class="s2">&quot;0x20726f6620746c75&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r11&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000000000246&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r12&quot;</span><span class="o">:</span> <span class="s2">&quot;0x00000000004007d0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r13&quot;</span><span class="o">:</span> <span class="s2">&quot;0x00007ffcafcc0cf0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r14&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000000000000&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r15&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000000000000&quot;</span>
+        <span class="p">},</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+        <span class="s2">&quot;FrameNum&quot;</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span>
+        <span class="s2">&quot;InstrAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x000000000040092d&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;./crash_report&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Function&quot;</span><span class="o">:</span> <span class="s2">&quot;induce_segfault&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Offset&quot;</span><span class="o">:</span> <span class="s2">&quot;0xe&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Registers&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;rax&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000000000000&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rbx&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000000000000&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rcx&quot;</span><span class="o">:</span> <span class="s2">&quot;0x00007f698ce7e2c0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rdx&quot;</span><span class="o">:</span> <span class="s2">&quot;0x00007f698d14d780&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rsi&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000002229010&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rdi&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000000000001&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rbp&quot;</span><span class="o">:</span> <span class="s2">&quot;0x00007ffcafcc0bd0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rsp&quot;</span><span class="o">:</span> <span class="s2">&quot;0x00007ffcafcc0bd0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rip&quot;</span><span class="o">:</span> <span class="s2">&quot;0x000000000040092d&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r8&quot;</span><span class="o">:</span> <span class="s2">&quot;0x2e2e2e676e697473&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r9&quot;</span><span class="o">:</span> <span class="s2">&quot;0x6166206e6f697461&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r10&quot;</span><span class="o">:</span> <span class="s2">&quot;0x20726f6620746c75&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r11&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000000000246&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r12&quot;</span><span class="o">:</span> <span class="s2">&quot;0x00000000004007d0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r13&quot;</span><span class="o">:</span> <span class="s2">&quot;0x00007ffcafcc0cf0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r14&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000000000000&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r15&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000000000000&quot;</span>
+        <span class="p">},</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+        <span class="s2">&quot;FrameNum&quot;</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+        <span class="s2">&quot;InstrAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000000400a01&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;./crash_report&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Function&quot;</span><span class="o">:</span> <span class="s2">&quot;main&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Offset&quot;</span><span class="o">:</span> <span class="s2">&quot;0xcd&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Registers&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;rax&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000000000000&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rbx&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000000000000&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rcx&quot;</span><span class="o">:</span> <span class="s2">&quot;0x00007f698ce7e2c0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rdx&quot;</span><span class="o">:</span> <span class="s2">&quot;0x00007f698d14d780&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rsi&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000002229010&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rdi&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000000000001&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rbp&quot;</span><span class="o">:</span> <span class="s2">&quot;0x00007ffcafcc0c10&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rsp&quot;</span><span class="o">:</span> <span class="s2">&quot;0x00007ffcafcc0be0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rip&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000000400a01&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r8&quot;</span><span class="o">:</span> <span class="s2">&quot;0x2e2e2e676e697473&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r9&quot;</span><span class="o">:</span> <span class="s2">&quot;0x6166206e6f697461&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r10&quot;</span><span class="o">:</span> <span class="s2">&quot;0x20726f6620746c75&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r11&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000000000246&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r12&quot;</span><span class="o">:</span> <span class="s2">&quot;0x00000000004007d0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r13&quot;</span><span class="o">:</span> <span class="s2">&quot;0x00007ffcafcc0cf0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r14&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000000000000&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r15&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000000000000&quot;</span>
+        <span class="p">},</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+        <span class="s2">&quot;FrameNum&quot;</span><span class="o">:</span> <span class="mi">6</span><span class="p">,</span>
+        <span class="s2">&quot;InstrAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x00007f698cda7830&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/lib/x86_64-linux-gnu/libc.so.6&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Function&quot;</span><span class="o">:</span> <span class="s2">&quot;__libc_start_main&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Offset&quot;</span><span class="o">:</span> <span class="s2">&quot;0xf0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Registers&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;rax&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000000000000&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rbx&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000000000000&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rcx&quot;</span><span class="o">:</span> <span class="s2">&quot;0x00007f698ce7e2c0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rdx&quot;</span><span class="o">:</span> <span class="s2">&quot;0x00007f698d14d780&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rsi&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000002229010&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rdi&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000000000001&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rbp&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000000400a60&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rsp&quot;</span><span class="o">:</span> <span class="s2">&quot;0x00007ffcafcc0c20&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rip&quot;</span><span class="o">:</span> <span class="s2">&quot;0x00007f698cda7830&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r8&quot;</span><span class="o">:</span> <span class="s2">&quot;0x2e2e2e676e697473&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r9&quot;</span><span class="o">:</span> <span class="s2">&quot;0x6166206e6f697461&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r10&quot;</span><span class="o">:</span> <span class="s2">&quot;0x20726f6620746c75&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r11&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000000000246&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r12&quot;</span><span class="o">:</span> <span class="s2">&quot;0x00000000004007d0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r13&quot;</span><span class="o">:</span> <span class="s2">&quot;0x00007ffcafcc0cf0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r14&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000000000000&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r15&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000000000000&quot;</span>
+        <span class="p">},</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+        <span class="s2">&quot;FrameNum&quot;</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
+        <span class="s2">&quot;InstrAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x00000000004007f9&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;./crash_report&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Function&quot;</span><span class="o">:</span> <span class="s2">&quot;_start&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Offset&quot;</span><span class="o">:</span> <span class="s2">&quot;0x29&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Registers&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;rax&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000000000000&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rbx&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000000000000&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rcx&quot;</span><span class="o">:</span> <span class="s2">&quot;0x00007f698ce7e2c0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rdx&quot;</span><span class="o">:</span> <span class="s2">&quot;0x00007f698d14d780&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rsi&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000002229010&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rdi&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000000000001&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rbp&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000000000000&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rsp&quot;</span><span class="o">:</span> <span class="s2">&quot;0x00007ffcafcc0ce0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rip&quot;</span><span class="o">:</span> <span class="s2">&quot;0x00000000004007f9&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r8&quot;</span><span class="o">:</span> <span class="s2">&quot;0x2e2e2e676e697473&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r9&quot;</span><span class="o">:</span> <span class="s2">&quot;0x6166206e6f697461&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r10&quot;</span><span class="o">:</span> <span class="s2">&quot;0x20726f6620746c75&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r11&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000000000246&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r12&quot;</span><span class="o">:</span> <span class="s2">&quot;0x00000000004007d0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r13&quot;</span><span class="o">:</span> <span class="s2">&quot;0x00007ffcafcc0cf0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r14&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000000000000&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r15&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0000000000000000&quot;</span>
+        <span class="p">},</span>
+        <span class="p">},</span>
+      <span class="p">]</span>
+    <span class="p">},</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;MemoryMap&quot;</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+    <span class="s2">&quot;StartAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x400000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;EndAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x401000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Permissions&quot;</span><span class="o">:</span> <span class="s2">&quot;r-xp&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;FileOffset&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Device&quot;</span><span class="o">:</span> <span class="s2">&quot;00:32&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Inode&quot;</span><span class="o">:</span> <span class="mi">2087277</span><span class="p">,</span>
+    <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/home/psygig/psygig-sdk-c/build/crash_report&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+    <span class="s2">&quot;StartAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x600000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;EndAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x601000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Permissions&quot;</span><span class="o">:</span> <span class="s2">&quot;r--p&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;FileOffset&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Device&quot;</span><span class="o">:</span> <span class="s2">&quot;00:32&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Inode&quot;</span><span class="o">:</span> <span class="mi">2087277</span><span class="p">,</span>
+    <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/home/psygig/psygig-sdk-c/build/crash_report&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+    <span class="s2">&quot;StartAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x601000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;EndAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x602000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Permissions&quot;</span><span class="o">:</span> <span class="s2">&quot;rw-p&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;FileOffset&quot;</span><span class="o">:</span> <span class="s2">&quot;0x1000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Device&quot;</span><span class="o">:</span> <span class="s2">&quot;00:32&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Inode&quot;</span><span class="o">:</span> <span class="mi">2087277</span><span class="p">,</span>
+    <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/home/psygig/psygig-sdk-c/build/crash_report&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+    <span class="s2">&quot;StartAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x2229000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;EndAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x224a000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Permissions&quot;</span><span class="o">:</span> <span class="s2">&quot;rw-p&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;FileOffset&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Device&quot;</span><span class="o">:</span> <span class="s2">&quot;00:00&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Inode&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;[heap]&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+    <span class="s2">&quot;StartAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x7f698c966000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;EndAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x7f698c969000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Permissions&quot;</span><span class="o">:</span> <span class="s2">&quot;r-xp&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;FileOffset&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Device&quot;</span><span class="o">:</span> <span class="s2">&quot;08:01&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Inode&quot;</span><span class="o">:</span> <span class="mi">1972536</span><span class="p">,</span>
+    <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/lib/x86_64-linux-gnu/libdl-2.23.so&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+    <span class="s2">&quot;StartAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x7f698c969000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;EndAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x7f698cb68000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Permissions&quot;</span><span class="o">:</span> <span class="s2">&quot;---p&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;FileOffset&quot;</span><span class="o">:</span> <span class="s2">&quot;0x3000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Device&quot;</span><span class="o">:</span> <span class="s2">&quot;08:01&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Inode&quot;</span><span class="o">:</span> <span class="mi">1972536</span><span class="p">,</span>
+    <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/lib/x86_64-linux-gnu/libdl-2.23.so&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+    <span class="s2">&quot;StartAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x7f698cb68000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;EndAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x7f698cb69000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Permissions&quot;</span><span class="o">:</span> <span class="s2">&quot;r--p&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;FileOffset&quot;</span><span class="o">:</span> <span class="s2">&quot;0x2000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Device&quot;</span><span class="o">:</span> <span class="s2">&quot;08:01&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Inode&quot;</span><span class="o">:</span> <span class="mi">1972536</span><span class="p">,</span>
+    <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/lib/x86_64-linux-gnu/libdl-2.23.so&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+    <span class="s2">&quot;StartAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x7f698cb69000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;EndAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x7f698cb6a000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Permissions&quot;</span><span class="o">:</span> <span class="s2">&quot;rw-p&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;FileOffset&quot;</span><span class="o">:</span> <span class="s2">&quot;0x3000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Device&quot;</span><span class="o">:</span> <span class="s2">&quot;08:01&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Inode&quot;</span><span class="o">:</span> <span class="mi">1972536</span><span class="p">,</span>
+    <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/lib/x86_64-linux-gnu/libdl-2.23.so&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+    <span class="s2">&quot;StartAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x7f698cb6a000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;EndAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x7f698cb82000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Permissions&quot;</span><span class="o">:</span> <span class="s2">&quot;r-xp&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;FileOffset&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Device&quot;</span><span class="o">:</span> <span class="s2">&quot;08:01&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Inode&quot;</span><span class="o">:</span> <span class="mi">1972533</span><span class="p">,</span>
+    <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/lib/x86_64-linux-gnu/libpthread-2.23.so&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+    <span class="s2">&quot;StartAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x7f698cb82000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;EndAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x7f698cd81000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Permissions&quot;</span><span class="o">:</span> <span class="s2">&quot;---p&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;FileOffset&quot;</span><span class="o">:</span> <span class="s2">&quot;0x18000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Device&quot;</span><span class="o">:</span> <span class="s2">&quot;08:01&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Inode&quot;</span><span class="o">:</span> <span class="mi">1972533</span><span class="p">,</span>
+    <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/lib/x86_64-linux-gnu/libpthread-2.23.so&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+    <span class="s2">&quot;StartAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x7f698cd81000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;EndAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x7f698cd82000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Permissions&quot;</span><span class="o">:</span> <span class="s2">&quot;r--p&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;FileOffset&quot;</span><span class="o">:</span> <span class="s2">&quot;0x17000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Device&quot;</span><span class="o">:</span> <span class="s2">&quot;08:01&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Inode&quot;</span><span class="o">:</span> <span class="mi">1972533</span><span class="p">,</span>
+    <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/lib/x86_64-linux-gnu/libpthread-2.23.so&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+    <span class="s2">&quot;StartAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x7f698cd82000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;EndAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x7f698cd83000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Permissions&quot;</span><span class="o">:</span> <span class="s2">&quot;rw-p&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;FileOffset&quot;</span><span class="o">:</span> <span class="s2">&quot;0x18000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Device&quot;</span><span class="o">:</span> <span class="s2">&quot;08:01&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Inode&quot;</span><span class="o">:</span> <span class="mi">1972533</span><span class="p">,</span>
+    <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/lib/x86_64-linux-gnu/libpthread-2.23.so&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+    <span class="s2">&quot;StartAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x7f698cd83000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;EndAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x7f698cd87000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Permissions&quot;</span><span class="o">:</span> <span class="s2">&quot;rw-p&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;FileOffset&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Device&quot;</span><span class="o">:</span> <span class="s2">&quot;00:00&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Inode&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+    <span class="s2">&quot;StartAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x7f698cd87000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;EndAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x7f698cf47000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Permissions&quot;</span><span class="o">:</span> <span class="s2">&quot;r-xp&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;FileOffset&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Device&quot;</span><span class="o">:</span> <span class="s2">&quot;08:01&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Inode&quot;</span><span class="o">:</span> <span class="mi">1972534</span><span class="p">,</span>
+    <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/lib/x86_64-linux-gnu/libc-2.23.so&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+    <span class="s2">&quot;StartAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x7f698cf47000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;EndAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x7f698d147000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Permissions&quot;</span><span class="o">:</span> <span class="s2">&quot;---p&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;FileOffset&quot;</span><span class="o">:</span> <span class="s2">&quot;0x1c0000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Device&quot;</span><span class="o">:</span> <span class="s2">&quot;08:01&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Inode&quot;</span><span class="o">:</span> <span class="mi">1972534</span><span class="p">,</span>
+    <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/lib/x86_64-linux-gnu/libc-2.23.so&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+    <span class="s2">&quot;StartAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x7f698d147000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;EndAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x7f698d14b000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Permissions&quot;</span><span class="o">:</span> <span class="s2">&quot;r--p&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;FileOffset&quot;</span><span class="o">:</span> <span class="s2">&quot;0x1c0000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Device&quot;</span><span class="o">:</span> <span class="s2">&quot;08:01&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Inode&quot;</span><span class="o">:</span> <span class="mi">1972534</span><span class="p">,</span>
+    <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/lib/x86_64-linux-gnu/libc-2.23.so&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+    <span class="s2">&quot;StartAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x7f698d14b000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;EndAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x7f698d14d000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Permissions&quot;</span><span class="o">:</span> <span class="s2">&quot;rw-p&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;FileOffset&quot;</span><span class="o">:</span> <span class="s2">&quot;0x1c4000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Device&quot;</span><span class="o">:</span> <span class="s2">&quot;08:01&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Inode&quot;</span><span class="o">:</span> <span class="mi">1972534</span><span class="p">,</span>
+    <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/lib/x86_64-linux-gnu/libc-2.23.so&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+    <span class="s2">&quot;StartAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x7f698d14d000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;EndAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x7f698d151000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Permissions&quot;</span><span class="o">:</span> <span class="s2">&quot;rw-p&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;FileOffset&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Device&quot;</span><span class="o">:</span> <span class="s2">&quot;00:00&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Inode&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+    <span class="s2">&quot;StartAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x7f698d151000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;EndAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x7f698d535000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Permissions&quot;</span><span class="o">:</span> <span class="s2">&quot;r-xp&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;FileOffset&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Device&quot;</span><span class="o">:</span> <span class="s2">&quot;00:32&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Inode&quot;</span><span class="o">:</span> <span class="mi">2057000</span><span class="p">,</span>
+    <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/home/psygig/psygig-sdk-c/build/libpsyiage.so.0.3.0&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+    <span class="s2">&quot;StartAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x7f698d535000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;EndAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x7f698d734000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Permissions&quot;</span><span class="o">:</span> <span class="s2">&quot;---p&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;FileOffset&quot;</span><span class="o">:</span> <span class="s2">&quot;0x3e4000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Device&quot;</span><span class="o">:</span> <span class="s2">&quot;00:32&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Inode&quot;</span><span class="o">:</span> <span class="mi">2057000</span><span class="p">,</span>
+    <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/home/psygig/psygig-sdk-c/build/libpsyiage.so.0.3.0&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+    <span class="s2">&quot;StartAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x7f698d734000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;EndAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x7f698d767000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Permissions&quot;</span><span class="o">:</span> <span class="s2">&quot;r--p&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;FileOffset&quot;</span><span class="o">:</span> <span class="s2">&quot;0x3e3000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Device&quot;</span><span class="o">:</span> <span class="s2">&quot;00:32&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Inode&quot;</span><span class="o">:</span> <span class="mi">2057000</span><span class="p">,</span>
+    <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/home/psygig/psygig-sdk-c/build/libpsyiage.so.0.3.0&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+    <span class="s2">&quot;StartAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x7f698d767000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;EndAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x7f698d774000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Permissions&quot;</span><span class="o">:</span> <span class="s2">&quot;rw-p&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;FileOffset&quot;</span><span class="o">:</span> <span class="s2">&quot;0x416000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Device&quot;</span><span class="o">:</span> <span class="s2">&quot;00:32&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Inode&quot;</span><span class="o">:</span> <span class="mi">2057000</span><span class="p">,</span>
+    <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/home/psygig/psygig-sdk-c/build/libpsyiage.so.0.3.0&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+    <span class="s2">&quot;StartAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x7f698d774000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;EndAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x7f698d829000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Permissions&quot;</span><span class="o">:</span> <span class="s2">&quot;rw-p&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;FileOffset&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Device&quot;</span><span class="o">:</span> <span class="s2">&quot;00:00&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Inode&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+    <span class="s2">&quot;StartAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x7f698d829000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;EndAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x7f698d84f000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Permissions&quot;</span><span class="o">:</span> <span class="s2">&quot;r-xp&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;FileOffset&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Device&quot;</span><span class="o">:</span> <span class="s2">&quot;08:01&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Inode&quot;</span><span class="o">:</span> <span class="mi">1972305</span><span class="p">,</span>
+    <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/lib/x86_64-linux-gnu/ld-2.23.so&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+    <span class="s2">&quot;StartAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x7f698da28000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;EndAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x7f698da2c000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Permissions&quot;</span><span class="o">:</span> <span class="s2">&quot;rw-p&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;FileOffset&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Device&quot;</span><span class="o">:</span> <span class="s2">&quot;00:00&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Inode&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+    <span class="s2">&quot;StartAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x7f698da4b000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;EndAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x7f698da4e000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Permissions&quot;</span><span class="o">:</span> <span class="s2">&quot;rw-p&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;FileOffset&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Device&quot;</span><span class="o">:</span> <span class="s2">&quot;00:00&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Inode&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+    <span class="s2">&quot;StartAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x7f698da4e000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;EndAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x7f698da4f000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Permissions&quot;</span><span class="o">:</span> <span class="s2">&quot;r--p&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;FileOffset&quot;</span><span class="o">:</span> <span class="s2">&quot;0x25000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Device&quot;</span><span class="o">:</span> <span class="s2">&quot;08:01&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Inode&quot;</span><span class="o">:</span> <span class="mi">1972305</span><span class="p">,</span>
+    <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/lib/x86_64-linux-gnu/ld-2.23.so&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+    <span class="s2">&quot;StartAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x7f698da4f000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;EndAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x7f698da50000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Permissions&quot;</span><span class="o">:</span> <span class="s2">&quot;rw-p&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;FileOffset&quot;</span><span class="o">:</span> <span class="s2">&quot;0x26000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Device&quot;</span><span class="o">:</span> <span class="s2">&quot;08:01&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Inode&quot;</span><span class="o">:</span> <span class="mi">1972305</span><span class="p">,</span>
+    <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/lib/x86_64-linux-gnu/ld-2.23.so&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+    <span class="s2">&quot;StartAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x7f698da50000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;EndAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x7f698da51000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Permissions&quot;</span><span class="o">:</span> <span class="s2">&quot;rw-p&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;FileOffset&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Device&quot;</span><span class="o">:</span> <span class="s2">&quot;00:00&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Inode&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+    <span class="s2">&quot;StartAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x7ffcafca1000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;EndAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x7ffcafcc2000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Permissions&quot;</span><span class="o">:</span> <span class="s2">&quot;rw-p&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;FileOffset&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Device&quot;</span><span class="o">:</span> <span class="s2">&quot;00:00&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Inode&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;[stack]&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+    <span class="s2">&quot;StartAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x7ffcafd1c000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;EndAddr&quot;</span><span class="o">:</span> <span class="s2">&quot;0x7ffcafd1f000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Permissions&quot;</span><span class="o">:</span> <span class="s2">&quot;r--p&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;FileOffset&quot;</span><span class="o">:</span> <span class="s2">&quot;0x0&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Device&quot;</span><span class="o">:</span> <span class="s2">&quot;00:00&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Inode&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;[vvar]&quot;</span>
+    <span class="p">},</span>
+  <span class="p">],</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="log-collection.html" class="btn btn-neutral float-right" title="ログ収集" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="application-performance-profiling.html" class="btn btn-neutral float-left" title="アプリケーションパフォーマンスプロファイリング" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020 PSYGIG株式会社
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

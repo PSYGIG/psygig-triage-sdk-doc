@@ -1,0 +1,16 @@
+.. _exhale_struct_struct__psyiage__diag__result:
+
+Struct _psyiage_diag_result
+===========================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: _psyiage_diag_result
+   :members:
+   :protected-members:
+   :undoc-members:

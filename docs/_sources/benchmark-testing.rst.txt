@@ -5,7 +5,7 @@ Tracking the benchmark scores of a system provides an objective way of identifyi
 affect the system performance. For example, the benchmark score obtained from a computer vision benchmark test may indicate
 whether a GPU upgrade is required.
 
-`PSYGIG Triage SDK` includes a comprehensive set of benchmark tests designed to measure the performance of the most basic components and
+`PSYGIG Mobility IoT SDK` includes a comprehensive set of benchmark tests designed to measure the performance of the most basic components and
 functions of an embedded system.
 
 The Benchmark Testing API includes many features suitable for integration into embedded systems:
@@ -51,12 +51,12 @@ The Benchmark Testing API includes many features suitable for integration into e
 .. [1] :sub:`Stereo matching, Optical flow, Visual odometry, SLAM, Object detection, Object classification, Object tracking, 3D estimation, Velocity estimation`
 
 - Customizable and extensible benchmark tests
-- View comparison charts of your device with built-in integration in the `PSYGIG diagnostics platform <https://www.psygig.com>`_
+- View comparison charts of your device with built-in integration in the `PSYGIG data platform <https://www.psygig.com>`_
 - Generate an HTML report from the benchmark results
 
 .. note::
     The `Benchmark Testing` feature is a work-in-progress. 
-    Please :email:`contact us <info@psygig.com?subject=[PSYGIG Triage SDK] Benchmark Testing>` if you are interested in beta-testing this feature. 
+    Please `contact us <mailto:info@psygig.com>`_ if you are interested in beta-testing this feature. 
 
 .. _running-benchmarks:
 

@@ -1,0 +1,13 @@
+.. _exhale_typedef_group__admin_1ga2c4d4758ecc6d3accf2503b511d05de5:
+
+Typedef psyiage_endpoint_type
+=============================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: psyiage_endpoint_type

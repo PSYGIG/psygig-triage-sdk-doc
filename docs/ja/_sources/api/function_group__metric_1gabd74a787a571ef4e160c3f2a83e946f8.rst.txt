@@ -1,0 +1,13 @@
+.. _exhale_function_group__metric_1gabd74a787a571ef4e160c3f2a83e946f8:
+
+Function psyiage_metric_record_pointcloud
+=========================================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: psyiage_metric_record_pointcloud(psyiage_handle, char *, psyiage_pointcloud_data *, int)

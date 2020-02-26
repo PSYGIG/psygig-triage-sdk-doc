@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="ja" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="ja" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Log Collection &mdash; PSYGIG Triage SDK 0.4.0 ドキュメント</title>
+  <title>Log Collection &mdash; PSYGIG Mobility IoT SDK 0.4.0 documentation</title>
   
 
   
@@ -17,18 +17,27 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script type="text/javascript" src="_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/collapsible-lists/css/tree_view.css" type="text/css" />
-    <link rel="index" title="索引" href="genindex.html" />
-    <link rel="search" title="検索" href="search.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Metrics Collection" href="metrics-collection.html" />
     <link rel="prev" title="Crash Reporting" href="crash-reporting.html" />
  
@@ -42,25 +51,25 @@
     ga('send', 'pageview');
 </script>
 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
+<p>EN | <a href="ja/index.html">JP</a></p>
+
+
+
+
           
-            <a href="index.html" class="icon icon-home"> PSYGIG Triage SDK
+            <a href="index.html" class="icon icon-home"> PSYGIG Mobility IoT SDK
           
 
           
@@ -99,7 +108,7 @@
             
               <p class="caption"><span class="caption-text">OVERVIEW</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="supported-platforms.html">Supported Platforms/Architectures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="supported-platforms.html">Supported Platforms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="third-party-integration.html">Third Party Integration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="change-log.html">Change Log</a></li>
 </ul>
@@ -108,14 +117,20 @@
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Download &amp; Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
 </ul>
-<p class="caption"><span class="caption-text">FEATURES</span></p>
+<p class="caption"><span class="caption-text">DEVICE PROVISIONING</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="software-provisioning.html">Software Provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module-marketplace.html">Module Marketplace</a></li>
+</ul>
+<p class="caption"><span class="caption-text">DEVICE MONITORING</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="video-streaming.html">Video Streaming</a></li>
 <li class="toctree-l1"><a class="reference internal" href="application-performance-profiling.html">Application Performance Profiling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="crash-reporting.html">Crash Reporting</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Log Collection</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#known-log-sources">Known Log Sources</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#using-psymon">Using <code class="docutils literal notranslate"><span class="pre">psymon</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#using-psygig-triage-sdk-api">Using PSYGIG Triage SDK API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#using-c-c-sdk-api">Using C/C++ SDK API</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#real-time-monitoring-of-known-log-files">Real-time monitoring of known log files</a></li>
 </ul>
 </li>
@@ -123,18 +138,22 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="metrics-collection.html">Metrics Collection</a></li>
-<li class="toctree-l1"><a class="reference internal" href="system-information.html">System Information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="event-reporting.html">Event Reporting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="benchmark-testing.html">Benchmark Testing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="diagnostic-testing.html">Diagnostic Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="system-information.html">System Information</a></li>
 </ul>
-<p class="caption"><span class="caption-text">PSYGIG TRIAGE SDK REFERENCE</span></p>
+<p class="caption"><span class="caption-text">DIAGNOSIS &amp; BENCHMARKS</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="diagnostic-testing.html">Diagnostic Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="benchmark-testing.html">Benchmark Testing</a></li>
+</ul>
+<p class="caption"><span class="caption-text">SDK REFERENCE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="angelo-man.html"><code class="docutils literal notranslate"><span class="pre">angelo</span></code> man page</a></li>
 <li class="toctree-l1"><a class="reference internal" href="psymon-man.html"><code class="docutils literal notranslate"><span class="pre">psymon</span></code> man page</a></li>
 <li class="toctree-l1"><a class="reference internal" href="psybench-man.html"><code class="docutils literal notranslate"><span class="pre">psybench</span></code> man page</a></li>
 <li class="toctree-l1"><a class="reference internal" href="psydiag-man.html"><code class="docutils literal notranslate"><span class="pre">psydiag</span></code> man page</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api/index.html">PSYGIG Triage SDK API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sample-output.html">Sample Output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/index.html">C/C++ SDK API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sample-output.html">Sample JSON Output</a></li>
 </ul>
 
             
@@ -149,7 +168,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">PSYGIG Triage SDK</a>
+          <a href="index.html">PSYGIG Mobility IoT SDK</a>
         
       </nav>
 
@@ -198,117 +217,112 @@
            <div itemprop="articleBody">
             
   <div class="section" id="log-collection">
-<h1>Log Collection<a class="headerlink" href="#log-collection" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<h1>Log Collection<a class="headerlink" href="#log-collection" title="Permalink to this headline">¶</a></h1>
 <p>Software processes generate logs which provide insight into the internal workings of the application. As a software system becomes more complex,
 distributed across multiple devices, there would be hundreds of processes generating millions of log entries.
 For example, laser sensor device drivers may generate logs including raw point cloud data. At the same time, autopilot software for autonomous drones
 may dump pathfinding graphs into the logs.</p>
 <p>In order to diagnose and debug faults in software, navigating and understanding the vast amounts of log data is necessary in order to
 find the root cause of failure.</p>
-<p><cite>PSYGIG Triage SDK</cite> simplies the log collection process by providing a unified logging facility that consolidates logs from multiple sources.
+<p><cite>PSYGIG Mobility IoT SDK</cite> simplies the log collection process by providing a unified logging facility that consolidates logs from multiple sources.
 The logs can then be pushed to any <a class="reference internal" href="third-party-integration.html"><span class="doc">supported output plugin</span></a>.
 The Log Collection API includes many features suitable for integration into embedded systems:</p>
 <ul class="simple">
-<li>Works on existing applications; <cite>no need to recompile source code</cite></li>
-<li>Seamless integration with <a class="reference internal" href="third-party-integration.html#log-third-party"><span class="std std-ref">third party logging platforms</span></a> and <a class="reference internal" href="third-party-integration.html#db-third-party"><span class="std std-ref">databases</span></a></li>
-<li>Automatically monitor and collect log files generated by <a class="reference internal" href="#known-log-sources"><span class="std std-ref">known applications</span></a></li>
-<li>Use the built-in logging facility for your application's own logging needs</li>
-<li>Export logs to a variety of file formats (eg. JSON, CSV, HTML)</li>
+<li><p>Works on existing applications; <cite>no need to recompile source code</cite></p></li>
+<li><p>Seamless integration with <a class="reference internal" href="third-party-integration.html#log-third-party"><span class="std std-ref">third party logging platforms</span></a> and <a class="reference internal" href="third-party-integration.html#db-third-party"><span class="std std-ref">databases</span></a></p></li>
+<li><p>Automatically monitor and collect log files generated by <a class="reference internal" href="#known-log-sources"><span class="std std-ref">known applications</span></a></p></li>
+<li><p>Use the built-in logging facility for your application’s own logging needs</p></li>
+<li><p>Export logs to a variety of file formats (eg. JSON, CSV, HTML)</p></li>
 </ul>
 <div class="section" id="known-log-sources">
-<span id="id1"></span><h2>Known Log Sources<a class="headerlink" href="#known-log-sources" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<span id="id1"></span><h2>Known Log Sources<a class="headerlink" href="#known-log-sources" title="Permalink to this headline">¶</a></h2>
 <p>The Log Collection API provides facilities to discover and monitor log files from the following known applications:</p>
 <div class="admonition note">
-<p class="first admonition-title">注釈</p>
+<p class="admonition-title">Note</p>
 <p>Support for application log files in this list is a work-in-progress.</p>
-<p class="last">This list is constantly expanding.
-Please <script type="text/javascript">document.write(
-              "<n uers=\"znvygb:vasb\100cfltvt\056pbz?fhowrpg=[CFLTVT Gevntr FQX] Ybt Pbyyrpgvba\">pbagnpg hf <\057n>".replace(/[a-zA-Z]/g,
-              function(c){
-                return String.fromCharCode(
-                (c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);}));
-                </script> if there are log files from an application that you would like to be supported.</p>
+<p>This list is constantly expanding.
+Please <a class="reference external" href="mailto:info&#37;&#52;&#48;psygig&#46;com">contact us</a> if there are log files from an application that you would like to be supported.</p>
 </div>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="20%" />
-<col width="80%" />
+<col style="width: 20%" />
+<col style="width: 80%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="_images/unix.png"><img alt="unix" src="_images/unix.png" style="height: 40px;" /></a></td>
-<td>syslogd (eg. auth, daemon, kern, syslog)</td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="_images/unix.png"><img alt="unix" src="_images/unix.png" style="height: 40px;" /></a></p></td>
+<td><p>syslogd (eg. auth, daemon, kern, syslog)</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="_images/unix.png"><img alt="unix" src="_images/unix.png" style="height: 40px;" /></a></td>
-<td>journald</td>
+<tr class="row-even"><td><p><a class="reference internal" href="_images/unix.png"><img alt="unix" src="_images/unix.png" style="height: 40px;" /></a></p></td>
+<td><p>journald</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="_images/unix.png"><img alt="unix" src="_images/unix.png" style="height: 40px;" /></a></td>
-<td>rsyslogd</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="_images/unix.png"><img alt="unix" src="_images/unix.png" style="height: 40px;" /></a></p></td>
+<td><p>rsyslogd</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="_images/unix.png"><img alt="unix" src="_images/unix.png" style="height: 40px;" /></a></td>
-<td>syslog-ng</td>
+<tr class="row-even"><td><p><a class="reference internal" href="_images/unix.png"><img alt="unix" src="_images/unix.png" style="height: 40px;" /></a></p></td>
+<td><p>syslog-ng</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="_images/apache-http.png"><img alt="apache" src="_images/apache-http.png" style="height: 40px;" /></a></td>
-<td>Apache HTTP Server</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="_images/apache-http.png"><img alt="apache" src="_images/apache-http.png" style="height: 40px;" /></a></p></td>
+<td><p>Apache HTTP Server</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="_images/tomcat.png"><img alt="tomcat" src="_images/tomcat.png" style="height: 40px;" /></a></td>
-<td>Apache Tomcat</td>
+<tr class="row-even"><td><p><a class="reference internal" href="_images/tomcat.png"><img alt="tomcat" src="_images/tomcat.png" style="height: 40px;" /></a></p></td>
+<td><p>Apache Tomcat</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="_images/zookeeper.png"><img alt="zookeeper" src="_images/zookeeper.png" style="height: 40px;" /></a></td>
-<td>Apache Zookeeper</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="_images/zookeeper.png"><img alt="zookeeper" src="_images/zookeeper.png" style="height: 40px;" /></a></p></td>
+<td><p>Apache Zookeeper</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="_images/kafka.png"><img alt="kafka" src="_images/kafka.png" style="height: 40px;" /></a></td>
-<td>Apache Kafka</td>
+<tr class="row-even"><td><p><a class="reference internal" href="_images/kafka.png"><img alt="kafka" src="_images/kafka.png" style="height: 40px;" /></a></p></td>
+<td><p>Apache Kafka</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="_images/nginx.webp"><img alt="nginx" src="_images/nginx.webp" style="height: 40px;" /></a></td>
-<td>Nginx</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="_images/nginx.webp"><img alt="nginx" src="_images/nginx.webp" style="height: 40px;" /></a></p></td>
+<td><p>Nginx</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="_images/mysql.png"><img alt="mysql" src="_images/mysql.png" style="height: 40px;" /></a></td>
-<td>MySQL</td>
+<tr class="row-even"><td><p><a class="reference internal" href="_images/mysql.png"><img alt="mysql" src="_images/mysql.png" style="height: 40px;" /></a></p></td>
+<td><p>MySQL</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="_images/postgresql.png"><img alt="postgresql" src="_images/postgresql.png" style="height: 40px;" /></a></td>
-<td>PostgreSQL</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="_images/postgresql.png"><img alt="postgresql" src="_images/postgresql.png" style="height: 40px;" /></a></p></td>
+<td><p>PostgreSQL</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="_images/mongodb.png"><img alt="mongodb" src="_images/mongodb.png" style="height: 40px;" /></a></td>
-<td>MongoDB</td>
+<tr class="row-even"><td><p><a class="reference internal" href="_images/mongodb.png"><img alt="mongodb" src="_images/mongodb.png" style="height: 40px;" /></a></p></td>
+<td><p>MongoDB</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="_images/couchdb.png"><img alt="couchdb" src="_images/couchdb.png" style="height: 40px;" /></a></td>
-<td>CouchDB</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="_images/couchdb.png"><img alt="couchdb" src="_images/couchdb.png" style="height: 40px;" /></a></p></td>
+<td><p>CouchDB</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="_images/redis.png"><img alt="redis" src="_images/redis.png" style="height: 40px;" /></a></td>
-<td>Redis</td>
+<tr class="row-even"><td><p><a class="reference internal" href="_images/redis.png"><img alt="redis" src="_images/redis.png" style="height: 40px;" /></a></p></td>
+<td><p>Redis</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="_images/amazon-aws.png"><img alt="aws" src="_images/amazon-aws.png" style="height: 40px;" /></a></td>
-<td>Amazon AWS</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="_images/amazon-aws.png"><img alt="aws" src="_images/amazon-aws.png" style="height: 40px;" /></a></p></td>
+<td><p>Amazon AWS</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="_images/docker.png"><img alt="docker" src="_images/docker.png" style="height: 40px;" /></a></td>
-<td>Docker</td>
+<tr class="row-even"><td><p><a class="reference internal" href="_images/docker.png"><img alt="docker" src="_images/docker.png" style="height: 40px;" /></a></p></td>
+<td><p>Docker</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="_images/django.png"><img alt="django" src="_images/django.png" style="height: 40px;" /></a></td>
-<td>Django</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="_images/django.png"><img alt="django" src="_images/django.png" style="height: 40px;" /></a></p></td>
+<td><p>Django</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="_images/jenkins.png"><img alt="jenkins" src="_images/jenkins.png" style="height: 40px;" /></a></td>
-<td>Jenkins</td>
+<tr class="row-even"><td><p><a class="reference internal" href="_images/jenkins.png"><img alt="jenkins" src="_images/jenkins.png" style="height: 40px;" /></a></p></td>
+<td><p>Jenkins</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="_images/haproxy.webp"><img alt="haproxy" src="_images/haproxy.webp" style="height: 40px;" /></a></td>
-<td>HAProxy</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="_images/haproxy.webp"><img alt="haproxy" src="_images/haproxy.webp" style="height: 40px;" /></a></p></td>
+<td><p>HAProxy</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="_images/nagios.png"><img alt="nagios" src="_images/nagios.png" style="height: 40px;" /></a></td>
-<td>Nagios</td>
+<tr class="row-even"><td><p><a class="reference internal" href="_images/nagios.png"><img alt="nagios" src="_images/nagios.png" style="height: 40px;" /></a></p></td>
+<td><p>Nagios</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="_images/cassandra.png"><img alt="cassandra" src="_images/cassandra.png" style="height: 40px;" /></a></td>
-<td>Cassandra</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="_images/cassandra.png"><img alt="cassandra" src="_images/cassandra.png" style="height: 40px;" /></a></p></td>
+<td><p>Cassandra</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="_images/sinatra.png"><img alt="sinatra" src="_images/sinatra.png" style="height: 40px;" /></a></td>
-<td>Sinatra</td>
+<tr class="row-even"><td><p><a class="reference internal" href="_images/sinatra.png"><img alt="sinatra" src="_images/sinatra.png" style="height: 40px;" /></a></p></td>
+<td><p>Sinatra</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="_images/varnish.png"><img alt="varnish" src="_images/varnish.png" style="height: 40px;" /></a></td>
-<td>Varnish</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="_images/varnish.png"><img alt="varnish" src="_images/varnish.png" style="height: 40px;" /></a></p></td>
+<td><p>Varnish</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="using-psymon">
-<h2>Using <code class="docutils literal notranslate"><span class="pre">psymon</span></code><a class="headerlink" href="#using-psymon" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>Using <code class="docutils literal notranslate"><span class="pre">psymon</span></code><a class="headerlink" href="#using-psymon" title="Permalink to this headline">¶</a></h2>
 <p>Without modifying your existing source code, you can instantly enable collection of known application logs
 to your application by using the <code class="docutils literal notranslate"><span class="pre">psymon</span></code> script to run your program. For example:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>psymon --logs <span class="s2">&quot;/path/to/your/app --arg1 --arg2 --arg3&quot;</span>
@@ -316,12 +330,12 @@ to your application by using the <code class="docutils literal notranslate"><spa
 </div>
 <p>See <a class="reference internal" href="psymon-man.html"><span class="doc">psymon man page</span></a> for a complete list of options.</p>
 </div>
-<div class="section" id="using-psygig-triage-sdk-api">
-<h2>Using PSYGIG Triage SDK API<a class="headerlink" href="#using-psygig-triage-sdk-api" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="using-c-c-sdk-api">
+<h2>Using C/C++ SDK API<a class="headerlink" href="#using-c-c-sdk-api" title="Permalink to this headline">¶</a></h2>
 <p>The Log Collection API can be accessed by including a <a class="reference internal" href="api/file_include_psyiage_psyiagesdk.h.html"><span class="doc">single header file</span></a>
 and linking the <code class="docutils literal notranslate"><span class="pre">libpsyiage</span></code> shared library. See <a class="reference internal" href="getting-started.html#libpsyiage-linking"><span class="std std-ref">Advanced Setup - Building your application with libpsyiage</span></a> for details.</p>
 <div class="section" id="real-time-monitoring-of-known-log-files">
-<h3>Real-time monitoring of known log files<a class="headerlink" href="#real-time-monitoring-of-known-log-files" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3>Real-time monitoring of known log files<a class="headerlink" href="#real-time-monitoring-of-known-log-files" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -382,7 +396,7 @@ and linking the <code class="docutils literal notranslate"><span class="pre">lib
 </div>
 </div>
 <div class="section" id="sample-syslog-json-output">
-<h2>Sample <code class="docutils literal notranslate"><span class="pre">syslog</span></code> JSON output<a class="headerlink" href="#sample-syslog-json-output" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>Sample <code class="docutils literal notranslate"><span class="pre">syslog</span></code> JSON output<a class="headerlink" href="#sample-syslog-json-output" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="s2">&quot;FilePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/var/log/messages&quot;</span><span class="p">,</span>
   <span class="s2">&quot;Entries&quot;</span><span class="o">:</span> <span class="p">[</span>
@@ -425,7 +439,7 @@ and linking the <code class="docutils literal notranslate"><span class="pre">lib
         <a href="metrics-collection.html" class="btn btn-neutral float-right" title="Metrics Collection" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="crash-reporting.html" class="btn btn-neutral" title="Crash Reporting" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="crash-reporting.html" class="btn btn-neutral float-left" title="Crash Reporting" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -434,7 +448,7 @@ and linking the <code class="docutils literal notranslate"><span class="pre">lib
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019 PSYGIG株式会社
+        &copy; Copyright 2020 PSYGIG株式会社
 
     </p>
   </div>
@@ -451,29 +465,16 @@ and linking the <code class="docutils literal notranslate"><span class="pre">lib
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/translations.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/javascript" src="_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
-        <script type="text/javascript" src="_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
-    
-
-  
-
-  <script type="text/javascript" src="_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

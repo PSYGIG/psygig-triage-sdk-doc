@@ -1,0 +1,13 @@
+.. _exhale_typedef_group__sysinfo_1ga291ded934cd9cff52388819b63e0bc47:
+
+Typedef psyiage_meminfo
+=======================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: psyiage_meminfo

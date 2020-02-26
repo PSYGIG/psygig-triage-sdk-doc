@@ -1,0 +1,13 @@
+.. _exhale_function_group__admin_1ga689acebf415fa1b1ac81ee98a4f02ebe:
+
+Function psyiage_init
+=====================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: psyiage_init(psyiage_handle *)

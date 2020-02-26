@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="ja" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="ja" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Struct _psyiage_pointcloud_data &mdash; PSYGIG Triage SDK 0.4.0 ドキュメント</title>
+  <title>Struct _psyiage_pointcloud_data &mdash; PSYGIG Mobility IoT SDK 0.4.0 documentation</title>
   
 
   
@@ -17,18 +17,27 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
-    <link rel="index" title="索引" href="../genindex.html" />
-    <link rel="search" title="検索" href="../search.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Struct _psyiage_session_info" href="struct__psyiage__session__info.html" />
     <link rel="prev" title="Struct _psyiage_pciinfo" href="struct__psyiage__pciinfo.html" />
  
@@ -42,25 +51,25 @@
     ga('send', 'pageview');
 </script>
 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
+<p>EN | <a href="ja/index.html">JP</a></p>
+
+
+
+
           
-            <a href="../index.html" class="icon icon-home"> PSYGIG Triage SDK
+            <a href="../index.html" class="icon icon-home"> PSYGIG Mobility IoT SDK
           
 
           
@@ -99,7 +108,7 @@
             
               <p class="caption"><span class="caption-text">OVERVIEW</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../supported-platforms.html">Supported Platforms/Architectures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../supported-platforms.html">Supported Platforms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../third-party-integration.html">Third Party Integration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../change-log.html">Change Log</a></li>
 </ul>
@@ -108,24 +117,34 @@
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">Download &amp; Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html">Getting Started</a></li>
 </ul>
-<p class="caption"><span class="caption-text">FEATURES</span></p>
+<p class="caption"><span class="caption-text">DEVICE PROVISIONING</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../software-provisioning.html">Software Provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-marketplace.html">Module Marketplace</a></li>
+</ul>
+<p class="caption"><span class="caption-text">DEVICE MONITORING</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../video-streaming.html">Video Streaming</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../application-performance-profiling.html">Application Performance Profiling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../crash-reporting.html">Crash Reporting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../log-collection.html">Log Collection</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../metrics-collection.html">Metrics Collection</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../system-information.html">System Information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../event-reporting.html">Event Reporting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../benchmark-testing.html">Benchmark Testing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../diagnostic-testing.html">Diagnostic Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system-information.html">System Information</a></li>
 </ul>
-<p class="caption"><span class="caption-text">PSYGIG TRIAGE SDK REFERENCE</span></p>
+<p class="caption"><span class="caption-text">DIAGNOSIS &amp; BENCHMARKS</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../diagnostic-testing.html">Diagnostic Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../benchmark-testing.html">Benchmark Testing</a></li>
+</ul>
+<p class="caption"><span class="caption-text">SDK REFERENCE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../angelo-man.html"><code class="docutils literal notranslate"><span class="pre">angelo</span></code> man page</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../psymon-man.html"><code class="docutils literal notranslate"><span class="pre">psymon</span></code> man page</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../psybench-man.html"><code class="docutils literal notranslate"><span class="pre">psybench</span></code> man page</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../psydiag-man.html"><code class="docutils literal notranslate"><span class="pre">psydiag</span></code> man page</a></li>
-<li class="toctree-l1"><a class="reference internal" href="index.html">PSYGIG Triage SDK API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../sample-output.html">Sample Output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">C/C++ SDK API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sample-output.html">Sample JSON Output</a></li>
 </ul>
 
             
@@ -140,7 +159,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">PSYGIG Triage SDK</a>
+          <a href="../index.html">PSYGIG Mobility IoT SDK</a>
         
       </nav>
 
@@ -171,7 +190,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="index.html">PSYGIG Triage SDK API</a> &raquo;</li>
+          <li><a href="index.html">C/C++ SDK API Reference</a> &raquo;</li>
         
       <li>Struct _psyiage_pointcloud_data</li>
     
@@ -191,44 +210,44 @@
            <div itemprop="articleBody">
             
   <div class="section" id="struct-psyiage-pointcloud-data">
-<span id="exhale-struct-struct-psyiage-pointcloud-data"></span><h1>Struct _psyiage_pointcloud_data<a class="headerlink" href="#struct-psyiage-pointcloud-data" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<span id="exhale-struct-struct-psyiage-pointcloud-data"></span><h1>Struct _psyiage_pointcloud_data<a class="headerlink" href="#struct-psyiage-pointcloud-data" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li>Defined in <a class="reference internal" href="file_include_psyiage_psyiagesdk.h.html#file-include-psyiage-psyiagesdk-h"><span class="std std-ref">File psyiagesdk.h</span></a></li>
+<li><p>Defined in <a class="reference internal" href="file_include_psyiage_psyiagesdk.h.html#file-include-psyiage-psyiagesdk-h"><span class="std std-ref">File psyiagesdk.h</span></a></p></li>
 </ul>
 <div class="section" id="struct-documentation">
-<h2>Struct Documentation<a class="headerlink" href="#struct-documentation" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>Struct Documentation<a class="headerlink" href="#struct-documentation" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
-<dt id="_CPPv324_psyiage_pointcloud_data">
-<span id="_CPPv224_psyiage_pointcloud_data"></span><span id="_psyiage_pointcloud_data"></span><span class="target" id="struct__psyiage__pointcloud__data"></span><em class="property">struct </em><code class="descname">_psyiage_pointcloud_data</code><a class="headerlink" href="#_CPPv324_psyiage_pointcloud_data" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dt id="_CPPv424_psyiage_pointcloud_data">
+<span id="_CPPv324_psyiage_pointcloud_data"></span><span id="_CPPv224_psyiage_pointcloud_data"></span><span id="_psyiage_pointcloud_data"></span><span class="target" id="struct__psyiage__pointcloud__data"></span><em class="property">struct </em><code class="sig-name descname">_psyiage_pointcloud_data</code><a class="headerlink" href="#_CPPv424_psyiage_pointcloud_data" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Point cloud data Defines the struct for pushing point cloud metrics to the psyiage instance. </p>
-<p><dl class="docutils">
-<dt><strong>Note</strong></dt>
-<dd>Not yet implemented </dd>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>Not yet implemented </p>
+</dd>
 </dl>
 </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Members</p>
 <dl class="member">
-<dt id="_CPPv3N24_psyiage_pointcloud_data1xE">
-<span id="_CPPv2N24_psyiage_pointcloud_data1xE"></span><span id="_psyiage_pointcloud_data::x__float"></span><span class="target" id="struct__psyiage__pointcloud__data_1ab56dcf90adeda918968a8dd51993f59e"></span>float <code class="descname">x</code><a class="headerlink" href="#_CPPv3N24_psyiage_pointcloud_data1xE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dt id="_CPPv4N24_psyiage_pointcloud_data1xE">
+<span id="_CPPv3N24_psyiage_pointcloud_data1xE"></span><span id="_CPPv2N24_psyiage_pointcloud_data1xE"></span><span id="_psyiage_pointcloud_data::x__float"></span><span class="target" id="struct__psyiage__pointcloud__data_1ab56dcf90adeda918968a8dd51993f59e"></span>float <code class="sig-name descname">x</code><a class="headerlink" href="#_CPPv4N24_psyiage_pointcloud_data1xE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>x-coordinate of point </p>
 </dd></dl>
 
 <dl class="member">
-<dt id="_CPPv3N24_psyiage_pointcloud_data1yE">
-<span id="_CPPv2N24_psyiage_pointcloud_data1yE"></span><span id="_psyiage_pointcloud_data::y__float"></span><span class="target" id="struct__psyiage__pointcloud__data_1a86ab9bb47f6f8520bcc5e7cface1f73b"></span>float <code class="descname">y</code><a class="headerlink" href="#_CPPv3N24_psyiage_pointcloud_data1yE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dt id="_CPPv4N24_psyiage_pointcloud_data1yE">
+<span id="_CPPv3N24_psyiage_pointcloud_data1yE"></span><span id="_CPPv2N24_psyiage_pointcloud_data1yE"></span><span id="_psyiage_pointcloud_data::y__float"></span><span class="target" id="struct__psyiage__pointcloud__data_1a86ab9bb47f6f8520bcc5e7cface1f73b"></span>float <code class="sig-name descname">y</code><a class="headerlink" href="#_CPPv4N24_psyiage_pointcloud_data1yE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>y-coordinate of point </p>
 </dd></dl>
 
 <dl class="member">
-<dt id="_CPPv3N24_psyiage_pointcloud_data1zE">
-<span id="_CPPv2N24_psyiage_pointcloud_data1zE"></span><span id="_psyiage_pointcloud_data::z__float"></span><span class="target" id="struct__psyiage__pointcloud__data_1a9696cffb93f378db15342ca5a2bfadb6"></span>float <code class="descname">z</code><a class="headerlink" href="#_CPPv3N24_psyiage_pointcloud_data1zE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dt id="_CPPv4N24_psyiage_pointcloud_data1zE">
+<span id="_CPPv3N24_psyiage_pointcloud_data1zE"></span><span id="_CPPv2N24_psyiage_pointcloud_data1zE"></span><span id="_psyiage_pointcloud_data::z__float"></span><span class="target" id="struct__psyiage__pointcloud__data_1a9696cffb93f378db15342ca5a2bfadb6"></span>float <code class="sig-name descname">z</code><a class="headerlink" href="#_CPPv4N24_psyiage_pointcloud_data1zE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>z-coordinate of point </p>
 </dd></dl>
 
 <dl class="member">
-<dt id="_CPPv3N24_psyiage_pointcloud_data3rgbE">
-<span id="_CPPv2N24_psyiage_pointcloud_data3rgbE"></span><span id="_psyiage_pointcloud_data::rgb__unsigned-i"></span><span class="target" id="struct__psyiage__pointcloud__data_1a4364cfc5a08a0c36d93781d3b9bac0ef"></span>unsigned int <code class="descname">rgb</code><a class="headerlink" href="#_CPPv3N24_psyiage_pointcloud_data3rgbE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dt id="_CPPv4N24_psyiage_pointcloud_data3rgbE">
+<span id="_CPPv3N24_psyiage_pointcloud_data3rgbE"></span><span id="_CPPv2N24_psyiage_pointcloud_data3rgbE"></span><span id="_psyiage_pointcloud_data::rgb__unsigned-i"></span><span class="target" id="struct__psyiage__pointcloud__data_1a4364cfc5a08a0c36d93781d3b9bac0ef"></span>unsigned int <code class="sig-name descname">rgb</code><a class="headerlink" href="#_CPPv4N24_psyiage_pointcloud_data3rgbE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>point colour in RGB (0x00RRGGBB) </p>
 </dd></dl>
 
@@ -249,7 +268,7 @@
         <a href="struct__psyiage__session__info.html" class="btn btn-neutral float-right" title="Struct _psyiage_session_info" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="struct__psyiage__pciinfo.html" class="btn btn-neutral" title="Struct _psyiage_pciinfo" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="struct__psyiage__pciinfo.html" class="btn btn-neutral float-left" title="Struct _psyiage_pciinfo" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -258,7 +277,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019 PSYGIG株式会社
+        &copy; Copyright 2020 PSYGIG株式会社
 
     </p>
   </div>
@@ -275,29 +294,16 @@
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/translations.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/javascript" src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
-        <script type="text/javascript" src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

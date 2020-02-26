@@ -1,0 +1,13 @@
+.. _exhale_typedef_group__sysinfo_1ga07334784a527ae69fb98d80f00e33658:
+
+Typedef psyiage_pciinfo
+=======================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: psyiage_pciinfo

@@ -1,0 +1,13 @@
+.. _exhale_function_group__profile_1ga49c998d49450ca1024fe0dd94592b214:
+
+Function psyiage_profile_code_end
+=================================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: psyiage_profile_code_end(psyiage_handle)

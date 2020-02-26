@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="ja" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="ja" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Crash Reporting &mdash; PSYGIG Triage SDK 0.4.0 ドキュメント</title>
+  <title>Crash Reporting &mdash; PSYGIG Mobility IoT SDK 0.4.0 documentation</title>
   
 
   
@@ -17,18 +17,27 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script type="text/javascript" src="_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/collapsible-lists/css/tree_view.css" type="text/css" />
-    <link rel="index" title="索引" href="genindex.html" />
-    <link rel="search" title="検索" href="search.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Log Collection" href="log-collection.html" />
     <link rel="prev" title="Application Performance Profiling" href="application-performance-profiling.html" />
  
@@ -42,25 +51,25 @@
     ga('send', 'pageview');
 </script>
 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
+<p>EN | <a href="ja/index.html">JP</a></p>
+
+
+
+
           
-            <a href="index.html" class="icon icon-home"> PSYGIG Triage SDK
+            <a href="index.html" class="icon icon-home"> PSYGIG Mobility IoT SDK
           
 
           
@@ -99,7 +108,7 @@
             
               <p class="caption"><span class="caption-text">OVERVIEW</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="supported-platforms.html">Supported Platforms/Architectures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="supported-platforms.html">Supported Platforms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="third-party-integration.html">Third Party Integration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="change-log.html">Change Log</a></li>
 </ul>
@@ -108,12 +117,18 @@
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Download &amp; Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
 </ul>
-<p class="caption"><span class="caption-text">FEATURES</span></p>
+<p class="caption"><span class="caption-text">DEVICE PROVISIONING</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="software-provisioning.html">Software Provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module-marketplace.html">Module Marketplace</a></li>
+</ul>
+<p class="caption"><span class="caption-text">DEVICE MONITORING</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="video-streaming.html">Video Streaming</a></li>
 <li class="toctree-l1"><a class="reference internal" href="application-performance-profiling.html">Application Performance Profiling</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Crash Reporting</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#using-psymon">Using <code class="docutils literal notranslate"><span class="pre">psymon</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#using-psygig-triage-sdk-api">Using PSYGIG Triage SDK API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#using-c-c-sdk-api">Using C/C++ SDK API</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#generate-crash-report-on-fatal-signals-eg-sigsegv-sigkill">Generate crash report on fatal signals (eg. SIGSEGV, SIGKILL)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#generate-crash-report-during-core-dump">Generate crash report during core dump</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#generate-crash-report-on-demand">Generate crash report on demand</a></li>
@@ -124,18 +139,22 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="log-collection.html">Log Collection</a></li>
 <li class="toctree-l1"><a class="reference internal" href="metrics-collection.html">Metrics Collection</a></li>
-<li class="toctree-l1"><a class="reference internal" href="system-information.html">System Information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="event-reporting.html">Event Reporting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="benchmark-testing.html">Benchmark Testing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="diagnostic-testing.html">Diagnostic Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="system-information.html">System Information</a></li>
 </ul>
-<p class="caption"><span class="caption-text">PSYGIG TRIAGE SDK REFERENCE</span></p>
+<p class="caption"><span class="caption-text">DIAGNOSIS &amp; BENCHMARKS</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="diagnostic-testing.html">Diagnostic Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="benchmark-testing.html">Benchmark Testing</a></li>
+</ul>
+<p class="caption"><span class="caption-text">SDK REFERENCE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="angelo-man.html"><code class="docutils literal notranslate"><span class="pre">angelo</span></code> man page</a></li>
 <li class="toctree-l1"><a class="reference internal" href="psymon-man.html"><code class="docutils literal notranslate"><span class="pre">psymon</span></code> man page</a></li>
 <li class="toctree-l1"><a class="reference internal" href="psybench-man.html"><code class="docutils literal notranslate"><span class="pre">psybench</span></code> man page</a></li>
 <li class="toctree-l1"><a class="reference internal" href="psydiag-man.html"><code class="docutils literal notranslate"><span class="pre">psydiag</span></code> man page</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api/index.html">PSYGIG Triage SDK API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sample-output.html">Sample Output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/index.html">C/C++ SDK API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sample-output.html">Sample JSON Output</a></li>
 </ul>
 
             
@@ -150,7 +169,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">PSYGIG Triage SDK</a>
+          <a href="index.html">PSYGIG Mobility IoT SDK</a>
         
       </nav>
 
@@ -199,43 +218,36 @@
            <div itemprop="articleBody">
             
   <div class="section" id="crash-reporting">
-<h1>Crash Reporting<a class="headerlink" href="#crash-reporting" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<h1>Crash Reporting<a class="headerlink" href="#crash-reporting" title="Permalink to this headline">¶</a></h1>
 <p>Many software development teams strive to build defect-free software systems, spending vast amounts of resources in software quality assurance and
 code analysis tools to prevent software failure from occuring. In reality, however, faults will still occur in the software and ultimately,
 causing the application to crash.</p>
 <p>To determine the cause of failure, a post-mortem analysis must be performed on the state of the application at the time of the crash.
 Such data includes stack traces, memory dumps and register contents at the point of failure, which can be used to
 identify the exact line in the source file where the crash occurred.</p>
-<p><cite>PSYGIG Triage SDK</cite> extends your application with crash reporting capabilties, collecting post-mortem data at the point of failure.
+<p><cite>PSYGIG Mobility IoT SDK</cite> extends your application with crash reporting capabilties, collecting post-mortem data at the point of failure.
 The Crash Reporting API includes many features suitable for integration into embedded systems:</p>
 <ul>
-<li><p class="first">Works on existing applications; <cite>no need to recompile source code</cite></p>
-</li>
-<li><p class="first"><a class="reference internal" href="supported-platforms.html"><span class="doc">Multiplatform support</span></a></p>
-</li>
-<li><p class="first">Seamless integration with <a class="reference internal" href="third-party-integration.html#crash-third-party"><span class="std std-ref">third party crash reporting platforms</span></a></p>
-</li>
-<li><p class="first">Generate process snapshot dumps for the crash report, including:</p>
+<li><p>Works on existing applications; <cite>no need to recompile source code</cite></p></li>
+<li><p><a class="reference internal" href="supported-platforms.html"><span class="doc">Multiplatform support</span></a></p></li>
+<li><p>Seamless integration with <a class="reference internal" href="third-party-integration.html#crash-third-party"><span class="std std-ref">third party crash reporting platforms</span></a></p></li>
+<li><p>Generate process snapshot dumps for the crash report, including:</p>
 <blockquote>
 <div><ul class="simple">
-<li>Process environment - <cite>including command line and environment variables</cite></li>
-<li>Thread states - <cite>including register contents and stack memory</cite></li>
-<li>Loaded modules - <cite>such as shared libraries and memory-mapped files</cite></li>
-<li>Memory dump of sections in process memory space</li>
+<li><p>Process environment - <cite>including command line and environment variables</cite></p></li>
+<li><p>Thread states - <cite>including register contents and stack memory</cite></p></li>
+<li><p>Loaded modules - <cite>such as shared libraries and memory-mapped files</cite></p></li>
+<li><p>Memory dump of sections in process memory space</p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first">Capture stack traces, including source file and line number</p>
-</li>
-<li><p class="first">Small execution footprint to preserve program state</p>
-</li>
-<li><p class="first">Append user-defined, application-specific metadata to the crash report</p>
-</li>
-<li><p class="first">Export crash report to a variety of file formats (eg. JSON, CSV, HTML)</p>
-</li>
+<li><p>Capture stack traces, including source file and line number</p></li>
+<li><p>Small execution footprint to preserve program state</p></li>
+<li><p>Append user-defined, application-specific metadata to the crash report</p></li>
+<li><p>Export crash report to a variety of file formats (eg. JSON, CSV, HTML)</p></li>
 </ul>
 <div class="section" id="using-psymon">
-<h2>Using <code class="docutils literal notranslate"><span class="pre">psymon</span></code><a class="headerlink" href="#using-psymon" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>Using <code class="docutils literal notranslate"><span class="pre">psymon</span></code><a class="headerlink" href="#using-psymon" title="Permalink to this headline">¶</a></h2>
 <p>Without modifying your existing source code, you can instantly enable crash reporting
 to your application by using the <code class="docutils literal notranslate"><span class="pre">psymon</span></code> script to run your program. For example:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>psymon --crash <span class="s2">&quot;/path/to/your/app --arg1 --arg2 --arg3&quot;</span>
@@ -243,12 +255,12 @@ to your application by using the <code class="docutils literal notranslate"><spa
 </div>
 <p>See <a class="reference internal" href="psymon-man.html"><span class="doc">psymon man page</span></a> for a complete list of options.</p>
 </div>
-<div class="section" id="using-psygig-triage-sdk-api">
-<h2>Using PSYGIG Triage SDK API<a class="headerlink" href="#using-psygig-triage-sdk-api" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="using-c-c-sdk-api">
+<h2>Using C/C++ SDK API<a class="headerlink" href="#using-c-c-sdk-api" title="Permalink to this headline">¶</a></h2>
 <p>The Crash Reporting API can be accessed by including a <a class="reference internal" href="api/file_include_psyiage_psyiagesdk.h.html"><span class="doc">single header file</span></a>
 and linking the <code class="docutils literal notranslate"><span class="pre">libpsyiage</span></code> shared library. See <a class="reference internal" href="getting-started.html#libpsyiage-linking"><span class="std std-ref">Advanced Setup - Building your application with libpsyiage</span></a> for details.</p>
 <div class="section" id="generate-crash-report-on-fatal-signals-eg-sigsegv-sigkill">
-<h3>Generate crash report on fatal signals (eg. SIGSEGV, SIGKILL)<a class="headerlink" href="#generate-crash-report-on-fatal-signals-eg-sigsegv-sigkill" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3>Generate crash report on fatal signals (eg. SIGSEGV, SIGKILL)<a class="headerlink" href="#generate-crash-report-on-fatal-signals-eg-sigsegv-sigkill" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -278,7 +290,7 @@ and linking the <code class="docutils literal notranslate"><span class="pre">lib
 </td></tr></table></div>
 </div>
 <div class="section" id="generate-crash-report-during-core-dump">
-<h3>Generate crash report during core dump<a class="headerlink" href="#generate-crash-report-during-core-dump" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3>Generate crash report during core dump<a class="headerlink" href="#generate-crash-report-during-core-dump" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -308,16 +320,11 @@ and linking the <code class="docutils literal notranslate"><span class="pre">lib
 </td></tr></table></div>
 </div>
 <div class="section" id="generate-crash-report-on-demand">
-<h3>Generate crash report on demand<a class="headerlink" href="#generate-crash-report-on-demand" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3>Generate crash report on demand<a class="headerlink" href="#generate-crash-report-on-demand" title="Permalink to this headline">¶</a></h3>
 <div class="admonition note">
-<p class="first admonition-title">注釈</p>
-<p class="last"><cite>Generate crash report on demand</cite> is a work-in-progress.
-Please <script type="text/javascript">document.write(
-              "<n uers=\"znvygb:vasb\100cfltvt\056pbz?fhowrpg=[CFLTVT Gevntr FQX] Trarengr penfu ercbeg ba qrznaq\">pbagnpg hf <\057n>".replace(/[a-zA-Z]/g,
-              function(c){
-                return String.fromCharCode(
-                (c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);}));
-                </script> if you are interested in beta-testing this feature.</p>
+<p class="admonition-title">Note</p>
+<p><cite>Generate crash report on demand</cite> is a work-in-progress.
+Please <a class="reference external" href="mailto:info&#37;&#52;&#48;psygig&#46;com">contact us</a> if you are interested in beta-testing this feature.</p>
 </div>
 <div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -349,7 +356,7 @@ Please <script type="text/javascript">document.write(
 </div>
 </div>
 <div class="section" id="sample-json-crash-report">
-<h2>Sample JSON crash report<a class="headerlink" href="#sample-json-crash-report" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>Sample JSON crash report<a class="headerlink" href="#sample-json-crash-report" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="s2">&quot;TaskInfo&quot;</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">&quot;ProcID&quot;</span><span class="o">:</span> <span class="mi">35392</span><span class="p">,</span>
@@ -873,7 +880,7 @@ Please <script type="text/javascript">document.write(
         <a href="log-collection.html" class="btn btn-neutral float-right" title="Log Collection" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="application-performance-profiling.html" class="btn btn-neutral" title="Application Performance Profiling" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="application-performance-profiling.html" class="btn btn-neutral float-left" title="Application Performance Profiling" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -882,7 +889,7 @@ Please <script type="text/javascript">document.write(
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019 PSYGIG株式会社
+        &copy; Copyright 2020 PSYGIG株式会社
 
     </p>
   </div>
@@ -899,29 +906,16 @@ Please <script type="text/javascript">document.write(
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/translations.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/javascript" src="_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
-        <script type="text/javascript" src="_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
-    
-
-  
-
-  <script type="text/javascript" src="_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

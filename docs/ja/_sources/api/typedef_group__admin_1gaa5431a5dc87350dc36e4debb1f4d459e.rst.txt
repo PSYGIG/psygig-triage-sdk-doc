@@ -1,0 +1,13 @@
+.. _exhale_typedef_group__admin_1gaa5431a5dc87350dc36e4debb1f4d459e:
+
+Typedef psyiage_sink_tcp_cfg
+============================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: psyiage_sink_tcp_cfg

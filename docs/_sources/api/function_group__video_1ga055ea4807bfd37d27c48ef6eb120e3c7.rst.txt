@@ -1,0 +1,13 @@
+.. _exhale_function_group__video_1ga055ea4807bfd37d27c48ef6eb120e3c7:
+
+Function psyiage_video_stream_start
+===================================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: psyiage_video_stream_start(psyiage_handle, psyiage_video_cfg *)

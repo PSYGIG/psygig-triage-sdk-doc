@@ -1,0 +1,13 @@
+.. _exhale_function_group__metric_1gab715c1e25afb366bd3ec5d4f7b0b3346:
+
+Function psyiage_metric_record_values_string
+============================================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: psyiage_metric_record_values_string(psyiage_handle, char *, char *, int)

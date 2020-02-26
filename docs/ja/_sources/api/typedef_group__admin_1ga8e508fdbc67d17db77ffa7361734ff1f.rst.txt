@@ -1,0 +1,13 @@
+.. _exhale_typedef_group__admin_1ga8e508fdbc67d17db77ffa7361734ff1f:
+
+Typedef psyiage_sink_data_format
+================================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: psyiage_sink_data_format

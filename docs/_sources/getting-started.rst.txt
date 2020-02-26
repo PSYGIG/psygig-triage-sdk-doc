@@ -1,13 +1,26 @@
 Getting Started
 ===============
 
-This short guide explains how to get started with `PSYGIG Triage SDK`. Before you can start instrumenting your applications, 
+This short guide explains how to get started with `PSYGIG Mobility IoT SDK`. Before you can start developing your IoT applications, 
 you need to download and install the latest version of the SDK.
 
-:doc:`PSYGIG Triage SDK Download/Installation Guide <installation>`
+:doc:`PSYGIG Mobility IoT SDK Download/Installation Guide <installation>`
 
-**Quick Start** - using ``psymon``
-----------------------------------
+**Quick Start**
+----------------
+
+Stream live video from camera
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+With a simple command, low-latency video can be streamed live directly from a camera using the ``angelo`` command line tool.
+
+.. code-block:: bash
+
+   angelo live
+
+See :doc:`angelo-man` for a complete list of options.
+
+Instrument your existing applications
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Without modifying your existing source code, you can instantly add instrumentation and crash reporting capabilities
 to your application by using the ``psymon`` script to run your program. For example:
 
@@ -26,7 +39,7 @@ See :doc:`psymon-man` for a complete list of options.
 
 **Advanced Setup** - Building your application with ``libpsyiage``
 ------------------------------------------------------------------
-The rich feature set of the `PSYGIG Triage SDK` can be fully exploited via the :doc:`api/index`. The API can be accessed
+The rich feature set of the `PSYGIG Mobility IoT SDK` can be fully exploited via the :doc:`C/C++ SDK API <api/index>`. The API can be accessed
 by including a :doc:`single header file <api/file_include_psyiage_psyiagesdk.h>` and linking to the ``libpsyiage`` shared library.
 
 .. _basic-example:
@@ -58,8 +71,8 @@ This example enables period polling of system resource metrics and saves the dat
         // Add a file sink for logging metrics to JSON
         sink.type = PSYIAGE_SINK_FILE;
         sink.format = PSYIAGE_DATA_FORMAT_JSON;
-        strcpy(sink.file.dir,RESULTS_DIR);
-        strcpy(sink.file.basename,RESULTS_BASE);
+        sink.file.dir = RESULTS_DIR;
+        sink.file.basename = RESULTS_BASE;
         rc = psyiage_add_sink(pah, &sink);  // Ignore return code for simplicity sake
 
         // Enable polling of system resources every 500ms
@@ -94,11 +107,11 @@ Depending on where libpsyiage was installed, you may need to specify the locatio
 
     gcc -I/opt/psygig/psyiage/include basic-example.c -o basic-example -L/opt/psygig/psyiage/lib -lpsyiage
 
-:sub:`Assuming PSYGIG Triage SDK was installed under /opt/psygig/psyiage`
+:sub:`Assuming PSYGIG Mobility IoT SDK was installed under /opt/psygig/psyiage`
 
 .. rubric:: Building `basic-example` using ``cmake``
 
-A better alternative for building programs using `PSYGIG Triage SDK` is to use ``cmake``, especially if you are
+A better alternative for building programs using `PSYGIG Mobility IoT SDK` is to use ``cmake``, especially if you are
 developing for several platforms. Assuming the following folder structure:
 
 .. code-block:: bash
@@ -125,7 +138,7 @@ developing for several platforms. Assuming the following folder structure:
     # Link the libpsyiage.so folder to the binary
     target_link_libraries(basic-example /opt/psygig/psyiage/lib/libpsyiage.so)
 
-:sub:`Assuming PSYGIG Triage SDK was installed under /opt/psygig/psyiage`
+:sub:`Assuming PSYGIG Mobility IoT SDK was installed under /opt/psygig/psyiage`
 
 The following sequence of commands create a directory for building (avoid building in the source folder), builds
 `basic-example` with ``cmake`` and then runs the program:

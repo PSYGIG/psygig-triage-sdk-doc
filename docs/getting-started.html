@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="ja" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="ja" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Getting Started &mdash; PSYGIG Triage SDK 0.4.0 ドキュメント</title>
+  <title>Getting Started &mdash; PSYGIG Mobility IoT SDK 0.4.0 documentation</title>
   
 
   
@@ -17,19 +17,28 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script type="text/javascript" src="_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/collapsible-lists/css/tree_view.css" type="text/css" />
-    <link rel="index" title="索引" href="genindex.html" />
-    <link rel="search" title="検索" href="search.html" />
-    <link rel="next" title="Application Performance Profiling" href="application-performance-profiling.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Software Provisioning" href="software-provisioning.html" />
     <link rel="prev" title="Download &amp; Installation" href="installation.html" />
  
 <script>
@@ -42,25 +51,25 @@
     ga('send', 'pageview');
 </script>
 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
+<p>EN | <a href="ja/index.html">JP</a></p>
+
+
+
+
           
-            <a href="index.html" class="icon icon-home"> PSYGIG Triage SDK
+            <a href="index.html" class="icon icon-home"> PSYGIG Mobility IoT SDK
           
 
           
@@ -99,7 +108,7 @@
             
               <p class="caption"><span class="caption-text">OVERVIEW</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="supported-platforms.html">Supported Platforms/Architectures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="supported-platforms.html">Supported Platforms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="third-party-integration.html">Third Party Integration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="change-log.html">Change Log</a></li>
 </ul>
@@ -107,7 +116,11 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Download &amp; Installation</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#quick-start-using-psymon"><strong>Quick Start</strong> - using <code class="docutils literal notranslate"><span class="pre">psymon</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#quick-start"><strong>Quick Start</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#stream-live-video-from-camera">Stream live video from camera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#instrument-your-existing-applications">Instrument your existing applications</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#advanced-setup-building-your-application-with-libpsyiage"><strong>Advanced Setup</strong> - Building your application with <code class="docutils literal notranslate"><span class="pre">libpsyiage</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#basic-example-collecting-system-resource-metrics"><strong>Basic example:</strong> <cite>Collecting system resource metrics</cite></a></li>
 </ul>
@@ -115,24 +128,34 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">FEATURES</span></p>
+<p class="caption"><span class="caption-text">DEVICE PROVISIONING</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="software-provisioning.html">Software Provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module-marketplace.html">Module Marketplace</a></li>
+</ul>
+<p class="caption"><span class="caption-text">DEVICE MONITORING</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="video-streaming.html">Video Streaming</a></li>
 <li class="toctree-l1"><a class="reference internal" href="application-performance-profiling.html">Application Performance Profiling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="crash-reporting.html">Crash Reporting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="log-collection.html">Log Collection</a></li>
 <li class="toctree-l1"><a class="reference internal" href="metrics-collection.html">Metrics Collection</a></li>
-<li class="toctree-l1"><a class="reference internal" href="system-information.html">System Information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="event-reporting.html">Event Reporting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="benchmark-testing.html">Benchmark Testing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="diagnostic-testing.html">Diagnostic Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="system-information.html">System Information</a></li>
 </ul>
-<p class="caption"><span class="caption-text">PSYGIG TRIAGE SDK REFERENCE</span></p>
+<p class="caption"><span class="caption-text">DIAGNOSIS &amp; BENCHMARKS</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="diagnostic-testing.html">Diagnostic Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="benchmark-testing.html">Benchmark Testing</a></li>
+</ul>
+<p class="caption"><span class="caption-text">SDK REFERENCE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="angelo-man.html"><code class="docutils literal notranslate"><span class="pre">angelo</span></code> man page</a></li>
 <li class="toctree-l1"><a class="reference internal" href="psymon-man.html"><code class="docutils literal notranslate"><span class="pre">psymon</span></code> man page</a></li>
 <li class="toctree-l1"><a class="reference internal" href="psybench-man.html"><code class="docutils literal notranslate"><span class="pre">psybench</span></code> man page</a></li>
 <li class="toctree-l1"><a class="reference internal" href="psydiag-man.html"><code class="docutils literal notranslate"><span class="pre">psydiag</span></code> man page</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api/index.html">PSYGIG Triage SDK API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sample-output.html">Sample Output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/index.html">C/C++ SDK API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sample-output.html">Sample JSON Output</a></li>
 </ul>
 
             
@@ -147,7 +170,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">PSYGIG Triage SDK</a>
+          <a href="index.html">PSYGIG Mobility IoT SDK</a>
         
       </nav>
 
@@ -196,12 +219,22 @@
            <div itemprop="articleBody">
             
   <div class="section" id="getting-started">
-<h1>Getting Started<a class="headerlink" href="#getting-started" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>This short guide explains how to get started with <cite>PSYGIG Triage SDK</cite>. Before you can start instrumenting your applications,
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<p>This short guide explains how to get started with <cite>PSYGIG Mobility IoT SDK</cite>. Before you can start developing your IoT applications,
 you need to download and install the latest version of the SDK.</p>
-<p><a class="reference internal" href="installation.html"><span class="doc">PSYGIG Triage SDK Download/Installation Guide</span></a></p>
-<div class="section" id="quick-start-using-psymon">
-<h2><strong>Quick Start</strong> - using <code class="docutils literal notranslate"><span class="pre">psymon</span></code><a class="headerlink" href="#quick-start-using-psymon" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><a class="reference internal" href="installation.html"><span class="doc">PSYGIG Mobility IoT SDK Download/Installation Guide</span></a></p>
+<div class="section" id="quick-start">
+<h2><strong>Quick Start</strong><a class="headerlink" href="#quick-start" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="stream-live-video-from-camera">
+<h3>Stream live video from camera<a class="headerlink" href="#stream-live-video-from-camera" title="Permalink to this headline">¶</a></h3>
+<p>With a simple command, low-latency video can be streamed live directly from a camera using the <code class="docutils literal notranslate"><span class="pre">angelo</span></code> command line tool.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>angelo live
+</pre></div>
+</div>
+<p>See <a class="reference internal" href="angelo-man.html"><span class="doc">angelo man page</span></a> for a complete list of options.</p>
+</div>
+<div class="section" id="instrument-your-existing-applications">
+<h3>Instrument your existing applications<a class="headerlink" href="#instrument-your-existing-applications" title="Permalink to this headline">¶</a></h3>
 <p>Without modifying your existing source code, you can instantly add instrumentation and crash reporting capabilities
 to your application by using the <code class="docutils literal notranslate"><span class="pre">psymon</span></code> script to run your program. For example:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>psymon <span class="s2">&quot;/path/to/your/app --arg1 --arg2 --arg3&quot;</span>
@@ -212,12 +245,13 @@ instrumentation class with the appropriate <a class="reference internal" href="p
 <p>See <a class="reference internal" href="psymon-man.html"><span class="doc">psymon man page</span></a> for a complete list of options.</p>
 <p><a class="reference internal" href="sample-output.html"><span class="doc">Sample JSON output generated by psymon</span></a></p>
 </div>
+</div>
 <div class="section" id="advanced-setup-building-your-application-with-libpsyiage">
-<span id="libpsyiage-linking"></span><h2><strong>Advanced Setup</strong> - Building your application with <code class="docutils literal notranslate"><span class="pre">libpsyiage</span></code><a class="headerlink" href="#advanced-setup-building-your-application-with-libpsyiage" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>The rich feature set of the <cite>PSYGIG Triage SDK</cite> can be fully exploited via the <a class="reference internal" href="api/index.html"><span class="doc">PSYGIG Triage SDK API</span></a>. The API can be accessed
+<span id="libpsyiage-linking"></span><h2><strong>Advanced Setup</strong> - Building your application with <code class="docutils literal notranslate"><span class="pre">libpsyiage</span></code><a class="headerlink" href="#advanced-setup-building-your-application-with-libpsyiage" title="Permalink to this headline">¶</a></h2>
+<p>The rich feature set of the <cite>PSYGIG Mobility IoT SDK</cite> can be fully exploited via the <a class="reference internal" href="api/index.html"><span class="doc">C/C++ SDK API</span></a>. The API can be accessed
 by including a <a class="reference internal" href="api/file_include_psyiage_psyiagesdk.h.html"><span class="doc">single header file</span></a> and linking to the <code class="docutils literal notranslate"><span class="pre">libpsyiage</span></code> shared library.</p>
 <div class="section" id="basic-example-collecting-system-resource-metrics">
-<span id="basic-example"></span><h3><strong>Basic example:</strong> <cite>Collecting system resource metrics</cite><a class="headerlink" href="#basic-example-collecting-system-resource-metrics" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<span id="basic-example"></span><h3><strong>Basic example:</strong> <cite>Collecting system resource metrics</cite><a class="headerlink" href="#basic-example-collecting-system-resource-metrics" title="Permalink to this headline">¶</a></h3>
 <p>This example enables period polling of system resource metrics and saves the data to a JSON file.</p>
 <p class="rubric"><cite>basic-example</cite> source code</p>
 <div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -276,8 +310,8 @@ by including a <a class="reference internal" href="api/file_include_psyiage_psyi
     <span class="c1">// Add a file sink for logging metrics to JSON</span>
     <span class="n">sink</span><span class="p">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">PSYIAGE_SINK_FILE</span><span class="p">;</span>
     <span class="n">sink</span><span class="p">.</span><span class="n">format</span> <span class="o">=</span> <span class="n">PSYIAGE_DATA_FORMAT_JSON</span><span class="p">;</span>
-    <span class="n">strcpy</span><span class="p">(</span><span class="n">sink</span><span class="p">.</span><span class="n">file</span><span class="p">.</span><span class="n">dir</span><span class="p">,</span><span class="n">RESULTS_DIR</span><span class="p">);</span>
-    <span class="n">strcpy</span><span class="p">(</span><span class="n">sink</span><span class="p">.</span><span class="n">file</span><span class="p">.</span><span class="n">basename</span><span class="p">,</span><span class="n">RESULTS_BASE</span><span class="p">);</span>
+    <span class="n">sink</span><span class="p">.</span><span class="n">file</span><span class="p">.</span><span class="n">dir</span> <span class="o">=</span> <span class="n">RESULTS_DIR</span><span class="p">;</span>
+    <span class="n">sink</span><span class="p">.</span><span class="n">file</span><span class="p">.</span><span class="n">basename</span> <span class="o">=</span> <span class="n">RESULTS_BASE</span><span class="p">;</span>
     <span class="n">rc</span> <span class="o">=</span> <span class="n">psyiage_add_sink</span><span class="p">(</span><span class="n">pah</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">sink</span><span class="p">);</span>  <span class="c1">// Ignore return code for simplicity sake</span>
 
     <span class="c1">// Enable polling of system resources every 500ms</span>
@@ -304,13 +338,13 @@ by including a <a class="reference internal" href="api/file_include_psyiage_psyi
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gcc basic-example.c -o basic-example -lpsyiage
 </pre></div>
 </div>
-<p>Depending on where libpsyiage was installed, you may need to specify the location of the SDK's header and library files. With GCC, use the -I and -L options respectively to achieve this.</p>
+<p>Depending on where libpsyiage was installed, you may need to specify the location of the SDK’s header and library files. With GCC, use the -I and -L options respectively to achieve this.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gcc -I/opt/psygig/psyiage/include basic-example.c -o basic-example -L/opt/psygig/psyiage/lib -lpsyiage
 </pre></div>
 </div>
-<p><sub>Assuming PSYGIG Triage SDK was installed under /opt/psygig/psyiage</sub></p>
+<p><sub>Assuming PSYGIG Mobility IoT SDK was installed under /opt/psygig/psyiage</sub></p>
 <p class="rubric">Building <cite>basic-example</cite> using <code class="docutils literal notranslate"><span class="pre">cmake</span></code></p>
-<p>A better alternative for building programs using <cite>PSYGIG Triage SDK</cite> is to use <code class="docutils literal notranslate"><span class="pre">cmake</span></code>, especially if you are
+<p>A better alternative for building programs using <cite>PSYGIG Mobility IoT SDK</cite> is to use <code class="docutils literal notranslate"><span class="pre">cmake</span></code>, especially if you are
 developing for several platforms. Assuming the following folder structure:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>basic-example<span class="se">\</span>
    <span class="p">|</span>- src<span class="se">\</span>
@@ -342,7 +376,7 @@ developing for several platforms. Assuming the following folder structure:</p>
 <span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">basic-example</span> <span class="s">/opt/psygig/psyiage/lib/libpsyiage.so</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
-<p><sub>Assuming PSYGIG Triage SDK was installed under /opt/psygig/psyiage</sub></p>
+<p><sub>Assuming PSYGIG Mobility IoT SDK was installed under /opt/psygig/psyiage</sub></p>
 <p>The following sequence of commands create a directory for building (avoid building in the source folder), builds
 <cite>basic-example</cite> with <code class="docutils literal notranslate"><span class="pre">cmake</span></code> and then runs the program:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir build
@@ -364,10 +398,10 @@ make
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="application-performance-profiling.html" class="btn btn-neutral float-right" title="Application Performance Profiling" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="software-provisioning.html" class="btn btn-neutral float-right" title="Software Provisioning" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="installation.html" class="btn btn-neutral" title="Download &amp; Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="installation.html" class="btn btn-neutral float-left" title="Download &amp; Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -376,7 +410,7 @@ make
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019 PSYGIG株式会社
+        &copy; Copyright 2020 PSYGIG株式会社
 
     </p>
   </div>
@@ -393,29 +427,16 @@ make
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/translations.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/javascript" src="_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
-        <script type="text/javascript" src="_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
-    
-
-  
-
-  <script type="text/javascript" src="_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

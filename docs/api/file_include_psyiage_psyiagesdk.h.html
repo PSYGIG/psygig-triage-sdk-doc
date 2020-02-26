@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="ja" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="ja" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>File psyiagesdk.h &mdash; PSYGIG Triage SDK 0.4.0 ドキュメント</title>
+  <title>File psyiagesdk.h &mdash; PSYGIG Mobility IoT SDK 0.4.0 documentation</title>
   
 
   
@@ -17,20 +17,27 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
-    <link rel="index" title="索引" href="../genindex.html" />
-    <link rel="search" title="検索" href="../search.html" />
-    <link rel="next" title="Program Listing for File psyiagesdk.h" href="program_listing_file_include_psyiage_psyiagesdk.h.html" />
-    <link rel="prev" title="Directory psyiage" href="dir_include_psyiage.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
  
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -42,25 +49,25 @@
     ga('send', 'pageview');
 </script>
 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
+<p>EN | <a href="ja/index.html">JP</a></p>
+
+
+
+
           
-            <a href="../index.html" class="icon icon-home"> PSYGIG Triage SDK
+            <a href="../index.html" class="icon icon-home"> PSYGIG Mobility IoT SDK
           
 
           
@@ -99,7 +106,7 @@
             
               <p class="caption"><span class="caption-text">OVERVIEW</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../supported-platforms.html">Supported Platforms/Architectures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../supported-platforms.html">Supported Platforms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../third-party-integration.html">Third Party Integration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../change-log.html">Change Log</a></li>
 </ul>
@@ -108,24 +115,34 @@
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">Download &amp; Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html">Getting Started</a></li>
 </ul>
-<p class="caption"><span class="caption-text">FEATURES</span></p>
+<p class="caption"><span class="caption-text">DEVICE PROVISIONING</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../software-provisioning.html">Software Provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-marketplace.html">Module Marketplace</a></li>
+</ul>
+<p class="caption"><span class="caption-text">DEVICE MONITORING</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../video-streaming.html">Video Streaming</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../application-performance-profiling.html">Application Performance Profiling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../crash-reporting.html">Crash Reporting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../log-collection.html">Log Collection</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../metrics-collection.html">Metrics Collection</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../system-information.html">System Information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../event-reporting.html">Event Reporting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../benchmark-testing.html">Benchmark Testing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../diagnostic-testing.html">Diagnostic Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system-information.html">System Information</a></li>
 </ul>
-<p class="caption"><span class="caption-text">PSYGIG TRIAGE SDK REFERENCE</span></p>
+<p class="caption"><span class="caption-text">DIAGNOSIS &amp; BENCHMARKS</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../diagnostic-testing.html">Diagnostic Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../benchmark-testing.html">Benchmark Testing</a></li>
+</ul>
+<p class="caption"><span class="caption-text">SDK REFERENCE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../angelo-man.html"><code class="docutils literal notranslate"><span class="pre">angelo</span></code> man page</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../psymon-man.html"><code class="docutils literal notranslate"><span class="pre">psymon</span></code> man page</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../psybench-man.html"><code class="docutils literal notranslate"><span class="pre">psybench</span></code> man page</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../psydiag-man.html"><code class="docutils literal notranslate"><span class="pre">psydiag</span></code> man page</a></li>
-<li class="toctree-l1"><a class="reference internal" href="index.html">PSYGIG Triage SDK API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../sample-output.html">Sample Output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">C/C++ SDK API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sample-output.html">Sample JSON Output</a></li>
 </ul>
 
             
@@ -140,7 +157,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">PSYGIG Triage SDK</a>
+          <a href="../index.html">PSYGIG Mobility IoT SDK</a>
         
       </nav>
 
@@ -171,8 +188,6 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="index.html">PSYGIG Triage SDK API</a> &raquo;</li>
-        
       <li>File psyiagesdk.h</li>
     
     
@@ -191,24 +206,24 @@
            <div itemprop="articleBody">
             
   <div class="section" id="file-psyiagesdk-h">
-<span id="file-include-psyiage-psyiagesdk-h"></span><h1>File psyiagesdk.h<a class="headerlink" href="#file-psyiagesdk-h" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<span id="file-include-psyiage-psyiagesdk-h"></span><h1>File psyiagesdk.h<a class="headerlink" href="#file-psyiagesdk-h" title="Permalink to this headline">¶</a></h1>
 <p>↰ <a class="reference internal" href="dir_include_psyiage.html#dir-include-psyiage"><span class="std std-ref">Parent directory</span></a> (<code class="docutils literal notranslate"><span class="pre">include/psyiage</span></code>)</p>
-<p>PSYGIG Triage SDK API header file.</p>
+<p>PSYGIG Mobility IoT SDK API header file.</p>
 <div class="contents local topic" id="contents">
-<p class="topic-title first">Contents</p>
+<p class="topic-title">Contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#definition-include-psyiage-psyiagesdk-h" id="id1">Definition (<code class="docutils literal notranslate"><span class="pre">include/psyiage/psyiagesdk.h</span></code>)</a></li>
-<li><a class="reference internal" href="#detailed-description" id="id2">Detailed Description</a></li>
-<li><a class="reference internal" href="#includes" id="id3">Includes</a></li>
-<li><a class="reference internal" href="#classes" id="id4">Classes</a></li>
-<li><a class="reference internal" href="#enums" id="id5">Enums</a></li>
-<li><a class="reference internal" href="#functions" id="id6">Functions</a></li>
-<li><a class="reference internal" href="#defines" id="id7">Defines</a></li>
-<li><a class="reference internal" href="#typedefs" id="id8">Typedefs</a></li>
+<li><p><a class="reference internal" href="#definition-include-psyiage-psyiagesdk-h" id="id1">Definition (<code class="docutils literal notranslate"><span class="pre">include/psyiage/psyiagesdk.h</span></code>)</a></p></li>
+<li><p><a class="reference internal" href="#detailed-description" id="id2">Detailed Description</a></p></li>
+<li><p><a class="reference internal" href="#includes" id="id3">Includes</a></p></li>
+<li><p><a class="reference internal" href="#classes" id="id4">Classes</a></p></li>
+<li><p><a class="reference internal" href="#enums" id="id5">Enums</a></p></li>
+<li><p><a class="reference internal" href="#functions" id="id6">Functions</a></p></li>
+<li><p><a class="reference internal" href="#defines" id="id7">Defines</a></p></li>
+<li><p><a class="reference internal" href="#typedefs" id="id8">Typedefs</a></p></li>
 </ul>
 </div>
 <div class="section" id="definition-include-psyiage-psyiagesdk-h">
-<h2>Definition (<code class="docutils literal notranslate"><span class="pre">include/psyiage/psyiagesdk.h</span></code>)<a class="headerlink" href="#definition-include-psyiage-psyiagesdk-h" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>Definition (<code class="docutils literal notranslate"><span class="pre">include/psyiage/psyiagesdk.h</span></code>)<a class="headerlink" href="#definition-include-psyiage-psyiagesdk-h" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="program_listing_file_include_psyiage_psyiagesdk.h.html">Program Listing for File psyiagesdk.h</a></li>
@@ -216,156 +231,161 @@
 </div>
 </div>
 <div class="section" id="detailed-description">
-<h2>Detailed Description<a class="headerlink" href="#detailed-description" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>Detailed Description<a class="headerlink" href="#detailed-description" title="Permalink to this headline">¶</a></h2>
 <p>Copyright (C) 2019 PSYGIG</p>
-<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &quot;Software&quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
 <p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
-<p>THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
 </div>
 <div class="section" id="includes">
-<h2>Includes<a class="headerlink" href="#includes" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>Includes<a class="headerlink" href="#includes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">stdint.h</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">stdio.h</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">stdint.h</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">stdio.h</span></code></p></li>
 </ul>
 </div>
 <div class="section" id="classes">
-<h2>Classes<a class="headerlink" href="#classes" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><a class="reference internal" href="struct__psyiage__cpuinfo.html#exhale-struct-struct-psyiage-cpuinfo"><span class="std std-ref">Struct _psyiage_cpuinfo</span></a></li>
-<li><a class="reference internal" href="struct__psyiage__diag__result.html#exhale-struct-struct-psyiage-diag-result"><span class="std std-ref">Struct _psyiage_diag_result</span></a></li>
-<li><a class="reference internal" href="struct__psyiage__diskinfo.html#exhale-struct-struct-psyiage-diskinfo"><span class="std std-ref">Struct _psyiage_diskinfo</span></a></li>
-<li><a class="reference internal" href="struct__psyiage__fsinfo.html#exhale-struct-struct-psyiage-fsinfo"><span class="std std-ref">Struct _psyiage_fsinfo</span></a></li>
-<li><a class="reference internal" href="struct__psyiage__meminfo.html#exhale-struct-struct-psyiage-meminfo"><span class="std std-ref">Struct _psyiage_meminfo</span></a></li>
-<li><a class="reference internal" href="struct__psyiage__netinfo.html#exhale-struct-struct-psyiage-netinfo"><span class="std std-ref">Struct _psyiage_netinfo</span></a></li>
-<li><a class="reference internal" href="struct__psyiage__osinfo.html#exhale-struct-struct-psyiage-osinfo"><span class="std std-ref">Struct _psyiage_osinfo</span></a></li>
-<li><a class="reference internal" href="struct__psyiage__pciinfo.html#exhale-struct-struct-psyiage-pciinfo"><span class="std std-ref">Struct _psyiage_pciinfo</span></a></li>
-<li><a class="reference internal" href="struct__psyiage__pointcloud__data.html#exhale-struct-struct-psyiage-pointcloud-data"><span class="std std-ref">Struct _psyiage_pointcloud_data</span></a></li>
-<li><a class="reference internal" href="struct__psyiage__session__info.html#exhale-struct-struct-psyiage-session-info"><span class="std std-ref">Struct _psyiage_session_info</span></a></li>
-<li><a class="reference internal" href="struct__psyiage__sink__cfg.html#exhale-struct-struct-psyiage-sink-cfg"><span class="std std-ref">Struct _psyiage_sink_cfg</span></a></li>
-<li><a class="reference internal" href="struct__psyiage__sink__file__cfg.html#exhale-struct-struct-psyiage-sink-file-cfg"><span class="std std-ref">Struct _psyiage_sink_file_cfg</span></a></li>
-<li><a class="reference internal" href="struct__psyiage__sink__fstream__cfg.html#exhale-struct-struct-psyiage-sink-fstream-cfg"><span class="std std-ref">Struct _psyiage_sink_fstream_cfg</span></a></li>
-<li><a class="reference internal" href="struct__psyiage__sink__http__cfg.html#exhale-struct-struct-psyiage-sink-http-cfg"><span class="std std-ref">Struct _psyiage_sink_http_cfg</span></a></li>
-<li><a class="reference internal" href="struct__psyiage__sink__influxdb__cfg.html#exhale-struct-struct-psyiage-sink-influxdb-cfg"><span class="std std-ref">Struct _psyiage_sink_influxdb_cfg</span></a></li>
-<li><a class="reference internal" href="struct__psyiage__sink__mqtt__cfg.html#exhale-struct-struct-psyiage-sink-mqtt-cfg"><span class="std std-ref">Struct _psyiage_sink_mqtt_cfg</span></a></li>
-<li><a class="reference internal" href="struct__psyiage__sink__psygig__cfg.html#exhale-struct-struct-psyiage-sink-psygig-cfg"><span class="std std-ref">Struct _psyiage_sink_psygig_cfg</span></a></li>
-<li><a class="reference internal" href="struct__psyiage__sink__tcp__cfg.html#exhale-struct-struct-psyiage-sink-tcp-cfg"><span class="std std-ref">Struct _psyiage_sink_tcp_cfg</span></a></li>
-<li><a class="reference internal" href="struct__psyiage__sink__udp__cfg.html#exhale-struct-struct-psyiage-sink-udp-cfg"><span class="std std-ref">Struct _psyiage_sink_udp_cfg</span></a></li>
-<li><a class="reference internal" href="struct__psyiage__sysinfo.html#exhale-struct-struct-psyiage-sysinfo"><span class="std std-ref">Struct _psyiage_sysinfo</span></a></li>
-<li><a class="reference internal" href="struct__psyiage__usbinfo.html#exhale-struct-struct-psyiage-usbinfo"><span class="std std-ref">Struct _psyiage_usbinfo</span></a></li>
-<li><a class="reference internal" href="struct__psyiage__video__cfg.html#exhale-struct-struct-psyiage-video-cfg"><span class="std std-ref">Struct _psyiage_video_cfg</span></a></li>
+<li><p><a class="reference internal" href="struct__psyiage__cpuinfo.html#exhale-struct-struct-psyiage-cpuinfo"><span class="std std-ref">Struct _psyiage_cpuinfo</span></a></p></li>
+<li><p><a class="reference internal" href="struct__psyiage__diag__result.html#exhale-struct-struct-psyiage-diag-result"><span class="std std-ref">Struct _psyiage_diag_result</span></a></p></li>
+<li><p><a class="reference internal" href="struct__psyiage__diskinfo.html#exhale-struct-struct-psyiage-diskinfo"><span class="std std-ref">Struct _psyiage_diskinfo</span></a></p></li>
+<li><p><a class="reference internal" href="struct__psyiage__fsinfo.html#exhale-struct-struct-psyiage-fsinfo"><span class="std std-ref">Struct _psyiage_fsinfo</span></a></p></li>
+<li><p><a class="reference internal" href="struct__psyiage__meminfo.html#exhale-struct-struct-psyiage-meminfo"><span class="std std-ref">Struct _psyiage_meminfo</span></a></p></li>
+<li><p><a class="reference internal" href="struct__psyiage__netinfo.html#exhale-struct-struct-psyiage-netinfo"><span class="std std-ref">Struct _psyiage_netinfo</span></a></p></li>
+<li><p><a class="reference internal" href="struct__psyiage__osinfo.html#exhale-struct-struct-psyiage-osinfo"><span class="std std-ref">Struct _psyiage_osinfo</span></a></p></li>
+<li><p><a class="reference internal" href="struct__psyiage__pciinfo.html#exhale-struct-struct-psyiage-pciinfo"><span class="std std-ref">Struct _psyiage_pciinfo</span></a></p></li>
+<li><p><a class="reference internal" href="struct__psyiage__pointcloud__data.html#exhale-struct-struct-psyiage-pointcloud-data"><span class="std std-ref">Struct _psyiage_pointcloud_data</span></a></p></li>
+<li><p><a class="reference internal" href="struct__psyiage__session__info.html#exhale-struct-struct-psyiage-session-info"><span class="std std-ref">Struct _psyiage_session_info</span></a></p></li>
+<li><p><a class="reference internal" href="struct__psyiage__sink__cfg.html#exhale-struct-struct-psyiage-sink-cfg"><span class="std std-ref">Struct _psyiage_sink_cfg</span></a></p></li>
+<li><p><a class="reference internal" href="struct__psyiage__sink__file__cfg.html#exhale-struct-struct-psyiage-sink-file-cfg"><span class="std std-ref">Struct _psyiage_sink_file_cfg</span></a></p></li>
+<li><p><a class="reference internal" href="struct__psyiage__sink__fstream__cfg.html#exhale-struct-struct-psyiage-sink-fstream-cfg"><span class="std std-ref">Struct _psyiage_sink_fstream_cfg</span></a></p></li>
+<li><p><a class="reference internal" href="struct__psyiage__sink__http__cfg.html#exhale-struct-struct-psyiage-sink-http-cfg"><span class="std std-ref">Struct _psyiage_sink_http_cfg</span></a></p></li>
+<li><p><a class="reference internal" href="struct__psyiage__sink__influxdb__cfg.html#exhale-struct-struct-psyiage-sink-influxdb-cfg"><span class="std std-ref">Struct _psyiage_sink_influxdb_cfg</span></a></p></li>
+<li><p><a class="reference internal" href="struct__psyiage__sink__mqtt__cfg.html#exhale-struct-struct-psyiage-sink-mqtt-cfg"><span class="std std-ref">Struct _psyiage_sink_mqtt_cfg</span></a></p></li>
+<li><p><a class="reference internal" href="struct__psyiage__sink__psygig__cfg.html#exhale-struct-struct-psyiage-sink-psygig-cfg"><span class="std std-ref">Struct _psyiage_sink_psygig_cfg</span></a></p></li>
+<li><p><a class="reference internal" href="struct__psyiage__sink__tcp__cfg.html#exhale-struct-struct-psyiage-sink-tcp-cfg"><span class="std std-ref">Struct _psyiage_sink_tcp_cfg</span></a></p></li>
+<li><p><a class="reference internal" href="struct__psyiage__sink__udp__cfg.html#exhale-struct-struct-psyiage-sink-udp-cfg"><span class="std std-ref">Struct _psyiage_sink_udp_cfg</span></a></p></li>
+<li><p><a class="reference internal" href="struct__psyiage__sysinfo.html#exhale-struct-struct-psyiage-sysinfo"><span class="std std-ref">Struct _psyiage_sysinfo</span></a></p></li>
+<li><p><a class="reference internal" href="struct__psyiage__usbinfo.html#exhale-struct-struct-psyiage-usbinfo"><span class="std std-ref">Struct _psyiage_usbinfo</span></a></p></li>
+<li><p><a class="reference internal" href="struct__psyiage__video__cfg.html#exhale-struct-struct-psyiage-video-cfg"><span class="std std-ref">Struct _psyiage_video_cfg</span></a></p></li>
 </ul>
 </div>
 <div class="section" id="enums">
-<h2>Enums<a class="headerlink" href="#enums" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>Enums<a class="headerlink" href="#enums" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><a class="reference internal" href="enum_group__admin_1ga06fc87d81c62e9abb8790b6e5713c55b.html#exhale-enum-group-admin-1ga06fc87d81c62e9abb8790b6e5713c55b"><span class="std std-ref">Enum &#64;0</span></a></li>
-<li><a class="reference internal" href="enum_group__log_1gadf764cbdea00d65edcd07bb9953ad2b7.html#exhale-enum-group-log-1gadf764cbdea00d65edcd07bb9953ad2b7"><span class="std std-ref">Enum &#64;1</span></a></li>
-<li><a class="reference internal" href="enum_group__benchmark_1gac03dae5406da673f498e6bab7336aee6.html#exhale-enum-group-benchmark-1gac03dae5406da673f498e6bab7336aee6"><span class="std std-ref">Enum _psyiage_benchmark_type</span></a></li>
-<li><a class="reference internal" href="enum_group__diag_1gac770c842f98bec563fe2340bd6e878a8.html#exhale-enum-group-diag-1gac770c842f98bec563fe2340bd6e878a8"><span class="std std-ref">Enum _psyiage_diag_type</span></a></li>
-<li><a class="reference internal" href="enum_psyiagesdk_8h_1a734f6bf1ee2ec276496c1422b058d6a5.html#exhale-enum-psyiagesdk-8h-1a734f6bf1ee2ec276496c1422b058d6a5"><span class="std std-ref">Enum _psyiage_error_code</span></a></li>
-<li><a class="reference internal" href="enum_group__event_1ga57d263052073675d36b0508906b3295f.html#exhale-enum-group-event-1ga57d263052073675d36b0508906b3295f"><span class="std std-ref">Enum _psyiage_event_level</span></a></li>
-<li><a class="reference internal" href="enum_group__log_1ga48b7b38696df6517a044bbd18bbb0a41.html#exhale-enum-group-log-1ga48b7b38696df6517a044bbd18bbb0a41"><span class="std std-ref">Enum _psyiage_log_level</span></a></li>
-<li><a class="reference internal" href="enum_group__metric_1ga70589d67957039a542cc0e145800e04a.html#exhale-enum-group-metric-1ga70589d67957039a542cc0e145800e04a"><span class="std std-ref">Enum _psyiage_metric_file_type</span></a></li>
-<li><a class="reference internal" href="enum_group__admin_1ga11aad8ec19c713fe01e757c542ec8f03.html#exhale-enum-group-admin-1ga11aad8ec19c713fe01e757c542ec8f03"><span class="std std-ref">Enum _psyiage_sink_data_format</span></a></li>
-<li><a class="reference internal" href="enum_group__admin_1ga66b12eae528c03fa4bd539d9f1d51fda.html#exhale-enum-group-admin-1ga66b12eae528c03fa4bd539d9f1d51fda"><span class="std std-ref">Enum _psyiage_sink_type</span></a></li>
+<li><p><a class="reference internal" href="enum_group__admin_1ga06fc87d81c62e9abb8790b6e5713c55b.html#exhale-enum-group-admin-1ga06fc87d81c62e9abb8790b6e5713c55b"><span class="std std-ref">Enum &#64;0</span></a></p></li>
+<li><p><a class="reference internal" href="enum_group__log_1gadf764cbdea00d65edcd07bb9953ad2b7.html#exhale-enum-group-log-1gadf764cbdea00d65edcd07bb9953ad2b7"><span class="std std-ref">Enum &#64;1</span></a></p></li>
+<li><p><a class="reference internal" href="enum_group__benchmark_1gac03dae5406da673f498e6bab7336aee6.html#exhale-enum-group-benchmark-1gac03dae5406da673f498e6bab7336aee6"><span class="std std-ref">Enum _psyiage_benchmark_type</span></a></p></li>
+<li><p><a class="reference internal" href="enum_group__diag_1gac770c842f98bec563fe2340bd6e878a8.html#exhale-enum-group-diag-1gac770c842f98bec563fe2340bd6e878a8"><span class="std std-ref">Enum _psyiage_diag_type</span></a></p></li>
+<li><p><a class="reference internal" href="enum_group__admin_1gad2b25661e4bfed58ed7cbcc088c5acc6.html#exhale-enum-group-admin-1gad2b25661e4bfed58ed7cbcc088c5acc6"><span class="std std-ref">Enum _psyiage_endpoint_type</span></a></p></li>
+<li><p><a class="reference internal" href="enum_psyiagesdk_8h_1a734f6bf1ee2ec276496c1422b058d6a5.html#exhale-enum-psyiagesdk-8h-1a734f6bf1ee2ec276496c1422b058d6a5"><span class="std std-ref">Enum _psyiage_error_code</span></a></p></li>
+<li><p><a class="reference internal" href="enum_group__event_1ga57d263052073675d36b0508906b3295f.html#exhale-enum-group-event-1ga57d263052073675d36b0508906b3295f"><span class="std std-ref">Enum _psyiage_event_level</span></a></p></li>
+<li><p><a class="reference internal" href="enum_group__log_1ga48b7b38696df6517a044bbd18bbb0a41.html#exhale-enum-group-log-1ga48b7b38696df6517a044bbd18bbb0a41"><span class="std std-ref">Enum _psyiage_log_level</span></a></p></li>
+<li><p><a class="reference internal" href="enum_group__metric_1ga70589d67957039a542cc0e145800e04a.html#exhale-enum-group-metric-1ga70589d67957039a542cc0e145800e04a"><span class="std std-ref">Enum _psyiage_metric_file_type</span></a></p></li>
+<li><p><a class="reference internal" href="enum_group__admin_1ga11aad8ec19c713fe01e757c542ec8f03.html#exhale-enum-group-admin-1ga11aad8ec19c713fe01e757c542ec8f03"><span class="std std-ref">Enum _psyiage_sink_data_format</span></a></p></li>
+<li><p><a class="reference internal" href="enum_group__admin_1ga66b12eae528c03fa4bd539d9f1d51fda.html#exhale-enum-group-admin-1ga66b12eae528c03fa4bd539d9f1d51fda"><span class="std std-ref">Enum _psyiage_sink_type</span></a></p></li>
 </ul>
 </div>
 <div class="section" id="functions">
-<h2>Functions<a class="headerlink" href="#functions" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><a class="reference internal" href="function_group__admin_1gaad96d4abcebbafd15c54bbec77fb7afe.html#exhale-function-group-admin-1gaad96d4abcebbafd15c54bbec77fb7afe"><span class="std std-ref">Function psyiage_add_sink</span></a></li>
-<li><a class="reference internal" href="function_group__benchmark_1ga78a2c0ca88cfe4a8131009e2c8ad58bc.html#exhale-function-group-benchmark-1ga78a2c0ca88cfe4a8131009e2c8ad58bc"><span class="std std-ref">Function psyiage_benchmark_run</span></a></li>
-<li><a class="reference internal" href="function_group__admin_1ga45475ebc1a0de0c7235b335582cec39b.html#exhale-function-group-admin-1ga45475ebc1a0de0c7235b335582cec39b"><span class="std std-ref">Function psyiage_cleanup</span></a></li>
-<li><a class="reference internal" href="function_group__crash_1gaa1cf522377f5700324b2e2689e757e55.html#exhale-function-group-crash-1gaa1cf522377f5700324b2e2689e757e55"><span class="std std-ref">Function psyiage_crash_enable_report_on_fatal_signal</span></a></li>
-<li><a class="reference internal" href="function_group__crash_1ga75fbbeb52ff7abb36b4a0936a4f4a224.html#exhale-function-group-crash-1ga75fbbeb52ff7abb36b4a0936a4f4a224"><span class="std std-ref">Function psyiage_crash_install_core_dump_handler</span></a></li>
-<li><a class="reference internal" href="function_group__crash_1ga62988c01593331c81abcecbd2802393c.html#exhale-function-group-crash-1ga62988c01593331c81abcecbd2802393c"><span class="std std-ref">Function psyiage_crash_start_crash_monitor</span></a></li>
-<li><a class="reference internal" href="function_group__diag_1gad6ec410e55af93597dbf4a8f90cd8261.html#exhale-function-group-diag-1gad6ec410e55af93597dbf4a8f90cd8261"><span class="std std-ref">Function psyiage_diag_export_report</span></a></li>
-<li><a class="reference internal" href="function_group__diag_1ga8c776d3e23a731373df927d15bb6a158.html#exhale-function-group-diag-1ga8c776d3e23a731373df927d15bb6a158"><span class="std std-ref">Function psyiage_diag_run</span></a></li>
-<li><a class="reference internal" href="function_group__event_1ga073357feb3a8a779a416c6f4e00df863.html#exhale-function-group-event-1ga073357feb3a8a779a416c6f4e00df863"><span class="std std-ref">Function psyiage_event_enable_auto_report_os_faults</span></a></li>
-<li><a class="reference internal" href="function_group__event_1ga88fa290d48b65043113cadec8dfc03b0.html#exhale-function-group-event-1ga88fa290d48b65043113cadec8dfc03b0"><span class="std std-ref">Function psyiage_event_import_file</span></a></li>
-<li><a class="reference internal" href="function_group__event_1gadb39dc50e109bd382c40cd5a26179caf.html#exhale-function-group-event-1gadb39dc50e109bd382c40cd5a26179caf"><span class="std std-ref">Function psyiage_event_report</span></a></li>
-<li><a class="reference internal" href="function_group__admin_1ga84098c77aa86802e46d76c3fc9d9b05c.html#exhale-function-group-admin-1ga84098c77aa86802e46d76c3fc9d9b05c"><span class="std std-ref">Function psyiage_get_current_session</span></a></li>
-<li><a class="reference internal" href="function_group__admin_1gaafe397a3a21395843a420633e201acb8.html#exhale-function-group-admin-1gaafe397a3a21395843a420633e201acb8"><span class="std std-ref">Function psyiage_get_num_sinks</span></a></li>
-<li><a class="reference internal" href="function_group__admin_1ga58ecaa2271e7e1507a016482b9bb870c.html#exhale-function-group-admin-1ga58ecaa2271e7e1507a016482b9bb870c"><span class="std std-ref">Function psyiage_get_sink_info</span></a></li>
-<li><a class="reference internal" href="function_group__admin_1gab8664018e420c273c2445963406e370a.html#exhale-function-group-admin-1gab8664018e420c273c2445963406e370a"><span class="std std-ref">Function psyiage_get_version</span></a></li>
-<li><a class="reference internal" href="function_group__admin_1ga689acebf415fa1b1ac81ee98a4f02ebe.html#exhale-function-group-admin-1ga689acebf415fa1b1ac81ee98a4f02ebe"><span class="std std-ref">Function psyiage_init</span></a></li>
-<li><a class="reference internal" href="function_group__log_1gaee7f59f93c8b969927f7c635a10d0217.html#exhale-function-group-log-1gaee7f59f93c8b969927f7c635a10d0217"><span class="std std-ref">Function psyiage_log_glob_free</span></a></li>
-<li><a class="reference internal" href="function_group__log_1gab26869954e2077d9528e5ee2aa01a851.html#exhale-function-group-log-1gab26869954e2077d9528e5ee2aa01a851"><span class="std std-ref">Function psyiage_log_glob_known_log_files</span></a></li>
-<li><a class="reference internal" href="function_group__log_1ga66ffb17354fe9a3634b1415aa7909943.html#exhale-function-group-log-1ga66ffb17354fe9a3634b1415aa7909943"><span class="std std-ref">Function psyiage_log_import_file</span></a></li>
-<li><a class="reference internal" href="function_group__log_1gaca2e28802660df71c0c1802a7fcca889.html#exhale-function-group-log-1gaca2e28802660df71c0c1802a7fcca889"><span class="std std-ref">Function psyiage_log_monitor_log_file</span></a></li>
-<li><a class="reference internal" href="function_group__log_1gabdba4839b5940b035dab35a547132871.html#exhale-function-group-log-1gabdba4839b5940b035dab35a547132871"><span class="std std-ref">Function psyiage_logf</span></a></li>
-<li><a class="reference internal" href="function_group__metric_1gae9c2020b8292c26d902de6f91a53524c.html#exhale-function-group-metric-1gae9c2020b8292c26d902de6f91a53524c"><span class="std std-ref">Function psyiage_metric_enable_poll_system_resources</span></a></li>
-<li><a class="reference internal" href="function_group__metric_1ga63a6b5010d50b0443555adb15106dd14.html#exhale-function-group-metric-1ga63a6b5010d50b0443555adb15106dd14"><span class="std std-ref">Function psyiage_metric_get_values_blob</span></a></li>
-<li><a class="reference internal" href="function_group__metric_1ga50ac5677790d3ced2eb4354c4adb1b9a.html#exhale-function-group-metric-1ga50ac5677790d3ced2eb4354c4adb1b9a"><span class="std std-ref">Function psyiage_metric_get_values_numeric</span></a></li>
-<li><a class="reference internal" href="function_group__metric_1ga3e00588fc2053ab426da22f973424043.html#exhale-function-group-metric-1ga3e00588fc2053ab426da22f973424043"><span class="std std-ref">Function psyiage_metric_get_values_string</span></a></li>
-<li><a class="reference internal" href="function_group__metric_1ga65fe769e9290b20201e1dd01b29c2166.html#exhale-function-group-metric-1ga65fe769e9290b20201e1dd01b29c2166"><span class="std std-ref">Function psyiage_metric_import_file</span></a></li>
-<li><a class="reference internal" href="function_group__metric_1gabd74a787a571ef4e160c3f2a83e946f8.html#exhale-function-group-metric-1gabd74a787a571ef4e160c3f2a83e946f8"><span class="std std-ref">Function psyiage_metric_record_pointcloud</span></a></li>
-<li><a class="reference internal" href="function_group__metric_1gad6ee99f1de56dd03d91dfcf02dacdb71.html#exhale-function-group-metric-1gad6ee99f1de56dd03d91dfcf02dacdb71"><span class="std std-ref">Function psyiage_metric_record_values_blob</span></a></li>
-<li><a class="reference internal" href="function_group__metric_1gafbe2b448c64bce6d855afbd5d2247955.html#exhale-function-group-metric-1gafbe2b448c64bce6d855afbd5d2247955"><span class="std std-ref">Function psyiage_metric_record_values_numeric</span></a></li>
-<li><a class="reference internal" href="function_group__metric_1gab715c1e25afb366bd3ec5d4f7b0b3346.html#exhale-function-group-metric-1gab715c1e25afb366bd3ec5d4f7b0b3346"><span class="std std-ref">Function psyiage_metric_record_values_string</span></a></li>
-<li><a class="reference internal" href="function_group__profile_1ga62fc4763ea6cc9d9a42564a2790d4207.html#exhale-function-group-profile-1ga62fc4763ea6cc9d9a42564a2790d4207"><span class="std std-ref">Function psyiage_profile_code_begin</span></a></li>
-<li><a class="reference internal" href="function_group__profile_1ga49c998d49450ca1024fe0dd94592b214.html#exhale-function-group-profile-1ga49c998d49450ca1024fe0dd94592b214"><span class="std std-ref">Function psyiage_profile_code_end</span></a></li>
-<li><a class="reference internal" href="function_group__profile_1gab3bd7bfd5de5b5af79231e51d25f5744.html#exhale-function-group-profile-1gab3bd7bfd5de5b5af79231e51d25f5744"><span class="std std-ref">Function psyiage_profile_enable_profiling</span></a></li>
-<li><a class="reference internal" href="function_group__admin_1ga1b78ff10f48bb97007ca0bd7ae83cb63.html#exhale-function-group-admin-1ga1b78ff10f48bb97007ca0bd7ae83cb63"><span class="std std-ref">Function psyiage_remove_sink</span></a></li>
-<li><a class="reference internal" href="function_group__admin_1ga80a2a28f0e7e89af0b849809528488e6.html#exhale-function-group-admin-1ga80a2a28f0e7e89af0b849809528488e6"><span class="std std-ref">Function psyiage_set_debug_level</span></a></li>
-<li><a class="reference internal" href="function_group__admin_1ga685b0634cb744c1b920c8452404330ec.html#exhale-function-group-admin-1ga685b0634cb744c1b920c8452404330ec"><span class="std std-ref">Function psyiage_start_session</span></a></li>
-<li><a class="reference internal" href="function_group__admin_1ga8cf34f1c5e1ca06e3dabe6a8f5ef5f97.html#exhale-function-group-admin-1ga8cf34f1c5e1ca06e3dabe6a8f5ef5f97"><span class="std std-ref">Function psyiage_stop_session</span></a></li>
-<li><a class="reference internal" href="function_group__sysinfo_1ga6a766b0b280da58739595172719c1b08.html#exhale-function-group-sysinfo-1ga6a766b0b280da58739595172719c1b08"><span class="std std-ref">Function psyiage_sysinfo_export_report</span></a></li>
-<li><a class="reference internal" href="function_group__sysinfo_1ga248d2dba10cc8a368b09dbafd7659a7a.html#exhale-function-group-sysinfo-1ga248d2dba10cc8a368b09dbafd7659a7a"><span class="std std-ref">Function psyiage_sysinfo_get</span></a></li>
-<li><a class="reference internal" href="function_group__video_1gab44c287691d4b5c9748142bc6baea6aa.html#exhale-function-group-video-1gab44c287691d4b5c9748142bc6baea6aa"><span class="std std-ref">Function psyiage_video_import</span></a></li>
-<li><a class="reference internal" href="function_group__video_1ga7a35f0cbf89fbac1d8277470984700c9.html#exhale-function-group-video-1ga7a35f0cbf89fbac1d8277470984700c9"><span class="std std-ref">Function psyiage_video_stream_start</span></a></li>
-<li><a class="reference internal" href="function_group__video_1ga136c94bc1954b25f3e6d499581cbecd8.html#exhale-function-group-video-1ga136c94bc1954b25f3e6d499581cbecd8"><span class="std std-ref">Function psyiage_video_stream_stop</span></a></li>
+<li><p><a class="reference internal" href="function_group__admin_1gaad96d4abcebbafd15c54bbec77fb7afe.html#exhale-function-group-admin-1gaad96d4abcebbafd15c54bbec77fb7afe"><span class="std std-ref">Function psyiage_add_sink</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__benchmark_1ga78a2c0ca88cfe4a8131009e2c8ad58bc.html#exhale-function-group-benchmark-1ga78a2c0ca88cfe4a8131009e2c8ad58bc"><span class="std std-ref">Function psyiage_benchmark_run</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__admin_1ga45475ebc1a0de0c7235b335582cec39b.html#exhale-function-group-admin-1ga45475ebc1a0de0c7235b335582cec39b"><span class="std std-ref">Function psyiage_cleanup</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__crash_1gaa1cf522377f5700324b2e2689e757e55.html#exhale-function-group-crash-1gaa1cf522377f5700324b2e2689e757e55"><span class="std std-ref">Function psyiage_crash_enable_report_on_fatal_signal</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__crash_1ga75fbbeb52ff7abb36b4a0936a4f4a224.html#exhale-function-group-crash-1ga75fbbeb52ff7abb36b4a0936a4f4a224"><span class="std std-ref">Function psyiage_crash_install_core_dump_handler</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__crash_1ga62988c01593331c81abcecbd2802393c.html#exhale-function-group-crash-1ga62988c01593331c81abcecbd2802393c"><span class="std std-ref">Function psyiage_crash_start_crash_monitor</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__diag_1gad6ec410e55af93597dbf4a8f90cd8261.html#exhale-function-group-diag-1gad6ec410e55af93597dbf4a8f90cd8261"><span class="std std-ref">Function psyiage_diag_export_report</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__diag_1ga8c776d3e23a731373df927d15bb6a158.html#exhale-function-group-diag-1ga8c776d3e23a731373df927d15bb6a158"><span class="std std-ref">Function psyiage_diag_run</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__event_1ga073357feb3a8a779a416c6f4e00df863.html#exhale-function-group-event-1ga073357feb3a8a779a416c6f4e00df863"><span class="std std-ref">Function psyiage_event_enable_auto_report_os_faults</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__event_1ga88fa290d48b65043113cadec8dfc03b0.html#exhale-function-group-event-1ga88fa290d48b65043113cadec8dfc03b0"><span class="std std-ref">Function psyiage_event_import_file</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__event_1gadb39dc50e109bd382c40cd5a26179caf.html#exhale-function-group-event-1gadb39dc50e109bd382c40cd5a26179caf"><span class="std std-ref">Function psyiage_event_report</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__admin_1ga84098c77aa86802e46d76c3fc9d9b05c.html#exhale-function-group-admin-1ga84098c77aa86802e46d76c3fc9d9b05c"><span class="std std-ref">Function psyiage_get_current_session</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__admin_1gaafe397a3a21395843a420633e201acb8.html#exhale-function-group-admin-1gaafe397a3a21395843a420633e201acb8"><span class="std std-ref">Function psyiage_get_num_sinks</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__admin_1ga58ecaa2271e7e1507a016482b9bb870c.html#exhale-function-group-admin-1ga58ecaa2271e7e1507a016482b9bb870c"><span class="std std-ref">Function psyiage_get_sink_info</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__admin_1gac2016925a075f7cc3120ac29d2c9b5cd.html#exhale-function-group-admin-1gac2016925a075f7cc3120ac29d2c9b5cd"><span class="std std-ref">Function psyiage_get_version</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__admin_1ga689acebf415fa1b1ac81ee98a4f02ebe.html#exhale-function-group-admin-1ga689acebf415fa1b1ac81ee98a4f02ebe"><span class="std std-ref">Function psyiage_init</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__log_1gaee7f59f93c8b969927f7c635a10d0217.html#exhale-function-group-log-1gaee7f59f93c8b969927f7c635a10d0217"><span class="std std-ref">Function psyiage_log_glob_free</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__log_1gab26869954e2077d9528e5ee2aa01a851.html#exhale-function-group-log-1gab26869954e2077d9528e5ee2aa01a851"><span class="std std-ref">Function psyiage_log_glob_known_log_files</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__log_1ga66ffb17354fe9a3634b1415aa7909943.html#exhale-function-group-log-1ga66ffb17354fe9a3634b1415aa7909943"><span class="std std-ref">Function psyiage_log_import_file</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__log_1gaca2e28802660df71c0c1802a7fcca889.html#exhale-function-group-log-1gaca2e28802660df71c0c1802a7fcca889"><span class="std std-ref">Function psyiage_log_monitor_log_file</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__log_1gabdba4839b5940b035dab35a547132871.html#exhale-function-group-log-1gabdba4839b5940b035dab35a547132871"><span class="std std-ref">Function psyiage_logf</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__metric_1gae9c2020b8292c26d902de6f91a53524c.html#exhale-function-group-metric-1gae9c2020b8292c26d902de6f91a53524c"><span class="std std-ref">Function psyiage_metric_enable_poll_system_resources</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__metric_1ga63a6b5010d50b0443555adb15106dd14.html#exhale-function-group-metric-1ga63a6b5010d50b0443555adb15106dd14"><span class="std std-ref">Function psyiage_metric_get_values_blob</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__metric_1ga50ac5677790d3ced2eb4354c4adb1b9a.html#exhale-function-group-metric-1ga50ac5677790d3ced2eb4354c4adb1b9a"><span class="std std-ref">Function psyiage_metric_get_values_numeric</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__metric_1ga3e00588fc2053ab426da22f973424043.html#exhale-function-group-metric-1ga3e00588fc2053ab426da22f973424043"><span class="std std-ref">Function psyiage_metric_get_values_string</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__metric_1ga65fe769e9290b20201e1dd01b29c2166.html#exhale-function-group-metric-1ga65fe769e9290b20201e1dd01b29c2166"><span class="std std-ref">Function psyiage_metric_import_file</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__metric_1gabd74a787a571ef4e160c3f2a83e946f8.html#exhale-function-group-metric-1gabd74a787a571ef4e160c3f2a83e946f8"><span class="std std-ref">Function psyiage_metric_record_pointcloud</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__metric_1gad6ee99f1de56dd03d91dfcf02dacdb71.html#exhale-function-group-metric-1gad6ee99f1de56dd03d91dfcf02dacdb71"><span class="std std-ref">Function psyiage_metric_record_values_blob</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__metric_1gafbe2b448c64bce6d855afbd5d2247955.html#exhale-function-group-metric-1gafbe2b448c64bce6d855afbd5d2247955"><span class="std std-ref">Function psyiage_metric_record_values_numeric</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__metric_1gab715c1e25afb366bd3ec5d4f7b0b3346.html#exhale-function-group-metric-1gab715c1e25afb366bd3ec5d4f7b0b3346"><span class="std std-ref">Function psyiage_metric_record_values_string</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__profile_1ga62fc4763ea6cc9d9a42564a2790d4207.html#exhale-function-group-profile-1ga62fc4763ea6cc9d9a42564a2790d4207"><span class="std std-ref">Function psyiage_profile_code_begin</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__profile_1ga49c998d49450ca1024fe0dd94592b214.html#exhale-function-group-profile-1ga49c998d49450ca1024fe0dd94592b214"><span class="std std-ref">Function psyiage_profile_code_end</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__profile_1gab3bd7bfd5de5b5af79231e51d25f5744.html#exhale-function-group-profile-1gab3bd7bfd5de5b5af79231e51d25f5744"><span class="std std-ref">Function psyiage_profile_enable_profiling</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__admin_1ga1b78ff10f48bb97007ca0bd7ae83cb63.html#exhale-function-group-admin-1ga1b78ff10f48bb97007ca0bd7ae83cb63"><span class="std std-ref">Function psyiage_remove_sink</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__admin_1ga80a2a28f0e7e89af0b849809528488e6.html#exhale-function-group-admin-1ga80a2a28f0e7e89af0b849809528488e6"><span class="std std-ref">Function psyiage_set_debug_level</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__admin_1ga685b0634cb744c1b920c8452404330ec.html#exhale-function-group-admin-1ga685b0634cb744c1b920c8452404330ec"><span class="std std-ref">Function psyiage_start_session</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__admin_1ga8cf34f1c5e1ca06e3dabe6a8f5ef5f97.html#exhale-function-group-admin-1ga8cf34f1c5e1ca06e3dabe6a8f5ef5f97"><span class="std std-ref">Function psyiage_stop_session</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__sysinfo_1ga6a766b0b280da58739595172719c1b08.html#exhale-function-group-sysinfo-1ga6a766b0b280da58739595172719c1b08"><span class="std std-ref">Function psyiage_sysinfo_export_report</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__sysinfo_1ga248d2dba10cc8a368b09dbafd7659a7a.html#exhale-function-group-sysinfo-1ga248d2dba10cc8a368b09dbafd7659a7a"><span class="std std-ref">Function psyiage_sysinfo_get</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__video_1gad416dd5fddb70471fc854a15d937741a.html#exhale-function-group-video-1gad416dd5fddb70471fc854a15d937741a"><span class="std std-ref">Function psyiage_video_get_num_streams</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__video_1gab44c287691d4b5c9748142bc6baea6aa.html#exhale-function-group-video-1gab44c287691d4b5c9748142bc6baea6aa"><span class="std std-ref">Function psyiage_video_import</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__video_1ga055ea4807bfd37d27c48ef6eb120e3c7.html#exhale-function-group-video-1ga055ea4807bfd37d27c48ef6eb120e3c7"><span class="std std-ref">Function psyiage_video_stream_start</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__video_1ga18ad0164f5fd9156cd27de98aaa7f296.html#exhale-function-group-video-1ga18ad0164f5fd9156cd27de98aaa7f296"><span class="std std-ref">Function psyiage_video_stream_stop</span></a></p></li>
 </ul>
 </div>
 <div class="section" id="defines">
-<h2>Defines<a class="headerlink" href="#defines" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>Defines<a class="headerlink" href="#defines" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><a class="reference internal" href="define_group__sysinfo_1ga036449da4ccac7279fa86d00ca8861d1.html#exhale-define-group-sysinfo-1ga036449da4ccac7279fa86d00ca8861d1"><span class="std std-ref">Define MAX_CACHES</span></a></li>
-<li><a class="reference internal" href="define_group__admin_1ga55e37042abe9e49d5b055ca4da45dce2.html#exhale-define-group-admin-1ga55e37042abe9e49d5b055ca4da45dce2"><span class="std std-ref">Define MAX_DEVICE_ID_LENGTH</span></a></li>
-<li><a class="reference internal" href="define_group__sysinfo_1gac874d7a1f535e6a609d1bf4c3b74e421.html#exhale-define-group-sysinfo-1gac874d7a1f535e6a609d1bf4c3b74e421"><span class="std std-ref">Define MAX_DISKS</span></a></li>
-<li><a class="reference internal" href="define_group__sysinfo_1gaa5f75fdbcf486cecbce0a63152429c2c.html#exhale-define-group-sysinfo-1gaa5f75fdbcf486cecbce0a63152429c2c"><span class="std std-ref">Define MAX_NET_INTF</span></a></li>
-<li><a class="reference internal" href="define_group__sysinfo_1ga83701fcd523d39d6399f6f701e8bbaea.html#exhale-define-group-sysinfo-1ga83701fcd523d39d6399f6f701e8bbaea"><span class="std std-ref">Define MAX_PARTS</span></a></li>
-<li><a class="reference internal" href="define_group__sysinfo_1ga1fa9555567da6fbd4652105591a3264a.html#exhale-define-group-sysinfo-1ga1fa9555567da6fbd4652105591a3264a"><span class="std std-ref">Define MAX_PCI_DEVS</span></a></li>
-<li><a class="reference internal" href="define_group__admin_1ga4f63dfd286ac76e65b342e2820428e9c.html#exhale-define-group-admin-1ga4f63dfd286ac76e65b342e2820428e9c"><span class="std std-ref">Define MAX_PSYIAGE_SESSION_NAME_LENGTH</span></a></li>
-<li><a class="reference internal" href="define_group__sysinfo_1gafba6e02f31b8a53894ca0e0faaaa7482.html#exhale-define-group-sysinfo-1gafba6e02f31b8a53894ca0e0faaaa7482"><span class="std std-ref">Define MAX_USB_DEVS</span></a></li>
+<li><p><a class="reference internal" href="define_group__sysinfo_1ga036449da4ccac7279fa86d00ca8861d1.html#exhale-define-group-sysinfo-1ga036449da4ccac7279fa86d00ca8861d1"><span class="std std-ref">Define MAX_CACHES</span></a></p></li>
+<li><p><a class="reference internal" href="define_group__admin_1ga55e37042abe9e49d5b055ca4da45dce2.html#exhale-define-group-admin-1ga55e37042abe9e49d5b055ca4da45dce2"><span class="std std-ref">Define MAX_DEVICE_ID_LENGTH</span></a></p></li>
+<li><p><a class="reference internal" href="define_group__sysinfo_1gac874d7a1f535e6a609d1bf4c3b74e421.html#exhale-define-group-sysinfo-1gac874d7a1f535e6a609d1bf4c3b74e421"><span class="std std-ref">Define MAX_DISKS</span></a></p></li>
+<li><p><a class="reference internal" href="define_group__sysinfo_1gaa5f75fdbcf486cecbce0a63152429c2c.html#exhale-define-group-sysinfo-1gaa5f75fdbcf486cecbce0a63152429c2c"><span class="std std-ref">Define MAX_NET_INTF</span></a></p></li>
+<li><p><a class="reference internal" href="define_group__sysinfo_1ga8c4cfc91d6265f3e5602d5cb1772478d.html#exhale-define-group-sysinfo-1ga8c4cfc91d6265f3e5602d5cb1772478d"><span class="std std-ref">Define MAX_NUM_FS</span></a></p></li>
+<li><p><a class="reference internal" href="define_group__sysinfo_1ga83701fcd523d39d6399f6f701e8bbaea.html#exhale-define-group-sysinfo-1ga83701fcd523d39d6399f6f701e8bbaea"><span class="std std-ref">Define MAX_PARTS</span></a></p></li>
+<li><p><a class="reference internal" href="define_group__sysinfo_1ga1fa9555567da6fbd4652105591a3264a.html#exhale-define-group-sysinfo-1ga1fa9555567da6fbd4652105591a3264a"><span class="std std-ref">Define MAX_PCI_DEVS</span></a></p></li>
+<li><p><a class="reference internal" href="define_group__admin_1ga4f63dfd286ac76e65b342e2820428e9c.html#exhale-define-group-admin-1ga4f63dfd286ac76e65b342e2820428e9c"><span class="std std-ref">Define MAX_PSYIAGE_SESSION_NAME_LENGTH</span></a></p></li>
+<li><p><a class="reference internal" href="define_group__sysinfo_1gafba6e02f31b8a53894ca0e0faaaa7482.html#exhale-define-group-sysinfo-1gafba6e02f31b8a53894ca0e0faaaa7482"><span class="std std-ref">Define MAX_USB_DEVS</span></a></p></li>
+<li><p><a class="reference internal" href="define_group__admin_1ga1f1df1cf12f0602b5790cf7f5d454b9c.html#exhale-define-group-admin-1ga1f1df1cf12f0602b5790cf7f5d454b9c"><span class="std std-ref">Define PSYGIGAPI_DEFAULT</span></a></p></li>
+<li><p><a class="reference internal" href="define_group__admin_1ga2e633a8d44b435dc2d207d9546dba7b0.html#exhale-define-group-admin-1ga2e633a8d44b435dc2d207d9546dba7b0"><span class="std std-ref">Define PSYGIGAPI_V1</span></a></p></li>
 </ul>
 </div>
 <div class="section" id="typedefs">
-<h2>Typedefs<a class="headerlink" href="#typedefs" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>Typedefs<a class="headerlink" href="#typedefs" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><a class="reference internal" href="typedef_group__benchmark_1gaea3c4fa11ac33ff2876572da9697045f.html#exhale-typedef-group-benchmark-1gaea3c4fa11ac33ff2876572da9697045f"><span class="std std-ref">Typedef psyiage_benchmark_type</span></a></li>
-<li><a class="reference internal" href="typedef_group__sysinfo_1ga73a9c407ebaca5cdab83dbc11f01d3ef.html#exhale-typedef-group-sysinfo-1ga73a9c407ebaca5cdab83dbc11f01d3ef"><span class="std std-ref">Typedef psyiage_cpuinfo</span></a></li>
-<li><a class="reference internal" href="typedef_group__diag_1gafe434ff30f430b6f0e4c8b73f395ce29.html#exhale-typedef-group-diag-1gafe434ff30f430b6f0e4c8b73f395ce29"><span class="std std-ref">Typedef psyiage_diag_result</span></a></li>
-<li><a class="reference internal" href="typedef_group__diag_1gae5cf86ea571b82e577d3f19c434d9a54.html#exhale-typedef-group-diag-1gae5cf86ea571b82e577d3f19c434d9a54"><span class="std std-ref">Typedef psyiage_diag_type</span></a></li>
-<li><a class="reference internal" href="typedef_group__sysinfo_1gaf42431ed915b3f35a95816a7e5f5e437.html#exhale-typedef-group-sysinfo-1gaf42431ed915b3f35a95816a7e5f5e437"><span class="std std-ref">Typedef psyiage_diskinfo</span></a></li>
-<li><a class="reference internal" href="typedef_psyiagesdk_8h_1a04a2ebbe603eeb319217ace07cb5950d.html#exhale-typedef-psyiagesdk-8h-1a04a2ebbe603eeb319217ace07cb5950d"><span class="std std-ref">Typedef psyiage_error_code</span></a></li>
-<li><a class="reference internal" href="typedef_group__event_1gae1c6518703f04847513478d34f5932e4.html#exhale-typedef-group-event-1gae1c6518703f04847513478d34f5932e4"><span class="std std-ref">Typedef psyiage_event_level</span></a></li>
-<li><a class="reference internal" href="typedef_group__sysinfo_1gaff2e794d5ec36561f8c067fb486903bb.html#exhale-typedef-group-sysinfo-1gaff2e794d5ec36561f8c067fb486903bb"><span class="std std-ref">Typedef psyiage_fsinfo</span></a></li>
-<li><a class="reference internal" href="typedef_group__admin_1ga49255132aa0ebae339c8e05d385980b2.html#exhale-typedef-group-admin-1ga49255132aa0ebae339c8e05d385980b2"><span class="std std-ref">Typedef psyiage_handle</span></a></li>
-<li><a class="reference internal" href="typedef_group__log_1ga808be951c69d09a9dfd404c9c516f0ce.html#exhale-typedef-group-log-1ga808be951c69d09a9dfd404c9c516f0ce"><span class="std std-ref">Typedef psyiage_log_level</span></a></li>
-<li><a class="reference internal" href="typedef_group__sysinfo_1ga291ded934cd9cff52388819b63e0bc47.html#exhale-typedef-group-sysinfo-1ga291ded934cd9cff52388819b63e0bc47"><span class="std std-ref">Typedef psyiage_meminfo</span></a></li>
-<li><a class="reference internal" href="typedef_group__metric_1ga3ec4a745466817a40b916566a379bc83.html#exhale-typedef-group-metric-1ga3ec4a745466817a40b916566a379bc83"><span class="std std-ref">Typedef psyiage_metric_file_type</span></a></li>
-<li><a class="reference internal" href="typedef_group__sysinfo_1ga5d799ce23fcd267dd59d4f9782376f84.html#exhale-typedef-group-sysinfo-1ga5d799ce23fcd267dd59d4f9782376f84"><span class="std std-ref">Typedef psyiage_netinfo</span></a></li>
-<li><a class="reference internal" href="typedef_group__sysinfo_1ga4d483955cbe645e631d66a0905bd6ddd.html#exhale-typedef-group-sysinfo-1ga4d483955cbe645e631d66a0905bd6ddd"><span class="std std-ref">Typedef psyiage_osinfo</span></a></li>
-<li><a class="reference internal" href="typedef_group__sysinfo_1ga07334784a527ae69fb98d80f00e33658.html#exhale-typedef-group-sysinfo-1ga07334784a527ae69fb98d80f00e33658"><span class="std std-ref">Typedef psyiage_pciinfo</span></a></li>
-<li><a class="reference internal" href="typedef_group__metric_1ga748985727467aa81bfb33988a17e3ed5.html#exhale-typedef-group-metric-1ga748985727467aa81bfb33988a17e3ed5"><span class="std std-ref">Typedef psyiage_pointcloud_data</span></a></li>
-<li><a class="reference internal" href="typedef_group__admin_1ga56c72b8200b4083156548bb07200805f.html#exhale-typedef-group-admin-1ga56c72b8200b4083156548bb07200805f"><span class="std std-ref">Typedef psyiage_session_info</span></a></li>
-<li><a class="reference internal" href="typedef_group__admin_1gad16476cfe5c3822528da970b59904243.html#exhale-typedef-group-admin-1gad16476cfe5c3822528da970b59904243"><span class="std std-ref">Typedef psyiage_sink_cfg</span></a></li>
-<li><a class="reference internal" href="typedef_group__admin_1ga8e508fdbc67d17db77ffa7361734ff1f.html#exhale-typedef-group-admin-1ga8e508fdbc67d17db77ffa7361734ff1f"><span class="std std-ref">Typedef psyiage_sink_data_format</span></a></li>
-<li><a class="reference internal" href="typedef_group__admin_1gae9a4cb96e37fe1332f761c07c2dfcc7e.html#exhale-typedef-group-admin-1gae9a4cb96e37fe1332f761c07c2dfcc7e"><span class="std std-ref">Typedef psyiage_sink_file_cfg</span></a></li>
-<li><a class="reference internal" href="typedef_group__admin_1ga46f3f258385a58e95bd2841f2426b20f.html#exhale-typedef-group-admin-1ga46f3f258385a58e95bd2841f2426b20f"><span class="std std-ref">Typedef psyiage_sink_fstream_cfg</span></a></li>
-<li><a class="reference internal" href="typedef_group__admin_1gadc5bb1081e343d7e0f133a547c59e701.html#exhale-typedef-group-admin-1gadc5bb1081e343d7e0f133a547c59e701"><span class="std std-ref">Typedef psyiage_sink_http_cfg</span></a></li>
-<li><a class="reference internal" href="typedef_group__admin_1ga1e1859bec7fc878e24adca169ae16147.html#exhale-typedef-group-admin-1ga1e1859bec7fc878e24adca169ae16147"><span class="std std-ref">Typedef psyiage_sink_influxdb_cfg</span></a></li>
-<li><a class="reference internal" href="typedef_group__admin_1ga29b9caabb18720031d4fd4852d920207.html#exhale-typedef-group-admin-1ga29b9caabb18720031d4fd4852d920207"><span class="std std-ref">Typedef psyiage_sink_mqtt_cfg</span></a></li>
-<li><a class="reference internal" href="typedef_group__admin_1gaa87f95f2c81cccd5cd107b2dd6dbccd2.html#exhale-typedef-group-admin-1gaa87f95f2c81cccd5cd107b2dd6dbccd2"><span class="std std-ref">Typedef psyiage_sink_psygig_cfg</span></a></li>
-<li><a class="reference internal" href="typedef_group__admin_1gaa5431a5dc87350dc36e4debb1f4d459e.html#exhale-typedef-group-admin-1gaa5431a5dc87350dc36e4debb1f4d459e"><span class="std std-ref">Typedef psyiage_sink_tcp_cfg</span></a></li>
-<li><a class="reference internal" href="typedef_group__admin_1gafd597ed8a80e3e08bdbfb653a2af76f2.html#exhale-typedef-group-admin-1gafd597ed8a80e3e08bdbfb653a2af76f2"><span class="std std-ref">Typedef psyiage_sink_type</span></a></li>
-<li><a class="reference internal" href="typedef_group__admin_1gaeb6555902b19d87d0b2631fdee270a2f.html#exhale-typedef-group-admin-1gaeb6555902b19d87d0b2631fdee270a2f"><span class="std std-ref">Typedef psyiage_sink_udp_cfg</span></a></li>
-<li><a class="reference internal" href="typedef_group__sysinfo_1ga196ccbc07a32f7e27868dffaba2aa628.html#exhale-typedef-group-sysinfo-1ga196ccbc07a32f7e27868dffaba2aa628"><span class="std std-ref">Typedef psyiage_sysinfo</span></a></li>
-<li><a class="reference internal" href="typedef_group__sysinfo_1ga87cdb6c2ddc997b0a3de8b8d2609efc1.html#exhale-typedef-group-sysinfo-1ga87cdb6c2ddc997b0a3de8b8d2609efc1"><span class="std std-ref">Typedef psyiage_usbinfo</span></a></li>
-<li><a class="reference internal" href="typedef_group__video_1ga10a2a2b22fcbc3f928dc6f3a37789fdd.html#exhale-typedef-group-video-1ga10a2a2b22fcbc3f928dc6f3a37789fdd"><span class="std std-ref">Typedef psyiage_video_cfg</span></a></li>
-<li><a class="reference internal" href="typedef_group__video_1gaaa0c6b2cc90010654de1ae761138d245.html#exhale-typedef-group-video-1gaaa0c6b2cc90010654de1ae761138d245"><span class="std std-ref">Typedef psyiage_video_handle</span></a></li>
+<li><p><a class="reference internal" href="typedef_group__benchmark_1gaea3c4fa11ac33ff2876572da9697045f.html#exhale-typedef-group-benchmark-1gaea3c4fa11ac33ff2876572da9697045f"><span class="std std-ref">Typedef psyiage_benchmark_type</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_group__sysinfo_1ga73a9c407ebaca5cdab83dbc11f01d3ef.html#exhale-typedef-group-sysinfo-1ga73a9c407ebaca5cdab83dbc11f01d3ef"><span class="std std-ref">Typedef psyiage_cpuinfo</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_group__diag_1gafe434ff30f430b6f0e4c8b73f395ce29.html#exhale-typedef-group-diag-1gafe434ff30f430b6f0e4c8b73f395ce29"><span class="std std-ref">Typedef psyiage_diag_result</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_group__diag_1gae5cf86ea571b82e577d3f19c434d9a54.html#exhale-typedef-group-diag-1gae5cf86ea571b82e577d3f19c434d9a54"><span class="std std-ref">Typedef psyiage_diag_type</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_group__sysinfo_1gaf42431ed915b3f35a95816a7e5f5e437.html#exhale-typedef-group-sysinfo-1gaf42431ed915b3f35a95816a7e5f5e437"><span class="std std-ref">Typedef psyiage_diskinfo</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_group__admin_1ga2c4d4758ecc6d3accf2503b511d05de5.html#exhale-typedef-group-admin-1ga2c4d4758ecc6d3accf2503b511d05de5"><span class="std std-ref">Typedef psyiage_endpoint_type</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_psyiagesdk_8h_1a04a2ebbe603eeb319217ace07cb5950d.html#exhale-typedef-psyiagesdk-8h-1a04a2ebbe603eeb319217ace07cb5950d"><span class="std std-ref">Typedef psyiage_error_code</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_group__event_1gae1c6518703f04847513478d34f5932e4.html#exhale-typedef-group-event-1gae1c6518703f04847513478d34f5932e4"><span class="std std-ref">Typedef psyiage_event_level</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_group__sysinfo_1gaff2e794d5ec36561f8c067fb486903bb.html#exhale-typedef-group-sysinfo-1gaff2e794d5ec36561f8c067fb486903bb"><span class="std std-ref">Typedef psyiage_fsinfo</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_group__admin_1ga49255132aa0ebae339c8e05d385980b2.html#exhale-typedef-group-admin-1ga49255132aa0ebae339c8e05d385980b2"><span class="std std-ref">Typedef psyiage_handle</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_group__log_1ga808be951c69d09a9dfd404c9c516f0ce.html#exhale-typedef-group-log-1ga808be951c69d09a9dfd404c9c516f0ce"><span class="std std-ref">Typedef psyiage_log_level</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_group__sysinfo_1ga291ded934cd9cff52388819b63e0bc47.html#exhale-typedef-group-sysinfo-1ga291ded934cd9cff52388819b63e0bc47"><span class="std std-ref">Typedef psyiage_meminfo</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_group__metric_1ga3ec4a745466817a40b916566a379bc83.html#exhale-typedef-group-metric-1ga3ec4a745466817a40b916566a379bc83"><span class="std std-ref">Typedef psyiage_metric_file_type</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_group__sysinfo_1ga5d799ce23fcd267dd59d4f9782376f84.html#exhale-typedef-group-sysinfo-1ga5d799ce23fcd267dd59d4f9782376f84"><span class="std std-ref">Typedef psyiage_netinfo</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_group__sysinfo_1ga4d483955cbe645e631d66a0905bd6ddd.html#exhale-typedef-group-sysinfo-1ga4d483955cbe645e631d66a0905bd6ddd"><span class="std std-ref">Typedef psyiage_osinfo</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_group__sysinfo_1ga07334784a527ae69fb98d80f00e33658.html#exhale-typedef-group-sysinfo-1ga07334784a527ae69fb98d80f00e33658"><span class="std std-ref">Typedef psyiage_pciinfo</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_group__metric_1ga748985727467aa81bfb33988a17e3ed5.html#exhale-typedef-group-metric-1ga748985727467aa81bfb33988a17e3ed5"><span class="std std-ref">Typedef psyiage_pointcloud_data</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_group__admin_1ga56c72b8200b4083156548bb07200805f.html#exhale-typedef-group-admin-1ga56c72b8200b4083156548bb07200805f"><span class="std std-ref">Typedef psyiage_session_info</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_group__admin_1gad16476cfe5c3822528da970b59904243.html#exhale-typedef-group-admin-1gad16476cfe5c3822528da970b59904243"><span class="std std-ref">Typedef psyiage_sink_cfg</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_group__admin_1ga8e508fdbc67d17db77ffa7361734ff1f.html#exhale-typedef-group-admin-1ga8e508fdbc67d17db77ffa7361734ff1f"><span class="std std-ref">Typedef psyiage_sink_data_format</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_group__admin_1gae9a4cb96e37fe1332f761c07c2dfcc7e.html#exhale-typedef-group-admin-1gae9a4cb96e37fe1332f761c07c2dfcc7e"><span class="std std-ref">Typedef psyiage_sink_file_cfg</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_group__admin_1ga46f3f258385a58e95bd2841f2426b20f.html#exhale-typedef-group-admin-1ga46f3f258385a58e95bd2841f2426b20f"><span class="std std-ref">Typedef psyiage_sink_fstream_cfg</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_group__admin_1gadc5bb1081e343d7e0f133a547c59e701.html#exhale-typedef-group-admin-1gadc5bb1081e343d7e0f133a547c59e701"><span class="std std-ref">Typedef psyiage_sink_http_cfg</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_group__admin_1ga1e1859bec7fc878e24adca169ae16147.html#exhale-typedef-group-admin-1ga1e1859bec7fc878e24adca169ae16147"><span class="std std-ref">Typedef psyiage_sink_influxdb_cfg</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_group__admin_1ga29b9caabb18720031d4fd4852d920207.html#exhale-typedef-group-admin-1ga29b9caabb18720031d4fd4852d920207"><span class="std std-ref">Typedef psyiage_sink_mqtt_cfg</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_group__admin_1gaa87f95f2c81cccd5cd107b2dd6dbccd2.html#exhale-typedef-group-admin-1gaa87f95f2c81cccd5cd107b2dd6dbccd2"><span class="std std-ref">Typedef psyiage_sink_psygig_cfg</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_group__admin_1gaa5431a5dc87350dc36e4debb1f4d459e.html#exhale-typedef-group-admin-1gaa5431a5dc87350dc36e4debb1f4d459e"><span class="std std-ref">Typedef psyiage_sink_tcp_cfg</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_group__admin_1gafd597ed8a80e3e08bdbfb653a2af76f2.html#exhale-typedef-group-admin-1gafd597ed8a80e3e08bdbfb653a2af76f2"><span class="std std-ref">Typedef psyiage_sink_type</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_group__admin_1gaeb6555902b19d87d0b2631fdee270a2f.html#exhale-typedef-group-admin-1gaeb6555902b19d87d0b2631fdee270a2f"><span class="std std-ref">Typedef psyiage_sink_udp_cfg</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_group__sysinfo_1ga196ccbc07a32f7e27868dffaba2aa628.html#exhale-typedef-group-sysinfo-1ga196ccbc07a32f7e27868dffaba2aa628"><span class="std std-ref">Typedef psyiage_sysinfo</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_group__sysinfo_1ga87cdb6c2ddc997b0a3de8b8d2609efc1.html#exhale-typedef-group-sysinfo-1ga87cdb6c2ddc997b0a3de8b8d2609efc1"><span class="std std-ref">Typedef psyiage_usbinfo</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_group__video_1ga10a2a2b22fcbc3f928dc6f3a37789fdd.html#exhale-typedef-group-video-1ga10a2a2b22fcbc3f928dc6f3a37789fdd"><span class="std std-ref">Typedef psyiage_video_cfg</span></a></p></li>
 </ul>
 </div>
 </div>
@@ -376,21 +396,12 @@
           </div>
           <footer>
   
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="program_listing_file_include_psyiage_psyiagesdk.h.html" class="btn btn-neutral float-right" title="Program Listing for File psyiagesdk.h" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="dir_include_psyiage.html" class="btn btn-neutral" title="Directory psyiage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019 PSYGIG株式会社
+        &copy; Copyright 2020 PSYGIG株式会社
 
     </p>
   </div>
@@ -407,29 +418,16 @@
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/translations.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/javascript" src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
-        <script type="text/javascript" src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

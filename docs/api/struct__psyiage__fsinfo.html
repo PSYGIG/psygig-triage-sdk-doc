@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="ja" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="ja" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Struct _psyiage_fsinfo &mdash; PSYGIG Triage SDK 0.4.0 ドキュメント</title>
+  <title>Struct _psyiage_fsinfo &mdash; PSYGIG Mobility IoT SDK 0.4.0 documentation</title>
   
 
   
@@ -17,18 +17,27 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
-    <link rel="index" title="索引" href="../genindex.html" />
-    <link rel="search" title="検索" href="../search.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Struct _psyiage_meminfo" href="struct__psyiage__meminfo.html" />
     <link rel="prev" title="Struct _psyiage_diskinfo" href="struct__psyiage__diskinfo.html" />
  
@@ -42,25 +51,25 @@
     ga('send', 'pageview');
 </script>
 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
+<p>EN | <a href="ja/index.html">JP</a></p>
+
+
+
+
           
-            <a href="../index.html" class="icon icon-home"> PSYGIG Triage SDK
+            <a href="../index.html" class="icon icon-home"> PSYGIG Mobility IoT SDK
           
 
           
@@ -99,7 +108,7 @@
             
               <p class="caption"><span class="caption-text">OVERVIEW</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../supported-platforms.html">Supported Platforms/Architectures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../supported-platforms.html">Supported Platforms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../third-party-integration.html">Third Party Integration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../change-log.html">Change Log</a></li>
 </ul>
@@ -108,24 +117,34 @@
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">Download &amp; Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html">Getting Started</a></li>
 </ul>
-<p class="caption"><span class="caption-text">FEATURES</span></p>
+<p class="caption"><span class="caption-text">DEVICE PROVISIONING</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../software-provisioning.html">Software Provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-marketplace.html">Module Marketplace</a></li>
+</ul>
+<p class="caption"><span class="caption-text">DEVICE MONITORING</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../video-streaming.html">Video Streaming</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../application-performance-profiling.html">Application Performance Profiling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../crash-reporting.html">Crash Reporting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../log-collection.html">Log Collection</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../metrics-collection.html">Metrics Collection</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../system-information.html">System Information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../event-reporting.html">Event Reporting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../benchmark-testing.html">Benchmark Testing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../diagnostic-testing.html">Diagnostic Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system-information.html">System Information</a></li>
 </ul>
-<p class="caption"><span class="caption-text">PSYGIG TRIAGE SDK REFERENCE</span></p>
+<p class="caption"><span class="caption-text">DIAGNOSIS &amp; BENCHMARKS</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../diagnostic-testing.html">Diagnostic Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../benchmark-testing.html">Benchmark Testing</a></li>
+</ul>
+<p class="caption"><span class="caption-text">SDK REFERENCE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../angelo-man.html"><code class="docutils literal notranslate"><span class="pre">angelo</span></code> man page</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../psymon-man.html"><code class="docutils literal notranslate"><span class="pre">psymon</span></code> man page</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../psybench-man.html"><code class="docutils literal notranslate"><span class="pre">psybench</span></code> man page</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../psydiag-man.html"><code class="docutils literal notranslate"><span class="pre">psydiag</span></code> man page</a></li>
-<li class="toctree-l1"><a class="reference internal" href="index.html">PSYGIG Triage SDK API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../sample-output.html">Sample Output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">C/C++ SDK API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sample-output.html">Sample JSON Output</a></li>
 </ul>
 
             
@@ -140,7 +159,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">PSYGIG Triage SDK</a>
+          <a href="../index.html">PSYGIG Mobility IoT SDK</a>
         
       </nav>
 
@@ -171,7 +190,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="index.html">PSYGIG Triage SDK API</a> &raquo;</li>
+          <li><a href="index.html">C/C++ SDK API Reference</a> &raquo;</li>
         
       <li>Struct _psyiage_fsinfo</li>
     
@@ -191,107 +210,107 @@
            <div itemprop="articleBody">
             
   <div class="section" id="struct-psyiage-fsinfo">
-<span id="exhale-struct-struct-psyiage-fsinfo"></span><h1>Struct _psyiage_fsinfo<a class="headerlink" href="#struct-psyiage-fsinfo" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<span id="exhale-struct-struct-psyiage-fsinfo"></span><h1>Struct _psyiage_fsinfo<a class="headerlink" href="#struct-psyiage-fsinfo" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li>Defined in <a class="reference internal" href="file_include_psyiage_psyiagesdk.h.html#file-include-psyiage-psyiagesdk-h"><span class="std std-ref">File psyiagesdk.h</span></a></li>
+<li><p>Defined in <a class="reference internal" href="file_include_psyiage_psyiagesdk.h.html#file-include-psyiage-psyiagesdk-h"><span class="std std-ref">File psyiagesdk.h</span></a></p></li>
 </ul>
 <div class="section" id="struct-documentation">
-<h2>Struct Documentation<a class="headerlink" href="#struct-documentation" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>Struct Documentation<a class="headerlink" href="#struct-documentation" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
-<dt id="_CPPv315_psyiage_fsinfo">
-<span id="_CPPv215_psyiage_fsinfo"></span><span id="_psyiage_fsinfo"></span><span class="target" id="struct__psyiage__fsinfo"></span><em class="property">struct </em><code class="descname">_psyiage_fsinfo</code><a class="headerlink" href="#_CPPv315_psyiage_fsinfo" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dt id="_CPPv415_psyiage_fsinfo">
+<span id="_CPPv315_psyiage_fsinfo"></span><span id="_CPPv215_psyiage_fsinfo"></span><span id="_psyiage_fsinfo"></span><span class="target" id="struct__psyiage__fsinfo"></span><em class="property">struct </em><code class="sig-name descname">_psyiage_fsinfo</code><a class="headerlink" href="#_CPPv415_psyiage_fsinfo" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>File System Information Details of mounted file systems. </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Members</p>
 <dl class="member">
-<dt id="_CPPv3N15_psyiage_fsinfo6deviceE">
-<span id="_CPPv2N15_psyiage_fsinfo6deviceE"></span><span id="_psyiage_fsinfo::device__cA"></span><span class="target" id="struct__psyiage__fsinfo_1a647985bbc4476b5a85c09af99d32a7e8"></span>char <code class="descname">device</code>[32]<a class="headerlink" href="#_CPPv3N15_psyiage_fsinfo6deviceE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dt id="_CPPv4N15_psyiage_fsinfo6deviceE">
+<span id="_CPPv3N15_psyiage_fsinfo6deviceE"></span><span id="_CPPv2N15_psyiage_fsinfo6deviceE"></span><span id="_psyiage_fsinfo::device__cA"></span><span class="target" id="struct__psyiage__fsinfo_1a647985bbc4476b5a85c09af99d32a7e8"></span>char <code class="sig-name descname">device</code>[32]<a class="headerlink" href="#_CPPv4N15_psyiage_fsinfo6deviceE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="member">
-<dt id="_CPPv3N15_psyiage_fsinfo8mountdirE">
-<span id="_CPPv2N15_psyiage_fsinfo8mountdirE"></span><span id="_psyiage_fsinfo::mountdir__cA"></span><span class="target" id="struct__psyiage__fsinfo_1ab62942a703d2cf212147f04892a1d427"></span>char <code class="descname">mountdir</code>[256]<a class="headerlink" href="#_CPPv3N15_psyiage_fsinfo8mountdirE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dt id="_CPPv4N15_psyiage_fsinfo8mountdirE">
+<span id="_CPPv3N15_psyiage_fsinfo8mountdirE"></span><span id="_CPPv2N15_psyiage_fsinfo8mountdirE"></span><span id="_psyiage_fsinfo::mountdir__cA"></span><span class="target" id="struct__psyiage__fsinfo_1ab62942a703d2cf212147f04892a1d427"></span>char <code class="sig-name descname">mountdir</code>[256]<a class="headerlink" href="#_CPPv4N15_psyiage_fsinfo8mountdirE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="member">
-<dt id="_CPPv3N15_psyiage_fsinfo10filesystemE">
-<span id="_CPPv2N15_psyiage_fsinfo10filesystemE"></span><span id="_psyiage_fsinfo::filesystem__cA"></span><span class="target" id="struct__psyiage__fsinfo_1a702796e010c2fa6b437eaf2772a62b49"></span>char <code class="descname">filesystem</code>[32]<a class="headerlink" href="#_CPPv3N15_psyiage_fsinfo10filesystemE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dt id="_CPPv4N15_psyiage_fsinfo10filesystemE">
+<span id="_CPPv3N15_psyiage_fsinfo10filesystemE"></span><span id="_CPPv2N15_psyiage_fsinfo10filesystemE"></span><span id="_psyiage_fsinfo::filesystem__cA"></span><span class="target" id="struct__psyiage__fsinfo_1a702796e010c2fa6b437eaf2772a62b49"></span>char <code class="sig-name descname">filesystem</code>[32]<a class="headerlink" href="#_CPPv4N15_psyiage_fsinfo10filesystemE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="member">
-<dt id="_CPPv3N15_psyiage_fsinfo9mountoptsE">
-<span id="_CPPv2N15_psyiage_fsinfo9mountoptsE"></span><span id="_psyiage_fsinfo::mountopts__cA"></span><span class="target" id="struct__psyiage__fsinfo_1a4643604e4dc56089f01a48b3b8ff490c"></span>char <code class="descname">mountopts</code>[32]<a class="headerlink" href="#_CPPv3N15_psyiage_fsinfo9mountoptsE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dt id="_CPPv4N15_psyiage_fsinfo9mountoptsE">
+<span id="_CPPv3N15_psyiage_fsinfo9mountoptsE"></span><span id="_CPPv2N15_psyiage_fsinfo9mountoptsE"></span><span id="_psyiage_fsinfo::mountopts__cA"></span><span class="target" id="struct__psyiage__fsinfo_1a4643604e4dc56089f01a48b3b8ff490c"></span>char <code class="sig-name descname">mountopts</code>[32]<a class="headerlink" href="#_CPPv4N15_psyiage_fsinfo9mountoptsE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="member">
-<dt id="_CPPv3N15_psyiage_fsinfo7blksizeE">
-<span id="_CPPv2N15_psyiage_fsinfo7blksizeE"></span><span id="_psyiage_fsinfo::blksize__uint64_t"></span><span class="target" id="struct__psyiage__fsinfo_1ac8c69e0d891e06ad84d405f47334d8f8"></span>uint64_t <code class="descname">blksize</code><a class="headerlink" href="#_CPPv3N15_psyiage_fsinfo7blksizeE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dt id="_CPPv4N15_psyiage_fsinfo7blksizeE">
+<span id="_CPPv3N15_psyiage_fsinfo7blksizeE"></span><span id="_CPPv2N15_psyiage_fsinfo7blksizeE"></span><span id="_psyiage_fsinfo::blksize__uint64_t"></span><span class="target" id="struct__psyiage__fsinfo_1ac8c69e0d891e06ad84d405f47334d8f8"></span>uint64_t <code class="sig-name descname">blksize</code><a class="headerlink" href="#_CPPv4N15_psyiage_fsinfo7blksizeE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="member">
-<dt id="_CPPv3N15_psyiage_fsinfo8fragsizeE">
-<span id="_CPPv2N15_psyiage_fsinfo8fragsizeE"></span><span id="_psyiage_fsinfo::fragsize__uint64_t"></span><span class="target" id="struct__psyiage__fsinfo_1a1079f4672598435039fccd21610aa345"></span>uint64_t <code class="descname">fragsize</code><a class="headerlink" href="#_CPPv3N15_psyiage_fsinfo8fragsizeE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dt id="_CPPv4N15_psyiage_fsinfo8fragsizeE">
+<span id="_CPPv3N15_psyiage_fsinfo8fragsizeE"></span><span id="_CPPv2N15_psyiage_fsinfo8fragsizeE"></span><span id="_psyiage_fsinfo::fragsize__uint64_t"></span><span class="target" id="struct__psyiage__fsinfo_1a1079f4672598435039fccd21610aa345"></span>uint64_t <code class="sig-name descname">fragsize</code><a class="headerlink" href="#_CPPv4N15_psyiage_fsinfo8fragsizeE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="member">
-<dt id="_CPPv3N15_psyiage_fsinfo9totalblksE">
-<span id="_CPPv2N15_psyiage_fsinfo9totalblksE"></span><span id="_psyiage_fsinfo::totalblks__uint64_t"></span><span class="target" id="struct__psyiage__fsinfo_1a4660fec61906d9cd6fc108aac56c50e1"></span>uint64_t <code class="descname">totalblks</code><a class="headerlink" href="#_CPPv3N15_psyiage_fsinfo9totalblksE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dt id="_CPPv4N15_psyiage_fsinfo9totalblksE">
+<span id="_CPPv3N15_psyiage_fsinfo9totalblksE"></span><span id="_CPPv2N15_psyiage_fsinfo9totalblksE"></span><span id="_psyiage_fsinfo::totalblks__uint64_t"></span><span class="target" id="struct__psyiage__fsinfo_1a4660fec61906d9cd6fc108aac56c50e1"></span>uint64_t <code class="sig-name descname">totalblks</code><a class="headerlink" href="#_CPPv4N15_psyiage_fsinfo9totalblksE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="member">
-<dt id="_CPPv3N15_psyiage_fsinfo8freeblksE">
-<span id="_CPPv2N15_psyiage_fsinfo8freeblksE"></span><span id="_psyiage_fsinfo::freeblks__uint64_t"></span><span class="target" id="struct__psyiage__fsinfo_1add9323ead8879f76472a00bc14140437"></span>uint64_t <code class="descname">freeblks</code><a class="headerlink" href="#_CPPv3N15_psyiage_fsinfo8freeblksE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dt id="_CPPv4N15_psyiage_fsinfo8freeblksE">
+<span id="_CPPv3N15_psyiage_fsinfo8freeblksE"></span><span id="_CPPv2N15_psyiage_fsinfo8freeblksE"></span><span id="_psyiage_fsinfo::freeblks__uint64_t"></span><span class="target" id="struct__psyiage__fsinfo_1add9323ead8879f76472a00bc14140437"></span>uint64_t <code class="sig-name descname">freeblks</code><a class="headerlink" href="#_CPPv4N15_psyiage_fsinfo8freeblksE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="member">
-<dt id="_CPPv3N15_psyiage_fsinfo9availblksE">
-<span id="_CPPv2N15_psyiage_fsinfo9availblksE"></span><span id="_psyiage_fsinfo::availblks__uint64_t"></span><span class="target" id="struct__psyiage__fsinfo_1af7f90972b3bd3a511b92cb2521523fd6"></span>uint64_t <code class="descname">availblks</code><a class="headerlink" href="#_CPPv3N15_psyiage_fsinfo9availblksE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dt id="_CPPv4N15_psyiage_fsinfo9availblksE">
+<span id="_CPPv3N15_psyiage_fsinfo9availblksE"></span><span id="_CPPv2N15_psyiage_fsinfo9availblksE"></span><span id="_psyiage_fsinfo::availblks__uint64_t"></span><span class="target" id="struct__psyiage__fsinfo_1af7f90972b3bd3a511b92cb2521523fd6"></span>uint64_t <code class="sig-name descname">availblks</code><a class="headerlink" href="#_CPPv4N15_psyiage_fsinfo9availblksE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="member">
-<dt id="_CPPv3N15_psyiage_fsinfo8totalinoE">
-<span id="_CPPv2N15_psyiage_fsinfo8totalinoE"></span><span id="_psyiage_fsinfo::totalino__uint64_t"></span><span class="target" id="struct__psyiage__fsinfo_1a6bed25b42aac7a431645d447634dca01"></span>uint64_t <code class="descname">totalino</code><a class="headerlink" href="#_CPPv3N15_psyiage_fsinfo8totalinoE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dt id="_CPPv4N15_psyiage_fsinfo8totalinoE">
+<span id="_CPPv3N15_psyiage_fsinfo8totalinoE"></span><span id="_CPPv2N15_psyiage_fsinfo8totalinoE"></span><span id="_psyiage_fsinfo::totalino__uint64_t"></span><span class="target" id="struct__psyiage__fsinfo_1a6bed25b42aac7a431645d447634dca01"></span>uint64_t <code class="sig-name descname">totalino</code><a class="headerlink" href="#_CPPv4N15_psyiage_fsinfo8totalinoE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="member">
-<dt id="_CPPv3N15_psyiage_fsinfo7freeinoE">
-<span id="_CPPv2N15_psyiage_fsinfo7freeinoE"></span><span id="_psyiage_fsinfo::freeino__uint64_t"></span><span class="target" id="struct__psyiage__fsinfo_1a0e672402465da13d22ff6c041c7632e5"></span>uint64_t <code class="descname">freeino</code><a class="headerlink" href="#_CPPv3N15_psyiage_fsinfo7freeinoE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dt id="_CPPv4N15_psyiage_fsinfo7freeinoE">
+<span id="_CPPv3N15_psyiage_fsinfo7freeinoE"></span><span id="_CPPv2N15_psyiage_fsinfo7freeinoE"></span><span id="_psyiage_fsinfo::freeino__uint64_t"></span><span class="target" id="struct__psyiage__fsinfo_1a0e672402465da13d22ff6c041c7632e5"></span>uint64_t <code class="sig-name descname">freeino</code><a class="headerlink" href="#_CPPv4N15_psyiage_fsinfo7freeinoE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="member">
-<dt id="_CPPv3N15_psyiage_fsinfo8availinoE">
-<span id="_CPPv2N15_psyiage_fsinfo8availinoE"></span><span id="_psyiage_fsinfo::availino__uint64_t"></span><span class="target" id="struct__psyiage__fsinfo_1a96105b0dbcb0f023debcb1b732e87ae8"></span>uint64_t <code class="descname">availino</code><a class="headerlink" href="#_CPPv3N15_psyiage_fsinfo8availinoE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dt id="_CPPv4N15_psyiage_fsinfo8availinoE">
+<span id="_CPPv3N15_psyiage_fsinfo8availinoE"></span><span id="_CPPv2N15_psyiage_fsinfo8availinoE"></span><span id="_psyiage_fsinfo::availino__uint64_t"></span><span class="target" id="struct__psyiage__fsinfo_1a96105b0dbcb0f023debcb1b732e87ae8"></span>uint64_t <code class="sig-name descname">availino</code><a class="headerlink" href="#_CPPv4N15_psyiage_fsinfo8availinoE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="member">
-<dt id="_CPPv3N15_psyiage_fsinfo4fsidE">
-<span id="_CPPv2N15_psyiage_fsinfo4fsidE"></span><span id="_psyiage_fsinfo::fsid__uint32_t"></span><span class="target" id="struct__psyiage__fsinfo_1ac36916c83faf8607833627a0e6d6b50f"></span>uint32_t <code class="descname">fsid</code><a class="headerlink" href="#_CPPv3N15_psyiage_fsinfo4fsidE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dt id="_CPPv4N15_psyiage_fsinfo4fsidE">
+<span id="_CPPv3N15_psyiage_fsinfo4fsidE"></span><span id="_CPPv2N15_psyiage_fsinfo4fsidE"></span><span id="_psyiage_fsinfo::fsid__uint32_t"></span><span class="target" id="struct__psyiage__fsinfo_1ac36916c83faf8607833627a0e6d6b50f"></span>uint32_t <code class="sig-name descname">fsid</code><a class="headerlink" href="#_CPPv4N15_psyiage_fsinfo4fsidE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="member">
-<dt id="_CPPv3N15_psyiage_fsinfo7fsflagsE">
-<span id="_CPPv2N15_psyiage_fsinfo7fsflagsE"></span><span id="_psyiage_fsinfo::fsflags__uint32_t"></span><span class="target" id="struct__psyiage__fsinfo_1ad6a58b317f3237034799009b8e1d4e02"></span>uint32_t <code class="descname">fsflags</code><a class="headerlink" href="#_CPPv3N15_psyiage_fsinfo7fsflagsE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dt id="_CPPv4N15_psyiage_fsinfo7fsflagsE">
+<span id="_CPPv3N15_psyiage_fsinfo7fsflagsE"></span><span id="_CPPv2N15_psyiage_fsinfo7fsflagsE"></span><span id="_psyiage_fsinfo::fsflags__uint32_t"></span><span class="target" id="struct__psyiage__fsinfo_1ad6a58b317f3237034799009b8e1d4e02"></span>uint32_t <code class="sig-name descname">fsflags</code><a class="headerlink" href="#_CPPv4N15_psyiage_fsinfo7fsflagsE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="member">
-<dt id="_CPPv3N15_psyiage_fsinfo8fnamemaxE">
-<span id="_CPPv2N15_psyiage_fsinfo8fnamemaxE"></span><span id="_psyiage_fsinfo::fnamemax__uint32_t"></span><span class="target" id="struct__psyiage__fsinfo_1a589dd769da85cbd01672d6a9d46c0bd7"></span>uint32_t <code class="descname">fnamemax</code><a class="headerlink" href="#_CPPv3N15_psyiage_fsinfo8fnamemaxE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dt id="_CPPv4N15_psyiage_fsinfo8fnamemaxE">
+<span id="_CPPv3N15_psyiage_fsinfo8fnamemaxE"></span><span id="_CPPv2N15_psyiage_fsinfo8fnamemaxE"></span><span id="_psyiage_fsinfo::fnamemax__uint32_t"></span><span class="target" id="struct__psyiage__fsinfo_1a589dd769da85cbd01672d6a9d46c0bd7"></span>uint32_t <code class="sig-name descname">fnamemax</code><a class="headerlink" href="#_CPPv4N15_psyiage_fsinfo8fnamemaxE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="member">
-<dt id="_CPPv3N15_psyiage_fsinfo4sizeE">
-<span id="_CPPv2N15_psyiage_fsinfo4sizeE"></span><span id="_psyiage_fsinfo::size__uint64_t"></span><span class="target" id="struct__psyiage__fsinfo_1a7c6db71d4caed43991233aac0341cbca"></span>uint64_t <code class="descname">size</code><a class="headerlink" href="#_CPPv3N15_psyiage_fsinfo4sizeE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dt id="_CPPv4N15_psyiage_fsinfo4sizeE">
+<span id="_CPPv3N15_psyiage_fsinfo4sizeE"></span><span id="_CPPv2N15_psyiage_fsinfo4sizeE"></span><span id="_psyiage_fsinfo::size__uint64_t"></span><span class="target" id="struct__psyiage__fsinfo_1a7c6db71d4caed43991233aac0341cbca"></span>uint64_t <code class="sig-name descname">size</code><a class="headerlink" href="#_CPPv4N15_psyiage_fsinfo4sizeE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="member">
-<dt id="_CPPv3N15_psyiage_fsinfo2fsE">
-<span id="_CPPv2N15_psyiage_fsinfo2fsE"></span><span class="target" id="struct__psyiage__fsinfo_1a7c4175cc3462c0bd7560d4f88f0153a3"></span><em class="property">struct</em> <a class="reference internal" href="#_CPPv315_psyiage_fsinfo" title="_psyiage_fsinfo">_psyiage_fsinfo</a>::<strong>[anonymous]</strong> <code class="descname">fs</code>[10]<a class="headerlink" href="#_CPPv3N15_psyiage_fsinfo2fsE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dt id="_CPPv4N15_psyiage_fsinfo2fsE">
+<span id="_CPPv3N15_psyiage_fsinfo2fsE"></span><span id="_CPPv2N15_psyiage_fsinfo2fsE"></span><span class="target" id="struct__psyiage__fsinfo_1ad929fdc72ef43892000079224262b1c4"></span><em class="property">struct</em> <a class="reference internal" href="#_CPPv415_psyiage_fsinfo" title="_psyiage_fsinfo">_psyiage_fsinfo</a>::<strong>[anonymous]</strong> <code class="sig-name descname">fs</code>[<code class="sig-name descname">MAX_NUM_FS</code>]<a class="headerlink" href="#_CPPv4N15_psyiage_fsinfo2fsE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Array of mounted file systems on the system. </p>
 </dd></dl>
 
 <dl class="member">
-<dt id="_CPPv3N15_psyiage_fsinfo5numfsE">
-<span id="_CPPv2N15_psyiage_fsinfo5numfsE"></span><span id="_psyiage_fsinfo::numfs__unsigned-i"></span><span class="target" id="struct__psyiage__fsinfo_1aff6876ab9eec6aeae9e1910eef6971d8"></span>unsigned int <code class="descname">numfs</code><a class="headerlink" href="#_CPPv3N15_psyiage_fsinfo5numfsE" title="この定義へのパーマリンク">¶</a><br /></dt>
+<dt id="_CPPv4N15_psyiage_fsinfo5numfsE">
+<span id="_CPPv3N15_psyiage_fsinfo5numfsE"></span><span id="_CPPv2N15_psyiage_fsinfo5numfsE"></span><span id="_psyiage_fsinfo::numfs__unsigned-i"></span><span class="target" id="struct__psyiage__fsinfo_1aff6876ab9eec6aeae9e1910eef6971d8"></span>unsigned int <code class="sig-name descname">numfs</code><a class="headerlink" href="#_CPPv4N15_psyiage_fsinfo5numfsE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Number of mounted file systems on the system. </p>
 </dd></dl>
 
@@ -312,7 +331,7 @@
         <a href="struct__psyiage__meminfo.html" class="btn btn-neutral float-right" title="Struct _psyiage_meminfo" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="struct__psyiage__diskinfo.html" class="btn btn-neutral" title="Struct _psyiage_diskinfo" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="struct__psyiage__diskinfo.html" class="btn btn-neutral float-left" title="Struct _psyiage_diskinfo" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -321,7 +340,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019 PSYGIG株式会社
+        &copy; Copyright 2020 PSYGIG株式会社
 
     </p>
   </div>
@@ -338,29 +357,16 @@
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/translations.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/javascript" src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
-        <script type="text/javascript" src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

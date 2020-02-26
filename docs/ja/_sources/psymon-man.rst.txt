@@ -1,0 +1,51 @@
+``psymon`` のマニュアルページ
+====================================================
+``psymon`` は、ソースコードを変更したり再コンパイルしたりせずに、psyiageの診断機能とパフォーマンス機能を使用して任意のコマンドの実行を自動的に計測します。たとえば、CPUプロファイル、
+システムメトリック、クラッシュ、およびログデータは、 ``psymon`` スクリプトを使用して実行可能ファイルを実行するだけで自動的に収集できます。
+
+.. code-block:: bash
+
+    On-demand diagnostic and performance instrumentation of any arbitrary command
+
+    Usage:
+      psymon [instrumentation-options] [output-options] "<command+arguments>"
+
+    Example:
+      psymon --logs --metrics --profile cpu -o json "/path/to/your/app --arg1 --arg2 --arg3"
+
+    psymon automatically instruments the execution of any arbitrary command (and arguments)
+    with psyiage diagnostic and performance capabilities without any source code changes
+    or recompilation.
+
+    The collected instrumentation data can be exported or streamed to a number of supported
+    output plugins (eg. json, csv, text, mqtt, http)
+
+    Options: Informational
+      -V, --version           Print version information.
+      -h, --help              Print help.
+
+    Options: instrumentation
+      --logs [options]        Enable collection and monitoring of known log files (system) [Default: system]
+      --profile [options]     Enable application profiling. (cpu|mem) [Default: cpu]
+      --profile-period <ms>   Sampling period (in ms) when collecting profiling data. [Default: 10]
+      --crash                 Enable collection of post-mortem data on program crash
+      --metrics [options]     Enable collection of metric data from known sources. (system) [Default: system]
+      --metrics-period <ms>   Sampling period (in ms) when collecting metrics. (1-32768) [Default: 500]
+      --alerts [options]      Enable pre-defined alerts/event triggers that raise an event when a condition is satisfied
+      --bench [options]       Enable execution of benchmark tests on startup
+      --diag [options]        Enable execution of diagnostic tests on startup
+
+      If no instrumentation options are selected, --metrics --logs --crash are enabled by default
+
+    Options: output
+      -o, --output [formats]  Output format of the collected data. (json|csv|text|http|mqtt) [Default: json]
+      -d, --dir <path>        Directory path for output data. Only valid for json, csv and text output formats (Default: current directory)
+      -p. --prefix <string>   String to prepend the output file name. Only valid for json, csv and text output formats (Default: command name)
+      -h, --host <address>    Host address to stream output data. Only valid for http|mqtt output format.
+      -k, --key <key>         Key to use with --host for streaming output data. Only valid for http|mqtt output format
+      -q, --quiet             Disable console messages when monitoring
+
+    NOTES:
+    * psymon uses preloaded shared libraries to initiate profiling.  For this
+      reason, it cannot be used to profile setuid programs.
+    * psymon may not be able to profile programs that themselves use preloading.

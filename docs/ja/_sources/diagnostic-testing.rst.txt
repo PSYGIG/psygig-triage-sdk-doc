@@ -1,0 +1,102 @@
+診断テスト
+==================
+安全性が重要なシステムの信頼性と安定性を確保することは、システム障害の社会経済的コストを考慮するときに必要です。障害の結果は、ログファイル内のエントリが破損することがほとんどない
+ようなディスクの断続的な障害などの良性の場合もあれば、自律走行車のナビゲーションシステムを停止させるメモリ障害のような致命的な場合もあります。装置の通常の動作の一部として診断テストを
+含めることで、より壊滅的な障害が発生する前に慢性的な問題または断続的な問題を発見することができます。
+
+`PSYGIG Mobility IoT SDK` は、組み込みデバイスの最も一般的なサブシステムを実行して強調するように設計された広範な一連の診断テストを提供します。
+
+診断テストAPIには、組み込みシステムへの統合に適した多くの機能が含まれています。
+
+- そのまま使用できます。 :ref:`psydiag <running-diagnostics>` を `実行する`
+- フル診断テストスイート：
+
+.. |cpu| image:: images/cpu.png
+   :height: 30
+
+.. |gpu| image:: images/gpu.png
+   :height: 30
+
+.. |ram| image:: images/ram.png
+   :height: 30
+
+.. |disk| image:: images/disk.png
+   :height: 30
+
+.. |network| image:: images/network.png
+   :height: 30
+
+.. table::
+    :widths: 10 40
+        
+    +-------------+----------------------------------+
+    | |cpu|       | CPU                              |
+    +-------------+----------------------------------+
+    | |gpu|       | GPU                              |
+    +-------------+----------------------------------+
+    | |ram|       | RAM                              |
+    +-------------+----------------------------------+
+    | |disk|      | Storage devices                  |
+    +-------------+----------------------------------+
+    | |network|   | Network                          |
+    +-------------+----------------------------------+
+
+- デバイス全体に十分な負荷をかけるための、すべてのサブシステムの同時テスト
+- カスタマイズ可能で拡張可能な診断テスト
+- `PSYGIG診断プラットフォーム <https://www.psygig.com>`_ に組み込まれた統合により診断結果を追跡
+- 診断用HTMLレポートを生成する
+
+.. note::
+    `診断テスト` 機能は開発中です。この機能をベータテストすることに興味がある方は、 `連絡 <mailto:info@psygig.com>`_ ください。
+
+.. _running-diagnostics:
+
+診断テストの実行
+----------------------------
+完全な診断スイートを実行するには、付属のスタンドアロンバイナリ　``psydiag``　を実行するだけです。例：
+
+.. code-block:: bash
+
+    psydiag -f json -o diagnostic-results.json
+
+オプションリストは :doc:`psydiag-manページ <psydiag-man>` を参考ください。
+
+C/C++ SDK APIの使用
+------------------------------------------------------
+診断テストAPIは、 :doc:`単一のヘッダーファイル <../api/file_include_psyiage_psyiagesdk.h>` をインクルードして ``libpsyiage`` 共有ライブラリを
+リンクすることによってアクセスできます。詳細については、 :ref:`libpsyiage-linking` を参照ください。
+
+RAM診断テストの実行
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: c
+    :linenos:
+
+    #include <psyiage/psyiagesdk.h>
+
+    int main(int argc, char **argv)
+    {
+        psyiage_handle     pah;  // handle to psyiage instance
+
+        /* ... Initialize code omitted for simplicity ... */
+
+        // Run RAM diagnostic test
+        psyiage_diag_result diagres;
+        rc = psyiage_diag_run(pah, PSYIAGE_DIAG_RAM, &diagres);
+
+        /* ... Cleanup code omitted for simplicity ... */
+    }
+
+サンプル診断JSON結果
+------------------------------------
+
+.. code-block:: c
+
+    {
+        "DiagResults": {
+            "Type: "RAM"
+            "StartTime": 1547534065,
+            "StartTimeOfDay": "2019-01-15 15:34:25",
+            "Result": "PASS"
+        }
+    }

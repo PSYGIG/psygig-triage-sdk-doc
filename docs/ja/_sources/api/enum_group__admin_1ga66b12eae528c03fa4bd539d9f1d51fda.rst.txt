@@ -1,0 +1,13 @@
+.. _exhale_enum_group__admin_1ga66b12eae528c03fa4bd539d9f1d51fda:
+
+Enum _psyiage_sink_type
+=======================
+
+- Defined in :ref:`file_include_psyiage_psyiagesdk.h`
+
+
+Enum Documentation
+------------------
+
+
+.. doxygenenum:: _psyiage_sink_type
